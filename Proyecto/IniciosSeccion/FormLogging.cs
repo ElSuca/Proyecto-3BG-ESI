@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto
+namespace Proyecto.IniciosSeccion
 {
     public partial class FormLogging : Form
     {
@@ -16,5 +16,12 @@ namespace Proyecto
         {
             InitializeComponent();
         }
+
+        private void btnLoggin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

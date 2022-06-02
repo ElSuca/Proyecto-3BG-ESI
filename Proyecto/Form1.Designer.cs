@@ -28,13 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnLoggin = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(336, 113);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 0;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // btnLoggin
+            // 
+            this.btnLoggin.Location = new System.Drawing.Point(336, 142);
+            this.btnLoggin.Name = "btnLoggin";
+            this.btnLoggin.Size = new System.Drawing.Size(75, 23);
+            this.btnLoggin.TabIndex = 1;
+            this.btnLoggin.Text = "Log in";
+            this.btnLoggin.UseVisualStyleBackColor = true;
+            this.btnLoggin.Click += new System.EventHandler(this.btnLoggin_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLoggin);
+            this.Controls.Add(this.btnRegister);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -43,6 +67,9 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnLoggin;
     }
 }
 

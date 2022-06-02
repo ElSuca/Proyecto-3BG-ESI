@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto
+namespace Proyecto.IniciosSeccion
 {
     public partial class FormRegistro : Form
     {
         public FormRegistro()
         {
             InitializeComponent();
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
