@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1927
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto", "Proyecto\Proyecto.csproj", "{28D2090D-F3B7-4A50-BE4A-2129E52A49FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaGrafica", "Proyecto\CapaGrafica.csproj", "{28D2090D-F3B7-4A50-BE4A-2129E52A49FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiAutenitficacion", "ApiAutenitficacion\ApiAutenitficacion.csproj", "{BAE819BE-D726-440B-8A27-DA7235D2510D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaLogica", "ApiAutenitficacion\CapaLogica.csproj", "{BAE819BE-D726-440B-8A27-DA7235D2510D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
