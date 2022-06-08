@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaGrafica", "Proyecto\Cap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaLogica", "ApiAutenitficacion\CapaLogica.csproj", "{BAE819BE-D726-440B-8A27-DA7235D2510D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapDeDatos", "CapDeDatos\CapDeDatos.csproj", "{C2A71A24-EA6E-4DB3-8F1D-CD8C21901F87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BAE819BE-D726-440B-8A27-DA7235D2510D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAE819BE-D726-440B-8A27-DA7235D2510D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAE819BE-D726-440B-8A27-DA7235D2510D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2A71A24-EA6E-4DB3-8F1D-CD8C21901F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A71A24-EA6E-4DB3-8F1D-CD8C21901F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A71A24-EA6E-4DB3-8F1D-CD8C21901F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A71A24-EA6E-4DB3-8F1D-CD8C21901F87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

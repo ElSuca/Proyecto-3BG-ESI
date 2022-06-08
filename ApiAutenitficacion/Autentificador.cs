@@ -33,7 +33,7 @@ namespace ApiAutenitficacion
                "uid = root;" +
                "pwd=root;" +
                "database=proyecto"
-              );
+            );
 
             conexion.Open();
 
