@@ -13,11 +13,11 @@ namespace ApiAutenitficacion
     class Autentificador
     {
         static void Main(string[] args)
-        {
-            
+        {        
         }
         public Autentificador()
-        {     
+        {
+     
         }
         string Name;
         string Pass;

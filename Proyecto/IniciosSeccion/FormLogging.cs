@@ -33,6 +33,7 @@ namespace Proyecto.IniciosSeccion
 
             var user = SetData();
             SerializeJson(user);
+
         }
 
         private static string _path = @"C:\Proyecto_3BG\Credenciales.json";

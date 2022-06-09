@@ -68,6 +68,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backoffice\Backoffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backoffice\Backoffice.Designer.cs">
+      <DependentUpon>Backoffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backoffice\BackofficeUserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backoffice\BackofficeUserManager.Designer.cs">
+      <DependentUpon>BackofficeUserManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,12 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Backoffice\Backoffice.resx">
+      <DependentUpon>Backoffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backoffice\BackofficeUserManager.resx">
+      <DependentUpon>BackofficeUserManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
