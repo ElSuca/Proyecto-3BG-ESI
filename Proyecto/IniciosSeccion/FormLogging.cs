@@ -1,11 +1,9 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CapaDeDatos;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
-using Proyecto.Model;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using Proyecto;
 
 namespace Proyecto.IniciosSeccion
 {
@@ -17,9 +15,6 @@ namespace Proyecto.IniciosSeccion
             InitializeComponent();
             
         }
-        string Username;
-        string Pasword;
- 
         private void btnLoggin_Click(object sender, EventArgs e)
         {
             MySqlConnection conexion = new MySqlConnection(
@@ -30,33 +25,35 @@ namespace Proyecto.IniciosSeccion
                );
 
             conexion.Open();
-
-            var user = SetData();
-            SerializeJson(user);
-
+            SetData();
+            
         }
 
-        private static string _path = @"C:\Proyecto_3BG\Credenciales.json";
-        
-
-        public List<User> SetData()
+        private static string _path = @"C:\Users\Admin\Cache\Credenciales.json";
+        public void SetData()
         {
-            Username = txtUserName.Text;
-            Pasword = txtPassword.Text;
-
-            new User
+           var UserData = new User
             {
-                Name = Username,
-                Password = Pasword
+               Username = txtUserName.Text,
+               Password = txtPassword.Text
             };
-            return null;
-        } 
-        public void SerializeJson(List<User> users)
+
+            SerializeJson(UserData);
+        }
+        public string getUsername()
         {
-            string userJson = JsonConvert.SerializeObject(users.ToArray(), Formatting.Indented);
+            return txtUserName.Text;
+        }
+        public string getPassword()
+        {
+            return txtPassword.Text;
+        }
+        public void SerializeJson(User users)
+        {
+            string userJson = JsonConvert.SerializeObject(users, Formatting.Indented);
             File.WriteAllText(_path, userJson);
         }
-        
-       
+      
+
     }
 }

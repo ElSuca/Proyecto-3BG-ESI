@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BAE819BE-D726-440B-8A27-DA7235D2510D}</ProjectGuid>
+    <ProjectGuid>{145B1ADB-BC7A-4013-8311-88959AC2A71A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ApiAutenitficacion</RootNamespace>
-    <AssemblyName>ApiAutenitficacion</AssemblyName>
+    <RootNamespace>CapaLoogica</RootNamespace>
+    <AssemblyName>CapaLoogica</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,16 +65,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autentificador.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Proyecto\CapaGrafica.csproj">
-      <Project>{28D2090D-F3B7-4A50-BE4A-2129E52A49FC}</Project>
-      <Name>CapaGrafica</Name>
+    <ProjectReference Include="..\CapDeDatos\CapaDeDatos.csproj">
+      <Project>{c2a71a24-ea6e-4db3-8f1d-cd8c21901f87}</Project>
+      <Name>CapaDeDatos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

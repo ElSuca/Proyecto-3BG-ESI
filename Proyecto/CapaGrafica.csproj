@@ -68,11 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backoffice\Backoffice.cs">
+    <Compile Include="Backoffice\BackofficeManu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Backoffice\Backoffice.Designer.cs">
-      <DependentUpon>Backoffice.cs</DependentUpon>
+    <Compile Include="Backoffice\BackofficeManu.Designer.cs">
+      <DependentUpon>BackofficeManu.cs</DependentUpon>
     </Compile>
     <Compile Include="Backoffice\BackofficeUserManager.cs">
       <SubType>Form</SubType>
@@ -98,11 +98,10 @@
     <Compile Include="IniciosSeccion\FormRegistro.Designer.cs">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Backoffice\Backoffice.resx">
-      <DependentUpon>Backoffice.cs</DependentUpon>
+    <EmbeddedResource Include="Backoffice\BackofficeManu.resx">
+      <DependentUpon>BackofficeManu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Backoffice\BackofficeUserManager.resx">
       <DependentUpon>BackofficeUserManager.cs</DependentUpon>
@@ -139,6 +138,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CapDeDatos\CapaDeDatos.csproj">
+      <Project>{c2a71a24-ea6e-4db3-8f1d-cd8c21901f87}</Project>
+      <Name>CapaDeDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

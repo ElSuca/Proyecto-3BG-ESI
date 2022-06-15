@@ -39,11 +39,8 @@
             this.lbMail = new System.Windows.Forms.Label();
             this.lbNumber = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.dgrid1 = new System.Windows.Forms.DataGridView();
-            this.btnList = new System.Windows.Forms.Button();
             this.lbPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUserNameRegister
@@ -136,24 +133,6 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // dgrid1
-            // 
-            this.dgrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid1.Location = new System.Drawing.Point(217, 26);
-            this.dgrid1.Name = "dgrid1";
-            this.dgrid1.Size = new System.Drawing.Size(240, 150);
-            this.dgrid1.TabIndex = 12;
-            // 
-            // btnList
-            // 
-            this.btnList.Location = new System.Drawing.Point(12, 198);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(75, 23);
-            this.btnList.TabIndex = 13;
-            this.btnList.Text = "list";
-            this.btnList.UseVisualStyleBackColor = true;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
-            // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
@@ -176,11 +155,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 233);
+            this.ClientSize = new System.Drawing.Size(224, 238);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.btnList);
-            this.Controls.Add(this.dgrid1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lbNumber);
             this.Controls.Add(this.lbMail);
@@ -194,7 +171,6 @@
             this.Controls.Add(this.txtUserNameRegister);
             this.Name = "FormRegistro";
             this.Text = "FormRegistro";
-            ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,8 +188,6 @@
         private System.Windows.Forms.Label lbMail;
         private System.Windows.Forms.Label lbNumber;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.DataGridView dgrid1;
-        private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.TextBox txtPassword;
     }

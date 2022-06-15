@@ -19,13 +19,18 @@ namespace Proyecto
         {
             FormRegistro fr = new FormRegistro();
             fr.Show();
-            
         }
 
         private void btnLoggin_Click(object sender, EventArgs e)
         {
             FormLogging fl = new FormLogging();
             fl.Show();
+        }
+
+        private void BtnBackOffice_Click(object sender, EventArgs e)
+        {
+            BackofficeMenu backoffice = new BackofficeMenu();
+            backoffice.Show();  
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Proyecto
 {
-    partial class Backoffice
+    partial class BackofficeMenu
     {
         /// <summary>
         /// Required designer variable.
