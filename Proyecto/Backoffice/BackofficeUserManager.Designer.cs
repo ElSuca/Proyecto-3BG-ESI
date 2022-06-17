@@ -43,12 +43,15 @@
             this.txtEmailRegister = new System.Windows.Forms.TextBox();
             this.txtApellidoRegister = new System.Windows.Forms.TextBox();
             this.txtUserNameRegister = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(92, 164);
+            this.txtPassword.Location = new System.Drawing.Point(92, 134);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
@@ -57,7 +60,7 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(33, 167);
+            this.lbPassword.Location = new System.Drawing.Point(27, 136);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(53, 13);
             this.lbPassword.TabIndex = 29;
@@ -66,7 +69,7 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(11, 202);
+            this.btnList.Location = new System.Drawing.Point(117, 196);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 28;
@@ -77,14 +80,15 @@
             // dgrid1
             // 
             this.dgrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid1.Location = new System.Drawing.Point(216, 30);
+            this.dgrid1.Location = new System.Drawing.Point(213, 30);
             this.dgrid1.Name = "dgrid1";
-            this.dgrid1.Size = new System.Drawing.Size(240, 150);
+            this.dgrid1.Size = new System.Drawing.Size(240, 218);
             this.dgrid1.TabIndex = 27;
+            this.dgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid1_CellContentClick);
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(92, 202);
+            this.btnRegister.Location = new System.Drawing.Point(30, 196);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 26;
@@ -95,7 +99,7 @@
             // lbNumber
             // 
             this.lbNumber.AutoSize = true;
-            this.lbNumber.Location = new System.Drawing.Point(42, 134);
+            this.lbNumber.Location = new System.Drawing.Point(44, 160);
             this.lbNumber.Name = "lbNumber";
             this.lbNumber.Size = new System.Drawing.Size(44, 13);
             this.lbNumber.TabIndex = 25;
@@ -104,7 +108,7 @@
             // lbMail
             // 
             this.lbMail.AutoSize = true;
-            this.lbMail.Location = new System.Drawing.Point(50, 111);
+            this.lbMail.Location = new System.Drawing.Point(44, 113);
             this.lbMail.Name = "lbMail";
             this.lbMail.Size = new System.Drawing.Size(36, 13);
             this.lbMail.TabIndex = 24;
@@ -113,7 +117,7 @@
             // lbLastname
             // 
             this.lbLastname.AutoSize = true;
-            this.lbLastname.Location = new System.Drawing.Point(33, 85);
+            this.lbLastname.Location = new System.Drawing.Point(35, 86);
             this.lbLastname.Name = "lbLastname";
             this.lbLastname.Size = new System.Drawing.Size(53, 13);
             this.lbLastname.TabIndex = 23;
@@ -122,7 +126,7 @@
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(31, 59);
+            this.lbUsername.Location = new System.Drawing.Point(33, 59);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(55, 13);
             this.lbUsername.TabIndex = 22;
@@ -146,21 +150,21 @@
             // 
             // txtTelefonoRegister
             // 
-            this.txtTelefonoRegister.Location = new System.Drawing.Point(92, 134);
+            this.txtTelefonoRegister.Location = new System.Drawing.Point(92, 160);
             this.txtTelefonoRegister.Name = "txtTelefonoRegister";
             this.txtTelefonoRegister.Size = new System.Drawing.Size(100, 20);
             this.txtTelefonoRegister.TabIndex = 19;
             // 
             // txtEmailRegister
             // 
-            this.txtEmailRegister.Location = new System.Drawing.Point(92, 108);
+            this.txtEmailRegister.Location = new System.Drawing.Point(92, 110);
             this.txtEmailRegister.Name = "txtEmailRegister";
             this.txtEmailRegister.Size = new System.Drawing.Size(100, 20);
             this.txtEmailRegister.TabIndex = 18;
             // 
             // txtApellidoRegister
             // 
-            this.txtApellidoRegister.Location = new System.Drawing.Point(92, 82);
+            this.txtApellidoRegister.Location = new System.Drawing.Point(92, 85);
             this.txtApellidoRegister.Name = "txtApellidoRegister";
             this.txtApellidoRegister.Size = new System.Drawing.Size(100, 20);
             this.txtApellidoRegister.TabIndex = 17;
@@ -172,11 +176,44 @@
             this.txtUserNameRegister.Size = new System.Drawing.Size(100, 20);
             this.txtUserNameRegister.TabIndex = 16;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(30, 225);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 31;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnModify
+            // 
+            this.btnModify.Location = new System.Drawing.Point(117, 225);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(75, 23);
+            this.btnModify.TabIndex = 32;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            // 
+            // Delete
+            // 
+            this.Delete.Location = new System.Drawing.Point(71, 254);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(75, 23);
+            this.Delete.TabIndex = 33;
+            this.Delete.Text = "Delete";
+            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
             // BackofficeUserManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 247);
+            this.ClientSize = new System.Drawing.Size(468, 291);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.btnModify);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.btnList);
@@ -218,5 +255,8 @@
         private System.Windows.Forms.TextBox txtEmailRegister;
         private System.Windows.Forms.TextBox txtApellidoRegister;
         private System.Windows.Forms.TextBox txtUserNameRegister;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button Delete;
     }
 }

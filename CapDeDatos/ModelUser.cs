@@ -59,7 +59,7 @@ namespace CapaDeDatos
             return users;
 
         }
-        public string GetUserPassword(string Nombre)
+        public string GetUserDataLogging(string Nombre,string type)
         {
             this.command.CommandText = "SELECT * FROM usuario WHERE Nombre = @nombre";
             this.command.Parameters.AddWithValue("@nombre", Nombre);
@@ -69,20 +69,12 @@ namespace CapaDeDatos
             this.Name = this.dataReader["Nombre"].ToString();
             this.Password = this.dataReader["Password"].ToString();
             this.dataReader.Close();
-            return Password;
+
+            if(type == "Password") return Password;
+            else if (type == "Name") return Name;
+            return null;
         }
-        public string GetUserName(string Nombre)
-        {
-            this.command.CommandText = "SELECT * FROM usuario WHERE Nombre = @nombre";
-            this.command.Parameters.AddWithValue("@nombre", Nombre);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Name = this.dataReader["Nombre"].ToString();
-            this.Password = this.dataReader["Password"].ToString();
-            this.dataReader.Close();
-            return Name;
-        }
+        
         #endregion
         public void Save()
         {
@@ -120,7 +112,7 @@ namespace CapaDeDatos
             this.command.Prepare();
             this.command.ExecuteNonQuery();
         }
-        public void Delete()
+        public void Delete(int Id)
         {
             this.command.CommandText = "DELETE FROM usuario WHERE id = @id";
             this.command.Parameters.AddWithValue("@id", this.Id);

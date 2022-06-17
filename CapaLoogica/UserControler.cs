@@ -5,7 +5,7 @@ using CapaDeDatos;
 
 namespace CapaLogica
 {
-    class UserControler
+    public class UserControler
     {
         public static void Alta(int id, string nombre, string apellido, string telefono, string email)
         {
@@ -31,7 +31,7 @@ namespace CapaLogica
         public static void Eliminar(int id)
         {
             ModelUser p = new ModelUser(id);
-            p.Delete();
+            p.Delete(id);
         }
 
         public DataTable ObtenerTodos()

@@ -26,7 +26,7 @@ namespace ApiAutenitficacion
             //string Password = getUserDataJson().Password;
 
             ModelUser p = new ModelUser();
-            if (UserName == p.GetUserName(UserName) && Password == p.GetUserPassword(UserName))
+            if (UserName == p.GetUserDataLogging(UserName,"Name") && Password == p.GetUserDataLogging(UserName,"Password"))
             {
                 Console.WriteLine("Credenciales correctas");
                 return true;

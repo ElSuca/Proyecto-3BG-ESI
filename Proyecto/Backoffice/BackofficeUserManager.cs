@@ -1,13 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaLogica;
 
 namespace Proyecto.Backoffice
 {
@@ -48,6 +44,7 @@ namespace Proyecto.Backoffice
                 MessageBox.Show("Hubo un problema, intente nuevamente");
                 return;
             }
+            
 
             MySqlConnection conexion = new MySqlConnection(
                 "server = 127.0.0.1; " +
@@ -109,6 +106,32 @@ namespace Proyecto.Backoffice
             reader = comando.ExecuteReader();
             table.Load(reader);
             dgrid1.DataSource = table;
+        }
+
+        private void dgrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            UserControler usercontroler = new UserControler();
+            UserControler.Eliminar(Int32.Parse(txtID.Text));
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            UserControler usercontroler = new UserControler();
+            UserControler.Modificar(int.Parse(txtID.Text),
+                txtUserNameRegister.Text,
+                txtApellidoRegister.Text,
+                txtTelefonoRegister.Text,
+                txtEmailRegister.Text);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
