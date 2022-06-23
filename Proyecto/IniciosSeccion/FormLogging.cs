@@ -1,4 +1,5 @@
 ﻿using CapaDeDatos;
+using CapaLogica;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System;
@@ -17,43 +18,13 @@ namespace Proyecto.IniciosSeccion
         }
         private void btnLoggin_Click(object sender, EventArgs e)
         {
-            MySqlConnection conexion = new MySqlConnection(
-                "server = 127.0.0.1; " +
-                "uid = root;" +
-                "pwd=root;" +
-                "database=proyecto"
-               );
-
-            conexion.Open();
-            SetData();
-            
+            bool Coincide;
+            string Username = txtUserName.Text;
+            string Password = txtPassword.Text;
+            UserControler.Confirmation(Username,Password);
+            Coincide = UserControler.getConfirmation();
+            if (Coincide) MessageBox.Show("Inicio De secion correcto");
+            else MessageBox.Show("Hubo un problema, intente nuevamente");
         }
-
-        private static string _path = @"C:\Users\Admin\Cache\Credenciales.json";
-        public void SetData()
-        {
-           var UserData = new User
-            {
-               Username = txtUserName.Text,
-               Password = txtPassword.Text
-            };
-
-            SerializeJson(UserData);
-        }
-        public string getUsername()
-        {
-            return txtUserName.Text;
-        }
-        public string getPassword()
-        {
-            return txtPassword.Text;
-        }
-        public void SerializeJson(User users)
-        {
-            string userJson = JsonConvert.SerializeObject(users, Formatting.Indented);
-            File.WriteAllText(_path, userJson);
-        }
-      
-
     }
 }

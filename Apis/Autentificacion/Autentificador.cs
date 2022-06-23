@@ -19,7 +19,6 @@ namespace ApiAutenitficacion
             //DeserializeJson();
             menuprovicional();
         }
-        private static string _path = @"C:\Users\Admin\Cache\Credenciales.json";
         public bool checkData(string UserName, string Password)
         {
             //string UserName = getUserDataJson().Username;
@@ -37,20 +36,11 @@ namespace ApiAutenitficacion
                 return false;
             }
         }
-        public User getUserDataJson()
-        {
-            StreamReader r = new StreamReader(_path);
-            string jsonRead = r.ReadToEnd();
-            User m = JsonConvert.DeserializeObject<User>(jsonRead);
-
-            return m;
-        }
 
         public void DeserializeJson(string userJson)
         {
-             //var UserDeserialized = JsonConvert.DeserializeObject<List<ModelUser>>(userJson);
-             //Username = UserDeserialized[1].Name;
-             //Pass = UserDeserialized[1].Password;
+             var UserDeserialized = JsonConvert.DeserializeObject(userJson);
+           
         }
         
         public void menuprovicional()

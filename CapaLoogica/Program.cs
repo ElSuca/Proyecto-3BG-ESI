@@ -1,4 +1,4 @@
-﻿using ApiAutenitficacion;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +11,7 @@ namespace CapaLogica
     {
         static void Main(string[] args)
         {
-            Autentificador a = new Autentificador();
-            a.menuprovicional() ;
+            
         }
     }
 }

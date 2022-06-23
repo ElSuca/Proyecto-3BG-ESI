@@ -46,6 +46,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
+            this.txtCargar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,11 +207,22 @@
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
+            // txtCargar
+            // 
+            this.txtCargar.Location = new System.Drawing.Point(286, 256);
+            this.txtCargar.Name = "txtCargar";
+            this.txtCargar.Size = new System.Drawing.Size(75, 23);
+            this.txtCargar.TabIndex = 34;
+            this.txtCargar.Text = "Cargar";
+            this.txtCargar.UseVisualStyleBackColor = true;
+            this.txtCargar.Click += new System.EventHandler(this.txtCargar_Click);
+            // 
             // BackofficeUserManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 291);
+            this.Controls.Add(this.txtCargar);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnSearch);
@@ -258,5 +270,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button txtCargar;
     }
 }

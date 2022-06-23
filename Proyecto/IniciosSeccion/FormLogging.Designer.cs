@@ -33,7 +33,6 @@
             this.lbUserName = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
-            this.lbdebuggpassstate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLoggin
@@ -79,21 +78,11 @@
             this.lbPassword.TabIndex = 4;
             this.lbPassword.Text = "Password";
             // 
-            // lbdebuggpassstate
-            // 
-            this.lbdebuggpassstate.AutoSize = true;
-            this.lbdebuggpassstate.Location = new System.Drawing.Point(198, 142);
-            this.lbdebuggpassstate.Name = "lbdebuggpassstate";
-            this.lbdebuggpassstate.Size = new System.Drawing.Size(35, 13);
-            this.lbdebuggpassstate.TabIndex = 5;
-            this.lbdebuggpassstate.Text = "label1";
-            // 
             // FormLogging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(266, 173);
-            this.Controls.Add(this.lbdebuggpassstate);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbUserName);
@@ -113,6 +102,5 @@
         private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lbPassword;
-        private System.Windows.Forms.Label lbdebuggpassstate;
     }
 }

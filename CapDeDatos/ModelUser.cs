@@ -23,8 +23,8 @@ namespace CapaDeDatos
         #region getUserData
         public void GetUserData(int id)
         {
-            this.command.CommandText = "SELECT * FROM usuario WHERE id = @id";
-            this.command.Parameters.AddWithValue("@id", id);
+            this.command.CommandText = "SELECT * FROM usuario WHERE id = @Id";
+            this.command.Parameters.AddWithValue("@Id", id);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
@@ -67,7 +67,7 @@ namespace CapaDeDatos
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
             this.Name = this.dataReader["Nombre"].ToString();
-            this.Password = this.dataReader["Password"].ToString();
+            this.Password = this.dataReader["password"].ToString();
             this.dataReader.Close();
 
             if(type == "Password") return Password;
@@ -83,12 +83,12 @@ namespace CapaDeDatos
         }
         private void Insertar()
         {
-            this.command.CommandText = "INSERT INTO usuario VALUES (@id, @nombre,@apellido,@email,@telefono,@password)";
-            this.command.Parameters.AddWithValue("@id", this.Id.ToString());
-            this.command.Parameters.AddWithValue("@nombre", this.Name);
-            this.command.Parameters.AddWithValue("@apellido", this.LastName);
-            this.command.Parameters.AddWithValue("@telefono", this.PhoneNumber);
-            this.command.Parameters.AddWithValue("@email", this.Email);
+            this.command.CommandText = "INSERT INTO usuario VALUES (@Id, @nombre,@apellido,@email,@telefono,@password)";
+            this.command.Parameters.AddWithValue("@Id", this.Id.ToString());
+            this.command.Parameters.AddWithValue("@Nombre", this.Name);
+            this.command.Parameters.AddWithValue("@Apellido", this.LastName);
+            this.command.Parameters.AddWithValue("@Telefono", this.PhoneNumber);
+            this.command.Parameters.AddWithValue("@Email", this.Email);
             this.command.Parameters.AddWithValue("@password", this.Password);
             this.command.Prepare();
             this.command.ExecuteNonQuery();
@@ -100,9 +100,9 @@ namespace CapaDeDatos
                 "nombre = @nombre," +
                 "apellido = @apellido," +
                 "telefono = @telefono," +
-                "email = @email" +
-                "password = @password" +
-                "WHERE id = @id";
+                "email = @email," +
+                "password = @password," +
+                "WHERE Id = @Id";
 
             this.command.Parameters.AddWithValue("@nombre", this.Name);
             this.command.Parameters.AddWithValue("@apellido", this.LastName);
@@ -114,8 +114,8 @@ namespace CapaDeDatos
         }
         public void Delete(int Id)
         {
-            this.command.CommandText = "DELETE FROM usuario WHERE id = @id";
-            this.command.Parameters.AddWithValue("@id", this.Id);
+            this.command.CommandText = "DELETE FROM usuario WHERE Id = @Id";
+            this.command.Parameters.AddWithValue("@Id", this.Id);
             this.command.Prepare();
             this.command.ExecuteNonQuery();
         }

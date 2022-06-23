@@ -38,52 +38,28 @@ namespace Proyecto.Backoffice
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (!checkInput(txtID.Text) || !checkInput(txtUserNameRegister.Text) || !checkInput(txtApellidoRegister.Text)
-               || !checkInput(txtTelefonoRegister.Text) || !checkInput(txtEmailRegister.Text))
-            {
-                MessageBox.Show("Hubo un problema, intente nuevamente");
-                return;
-            }
-            
-
-            MySqlConnection conexion = new MySqlConnection(
-                "server = 127.0.0.1; " +
-                "uid = root;" +
-                "pwd=root;" +
-                "database=proyecto"
-               );
-
-            conexion.Open();
-
-            MySqlCommand comando = new MySqlCommand();
-            comando.Connection = conexion;
-
-            if (txtID.Text == "")
-            {
-                comando.CommandText = "INSERT INTO " +
-                "usuario (nombre, apellido, telefono, email, password) " +
-                "VALUES (@nombre,@apellido,@telefono,@email, @password)";
-                comando.Parameters.AddWithValue("@nombre", txtUserNameRegister.Text);
-                comando.Parameters.AddWithValue("@apellido", txtApellidoRegister.Text);
-                comando.Parameters.AddWithValue("@telefono", txtTelefonoRegister.Text);
-                comando.Parameters.AddWithValue("@email", txtEmailRegister.Text);
-                comando.Parameters.AddWithValue("@password", txtPassword.Text);
-            }
-            else
-            {
-                comando.CommandText = "INSERT INTO " +
-                "usuario VALUES (@id, @nombre,@apellido,@email,@telefono)";
-                comando.Parameters.AddWithValue("@id", txtID.Text);
-                comando.Parameters.AddWithValue("@nombre", txtUserNameRegister.Text);
-                comando.Parameters.AddWithValue("@apellido", txtApellidoRegister.Text);
-                comando.Parameters.AddWithValue("@telefono", txtTelefonoRegister.Text);
-                comando.Parameters.AddWithValue("@email", txtEmailRegister.Text);
-                comando.Parameters.AddWithValue("@password", txtPassword.Text);
-            }
-
-            comando.Prepare();
-            comando.ExecuteNonQuery();
-
+            /* if (!checkInput(txtID.Text) || 
+                 !checkInput(txtUserNameRegister.Text) || 
+                 !checkInput(txtApellidoRegister.Text) || 
+                 !checkInput(txtTelefonoRegister.Text) || 
+                 !checkInput(txtEmailRegister.Text) || 
+                 !checkInput(txtPassword.Text)) 
+             {
+                 MessageBox.Show("Hubo un problema, intente nuevamente");
+                 return;
+             }*/
+           bool IdVacio =String.IsNullOrEmpty(txtID.Text);
+            string ID;
+            if (IdVacio) ID = null;
+            else ID = txtID.Text;
+            UserControler.Alta(
+                ID,
+                txtUserNameRegister.Text,
+                txtApellidoRegister.Text, 
+                txtTelefonoRegister.Text,
+                txtEmailRegister.Text,
+                txtPassword.Text
+            );
             MessageBox.Show("Usuario cargado");
         }
 
@@ -112,7 +88,6 @@ namespace Proyecto.Backoffice
         {
 
         }
-
         private void Delete_Click(object sender, EventArgs e)
         {
             UserControler usercontroler = new UserControler();
@@ -126,12 +101,23 @@ namespace Proyecto.Backoffice
                 txtUserNameRegister.Text,
                 txtApellidoRegister.Text,
                 txtTelefonoRegister.Text,
-                txtEmailRegister.Text);
+                txtEmailRegister.Text,
+                txtPassword.Text);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCargar_Click(object sender, EventArgs e)
+        {
+            txtID.Text = "5";
+            txtUserNameRegister.Text = "test";
+            txtApellidoRegister.Text = "a";
+            txtTelefonoRegister.Text = "a";
+            txtEmailRegister.Text = "a";
+            txtPassword.Text = "test";
         }
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{145B1ADB-BC7A-4013-8311-88959AC2A71A}</ProjectGuid>
+    <ProjectGuid>{5ECC57A8-0490-4958-A2E1-8ABB31074C1E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CapaLoogica</RootNamespace>
-    <AssemblyName>CapaLoogica</AssemblyName>
+    <RootNamespace>Apis</RootNamespace>
+    <AssemblyName>Apis</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,15 +65,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autentificacion\Autentificador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControler.cs" />
+    <Compile Include="Respuesta.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaLoogica\CapaLogica.csproj">
+      <Project>{145b1adb-bc7a-4013-8311-88959ac2a71a}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapDeDatos\CapaDeDatos.csproj">
       <Project>{c2a71a24-ea6e-4db3-8f1d-cd8c21901f87}</Project>
       <Name>CapaDeDatos</Name>
