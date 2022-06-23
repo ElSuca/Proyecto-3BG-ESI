@@ -21,10 +21,14 @@ namespace Proyecto.IniciosSeccion
             bool Coincide;
             string Username = txtUserName.Text;
             string Password = txtPassword.Text;
-            UserControler.Confirmation(Username,Password);
-            Coincide = UserControler.getConfirmation();
+            Coincide = UserControler.Confirmation(Username, Password);
             if (Coincide) MessageBox.Show("Inicio De secion correcto");
             else MessageBox.Show("Hubo un problema, intente nuevamente");
+        }
+
+        private void FormLogging_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

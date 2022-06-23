@@ -36,7 +36,7 @@ namespace Proyecto.IniciosSeccion
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (!checkInput(txtID.Text) || !checkInput(txtUserNameRegister.Text) || !checkInput(txtApellidoRegister.Text) 
+            if (!checkInput(txtUserNameRegister.Text) || !checkInput(txtApellidoRegister.Text) 
                || !checkInput(txtTelefonoRegister.Text) || !checkInput(txtEmailRegister.Text))
             {
                 MessageBox.Show("Hubo un problema, intente nuevamente");
@@ -46,7 +46,7 @@ namespace Proyecto.IniciosSeccion
             MySqlConnection conexion = new MySqlConnection(
                 "server = 127.0.0.1; " +
                 "uid = root;" +
-                "pwd=root;" +
+                "pwd=stEAEgBRH35jgtLN3ztIDmlOYP;" +
                 "database=proyecto"
                );
 
@@ -55,8 +55,6 @@ namespace Proyecto.IniciosSeccion
             MySqlCommand comando = new MySqlCommand();
             comando.Connection = conexion;
 
-            if (txtID.Text == "")
-            {
                 comando.CommandText = "INSERT INTO " +
                 "usuario (nombre, apellido, telefono, email, password) " +
                 "VALUES (@nombre,@apellido,@telefono,@email, @password)";
@@ -66,24 +64,17 @@ namespace Proyecto.IniciosSeccion
                 comando.Parameters.AddWithValue("@telefono", txtTelefonoRegister.Text);
                 comando.Parameters.AddWithValue("@email", txtEmailRegister.Text);
                 comando.Parameters.AddWithValue("@password", txtPassword.Text);
-            }
-            else
-            {
-                comando.CommandText = "INSERT INTO " +
-                "usuario VALUES (@id, @nombre,@apellido,@email,@telefono)";
 
-                comando.Parameters.AddWithValue("@id", txtID.Text);
-                comando.Parameters.AddWithValue("@nombre", txtUserNameRegister.Text);
-                comando.Parameters.AddWithValue("@apellido", txtApellidoRegister.Text);
-                comando.Parameters.AddWithValue("@telefono", txtTelefonoRegister.Text);
-                comando.Parameters.AddWithValue("@email", txtEmailRegister.Text);
-                comando.Parameters.AddWithValue("@password", txtPassword.Text);
-            }
 
             comando.Prepare();
             comando.ExecuteNonQuery();
             
             MessageBox.Show("Usuario cargado");
+
+        }
+
+        private void FormRegistro_Load(object sender, EventArgs e)
+        {
 
         }
     }

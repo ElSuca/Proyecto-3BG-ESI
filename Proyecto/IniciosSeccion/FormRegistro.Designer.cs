@@ -32,8 +32,6 @@
             this.txtApellidoRegister = new System.Windows.Forms.TextBox();
             this.txtEmailRegister = new System.Windows.Forms.TextBox();
             this.txtTelefonoRegister = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.lbID = new System.Windows.Forms.Label();
             this.lbUsername = new System.Windows.Forms.Label();
             this.lbLastname = new System.Windows.Forms.Label();
             this.lbMail = new System.Windows.Forms.Label();
@@ -45,52 +43,36 @@
             // 
             // txtUserNameRegister
             // 
-            this.txtUserNameRegister.Location = new System.Drawing.Point(93, 52);
+            this.txtUserNameRegister.Location = new System.Drawing.Point(93, 25);
             this.txtUserNameRegister.Name = "txtUserNameRegister";
             this.txtUserNameRegister.Size = new System.Drawing.Size(100, 20);
             this.txtUserNameRegister.TabIndex = 1;
             // 
             // txtApellidoRegister
             // 
-            this.txtApellidoRegister.Location = new System.Drawing.Point(93, 78);
+            this.txtApellidoRegister.Location = new System.Drawing.Point(93, 51);
             this.txtApellidoRegister.Name = "txtApellidoRegister";
             this.txtApellidoRegister.Size = new System.Drawing.Size(100, 20);
             this.txtApellidoRegister.TabIndex = 2;
             // 
             // txtEmailRegister
             // 
-            this.txtEmailRegister.Location = new System.Drawing.Point(93, 104);
+            this.txtEmailRegister.Location = new System.Drawing.Point(93, 74);
             this.txtEmailRegister.Name = "txtEmailRegister";
             this.txtEmailRegister.Size = new System.Drawing.Size(100, 20);
             this.txtEmailRegister.TabIndex = 3;
             // 
             // txtTelefonoRegister
             // 
-            this.txtTelefonoRegister.Location = new System.Drawing.Point(93, 130);
+            this.txtTelefonoRegister.Location = new System.Drawing.Point(93, 100);
             this.txtTelefonoRegister.Name = "txtTelefonoRegister";
             this.txtTelefonoRegister.Size = new System.Drawing.Size(100, 20);
             this.txtTelefonoRegister.TabIndex = 4;
             // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(93, 26);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 5;
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(69, 29);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(18, 13);
-            this.lbID.TabIndex = 6;
-            this.lbID.Text = "ID";
-            // 
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(32, 55);
+            this.lbUsername.Location = new System.Drawing.Point(32, 28);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(55, 13);
             this.lbUsername.TabIndex = 7;
@@ -99,7 +81,7 @@
             // lbLastname
             // 
             this.lbLastname.AutoSize = true;
-            this.lbLastname.Location = new System.Drawing.Point(34, 81);
+            this.lbLastname.Location = new System.Drawing.Point(32, 54);
             this.lbLastname.Name = "lbLastname";
             this.lbLastname.Size = new System.Drawing.Size(53, 13);
             this.lbLastname.TabIndex = 8;
@@ -108,7 +90,7 @@
             // lbMail
             // 
             this.lbMail.AutoSize = true;
-            this.lbMail.Location = new System.Drawing.Point(51, 107);
+            this.lbMail.Location = new System.Drawing.Point(49, 77);
             this.lbMail.Name = "lbMail";
             this.lbMail.Size = new System.Drawing.Size(36, 13);
             this.lbMail.TabIndex = 9;
@@ -117,7 +99,7 @@
             // lbNumber
             // 
             this.lbNumber.AutoSize = true;
-            this.lbNumber.Location = new System.Drawing.Point(43, 130);
+            this.lbNumber.Location = new System.Drawing.Point(43, 103);
             this.lbNumber.Name = "lbNumber";
             this.lbNumber.Size = new System.Drawing.Size(44, 13);
             this.lbNumber.TabIndex = 10;
@@ -125,7 +107,7 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(93, 198);
+            this.btnRegister.Location = new System.Drawing.Point(118, 166);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 11;
@@ -136,7 +118,7 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(34, 163);
+            this.lbPassword.Location = new System.Drawing.Point(34, 129);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(53, 13);
             this.lbPassword.TabIndex = 14;
@@ -145,7 +127,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(93, 160);
+            this.txtPassword.Location = new System.Drawing.Point(93, 126);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
@@ -155,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(224, 238);
+            this.ClientSize = new System.Drawing.Size(224, 201);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.btnRegister);
@@ -163,14 +145,13 @@
             this.Controls.Add(this.lbMail);
             this.Controls.Add(this.lbLastname);
             this.Controls.Add(this.lbUsername);
-            this.Controls.Add(this.lbID);
-            this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtTelefonoRegister);
             this.Controls.Add(this.txtEmailRegister);
             this.Controls.Add(this.txtApellidoRegister);
             this.Controls.Add(this.txtUserNameRegister);
             this.Name = "FormRegistro";
             this.Text = "FormRegistro";
+            this.Load += new System.EventHandler(this.FormRegistro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,8 +162,6 @@
         private System.Windows.Forms.TextBox txtApellidoRegister;
         private System.Windows.Forms.TextBox txtEmailRegister;
         private System.Windows.Forms.TextBox txtTelefonoRegister;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lbUsername;
         private System.Windows.Forms.Label lbLastname;
         private System.Windows.Forms.Label lbMail;

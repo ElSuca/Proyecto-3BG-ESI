@@ -90,6 +90,7 @@
             this.Controls.Add(this.btnLoggin);
             this.Name = "FormLogging";
             this.Text = "FormLogging";
+            this.Load += new System.EventHandler(this.FormLogging_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

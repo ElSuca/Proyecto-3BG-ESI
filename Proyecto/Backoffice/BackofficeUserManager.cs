@@ -68,7 +68,7 @@ namespace Proyecto.Backoffice
             MySqlConnection conexion = new MySqlConnection(
                      "server = 127.0.0.1; " +
                      "uid = root;" +
-                     "pwd=root;" +
+                     "pwd=stEAEgBRH35jgtLN3ztIDmlOYP;" +
                      "database=proyecto"
                     );
 
@@ -89,15 +89,13 @@ namespace Proyecto.Backoffice
 
         }
         private void Delete_Click(object sender, EventArgs e)
-        {
-            UserControler usercontroler = new UserControler();
+        { 
             UserControler.Eliminar(Int32.Parse(txtID.Text));
         }
 
         private void btnModify_Click(object sender, EventArgs e)
-        {
-            UserControler usercontroler = new UserControler();
-            UserControler.Modificar(int.Parse(txtID.Text),
+        { 
+            UserControler.Modificar(Int32.Parse(txtID.Text),
                 txtUserNameRegister.Text,
                 txtApellidoRegister.Text,
                 txtTelefonoRegister.Text,

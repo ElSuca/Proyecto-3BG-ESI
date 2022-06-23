@@ -108,7 +108,7 @@ namespace CapaDeDatos
             this.command.Parameters.AddWithValue("@apellido", this.LastName);
             this.command.Parameters.AddWithValue("@telefono", this.PhoneNumber);
             this.command.Parameters.AddWithValue("@email", this.Email);
-            this.command.Parameters.AddWithValue("@password", this.Password);
+            this.command.Parameters.AddWithValue("@password", this.Password);            
             this.command.Prepare();
             this.command.ExecuteNonQuery();
         }
