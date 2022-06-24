@@ -38,22 +38,7 @@ namespace Proyecto.Backoffice
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            /* if (!checkInput(txtID.Text) || 
-                 !checkInput(txtUserNameRegister.Text) || 
-                 !checkInput(txtApellidoRegister.Text) || 
-                 !checkInput(txtTelefonoRegister.Text) || 
-                 !checkInput(txtEmailRegister.Text) || 
-                 !checkInput(txtPassword.Text)) 
-             {
-                 MessageBox.Show("Hubo un problema, intente nuevamente");
-                 return;
-             }*/
-           bool IdVacio =String.IsNullOrEmpty(txtID.Text);
-            string ID;
-            if (IdVacio) ID = null;
-            else ID = txtID.Text;
             UserControler.Alta(
-                ID,
                 txtUserNameRegister.Text,
                 txtApellidoRegister.Text, 
                 txtTelefonoRegister.Text,
@@ -68,7 +53,7 @@ namespace Proyecto.Backoffice
             MySqlConnection conexion = new MySqlConnection(
                      "server = 127.0.0.1; " +
                      "uid = root;" +
-                     "pwd=stEAEgBRH35jgtLN3ztIDmlOYP;" +
+                     "pwd=root;" +
                      "database=proyecto"
                     );
 
@@ -78,7 +63,7 @@ namespace Proyecto.Backoffice
             MySqlDataReader reader;
             DataTable table = new DataTable();
             comando.Connection = conexion;
-            comando.CommandText = "SELECT * FROM usuario";
+            comando.CommandText = "SELECT * FROM Usuario";
             reader = comando.ExecuteReader();
             table.Load(reader);
             dgrid1.DataSource = table;
@@ -113,7 +98,7 @@ namespace Proyecto.Backoffice
             txtID.Text = "5";
             txtUserNameRegister.Text = "test";
             txtApellidoRegister.Text = "a";
-            txtTelefonoRegister.Text = "a";
+            txtTelefonoRegister.Text = "12345678";
             txtEmailRegister.Text = "a";
             txtPassword.Text = "test";
         }

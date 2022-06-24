@@ -31,7 +31,7 @@ namespace API
         public void CrearCuerpoDeRespuesta()
         {
             UserControler us = new UserControler();
-            Console.Write(request.QueryString["usuario"]);
+            Console.Write(request.QueryString["Usuario"]);
 
             if (this.request.Url.AbsolutePath == "/listar") 
                 body = JsonConvert.SerializeObject(Username + Password);

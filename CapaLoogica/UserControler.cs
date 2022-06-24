@@ -11,14 +11,9 @@ namespace CapaLogica
         private string Username;
         private string UserPassword;
         private bool PasswordConfirmation;
-        public static void Alta(string id, string nombre, string apellido, string telefono, string email, string password)
+        public static void Alta(string nombre, string apellido, string telefono, string email, string password)
         {
-            int valor;
-
             ModelUser p = new ModelUser();
-                int.TryParse(id, out valor);
-                
-                p.Id = valor;
                 p.Name = nombre;
                 p.LastName = apellido;
                 p.PhoneNumber = telefono;

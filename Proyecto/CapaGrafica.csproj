@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backoffice\BackofficeAddManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backoffice\BackofficeAddManager.Designer.cs">
+      <DependentUpon>BackofficeAddManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Backoffice\BackofficeManu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMenuMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuMain.Designer.cs">
+      <DependentUpon>FormMenuMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="IniciosSeccion\FormLogging.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Backoffice\BackofficeAddManager.resx">
+      <DependentUpon>BackofficeAddManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Backoffice\BackofficeManu.resx">
       <DependentUpon>BackofficeManu.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuMain.resx">
+      <DependentUpon>FormMenuMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciosSeccion\FormLogging.resx">
       <DependentUpon>FormLogging.cs</DependentUpon>
@@ -123,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -147,6 +166,12 @@
       <Project>{c2a71a24-ea6e-4db3-8f1d-cd8c21901f87}</Project>
       <Name>CapaDeDatos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anuncio_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anuncio_2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
