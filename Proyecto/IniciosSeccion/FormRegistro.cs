@@ -25,7 +25,8 @@ namespace Proyecto.IniciosSeccion
             DangerWords.Add("DROP");
             DangerWords.Add(";");
             DangerWords.Add("FROM");
-
+            DangerWords.Add("CHAR");
+            DangerWords.Add("SET");
 
             foreach (string palabra in DangerWords)
             {

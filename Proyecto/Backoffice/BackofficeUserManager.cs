@@ -58,7 +58,7 @@ namespace Proyecto.Backoffice
                     );
 
             conexion.Open();
-
+            
             MySqlCommand comando = new MySqlCommand();
             MySqlDataReader reader;
             DataTable table = new DataTable();
@@ -66,6 +66,7 @@ namespace Proyecto.Backoffice
             comando.CommandText = "SELECT * FROM Usuario";
             reader = comando.ExecuteReader();
             table.Load(reader);
+            conexion.Close();
             dgrid1.DataSource = table;
         }
 
@@ -75,7 +76,8 @@ namespace Proyecto.Backoffice
         }
         private void Delete_Click(object sender, EventArgs e)
         { 
-            UserControler.Eliminar(Int32.Parse(txtID.Text));
+            UserControler.Eliminar(int.Parse(txtID.Text));
+            MessageBox.Show("Usuario "+ txtID.Text + " eliminado");
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -90,6 +92,8 @@ namespace Proyecto.Backoffice
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
+            UserControler.GetUserDataID(int.Parse(txtID.Text)); // no funciona aun
 
         }
 

@@ -29,12 +29,30 @@ namespace CapaDeDatos
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
 
-            this.Id = Int32.Parse(this.dataReader["Id"].ToString());
+            this.Id = int.Parse(this.dataReader["Id"].ToString());
             this.Name = this.dataReader["Nombre"].ToString();
             this.LastName = this.dataReader["Apellido"].ToString();
             this.PhoneNumber = this.dataReader["Telefono"].ToString();
             this.Email = this.dataReader["Email"].ToString();
             this.Password = this.dataReader["Password"].ToString();
+        }
+
+        public List<ModelUser> GetUserDataID(int id)
+        {
+            List<ModelUser> users = new List<ModelUser>();
+            this.command.CommandText = "SELECT * FROM Usuario WHERE id = @Id";
+            this.command.Parameters.AddWithValue("@Id", id);
+            this.command.Prepare();
+            this.dataReader = this.command.ExecuteReader();
+            this.dataReader.Read();
+
+            this.Id = int.Parse(this.dataReader["Id"].ToString());
+            this.Name = this.dataReader["Nombre"].ToString();
+            this.LastName = this.dataReader["Apellido"].ToString();
+            this.PhoneNumber = this.dataReader["Telefono"].ToString();
+            this.Email = this.dataReader["Email"].ToString();
+            this.Password = this.dataReader["Password"].ToString();
+            return users;
         }
 
         public List<ModelUser> GetUserData()
@@ -55,7 +73,6 @@ namespace CapaDeDatos
 
                 users.Add(p);
             }
-
             return users;
 
         }
@@ -78,12 +95,12 @@ namespace CapaDeDatos
         #endregion
         public void Save()
         {
-            //if (this.Id.ToString() != "") Update();
-            //else
-                Insertar();
+            if (this.Id.ToString() != "") Update();
+            else Insertar();
         }
         private void Insertar()
         {
+            this.dataReader.Close();
             command.CommandText = "INSERT INTO " +
                "Usuario (nombre, apellido, telefono, email, password) " +
                "VALUES (@Nombre,@Apellido,@Telefono,@Email, @Password)";
@@ -98,6 +115,7 @@ namespace CapaDeDatos
 
         private void Update()
         {
+            this.dataReader.Close();
             this.command.CommandText = "UPDATE Usuario SET " +
                 "nombre = @Nombre," +
                 "apellido = @Apellido," +
@@ -116,6 +134,7 @@ namespace CapaDeDatos
         }
         public void Delete(int Id)
         {
+            this.dataReader.Close();
             this.command.CommandText = "DELETE FROM Usuario WHERE Id = @Id";
             this.command.Parameters.AddWithValue("@Id", this.Id);
             this.command.Prepare();

@@ -20,7 +20,6 @@ namespace CapaLogica
                 p.Email = email;
                 p.Password = password;
                 p.Save();
- 
         }
         public static void Modificar(int id, string nombre, string apellido, string telefono, string email, string password)
         {
@@ -37,6 +36,16 @@ namespace CapaLogica
         {
             ModelUser p = new ModelUser(id);
             p.Delete(id);
+        }
+        public static List<ModelUser> GetUserData(int id)
+        {
+            ModelUser p = new ModelUser(id);
+            return p.GetUserData();
+        }
+        public static List<ModelUser> GetUserDataID(int id)
+        {
+            ModelUser p = new ModelUser(id);
+            return p.GetUserDataID(id);
         }
 
         public static DataTable ObtenerTodos()
