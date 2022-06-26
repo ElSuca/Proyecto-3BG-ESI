@@ -47,6 +47,11 @@ namespace CapaLogica
             ModelUser p = new ModelUser(id);
             return p.GetUserDataID(id);
         }
+        public void getId(int id)
+        {
+            ModelUser p = new ModelUser(id);
+            p.GetId(id);
+        }
 
         public static DataTable ObtenerTodos()
         {
@@ -74,7 +79,7 @@ namespace CapaLogica
             UserControler u = new UserControler();
             u.Username = Username;
             u.UserPassword = UserPassword;
-            
+
             return true;
         }
         

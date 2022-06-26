@@ -9,6 +9,8 @@ namespace Proyecto.Backoffice
 {
     public partial class BackofficeUserManager : Form
     {
+        public MySqlCommand command;
+        public MySqlDataReader dataReader;
         public BackofficeUserManager()
         {
             InitializeComponent();
@@ -90,11 +92,29 @@ namespace Proyecto.Backoffice
                 txtPassword.Text);
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)// no funca ayuda
         {
+            UserControler u = new UserControler();
+            MySqlConnection conexion = new MySqlConnection(
+                     "server = 127.0.0.1; " +
+                     "uid = root;" +
+                     "pwd=root;" +
+                     "database=proyecto"
+                    );
 
-            UserControler.GetUserDataID(int.Parse(txtID.Text)); // no funciona aun
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
 
+            int id = Int32.Parse(txtID.Text);
+            MySqlDataReader reader;
+            DataTable table = new DataTable();
+            comando.Connection = conexion;
+            u.getId(id);
+            comando.CommandText = "SELECT * FROM Usuario WHERE id = @Id";
+            reader = comando.ExecuteReader();
+            table.Load(reader);
+            conexion.Close();
+            dgrid1.DataSource = table;
         }
 
         private void txtCargar_Click(object sender, EventArgs e)

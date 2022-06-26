@@ -36,7 +36,17 @@ namespace CapaDeDatos
             this.Email = this.dataReader["Email"].ToString();
             this.Password = this.dataReader["Password"].ToString();
         }
+        public void GetId(int id)
+        {
+            if(!dataReader.IsClosed) dataReader.Close();
+            this.command.CommandText = "SELECT * FROM Usuario WHERE id = @Id";
+            this.command.Parameters.AddWithValue("@Id", id);
+            this.command.Prepare();
+            this.dataReader = this.command.ExecuteReader();
+            this.dataReader.Read();
 
+            this.Id = int.Parse(this.dataReader["Id"].ToString());
+        }
         public List<ModelUser> GetUserDataID(int id)
         {
             List<ModelUser> users = new List<ModelUser>();
