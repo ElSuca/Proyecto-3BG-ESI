@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MD5, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MD5.2.0.2\lib\netstandard2.0\MD5.dll</HintPath>
+    </Reference>
     <Reference Include="MySqlConnector, Version=0.30.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.0.30.0\lib\net46\MySqlConnector.dll</HintPath>
     </Reference>
@@ -78,6 +81,9 @@
       <Project>{c2a71a24-ea6e-4db3-8f1d-cd8c21901f87}</Project>
       <Name>CapaDeDatos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
