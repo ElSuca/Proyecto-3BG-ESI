@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MD5, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MD5.2.0.2\lib\netstandard2.0\MD5.dll</HintPath>
+    </Reference>
     <Reference Include="MySqlConnector, Version=0.30.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.0.30.0\lib\net46\MySqlConnector.dll</HintPath>
     </Reference>
@@ -68,35 +71,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backoffice\BackofficeAddManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Backoffice\BackofficeAddManager.Designer.cs">
-      <DependentUpon>BackofficeAddManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Backoffice\BackofficeManu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Backoffice\BackofficeManu.Designer.cs">
-      <DependentUpon>BackofficeManu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Backoffice\BackofficeUserManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Backoffice\BackofficeUserManager.Designer.cs">
-      <DependentUpon>BackofficeUserManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormMenuMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMenuMain.Designer.cs">
-      <DependentUpon>FormMenuMain.cs</DependentUpon>
     </Compile>
     <Compile Include="IniciosSeccion\FormLogging.cs">
       <SubType>Form</SubType>
@@ -112,20 +91,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Backoffice\BackofficeAddManager.resx">
-      <DependentUpon>BackofficeAddManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Backoffice\BackofficeManu.resx">
-      <DependentUpon>BackofficeManu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Backoffice\BackofficeUserManager.resx">
-      <DependentUpon>BackofficeUserManager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMenuMain.resx">
-      <DependentUpon>FormMenuMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciosSeccion\FormLogging.resx">
       <DependentUpon>FormLogging.cs</DependentUpon>
@@ -158,6 +125,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BackOffice\BackOffice.csproj">
+      <Project>{ad3f7e90-2c30-4d95-95f3-6d2b7af2864b}</Project>
+      <Name>BackOffice</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaLoogica\CapaLogica.csproj">
       <Project>{145b1adb-bc7a-4013-8311-88959ac2a71a}</Project>
       <Name>CapaLogica</Name>
@@ -172,6 +143,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Anuncio_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TprtafritasElMartinez.jpg" />
+    <None Include="Resources\Anuncio_2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

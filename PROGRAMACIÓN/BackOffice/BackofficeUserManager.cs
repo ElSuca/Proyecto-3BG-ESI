@@ -45,7 +45,7 @@ namespace Proyecto.Backoffice
                 txtApellidoRegister.Text, 
                 txtTelefonoRegister.Text,
                 txtEmailRegister.Text,
-                txtPassword.Text
+                MD5Hash.Hash.Content(txtPassword.Text)
             );
             MessageBox.Show("Usuario cargado");
         }

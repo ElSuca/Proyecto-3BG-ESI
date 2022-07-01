@@ -1,13 +1,6 @@
 ﻿using CapaLogica;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto.IniciosSeccion
@@ -25,7 +18,8 @@ namespace Proyecto.IniciosSeccion
             DangerWords.Add("DROP");
             DangerWords.Add(";");
             DangerWords.Add("FROM");
-
+            DangerWords.Add("CHAR");
+            DangerWords.Add("SET");
 
             foreach (string palabra in DangerWords)
             {
@@ -48,7 +42,7 @@ namespace Proyecto.IniciosSeccion
                 txtApellidoRegister.Text,
                 txtTelefonoRegister.Text,
                 txtEmailRegister.Text,
-                txtPassword.Text
+                MD5Hash.Hash.Content(txtPassword.Text)
             );
             MessageBox.Show("Usuario cargado");
         }

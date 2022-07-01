@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaDeDatos;
-using MySql.Data.MySqlClient;
+using System.Net;
+using CapaLogica;
 using Newtonsoft.Json;
 
 
@@ -15,42 +10,41 @@ namespace ApiAutenitficacion
     class Autentificador
     {
         public Autentificador()
-        {
-            //DeserializeJson();
-            menuprovicional();
+        {     
         }
-        public bool checkData(string UserName, string Password)
+        public static Dictionary<string, string> GenerarRespuesta(HttpListenerRequest request)
         {
-            //string UserName = getUserDataJson().Username;
-            //string Password = getUserDataJson().Password;
-
-            ModelUser p = new ModelUser();
-            if (UserName == p.GetUserDataLogging(UserName,"Name") && Password == p.GetUserDataLogging(UserName,"Password"))
+            string cuerpo = extraerCuerpoDeRequest(request);
+            Dictionary<string, string> respuesta = evaluarCredenciales(cuerpo);
+            return respuesta;
+        }
+        private static string extraerCuerpoDeRequest(HttpListenerRequest request)
+        {
+            string cuerpo;
+            using (var reader = new StreamReader(request.InputStream, request.ContentEncoding))
             {
-                Console.WriteLine("Credenciales correctas");
-                return true;
+                cuerpo = reader.ReadToEnd();
+            }
+            return cuerpo;
+        }
+
+       
+        private static Dictionary<string, string> evaluarCredenciales(string cuerpo)
+        {
+            Dictionary<string, string> credenciales = JsonConvert.DeserializeObject<Dictionary<string, string>>(cuerpo);
+            Dictionary<string, string> resultadoAutenticacion = new Dictionary<string, string>();
+            if (UserControler.Autenticar(credenciales["usuario"], credenciales["password"]) == true)
+            {
+                resultadoAutenticacion.Add("codigo", "1");
+                resultadoAutenticacion.Add("mensaje", "Credenciales correctas");
             }
             else
             {
-                Console.WriteLine("Credenciales incorrectas");
-                return false;
+                resultadoAutenticacion.Add("codigo", "-1");
+                resultadoAutenticacion.Add("mensaje", "Credenciales invalidas");
             }
-        }
-
-        public void DeserializeJson(string userJson)
-        {
-             var UserDeserialized = JsonConvert.DeserializeObject(userJson);
-           
-        }
-        
-        public void menuprovicional()
-        {
-             Console.WriteLine("Ingrese Nombre:");
-             string UserName = Console.ReadLine();
-             Console.WriteLine("Ingrese Contraseña:");
-             string Password = Console.ReadLine();
-             checkData(UserName, Password);
-            //getUserDataJson();
+            return resultadoAutenticacion;
         }
     }
+
 }

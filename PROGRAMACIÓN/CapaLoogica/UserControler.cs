@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
+using System.Net;
+using System.Text;
 using CapaDeDatos;
 using Newtonsoft.Json;
 
 namespace CapaLogica
 {
     public class UserControler
-    {
-        private string Username;
-        private string UserPassword;
-        private bool PasswordConfirmation;
+    { 
         public static void Alta(string nombre, string apellido, string telefono, string email, string password)
         {
             ModelUser p = new ModelUser();
@@ -20,7 +20,6 @@ namespace CapaLogica
                 p.Email = email;
                 p.Password = password;
                 p.Save();
- 
         }
         public static void Modificar(int id, string nombre, string apellido, string telefono, string email, string password)
         {
@@ -32,13 +31,21 @@ namespace CapaLogica
             p.Password = password;
             p.Save();
         }
-
         public static void Eliminar(int id)
         {
             ModelUser p = new ModelUser(id);
             p.Delete(id);
         }
-
+        public static List<ModelUser> GetUserData(int id)
+        {
+            ModelUser p = new ModelUser(id);
+            return p.GetUserData();
+        }
+        public void getId(int id)
+        {
+            ModelUser p = new ModelUser(id);
+            p.GetId(id);
+        }
         public static DataTable ObtenerTodos()
         {
             DataTable tabla = new DataTable();
@@ -47,46 +54,14 @@ namespace CapaLogica
 
             return tabla;
         }
-        public string ObtenerNombre()
+        public static bool Autenticar(string nombre, string password)
         {
-            return Username;
-        }
-        public string ObtenerContraseña()
-        {
-            return UserPassword;
-        }
-        public void SetUserData(string name, string password)
-        {
-            Username = name;
-            UserPassword = password;
-        }
-        public static bool Confirmation(string Username, string UserPassword)
-        {
-            UserControler u = new UserControler();
-            u.Username = Username;
-            u.UserPassword = UserPassword;
-            
-            return true;
+            ModelUser u = new ModelUser();
+            u.Name = nombre;
+         
+            return u.Autenticar(password);
         }
         
-        public static void setConfirmation(bool value)
-        {
-            UserControler u = new UserControler();
-            u.PasswordConfirmation = value;
-        }
-        public static bool getConfirmation()
-        {
-            UserControler u = new UserControler();
-            return u.PasswordConfirmation;
-        }
-        public bool credencialesCorrectas;
-        public void CallUserVerification()
-        {
-           // ApiAutenitficacion.Autentificador au = new ApiAutenitficacion.Autentificador();
-            //if (au.checkData()) credencialesCorrectas = true;
-            //else credencialesCorrectas = false;
-            Console.Write(credencialesCorrectas);
-        }
     }
 }
 

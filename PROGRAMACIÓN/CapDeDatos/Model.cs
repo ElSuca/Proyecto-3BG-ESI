@@ -45,7 +45,8 @@ namespace CapaDeDatos
             this.IpDataBase = "127.0.0.1";
             this.NameDataBase = "proyecto";
             this.UserDataBase = "root";
-            this.PasswordDataBase = "stEAEgBRH35jgtLN3ztIDmlOYP";
+            this.PasswordDataBase = "root";
+            this.PuertoDataBase = "3306"; 
         }
     }
 }

@@ -34,7 +34,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Proyecto.Properties.Resources.Anuncio_2;
+            this.pictureBox1.Image = global::Proyecto.Properties.Resources.TprtafritasElMartinez;
             this.pictureBox1.Location = new System.Drawing.Point(12, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(628, 89);
