@@ -2,11 +2,9 @@
 - hosts: Api
   tasks:
 
-    - name: Setup Dotnet
-      command: rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
 
     - name: Instalar Dotnet
       yum:
         name:
-          - dotnet-sdk-6.0
+          - https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
 
