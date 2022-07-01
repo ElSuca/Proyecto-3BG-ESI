@@ -1,0 +1,11 @@
+---
+- hosts: Database
+  tasks:
+
+    - name: Instalar mysql
+      yum:
+        name:
+          - mysql
+
+
+ 
