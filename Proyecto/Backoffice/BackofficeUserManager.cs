@@ -119,12 +119,16 @@ namespace Proyecto.Backoffice
 
         private void txtCargar_Click(object sender, EventArgs e)
         {
-            txtID.Text = "5";
             txtUserNameRegister.Text = "test";
             txtApellidoRegister.Text = "a";
             txtTelefonoRegister.Text = "12345678";
             txtEmailRegister.Text = "a";
             txtPassword.Text = "test";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

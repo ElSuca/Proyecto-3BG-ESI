@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using CapaDeDatos;
 using CapaLogica;
-using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 
 
@@ -24,7 +17,6 @@ namespace ApiAutenitficacion
             string cuerpo = extraerCuerpoDeRequest(request);
             Dictionary<string, string> respuesta = evaluarCredenciales(cuerpo);
             return respuesta;
-
         }
         private static string extraerCuerpoDeRequest(HttpListenerRequest request)
         {

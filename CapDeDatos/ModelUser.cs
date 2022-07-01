@@ -125,17 +125,17 @@ namespace CapaDeDatos
         {
             this.CheckDataReaderActive();
             this.command.CommandText = "UPDATE usuario SET " +
-                "Nombre = @Nombre," +
-                "Apellido = @Apellido," +
-                "Telefono = @Telefono," +
-                "Email = @Email," +
-                "Password = @Password," +
-                "WHERE id = @id;";
+               "Nombre = @Nombre," +
+               "Apellido = @Apellido," +
+               "Telefono = @Telefono," +
+               "Email = @Email," +
+               "Password = @Password" +
+               " WHERE id = @id";
             this.command.Parameters.AddWithValue("@Nombre", this.Name);
             this.command.Parameters.AddWithValue("@Apellido", this.LastName);
             this.command.Parameters.AddWithValue("@Telefono", this.PhoneNumber);
             this.command.Parameters.AddWithValue("@Email", this.Email);
-            this.command.Parameters.AddWithValue("@Password", this.Password);            
+            this.command.Parameters.AddWithValue("@Password", this.Password);
             this.command.Prepare();
             this.command.ExecuteNonQuery();
         }
@@ -150,6 +150,7 @@ namespace CapaDeDatos
 
         public bool Autenticar(string passwordEntrada)
         {
+
             this.ObtenerPorNombre();
             if (this.Name == "") return false;
             if (this.Password == hashearPassword(passwordEntrada)) return true;

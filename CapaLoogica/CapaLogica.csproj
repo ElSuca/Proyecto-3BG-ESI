@@ -82,8 +82,5 @@
       <Name>CapaDeDatos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="logo.ico" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

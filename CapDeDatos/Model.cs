@@ -46,6 +46,7 @@ namespace CapaDeDatos
             this.NameDataBase = "proyecto";
             this.UserDataBase = "root";
             this.PasswordDataBase = "root";
+            this.PuertoDataBase = "3306"; 
         }
     }
 }

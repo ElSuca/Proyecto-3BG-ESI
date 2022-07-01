@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Net;
+using System.Text;
 using CapaDeDatos;
 using Newtonsoft.Json;
 
@@ -53,9 +55,41 @@ namespace CapaLogica
         }
         public static bool Autenticar(string nombre, string password)
         {
+
             ModelUser u = new ModelUser();
+            UserControler uc = new UserControler();
             u.Name = nombre;
+            uc.enviar(nombre, password);
             return u.Autenticar(password);
+        }
+        public void enviar(string nombre, string password)
+        {
+            HttpListener listener = new HttpListener();
+            string Url = "http://127.0.0.1:8888/autenticar/";
+            WebRequest request = WebRequest.Create(Url);
+            listener.Prefixes.Add(Url);
+            checklisten(listener);
+             HttpListenerContext context = listener.GetContext();
+            
+            HttpListenerResponse response = context.Response;
+
+            string body;
+            request.Method = "post";
+            Dictionary<string, string> camposJsonDeSalida = new Dictionary<string, string>();
+             camposJsonDeSalida.Add(nombre, password);
+
+            body = JsonConvert.SerializeObject(camposJsonDeSalida);
+
+            response.ContentType = "application/json";
+            byte[] buffer = Encoding.UTF8.GetBytes(body);
+            response.ContentLength64 = buffer.Length;
+            System.IO.Stream output = response.OutputStream;
+            output.Write(buffer, 0, buffer.Length);
+        }
+        public void checklisten(HttpListener listener)
+        {
+            if (listener.IsListening) listener.Stop();
+            else listener.Start();
         }
     }
 }
