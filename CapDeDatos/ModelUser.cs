@@ -150,7 +150,6 @@ namespace CapaDeDatos
 
         public bool Autenticar(string passwordEntrada)
         {
-
             this.ObtenerPorNombre();
             if (this.Name == "") return false;
             if (this.Password == hashearPassword(passwordEntrada)) return true;
@@ -189,7 +188,6 @@ namespace CapaDeDatos
         {
             return MD5Hash.Hash.Content(password);
         }
-
         public void CheckDataReaderActive()
         {
             if (!dataReader.IsClosed && dataReader != null) dataReader.Close();

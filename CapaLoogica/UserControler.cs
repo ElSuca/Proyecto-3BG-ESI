@@ -56,50 +56,12 @@ namespace CapaLogica
         }
         public static bool Autenticar(string nombre, string password)
         {
-            string Url = "http://127.0.0.1:8888/autenticar/";
             ModelUser u = new ModelUser();
-            UserControler uc = new UserControler();
-            uc.enviar(nombre, password,Url);
-            string respuesta = recivir(Url);
+            u.Name = nombre;
+         
             return u.Autenticar(password);
         }
-        public void enviar(string nombre, string password, string Url)
-        {
-            HttpListener listener = new HttpListener();
-            WebRequest request = WebRequest.Create(Url);
-            listener.Prefixes.Add(Url);
-            checklisten(listener);
-            HttpListenerContext context = listener.GetContext();
-            HttpListenerResponse response = context.Response;
-
-            string body;
-            request.Method = "post";
-            Dictionary<string, string> camposJsonDeSalida = new Dictionary<string, string>();
-            camposJsonDeSalida.Add(nombre, password);
-
-            body = JsonConvert.SerializeObject(camposJsonDeSalida);
-
-            response.ContentType = "application/json";
-            byte[] buffer = Encoding.UTF8.GetBytes(body);
-            response.ContentLength64 = buffer.Length;
-            Stream output = response.OutputStream;
-            output.Write(buffer, 0, buffer.Length);
-        }
-        public static string recivir(string Url)
-        {
-           
-            WebRequest request = WebRequest.Create(Url);
-            WebResponse response = request.GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream());
-            return reader.ReadToEnd().Trim();
-
-        }
-
-        public void checklisten(HttpListener listener)
-        {
-            if (listener.IsListening) listener.Stop();
-            else listener.Start();
-        }
+        
     }
 }
 

@@ -39,7 +39,7 @@
             // btnLoggin
             // 
             this.btnLoggin.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnLoggin.Location = new System.Drawing.Point(53, 125);
+            this.btnLoggin.Location = new System.Drawing.Point(53, 124);
             this.btnLoggin.Name = "btnLoggin";
             this.btnLoggin.Size = new System.Drawing.Size(75, 23);
             this.btnLoggin.TabIndex = 0;
@@ -86,7 +86,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 9);
+            this.label1.Location = new System.Drawing.Point(47, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 31);
             this.label1.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.ClientSize = new System.Drawing.Size(202, 169);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbPassword);

@@ -144,7 +144,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 21);
+            this.label1.Location = new System.Drawing.Point(46, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 33);
             this.label1.TabIndex = 16;
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.ClientSize = new System.Drawing.Size(224, 244);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
@@ -168,6 +168,7 @@
             this.Controls.Add(this.txtEmailRegister);
             this.Controls.Add(this.txtApellidoRegister);
             this.Controls.Add(this.txtUserNameRegister);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "FormRegistro";
             this.Text = "FormRegistro";
             this.Load += new System.EventHandler(this.FormRegistro_Load);

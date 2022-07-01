@@ -1,9 +1,5 @@
-﻿using CapaDeDatos;
-using CapaLogica;
-using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
+﻿using CapaLogica;
 using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Proyecto.IniciosSeccion
