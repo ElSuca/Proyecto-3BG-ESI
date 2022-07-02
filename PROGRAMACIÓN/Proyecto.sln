@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaLogica", "CapaLoogica\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apis", "Apis\Apis.csproj", "{5ECC57A8-0490-4958-A2E1-8ABB31074C1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice", "BackOffice\BackOffice.csproj", "{AD3F7E90-2C30-4D95-95F3-6D2B7AF2864B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5ECC57A8-0490-4958-A2E1-8ABB31074C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ECC57A8-0490-4958-A2E1-8ABB31074C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ECC57A8-0490-4958-A2E1-8ABB31074C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD3F7E90-2C30-4D95-95F3-6D2B7AF2864B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD3F7E90-2C30-4D95-95F3-6D2B7AF2864B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD3F7E90-2C30-4D95-95F3-6D2B7AF2864B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD3F7E90-2C30-4D95-95F3-6D2B7AF2864B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
