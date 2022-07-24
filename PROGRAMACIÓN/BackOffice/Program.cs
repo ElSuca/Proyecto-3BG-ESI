@@ -1,4 +1,5 @@
 ﻿using Proyecto;
+using Proyecto.Backoffice;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace BackOffice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BackofficeMenu());
+            Application.Run(new BackofficeManager());
         }
     }
 }

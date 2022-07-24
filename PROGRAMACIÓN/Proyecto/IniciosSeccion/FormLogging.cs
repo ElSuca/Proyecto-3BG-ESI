@@ -26,5 +26,11 @@ namespace Proyecto.IniciosSeccion
         {
 
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal m = new MenuPrincipal();
+            m.Show();
+        }
     }
 }

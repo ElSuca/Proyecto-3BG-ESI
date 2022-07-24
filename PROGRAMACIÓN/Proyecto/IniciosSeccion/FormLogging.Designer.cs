@@ -34,12 +34,13 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEntrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLoggin
             // 
             this.btnLoggin.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnLoggin.Location = new System.Drawing.Point(53, 124);
+            this.btnLoggin.Location = new System.Drawing.Point(15, 124);
             this.btnLoggin.Name = "btnLoggin";
             this.btnLoggin.Size = new System.Drawing.Size(75, 23);
             this.btnLoggin.TabIndex = 0;
@@ -92,12 +93,23 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Log in";
             // 
+            // btnEntrar
+            // 
+            this.btnEntrar.Location = new System.Drawing.Point(96, 124);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(98, 23);
+            this.btnEntrar.TabIndex = 6;
+            this.btnEntrar.Text = "Entrar de una";
+            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            // 
             // FormLogging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.ClientSize = new System.Drawing.Size(202, 169);
+            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.txtPassword);
@@ -120,5 +132,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEntrar;
     }
 }

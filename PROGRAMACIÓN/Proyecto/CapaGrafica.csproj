@@ -89,6 +89,12 @@
     <Compile Include="IniciosSeccion\FormRegistro.Designer.cs">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IniciosSeccion\FormRegistro.resx">
       <DependentUpon>FormRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -125,6 +134,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ApiPublicidad\ApiPublicidad.csproj">
+      <Project>{eab0cd5c-6f60-4bfa-80ec-d07a595d3f32}</Project>
+      <Name>ApiPublicidad</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BackOffice\BackOffice.csproj">
       <Project>{ad3f7e90-2c30-4d95-95f3-6d2b7af2864b}</Project>
       <Name>BackOffice</Name>

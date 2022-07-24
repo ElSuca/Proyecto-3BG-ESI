@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Proyecto.Backoffice;
 using Proyecto.IniciosSeccion;
 namespace Proyecto
 {
@@ -29,8 +30,10 @@ namespace Proyecto
 
         private void BtnBackOffice_Click(object sender, EventArgs e)
         {
-            BackofficeMenu backoffice = new BackofficeMenu();
+            BackofficeManager backoffice = new BackofficeManager();
             backoffice.Show();  
         }
+
+        
     }
 }
