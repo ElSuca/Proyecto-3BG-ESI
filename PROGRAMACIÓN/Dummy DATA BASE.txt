@@ -1,0 +1,10 @@
+CREATE DATABASE proyecto;
+USE proyecto;
+CREATE TABLE Usuario (
+Id int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Nombre varchar(30) UNIQUE NOT NULL,
+Apellido varchar(30) NOT NULL,
+Email varchar(30) NOT NULL,
+Telefono int(9) NOT NULL,
+password varchar(49) NOT NULL
+);
