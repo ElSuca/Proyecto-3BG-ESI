@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.BannerPic = new System.Windows.Forms.PictureBox();
-            this.txtdebugg = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UserInformationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BannerPic
@@ -42,25 +45,44 @@
             this.BannerPic.TabStop = false;
             this.BannerPic.Click += new System.EventHandler(this.BannerPic_Click);
             // 
-            // txtdebugg
+            // menuStrip1
             // 
-            this.txtdebugg.AutoSize = true;
-            this.txtdebugg.Location = new System.Drawing.Point(362, 153);
-            this.txtdebugg.Name = "txtdebugg";
-            this.txtdebugg.Size = new System.Drawing.Size(35, 13);
-            this.txtdebugg.TabIndex = 1;
-            this.txtdebugg.Text = "label1";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1104, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UserInformationMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // UserInformationMenuItem
+            // 
+            this.UserInformationMenuItem.Name = "UserInformationMenuItem";
+            this.UserInformationMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.UserInformationMenuItem.Text = "My information";
+            this.UserInformationMenuItem.Click += new System.EventHandler(this.UserInformationMenuItem_Click);
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 638);
-            this.Controls.Add(this.txtdebugg);
             this.Controls.Add(this.BannerPic);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
             this.Text = "MainMenu";
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,6 +91,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox BannerPic;
-        private System.Windows.Forms.Label txtdebugg;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem UserInformationMenuItem;
     }
 }

@@ -31,7 +31,7 @@ namespace Proyecto
         private void BtnBackOffice_Click(object sender, EventArgs e)
         {
             BackofficeManager backoffice = new BackofficeManager();
-            backoffice.Show();  
+            backoffice.Show();
         }
 
         

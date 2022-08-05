@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice", "BackOffice\Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiPublicidad", "ApiPublicidad\ApiPublicidad.csproj", "{EAB0CD5C-6F60-4BFA-80EC-D07A595D3F32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiPublica", "ApiPublica\ApiPublica.csproj", "{60045646-DC91-4946-96E8-9D73441BA6D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{EAB0CD5C-6F60-4BFA-80EC-D07A595D3F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAB0CD5C-6F60-4BFA-80EC-D07A595D3F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAB0CD5C-6F60-4BFA-80EC-D07A595D3F32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60045646-DC91-4946-96E8-9D73441BA6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60045646-DC91-4946-96E8-9D73441BA6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60045646-DC91-4946-96E8-9D73441BA6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60045646-DC91-4946-96E8-9D73441BA6D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

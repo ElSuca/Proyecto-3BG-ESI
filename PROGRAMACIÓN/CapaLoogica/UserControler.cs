@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.IO;
-using System.Net;
-using System.Text;
 using CapaDeDatos;
-using Newtonsoft.Json;
 
 namespace CapaLogica
 {
     public class UserControler
-    { 
+    {
         public static void Alta(string nombre, string apellido, string telefono, string email, string password)
         {
             ModelUser p = new ModelUser();
-                p.Name = nombre;
-                p.LastName = apellido;
-                p.PhoneNumber = telefono;
-                p.Email = email;
-                p.Password = password;
-                p.Save();
+            p.Name = nombre;
+            p.LastName = apellido;
+            p.PhoneNumber = telefono;
+            p.Email = email;
+            p.Password = password;
+            p.Save();
         }
         public static void Modificar(int id, string nombre, string apellido, string telefono, string email, string password)
         {
@@ -58,7 +53,6 @@ namespace CapaLogica
         {
             ModelUser u = new ModelUser();
             u.Name = nombre;
-         
             return u.Autenticar(password);
         }
         

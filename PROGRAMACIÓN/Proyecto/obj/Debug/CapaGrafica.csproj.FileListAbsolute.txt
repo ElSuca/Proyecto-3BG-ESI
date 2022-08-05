@@ -382,7 +382,9 @@ C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Pr
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\obj\Debug\CapaGrafica.csproj.CopyComplete
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.exe
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.pdb
-C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.MenuPrincipal.resources
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\ApiPublicidad.exe
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\ApiPublicidad.pdb
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\ApiPublicidad.exe.config
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\ApiPublica.exe
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\ApiPublica.pdb
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\ApiPublica.exe.config

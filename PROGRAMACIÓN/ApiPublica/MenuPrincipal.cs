@@ -1,7 +1,6 @@
-﻿using System;
+﻿using ApiPublica;
+using System;
 using System.Drawing;
-using System.IO;
-using System.Net;
 using System.Windows.Forms;
 
 namespace Proyecto
@@ -24,7 +23,6 @@ namespace Proyecto
         public void SetAnuncio(int Bannerselect)
         {    
             selection = Bannerselect;
-            txtdebugg.Text = selection.ToString();
             BannerPic.Image = Image.FromFile("C:\\Users\\Admin\\Desktop\\Deberes S\\2022\\Proyecto\\Proyecto-3BG-ESI\\PROGRAMACIÓN\\Cache\\" + selection + ".jpg");
         }
         public string SelectUrllink(int n)
@@ -34,6 +32,12 @@ namespace Proyecto
             else if (selection == 1) banner = "https://cuk-it.com/recetas/tortas-fritas/";
             else if (selection == 2) banner = "https://as.com/baloncesto/nba/";
             return banner;
+        }
+
+        private void UserInformationMenuItem_Click(object sender, EventArgs e)
+        {
+            UserData u = new UserData();
+            u.Show();
         }
     }
 }

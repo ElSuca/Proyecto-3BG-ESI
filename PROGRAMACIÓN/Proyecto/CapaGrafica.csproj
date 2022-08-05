@@ -89,12 +89,6 @@
     <Compile Include="IniciosSeccion\FormRegistro.Designer.cs">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -105,9 +99,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IniciosSeccion\FormRegistro.resx">
       <DependentUpon>FormRegistro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -134,6 +125,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ApiPublica\ApiPublica.csproj">
+      <Project>{60045646-dc91-4946-96e8-9d73441ba6d2}</Project>
+      <Name>ApiPublica</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ApiPublicidad\ApiPublicidad.csproj">
       <Project>{eab0cd5c-6f60-4bfa-80ec-d07a595d3f32}</Project>
       <Name>ApiPublicidad</Name>
