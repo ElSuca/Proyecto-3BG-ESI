@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaDeDatos;
+using CapaLogica;
+using System;
 using System.Windows.Forms;
 
 namespace ApiPublica
 {
     public partial class UserData : Form
     {
+        string UserName;
         public UserData()
         {
             InitializeComponent();
@@ -27,9 +23,32 @@ namespace ApiPublica
         {
 
         }
+
+        public void SetUserName(string n)
+        {
+            UserName = n;
+        }
         public void SetUserData()
         {
-            
+            ModelUser u = new ModelUser();
+            string n = u.getUserName();
+            lbUserName.Text = u.getUserName();
+            lbEmail.Text = u.getEmail();
+        }
+
+        private void UserData_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgridUserData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lbUserName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

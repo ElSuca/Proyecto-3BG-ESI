@@ -14,12 +14,18 @@ namespace Proyecto.IniciosSeccion
         private void btnLoggin_Click(object sender, EventArgs e)
         {
             MenuPrincipal m = new MenuPrincipal();
-
+            UserControler uc = new UserControler();
+            ApiPublica.UserData u = new ApiPublica.UserData();
             bool Coincide;
             string Username = txtUserName.Text;
             string Password = txtPassword.Text;
+          
             Coincide = UserControler.Autenticar(Username, Password);
-            if (Coincide) m.Show(); 
+            if (Coincide)
+            {
+                uc.inicializate(Username);
+                m.Show();
+            }
             else MessageBox.Show("Hubo un problema, intente nuevamente");
         }
 

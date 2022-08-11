@@ -52,15 +52,8 @@ namespace Proyecto.Backoffice
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            MySqlConnection conexion = new MySqlConnection(
-                     "server = 127.0.0.1; " +
-                     "uid = root;" +
-                     "pwd=root;" +
-                     "database=proyecto"
-                    );
-
-            conexion.Open();
-            
+            UserControler u = new UserControler();
+            MySqlConnection conexion = u.ConectDatabase();
             MySqlCommand comando = new MySqlCommand();
             MySqlDataReader reader;
             DataTable table = new DataTable();
@@ -92,20 +85,13 @@ namespace Proyecto.Backoffice
                 txtPassword.Text);
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)// no funca ayuda
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             UserControler u = new UserControler();
-            MySqlConnection conexion = new MySqlConnection(
-                     "server = 127.0.0.1; " +
-                     "uid = root;" +
-                     "pwd=root;" +
-                     "database=proyecto"
-                    );
-
-            conexion.Open();
+            MySqlConnection conexion = u.ConectDatabase();
             MySqlCommand comando = new MySqlCommand();
 
-            int id = Int32.Parse(txtID.Text);
+            int id = int.Parse(txtID.Text);
             MySqlDataReader reader;
             DataTable table = new DataTable();
             comando.Connection = conexion;
@@ -115,15 +101,6 @@ namespace Proyecto.Backoffice
             table.Load(reader);
             conexion.Close();
             dgrid1.DataSource = table;
-        }
-
-        private void txtCargar_Click(object sender, EventArgs e)
-        {
-            txtUserNameRegister.Text = "test";
-            txtApellidoRegister.Text = "a";
-            txtTelefonoRegister.Text = "12345678";
-            txtEmailRegister.Text = "a";
-            txtPassword.Text = "test";
         }
 
         private void label1_Click(object sender, EventArgs e)

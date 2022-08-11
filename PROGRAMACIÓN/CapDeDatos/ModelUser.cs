@@ -21,6 +21,12 @@ namespace CapaDeDatos
         {   
         }
         
+
+        public void inicializate(string Username)
+        {
+            setUsername(Username);
+            GetUserDataForUserName();
+        }
         #region getUserData
         public void GetUserData(int id)
         {
@@ -45,6 +51,17 @@ namespace CapaDeDatos
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
             this.Id = int.Parse(this.dataReader["id"].ToString());
+        }
+        public int GetId(string Name)
+        {
+            this.CheckDataReaderActive();
+            this.command.CommandText = "SELECT * FROM Usuario WHERE Name = @Nombre";
+            this.command.Parameters.AddWithValue("@Nombre", Name);
+            this.command.Prepare();
+            this.dataReader = this.command.ExecuteReader();
+            this.dataReader.Read();
+            this.Id = int.Parse(this.dataReader["id"].ToString());
+            return Id;
         }
         public List<ModelUser> GetUserDataID(int id)
         {
@@ -83,6 +100,26 @@ namespace CapaDeDatos
             }
             return users;
 
+        }
+        public List<ModelUser> GetUserData(string Username)
+        {
+            List<ModelUser> users = new List<ModelUser>();
+            this.command.CommandText = "SELECT * FROM Usuario WHERE Nombre = @Nombre";
+            this.dataReader = this.command.ExecuteReader();
+
+            while (this.dataReader.Read())
+            {
+                ModelUser p = new ModelUser();
+                p.Id = Int32.Parse(dataReader["Id"].ToString());
+                p.Name = dataReader["Nombre"].ToString();
+                p.LastName = dataReader["Apellido"].ToString();
+                p.PhoneNumber = dataReader["Telefono"].ToString();
+                p.Email = dataReader["Email"].ToString();
+                p.Password = dataReader["password"].ToString();
+
+                users.Add(p);
+            }
+            return users;
         }
         public string GetUserDataLogging(string Nombre,string type)
         {
@@ -150,12 +187,12 @@ namespace CapaDeDatos
 
         public bool Autenticar(string passwordEntrada)
         {
-            this.ObtenerPorNombre();
+            this.ObtenerCredencialesPorNombre();
             if (this.Name == "") return false;
             if (this.Password == hashearPassword(passwordEntrada)) return true;
             return false;
         }
-        public void ObtenerPorNombre()
+        public void ObtenerCredencialesPorNombre()
         {
             this.command.CommandText = "SELECT nombre,password FROM usuario WHERE Nombre = @Nombre";
             this.command.Parameters.AddWithValue("@Nombre", this.Name);
@@ -166,6 +203,21 @@ namespace CapaDeDatos
             this.Name = this.dataReader["Nombre"].ToString();
             this.Password = this.dataReader["Password"].ToString();
         }
+        public void GetUserDataForUserName()
+        {
+            this.command.CommandText = "SELECT nombre,password,Apellido,Email,Telefono FROM usuario WHERE Nombre = @Nombre";
+            this.command.Parameters.AddWithValue("@Nombre", this.Name);
+            this.command.Prepare();
+            this.dataReader = this.command.ExecuteReader();
+            if (!this.dataReader.HasRows) return;
+            this.dataReader.Read();
+            this.Name = this.dataReader["Nombre"].ToString();
+            this.LastName = this.dataReader["Apellido"].ToString();
+            this.Email = this.dataReader["Email"].ToString();
+            this.PhoneNumber = this.dataReader["Telefono"].ToString();
+            this.Password = this.dataReader["Password"].ToString();
+        }
+        
         private void crearArrayDePersonas(List<ModelUser> usuarios)
         {
             while (this.dataReader.Read())
@@ -192,6 +244,18 @@ namespace CapaDeDatos
         {
             if (!dataReader.IsClosed && dataReader != null) dataReader.Close();
             else if (dataReader == null) Console.WriteLine("error");
+        }
+        public void setUsername(string Username)
+        {
+            this.Name = Username;
+        }
+        public string getEmail()
+        {
+            return Email;
+        }
+        public string getUserName()
+        {
+            return this.Name;
         }
     }
     public class User
