@@ -31,9 +31,12 @@ namespace ApiPublica
         public void SetUserData()
         {
             ModelUser u = new ModelUser();
-            string n = u.getUserName();
-            lbUserName.Text = u.getUserName();
-            lbEmail.Text = u.getEmail();
+            UserControler uc = new UserControler();
+            string buffer = u.getBuffer();
+            uc.inicializate(buffer);
+            string n = uc.getUsername();
+            lbUserName.Text = uc.getUsername();
+            lbEmail.Text = uc.getEmail();
         }
 
         private void UserData_Load(object sender, EventArgs e)

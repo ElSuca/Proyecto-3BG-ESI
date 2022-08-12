@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using CapaDeDatos;
 using MySql.Data.MySqlClient;
@@ -84,15 +85,22 @@ namespace CapaLogica
         }
         public MySqlConnection ConectDatabase()
         {
-            MySqlConnection conexion = new MySqlConnection(
-                    "server = 127.0.0.1; " +
-                    "uid = root;" +
-                    "pwd=root;" +
-                    "database=proyecto"
-                   );
+            try
+            {
+                MySqlConnection conexion = new MySqlConnection(
+                "server = 127.0.0.1; " +
+                "uid = root;" +
+                "pwd=root;" +
+                "database=proyecto"
+                );
 
-            conexion.Open();
-            return conexion;
+                conexion.Open();
+                return conexion;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

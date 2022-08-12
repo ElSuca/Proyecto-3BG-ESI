@@ -12,6 +12,7 @@ namespace CapaDeDatos
         public string PhoneNumber;
         public string Email;
         public string Password;
+        public string Buffer;
 
         public ModelUser(int id)
         {
@@ -30,111 +31,158 @@ namespace CapaDeDatos
         #region getUserData
         public void GetUserData(int id)
         {
-            this.command.CommandText = "SELECT * FROM usuario WHERE id = @id";
-            this.command.Parameters.AddWithValue("@id", id);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["id"].ToString());
-            this.Name = this.dataReader["Nombre"].ToString();
-            this.LastName = this.dataReader["Apellido"].ToString();
-            this.PhoneNumber = this.dataReader["Telefono"].ToString();
-            this.Email = this.dataReader["Email"].ToString();
-            this.Password = this.dataReader["Password"].ToString();
+            try
+            {
+                this.command.CommandText = "SELECT * FROM usuario WHERE id = @id";
+                this.command.Parameters.AddWithValue("@id", id);
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["id"].ToString());
+                this.Name = this.dataReader["Nombre"].ToString();
+                this.LastName = this.dataReader["Apellido"].ToString();
+                this.PhoneNumber = this.dataReader["Telefono"].ToString();
+                this.Email = this.dataReader["Email"].ToString();
+                this.Password = this.dataReader["Password"].ToString();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void GetId(int id)
         {
-            this.CheckDataReaderActive();
-            this.command.CommandText = "SELECT * FROM Usuario WHERE id = @id";
-            this.command.Parameters.AddWithValue("@id", id);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["id"].ToString());
+            try
+            {
+                this.CheckDataReaderActive();
+                this.command.CommandText = "SELECT * FROM Usuario WHERE id = @id";
+                this.command.Parameters.AddWithValue("@id", id);
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["id"].ToString());
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public int GetId(string Name)
         {
-            this.CheckDataReaderActive();
-            this.command.CommandText = "SELECT * FROM Usuario WHERE Name = @Nombre";
-            this.command.Parameters.AddWithValue("@Nombre", Name);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["id"].ToString());
-            return Id;
+            try
+            {
+                this.CheckDataReaderActive();
+                this.command.CommandText = "SELECT * FROM Usuario WHERE Name = @Nombre";
+                this.command.Parameters.AddWithValue("@Nombre", Name);
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["id"].ToString());
+                return Id;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public List<ModelUser> GetUserDataID(int id)
         {
             List<ModelUser> users = new List<ModelUser>();
-            this.command.CommandText = "SELECT * FROM Usuario WHERE id = @id";
-            this.command.Parameters.AddWithValue("@id", id);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["id"].ToString());
-            this.Name = this.dataReader["Nombre"].ToString();
-            this.LastName = this.dataReader["Apellido"].ToString();
-            this.PhoneNumber = this.dataReader["Telefono"].ToString();
-            this.Email = this.dataReader["Email"].ToString();
-            this.Password = this.dataReader["Password"].ToString();
-            return users;
+            try
+            {
+                this.command.CommandText = "SELECT * FROM Usuario WHERE id = @id";
+                this.command.Parameters.AddWithValue("@id", id);
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["id"].ToString());
+                this.Name = this.dataReader["Nombre"].ToString();
+                this.LastName = this.dataReader["Apellido"].ToString();
+                this.PhoneNumber = this.dataReader["Telefono"].ToString();
+                this.Email = this.dataReader["Email"].ToString();
+                this.Password = this.dataReader["Password"].ToString();
+                return users;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public List<ModelUser> GetUserData()
         {
             List<ModelUser> users = new List<ModelUser>();
-            this.command.CommandText = "SELECT * FROM Usuario";
-            this.dataReader = this.command.ExecuteReader();
-
-            while (this.dataReader.Read())
+            try
             {
-                ModelUser p = new ModelUser();
-                p.Id = Int32.Parse(dataReader["Id"].ToString());
-                p.Name = dataReader["Nombre"].ToString();
-                p.LastName = dataReader["Apellido"].ToString();
-                p.PhoneNumber = dataReader["Telefono"].ToString();
-                p.Email = dataReader["Email"].ToString();
-                p.Password = dataReader["password"].ToString();
+                this.command.CommandText = "SELECT * FROM Usuario";
+                this.dataReader = this.command.ExecuteReader();
 
-                users.Add(p);
+                while (this.dataReader.Read())
+                {
+                    ModelUser p = new ModelUser();
+                    p.Id = Int32.Parse(dataReader["Id"].ToString());
+                    p.Name = dataReader["Nombre"].ToString();
+                    p.LastName = dataReader["Apellido"].ToString();
+                    p.PhoneNumber = dataReader["Telefono"].ToString();
+                    p.Email = dataReader["Email"].ToString();
+                    p.Password = dataReader["password"].ToString();
+
+                    users.Add(p);
+                }
+                return users;
             }
-            return users;
-
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public List<ModelUser> GetUserData(string Username)
         {
             List<ModelUser> users = new List<ModelUser>();
-            this.command.CommandText = "SELECT * FROM Usuario WHERE Nombre = @Nombre";
-            this.dataReader = this.command.ExecuteReader();
-
-            while (this.dataReader.Read())
+            try
             {
-                ModelUser p = new ModelUser();
-                p.Id = Int32.Parse(dataReader["Id"].ToString());
-                p.Name = dataReader["Nombre"].ToString();
-                p.LastName = dataReader["Apellido"].ToString();
-                p.PhoneNumber = dataReader["Telefono"].ToString();
-                p.Email = dataReader["Email"].ToString();
-                p.Password = dataReader["password"].ToString();
+                this.command.CommandText = "SELECT * FROM Usuario WHERE Nombre = @Nombre";
+                this.dataReader = this.command.ExecuteReader();
+                while (this.dataReader.Read())
+                {
+                    ModelUser p = new ModelUser();
+                    p.Id = Int32.Parse(dataReader["Id"].ToString());
+                    p.Name = dataReader["Nombre"].ToString();
+                    p.LastName = dataReader["Apellido"].ToString();
+                    p.PhoneNumber = dataReader["Telefono"].ToString();
+                    p.Email = dataReader["Email"].ToString();
+                    p.Password = dataReader["password"].ToString();
 
-                users.Add(p);
+                    users.Add(p);
+                }
+                return users;
             }
-            return users;
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public string GetUserDataLogging(string Nombre,string type)
         {
-            this.command.CommandText = "SELECT * FROM Usuario WHERE Nombre = @Nombre";
-            this.command.Parameters.AddWithValue("@Nombre", Nombre);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Name = this.dataReader["Nombre"].ToString();
-            this.Password = this.dataReader["password"].ToString();
-            this.dataReader.Close();
+            try
+            {
+                this.command.CommandText = "SELECT * FROM Usuario WHERE Nombre = @Nombre";
+                this.command.Parameters.AddWithValue("@Nombre", Nombre);
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Name = this.dataReader["Nombre"].ToString();
+                this.Password = this.dataReader["password"].ToString();
+                this.dataReader.Close();
 
-            if(type == "Password") return Password;
-            else if (type == "Name") return Name;
-            return null;
+                if (type == "Password") return Password;
+                else if (type == "Name") return Name;
+                return null;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
         }
         
         #endregion
@@ -145,77 +193,118 @@ namespace CapaDeDatos
         }
         private void Insertar()
         {
-            //this.CheckDataReaderActive();
-            command.CommandText = "INSERT INTO " +
-               "Usuario (nombre, apellido, telefono, email, password) " +
-               "VALUES (@Nombre,@Apellido,@Telefono,@Email, @Password)";
-            this.command.Parameters.AddWithValue("@Nombre", this.Name);
-            this.command.Parameters.AddWithValue("@Apellido", this.LastName);
-            this.command.Parameters.AddWithValue("@Email", this.Email);
-            this.command.Parameters.AddWithValue("@Telefono", this.PhoneNumber);
-            this.command.Parameters.AddWithValue("@Password", this.Password);
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            try{
+                command.CommandText = "INSERT INTO " +
+                   "Usuario (nombre, apellido, telefono, email, password) " +
+                   "VALUES (@Nombre,@Apellido,@Telefono,@Email, @Password)";
+                this.command.Parameters.AddWithValue("@Nombre", this.Name);
+                this.command.Parameters.AddWithValue("@Apellido", this.LastName);
+                this.command.Parameters.AddWithValue("@Email", this.Email);
+                this.command.Parameters.AddWithValue("@Telefono", this.PhoneNumber);
+                this.command.Parameters.AddWithValue("@Password", this.Password);
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         private void Update()
         {
-            this.CheckDataReaderActive();
-            this.command.CommandText = "UPDATE usuario SET " +
-               "Nombre = @Nombre," +
-               "Apellido = @Apellido," +
-               "Telefono = @Telefono," +
-               "Email = @Email," +
-               "Password = @Password" +
-               " WHERE id = @id";
-            this.command.Parameters.AddWithValue("@Nombre", this.Name);
-            this.command.Parameters.AddWithValue("@Apellido", this.LastName);
-            this.command.Parameters.AddWithValue("@Telefono", this.PhoneNumber);
-            this.command.Parameters.AddWithValue("@Email", this.Email);
-            this.command.Parameters.AddWithValue("@Password", this.Password);
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            try
+            {
+                this.CheckDataReaderActive();
+                this.command.CommandText = "UPDATE usuario SET " +
+                   "Nombre = @Nombre," +
+                   "Apellido = @Apellido," +
+                   "Telefono = @Telefono," +
+                   "Email = @Email," +
+                   "Password = @Password" +
+                   " WHERE id = @id";
+                this.command.Parameters.AddWithValue("@Nombre", this.Name);
+                this.command.Parameters.AddWithValue("@Apellido", this.LastName);
+                this.command.Parameters.AddWithValue("@Telefono", this.PhoneNumber);
+                this.command.Parameters.AddWithValue("@Email", this.Email);
+                this.command.Parameters.AddWithValue("@Password", this.Password);
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void Delete(int Id)
         {
-            this.CheckDataReaderActive();
-            this.command.CommandText = "DELETE FROM Usuario WHERE id = @id";
-            this.command.Parameters.AddWithValue("@id", this.Id);
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            try
+            {
+                this.CheckDataReaderActive();
+                this.command.CommandText = "DELETE FROM Usuario WHERE id = @id";
+                this.command.Parameters.AddWithValue("@id", this.Id);
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public bool Autenticar(string passwordEntrada)
         {
-            this.ObtenerCredencialesPorNombre();
-            if (this.Name == "") return false;
-            if (this.Password == hashearPassword(passwordEntrada)) return true;
-            return false;
+            try
+            {
+                this.ObtenerCredencialesPorNombre();
+                if (this.Name == "") return false;
+                if (this.Password == hashearPassword(passwordEntrada)) return true;
+                return false;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void ObtenerCredencialesPorNombre()
         {
-            this.command.CommandText = "SELECT nombre,password FROM usuario WHERE Nombre = @Nombre";
-            this.command.Parameters.AddWithValue("@Nombre", this.Name);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            if (!this.dataReader.HasRows) return;
-            this.dataReader.Read();
-            this.Name = this.dataReader["Nombre"].ToString();
-            this.Password = this.dataReader["Password"].ToString();
+            try
+            {
+                this.command.CommandText = "SELECT nombre,password FROM usuario WHERE Nombre = @Nombre";
+                this.command.Parameters.AddWithValue("@Nombre", this.Name);
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                if (!this.dataReader.HasRows) return;
+                this.dataReader.Read();
+                this.Name = this.dataReader["Nombre"].ToString();
+                this.Password = this.dataReader["Password"].ToString();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void GetUserDataForUserName()
         {
-            this.command.CommandText = "SELECT nombre,password,Apellido,Email,Telefono FROM usuario WHERE Nombre = @Nombre";
-            this.command.Parameters.AddWithValue("@Nombre", this.Name);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            if (!this.dataReader.HasRows) return;
-            this.dataReader.Read();
-            this.Name = this.dataReader["Nombre"].ToString();
-            this.LastName = this.dataReader["Apellido"].ToString();
-            this.Email = this.dataReader["Email"].ToString();
-            this.PhoneNumber = this.dataReader["Telefono"].ToString();
-            this.Password = this.dataReader["Password"].ToString();
+            try
+            {
+                this.command.CommandText = "SELECT nombre,password,Apellido,Email,Telefono FROM usuario WHERE Nombre = @Nombre";
+                this.command.Parameters.AddWithValue("@Nombre", this.Name);
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                if (!this.dataReader.HasRows) return;
+                this.dataReader.Read();
+                this.Name = this.dataReader["Nombre"].ToString();
+                this.LastName = this.dataReader["Apellido"].ToString();
+                this.Email = this.dataReader["Email"].ToString();
+                this.PhoneNumber = this.dataReader["Telefono"].ToString();
+                this.Password = this.dataReader["Password"].ToString();
+                Buffer = Name;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         
         private void crearArrayDePersonas(List<ModelUser> usuarios)
@@ -231,10 +320,17 @@ namespace CapaDeDatos
         }
         private List<ModelUser> obtenerTodasLasFilas()
         {
-            List<ModelUser> usuarios = new List<ModelUser>();
-            this.command.CommandText = "SELECT id,Nombre FROM usuario";
-            this.dataReader = this.command.ExecuteReader();
-            return usuarios;
+            try
+            {
+                List<ModelUser> usuarios = new List<ModelUser>();
+                this.command.CommandText = "SELECT id,Nombre FROM usuario";
+                this.dataReader = this.command.ExecuteReader();
+                return usuarios;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         private string hashearPassword(string password)
         {
@@ -242,12 +338,19 @@ namespace CapaDeDatos
         }
         public void CheckDataReaderActive()
         {
-            if (!dataReader.IsClosed && dataReader != null) dataReader.Close();
-            else if (dataReader == null) Console.WriteLine("error");
+            try
+            {
+                if (!dataReader.IsClosed && dataReader != null) dataReader.Close();
+                else if (dataReader == null) Console.WriteLine("error");
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void setUsername(string Username)
         {
-            this.Name = Username;
+            Name = Username;
         }
         public string getEmail()
         {
@@ -255,7 +358,11 @@ namespace CapaDeDatos
         }
         public string getUserName()
         {
-            return this.Name;
+            return Name;
+        }
+        public string getBuffer()
+        {
+            return Buffer;
         }
     }
     public class User

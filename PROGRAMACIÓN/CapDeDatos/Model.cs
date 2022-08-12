@@ -30,15 +30,22 @@ namespace CapaDeDatos
         }
         private void conectDataBase()
         {
-            this.startConection();
-            this.conection = new MySqlConnection(
-                $"server={this.IpDataBase};" +
-                $"userid={this.UserDataBase};" +
-                $"password={this.PasswordDataBase};" +
-                $"database={this.NameDataBase};" +
-                $"port={this.PuertoDataBase}"
-            );
-            this.conection.Open();
+            try
+            {
+                this.startConection();
+                this.conection = new MySqlConnection(
+                    $"server={this.IpDataBase};" +
+                    $"userid={this.UserDataBase};" +
+                    $"password={this.PasswordDataBase};" +
+                    $"database={this.NameDataBase};" +
+                    $"port={this.PuertoDataBase}"
+                );
+                this.conection.Open();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         private void startConection()
         {
