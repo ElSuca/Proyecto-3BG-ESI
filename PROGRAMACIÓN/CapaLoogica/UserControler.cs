@@ -8,11 +8,7 @@ namespace CapaLogica
 {
     public class UserControler
     {
-        public void inicializate(string Username)
-        {
-            ModelUser mu = new ModelUser();
-            mu.inicializate(Username);
-        }
+        #region FuncionesBasicas  
         public static void Alta(string nombre, string apellido, string telefono, string email, string password)
         {
             ModelUser p = new ModelUser();
@@ -38,6 +34,8 @@ namespace CapaLogica
             ModelUser p = new ModelUser(id);
             p.Delete(id);
         }
+        #endregion
+        #region GetUserData
         public static List<ModelUser> GetUserData(int id)
         {
             ModelUser p = new ModelUser(id);
@@ -48,6 +46,8 @@ namespace CapaLogica
             ModelUser p = new ModelUser();
             return p.GetUserData(Username);
         }
+        #endregion
+        #region GetId
         public void getId(int id)
         {
             ModelUser p = new ModelUser(id);
@@ -59,6 +59,7 @@ namespace CapaLogica
             int id = p.GetId(Name);
             return id;
         }
+        #endregion
         public static DataTable ObtenerTodos()
         {
             DataTable tabla = new DataTable();
@@ -73,6 +74,7 @@ namespace CapaLogica
             u.Name = nombre;
             return u.Autenticar(password);
         }
+        #region get
         public string getEmail()
         {
             ModelUser p = new ModelUser();
@@ -83,24 +85,72 @@ namespace CapaLogica
             ModelUser p = new ModelUser();
             return p.getUserName();
         }
+        #endregion
+        #region SetStatic
+        public void SetStaticUsername(string name)
+        {
+            ModelUser mu = new ModelUser();
+            mu.SetUsernameStatic(name);
+        }
+        public void SetStaticLastName(string lastname)
+        {
+            ModelUser mu = new ModelUser();
+            mu.SetLastNameStatic(lastname);
+        }
+        public void SetStaticEmail(string email)
+        {
+            ModelUser mu = new ModelUser();
+            mu.SetEmailStatic(email);
+        }
+        public void SetStaticPhoneNumber(int phonenumber)
+        {
+            ModelUser mu = new ModelUser();
+            mu.SetPhoneNumberStatic(phonenumber);
+        }
+        public void SetStaticPassword(string password)
+        {
+            ModelUser mu = new ModelUser();
+            mu.SetPasswordStatic(password);
+        }
+        #endregion
+        #region GetStatic
+        public string GetStaticUsername()
+        {
+            ModelUser mu = new ModelUser();
+            return mu.GetUsernameStatic();
+        }
+        public string GetStaticLastName()
+        {
+            ModelUser mu = new ModelUser();
+            return mu.GetLastNameStatic();
+        }
+        public string GetStaticEmail()
+        {
+            ModelUser mu = new ModelUser();
+            return mu.GetEmailStatic();
+        }
+        public int GetStaticPhoneNumber()
+        {
+            ModelUser mu = new ModelUser();
+            return mu.GetPhoneNumberStatic();
+        }
+        public string GetStaticPassword()
+        {
+            ModelUser mu = new ModelUser();
+            return mu.GetPasswordStatic();
+        }
+        #endregion
         public MySqlConnection ConectDatabase()
         {
-            try
-            {
-                MySqlConnection conexion = new MySqlConnection(
-                "server = 127.0.0.1; " +
-                "uid = root;" +
-                "pwd=root;" +
-                "database=proyecto"
-                );
+            MySqlConnection conexion = new MySqlConnection(
+            "server = 127.0.0.1; " +
+            "uid = root;" +
+            "pwd=root;" +
+            "database=proyecto"
+            );
 
-                conexion.Open();
-                return conexion;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            conexion.Open();
+            return conexion;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CapaDeDatos;
+using CapDeDatos;
 using System;
 using System.Collections.Generic;
 
@@ -12,22 +13,17 @@ namespace CapaDeDatos
         public string PhoneNumber;
         public string Email;
         public string Password;
-        public string Buffer;
 
         public ModelUser(int id)
         {
             this.GetUserData(id);
         }
         public ModelUser()
-        {   
-        }
-        
-
-        public void inicializate(string Username)
         {
-            setUsername(Username);
-            GetUserDataForUserName();
         }
+
+
+
         #region getUserData
         public void GetUserData(int id)
         {
@@ -162,7 +158,7 @@ namespace CapaDeDatos
                 throw e;
             }
         }
-        public string GetUserDataLogging(string Nombre,string type)
+        public string GetUserDataLogging(string Nombre, string type)
         {
             try
             {
@@ -179,12 +175,12 @@ namespace CapaDeDatos
                 else if (type == "Name") return Name;
                 return null;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
         }
-        
+
         #endregion
         public void Save()
         {
@@ -193,7 +189,8 @@ namespace CapaDeDatos
         }
         private void Insertar()
         {
-            try{
+            try
+            {
                 command.CommandText = "INSERT INTO " +
                    "Usuario (nombre, apellido, telefono, email, password) " +
                    "VALUES (@Nombre,@Apellido,@Telefono,@Email, @Password)";
@@ -213,28 +210,24 @@ namespace CapaDeDatos
 
         private void Update()
         {
-            try
-            {
-                this.CheckDataReaderActive();
-                this.command.CommandText = "UPDATE usuario SET " +
-                   "Nombre = @Nombre," +
-                   "Apellido = @Apellido," +
-                   "Telefono = @Telefono," +
-                   "Email = @Email," +
-                   "Password = @Password" +
-                   " WHERE id = @id";
-                this.command.Parameters.AddWithValue("@Nombre", this.Name);
-                this.command.Parameters.AddWithValue("@Apellido", this.LastName);
-                this.command.Parameters.AddWithValue("@Telefono", this.PhoneNumber);
-                this.command.Parameters.AddWithValue("@Email", this.Email);
-                this.command.Parameters.AddWithValue("@Password", this.Password);
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+
+            this.CheckDataReaderActive();
+            this.command.CommandText = "UPDATE usuario SET " +
+               "Nombre = @Nombre," +
+               "Apellido = @Apellido," +
+               "Telefono = @Telefono," +
+               "Email = @Email," +
+               "Password = @Password" +
+               " WHERE id = @id";
+            this.command.Parameters.AddWithValue("@Nombre", this.Name);
+            this.command.Parameters.AddWithValue("@Apellido", this.LastName);
+            this.command.Parameters.AddWithValue("@Telefono", this.PhoneNumber);
+            this.command.Parameters.AddWithValue("@Email", this.Email);
+            this.command.Parameters.AddWithValue("@Password", this.Password);
+            this.command.Prepare();
+            this.command.ExecuteNonQuery();
+
+
         }
         public void Delete(int Id)
         {
@@ -254,59 +247,42 @@ namespace CapaDeDatos
 
         public bool Autenticar(string passwordEntrada)
         {
-            try
-            {
-                this.ObtenerCredencialesPorNombre();
-                if (this.Name == "") return false;
-                if (this.Password == hashearPassword(passwordEntrada)) return true;
-                return false;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            this.ObtenerCredencialesPorNombre();
+            if (this.Name == "") return false;
+            if (this.Password == hashearPassword(passwordEntrada)) return true;
+            return false;
         }
         public void ObtenerCredencialesPorNombre()
         {
-            try
-            {
-                this.command.CommandText = "SELECT nombre,password FROM usuario WHERE Nombre = @Nombre";
-                this.command.Parameters.AddWithValue("@Nombre", this.Name);
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                if (!this.dataReader.HasRows) return;
-                this.dataReader.Read();
-                this.Name = this.dataReader["Nombre"].ToString();
-                this.Password = this.dataReader["Password"].ToString();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+
+            this.command.CommandText = "SELECT nombre,password FROM usuario WHERE Nombre = @Nombre";
+            this.command.Parameters.AddWithValue("@Nombre", this.Name);
+            this.command.Prepare();
+            this.dataReader = this.command.ExecuteReader();
+            if (!this.dataReader.HasRows) return;
+            this.dataReader.Read();
+            this.Name = this.dataReader["Nombre"].ToString();
+            this.Password = this.dataReader["Password"].ToString();
+
         }
-        public void GetUserDataForUserName()
+        public void GetUserDataForUserName(string name)
         {
-            try
-            {
-                this.command.CommandText = "SELECT nombre,password,Apellido,Email,Telefono FROM usuario WHERE Nombre = @Nombre";
-                this.command.Parameters.AddWithValue("@Nombre", this.Name);
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                if (!this.dataReader.HasRows) return;
-                this.dataReader.Read();
-                this.Name = this.dataReader["Nombre"].ToString();
-                this.LastName = this.dataReader["Apellido"].ToString();
-                this.Email = this.dataReader["Email"].ToString();
-                this.PhoneNumber = this.dataReader["Telefono"].ToString();
-                this.Password = this.dataReader["Password"].ToString();
-                Buffer = Name;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+
+            this.command.CommandText = "SELECT nombre,password,Apellido,Email,Telefono FROM usuario WHERE Nombre = @Nombre";
+            this.command.Parameters.AddWithValue("@Nombre", name);
+            this.command.Prepare();
+            this.dataReader = this.command.ExecuteReader();
+            if (!this.dataReader.HasRows) return;
+            this.dataReader.Read();
+            this.Name = this.dataReader["Nombre"].ToString();
+            this.LastName = this.dataReader["Apellido"].ToString();
+            this.Email = this.dataReader["Email"].ToString();
+            this.PhoneNumber = this.dataReader["Telefono"].ToString();
+            this.Password = this.dataReader["Password"].ToString();
+
+            SetAllStaticUserData(Name, LastName, Email, Int32.Parse(PhoneNumber));
         }
-        
+
         private void crearArrayDePersonas(List<ModelUser> usuarios)
         {
             while (this.dataReader.Read())
@@ -320,17 +296,11 @@ namespace CapaDeDatos
         }
         private List<ModelUser> obtenerTodasLasFilas()
         {
-            try
-            {
-                List<ModelUser> usuarios = new List<ModelUser>();
-                this.command.CommandText = "SELECT id,Nombre FROM usuario";
-                this.dataReader = this.command.ExecuteReader();
-                return usuarios;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+
+            List<ModelUser> usuarios = new List<ModelUser>();
+            this.command.CommandText = "SELECT id,Nombre FROM usuario";
+            this.dataReader = this.command.ExecuteReader();
+            return usuarios;
         }
         private string hashearPassword(string password)
         {
@@ -338,15 +308,15 @@ namespace CapaDeDatos
         }
         public void CheckDataReaderActive()
         {
-            try
-            {
                 if (!dataReader.IsClosed && dataReader != null) dataReader.Close();
                 else if (dataReader == null) Console.WriteLine("error");
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+        }
+        public void SetAllStaticUserData(string Username,string LastName, string Email, int PhoneNumber)
+        {
+            SetUsernameStatic(Username);
+            SetLastNameStatic(LastName);
+            SetEmailStatic(Email);
+            SetPhoneNumberStatic(PhoneNumber);
         }
         public void setUsername(string Username)
         {
@@ -360,10 +330,60 @@ namespace CapaDeDatos
         {
             return Name;
         }
-        public string getBuffer()
+        #region Set static
+        public void SetUsernameStatic(string name)
         {
-            return Buffer;
+            SafeUserData ud = new SafeUserData();
+            ud.SetUsername(name);
+        } 
+        public void SetLastNameStatic(string lastname)
+        {
+            SafeUserData ud = new SafeUserData();
+            ud.SetLastName(lastname);
         }
+        public void SetEmailStatic(string email)
+        {
+            SafeUserData ud = new SafeUserData();
+            ud.SetEmail(email);
+        }
+        public void SetPhoneNumberStatic(int phonenumber)
+        {
+            SafeUserData ud = new SafeUserData();
+            ud.SetPhoneNumber(phonenumber);
+        }
+        public void SetPasswordStatic(string password)
+        {
+            SafeUserData ud = new SafeUserData();
+            ud.SetPassword(password);
+        }
+        #endregion
+        #region getStatic
+        public string GetUsernameStatic()
+        {
+            SafeUserData ud = new SafeUserData();
+            return ud.GetUsername();
+        }
+        public string GetLastNameStatic()
+        {
+            SafeUserData ud = new SafeUserData();
+            return ud.GetLastName();
+        }
+        public string GetEmailStatic()
+        {
+            SafeUserData ud = new SafeUserData();
+            return ud.GetEmail();
+        }
+        public int GetPhoneNumberStatic()
+        {
+            SafeUserData ud = new SafeUserData();
+            return ud.GetPhoneNumber();
+        }
+        public string GetPasswordStatic()
+        {
+            SafeUserData ud = new SafeUserData();
+            return ud.GetPassword();
+        }
+        #endregion
     }
     public class User
     {

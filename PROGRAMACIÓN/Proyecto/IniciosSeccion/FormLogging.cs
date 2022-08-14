@@ -23,7 +23,8 @@ namespace Proyecto.IniciosSeccion
             Coincide = UserControler.Autenticar(Username, Password);
             if (Coincide)
             {
-                uc.inicializate(Username);
+                uc.SetStaticUsername(Username);
+                uc.SetStaticPassword(Password);
                 m.Show();
             }
             else MessageBox.Show("Hubo un problema, intente nuevamente");

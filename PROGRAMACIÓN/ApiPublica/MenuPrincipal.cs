@@ -7,32 +7,27 @@ namespace Proyecto
 {
     public partial class MenuPrincipal : Form
     {
-        int selection = 0;
+        int selection;
+
         public MenuPrincipal()
         {
             InitializeComponent();
-            ApiPublicidad.AddManager f = new ApiPublicidad.AddManager();
-            int selection = f.getBanner();
-            SetAnuncio(selection);
+            Random random = new Random();
+            selection = random.Next(3);
+            SetAnuncio();
         }
         private void BannerPic_Click(object sender, EventArgs e)
-        {
-            string link = SelectUrllink(selection);
+        {   
+            ApiPublicidad.AddManager f = new ApiPublicidad.AddManager();
+            string link = f.SelectUrllink(selection);
             System.Diagnostics.Process.Start(link);
-        }
-        public void SetAnuncio(int Bannerselect)
-        {    
-            selection = Bannerselect;
-            BannerPic.Image = Image.FromFile("C:\\Users\\Admin\\Desktop\\Deberes S\\2022\\Proyecto\\Proyecto-3BG-ESI\\PROGRAMACIÓN\\Cache\\" + selection + ".jpg");
-        }
-        public string SelectUrllink(int n)
+         }
+        public void SetAnuncio()
         {
-            string banner = "";
-            if (selection == 0) banner = "https://www.fifa.com/es";
-            else if (selection == 1) banner = "https://cuk-it.com/recetas/tortas-fritas/";
-            else if (selection == 2) banner = "https://as.com/baloncesto/nba/";
-            return banner;
+            ApiPublicidad.AddManager f = new ApiPublicidad.AddManager();
+            BannerPic.Image = Image.FromFile(f.GetBanner(selection));
         }
+        
 
         private void UserInformationMenuItem_Click(object sender, EventArgs e)
         {
