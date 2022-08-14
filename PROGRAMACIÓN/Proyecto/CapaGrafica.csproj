@@ -125,9 +125,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ApiPublica\ApiPublica.csproj">
+    <ProjectReference Include="..\ApiPublica\PublicAplication.csproj">
       <Project>{60045646-dc91-4946-96e8-9d73441ba6d2}</Project>
-      <Name>ApiPublica</Name>
+      <Name>PublicAplication</Name>
     </ProjectReference>
     <ProjectReference Include="..\ApiPublicidad\ApiPublicidad.csproj">
       <Project>{eab0cd5c-6f60-4bfa-80ec-d07a595d3f32}</Project>
@@ -153,7 +153,6 @@
     <None Include="Resources\Anuncio_2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TprtafritasElMartinez.jpg" />
     <None Include="Resources\Anuncio_2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
