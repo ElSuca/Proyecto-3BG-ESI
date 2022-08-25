@@ -14,9 +14,7 @@ namespace ApiAutenitficacion
         }
         public static Dictionary<string, string> GenerarRespuesta(HttpListenerRequest request)
         {
-            string cuerpo = extraerCuerpoDeRequest(request);
-            Dictionary<string, string> respuesta = evaluarCredenciales(cuerpo);
-            return respuesta;
+            return evaluarCredenciales(extraerCuerpoDeRequest(request));
         }
         private static string extraerCuerpoDeRequest(HttpListenerRequest request)
         {

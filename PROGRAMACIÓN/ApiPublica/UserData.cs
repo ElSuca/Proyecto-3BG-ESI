@@ -32,12 +32,12 @@ namespace ApiPublica
         {
             ModelUser u = new ModelUser();
             UserControler uc = new UserControler();
-            string nombre = uc.GetStaticUsername();
+            string nombre = uc.StaticUsername;
             lbUserName.Text = nombre;
-            lbLastName.Text = uc.GetStaticLastName();
-            lbEmail.Text = uc.GetStaticEmail();
-            lbPhoneNumber.Text = uc.GetStaticPhoneNumber().ToString();
-            lbPassword.Text = uc.GetStaticPassword();
+            lbLastName.Text = uc.StaticLastName;
+            lbEmail.Text = uc.StaticEmail;
+            lbPhoneNumber.Text = uc.StaticPhoneNumber.ToString();
+            lbPassword.Text = uc.StaticPassword;
         }
 
         private void UserData_Load(object sender, EventArgs e)

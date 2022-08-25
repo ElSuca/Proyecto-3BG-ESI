@@ -9,149 +9,99 @@ namespace CapaLogica
     public class UserControler
     {
         #region FuncionesBasicas  
-        public static void Alta(string nombre, string apellido, string telefono, string email, string password)
+        public static void Alta(string name, string lastName1, string lastName2, string email, string username, string role, string password, string phoneNumber)
         {
-            ModelUser p = new ModelUser();
-            p.Name = nombre;
-            p.LastName = apellido;
-            p.PhoneNumber = telefono;
-            p.Email = email;
-            p.Password = password;
+            ModelUser p = new ModelUser
+            {
+                Name = name,
+                LastName = lastName1,
+                LastName2 = lastName2,
+                PhoneNumber = phoneNumber,
+                Email = email,
+                UserName = username,
+                Password = password,
+                UserRole = role
+            };
             p.Save();
         }
-        public static void Modificar(int id, string nombre, string apellido, string telefono, string email, string password)
+        public static void Modificar(int id, string name, string lastName1, string lastName2, string email, string username, string role, string password, string phoneNumber)
         {
-            ModelUser p = new ModelUser(id);
-            p.Name = nombre;
-            p.LastName = apellido;
-            p.PhoneNumber = telefono;
-            p.Email = email;
-            p.Password = password;
+            ModelUser p = new ModelUser(id)
+            {
+                Name = name,
+                LastName = lastName1,
+                LastName2 = lastName2,
+                PhoneNumber = phoneNumber,
+                Email = email,
+                UserName = username,
+                Password = password,
+                UserRole = role
+            };
             p.Save();
         }
-        public static void Eliminar(int id)
-        {
-            ModelUser p = new ModelUser(id);
-            p.Delete(id);
-        }
+        public static void Eliminar(int id) => new ModelUser(id).Delete(id);
         #endregion
         #region GetUserData
-        public static List<ModelUser> GetUserData(int id)
-        {
-            ModelUser p = new ModelUser(id);
-            return p.GetUserData();
-        }
-        public List<ModelUser> GetUserData(string Username)
-        {
-            ModelUser p = new ModelUser();
-            return p.GetUserData(Username);
-        }
+        public static List<ModelUser> GetUserData(int id) => new ModelUser(id).GetUserData();
+        public List<ModelUser> GetUserData(string Username) => new ModelUser().GetUserData(Username);
         #endregion
         #region GetId
-        public void getId(int id)
-        {
-            ModelUser p = new ModelUser(id);
-            p.GetId(id);
-        }
-        public int GetId(string Name)
-        {
-            ModelUser p = new ModelUser();
-            int id = p.GetId(Name);
-            return id;
-        }
+        public void GetId(int id) => new ModelUser(id).GetId(id);
+        public int GetId(string Name) => new ModelUser().GetId(Name);
         #endregion
         public static DataTable ObtenerTodos()
         {
-            DataTable tabla = new DataTable();
-            ModelUser p = new ModelUser();
-            List<ModelUser> personitas = p.GetUserData();
-
-            return tabla;
+            List<ModelUser> personitas = new ModelUser().GetUserData();
+            return new DataTable();
         }
         public static bool Autenticar(string nombre, string password)
         {
             ModelUser u = new ModelUser();
-            u.Name = nombre;
+
+            u.SetUsernameBuffer(nombre);
             return u.Autenticar(password);
         }
         #region get
-        public string getEmail()
-        {
-            ModelUser p = new ModelUser();
-            return p.getEmail();
-        }
-        public string getUsername()
-        {
-            ModelUser p = new ModelUser();
-            return p.getUserName();
-        }
+        public string GetEmail() => new ModelUser().getEmail();
+        public string GetUsername() => new ModelUser().getUserName();
         #endregion
         #region SetStatic
-        public void SetStaticUsername(string name)
-        {
-            ModelUser mu = new ModelUser();
-            mu.SetUsernameStatic(name);
-        }
-        public void SetStaticLastName(string lastname)
-        {
-            ModelUser mu = new ModelUser();
-            mu.SetLastNameStatic(lastname);
-        }
-        public void SetStaticEmail(string email)
-        {
-            ModelUser mu = new ModelUser();
-            mu.SetEmailStatic(email);
-        }
-        public void SetStaticPhoneNumber(int phonenumber)
-        {
-            ModelUser mu = new ModelUser();
-            mu.SetPhoneNumberStatic(phonenumber);
-        }
-        public void SetStaticPassword(string password)
-        {
-            ModelUser mu = new ModelUser();
-            mu.SetPasswordStatic(password);
-        }
+        public void SetStaticUsername(string name) => new ModelUser().SetUsernameBuffer(name);
+
+        public void SetStaticName(string name) => new ModelUser().SetUsernameBuffer(name);
+
+        public void SetStaticLastName(string lastname) => new ModelUser().SetLastNameBuffer(lastname);
+
+        public void SetStaticLastName2(string lastname2) => new ModelUser().SetLastName2Buffer(lastname2);
+
+        public void SetStaticEmail(string email) => new ModelUser().SetEmailBuffer(email);
+
+        public void SetStaticPhoneNumber(int phonenumber) => new ModelUser().SetPhoneNumberBuffer(phonenumber);
+
+        public void SetStaticPassword(string password) => new ModelUser().SetPasswordBuffer(password);
+
+        public void SetStaticRole(string role) => new ModelUser().SetPasswordBuffer(role);
         #endregion
         #region GetStatic
-        public string GetStaticUsername()
-        {
-            ModelUser mu = new ModelUser();
-            return mu.GetUsernameStatic();
-        }
-        public string GetStaticLastName()
-        {
-            ModelUser mu = new ModelUser();
-            return mu.GetLastNameStatic();
-        }
-        public string GetStaticEmail()
-        {
-            ModelUser mu = new ModelUser();
-            return mu.GetEmailStatic();
-        }
-        public int GetStaticPhoneNumber()
-        {
-            ModelUser mu = new ModelUser();
-            return mu.GetPhoneNumberStatic();
-        }
-        public string GetStaticPassword()
-        {
-            ModelUser mu = new ModelUser();
-            return mu.GetPasswordStatic();
-        }
-        #endregion
-        public MySqlConnection ConectDatabase()
-        {
-            MySqlConnection conexion = new MySqlConnection(
-            "server = 127.0.0.1; " +
-            "uid = root;" +
-            "pwd=root;" +
-            "database=proyecto"
-            );
+        public string StaticUsername => new ModelUser().GetUsernameBuffer();
 
-            conexion.Open();
-            return conexion;
-        }
+        public string StaticName => new ModelUser().GetNameBuffer();
+
+        public string StaticLastName => new ModelUser().GetLastNameBuffer();
+
+        public string StaticLastName2 => new ModelUser().GetLastName2Buffer();
+
+        public string StaticEmail => new ModelUser().GetEmailBuffer();
+
+        public int StaticPhoneNumber => new ModelUser().GetPhoneNumberBuffer();
+
+        public string StaticPassword => new ModelUser().GetPasswordBuffer();
+
+        public string StaticRole => new ModelUser().GetRoleBuffer();
+        #endregion
+
+
+
     }
 }
 

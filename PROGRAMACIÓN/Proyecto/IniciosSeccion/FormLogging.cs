@@ -9,23 +9,16 @@ namespace Proyecto.IniciosSeccion
 
         public FormLogging()
         {
-            InitializeComponent();  
+            InitializeComponent();
         }
         private void btnLoggin_Click(object sender, EventArgs e)
         {
-            MenuPrincipal m = new MenuPrincipal();
             UserControler uc = new UserControler();
-            ApiPublica.UserData u = new ApiPublica.UserData();
-            bool Coincide;
-            string Username = txtUserName.Text;
-            string Password = txtPassword.Text;
-          
-            Coincide = UserControler.Autenticar(Username, Password);
-            if (Coincide)
+            if (UserControler.Autenticar(txtUserName.Text, txtPassword.Text))
             {
-                uc.SetStaticUsername(Username);
-                uc.SetStaticPassword(Password);
-                m.Show();
+                uc.SetStaticUsername(txtUserName.Text);
+                uc.SetStaticPassword(txtPassword.Text);
+                new MenuPrincipal().Show();
             }
             else MessageBox.Show("Hubo un problema, intente nuevamente");
         }
@@ -34,10 +27,6 @@ namespace Proyecto.IniciosSeccion
         {
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            MenuPrincipal m = new MenuPrincipal();
-            m.Show();
-        }
+        private void btnEntrar_Click(object sender, EventArgs e) => new MenuPrincipal().Show();
     }
 }

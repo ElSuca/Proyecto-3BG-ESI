@@ -1,9 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
@@ -29,9 +24,7 @@ namespace CapaDeDatos
             this.command.Connection = this.conection;
         }
         private void conectDataBase()
-        {
-            try
-            {
+        {   
                 this.startConection();
                 this.conection = new MySqlConnection(
                     $"server={this.IpDataBase};" +
@@ -40,17 +33,12 @@ namespace CapaDeDatos
                     $"database={this.NameDataBase};" +
                     $"port={this.PuertoDataBase}"
                 );
-                this.conection.Open();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+                this.conection.Open(); 
         }
         private void startConection()
         {
             this.IpDataBase = "127.0.0.1";
-            this.NameDataBase = "proyecto";
+            this.NameDataBase = "olympus";
             this.UserDataBase = "root";
             this.PasswordDataBase = "root";
             this.PuertoDataBase = "3306"; 

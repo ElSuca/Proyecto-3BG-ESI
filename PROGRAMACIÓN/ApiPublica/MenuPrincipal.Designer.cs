@@ -93,7 +93,6 @@
         private System.Windows.Forms.PictureBox BannerPic;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem UserInformationMenuItem;
     }
 }

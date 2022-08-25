@@ -42,12 +42,18 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtTelefonoRegister = new System.Windows.Forms.TextBox();
             this.txtEmailRegister = new System.Windows.Forms.TextBox();
-            this.txtApellidoRegister = new System.Windows.Forms.TextBox();
+            this.txtLastName1Register = new System.Windows.Forms.TextBox();
             this.txtUserNameRegister = new System.Windows.Forms.TextBox();
             this.btnModify = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtLastName2Register = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNameRegister = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ComboBoxRole = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,16 +61,16 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtPassword.Location = new System.Drawing.Point(97, 195);
+            this.txtPassword.Location = new System.Drawing.Point(97, 248);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(176, 20);
             this.txtPassword.TabIndex = 30;
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(38, 195);
+            this.lbPassword.Location = new System.Drawing.Point(38, 251);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(53, 13);
             this.lbPassword.TabIndex = 29;
@@ -73,38 +79,38 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(122, 248);
+            this.btnList.Location = new System.Drawing.Point(171, 326);
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(75, 23);
+            this.btnList.Size = new System.Drawing.Size(102, 23);
             this.btnList.TabIndex = 28;
             this.btnList.Text = "list";
             this.btnList.UseVisualStyleBackColor = true;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
+            this.btnList.Click += new System.EventHandler(this.BtnList_Click);
             // 
             // dgrid1
             // 
             this.dgrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid1.Location = new System.Drawing.Point(229, 82);
+            this.dgrid1.Location = new System.Drawing.Point(279, 91);
             this.dgrid1.Name = "dgrid1";
-            this.dgrid1.Size = new System.Drawing.Size(426, 218);
+            this.dgrid1.Size = new System.Drawing.Size(670, 218);
             this.dgrid1.TabIndex = 27;
             this.dgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid1_CellContentClick);
             // 
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnRegister.Location = new System.Drawing.Point(41, 248);
+            this.btnRegister.Location = new System.Drawing.Point(62, 326);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.Size = new System.Drawing.Size(103, 23);
             this.btnRegister.TabIndex = 26;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // lbNumber
             // 
             this.lbNumber.AutoSize = true;
-            this.lbNumber.Location = new System.Drawing.Point(15, 225);
+            this.lbNumber.Location = new System.Drawing.Point(15, 277);
             this.lbNumber.Name = "lbNumber";
             this.lbNumber.Size = new System.Drawing.Size(76, 13);
             this.lbNumber.TabIndex = 25;
@@ -113,7 +119,7 @@
             // lbMail
             // 
             this.lbMail.AutoSize = true;
-            this.lbMail.Location = new System.Drawing.Point(48, 172);
+            this.lbMail.Location = new System.Drawing.Point(55, 225);
             this.lbMail.Name = "lbMail";
             this.lbMail.Size = new System.Drawing.Size(36, 13);
             this.lbMail.TabIndex = 24;
@@ -122,7 +128,7 @@
             // lbLastname
             // 
             this.lbLastname.AutoSize = true;
-            this.lbLastname.Location = new System.Drawing.Point(38, 146);
+            this.lbLastname.Location = new System.Drawing.Point(38, 173);
             this.lbLastname.Name = "lbLastname";
             this.lbLastname.Size = new System.Drawing.Size(53, 13);
             this.lbLastname.TabIndex = 23;
@@ -131,7 +137,7 @@
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(36, 117);
+            this.lbUsername.Location = new System.Drawing.Point(36, 120);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(55, 13);
             this.lbUsername.TabIndex = 22;
@@ -151,47 +157,47 @@
             this.txtID.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtID.Location = new System.Drawing.Point(97, 91);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.Size = new System.Drawing.Size(176, 20);
             this.txtID.TabIndex = 20;
             // 
             // txtTelefonoRegister
             // 
             this.txtTelefonoRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtTelefonoRegister.Location = new System.Drawing.Point(97, 222);
+            this.txtTelefonoRegister.Location = new System.Drawing.Point(97, 274);
             this.txtTelefonoRegister.Name = "txtTelefonoRegister";
-            this.txtTelefonoRegister.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonoRegister.Size = new System.Drawing.Size(176, 20);
             this.txtTelefonoRegister.TabIndex = 19;
             this.txtTelefonoRegister.TextChanged += new System.EventHandler(this.txtTelefonoRegister_TextChanged);
             // 
             // txtEmailRegister
             // 
             this.txtEmailRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtEmailRegister.Location = new System.Drawing.Point(97, 169);
+            this.txtEmailRegister.Location = new System.Drawing.Point(97, 222);
             this.txtEmailRegister.Name = "txtEmailRegister";
-            this.txtEmailRegister.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailRegister.Size = new System.Drawing.Size(176, 20);
             this.txtEmailRegister.TabIndex = 18;
             // 
-            // txtApellidoRegister
+            // txtLastName1Register
             // 
-            this.txtApellidoRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtApellidoRegister.Location = new System.Drawing.Point(97, 143);
-            this.txtApellidoRegister.Name = "txtApellidoRegister";
-            this.txtApellidoRegister.Size = new System.Drawing.Size(100, 20);
-            this.txtApellidoRegister.TabIndex = 17;
+            this.txtLastName1Register.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtLastName1Register.Location = new System.Drawing.Point(97, 170);
+            this.txtLastName1Register.Name = "txtLastName1Register";
+            this.txtLastName1Register.Size = new System.Drawing.Size(176, 20);
+            this.txtLastName1Register.TabIndex = 17;
             // 
             // txtUserNameRegister
             // 
             this.txtUserNameRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtUserNameRegister.Location = new System.Drawing.Point(97, 117);
             this.txtUserNameRegister.Name = "txtUserNameRegister";
-            this.txtUserNameRegister.Size = new System.Drawing.Size(100, 20);
+            this.txtUserNameRegister.Size = new System.Drawing.Size(176, 20);
             this.txtUserNameRegister.TabIndex = 16;
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(122, 277);
+            this.btnModify.Location = new System.Drawing.Point(171, 355);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 23);
+            this.btnModify.Size = new System.Drawing.Size(102, 23);
             this.btnModify.TabIndex = 32;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -201,9 +207,9 @@
             // 
             this.Delete.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.Delete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Delete.Location = new System.Drawing.Point(41, 277);
+            this.Delete.Location = new System.Drawing.Point(62, 355);
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(75, 23);
+            this.Delete.Size = new System.Drawing.Size(103, 23);
             this.Delete.TabIndex = 33;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = false;
@@ -233,12 +239,73 @@
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
+            // txtLastName2Register
+            // 
+            this.txtLastName2Register.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtLastName2Register.Location = new System.Drawing.Point(97, 196);
+            this.txtLastName2Register.Name = "txtLastName2Register";
+            this.txtLastName2Register.Size = new System.Drawing.Size(176, 20);
+            this.txtLastName2Register.TabIndex = 37;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(-2, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Second Lastname";
+            // 
+            // txtNameRegister
+            // 
+            this.txtNameRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNameRegister.Location = new System.Drawing.Point(97, 143);
+            this.txtNameRegister.Name = "txtNameRegister";
+            this.txtNameRegister.Size = new System.Drawing.Size(176, 20);
+            this.txtNameRegister.TabIndex = 39;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Real Name";
+            // 
+            // ComboBoxRole
+            // 
+            this.ComboBoxRole.FormattingEnabled = true;
+            this.ComboBoxRole.Items.AddRange(new object[] {
+            "User",
+            "Premiun",
+            "Admin"});
+            this.ComboBoxRole.Location = new System.Drawing.Point(97, 299);
+            this.ComboBoxRole.Name = "ComboBoxRole";
+            this.ComboBoxRole.Size = new System.Drawing.Size(176, 21);
+            this.ComboBoxRole.TabIndex = 41;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(56, 302);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Role";
+            // 
             // BackofficeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(1105, 623);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ComboBoxRole);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtNameRegister);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtLastName2Register);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Delete);
@@ -256,7 +323,7 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtTelefonoRegister);
             this.Controls.Add(this.txtEmailRegister);
-            this.Controls.Add(this.txtApellidoRegister);
+            this.Controls.Add(this.txtLastName1Register);
             this.Controls.Add(this.txtUserNameRegister);
             this.Name = "BackofficeManager";
             this.Text = "BackofficeUserManager";
@@ -283,11 +350,17 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtTelefonoRegister;
         private System.Windows.Forms.TextBox txtEmailRegister;
-        private System.Windows.Forms.TextBox txtApellidoRegister;
+        private System.Windows.Forms.TextBox txtLastName1Register;
         private System.Windows.Forms.TextBox txtUserNameRegister;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtLastName2Register;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtNameRegister;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox ComboBoxRole;
+        private System.Windows.Forms.Label label4;
     }
 }
