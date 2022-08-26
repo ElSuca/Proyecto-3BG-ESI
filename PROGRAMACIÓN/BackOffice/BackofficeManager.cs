@@ -15,6 +15,7 @@ namespace Proyecto.Backoffice
         public BackofficeManager()
         {
             InitializeComponent();
+            selectMenu(0);
         }
         private void BackofficeUserManager_Load(object sender, EventArgs e)
         {
@@ -87,6 +88,13 @@ namespace Proyecto.Backoffice
             dgrid1.DataSource = table;
         }
 
+        public void selectMenu(int selection)
+        {
+            if (selection == 1) UserManagerVisibility(true);
+            else UserManagerVisibility(false);
+        }
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -95,6 +103,48 @@ namespace Proyecto.Backoffice
         private void txtTelefonoRegister_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ComboBoxBackofficeMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUserManagerToggle_Click(object sender, EventArgs e)
+        {
+            selectMenu(1);
+        }
+        public void UserManagerVisibility(bool v)
+        {
+           
+                dgrid1.Visible = v;
+                btnList.Visible = v;
+            btnRegister.Visible = v;
+            btnModify.Visible = v;
+            btnDelete.Visible = v;
+            txtEmailRegister.Visible = v;
+            txtID.Visible = v;
+            txtLastName1Register.Visible = v;
+            txtLastName2Register.Visible = v;
+            txtNameRegister.Visible = v;
+            txtUserNameRegister.Visible = v;
+            txtTelefonoRegister.Visible = v;
+            txtPassword.Visible = v;
+            ComboBoxRole.Visible = v;
+            lbID.Visible = v;
+            lbLastname.Visible = v;
+            lbMail.Visible = v;
+            lbUsername.Visible = v;
+            lbLastName2.Visible = v;
+            lbNumber.Visible = v;
+            lbRole.Visible = v;
+            lbName.Visible = v;
+            lbPassword.Visible = v;
+        }
+
+        private void btnAdManager_Click(object sender, EventArgs e)
+        {
+            selectMenu(2);
         }
     }
 }

@@ -24,6 +24,7 @@ namespace CapaLogica
             };
             p.Save();
         }
+
         public static void Modificar(int id, string name, string lastName1, string lastName2, string email, string username, string role, string password, string phoneNumber)
         {
             ModelUser p = new ModelUser(id)
