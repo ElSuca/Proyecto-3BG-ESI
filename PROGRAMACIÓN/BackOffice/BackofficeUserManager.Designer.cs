@@ -1,16 +1,16 @@
-﻿namespace Proyecto.Backoffice
+﻿namespace BackOffice
 {
-    partial class BackofficeUserManager
+    partial class BackOfficeUserManager
     {
-        /// <summary>
-        /// Required designer variable.
+        /// <summary> 
+        /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
+        /// <summary> 
+        /// Limpiar los recursos que se estén usando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,14 +20,22 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de componentes
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// <summary> 
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
+            this.lbRole = new System.Windows.Forms.Label();
+            this.ComboBoxRole = new System.Windows.Forms.ComboBox();
+            this.lbName = new System.Windows.Forms.Label();
+            this.txtNameRegister = new System.Windows.Forms.TextBox();
+            this.lbLastName2 = new System.Windows.Forms.Label();
+            this.txtLastName2Register = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
             this.btnList = new System.Windows.Forms.Button();
@@ -41,204 +49,232 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtTelefonoRegister = new System.Windows.Forms.TextBox();
             this.txtEmailRegister = new System.Windows.Forms.TextBox();
-            this.txtApellidoRegister = new System.Windows.Forms.TextBox();
+            this.txtLastName1Register = new System.Windows.Forms.TextBox();
             this.txtUserNameRegister = new System.Windows.Forms.TextBox();
-            this.btnModify = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
-            this.txtCargar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lbRole
+            // 
+            this.lbRole.AutoSize = true;
+            this.lbRole.Location = new System.Drawing.Point(74, 223);
+            this.lbRole.Name = "lbRole";
+            this.lbRole.Size = new System.Drawing.Size(29, 13);
+            this.lbRole.TabIndex = 65;
+            this.lbRole.Text = "Role";
+            // 
+            // ComboBoxRole
+            // 
+            this.ComboBoxRole.FormattingEnabled = true;
+            this.ComboBoxRole.Items.AddRange(new object[] {
+            "User",
+            "Premiun",
+            "Admin"});
+            this.ComboBoxRole.Location = new System.Drawing.Point(109, 223);
+            this.ComboBoxRole.Name = "ComboBoxRole";
+            this.ComboBoxRole.Size = new System.Drawing.Size(176, 21);
+            this.ComboBoxRole.TabIndex = 64;
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(43, 70);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(60, 13);
+            this.lbName.TabIndex = 63;
+            this.lbName.Text = "Real Name";
+            // 
+            // txtNameRegister
+            // 
+            this.txtNameRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNameRegister.Location = new System.Drawing.Point(109, 67);
+            this.txtNameRegister.Name = "txtNameRegister";
+            this.txtNameRegister.Size = new System.Drawing.Size(176, 20);
+            this.txtNameRegister.TabIndex = 62;
+            // 
+            // lbLastName2
+            // 
+            this.lbLastName2.AutoSize = true;
+            this.lbLastName2.Location = new System.Drawing.Point(10, 123);
+            this.lbLastName2.Name = "lbLastName2";
+            this.lbLastName2.Size = new System.Drawing.Size(93, 13);
+            this.lbLastName2.TabIndex = 61;
+            this.lbLastName2.Text = "Second Lastname";
+            // 
+            // txtLastName2Register
+            // 
+            this.txtLastName2Register.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtLastName2Register.Location = new System.Drawing.Point(109, 120);
+            this.txtLastName2Register.Name = "txtLastName2Register";
+            this.txtLastName2Register.Size = new System.Drawing.Size(176, 20);
+            this.txtLastName2Register.TabIndex = 60;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelete.Location = new System.Drawing.Point(424, 250);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(103, 23);
+            this.btnDelete.TabIndex = 59;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnModify
+            // 
+            this.btnModify.Location = new System.Drawing.Point(533, 250);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(102, 23);
+            this.btnModify.TabIndex = 58;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click_1);
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtPassword.Location = new System.Drawing.Point(71, 173);
+            this.txtPassword.Location = new System.Drawing.Point(109, 172);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtPassword.TabIndex = 30;
+            this.txtPassword.Size = new System.Drawing.Size(176, 20);
+            this.txtPassword.TabIndex = 57;
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(12, 176);
+            this.lbPassword.Location = new System.Drawing.Point(50, 172);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(53, 13);
-            this.lbPassword.TabIndex = 29;
+            this.lbPassword.TabIndex = 56;
             this.lbPassword.Text = "Password";
             this.lbPassword.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(117, 225);
+            this.btnList.Location = new System.Drawing.Point(641, 250);
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(75, 23);
-            this.btnList.TabIndex = 28;
+            this.btnList.Size = new System.Drawing.Size(102, 23);
+            this.btnList.TabIndex = 55;
             this.btnList.Text = "list";
             this.btnList.UseVisualStyleBackColor = true;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
+            this.btnList.Click += new System.EventHandler(this.btnList_Click_1);
             // 
             // dgrid1
             // 
             this.dgrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid1.Location = new System.Drawing.Point(250, 59);
+            this.dgrid1.Location = new System.Drawing.Point(291, 15);
             this.dgrid1.Name = "dgrid1";
-            this.dgrid1.Size = new System.Drawing.Size(240, 218);
-            this.dgrid1.TabIndex = 27;
-            this.dgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid1_CellContentClick);
+            this.dgrid1.Size = new System.Drawing.Size(670, 218);
+            this.dgrid1.TabIndex = 54;
             // 
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnRegister.Location = new System.Drawing.Point(36, 225);
+            this.btnRegister.Location = new System.Drawing.Point(315, 250);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnRegister.TabIndex = 26;
+            this.btnRegister.Size = new System.Drawing.Size(103, 23);
+            this.btnRegister.TabIndex = 53;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // lbNumber
             // 
             this.lbNumber.AutoSize = true;
-            this.lbNumber.Location = new System.Drawing.Point(21, 202);
+            this.lbNumber.Location = new System.Drawing.Point(27, 201);
             this.lbNumber.Name = "lbNumber";
-            this.lbNumber.Size = new System.Drawing.Size(44, 13);
-            this.lbNumber.TabIndex = 25;
-            this.lbNumber.Text = "Number";
+            this.lbNumber.Size = new System.Drawing.Size(76, 13);
+            this.lbNumber.TabIndex = 52;
+            this.lbNumber.Text = "Phone number";
             // 
             // lbMail
             // 
             this.lbMail.AutoSize = true;
-            this.lbMail.Location = new System.Drawing.Point(29, 150);
+            this.lbMail.Location = new System.Drawing.Point(67, 149);
             this.lbMail.Name = "lbMail";
             this.lbMail.Size = new System.Drawing.Size(36, 13);
-            this.lbMail.TabIndex = 24;
+            this.lbMail.TabIndex = 51;
             this.lbMail.Text = "E-Mail";
             // 
             // lbLastname
             // 
             this.lbLastname.AutoSize = true;
-            this.lbLastname.Location = new System.Drawing.Point(12, 124);
+            this.lbLastname.Location = new System.Drawing.Point(48, 96);
             this.lbLastname.Name = "lbLastname";
             this.lbLastname.Size = new System.Drawing.Size(53, 13);
-            this.lbLastname.TabIndex = 23;
+            this.lbLastname.TabIndex = 50;
             this.lbLastname.Text = "Lastname";
             // 
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(10, 98);
+            this.lbUsername.Location = new System.Drawing.Point(48, 44);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(55, 13);
-            this.lbUsername.TabIndex = 22;
+            this.lbUsername.TabIndex = 49;
             this.lbUsername.Text = "Username";
             // 
             // lbID
             // 
             this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(47, 72);
+            this.lbID.Location = new System.Drawing.Point(85, 18);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(18, 13);
-            this.lbID.TabIndex = 21;
+            this.lbID.TabIndex = 48;
             this.lbID.Text = "ID";
             // 
             // txtID
             // 
             this.txtID.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtID.Location = new System.Drawing.Point(71, 69);
+            this.txtID.Location = new System.Drawing.Point(109, 15);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 20;
+            this.txtID.Size = new System.Drawing.Size(176, 20);
+            this.txtID.TabIndex = 47;
             // 
             // txtTelefonoRegister
             // 
             this.txtTelefonoRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtTelefonoRegister.Location = new System.Drawing.Point(71, 199);
+            this.txtTelefonoRegister.Location = new System.Drawing.Point(109, 198);
             this.txtTelefonoRegister.Name = "txtTelefonoRegister";
-            this.txtTelefonoRegister.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefonoRegister.TabIndex = 19;
+            this.txtTelefonoRegister.Size = new System.Drawing.Size(176, 20);
+            this.txtTelefonoRegister.TabIndex = 46;
             // 
             // txtEmailRegister
             // 
             this.txtEmailRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtEmailRegister.Location = new System.Drawing.Point(71, 147);
+            this.txtEmailRegister.Location = new System.Drawing.Point(109, 146);
             this.txtEmailRegister.Name = "txtEmailRegister";
-            this.txtEmailRegister.Size = new System.Drawing.Size(100, 20);
-            this.txtEmailRegister.TabIndex = 18;
+            this.txtEmailRegister.Size = new System.Drawing.Size(176, 20);
+            this.txtEmailRegister.TabIndex = 45;
             // 
-            // txtApellidoRegister
+            // txtLastName1Register
             // 
-            this.txtApellidoRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtApellidoRegister.Location = new System.Drawing.Point(71, 121);
-            this.txtApellidoRegister.Name = "txtApellidoRegister";
-            this.txtApellidoRegister.Size = new System.Drawing.Size(100, 20);
-            this.txtApellidoRegister.TabIndex = 17;
+            this.txtLastName1Register.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtLastName1Register.Location = new System.Drawing.Point(109, 93);
+            this.txtLastName1Register.Name = "txtLastName1Register";
+            this.txtLastName1Register.Size = new System.Drawing.Size(176, 20);
+            this.txtLastName1Register.TabIndex = 44;
             // 
             // txtUserNameRegister
             // 
             this.txtUserNameRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtUserNameRegister.Location = new System.Drawing.Point(71, 95);
+            this.txtUserNameRegister.Location = new System.Drawing.Point(109, 41);
             this.txtUserNameRegister.Name = "txtUserNameRegister";
-            this.txtUserNameRegister.Size = new System.Drawing.Size(100, 20);
-            this.txtUserNameRegister.TabIndex = 16;
+            this.txtUserNameRegister.Size = new System.Drawing.Size(176, 20);
+            this.txtUserNameRegister.TabIndex = 43;
             // 
-            // btnModify
-            // 
-            this.btnModify.Location = new System.Drawing.Point(117, 254);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 23);
-            this.btnModify.TabIndex = 32;
-            this.btnModify.Text = "Modify";
-            this.btnModify.UseVisualStyleBackColor = true;
-            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
-            // 
-            // Delete
-            // 
-            this.Delete.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Delete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Delete.Location = new System.Drawing.Point(36, 254);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(75, 23);
-            this.Delete.TabIndex = 33;
-            this.Delete.Text = "Delete";
-            this.Delete.UseVisualStyleBackColor = false;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
-            // 
-            // txtCargar
-            // 
-            this.txtCargar.Location = new System.Drawing.Point(71, 278);
-            this.txtCargar.Name = "txtCargar";
-            this.txtCargar.Size = new System.Drawing.Size(75, 23);
-            this.txtCargar.TabIndex = 34;
-            this.txtCargar.Text = "Cargar test";
-            this.txtCargar.UseVisualStyleBackColor = true;
-            this.txtCargar.Click += new System.EventHandler(this.txtCargar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 44);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Back Office ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // BackofficeUserManager
+            // BackOfficeUserManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(530, 313);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCargar);
-            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.lbRole);
+            this.Controls.Add(this.ComboBoxRole);
+            this.Controls.Add(this.lbName);
+            this.Controls.Add(this.txtNameRegister);
+            this.Controls.Add(this.lbLastName2);
+            this.Controls.Add(this.txtLastName2Register);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbPassword);
@@ -253,11 +289,10 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtTelefonoRegister);
             this.Controls.Add(this.txtEmailRegister);
-            this.Controls.Add(this.txtApellidoRegister);
+            this.Controls.Add(this.txtLastName1Register);
             this.Controls.Add(this.txtUserNameRegister);
-            this.Name = "BackofficeUserManager";
-            this.Text = "BackofficeUserManager";
-            this.Load += new System.EventHandler(this.BackofficeUserManager_Load);
+            this.Name = "BackOfficeUserManager";
+            this.Size = new System.Drawing.Size(987, 288);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -266,6 +301,14 @@
 
         #endregion
 
+        private System.Windows.Forms.Label lbRole;
+        private System.Windows.Forms.ComboBox ComboBoxRole;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.TextBox txtNameRegister;
+        private System.Windows.Forms.Label lbLastName2;
+        private System.Windows.Forms.TextBox txtLastName2Register;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Button btnList;
@@ -279,11 +322,7 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtTelefonoRegister;
         private System.Windows.Forms.TextBox txtEmailRegister;
-        private System.Windows.Forms.TextBox txtApellidoRegister;
+        private System.Windows.Forms.TextBox txtLastName1Register;
         private System.Windows.Forms.TextBox txtUserNameRegister;
-        private System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Button txtCargar;
-        private System.Windows.Forms.Label label1;
     }
 }
