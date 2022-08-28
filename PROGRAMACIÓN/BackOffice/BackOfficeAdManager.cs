@@ -1,17 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BackOffice
 {
     public partial class BackOfficeAdManager : UserControl
     {
+        private static BackOfficeAdManager _instance;
+
+        public static BackOfficeAdManager Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = new BackOfficeAdManager();
+                return _instance;
+            }
+        }
+
         public BackOfficeAdManager()
         {
             InitializeComponent();

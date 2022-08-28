@@ -9,10 +9,22 @@ namespace BackOffice
 {
     public partial class BackOfficeUserManager : UserControl
     {
+        private static BackOfficeUserManager _instance;
+
+        public static BackOfficeUserManager Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = new BackOfficeUserManager();
+                return _instance;
+            }
+        }
+
         public BackOfficeUserManager()
         {
             InitializeComponent();
         }
+
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {

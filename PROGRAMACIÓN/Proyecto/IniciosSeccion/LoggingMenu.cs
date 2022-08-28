@@ -1,16 +1,28 @@
-﻿using CapaLogica;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using CapaLogica;
 
 namespace Proyecto.IniciosSeccion
 {
-    public partial class FormLogging : Form
+    public partial class LoggingMenu : UserControl
     {
+        private static LoggingMenu _instance;
 
-        public FormLogging()
+        public static LoggingMenu Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = new LoggingMenu();
+                return _instance;
+            }
+        }
+
+        public LoggingMenu()
         {
             InitializeComponent();
         }
+      
+
         private void btnLoggin_Click(object sender, EventArgs e)
         {
             UserControler uc = new UserControler();
@@ -23,35 +35,6 @@ namespace Proyecto.IniciosSeccion
             else MessageBox.Show("Hubo un problema, intente nuevamente");
         }
 
-        private void FormLogging_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btnEntrar_Click(object sender, EventArgs e) => new MenuPrincipal().Show();
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbUserName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

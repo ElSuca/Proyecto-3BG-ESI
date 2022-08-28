@@ -34,6 +34,7 @@
             this.btnUserManagerToggle = new System.Windows.Forms.Button();
             this.btnAdManager = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.btnResultManager = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             // 
             this.btnUserManagerToggle.Location = new System.Drawing.Point(12, 94);
             this.btnUserManagerToggle.Name = "btnUserManagerToggle";
-            this.btnUserManagerToggle.Size = new System.Drawing.Size(84, 23);
+            this.btnUserManagerToggle.Size = new System.Drawing.Size(93, 23);
             this.btnUserManagerToggle.TabIndex = 43;
             this.btnUserManagerToggle.Text = "User Manager";
             this.btnUserManagerToggle.UseVisualStyleBackColor = true;
@@ -75,7 +76,7 @@
             // 
             this.btnAdManager.Location = new System.Drawing.Point(12, 123);
             this.btnAdManager.Name = "btnAdManager";
-            this.btnAdManager.Size = new System.Drawing.Size(84, 23);
+            this.btnAdManager.Size = new System.Drawing.Size(93, 23);
             this.btnAdManager.TabIndex = 44;
             this.btnAdManager.Text = "Ad Manager";
             this.btnAdManager.UseVisualStyleBackColor = true;
@@ -88,12 +89,23 @@
             this.MainPanel.Size = new System.Drawing.Size(1280, 502);
             this.MainPanel.TabIndex = 45;
             // 
+            // btnResultManager
+            // 
+            this.btnResultManager.Location = new System.Drawing.Point(12, 152);
+            this.btnResultManager.Name = "btnResultManager";
+            this.btnResultManager.Size = new System.Drawing.Size(93, 23);
+            this.btnResultManager.TabIndex = 46;
+            this.btnResultManager.Text = "Result Manager";
+            this.btnResultManager.UseVisualStyleBackColor = true;
+            this.btnResultManager.Click += new System.EventHandler(this.btnResultManager_Click);
+            // 
             // BackofficeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(1445, 623);
+            this.Controls.Add(this.btnResultManager);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.btnAdManager);
             this.Controls.Add(this.btnUserManagerToggle);
@@ -114,5 +126,6 @@
         private System.Windows.Forms.Button btnUserManagerToggle;
         private System.Windows.Forms.Button btnAdManager;
         private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button btnResultManager;
     }
 }

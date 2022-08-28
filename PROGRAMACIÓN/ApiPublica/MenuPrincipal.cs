@@ -18,22 +18,15 @@ namespace Proyecto
         }
         private void BannerPic_Click(object sender, EventArgs e)
         {   
-            ApiPublicidad.AddManager f = new ApiPublicidad.AddManager();
-            string link = f.SelectUrllink(selection);
+            string link = new ApiPublicidad.AddManager().SelectUrllink(selection);
             System.Diagnostics.Process.Start(link);
-         }
+        }
         public void SetAnuncio()
         {
             ApiPublicidad.AddManager f = new ApiPublicidad.AddManager();
             BannerPic.Image = Image.FromFile(f.GetBanner(selection));
         }
-        
-
-        private void UserInformationMenuItem_Click(object sender, EventArgs e)
-        {
-            UserData u = new UserData();
-            u.Show();
-        }
+        private void UserInformationMenuItem_Click(object sender, EventArgs e) => new UserData().Show();
     }
 }
        

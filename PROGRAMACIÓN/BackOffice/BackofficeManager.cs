@@ -24,11 +24,44 @@ namespace Proyecto.Backoffice
 
         public void selectMenu(int selection)
         {
-            BackOfficeUserManager um = new BackOfficeUserManager();
-            if (selection == 1) MainPanel.Controls.Add(um);
-           
-        }
+            if (selection == 1)
+            {
 
+                if (!MainPanel.Contains(BackOfficeUserManager.Instance))
+                {
+                    MainPanel.Controls.Add(BackOfficeUserManager.Instance);
+                    BackOfficeUserManager.Instance.Dock = DockStyle.Fill;
+                    BackOfficeUserManager.Instance.BringToFront();
+                }
+                else BackOfficeUserManager.Instance.BringToFront();
+            }
+
+            if (selection == 2)
+            {
+                if (!MainPanel.Contains(BackOfficeAdManager.Instance))
+                {
+                    MainPanel.Controls.Add(BackOfficeAdManager.Instance);
+                    BackOfficeAdManager.Instance.Dock = DockStyle.Fill;
+                    BackOfficeAdManager.Instance.BringToFront();
+                }
+                else BackOfficeAdManager.Instance.BringToFront();
+            }
+            if (selection == 3)
+            {
+                if (!MainPanel.Contains(BackOfficeResultsManager.Instance))
+                {
+                    MainPanel.Controls.Add(BackOfficeResultsManager.Instance);
+                    BackOfficeResultsManager.Instance.Dock = DockStyle.Fill;
+                    BackOfficeResultsManager.Instance.BringToFront();
+                }
+                else BackOfficeResultsManager.Instance.BringToFront();
+            }
+
+        }
+        public void closeMenu()
+        {
+          
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -45,14 +78,10 @@ namespace Proyecto.Backoffice
 
         }
 
-        private void btnUserManagerToggle_Click(object sender, EventArgs e)
-        {
-            selectMenu(1);
-        }
-       
-        private void btnAdManager_Click(object sender, EventArgs e)
-        {
-            selectMenu(2);
-        }
+        private void btnUserManagerToggle_Click(object sender, EventArgs e) => selectMenu(1);
+
+        private void btnAdManager_Click(object sender, EventArgs e) => selectMenu(2);
+
+        private void btnResultManager_Click(object sender, EventArgs e) => selectMenu(3);
     }
 }
