@@ -167,6 +167,7 @@
             this.dgrid1.Name = "dgrid1";
             this.dgrid1.Size = new System.Drawing.Size(670, 218);
             this.dgrid1.TabIndex = 54;
+            this.dgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid1_CellContentClick);
             // 
             // btnRegister
             // 

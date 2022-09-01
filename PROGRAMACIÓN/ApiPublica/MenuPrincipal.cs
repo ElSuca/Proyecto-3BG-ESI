@@ -14,7 +14,8 @@ namespace Proyecto
             InitializeComponent();
             Random random = new Random();
             selection = random.Next(3);
-            SetAnuncio();
+            
+            GetInfo();
         }
         private void BannerPic_Click(object sender, EventArgs e)
         {   
@@ -28,11 +29,26 @@ namespace Proyecto
             BannerPic.Image = Image.FromFile(f.GetBanner(selection));
         }
         
+        public void GetInfo ()
+        {
+            GetSportInfo e = new GetSportInfo();
+            dataGridView1.DataSource= e.ejecutarComando();
+        }
 
         private void UserInformationMenuItem_Click(object sender, EventArgs e)
         {
             UserData u = new UserData();
             u.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            System.Console.Write(e);
         }
     }
 }

@@ -54,5 +54,10 @@ namespace Proyecto.Backoffice
         {
             selectMenu(2);
         }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -60,5 +60,10 @@ namespace BackOffice
             new AplicationControler().ConectDatabase().Close();
             dgrid1.DataSource = tabla;
         }
+
+        private void dgrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

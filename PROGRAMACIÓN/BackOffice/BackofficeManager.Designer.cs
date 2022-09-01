@@ -87,13 +87,14 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1280, 502);
             this.MainPanel.TabIndex = 45;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
             // BackofficeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(1445, 623);
+            this.ClientSize = new System.Drawing.Size(1370, 623);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.btnAdManager);
             this.Controls.Add(this.btnUserManagerToggle);
