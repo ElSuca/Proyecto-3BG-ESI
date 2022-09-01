@@ -25,5 +25,20 @@ namespace BackOffice
         {
 
         }
+
+        private void txtEvenScore_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BackOfficeResultsManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

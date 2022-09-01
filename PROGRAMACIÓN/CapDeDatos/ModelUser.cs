@@ -25,6 +25,7 @@ namespace CapaDeDatos
         public ModelUser()
         {
         }
+        
 
 
 

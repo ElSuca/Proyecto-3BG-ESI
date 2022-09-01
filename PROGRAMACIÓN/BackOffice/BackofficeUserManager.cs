@@ -60,9 +60,19 @@ namespace BackOffice
                 MD5Hash.Hash.Content(txtPassword.Text),
                 txtTelefonoRegister.Text
                 );
+            MessageBox.Show("Usuario " + txtID.Text + " modificado");
+            reloadList();
+            reloadList();
+            reloadList();
+            reloadList();
+            reloadList();
         }
 
         private void btnList_Click_1(object sender, EventArgs e)
+        {
+            reloadList();
+        }
+        private void reloadList()
         {
             DataTable tabla = new DataTable();
             MySqlCommand command = new MySqlCommand();
