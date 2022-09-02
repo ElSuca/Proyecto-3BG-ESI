@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
+
 namespace Proyecto
 {
     public partial class MenuPrincipal : Form
@@ -48,7 +49,14 @@ namespace Proyecto
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            System.Console.Write(e);
+            Console.Write(e);
+        }
+
+        private void btnBusqueda_Click(object sender, EventArgs e)
+        {
+            GetSportInfo s = new GetSportInfo();
+            string EventName = txtBusqueda.Text;
+            s.eventTable(EventName);
         }
     }
 }
