@@ -56,7 +56,18 @@ namespace Proyecto
         {
             GetSportInfo s = new GetSportInfo();
             string EventName = txtBusqueda.Text;
-            s.eventTable(EventName);
+            dataGridView1.DataSource = s.eventTable(EventName);
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            GetSportInfo s = new GetSportInfo();
+            dataGridView1.DataSource = s.ejecutarComando();
         }
     }
 }

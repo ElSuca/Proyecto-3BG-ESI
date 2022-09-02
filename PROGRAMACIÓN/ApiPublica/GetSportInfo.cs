@@ -19,12 +19,12 @@ namespace ApiPublica
         public MySqlCommand command;
         public MySqlDataReader dataReader;
         public DataTable table;
+        public DataTable EventTable;
         public GetSportInfo()
         {
             conectDataBase();
             inicializarComando();
             table = new DataTable();
-
         }
         private void inicializarComando()
         {
@@ -52,12 +52,11 @@ namespace ApiPublica
         }
         public DataTable eventTable(string EventName)
         {
-            table.Reset();
             string NombreEvento = EventName;
             this.command.CommandText = " SELECT FAMILY.NAME , FAMILY.RECURRENCY, FAMILY.DOMAIN, " +
                 "FAMILY.TYPE, FAMILY.PARENT_ID, EVENT.NAME, EVENT.DATE, TEAM.NAME, PLAYER.NAME, " +
-                "PLAYER.LNAME1, PLAYER.LNAME2, PLAYER.STATUS, PLAYER.AGE, SCORE.TYPE, SCORE.QUANTITY, " +
-                "SCORE.CONTEXT, FOULS.TYPE, FOULS.QUANTITY, FOULS.CONTEXT, JUDGE.NAME, JUDGE.LNAME1, JUDGE.LNAME2 " +
+                "PLAYER.LNAME1, PLAYER.STATUS, PLAYER.AGE, SCORE.TYPE, SCORE.QUANTITY, " +
+                "SCORE.CONTEXT, FOULS.TYPE, FOULS.QUANTITY, FOULS.CONTEXT, JUDGE.NAME, JUDGE.LNAME1 " +
                 "FROM OLYMPUS.EVENT STRAIGHT_JOIN(TIME, TMTI, TEAM, PLYR_TM, " +
                 "PLAYER, PLYR_TM_TI_SC, PLYR_TM_TIME_FL, SCORE, FOULS, JUDGE, JUD_FOUL, FAMILY, EVENT_FAMILY) " +
                 "ON(EVENT.ID = TIME.ID_EVENT AND TIME.ID = TMTI.ID_TIME AND TMTI.ID_TEAM = TEAM.ID " +
@@ -66,35 +65,33 @@ namespace ApiPublica
                 "AND PLYR_TM_TIME_FL.ID_TEAM = TEAM.ID AND PLYR_TM_TIME_FL.ID_FL = FOULS.ID " +
                 "AND JUD_FOUL.ID_FL = FOULS.ID AND JUD_FOUL.ID_JUD = JUDGE.ID) WHERE EVENT.NAME = @EventName;";
             this.command.Parameters.AddWithValue("@EventName", EventName);
-            this.table.Load(this.command.ExecuteReader());
-            this.table = limpiarTablaEvento(table);
+            table.Load(command.ExecuteReader());
+            table = limpiarTablaEvento(table);
             return table;
         }
-        public DataTable limpiarTablaEvento(DataTable te)
-        {
-            te.Columns[1].ColumnName = "NOMBRE FAMILIA";
-            te.Columns[2].ColumnName = "RECURRENCIA FAMILIA";
-            te.Columns[3].ColumnName = "DOMINIO FAMILIA";
-            te.Columns[4].ColumnName = "TIPO DE FAMILIA";
-            te.Columns[5].ColumnName = "FAMILIA ARRIBA";
-            te.Columns[6].ColumnName = "NOMBRE EVENTO";
-            te.Columns[7].ColumnName = "FECHA EVENTO";
-            te.Columns[8].ColumnName = "NOMBRE EQUIPO";
-            te.Columns[9].ColumnName = "NOMBRE JUGADOR";
-            te.Columns[10].ColumnName = "APELLIDO";
-            te.Columns[11].ColumnName = "SEGUNDO APELLIDO";
-            te.Columns[12].ColumnName = "STATUS";
-            te.Columns[13].ColumnName = "EDAD";
-            te.Columns[14].ColumnName = "TIPO PUNTAJE";
-            te.Columns[15].ColumnName = "CONTEXTO PUNTAJE";
-            te.Columns[16].ColumnName = "TIPO FOUL";
-            te.Columns[17].ColumnName = "CANT FOUL";
-            te.Columns[18].ColumnName = "CONTEXTO FOUL";
-            te.Columns[19].ColumnName = "NOMBRE ARBITRO";
-            te.Columns[20].ColumnName = "APELL ARBITRO";
-            te.Columns[21].ColumnName = "SEG APELL ARBITRO";
+        public DataTable limpiarTablaEvento(DataTable t)
+         {
+            t.Columns[1].ColumnName = "NOMBRE FAMILIA";
+            t.Columns[2].ColumnName = "RECURRENCIA FAMILIA";
+            t.Columns[3].ColumnName = "DOMINIO FAMILIA";
+            t.Columns[4].ColumnName = "TIPO DE FAMILIA";
+            t.Columns[5].ColumnName = "FAMILIA ARRIBA";
+            t.Columns[6].ColumnName = "NOMBRE EVENTO";
+            t.Columns[7].ColumnName = "FECHA EVENTO";
+            t.Columns[8].ColumnName = "NOMBRE EQUIPO";
+            t.Columns[9].ColumnName = "NOMBRE JUGADOR";
+            t.Columns[10].ColumnName = "APELLIDO";
+            t.Columns[11].ColumnName = "STATUS";
+            t.Columns[12].ColumnName = "EDAD";
+            t.Columns[13].ColumnName = "TIPO PUNTAJE";
+            t.Columns[14].ColumnName = "CONTEXTO PUNTAJE";
+            t.Columns[15].ColumnName = "TIPO FOUL";
+            t.Columns[16].ColumnName = "CANT FOUL";
+            t.Columns[17].ColumnName = "CONTEXTO FOUL";
+            t.Columns[18].ColumnName = "NOMBRE ARBITRO";
+            t.Columns[19].ColumnName = "APELL ARBITRO";
 
-            return te;
+            return t;
         }
         public DataTable limpiarTabla(DataTable t)
         {
