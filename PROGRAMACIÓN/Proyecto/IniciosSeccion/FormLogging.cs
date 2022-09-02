@@ -28,5 +28,30 @@ namespace Proyecto.IniciosSeccion
         }
 
         private void btnEntrar_Click(object sender, EventArgs e) => new MenuPrincipal().Show();
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

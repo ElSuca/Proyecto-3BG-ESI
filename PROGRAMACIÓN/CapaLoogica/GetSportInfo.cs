@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using CapaLoogica;
 
 namespace CapaLogica
 {
-    public class GetSportInfo
+   /* public class GetSportInfo
     {
         public string IpDataBase;
         public string UserDataBase;
@@ -33,7 +34,7 @@ namespace CapaLogica
         }
         private void conectDataBase()
         {
-            this.startConection();
+            new AplicationControler().ConectDatabase();
             this.conection = new MySqlConnection(
                 $"server={this.IpDataBase};" +
                 $"userid={this.UserDataBase};" +
@@ -102,7 +103,7 @@ namespace CapaLogica
 
             return t;
         }
-        private void startConection()
+     /*   private void startConection()
         {
             this.IpDataBase = "127.0.0.1";
             this.NameDataBase = "olympus";
@@ -110,6 +111,6 @@ namespace CapaLogica
             this.PasswordDataBase = "stEAEgBRH35jgtLN3ztIDmlOYP";
             this.PuertoDataBase = "3306";
         }
-
-    }
+        
+    }*/
 }

@@ -9,10 +9,22 @@ namespace BackOffice
 {
     public partial class BackOfficeUserManager : UserControl
     {
+        private static BackOfficeUserManager _instance;
+
+        public static BackOfficeUserManager Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = new BackOfficeUserManager();
+                return _instance;
+            }
+        }
+
         public BackOfficeUserManager()
         {
             InitializeComponent();
         }
+
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
@@ -48,9 +60,19 @@ namespace BackOffice
                 MD5Hash.Hash.Content(txtPassword.Text),
                 txtTelefonoRegister.Text
                 );
+            MessageBox.Show("Usuario " + txtID.Text + " modificado");
+            reloadList();
+            reloadList();
+            reloadList();
+            reloadList();
+            reloadList();
         }
 
         private void btnList_Click_1(object sender, EventArgs e)
+        {
+            reloadList();
+        }
+        private void reloadList()
         {
             DataTable tabla = new DataTable();
             MySqlCommand command = new MySqlCommand();
@@ -59,11 +81,6 @@ namespace BackOffice
             tabla.Load(command.ExecuteReader());
             new AplicationControler().ConectDatabase().Close();
             dgrid1.DataSource = tabla;
-        }
-
-        private void dgrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

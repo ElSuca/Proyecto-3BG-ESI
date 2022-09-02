@@ -12,6 +12,8 @@ namespace CapaDeDatos
         public MySqlConnection conection;
         public MySqlCommand command;
         public MySqlDataReader dataReader;
+        public MySqlCommand commanditou;
+                
 
         public Model()
         {
@@ -22,6 +24,9 @@ namespace CapaDeDatos
         {
             this.command = new MySqlCommand();
             this.command.Connection = this.conection;
+            this.commanditou = new MySqlCommand();
+            this.commanditou.Connection = this.conection;
+
         }
         private void conectDataBase()
         {   
@@ -39,8 +44,8 @@ namespace CapaDeDatos
         {
             this.IpDataBase = "127.0.0.1";
             this.NameDataBase = "olympus";
-            this.UserDataBase = "root";
-            this.PasswordDataBase = "stEAEgBRH35jgtLN3ztIDmlOYP";
+            this.UserDataBase = "bd_adm";
+            this.PasswordDataBase = "password";
             this.PuertoDataBase = "3306"; 
         }
     }

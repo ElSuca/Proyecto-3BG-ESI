@@ -19,15 +19,13 @@ namespace CapaDeDatos
         public string Password;
         public string UserRole;
 
-        public ModelUser(int id)
-        {
-            this.GetUserData(id);
-            
-        }
+
+        public ModelUser(int id) => this.GetUserData(id);
 
         public ModelUser()
         {
         }
+        
 
 
 
@@ -230,13 +228,14 @@ namespace CapaDeDatos
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
 
-                command.CommandText = "INSERT INTO " +
+              
+                commanditou.CommandText = "INSERT INTO " +
                    "phones (id_user,num) " +
-                   "VALUES (@id_us,@Num)";
-                this.command.Parameters.AddWithValue("@id_us", GetId(UserName));
-                this.command.Parameters.AddWithValue("@Num", this.PhoneNumber);
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                   "VALUES (@id_user,@Num)";
+                this.commanditou.Parameters.AddWithValue("@id_user", GetId(UserName));
+                this.commanditou.Parameters.AddWithValue("@Num", this.PhoneNumber);
+                this.commanditou.Prepare();
+                this.commanditou.ExecuteNonQuery();
             }
             catch (Exception e)
             {

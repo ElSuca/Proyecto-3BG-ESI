@@ -3,6 +3,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using CapaLogica;
+using CapaLoogica;
+using CapDeDatos;
 
 namespace Proyecto
 {
@@ -32,8 +34,7 @@ namespace Proyecto
         
         public void GetInfo ()
         {
-            GetSportInfo e = new GetSportInfo();
-            dataGridView1.DataSource= e.ejecutarComando();
+            dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
         }
 
         private void UserInformationMenuItem_Click(object sender, EventArgs e)
@@ -52,12 +53,8 @@ namespace Proyecto
             Console.Write(e);
         }
 
-        private void btnBusqueda_Click(object sender, EventArgs e)
-        {
-            GetSportInfo s = new GetSportInfo();
-            string EventName = txtBusqueda.Text;
-            dataGridView1.DataSource = s.eventTable(EventName);
-        }
+        private void btnBusqueda_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetEventData(txtBusquedaEvento.Text);
+
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
@@ -66,9 +63,10 @@ namespace Proyecto
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            GetSportInfo s = new GetSportInfo();
-            dataGridView1.DataSource = s.ejecutarComando();
+            dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
         }
+
+        private void btnBusquedaJugador_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetPlayerData(txtBusquedaJugador.Text);
     }
 }
        
