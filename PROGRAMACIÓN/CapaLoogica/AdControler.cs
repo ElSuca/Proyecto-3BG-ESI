@@ -29,5 +29,8 @@ namespace CapaLoogica
             };
             a.Save();
         }
+
+        public static void setStartPath(string path) => SafeSystemBuffer.startPath = path;
+        public static string GetStartPath() => SafeSystemBuffer.startPath;
     }
 }

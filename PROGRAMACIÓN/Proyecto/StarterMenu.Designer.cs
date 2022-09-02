@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnBackOffice = new System.Windows.Forms.Button();
             this.btnLoggin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,19 +43,9 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Project Olympus";
             // 
-            // BtnBackOffice
-            // 
-            this.BtnBackOffice.Location = new System.Drawing.Point(32, 185);
-            this.BtnBackOffice.Name = "BtnBackOffice";
-            this.BtnBackOffice.Size = new System.Drawing.Size(274, 23);
-            this.BtnBackOffice.TabIndex = 6;
-            this.BtnBackOffice.Text = "Back Office";
-            this.BtnBackOffice.UseVisualStyleBackColor = true;
-            this.BtnBackOffice.Click += new System.EventHandler(this.BtnBackOffice_Click);
-            // 
             // btnLoggin
             // 
-            this.btnLoggin.Location = new System.Drawing.Point(32, 156);
+            this.btnLoggin.Location = new System.Drawing.Point(32, 173);
             this.btnLoggin.Name = "btnLoggin";
             this.btnLoggin.Size = new System.Drawing.Size(274, 23);
             this.btnLoggin.TabIndex = 5;
@@ -66,7 +55,7 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(32, 127);
+            this.btnRegister.Location = new System.Drawing.Point(32, 144);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(274, 23);
             this.btnRegister.TabIndex = 4;
@@ -80,7 +69,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnBackOffice);
             this.Controls.Add(this.btnLoggin);
             this.Controls.Add(this.btnRegister);
             this.Name = "StarterMenu";
@@ -93,7 +81,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnBackOffice;
         private System.Windows.Forms.Button btnLoggin;
         private System.Windows.Forms.Button btnRegister;
     }

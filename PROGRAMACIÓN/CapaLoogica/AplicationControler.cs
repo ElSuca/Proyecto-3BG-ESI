@@ -1,13 +1,4 @@
-﻿using Google.Apis.Auth.OAuth2;
-using Google.Apis.Download;
-using Google.Apis.Drive.v3;
-using Google.Apis.Services;
-using Google.Apis.Util.Store;
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading;
+﻿using MySql.Data.MySqlClient;
 
 namespace CapaLoogica
 {

@@ -53,11 +53,11 @@ namespace CapDeDatos
             try
             {
                 command.CommandText = "INSERT INTO " +
-                   "AD (PATH,CAT,AD_NAME) " +
-                   "VALUES (@PATH,@CAT,@AD_NAME)";
+                   "AD (PATH,CAT,NAME) " +
+                   "VALUES (@PATH,@CAT,@NAME)";
                 this.command.Parameters.AddWithValue("@PATH", this.Path);
                 this.command.Parameters.AddWithValue("@CAT", this.Category);
-                this.command.Parameters.AddWithValue("@AD_NAME", this.Name);
+                this.command.Parameters.AddWithValue("@NAME", this.Name);
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -75,12 +75,12 @@ namespace CapDeDatos
         }
         public int GetId(string Name)
         {
-            this.command.CommandText = "SELECT * FROM AD WHERE Ad_Name = @Ad_Name";
-            this.command.Parameters.AddWithValue("@Ad_Name", Name);
+            this.command.CommandText = "SELECT * FROM AD WHERE Name = @Name";
+            this.command.Parameters.AddWithValue("@Name", Name);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["ID_AD"].ToString());
+            this.Id = int.Parse(this.dataReader["ID"].ToString());
             this.dataReader.Close();
             return Id;
         }

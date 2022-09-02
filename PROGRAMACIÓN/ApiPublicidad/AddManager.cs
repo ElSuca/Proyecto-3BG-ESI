@@ -5,7 +5,7 @@
         
         public string GetBanner(int Banner)
         {
-            return "C:\\Users\\Admin\\Desktop\\Deberes S\\2022\\Proyecto\\Proyecto-3BG-ESI\\PROGRAMACIÓN\\Cache\\" + Banner + ".jpg";
+            return @"C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Cache\" + Banner + ".jpg";
         }
         public string SelectUrllink(int choice)
         {

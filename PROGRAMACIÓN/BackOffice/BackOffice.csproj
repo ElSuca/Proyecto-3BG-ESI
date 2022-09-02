@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AD3F7E90-2C30-4D95-95F3-6D2B7AF2864B}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>BackOffice</RootNamespace>
     <AssemblyName>BackOffice</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MD5, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -93,12 +96,6 @@
     <Compile Include="BackofficeUserManager.Designer.cs">
       <DependentUpon>BackofficeUserManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdManager\FileBrowser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdManager\FileBrowser.Designer.cs">
-      <DependentUpon>FileBrowser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultManager\BackOfficeResults_Events.cs">
@@ -124,9 +121,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BackofficeUserManager.resx">
       <DependentUpon>BackofficeUserManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdManager\FileBrowser.resx">
-      <DependentUpon>FileBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

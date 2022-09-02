@@ -104,7 +104,7 @@
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(98, 23);
             this.btnEntrar.TabIndex = 6;
-            this.btnEntrar.Text = "Entrar de una";
+            this.btnEntrar.Text = "GuestLogging";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 

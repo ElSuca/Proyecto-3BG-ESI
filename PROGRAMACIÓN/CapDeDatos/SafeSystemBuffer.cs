@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CapDeDatos
+﻿namespace CapDeDatos
 {
     public class SafeSystemBuffer
     {
         public static int Menu1Choice;
-
+        public static string startPath;
 
         public int GetMenu1Choice() => Menu1Choice;
 
 
-        public void SetMenu1Choice(int a)
-        {
-            Menu1Choice = a;
-        }
+        public void SetMenu1Choice(int a) => Menu1Choice = a;
+        public void SetStartAdPath(string p) => startPath = p;
     }
 }
