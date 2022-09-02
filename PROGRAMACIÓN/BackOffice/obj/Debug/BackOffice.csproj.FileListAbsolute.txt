@@ -275,3 +275,5 @@ C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Ba
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.BackOfficeAdManager.resources
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.BackOfficeResultsManager.resources
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.FileBrowser.resources
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.ResultManager.BackOficeResultManager_Asociation.resources
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.ResultManager.BackOfficeResults_Events.resources

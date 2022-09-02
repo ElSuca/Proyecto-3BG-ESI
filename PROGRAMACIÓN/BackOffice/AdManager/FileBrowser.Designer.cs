@@ -32,8 +32,8 @@
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.lbPath = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // imageList
@@ -63,15 +63,6 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // lbPath
-            // 
-            this.lbPath.AutoSize = true;
-            this.lbPath.Location = new System.Drawing.Point(69, 415);
-            this.lbPath.Name = "lbPath";
-            this.lbPath.Size = new System.Drawing.Size(35, 13);
-            this.lbPath.TabIndex = 2;
-            this.lbPath.Text = "label1";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -81,13 +72,21 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Path:";
             // 
+            // txtPath
+            // 
+            this.txtPath.Location = new System.Drawing.Point(69, 412);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(400, 20);
+            this.txtPath.TabIndex = 4;
+            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
+            // 
             // FileBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtPath);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbPath);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.listView1);
             this.Name = "FileBrowser";
@@ -102,7 +101,7 @@
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.Label lbPath;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPath;
     }
 }

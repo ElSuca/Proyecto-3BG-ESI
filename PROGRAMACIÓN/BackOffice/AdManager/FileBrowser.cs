@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BackOffice
@@ -33,7 +28,7 @@ namespace BackOffice
             {
                 if(f.ShowDialog() == DialogResult.OK)
                 {
-                    lbPath.Text = f.SelectedPath;
+                    txtPath.Text = f.SelectedPath;
                     new BackOfficeAdManager().setPath(f.SelectedPath);
                     foreach(string item in Directory.GetFiles(f.SelectedPath))
                     {
@@ -49,6 +44,11 @@ namespace BackOffice
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView1.FocusedItem != null) Process.Start(listFiles[listView1.FocusedItem.Index]);
+        }
+
+        private void txtPath_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -18,8 +18,8 @@ namespace CapaLoogica
         {
             MySqlConnection conexion = new MySqlConnection(
             "server = 127.0.0.1; " +
-            "uid = root;" +
-            "pwd=root;" +
+            "uid = bd_adm;" +
+            "pwd=password;" +
             "database=olympus"
             );
 

@@ -67,27 +67,32 @@ namespace BackOffice
             new AplicationControler().ConectDatabase().Close();
             dataGrid1.DataSource = tabla;
         }
-        private string startpath;
+        private static string startpath;
         public void setPath(string path) => startpath = path;
         private void btnInsertBanner_Click(object sender, EventArgs e)
         {
             new FileBrowser().Show();
-            MoveFlies(startpath);
+         
         }
 
-        private void MoveFlies(string source)
+        private void MoveFlies(string startpath)
         {
-            CreateDirectory();
-            File.Copy(source, "C:\\Olympus\\Cahe\\"+new AdControler().GetAdId(txtAdName.Text)+txtAdCategory);
+            string basepath = @"C:\Users\" + Environment.UserName + @"\Desktop\Olympus\Cahe";
+            string finalpath = basepath+ new AdControler().GetAdId(txtAdName.Text) + txtAdCategory.Text + ".jpg";
 
+            if (Directory.Exists(basepath)) CreateDirectory();
+            File.Copy(startpath, finalpath); 
         }
         private void CreateDirectory()
         {
-           if (!Directory.Exists("C:\\Olympus\\Cahe")) Directory.CreateDirectory("C:\\Olympus\\Cahe");
+            string path = @"C:\Users\" + Environment.UserName + @"\Desktop\Olympus\Cahe";
+           if (!Directory.Exists(path)) Directory.CreateDirectory(path);
         }
         private void txtAdCategory_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void btnMoveBanner_Click(object sender, EventArgs e) => MoveFlies(txtPathBanner.Text);
     }
 }

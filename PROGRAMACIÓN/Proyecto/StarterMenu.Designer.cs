@@ -38,11 +38,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(89, 24);
+            this.label1.Location = new System.Drawing.Point(25, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 39);
+            this.label1.Size = new System.Drawing.Size(289, 39);
             this.label1.TabIndex = 7;
-            this.label1.Text = "App test";
+            this.label1.Text = "Project Olympus";
             // 
             // BtnBackOffice
             // 
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnBackOffice);
             this.Controls.Add(this.btnLoggin);

@@ -34,6 +34,7 @@
             // MainPanel
             // 
             this.MainPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.MainPanel.BackColor = System.Drawing.Color.White;
             this.MainPanel.Location = new System.Drawing.Point(12, 12);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(343, 230);
@@ -44,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(367, 254);
             this.Controls.Add(this.MainPanel);
             this.Name = "Form1";

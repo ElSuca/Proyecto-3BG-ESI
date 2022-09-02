@@ -44,8 +44,8 @@ namespace CapaDeDatos
         {
             this.IpDataBase = "127.0.0.1";
             this.NameDataBase = "olympus";
-            this.UserDataBase = "root";
-            this.PasswordDataBase = "root";
+            this.UserDataBase = "bd_adm";
+            this.PasswordDataBase = "password";
             this.PuertoDataBase = "3306"; 
         }
     }

@@ -69,10 +69,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackOfficeAdManager.cs">
+    <Compile Include="AdManager\BackOfficeAdManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BackOfficeAdManager.Designer.cs">
+    <Compile Include="AdManager\BackOfficeAdManager.Designer.cs">
       <DependentUpon>BackOfficeAdManager.cs</DependentUpon>
     </Compile>
     <Compile Include="BackofficeManager.cs">
@@ -81,10 +81,10 @@
     <Compile Include="BackofficeManager.Designer.cs">
       <DependentUpon>BackofficeManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="BackOfficeResultsManager.cs">
+    <Compile Include="ResultManager\BackOfficeResultsManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BackOfficeResultsManager.Designer.cs">
+    <Compile Include="ResultManager\BackOfficeResultsManager.Designer.cs">
       <DependentUpon>BackOfficeResultsManager.cs</DependentUpon>
     </Compile>
     <Compile Include="BackofficeUserManager.cs">
@@ -93,27 +93,39 @@
     <Compile Include="BackofficeUserManager.Designer.cs">
       <DependentUpon>BackofficeUserManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="FileBrowser.cs">
+    <Compile Include="AdManager\FileBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FileBrowser.Designer.cs">
+    <Compile Include="AdManager\FileBrowser.Designer.cs">
       <DependentUpon>FileBrowser.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BackOfficeAdManager.resx">
+    <Compile Include="ResultManager\BackOfficeResults_Events.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResultManager\BackOfficeResults_Events.Designer.cs">
+      <DependentUpon>BackOfficeResults_Events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultManager\BackOficeResultManager_Asociation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResultManager\BackOficeResultManager_Asociation.Designer.cs">
+      <DependentUpon>BackOficeResultManager_Asociation.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdManager\BackOfficeAdManager.resx">
       <DependentUpon>BackOfficeAdManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BackofficeManager.resx">
       <DependentUpon>BackofficeManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BackOfficeResultsManager.resx">
+    <EmbeddedResource Include="ResultManager\BackOfficeResultsManager.resx">
       <DependentUpon>BackOfficeResultsManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BackofficeUserManager.resx">
       <DependentUpon>BackofficeUserManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FileBrowser.resx">
+    <EmbeddedResource Include="AdManager\FileBrowser.resx">
       <DependentUpon>FileBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -125,6 +137,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ResultManager\BackOfficeResults_Events.resx">
+      <DependentUpon>BackOfficeResults_Events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultManager\BackOficeResultManager_Asociation.resx">
+      <DependentUpon>BackOficeResultManager_Asociation.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

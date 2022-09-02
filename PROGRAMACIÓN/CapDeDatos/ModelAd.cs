@@ -1,9 +1,5 @@
 ﻿using CapaDeDatos;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapDeDatos
 {
@@ -79,9 +75,9 @@ namespace CapDeDatos
         }
         public int GetId(string Name)
         {
-            this.commanditou.CommandText = "SELECT * FROM AD WHERE Ad_Name = @Ad_Name";
-            this.commanditou.Parameters.AddWithValue("@Ad_Name", Name);
-            this.commanditou.Prepare();
+            this.command.CommandText = "SELECT * FROM AD WHERE Ad_Name = @Ad_Name";
+            this.command.Parameters.AddWithValue("@Ad_Name", Name);
+            this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
             this.Id = int.Parse(this.dataReader["ID_AD"].ToString());
