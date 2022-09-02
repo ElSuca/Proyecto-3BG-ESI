@@ -1,8 +1,0 @@
-[Api]
-
-192.168.133.128 ansible_connection="ssh" ansible_hostname="api_auth" ansible_ssh_user="root" ansible_ssh_pass="IfMpDSLyFdynMteFZVi" ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-192.168.133.129 ansible_connection="ssh" ansible_hostname="api_pub" ansible_ssh_user="root" ansible_ssh_pass="IfMpDSLyFdynMteFZVi" ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-
-[Database]
-
-192.168.133.130 ansible_connection="ssh" ansible_hostname="database1" ansible_ssh_user="root" ansible_ssh_pass="IfMpDSLyFdynMteFZVi" ansible_ssh_common_args='-o StrictHostKeyChecking=no'
