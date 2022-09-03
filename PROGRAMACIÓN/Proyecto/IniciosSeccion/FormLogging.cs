@@ -10,19 +10,46 @@ namespace Proyecto.IniciosSeccion
         public FormLogging()
         {
             InitializeComponent();
-            
         }
         private void btnLoggin_Click(object sender, EventArgs e)
         {
-            bool Coincide;
-            string Username = txtUserName.Text;
-            string Password = txtPassword.Text;
-            Coincide = UserControler.Autenticar(Username, Password);
-            if (Coincide) MessageBox.Show("Inicio De secion correcto");
+            UserControler uc = new UserControler();
+            if (UserControler.Autenticar(txtUserName.Text, txtPassword.Text))
+            {
+                uc.SetStaticUsername(txtUserName.Text);
+                uc.SetStaticPassword(txtPassword.Text);
+                new MenuPrincipal().Show();
+            }
             else MessageBox.Show("Hubo un problema, intente nuevamente");
         }
 
         private void FormLogging_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e) => new MenuPrincipal().Show();
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
         {
 
         }

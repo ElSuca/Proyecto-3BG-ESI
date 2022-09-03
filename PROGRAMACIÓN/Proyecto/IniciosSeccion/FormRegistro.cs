@@ -1,6 +1,5 @@
 ﻿using CapaLogica;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Proyecto.IniciosSeccion
@@ -11,43 +10,33 @@ namespace Proyecto.IniciosSeccion
         {
             InitializeComponent();
         }
-        private bool checkInput(string input)
-        {
-            List<string> DangerWords = new List<string>();
-            DangerWords.Add("WHERE");
-            DangerWords.Add("DROP");
-            DangerWords.Add(";");
-            DangerWords.Add("FROM");
-            DangerWords.Add("CHAR");
-            DangerWords.Add("SET");
 
-            foreach (string palabra in DangerWords)
-            {
-                if (input.Contains(palabra)) return false;
-
-            }
-
-            return true;
-        }
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (!checkInput(txtUserNameRegister.Text) || !checkInput(txtApellidoRegister.Text) 
-               || !checkInput(txtTelefonoRegister.Text) || !checkInput(txtEmailRegister.Text))
-            {
-                MessageBox.Show("Hubo un problema, intente nuevamente");
-                return;
-            }
             UserControler.Alta(
-                txtUserNameRegister.Text,
+                txtNameRegister.Text,
                 txtApellidoRegister.Text,
-                txtTelefonoRegister.Text,
+                txtLastName2Register.Text,
                 txtEmailRegister.Text,
-                MD5Hash.Hash.Content(txtPassword.Text)
+                txtUserNameRegister.Text,
+                "User",
+                MD5Hash.Hash.Content(txtPassword.Text),
+                txtPhoneRegister.Text
             );
             MessageBox.Show("Usuario cargado");
         }
 
         private void FormRegistro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbMail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmailRegister_TextChanged(object sender, EventArgs e)
         {
 
         }
