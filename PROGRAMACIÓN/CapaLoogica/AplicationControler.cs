@@ -5,7 +5,7 @@ namespace CapaLoogica
     public class AplicationControler
     {
 
-        public MySqlConnection ConectDatabase()
+        /*public MySqlConnection ConectDatabase()
         {
             MySqlConnection conexion = new MySqlConnection(
             "server = 127.0.0.1; " +
@@ -16,7 +16,7 @@ namespace CapaLoogica
 
             conexion.Open();
             return conexion;
-        }
+        }*/
 
 
     }
