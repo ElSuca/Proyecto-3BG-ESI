@@ -34,16 +34,22 @@
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(44, 79);
+            this.btnApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnApply.Location = new System.Drawing.Point(21, 73);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.Size = new System.Drawing.Size(121, 26);
             this.btnApply.TabIndex = 5;
             this.btnApply.Text = "Apply";
-            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.UseVisualStyleBackColor = false;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // ComboBoxLanguage
             // 
+            this.ComboBoxLanguage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.ComboBoxLanguage.ForeColor = System.Drawing.SystemColors.Window;
             this.ComboBoxLanguage.FormattingEnabled = true;
             this.ComboBoxLanguage.Items.AddRange(new object[] {
             "English",
@@ -57,6 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(161, 129);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.ComboBoxLanguage);

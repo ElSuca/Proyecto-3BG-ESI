@@ -40,10 +40,13 @@
             // 
             // btnLoggin
             // 
-            this.btnLoggin.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnLoggin.Location = new System.Drawing.Point(12, 152);
+            this.btnLoggin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnLoggin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLoggin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoggin.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLoggin.Location = new System.Drawing.Point(12, 191);
             this.btnLoggin.Name = "btnLoggin";
-            this.btnLoggin.Size = new System.Drawing.Size(83, 23);
+            this.btnLoggin.Size = new System.Drawing.Size(144, 34);
             this.btnLoggin.TabIndex = 0;
             this.btnLoggin.Text = "Accept";
             this.btnLoggin.UseVisualStyleBackColor = false;
@@ -51,39 +54,45 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtUserName.Location = new System.Drawing.Point(95, 59);
+            this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtUserName.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtUserName.Location = new System.Drawing.Point(12, 76);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtUserName.Size = new System.Drawing.Size(287, 20);
             this.txtUserName.TabIndex = 1;
             this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
-            this.lbUserName.Location = new System.Drawing.Point(12, 62);
+            this.lbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserName.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbUserName.Location = new System.Drawing.Point(11, 53);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(55, 13);
+            this.lbUserName.Size = new System.Drawing.Size(91, 20);
             this.lbUserName.TabIndex = 2;
             this.lbUserName.Text = "Username";
             this.lbUserName.Click += new System.EventHandler(this.lbUserName_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtPassword.Location = new System.Drawing.Point(95, 89);
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.Location = new System.Drawing.Point(12, 126);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(287, 20);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(12, 89);
+            this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPassword.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPassword.Location = new System.Drawing.Point(12, 103);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(53, 13);
+            this.lbPassword.Size = new System.Drawing.Size(86, 20);
             this.lbPassword.TabIndex = 4;
             this.lbPassword.Text = "Password";
             this.lbPassword.Click += new System.EventHandler(this.lbPassword_Click);
@@ -92,7 +101,8 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(47, 9);
+            this.lbTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbTitle.Location = new System.Drawing.Point(110, 9);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(93, 31);
             this.lbTitle.TabIndex = 5;
@@ -101,12 +111,16 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(101, 152);
+            this.btnEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEntrar.Location = new System.Drawing.Point(159, 191);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(94, 23);
+            this.btnEntrar.Size = new System.Drawing.Size(150, 34);
             this.btnEntrar.TabIndex = 6;
             this.btnEntrar.Text = "GuestLogging";
-            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // lbMessage
@@ -122,8 +136,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(213, 219);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.ClientSize = new System.Drawing.Size(321, 256);
             this.Controls.Add(this.lbMessage);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.lbTitle);

@@ -34,7 +34,8 @@ namespace Proyecto
             else if (Choice == 4) new FormLanguageMenu().Show();
         }
 
-       public void OpenRegisterMenu()
+      
+        public void OpenRegisterMenu()
         {
             if (!MainPanel.Contains(RegisterMenu.Instance))
             {

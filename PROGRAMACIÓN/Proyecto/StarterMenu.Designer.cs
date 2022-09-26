@@ -37,8 +37,9 @@
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(25, 46);
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelTitle.Location = new System.Drawing.Point(17, 46);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(289, 39);
             this.labelTitle.TabIndex = 7;
@@ -46,30 +47,40 @@
             // 
             // btnLoggin
             // 
-            this.btnLoggin.Location = new System.Drawing.Point(32, 173);
+            this.btnLoggin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnLoggin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLoggin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoggin.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLoggin.Location = new System.Drawing.Point(24, 185);
             this.btnLoggin.Name = "btnLoggin";
-            this.btnLoggin.Size = new System.Drawing.Size(274, 23);
+            this.btnLoggin.Size = new System.Drawing.Size(282, 31);
             this.btnLoggin.TabIndex = 5;
             this.btnLoggin.Text = "Log in";
-            this.btnLoggin.UseVisualStyleBackColor = true;
+            this.btnLoggin.UseVisualStyleBackColor = false;
             this.btnLoggin.Click += new System.EventHandler(this.btnLoggin_Click);
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(32, 144);
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegister.Location = new System.Drawing.Point(24, 144);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(274, 23);
+            this.btnRegister.Size = new System.Drawing.Size(282, 35);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // Lblanguaje
             // 
             this.Lblanguaje.AutoSize = true;
+            this.Lblanguaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblanguaje.ForeColor = System.Drawing.SystemColors.Control;
             this.Lblanguaje.Location = new System.Drawing.Point(15, 11);
             this.Lblanguaje.Name = "Lblanguaje";
-            this.Lblanguaje.Size = new System.Drawing.Size(51, 13);
+            this.Lblanguaje.Size = new System.Drawing.Size(59, 13);
             this.Lblanguaje.TabIndex = 8;
             this.Lblanguaje.Text = "Languaje";
             this.Lblanguaje.Click += new System.EventHandler(this.Lblanguaje_Click);
@@ -78,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.Controls.Add(this.Lblanguaje);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.btnLoggin);

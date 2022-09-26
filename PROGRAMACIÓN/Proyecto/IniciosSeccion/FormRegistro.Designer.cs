@@ -48,34 +48,39 @@
             // 
             // txtUserNameRegister
             // 
-            this.txtUserNameRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtUserNameRegister.Location = new System.Drawing.Point(130, 77);
+            this.txtUserNameRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtUserNameRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtUserNameRegister.Location = new System.Drawing.Point(11, 84);
             this.txtUserNameRegister.Name = "txtUserNameRegister";
-            this.txtUserNameRegister.Size = new System.Drawing.Size(100, 20);
+            this.txtUserNameRegister.Size = new System.Drawing.Size(224, 20);
             this.txtUserNameRegister.TabIndex = 1;
             // 
             // txtApellidoRegister
             // 
-            this.txtApellidoRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtApellidoRegister.Location = new System.Drawing.Point(130, 127);
+            this.txtApellidoRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtApellidoRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtApellidoRegister.Location = new System.Drawing.Point(11, 179);
             this.txtApellidoRegister.Name = "txtApellidoRegister";
-            this.txtApellidoRegister.Size = new System.Drawing.Size(100, 20);
+            this.txtApellidoRegister.Size = new System.Drawing.Size(224, 20);
             this.txtApellidoRegister.TabIndex = 2;
             // 
             // txtPhoneRegister
             // 
-            this.txtPhoneRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtPhoneRegister.Location = new System.Drawing.Point(130, 205);
+            this.txtPhoneRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPhoneRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPhoneRegister.Location = new System.Drawing.Point(11, 317);
             this.txtPhoneRegister.Name = "txtPhoneRegister";
-            this.txtPhoneRegister.Size = new System.Drawing.Size(100, 20);
+            this.txtPhoneRegister.Size = new System.Drawing.Size(224, 20);
             this.txtPhoneRegister.TabIndex = 4;
             // 
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(8, 84);
+            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsername.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbUsername.Location = new System.Drawing.Point(7, 64);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(55, 13);
+            this.lbUsername.Size = new System.Drawing.Size(91, 20);
             this.lbUsername.TabIndex = 7;
             this.lbUsername.Text = "Username";
             this.lbUsername.Click += new System.EventHandler(this.lbUsername_Click);
@@ -83,18 +88,22 @@
             // lbLastname
             // 
             this.lbLastname.AutoSize = true;
-            this.lbLastname.Location = new System.Drawing.Point(8, 134);
+            this.lbLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLastname.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbLastname.Location = new System.Drawing.Point(7, 156);
             this.lbLastname.Name = "lbLastname";
-            this.lbLastname.Size = new System.Drawing.Size(53, 13);
+            this.lbLastname.Size = new System.Drawing.Size(88, 20);
             this.lbLastname.TabIndex = 8;
             this.lbLastname.Text = "Lastname";
             // 
             // lbMail
             // 
             this.lbMail.AutoSize = true;
-            this.lbMail.Location = new System.Drawing.Point(8, 182);
+            this.lbMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMail.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbMail.Location = new System.Drawing.Point(7, 248);
             this.lbMail.Name = "lbMail";
-            this.lbMail.Size = new System.Drawing.Size(36, 13);
+            this.lbMail.Size = new System.Drawing.Size(59, 20);
             this.lbMail.TabIndex = 9;
             this.lbMail.Text = "E-Mail";
             this.lbMail.Click += new System.EventHandler(this.lbMail_Click);
@@ -102,18 +111,23 @@
             // lbNumber
             // 
             this.lbNumber.AutoSize = true;
-            this.lbNumber.Location = new System.Drawing.Point(8, 208);
+            this.lbNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumber.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbNumber.Location = new System.Drawing.Point(7, 294);
             this.lbNumber.Name = "lbNumber";
-            this.lbNumber.Size = new System.Drawing.Size(78, 13);
+            this.lbNumber.Size = new System.Drawing.Size(127, 20);
             this.lbNumber.TabIndex = 10;
             this.lbNumber.Text = "Phone Number";
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnRegister.Location = new System.Drawing.Point(74, 285);
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegister.Location = new System.Drawing.Point(11, 409);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.Size = new System.Drawing.Size(224, 30);
             this.btnRegister.TabIndex = 11;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -122,26 +136,30 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(8, 234);
+            this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPassword.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPassword.Location = new System.Drawing.Point(7, 340);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(53, 13);
+            this.lbPassword.Size = new System.Drawing.Size(86, 20);
             this.lbPassword.TabIndex = 14;
             this.lbPassword.Text = "Password";
             this.lbPassword.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtPassword.Location = new System.Drawing.Point(130, 231);
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.Location = new System.Drawing.Point(11, 363);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(224, 20);
             this.txtPassword.TabIndex = 15;
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTitle.Location = new System.Drawing.Point(46, 22);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(132, 33);
@@ -150,43 +168,50 @@
             // 
             // txtLastName2Register
             // 
-            this.txtLastName2Register.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtLastName2Register.Location = new System.Drawing.Point(130, 153);
+            this.txtLastName2Register.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtLastName2Register.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtLastName2Register.Location = new System.Drawing.Point(11, 225);
             this.txtLastName2Register.Name = "txtLastName2Register";
-            this.txtLastName2Register.Size = new System.Drawing.Size(100, 20);
+            this.txtLastName2Register.Size = new System.Drawing.Size(224, 20);
             this.txtLastName2Register.TabIndex = 17;
             // 
             // lbSecondLastName
             // 
             this.lbSecondLastName.AutoSize = true;
-            this.lbSecondLastName.Location = new System.Drawing.Point(8, 160);
+            this.lbSecondLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSecondLastName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbSecondLastName.Location = new System.Drawing.Point(7, 202);
             this.lbSecondLastName.Name = "lbSecondLastName";
-            this.lbSecondLastName.Size = new System.Drawing.Size(96, 13);
+            this.lbSecondLastName.Size = new System.Drawing.Size(159, 20);
             this.lbSecondLastName.TabIndex = 18;
             this.lbSecondLastName.Text = "Second Lastname ";
             // 
             // txtEmailRegister
             // 
-            this.txtEmailRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtEmailRegister.Location = new System.Drawing.Point(130, 179);
+            this.txtEmailRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtEmailRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtEmailRegister.Location = new System.Drawing.Point(11, 271);
             this.txtEmailRegister.Name = "txtEmailRegister";
-            this.txtEmailRegister.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailRegister.Size = new System.Drawing.Size(224, 20);
             this.txtEmailRegister.TabIndex = 19;
             // 
             // txtNameRegister
             // 
-            this.txtNameRegister.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNameRegister.Location = new System.Drawing.Point(130, 103);
+            this.txtNameRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtNameRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtNameRegister.Location = new System.Drawing.Point(11, 133);
             this.txtNameRegister.Name = "txtNameRegister";
-            this.txtNameRegister.Size = new System.Drawing.Size(100, 20);
+            this.txtNameRegister.Size = new System.Drawing.Size(224, 20);
             this.txtNameRegister.TabIndex = 20;
             // 
             // lbRealName
             // 
             this.lbRealName.AutoSize = true;
-            this.lbRealName.Location = new System.Drawing.Point(8, 110);
+            this.lbRealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRealName.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbRealName.Location = new System.Drawing.Point(7, 110);
             this.lbRealName.Name = "lbRealName";
-            this.lbRealName.Size = new System.Drawing.Size(60, 13);
+            this.lbRealName.Size = new System.Drawing.Size(97, 20);
             this.lbRealName.TabIndex = 21;
             this.lbRealName.Text = "Real Name";
             // 
@@ -194,8 +219,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(242, 320);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.ClientSize = new System.Drawing.Size(252, 466);
             this.Controls.Add(this.lbRealName);
             this.Controls.Add(this.txtNameRegister);
             this.Controls.Add(this.txtEmailRegister);

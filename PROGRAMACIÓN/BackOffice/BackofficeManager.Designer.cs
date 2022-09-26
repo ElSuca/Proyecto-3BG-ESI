@@ -46,6 +46,7 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(279, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(233, 44);
@@ -65,22 +66,30 @@
             // 
             // btnUserManagerToggle
             // 
+            this.btnUserManagerToggle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnUserManagerToggle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUserManagerToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserManagerToggle.ForeColor = System.Drawing.SystemColors.Control;
             this.btnUserManagerToggle.Location = new System.Drawing.Point(12, 94);
             this.btnUserManagerToggle.Name = "btnUserManagerToggle";
-            this.btnUserManagerToggle.Size = new System.Drawing.Size(93, 23);
+            this.btnUserManagerToggle.Size = new System.Drawing.Size(120, 23);
             this.btnUserManagerToggle.TabIndex = 43;
             this.btnUserManagerToggle.Text = "User Manager";
-            this.btnUserManagerToggle.UseVisualStyleBackColor = true;
+            this.btnUserManagerToggle.UseVisualStyleBackColor = false;
             this.btnUserManagerToggle.Click += new System.EventHandler(this.btnUserManagerToggle_Click);
             // 
             // btnAdManager
             // 
+            this.btnAdManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnAdManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdManager.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAdManager.Location = new System.Drawing.Point(12, 123);
             this.btnAdManager.Name = "btnAdManager";
-            this.btnAdManager.Size = new System.Drawing.Size(93, 23);
+            this.btnAdManager.Size = new System.Drawing.Size(120, 23);
             this.btnAdManager.TabIndex = 44;
             this.btnAdManager.Text = "Ad Manager";
-            this.btnAdManager.UseVisualStyleBackColor = true;
+            this.btnAdManager.UseVisualStyleBackColor = false;
             this.btnAdManager.Click += new System.EventHandler(this.btnAdManager_Click);
             // 
             // MainPanel
@@ -92,20 +101,26 @@
             // 
             // btnResultManager
             // 
+            this.btnResultManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnResultManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnResultManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultManager.ForeColor = System.Drawing.SystemColors.Control;
             this.btnResultManager.Location = new System.Drawing.Point(12, 152);
             this.btnResultManager.Name = "btnResultManager";
-            this.btnResultManager.Size = new System.Drawing.Size(93, 23);
+            this.btnResultManager.Size = new System.Drawing.Size(120, 29);
             this.btnResultManager.TabIndex = 46;
             this.btnResultManager.Text = "Result Manager";
-            this.btnResultManager.UseVisualStyleBackColor = true;
+            this.btnResultManager.UseVisualStyleBackColor = false;
             this.btnResultManager.Click += new System.EventHandler(this.btnResultManager_Click);
             // 
             // Lblanguaje
             // 
             this.Lblanguaje.AutoSize = true;
+            this.Lblanguaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblanguaje.ForeColor = System.Drawing.SystemColors.Control;
             this.Lblanguaje.Location = new System.Drawing.Point(9, 12);
             this.Lblanguaje.Name = "Lblanguaje";
-            this.Lblanguaje.Size = new System.Drawing.Size(51, 13);
+            this.Lblanguaje.Size = new System.Drawing.Size(59, 13);
             this.Lblanguaje.TabIndex = 47;
             this.Lblanguaje.Text = "Languaje";
             this.Lblanguaje.Click += new System.EventHandler(this.Lblanguaje_Click);
@@ -114,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1445, 623);
             this.Controls.Add(this.Lblanguaje);
             this.Controls.Add(this.btnResultManager);

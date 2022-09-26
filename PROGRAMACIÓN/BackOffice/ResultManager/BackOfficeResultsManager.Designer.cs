@@ -42,28 +42,37 @@
             // 
             // btnEventManager
             // 
-            this.btnEventManager.Location = new System.Drawing.Point(17, 27);
+            this.btnEventManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnEventManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEventManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEventManager.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEventManager.Location = new System.Drawing.Point(17, 25);
             this.btnEventManager.Name = "btnEventManager";
-            this.btnEventManager.Size = new System.Drawing.Size(172, 23);
+            this.btnEventManager.Size = new System.Drawing.Size(172, 29);
             this.btnEventManager.TabIndex = 47;
             this.btnEventManager.Text = "Event Manager";
-            this.btnEventManager.UseVisualStyleBackColor = true;
+            this.btnEventManager.UseVisualStyleBackColor = false;
             this.btnEventManager.Click += new System.EventHandler(this.btnEventManager_Click);
             // 
             // btnAsociation
             // 
-            this.btnAsociation.Location = new System.Drawing.Point(17, 56);
+            this.btnAsociation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnAsociation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsociation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsociation.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAsociation.Location = new System.Drawing.Point(17, 60);
             this.btnAsociation.Name = "btnAsociation";
-            this.btnAsociation.Size = new System.Drawing.Size(172, 23);
+            this.btnAsociation.Size = new System.Drawing.Size(172, 28);
             this.btnAsociation.TabIndex = 48;
             this.btnAsociation.Text = "Asociation Manager";
-            this.btnAsociation.UseVisualStyleBackColor = true;
+            this.btnAsociation.UseVisualStyleBackColor = false;
             this.btnAsociation.Click += new System.EventHandler(this.btnAsociation_Click);
             // 
             // BackOfficeResultsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.Controls.Add(this.btnAsociation);
             this.Controls.Add(this.btnEventManager);
             this.Controls.Add(this.Panel);
