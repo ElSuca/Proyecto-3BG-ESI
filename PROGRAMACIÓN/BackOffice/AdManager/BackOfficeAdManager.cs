@@ -27,7 +27,6 @@ namespace BackOffice
 
         private void BtnAddAd_Click(object sender, EventArgs e)
         {
-            
             string p = "";
             AdControler.Alta(
                 txtAdName.Text,
@@ -39,10 +38,7 @@ namespace BackOffice
             reloadList();
         }
 
-        private void btnList_Click(object sender, EventArgs e)
-        {
-            reloadList();
-        }
+        private void btnList_Click(object sender, EventArgs e) => reloadList();
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -53,7 +49,6 @@ namespace BackOffice
 
         private void btnAdModify_Click(object sender, EventArgs e)
         {
-            
             AdControler.Modify(
                  txtAdName.Text,
                  Int32.Parse(txtAdId.Text),
@@ -64,24 +59,16 @@ namespace BackOffice
             reloadList();
         }
 
-        private void reloadList()
-        {
-            DataTable tabla = new DataTable();
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = new AplicationControler().ConectDatabase();
-            command.CommandText = "SELECT * FROM Ad";
-            tabla.Load(command.ExecuteReader());
-            new AplicationControler().ConectDatabase().Close();
-            dataGrid1.DataSource = tabla;
-        }
-      
-  
+        private void reloadList() => dataGrid1.DataSource = new AdControler().GetAdDataTable();
         public void SetFinalPath(string path) => Finalpath = path;
         public string GetFinalPath() => Finalpath;
 
         private void MoveFlies(string startpath)
         {
-            string basepath = @"C:\Users\" + Environment.UserName + @"\Desktop\Olympus\Cahe\";
+           
+
+
+            string basepath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Olympus\Cache\";
             string finalpath = basepath+ new AdControler().GetAdId(txtAdName.Text) + txtAdCategory.Text + ".jpg";
             
             if (!Directory.Exists(basepath)) CreateDirectory();
@@ -91,7 +78,7 @@ namespace BackOffice
         }
         private void CreateDirectory()
         { 
-            string path = @"C:\Users\" + Environment.UserName + @"\Desktop\Olympus\Cahe";
+            string path = @"C:\Users\" + Environment.UserName + @"\Desktop\Olympus\Cache";
            if (!Directory.Exists(path)) Directory.CreateDirectory(path);
         }
         private void txtAdCategory_TextChanged(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using CapaDeDatos;
 using System;
+using System.Data;
 
 namespace CapDeDatos
 {
@@ -83,6 +84,15 @@ namespace CapDeDatos
             this.Id = int.Parse(this.dataReader["ID"].ToString());
             this.dataReader.Close();
             return Id;
+        }
+
+        public DataTable GetAdDataTable()
+        {
+            DataTable tabla = new DataTable();
+            command.CommandText = "SELECT * FROM Ad";
+            tabla.Load(command.ExecuteReader());
+            conection.Close();
+            return tabla;
         }
     }
 }

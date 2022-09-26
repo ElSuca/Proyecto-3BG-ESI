@@ -12,10 +12,7 @@ namespace ApiAutenitficacion
         public Autentificador()
         {     
         }
-        public static Dictionary<string, string> GenerarRespuesta(HttpListenerRequest request)
-        {
-            return evaluarCredenciales(extraerCuerpoDeRequest(request));
-        }
+        public static Dictionary<string, string> GenerarRespuesta(HttpListenerRequest request) => evaluarCredenciales(extraerCuerpoDeRequest(request));
         private static string extraerCuerpoDeRequest(HttpListenerRequest request)
         {
             string cuerpo;
@@ -26,7 +23,6 @@ namespace ApiAutenitficacion
             return cuerpo;
         }
 
-       
         private static Dictionary<string, string> evaluarCredenciales(string cuerpo)
         {
             Dictionary<string, string> credenciales = JsonConvert.DeserializeObject<Dictionary<string, string>>(cuerpo);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using CapaLoogica;
 using Proyecto.IniciosSeccion;
 
 namespace Proyecto
@@ -16,10 +17,34 @@ namespace Proyecto
                 return _instance;
             }
         }
-        public StarterMenu() => InitializeComponent();
+        public StarterMenu()
+        {
+            InitializeComponent();
+            Traduction(new AplicationControler().getLanguage());
+        }
 
         private void btnLoggin_Click(object sender, EventArgs e) => new FormLogging().Show();
 
         private void btnRegister_Click(object sender, EventArgs e) => new FormRegistro().Show();
+
+        private void Lblanguaje_Click(object sender, EventArgs e) => new Form1().setSelection(4);
+
+        private void Traduction(int l)
+        {
+            if (l == 0)
+            {
+                btnRegister.Text = "Register";
+                btnLoggin.Text = "Log in";
+                Lblanguaje.Text = "Language";
+                labelTitle.Text = "Project Olympus";
+            }
+            else
+            {
+                btnRegister.Text = "Registrar";
+                btnLoggin.Text = "Iniciar Seción";
+                Lblanguaje.Text = "Idioma";
+                labelTitle.Text = "Pryecto Olympus";
+            }
+        }
     }
 }

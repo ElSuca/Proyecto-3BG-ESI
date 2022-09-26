@@ -11,27 +11,101 @@ namespace CapDeDatos
         {
             table = new DataTable();
         }
-
+        public DataTable playerTable(string PlayerName)
+        {
+            string NombreJugador = PlayerName;
+            command.CommandText = "SELECT PLAYER.NAME, PLAYER.LNAME1, PLAYER.LNAME2, PLAYER.STATUS, PLAYER.AGE FROM PLAYER WHERE PLAYER.NAME = @PlayerName";
+            this.command.Parameters.AddWithValue("@PlayerName", PlayerName);
+            table.Load(command.ExecuteReader());
+            table = limpiarTablaJugador(table);
+            return table;
+        }
+       
         public DataTable eventTable(string EventName)
         {
             string NombreEvento = EventName;
-            this.command.CommandText = " SELECT FAMILY.NAME , FAMILY.RECURRENCY, FAMILY.DOMAIN, " +
-                "FAMILY.TYPE, FAMILY.PARENT_ID, EVENT.NAME, EVENT.DATE, TEAM.NAME, PLAYER.NAME, " +
-                "PLAYER.LNAME1, PLAYER.STATUS, PLAYER.AGE, SCORE.TYPE, SCORE.QUANTITY, " +
-                "SCORE.CONTEXT, FOULS.TYPE, FOULS.QUANTITY, FOULS.CONTEXT, JUDGE.NAME, JUDGE.LNAME1 " +
-                "FROM OLYMPUS.EVENT STRAIGHT_JOIN(TIME, TMTI, TEAM, PLYR_TM, " +
-                "PLAYER, PLYR_TM_TI_SC, PLYR_TM_TIME_FL, SCORE, FOULS, JUDGE, JUD_FOUL, FAMILY, EVENT_FAMILY) " +
-                "ON(EVENT.ID = TIME.ID_EVENT AND TIME.ID = TMTI.ID_TIME AND TMTI.ID_TEAM = TEAM.ID " +
-                "AND PLYR_TM.ID_TEAM = TEAM.ID AND PLYR_TM.ID_PLYR = PLAYER.ID AND TIME.ID = PLYR_TM_TI_SC.ID_TIME " +
-                "AND TEAM.ID = PLYR_TM_TI_SC.ID_TEAM AND SCORE.ID = PLYR_TM_TI_SC.ID_SC AND PLYR_TM_TIME_FL.ID_TIME = TIME.ID " +
-                "AND PLYR_TM_TIME_FL.ID_TEAM = TEAM.ID AND PLYR_TM_TIME_FL.ID_FL = FOULS.ID " +
-                "AND JUD_FOUL.ID_FL = FOULS.ID AND JUD_FOUL.ID_JUD = JUDGE.ID) WHERE EVENT.NAME = @EventName;";
+            this.command.CommandText = " SELECT FAMILY.NAME," +
+                "FAMILY.RECURRENCY," +
+                "FAMILY.DOMAIN," +
+                "FAMILY.TYPE," +
+                "FAMILY.PARENT_ID," +
+                "EVENT.NAME," +
+                "EVENT.DATE," +
+                "TEAM.NAME," +
+                "PLAYER.NAME," +
+                "PLAYER.LNAME1," +
+                "PLAYER.STATUS," +
+                "PLAYER.AGE," +
+                "SCORE.TYPE," +
+                "SCORE.QUANTITY," +
+                "SCORE.CONTEXT," +
+                "FOULS.TYPE," +
+                "FOULS.QUANTITY," +
+                "FOULS.CONTEXT," +
+                "JUDGE.NAME," +
+                "JUDGE.LNAME1" +
+                "FROM EVENT STRAIGHT_JOIN(TIME, TMTI, TEAM, PLYR_TM, PLAYER, PLYR_TM_TI_SC, PLYR_TM_TIME_FL, SCORE, FOULS, JUDGE, JUD_FOUL, FAMILY, EVENT_FAMILY) " +
+                "ON(EVENT.ID = TIME.ID_EVENT" +
+                "AND TIME.ID = TMTI.ID_TIME" +
+                "AND TMTI.ID_TEAM = TEAM.ID" +
+                "AND PLYR_TM.ID_TEAM = TEAM.ID" +
+                "AND PLYR_TM.ID_PLYR = PLAYER.ID" +
+                "AND TIME.ID = PLYR_TM_TI_SC.ID_TIME " +
+                "AND TEAM.ID = PLYR_TM_TI_SC.ID_TEAM" +
+                "AND SCORE.ID = PLYR_TM_TI_SC.ID_SC" +
+                "AND PLYR_TM_TIME_FL.ID_TIME = TIME.ID " +
+                "AND PLYR_TM_TIME_FL.ID_TEAM = TEAM.ID" +
+                "AND PLYR_TM_TIME_FL.ID_FL = FOULS.ID " +
+                "AND JUD_FOUL.ID_FL = FOULS.ID" +
+                "AND JUD_FOUL.ID_JUD = JUDGE.ID)" +
+                "WHERE EVENT.NAME = @EventName;";
             this.command.Parameters.AddWithValue("@EventName", EventName);
             table.Load(command.ExecuteReader());
-            table = limpiarTablaEvento(table);
+            table = RenombrarTablaEvento(table);
             return table;
         }
-        public DataTable limpiarTablaEvento(DataTable t)
+       /* public DataTable GetEventTableForCategory(string Category)
+        {
+            this.command.CommandText = " SELECT FAMILY.NAME," +
+                "FAMILY.RECURRENCY," +
+                "FAMILY.DOMAIN," +
+                "FAMILY.TYPE," +
+                "FAMILY.PARENT_ID," +
+                "EVENT.NAME," +
+                "EVENT.DATE," +
+                "TEAM.NAME," +
+                "PLAYER.NAME," +
+                "PLAYER.LNAME1," +
+                "PLAYER.STATUS," +
+                "PLAYER.AGE," +
+                "SCORE.TYPE," +
+                "SCORE.QUANTITY," +
+                "SCORE.CONTEXT," +
+                "FOULS.TYPE," +
+                "FOULS.QUANTITY," +
+                "FOULS.CONTEXT," +
+                "JUDGE.NAME," +
+                "JUDGE.LNAME1" +
+                "FROM EVENT STRAIGHT_JOIN(TIME, TMTI, TEAM, PLYR_TM, PLAYER, PLYR_TM_TI_SC, PLYR_TM_TIME_FL, SCORE, FOULS, JUDGE, JUD_FOUL, FAMILY, EVENT_FAMILY) " +
+                "ON(EVENT.ID = TIME.ID_EVENT" +
+                "AND TIME.ID = TMTI.ID_TIME" +
+                "AND TMTI.ID_TEAM = TEAM.ID" +
+                "AND PLYR_TM.ID_TEAM = TEAM.ID" +
+                "AND PLYR_TM.ID_PLYR = PLAYER.ID" +
+                "AND TIME.ID = PLYR_TM_TI_SC.ID_TIME " +
+                "AND TEAM.ID = PLYR_TM_TI_SC.ID_TEAM" +
+                "AND SCORE.ID = PLYR_TM_TI_SC.ID_SC" +
+                "AND PLYR_TM_TIME_FL.ID_TIME = TIME.ID " +
+                "AND PLYR_TM_TIME_FL.ID_TEAM = TEAM.ID AND PLYR_TM_TIME_FL.ID_FL = FOULS.ID " +
+                "AND JUD_FOUL.ID_FL = FOULS.ID AND JUD_FOUL.ID_JUD = JUDGE.ID) " +
+                "WHERE EVENT.ID = EVENT_SPO.ID_Spo;";
+
+            this.command.Parameters.AddWithValue("@EventName", EventName);
+            table.Load(command.ExecuteReader());
+            table = RenombrarTablaEvento(table);
+            return table;
+        }*/
+        public DataTable RenombrarTablaEvento(DataTable t)
         {
             t.Columns[1].ColumnName = "NOMBRE FAMILIA";
             t.Columns[2].ColumnName = "RECURRENCIA FAMILIA";
@@ -55,6 +129,7 @@ namespace CapDeDatos
 
             return t;
         }
+        #region limpiar tabla
         public DataTable limpiarTabla(DataTable t)
         {
             t.Columns[0].ColumnName = "TORNEO";
@@ -64,12 +139,23 @@ namespace CapDeDatos
 
             return t;
         }
+        public DataTable limpiarTablaJugador(DataTable t)
+        {
+            t.Columns[0].ColumnName = "NOMBRE JUGADOR";
+            t.Columns[1].ColumnName = "APELLIDO";
+            t.Columns[2].ColumnName = "SEG. APELLIDO";
+            t.Columns[3].ColumnName = "ESTATUS";
+            t.Columns[4].ColumnName = "EDAD";
+
+            return t;
+        }
+        #endregion
         public DataTable ejecutarComando()
         {
             this.command.CommandText = "SELECT FAMILY.NAME ," +
                 " EVENT.NAME ," +
                 " SCORE.QUANTITY ," +
-                " TEAM.NAME FROM OLYMPUS.EVENT STRAIGHT_JOIN ( TIME, TMTI, TEAM, PLYR_TM_TI_SC, SCORE, EVENT_FAMILY, FAMILY) ON " +
+                " TEAM.NAME FROM EVENT STRAIGHT_JOIN ( TIME, TMTI, TEAM, PLYR_TM_TI_SC, SCORE, EVENT_FAMILY, FAMILY) ON " +
                 "(EVENT.ID = TIME.ID_EVENT AND TMTI.ID_TIME = TIME.ID AND TMTI.ID_TEAM = TEAM.ID AND PLYR_TM_TI_SC.ID_TIME = TIME.ID AND PLYR_TM_TI_SC.ID_TEAM" +
                 " = TEAM.ID AND PLYR_TM_TI_SC.ID_SC = SCORE.ID AND EVENT.ID = EVENT_FAMILY.ID_EVENT AND EVENT_FAMILY.ID_FAM = FAMILY.ID) LIMIT 5000; ";
             table.Load(command.ExecuteReader());

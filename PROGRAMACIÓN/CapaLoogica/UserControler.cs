@@ -58,10 +58,10 @@ namespace CapaLogica
         public static bool Autenticar(string nombre, string password)
         {
             ModelUser u = new ModelUser();
-
             u.SetUsernameBuffer(nombre);
             return u.Autenticar(password);
         }
+        public DataTable GetUserDataTable() => new ModelUser().GetUserDataTable();
         #region get
         public string GetEmail() => new ModelUser().getEmail();
         public string GetUsername() => new ModelUser().getUserName();
@@ -71,34 +71,34 @@ namespace CapaLogica
 
         public void SetStaticName(string name) => new ModelUser().SetUsernameBuffer(name);
 
-        public void SetStaticLastName(string lastname) => new ModelUser().SetLastNameBuffer(lastname);
+        public void SetStaticLastName(string lastname) => new ModelUser().SetLastNameStaticBuffer(lastname);
 
-        public void SetStaticLastName2(string lastname2) => new ModelUser().SetLastName2Buffer(lastname2);
+        public void SetStaticLastName2(string lastname2) => new ModelUser().SetLastName2StaticBuffer(lastname2);
 
-        public void SetStaticEmail(string email) => new ModelUser().SetEmailBuffer(email);
+        public void SetStaticEmail(string email) => new ModelUser().SetEmailStaticBuffer(email);
 
-        public void SetStaticPhoneNumber(int phonenumber) => new ModelUser().SetPhoneNumberBuffer(phonenumber);
+        public void SetStaticPhoneNumber(int phonenumber) => new ModelUser().SetPhoneNumberStaticBuffer(phonenumber);
 
-        public void SetStaticPassword(string password) => new ModelUser().SetPasswordBuffer(password);
+        public void SetStaticPassword(string password) => new ModelUser().SetPasswordStaticBuffer(password);
 
-        public void SetStaticRole(string role) => new ModelUser().SetPasswordBuffer(role);
+        public void SetStaticRole(string role) => new ModelUser().SetRoleStaticBuffer(role);
         #endregion
         #region GetStatic
-        public string StaticUsername => new ModelUser().GetUsernameBuffer();
+        public string GetStaticUsername => new ModelUser().GetUsernameBuffer();
 
-        public string StaticName => new ModelUser().GetNameBuffer();
+        public string GetStaticName => new ModelUser().GetNameBuffer();
 
-        public string StaticLastName => new ModelUser().GetLastNameBuffer();
+        public string GetStaticLastName => new ModelUser().GetLastNameBuffer();
 
-        public string StaticLastName2 => new ModelUser().GetLastName2Buffer();
+        public string GetStaticLastName2 => new ModelUser().GetLastName2Buffer();
 
-        public string StaticEmail => new ModelUser().GetEmailBuffer();
+        public string GetStaticEmail => new ModelUser().GetEmailBuffer();
 
-        public int StaticPhoneNumber => new ModelUser().GetPhoneNumberBuffer();
+        public int GetStaticPhoneNumber => new ModelUser().GetPhoneNumberBuffer();
 
-        public string StaticPassword => new ModelUser().GetPasswordBuffer();
+        public string GetStaticPassword => new ModelUser().GetPasswordBuffer();
 
-        public string StaticRole => new ModelUser().GetRoleBuffer();
+        public string GetStaticRole => new ModelUser().GetRoleBuffer();
         #endregion
 
 

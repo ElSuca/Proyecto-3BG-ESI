@@ -1,11 +1,31 @@
-﻿namespace ApiPublicidad
+﻿using System;
+using System.IO;
+
+namespace ApiPublicidad
 {
     public class AddManager
     {
         
         public string GetBanner(int Banner)
         {
-            return @"C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Cache\" + Banner + ".jpg";
+            string finalpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Olympus\Cache\" + Banner + ".jpg";
+            string file = Banner + ".jpg";
+            Moveplaceholders(finalpath,file);
+            return finalpath;
+        }
+
+        public void Moveplaceholders(string finalpath,string file)
+        {
+           string basepath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Olympus\Cache\";
+            string startpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+ @"\Proyecto-3BG-ESI\PROGRAMACIÓN\Cache\" + file; 
+            if (!Directory.Exists(basepath)) CreateDirectory();
+            if(!File.Exists(finalpath)) File.Copy(startpath, finalpath);
+        }
+
+        private void CreateDirectory()
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Olympus\Cache";
+            if (!Directory.Exists(path)) Directory.CreateDirectory(path);
         }
         public string SelectUrllink(int choice)
         {

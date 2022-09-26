@@ -35,6 +35,7 @@
             this.btnAdManager = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.btnResultManager = new System.Windows.Forms.Button();
+            this.Lblanguaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(229, 12);
+            this.label1.Location = new System.Drawing.Point(279, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(233, 44);
             this.label1.TabIndex = 35;
@@ -55,7 +56,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(88, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(185, 53);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,12 +100,23 @@
             this.btnResultManager.UseVisualStyleBackColor = true;
             this.btnResultManager.Click += new System.EventHandler(this.btnResultManager_Click);
             // 
+            // Lblanguaje
+            // 
+            this.Lblanguaje.AutoSize = true;
+            this.Lblanguaje.Location = new System.Drawing.Point(9, 12);
+            this.Lblanguaje.Name = "Lblanguaje";
+            this.Lblanguaje.Size = new System.Drawing.Size(51, 13);
+            this.Lblanguaje.TabIndex = 47;
+            this.Lblanguaje.Text = "Languaje";
+            this.Lblanguaje.Click += new System.EventHandler(this.Lblanguaje_Click);
+            // 
             // BackofficeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1445, 623);
+            this.Controls.Add(this.Lblanguaje);
             this.Controls.Add(this.btnResultManager);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.btnAdManager);
@@ -127,5 +139,6 @@
         private System.Windows.Forms.Button btnAdManager;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button btnResultManager;
+        private System.Windows.Forms.Label Lblanguaje;
     }
 }

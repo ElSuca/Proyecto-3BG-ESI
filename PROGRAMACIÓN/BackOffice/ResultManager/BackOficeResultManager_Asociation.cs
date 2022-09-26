@@ -25,25 +25,9 @@ namespace BackOffice.ResultManager
                 return _instance;
             }
         }
-        public BackOficeResultManager_Asociation()
-        {
-            InitializeComponent();
-        }
-
-        private void btnList_Click(object sender, EventArgs e)
-        {
-            reloadList();
-        }
-        private void reloadList()
-        {
-            DataTable tabla = new DataTable();
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = new AplicationControler().ConectDatabase();
-            command.CommandText = "SELECT * FROM asoc";
-            tabla.Load(command.ExecuteReader());
-            new AplicationControler().ConectDatabase().Close();
-            dataGrid1.DataSource = tabla;
-        }
+        public BackOficeResultManager_Asociation() => InitializeComponent();
+        private void btnList_Click(object sender, EventArgs e) => reloadList();
+        private void reloadList() => dataGrid1.DataSource = new AsociationControler().GetAsociationDataTable();
 
         private void btnRegisterAcc_Click(object sender, EventArgs e)
         {

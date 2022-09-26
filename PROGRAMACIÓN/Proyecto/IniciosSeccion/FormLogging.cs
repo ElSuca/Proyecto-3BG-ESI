@@ -1,15 +1,17 @@
 ﻿using CapaLogica;
+using CapaLoogica;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Proyecto.IniciosSeccion
 {
     public partial class FormLogging : Form
     {
-
         public FormLogging()
         {
             InitializeComponent();
+            Traduction(new AplicationControler().getLanguage());
         }
         private void btnLoggin_Click(object sender, EventArgs e)
         {
@@ -20,7 +22,11 @@ namespace Proyecto.IniciosSeccion
                 uc.SetStaticPassword(txtPassword.Text);
                 new MenuPrincipal().Show();
             }
-            else MessageBox.Show("Hubo un problema, intente nuevamente");
+            else
+            {
+                lbMessage.ForeColor = Color.FromArgb(255, 0, 0);
+                lbMessage.Text = ErrorMesageTranslation(new AplicationControler().getLanguage());
+            }
         }
 
         private void FormLogging_Load(object sender, EventArgs e)
@@ -29,6 +35,52 @@ namespace Proyecto.IniciosSeccion
 
         private void btnEntrar_Click(object sender, EventArgs e) => new MenuPrincipal().Show();
 
+        private void Traduction(int l)
+        {
+            if (l == 0)
+            {
+                btnLoggin.Text = "Login";
+                btnEntrar.Text = "Guest Login";
+                lbUserName.Text = "Username";
+                lbPassword.Text = "Password";
+                lbTitle.Text = "Logging";
+            }
+            else
+            {
+                btnLoggin.Text = "Inicio de seción";
+                btnEntrar.Text = "Ingresar como invitado";
+                lbPassword.Text = "Contraseña";
+                lbUserName.Text = "Usuario";
+                lbTitle.Text = "Inicio de sesión";
+            }
+            correctlabelposition(l);
+        }
+        private string ErrorMesageTranslation(int l)
+        {
+            string v = l == 0? "There was a problem, please try again":"Hubo un error, intentelo mas tarde";
+            return v;
+        }
+        private void correctlabelposition(int l)
+        {
+            if(l == 0)
+            {
+                lbTitle.Location = new Point(47, 9);
+                btnEntrar.Location = new Point(96, 153);
+                btnEntrar.Size = new Size(94, 23);
+                btnLoggin.Location = new Point(15,153);
+              
+            }
+            else
+            {
+                lbTitle.Location = new Point(-1, 9);
+                btnEntrar.Location = new Point(12, 190);
+                btnEntrar.Size = new Size(178,23);
+                btnLoggin.Location = new Point(12, 160);
+                btnLoggin.Size = new Size(178, 23);
+
+
+            }
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -50,6 +102,11 @@ namespace Proyecto.IniciosSeccion
         }
 
         private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -42,7 +42,7 @@
             // 
             // btnRegisterAcc
             // 
-            this.btnRegisterAcc.Location = new System.Drawing.Point(189, 262);
+            this.btnRegisterAcc.Location = new System.Drawing.Point(57, 262);
             this.btnRegisterAcc.Name = "btnRegisterAcc";
             this.btnRegisterAcc.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterAcc.TabIndex = 0;
@@ -108,7 +108,7 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(270, 262);
+            this.btnList.Location = new System.Drawing.Point(138, 262);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 10;

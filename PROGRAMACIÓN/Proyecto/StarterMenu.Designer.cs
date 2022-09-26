@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.btnLoggin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.Lblanguaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // labelTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 39);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Project Olympus";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(25, 46);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(289, 39);
+            this.labelTitle.TabIndex = 7;
+            this.labelTitle.Text = "Project Olympus";
             // 
             // btnLoggin
             // 
@@ -63,12 +64,23 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // Lblanguaje
+            // 
+            this.Lblanguaje.AutoSize = true;
+            this.Lblanguaje.Location = new System.Drawing.Point(15, 11);
+            this.Lblanguaje.Name = "Lblanguaje";
+            this.Lblanguaje.Size = new System.Drawing.Size(51, 13);
+            this.Lblanguaje.TabIndex = 8;
+            this.Lblanguaje.Text = "Languaje";
+            this.Lblanguaje.Click += new System.EventHandler(this.Lblanguaje_Click);
+            // 
             // StarterMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Lblanguaje);
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.btnLoggin);
             this.Controls.Add(this.btnRegister);
             this.Name = "StarterMenu";
@@ -80,8 +92,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button btnLoggin;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Label Lblanguaje;
     }
 }

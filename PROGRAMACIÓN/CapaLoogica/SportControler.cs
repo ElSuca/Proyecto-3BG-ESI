@@ -15,5 +15,6 @@ namespace CapaLoogica
         }
         public DataTable GetEventData(string Eventname) => new ModelSport().eventTable(Eventname);
         public DataTable GetSimpifiedEventData() => new ModelSport().ejecutarComando();
+        public DataTable GetPlayerData(string PlayerName) => new ModelSport().playerTable(PlayerName);
     }
 }

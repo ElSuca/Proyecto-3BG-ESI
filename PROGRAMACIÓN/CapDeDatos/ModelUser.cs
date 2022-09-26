@@ -1,6 +1,4 @@
-﻿using CapaDeDatos;
-using CapDeDatos;
-using MySql.Data.MySqlClient;
+﻿using CapDeDatos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,20 +17,15 @@ namespace CapaDeDatos
         public string Password;
         public string UserRole;
 
-
         public ModelUser(int id) => this.GetUserData(id);
 
         public ModelUser()
         {
         }
-        
-
-
-
         #region getUserData
         public void GetUserData(int id)
         {           
-            this.command.CommandText = "SELECT * FROM user WHERE id = @id";
+            this.command.CommandText = $"Select User.*, Phones.Num From User LEFT JOIN phones on User.id = Phones.Id_User where User.id={id}";
             this.command.Parameters.AddWithValue("@id", id);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
@@ -46,17 +39,7 @@ namespace CapaDeDatos
             this.Email = this.dataReader["Email"].ToString();
             this.Password = this.dataReader["PASS"].ToString();
             this.UserRole = this.dataReader["ROLE"].ToString();
-            this.dataReader.Close();
-           this.GetPhoneById(id);
-        }
-        public void GetPhoneById(int id)
-        {
-            this.command.CommandText = "SELECT * FROM phones WHERE id_user = @id";
-            this.command.Parameters.AddWithValue("@id", id);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.PhoneNumber = this.dataReader["telefono"].ToString();
+            this.PhoneNumber = this.dataReader["NUM"].ToString();
             this.dataReader.Close();
         }
         public void GetId(int UserName)
@@ -76,12 +59,12 @@ namespace CapaDeDatos
                 throw e;
             }
         }
-        public int GetId(string Name)
+        public int GetId(string Username)
         {
             try
             {
-                this.command.CommandText = "SELECT * FROM User WHERE Name = @Nombre";
-                this.command.Parameters.AddWithValue("@Nombre", Name);
+                this.command.CommandText = "SELECT * FROM User WHERE Uname = @Uname";
+                this.command.Parameters.AddWithValue("@Uname", Username);
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
                 this.dataReader.Read();
@@ -89,9 +72,9 @@ namespace CapaDeDatos
                 this.dataReader.Close();
                 return Id;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                return 0;
             }
         }
         public List<ModelUser> GetUserDataID(int id)
@@ -209,58 +192,51 @@ namespace CapaDeDatos
         public void Save()
         {
             if (this.Id.ToString() != "0") Update();
-            else Insert();
+            else
+            {
+                Insert();            
+                InsertPhone();
+            }
         }
         private void Insert()
         {
-            try
-            {
-                command.CommandText = "INSERT INTO " +
-                   "User (NAME,LNAME1,LNAME2,EMAIL,UNAME,PASS,ROLE) " +
-                   "VALUES (@Name,@Lastname1,@Lastname2,@Email,@Username,@Password,@UserRole)";
-                this.command.Parameters.AddWithValue("@Name", this.Name);
-                this.command.Parameters.AddWithValue("@Lastname1", this.LastName);
-                this.command.Parameters.AddWithValue("@Lastname2", this.LastName);
-                this.command.Parameters.AddWithValue("@Email", this.Email);
-                this.command.Parameters.AddWithValue("@Username", this.UserName);
-                this.command.Parameters.AddWithValue("@Password", this.Password);
-                this.command.Parameters.AddWithValue("@UserRole", this.UserRole);
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
-
-              
-                commanditou.CommandText = "INSERT INTO " +
-                   "phones (id_user,num) " +
-                   "VALUES (@id_user,@Num)";
-                this.commanditou.Parameters.AddWithValue("@id_user", GetId(UserName));
-                this.commanditou.Parameters.AddWithValue("@Num", this.PhoneNumber);
-                this.commanditou.Prepare();
-                this.commanditou.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            command.CommandText = "INSERT INTO " +
+               "User (NAME,LNAME1,LNAME2,EMAIL,UNAME,PASS,ROLE) " +
+               "VALUES (@Name,@Lastname1,@Lastname2,@Email,@Username,@Password,@UserRole)";
+            this.command.Parameters.AddWithValue("@Name", this.Name);
+            this.command.Parameters.AddWithValue("@Lastname1", this.LastName);
+            this.command.Parameters.AddWithValue("@Lastname2", this.LastName);
+            this.command.Parameters.AddWithValue("@Email", this.Email);
+            this.command.Parameters.AddWithValue("@Username", this.UserName);
+            this.command.Parameters.AddWithValue("@Password", this.Password);
+            this.command.Parameters.AddWithValue("@UserRole", this.UserRole);
+            this.command.Prepare();
+            this.command.ExecuteNonQuery();
+           
+        }
+        private void InsertPhone()
+        {
+            commanditou.CommandText = "INSERT INTO " +
+               "phones (id_user,num) " +
+               "VALUES (@id_user,@Num)";
+            this.commanditou.Parameters.AddWithValue("@id_user", GetId(UserName));
+            this.commanditou.Parameters.AddWithValue("@Num", this.PhoneNumber);
+            this.commanditou.Prepare();
+            this.commanditou.ExecuteNonQuery();
         }
 
         private void Update()
         {
-            this.command.CommandText = "UPDATE user SET " +
-                "NAME = @Name," +
-                "LNAME1 = @Lastname1," +
-                "LNAME2 = @Lastname2," +
-                "EMAIL = @Email," +
-                "UNAME = @Username," +
-                "PASS = @Password," +
-                "ROLE = @UserRole " +
-                 "WHERE id = @id";
-            this.command.Parameters.AddWithValue("@Name", this.Name);
-            this.command.Parameters.AddWithValue("@Lastname1", this.LastName);
-            this.command.Parameters.AddWithValue("@Lastname2", this.LastName2);
-            this.command.Parameters.AddWithValue("@EMAIL", this.Email);
-            this.command.Parameters.AddWithValue("@Username", this.UserName);
-            this.command.Parameters.AddWithValue("@Password", this.Password);
-            this.command.Parameters.AddWithValue("@UserRole", this.UserRole);
+            this.command.CommandText = "UPDATE user,phones SET " +
+                $"NAME = '{this.Name}'," +
+                $"LNAME1 = '{this.LastName}'," +
+                $"LNAME2 = '{this.LastName2}'," +
+                $"EMAIL = '{this.Email}'," +
+                $"UNAME = '{this.UserName}'," +
+                $"PASS = '{this.Password}'," +
+                $"ROLE = '{this.UserRole}'," +
+                $"NUM = {this.PhoneNumber} " +
+                $"WHERE user.id = phones.ID_USER and user.id = {this.Id}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
 
@@ -269,8 +245,10 @@ namespace CapaDeDatos
         {
             try
             {
-                this.command.CommandText = "DELETE FROM user WHERE id = @id";
-                this.command.Parameters.AddWithValue("@id", this.Id);
+                this.command.CommandText = $"DELETE phones.* from phones where ID_USER = {Id}";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+                this.command.CommandText = $"delete user.* from user where id= {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -282,9 +260,7 @@ namespace CapaDeDatos
 
         public bool Autenticar(string passwordEntrada)
         {
-            SafeUserData b = new SafeUserData();
-            string n = b.GetUsername();
-            GetUserDataForUserName(n);
+            GetUserDataForUserName(new SafeUserData().GetUsername());
             if (this.UserName == "") return false;
             if (this.Password == hashearPassword(passwordEntrada)) return true;
             return false;
@@ -303,36 +279,30 @@ namespace CapaDeDatos
         }
         public void GetUserDataForUserName(string UserName)
         {
+            try
+            {
+                this.command.CommandText = $"SELECT User.*, Phones.Num From User LEFT JOIN phones on User.ID = Phones.ID_USER where ID = {GetId(UserName)}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                if (!this.dataReader.HasRows) return;
+                this.dataReader.Read();
+                this.UserName = this.dataReader["UNAME"].ToString();
+                this.Name = this.dataReader["NAME"].ToString();
+                this.LastName = this.dataReader["LNAME1"].ToString();
+                this.LastName2 = this.dataReader["LNAME2"].ToString();
+                this.Email = this.dataReader["Email"].ToString();
+                this.Password = this.dataReader["PASS"].ToString();
+                this.UserRole = this.dataReader["ROLE"].ToString();
+                this.PhoneNumber = this.dataReader["Num"].ToString();
+                conection.Close();
+                SetAllStaticUserData(UserName, Name, LastName, LastName2, Email, Int32.Parse(PhoneNumber), Password, UserRole);
+            }
+            catch(Exception ex)
+            {
 
-            
-            this.command.CommandText = "SELECT NAME,LNAME1,LNAME2,EMAIL,UNAME,PASS,ROLE FROM user WHERE UNAME = @UNAME";
-            this.command.Parameters.AddWithValue("@UNAME", UserName);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            if (!this.dataReader.HasRows) return;
-            this.dataReader.Read();
-            this.UserName = this.dataReader["UNAME"].ToString();
-            this.Name = this.dataReader["NAME"].ToString();
-            this.LastName = this.dataReader["LNAME1"].ToString();
-            this.LastName2 = this.dataReader["LNAME2"].ToString();
-            this.Email = this.dataReader["Email"].ToString();
-            this.Password = this.dataReader["PASS"].ToString();
-            this.UserRole = this.dataReader["ROLE"].ToString();
-            conection.Close();
-          //  GetPhoneNumber(UserName);
-            PhoneNumber = "12345678";
-            SetAllStaticUserData(UserName, Name, LastName, LastName2, Email, Int32.Parse(PhoneNumber),Password,UserRole);
+            }
         }
-        public string GetPhoneNumber(string Username)
-        {
-            conection.Open();
-            dataReader.Close();
-            busquedasql("SELECT ID_USER,NUM FROM phones WHERE ID_USER = @ID_USER", "ID_USER", UserName);
-            this.PhoneNumber = this.dataReader["NUM"].ToString();
-            conection.Close();
-            return PhoneNumber;
-        }
-        
+
         private void crearArrayDePersonas(List<ModelUser> usuarios)
         {
             while (this.dataReader.Read())
@@ -351,18 +321,6 @@ namespace CapaDeDatos
         }
         private string hashearPassword(string password) => MD5Hash.Hash.Content(password);
 
-        public MySqlDataReader busquedasql(string path,string condition,string condition2)
-        {
-            checkconection();
-            checkedatareader();
-            this.command.CommandText = path;
-            this.command.Parameters.AddWithValue("@"+condition, condition2);
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            return dataReader;
-            
-        }
         public void checkedatareader()
         {
             try
@@ -375,30 +333,42 @@ namespace CapaDeDatos
         }
         public void checkconection()
         {
-            ConnectionState state = conection.State;
-            if (state != ConnectionState.Open) conection.Open();
+            if (conection.State != ConnectionState.Open) conection.Open();
             else conection.Close();
         }
        
         public void SetAllStaticUserData(string Username, string Name ,string LastName, string LastName2, string Email, int PhoneNumber, string password, string role)
         {
             SetUsernameBuffer(Username);
-            SetLastNameBuffer(LastName);
-            SetEmailBuffer(Email);
-            SetPhoneNumberBuffer(PhoneNumber);
+            SetNameStaticBuffer(Name);
+            SetLastNameStaticBuffer(LastName);
+            SetLastName2StaticBuffer(LastName2);
+            SetEmailStaticBuffer(Email);
+            SetPhoneNumberStaticBuffer(PhoneNumber);
+            SetRoleStaticBuffer(role);
         }
+
+        public DataTable GetUserDataTable()
+        {
+            DataTable tabla = new DataTable();
+            command.CommandText = "Select User.*, Phones.Num From User LEFT JOIN phones on User.id = Phones.Id_User";
+            tabla.Load(command.ExecuteReader());
+            conection.Close();
+            return tabla;
+        }
+
         public void setUsername(string un) => UserName = un;
         public string getEmail() => Email;
         public string getUserName() => UserName;
         #region Set static
         public void SetUsernameBuffer(string UserName) => new SafeUserData().SetUsername(UserName);
         public void SetNameStaticBuffer(string Name) => new SafeUserData().SetName(Name);
-        public void SetLastNameBuffer(string lastname) => new SafeUserData().SetLastName(lastname);
-        public void SetLastName2Buffer(string lastname2) => new SafeUserData().SetLastName(lastname2);
-        public void SetEmailBuffer(string email) => new SafeUserData().SetEmail(email);
-        public void SetPhoneNumberBuffer(int phonenumber) => new SafeUserData().SetPhoneNumber(phonenumber);
-        public void SetPasswordBuffer(string password) => new SafeUserData().SetPassword(password);
-        public void SetRoleBuffer(string role) => new SafeUserData().SetEmail(role);
+        public void SetLastNameStaticBuffer(string lastname) => new SafeUserData().SetLastName(lastname);
+        public void SetLastName2StaticBuffer(string lastname2) => new SafeUserData().SetLastName2(lastname2);
+        public void SetEmailStaticBuffer(string email) => new SafeUserData().SetEmail(email);
+        public void SetPhoneNumberStaticBuffer(int phonenumber) => new SafeUserData().SetPhoneNumber(phonenumber);
+        public void SetPasswordStaticBuffer(string password) => new SafeUserData().SetPassword(password);
+        public void SetRoleStaticBuffer(string role) => new SafeUserData().SetRole(role);
         #endregion
         #region getStatic
         public string GetUsernameBuffer() => new SafeUserData().GetUsername();

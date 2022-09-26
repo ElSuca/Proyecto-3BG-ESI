@@ -1,4 +1,5 @@
 ﻿using CapDeDatos;
+using System.Data;
 
 namespace CapaLoogica
 {
@@ -32,5 +33,6 @@ namespace CapaLoogica
 
         public static void setStartPath(string path) => SafeSystemBuffer.startPath = path;
         public static string GetStartPath() => SafeSystemBuffer.startPath;
+        public DataTable GetAdDataTable() => new ModelAd().GetAdDataTable();
     }
 }

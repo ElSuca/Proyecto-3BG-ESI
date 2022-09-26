@@ -530,3 +530,5 @@ C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\C
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\CapaGrafica.csproj.CopyComplete
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.exe
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.LanguageMenu.resources
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.FormLanguageMenu.resources

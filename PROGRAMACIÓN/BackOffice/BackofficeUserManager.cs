@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
 using CapaLogica;
-using MySql.Data.MySqlClient;
-using CapaLoogica;
 
 namespace BackOffice
 {
@@ -62,25 +59,9 @@ namespace BackOffice
                 );
             MessageBox.Show("Usuario " + txtID.Text + " modificado");
             reloadList();
-            reloadList();
-            reloadList();
-            reloadList();
-            reloadList();
         }
 
-        private void btnList_Click_1(object sender, EventArgs e)
-        {
-            reloadList();
-        }
-        private void reloadList()
-        {
-            DataTable tabla = new DataTable();
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = new AplicationControler().ConectDatabase();
-            command.CommandText = "SELECT * FROM User LEFT JOIN phones ON User.Id = phones.Id_User ";
-            tabla.Load(command.ExecuteReader());
-            new AplicationControler().ConectDatabase().Close();
-            dgrid1.DataSource = tabla;
-        }
+        private void btnList_Click_1(object sender, EventArgs e) => reloadList();
+        private void reloadList() => dgrid1.DataSource = new UserControler().GetUserDataTable();
     }
 }

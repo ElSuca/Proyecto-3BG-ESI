@@ -1,9 +1,12 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CapDeDatos;
+using MySql.Data.MySqlClient;
 
 namespace CapaLoogica
 {
     public class AplicationControler
     {
+        public void setLanguage(int l) => new SafeSystemBuffer().SetLanguage(l);
+        public int getLanguage() => new SafeSystemBuffer().GetLanguage();
 
         public MySqlConnection ConectDatabase()
         {
@@ -17,7 +20,5 @@ namespace CapaLoogica
             conexion.Open();
             return conexion;
         }
-
-
     }
 }

@@ -15,7 +15,7 @@ namespace CapDeDatos
         #region get
         public string GetUsername()
         {
-            setData(Username);
+            getData(Username);
             return Username;
         }
         public string GetName() => Name;
@@ -38,6 +38,6 @@ namespace CapDeDatos
 
         #endregion
 
-        public void setData(string name) => new ModelUser().GetUserDataForUserName(name);
+        public void getData(string name) => new ModelUser().GetUserDataForUserName(name);
     } 
 }

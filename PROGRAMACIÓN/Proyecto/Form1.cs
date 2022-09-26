@@ -27,10 +27,11 @@ namespace Proyecto
         }
         private void loadMenu(int Choice)
         {
-           if (Choice == 0)  OpenMainMenu(); 
+            if (Choice == 0) OpenMainMenu();
             else if (Choice == 1) OpenLoggingMenu();
-            else if (Choice == 2) new BackofficeManager().Show(); 
-            else if (Choice == 3) OpenRegisterMenu();    
+            else if (Choice == 2) new BackofficeManager().Show();
+            else if (Choice == 3) OpenRegisterMenu();
+            else if (Choice == 4) new FormLanguageMenu().Show();
         }
 
        public void OpenRegisterMenu()
@@ -63,7 +64,16 @@ namespace Proyecto
             }
             else  StarterMenu.Instance.BringToFront(); 
         }
-        
+        public void OpenLanguageMenu()
+        {
+            if (!MainPanel.Contains(LanguageMenu.Instance))
+            {
+                MainPanel.Controls.Add(LanguageMenu.Instance);
+                LanguageMenu.Instance.Dock = DockStyle.Fill;
+                LanguageMenu.Instance.BringToFront();
+            }
+            else LanguageMenu.Instance.BringToFront();
+        } 
        
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)

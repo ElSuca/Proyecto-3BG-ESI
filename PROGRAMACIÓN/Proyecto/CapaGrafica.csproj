@@ -77,6 +77,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLanguageMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLanguageMenu.Designer.cs">
+      <DependentUpon>FormLanguageMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="IniciosSeccion\FormLogging.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     <Compile Include="IniciosSeccion\RegisterMenu.Designer.cs">
       <DependentUpon>RegisterMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanguageMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LanguageMenu.Designer.cs">
+      <DependentUpon>LanguageMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StarterMenu.cs">
@@ -111,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLanguageMenu.resx">
+      <DependentUpon>FormLanguageMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciosSeccion\FormLogging.resx">
       <DependentUpon>FormLogging.cs</DependentUpon>
@@ -123,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IniciosSeccion\RegisterMenu.resx">
       <DependentUpon>RegisterMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanguageMenu.resx">
+      <DependentUpon>LanguageMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

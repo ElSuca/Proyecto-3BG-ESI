@@ -2,68 +2,56 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using CapaLogica;
 using CapaLoogica;
-using CapDeDatos;
 
 namespace Proyecto
 {
     public partial class MenuPrincipal : Form
     {
+     
         int selection;
-
         public MenuPrincipal()
         {
-            InitializeComponent();
-            Random random = new Random();
-            selection = random.Next(3);
-            
+            InitializeComponent(); 
+            selection = new Random().Next(3);
             GetInfo();
+            SearchEventMenuToggle(false);
         }
-        private void BannerPic_Click(object sender, EventArgs e)
-        {   
-            ApiPublicidad.AddManager f = new ApiPublicidad.AddManager();
-            string link = f.SelectUrllink(selection);
-            System.Diagnostics.Process.Start(link);
-         }
-        public void SetAnuncio()
+        private void BannerPic_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(new ApiPublicidad.AddManager().SelectUrllink(selection));
+
+        public void SetAnuncio() => BannerPic.Image = Image.FromFile(new ApiPublicidad.AddManager().GetBanner(selection));
+
+        public void GetInfo() => dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
+
+        private void UserInformationMenuItem_Click(object sender, EventArgs e) => new UserData().Show();
+
+        private void panel1_Paint(object sender, PaintEventArgs e){}
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) => Console.Write(e);
+
+        private void btnBusqueda_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetEventData(txtBusquedaEvento.Text);
+
+        private void MenuPrincipal_Load(object sender, EventArgs e){}
+
+        private void btnBack_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
+
+        private void btnBusquedaJugador_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetPlayerData(txtBusquedaJugador.Text);
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            ApiPublicidad.AddManager f = new ApiPublicidad.AddManager();
-            BannerPic.Image = Image.FromFile(f.GetBanner(selection));
+            bool n = !panelMenuSearch.Visible ? true: false;
+            SearchEventMenuToggle(n);
         }
-        
-        public void GetInfo ()
+        private void SearchEventMenuToggle(bool n)
         {
-            dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
+            panelMenuSearch.Visible = n;
+            lbCategory.Visible = n;
+            lbName.Visible = n;
+            txtBusquedaEvento.Visible = n;
+            txtCategory.Visible = n;
         }
 
-        private void UserInformationMenuItem_Click(object sender, EventArgs e)
-        {
-            UserData u = new UserData();
-            u.Show();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Console.Write(e);
-        }
-
-        private void btnBusqueda_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetEventData(txtBusqueda.Text);
-
-        private void MenuPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
-        }
+        private void btnSearchCategory_Click(object sender, EventArgs e) => new SportControler().GetPlayerData(txtBusquedaJugador.Text);
     }
 }
        

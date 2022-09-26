@@ -83,5 +83,10 @@ namespace Proyecto.Backoffice
         private void btnAdManager_Click(object sender, EventArgs e) => selectMenu(2);
 
         private void btnResultManager_Click(object sender, EventArgs e) => selectMenu(3);
+
+        private void Lblanguaje_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

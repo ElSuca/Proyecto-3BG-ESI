@@ -42,7 +42,7 @@
             // 
             // btnEventManager
             // 
-            this.btnEventManager.Location = new System.Drawing.Point(17, 214);
+            this.btnEventManager.Location = new System.Drawing.Point(17, 27);
             this.btnEventManager.Name = "btnEventManager";
             this.btnEventManager.Size = new System.Drawing.Size(172, 23);
             this.btnEventManager.TabIndex = 47;
@@ -52,7 +52,7 @@
             // 
             // btnAsociation
             // 
-            this.btnAsociation.Location = new System.Drawing.Point(17, 243);
+            this.btnAsociation.Location = new System.Drawing.Point(17, 56);
             this.btnAsociation.Name = "btnAsociation";
             this.btnAsociation.Size = new System.Drawing.Size(172, 23);
             this.btnAsociation.TabIndex = 48;

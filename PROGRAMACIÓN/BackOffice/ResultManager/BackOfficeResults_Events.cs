@@ -19,28 +19,18 @@ namespace BackOffice.ResultManager
             }
         }
 
-        public BackOfficeResults_Events()
-        {
-            InitializeComponent();
-        }
-
+        public BackOfficeResults_Events() => InitializeComponent();
         private void btnRegisterEvent_Click(object sender, EventArgs e)
         {
-
+            EventControler.Alta(
+                txtEventName.Text,
+                txtDate.Text,
+                txtPreEvent.Text
+            );
+            MessageBox.Show("Evento cargado");
         }
-        private void reloadList()
-        {
-            DataTable tabla = new DataTable();
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = new AplicationControler().ConectDatabase();
-            command.CommandText = "SELECT * FROM User LEFT JOIN phones ON User.Id = phones.Id_User ";
-            tabla.Load(command.ExecuteReader());
-            new AplicationControler().ConectDatabase().Close();
-            dataGrid1.DataSource = tabla;
-        }
-
+        private void reloadList() => dataGrid1.DataSource = new EventControler().GetEventDataTable();
         private void btnList_Click(object sender, EventArgs e) => reloadList();
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
 

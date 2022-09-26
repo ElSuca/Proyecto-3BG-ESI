@@ -33,16 +33,17 @@
             this.lbUserName = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
+            this.lbMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLoggin
             // 
             this.btnLoggin.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnLoggin.Location = new System.Drawing.Point(15, 124);
+            this.btnLoggin.Location = new System.Drawing.Point(12, 152);
             this.btnLoggin.Name = "btnLoggin";
-            this.btnLoggin.Size = new System.Drawing.Size(75, 23);
+            this.btnLoggin.Size = new System.Drawing.Size(83, 23);
             this.btnLoggin.TabIndex = 0;
             this.btnLoggin.Text = "Accept";
             this.btnLoggin.UseVisualStyleBackColor = false;
@@ -51,7 +52,7 @@
             // txtUserName
             // 
             this.txtUserName.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtUserName.Location = new System.Drawing.Point(74, 59);
+            this.txtUserName.Location = new System.Drawing.Point(95, 59);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(100, 20);
             this.txtUserName.TabIndex = 1;
@@ -70,7 +71,7 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtPassword.Location = new System.Drawing.Point(74, 86);
+            this.txtPassword.Location = new System.Drawing.Point(95, 89);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
@@ -87,35 +88,45 @@
             this.lbPassword.Text = "Password";
             this.lbPassword.Click += new System.EventHandler(this.lbPassword_Click);
             // 
-            // label1
+            // lbTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 31);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Log in";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Location = new System.Drawing.Point(47, 9);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(93, 31);
+            this.lbTitle.TabIndex = 5;
+            this.lbTitle.Text = "Log in";
+            this.lbTitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(96, 124);
+            this.btnEntrar.Location = new System.Drawing.Point(101, 152);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(98, 23);
+            this.btnEntrar.Size = new System.Drawing.Size(94, 23);
             this.btnEntrar.TabIndex = 6;
             this.btnEntrar.Text = "GuestLogging";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            // 
+            // lbMessage
+            // 
+            this.lbMessage.AutoSize = true;
+            this.lbMessage.Location = new System.Drawing.Point(12, 136);
+            this.lbMessage.Name = "lbMessage";
+            this.lbMessage.Size = new System.Drawing.Size(0, 13);
+            this.lbMessage.TabIndex = 7;
+            this.lbMessage.Click += new System.EventHandler(this.label2_Click);
             // 
             // FormLogging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(202, 169);
+            this.ClientSize = new System.Drawing.Size(213, 219);
+            this.Controls.Add(this.lbMessage);
             this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbUserName);
@@ -136,7 +147,8 @@
         private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lbPassword;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.Label lbMessage;
     }
 }
