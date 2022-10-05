@@ -37,7 +37,7 @@
             // 
             this.Panel.Location = new System.Drawing.Point(205, 8);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(1088, 448);
+            this.Panel.Size = new System.Drawing.Size(1490, 785);
             this.Panel.TabIndex = 46;
             // 
             // btnEventManager
@@ -77,7 +77,7 @@
             this.Controls.Add(this.btnEventManager);
             this.Controls.Add(this.Panel);
             this.Name = "BackOfficeResultsManager";
-            this.Size = new System.Drawing.Size(1310, 471);
+            this.Size = new System.Drawing.Size(1744, 810);
             this.Load += new System.EventHandler(this.BackOfficeResultsManager_Load);
             this.ResumeLayout(false);
 

@@ -96,7 +96,7 @@
             // 
             this.MainPanel.Location = new System.Drawing.Point(138, 94);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1280, 502);
+            this.MainPanel.Size = new System.Drawing.Size(1618, 676);
             this.MainPanel.TabIndex = 45;
             // 
             // btnResultManager
@@ -130,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(1445, 623);
+            this.ClientSize = new System.Drawing.Size(1768, 791);
             this.Controls.Add(this.Lblanguaje);
             this.Controls.Add(this.btnResultManager);
             this.Controls.Add(this.MainPanel);

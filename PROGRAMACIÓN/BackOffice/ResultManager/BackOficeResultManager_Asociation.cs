@@ -25,13 +25,43 @@ namespace BackOffice.ResultManager
                 return _instance;
             }
         }
-        public BackOficeResultManager_Asociation() => InitializeComponent();
+
+        public BackOficeResultManager_Asociation()
+        {
+            InitializeComponent();
+            setInitial();
+        }
         private void btnList_Click(object sender, EventArgs e) => reloadList();
         private void reloadList() => dataGrid1.DataSource = new AsociationControler().GetAsociationDataTable();
 
         private void btnRegisterAcc_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEventMenu_Click(object sender, EventArgs e)
+        {
+            toggleMenus(1);
+        }
+        private void toggleMenus(int menu)
+        {
+            bool n;
+
+            n = getVisibility() ? false : true;
+
+            if(menu == 1)
+            {
+                panelEventMenu.Visible = n;
+            }
+
+        }
+        private bool getVisibility()
+        {
+           return panelEventMenu.Visible;
+        }
+        private void setInitial()
+        {
+            panelEventMenu.Visible = false;
         }
     }
 }
