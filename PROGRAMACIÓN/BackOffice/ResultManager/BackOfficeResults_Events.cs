@@ -33,7 +33,8 @@ namespace BackOffice.ResultManager
         private void btnList_Click(object sender, EventArgs e) => reloadList();
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            EventControler.Eliminar(int.Parse(txtEventId.Text));
+            MessageBox.Show("Evento" + txtEventId.Text + " eliminado");
         }
     }
 }

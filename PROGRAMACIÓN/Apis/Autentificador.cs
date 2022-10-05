@@ -22,7 +22,6 @@ namespace ApiAutenitficacion
             }
             return cuerpo;
         }
-
         private static Dictionary<string, string> evaluarCredenciales(string cuerpo)
         {
             Dictionary<string, string> credenciales = JsonConvert.DeserializeObject<Dictionary<string, string>>(cuerpo);

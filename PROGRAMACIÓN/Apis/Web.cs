@@ -1,30 +1,46 @@
-﻿using Newtonsoft.Json;
+﻿using CapaDeDatos;
+using CapDeDatos;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ApiAurentificacion
 {
-    class Program
+    public class Web
     {
         static void Main(string[] args)
-        {        
-            HttpListener listener = new HttpListener();
-            string listenUrl = "http://127.0.0.1:8888/";
-            listener.Prefixes.Add(listenUrl);
-            listener.Start();
-            Console.WriteLine("Listening...");
+        {
+            string n = "a";
+            string p = "a";
+            string url = "http://127.0.0.1:8888/autenticar";
+             HttpListener listener = new HttpListener();
+             listener.Prefixes.Add("http://127.0.0.1:8888/");
+             listener.Start();
+             Console.WriteLine("Listening...");
 
-            while (true)
+            GetPost(url, n, p);
+            string result = GetHttp(url);
+          /*  while (true)
             {
                 HttpListenerContext context = listener.GetContext();
                 HttpListenerRequest request = context.Request;
                 HttpListenerResponse response = context.Response;
                 Log(request);
                 EnviarRespuesta(request, response);
-            }
+            }*/
+
         }
+        public Web()
+        {
+
+        }
+
+        public Web(string Username, string Password) => GetPost("http://127.0.0.1:8888/autenticar", Username, Password);
 
         static void EnviarRespuesta(HttpListenerRequest request, HttpListenerResponse response)
         {
@@ -55,5 +71,38 @@ namespace ApiAurentificacion
         {
             Console.WriteLine(request.RemoteEndPoint + " " + request.HttpMethod + " " + request.RawUrl);
         }
+
+        public static void GetPost(string url, string Uname, string Pass)
+        {
+            WebRequest request = WebRequest.Create(url);
+            User u = new User(){Username=Uname,Password=Pass};
+
+            string result = "";
+            
+            request.Method = "post";
+            request.ContentType = "application/json;charset=UTF-8";
+
+            using (var m = new StreamWriter(request.GetRequestStream()))
+            {
+                string json = JsonConvert.SerializeObject(u, Formatting.Indented);
+                m.Write(json);
+                m.Flush();
+                m.Close();
+            }
+          /*  WebResponse response = request.GetResponse();
+            using (var l = new StreamReader(response.GetResponseStream()))
+            {
+                result = l.ReadToEnd().Trim();
+            }*/
+          //  return result;
+        }
+        public static string GetHttp(string url)
+        {
+            WebRequest request = WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            return reader.ReadToEnd().Trim();
+        }
+
     }
 }

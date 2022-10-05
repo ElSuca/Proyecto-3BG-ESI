@@ -65,10 +65,10 @@ namespace Proyecto.IniciosSeccion
             if(l == 0)
             {
                 lbTitle.Location = new Point(47, 9);
-                btnEntrar.Location = new Point(159, 191);
+                btnEntrar.Location = new Point(159, 200);
                 btnEntrar.Size = new Size(144, 34);
-                btnLoggin.Location = new Point(12, 191);
-              
+                btnLoggin.Location = new Point(12, 200);
+                lbMessage.Location = new Point(13, 165);
             }
             else
             {
@@ -77,6 +77,7 @@ namespace Proyecto.IniciosSeccion
                 btnEntrar.Size = new Size(287, 34);
                 btnLoggin.Location = new Point(12, 160);
                 btnLoggin.Size = new Size(287, 34);
+                lbMessage.Location = new Point(13, 146);
             }
         }
         private void label1_Click(object sender, EventArgs e)

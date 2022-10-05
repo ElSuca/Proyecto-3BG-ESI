@@ -20,5 +20,6 @@ namespace CapaLoogica
             };
             e.Save();
         }
+        public static void Eliminar(int id) => new ModelEvents(id).Delete(id);
     }
 }

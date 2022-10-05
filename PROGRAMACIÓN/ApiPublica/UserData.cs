@@ -142,5 +142,34 @@ namespace ApiPublica
                 btnUpgradeAccount.Visible = false;
             }
         }
+
+        private void btnSendMail_Click(object sender, EventArgs e)
+        {
+            string Correo = "ptahtechnologiesolympus@gmail.com";
+            System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
+            mmsg.To.Add(txtMail.Text);
+            mmsg.Subject = "Olympus";
+            mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
+            mmsg.Body = "Hola, este es un mensaje enviado desde el proyecto Olympus";
+            mmsg.BodyEncoding = System.Text.Encoding.UTF8;
+            mmsg.IsBodyHtml = true;
+            mmsg.From = new System.Net.Mail.MailAddress(Correo);
+
+            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+            cliente.Credentials = new System.Net.NetworkCredential(Correo, "xjypkpamhrfypghr");
+            cliente.Port = 587;
+            cliente.EnableSsl = true;
+            cliente.Host = "smtp.gmail.com";
+
+            try
+            {
+                cliente.Send(mmsg);
+                MessageBox.Show("Correo enviado");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

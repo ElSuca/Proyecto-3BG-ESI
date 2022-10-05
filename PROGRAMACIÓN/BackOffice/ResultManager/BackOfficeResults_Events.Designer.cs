@@ -139,6 +139,7 @@
             // txtDate
             // 
             this.txtDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtDate.ForeColor = System.Drawing.SystemColors.Window;
             this.txtDate.Location = new System.Drawing.Point(49, 172);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(189, 20);

@@ -1,8 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using CapDeDatos;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +15,9 @@ namespace ApiResultados
     {
         static void Main(string[] args)
         {
+            GetPost("http://127.0.0.1:8888/autenticar","a","a");
+
+            /*
             HttpListener listener = new HttpListener();
             string listenUrl = "http://127.0.0.1:8888/";
             listener.Prefixes.Add(listenUrl);
@@ -25,8 +31,10 @@ namespace ApiResultados
                 HttpListenerResponse response = context.Response;
                 Log(request);
                 EnviarRespuesta(request, response);
-            }
+            }*/
         }
+
+
 
         static void EnviarRespuesta(HttpListenerRequest request, HttpListenerResponse response)
         {
@@ -52,6 +60,20 @@ namespace ApiResultados
         }
 
         public static void Log(HttpListenerRequest request) => Console.WriteLine(request.RemoteEndPoint + " " + request.HttpMethod + " " + request.RawUrl);
+
+        public static string GetPost(string url, string Username, string Password)
+        {
+            string result = "";
+            WebRequest request = WebRequest.Create(url);
+            request.Method = "post";
+            request.ContentType = "application/json;charset=UTF-8";
+
+            using (var m = new StreamWriter(request.GetRequestStream()))
+            {
+                string json = "{\"usuario\":\""+Username+"\",\"usuario\":\""+Password+"\"}";
+            }
+                return result;
+        }
     }
 }
 

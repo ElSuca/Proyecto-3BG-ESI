@@ -63,5 +63,15 @@ namespace BackOffice
 
         private void btnList_Click_1(object sender, EventArgs e) => reloadList();
         private void reloadList() => dgrid1.DataSource = new UserControler().GetUserDataTable();
+
+        private void lbNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbRole_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

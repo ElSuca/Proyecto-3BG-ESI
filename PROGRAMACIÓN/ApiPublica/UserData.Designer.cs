@@ -47,6 +47,7 @@
             this.lbMessage = new System.Windows.Forms.Label();
             this.btnShowPassword = new System.Windows.Forms.Button();
             this.btnUpgradeAccount = new System.Windows.Forms.Button();
+            this.btnSendMail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbNameDisplay
@@ -260,12 +261,23 @@
             this.btnUpgradeAccount.UseVisualStyleBackColor = false;
             this.btnUpgradeAccount.Click += new System.EventHandler(this.btnUpgradeAccount_Click);
             // 
+            // btnSendMail
+            // 
+            this.btnSendMail.Location = new System.Drawing.Point(303, 467);
+            this.btnSendMail.Name = "btnSendMail";
+            this.btnSendMail.Size = new System.Drawing.Size(75, 23);
+            this.btnSendMail.TabIndex = 25;
+            this.btnSendMail.Text = "button1";
+            this.btnSendMail.UseVisualStyleBackColor = true;
+            this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
+            // 
             // UserData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(448, 510);
+            this.Controls.Add(this.btnSendMail);
             this.Controls.Add(this.btnUpgradeAccount);
             this.Controls.Add(this.btnShowPassword);
             this.Controls.Add(this.lbMessage);
@@ -314,6 +326,7 @@
         private System.Windows.Forms.Label lbMessage;
         private System.Windows.Forms.Button btnShowPassword;
         private System.Windows.Forms.Button btnUpgradeAccount;
+        private System.Windows.Forms.Button btnSendMail;
     }
 }
 
