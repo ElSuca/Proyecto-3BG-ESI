@@ -21,7 +21,7 @@ namespace Proyecto.IniciosSeccion
                 txtLastName2Register.Text,
                 txtEmailRegister.Text,
                 txtUserNameRegister.Text,
-                "User",
+                "USER",
                 MD5Hash.Hash.Content(txtPassword.Text),
                 txtPhoneRegister.Text
             );

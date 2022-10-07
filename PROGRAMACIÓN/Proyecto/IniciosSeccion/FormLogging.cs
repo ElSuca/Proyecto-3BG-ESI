@@ -47,7 +47,7 @@ namespace Proyecto.IniciosSeccion
             }
             else
             {
-                btnLoggin.Text = "Inicio de seción";
+                btnLoggin.Text = "Inicio de sesión";
                 btnEntrar.Text = "Ingresar como invitado";
                 lbPassword.Text = "Contraseña";
                 lbUserName.Text = "Usuario";

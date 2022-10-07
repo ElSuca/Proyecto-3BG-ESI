@@ -15,7 +15,7 @@ namespace CapDeDatos
         public DataTable GetAsociationDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM asoc";
+            command.CommandText = "SELECT * FROM ASOC";
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;
@@ -24,7 +24,7 @@ namespace CapDeDatos
         public DataTable GetUserDataTableForApi(int id)
         {
             DataTable tabla = new DataTable();
-            command.CommandText = $"Select asoc.*, address.CITY,address.STREET,address.NUM,address.COUNTRY,address.STATE From User LEFT JOIN phones on asoc.id ={ID} AND address.ID =" +GetAddress(id);
+            command.CommandText = $"Select asoc.*, address.CITY,address.STREET,address.NUM,address.COUNTRY,address.STATE From USER LEFT JOIN phones on asoc.id ={ID} AND address.ID =" +GetAddress(id);
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;

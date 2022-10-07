@@ -156,7 +156,7 @@ namespace ApiPublica
             mmsg.From = new System.Net.Mail.MailAddress(Correo);
 
             System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
-            cliente.Credentials = new System.Net.NetworkCredential(Correo, "xjypkpamhrfypghr");
+            cliente.Credentials = new System.Net.NetworkCredential(Correo, "ebsbhhvqesxpleso");
             cliente.Port = 587;
             cliente.EnableSsl = true;
             cliente.Host = "smtp.gmail.com";

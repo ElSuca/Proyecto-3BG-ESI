@@ -25,7 +25,7 @@ namespace CapaDeDatos
         #region getUserData
         public void GetUserData(int id)
         {           
-            this.command.CommandText = $"Select User.*, Phones.Num From User LEFT JOIN phones on User.id = Phones.Id_User where User.id={id}";
+            this.command.CommandText = $"Select USER.*, PHONES.Num From USER LEFT JOIN PHONES on USER.ID = PHONES.ID_USER where USER.ID={id}";
             this.command.Parameters.AddWithValue("@id", id);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
@@ -46,7 +46,7 @@ namespace CapaDeDatos
         {
             try
             {
-                this.command.CommandText = "SELECT * FROM User WHERE UNAME = @UNAME";
+                this.command.CommandText = "SELECT * FROM USER WHERE UNAME = @UNAME";
                 this.command.Parameters.AddWithValue("@UNAME", UserName);
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
@@ -63,7 +63,7 @@ namespace CapaDeDatos
         {
             try
             {
-                this.command.CommandText = "SELECT * FROM User WHERE Uname = @Uname";
+                this.command.CommandText = "SELECT * FROM USER WHERE UNAME = @Uname";
                 this.command.Parameters.AddWithValue("@Uname", Username);
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
@@ -77,12 +77,12 @@ namespace CapaDeDatos
                 return 0;
             }
         }
-        public List<ModelUser> GetUserDataID(int id)
+     /*   public List<ModelUser> GetUserDataID(int id)
         {
             List<ModelUser> users = new List<ModelUser>();
             try
             {
-                this.command.CommandText = "SELECT * FROM User WHERE id = @id";
+                this.command.CommandText = "SELECT * FROM USER WHERE ID = @id";
                 this.command.Parameters.AddWithValue("@id", id);
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
@@ -95,7 +95,7 @@ namespace CapaDeDatos
                 this.Email = this.dataReader["email"].ToString();
                 this.Password = this.dataReader["password"].ToString();
 
-                this.command.CommandText = "SELECT * FROM Telefonos WHERE id = @id";
+                this.command.CommandText = "SELECT * FROM Telefonos WHERE ID = @id";
                 this.command.Parameters.AddWithValue("@id", id);
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
@@ -106,14 +106,14 @@ namespace CapaDeDatos
             {
                 throw e;
             }
-        }
+        }*/
 
         public List<ModelUser> GetUserData()
         {
             List<ModelUser> users = new List<ModelUser>();
             try
             {
-                this.command.CommandText = "SELECT * FROM User";
+                this.command.CommandText = "SELECT * FROM USER";
                 this.dataReader = this.command.ExecuteReader();
 
                 while (this.dataReader.Read())
@@ -142,7 +142,7 @@ namespace CapaDeDatos
             List<ModelUser> users = new List<ModelUser>();
             try
             {
-                this.command.CommandText = "SELECT * FROM User WHERE Nombre = @Nombre";
+                this.command.CommandText = "SELECT * FROM USER WHERE Nombre = @Nombre";
                 this.dataReader = this.command.ExecuteReader();
                 while (this.dataReader.Read())
                 {
@@ -169,7 +169,7 @@ namespace CapaDeDatos
         {
             try
             {
-                this.command.CommandText = "SELECT * FROM User WHERE username = @username";
+                this.command.CommandText = "SELECT * FROM USER WHERE username = @username";
                 this.command.Parameters.AddWithValue("@Nombre", Nombre);
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
@@ -201,7 +201,7 @@ namespace CapaDeDatos
         private void Insert()
         {
             command.CommandText = "INSERT INTO " +
-               "User (NAME,LNAME1,LNAME2,EMAIL,UNAME,PASS,ROLE) " +
+               "USER (NAME,LNAME1,LNAME2,EMAIL,UNAME,PASS,ROLE) " +
                "VALUES (@Name,@Lastname1,@Lastname2,@Email,@Username,@Password,@UserRole)";
             this.command.Parameters.AddWithValue("@Name", this.Name);
             this.command.Parameters.AddWithValue("@Lastname1", this.LastName);
@@ -217,7 +217,7 @@ namespace CapaDeDatos
         private void InsertPhone()
         {
             commanditou.CommandText = "INSERT INTO " +
-               "phones (id_user,num) " +
+               "PHONES (id_user,num) " +
                "VALUES (@id_user,@Num)";
             this.commanditou.Parameters.AddWithValue("@id_user", GetId(UserName));
             this.commanditou.Parameters.AddWithValue("@Num", this.PhoneNumber);
@@ -227,7 +227,7 @@ namespace CapaDeDatos
 
         private void Update()
         {
-            this.command.CommandText = "UPDATE user,phones SET " +
+            this.command.CommandText = "UPDATE USER,PHONES SET " +
                 $"NAME = '{this.Name}'," +
                 $"LNAME1 = '{this.LastName}'," +
                 $"LNAME2 = '{this.LastName2}'," +
@@ -236,7 +236,7 @@ namespace CapaDeDatos
                 $"PASS = '{this.Password}'," +
                 $"ROLE = '{this.UserRole}'," +
                 $"NUM = {this.PhoneNumber} " +
-                $"WHERE user.id = phones.ID_USER and user.id = {this.Id}";
+                $"WHERE USER.id = PHONES.ID_USER and USER.id = {this.Id}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
 
@@ -245,10 +245,10 @@ namespace CapaDeDatos
         {
             try
             {
-                this.command.CommandText = $"DELETE phones.* from phones where ID_USER = {Id}";
+                this.command.CommandText = $"DELETE PHONES.* from PHONES where ID_USER = {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
-                this.command.CommandText = $"delete user.* from user where id= {Id}";
+                this.command.CommandText = $"delete USER.* from USER where ID= {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -281,7 +281,7 @@ namespace CapaDeDatos
         {
             try
             {
-                this.command.CommandText = $"SELECT User.*, Phones.Num From User LEFT JOIN phones on User.ID = Phones.ID_USER where ID = {GetId(UserName)}";
+                this.command.CommandText = $"SELECT USER.*, PHONES.NUM From USER LEFT JOIN PHONES on USER.ID = PHONES.ID_USER where ID = {GetId(UserName)}";
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
                 if (!this.dataReader.HasRows) return;
@@ -315,7 +315,7 @@ namespace CapaDeDatos
         }
         private List<ModelUser> obtenerTodasLasFilas()
         {
-            this.command.CommandText = "SELECT id,UserName FROM User";
+            this.command.CommandText = "SELECT ID,USERNAME FROM USER";
             this.dataReader = this.command.ExecuteReader();
             return new List<ModelUser>();
         }
@@ -351,7 +351,7 @@ namespace CapaDeDatos
         public DataTable GetUserDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "Select User.*, Phones.Num From User LEFT JOIN phones on User.id = Phones.Id_User";
+            command.CommandText = "Select USER.*, PHONES.NUM From USER LEFT JOIN PHONES on USER.ID = PHONES.ID_USER";
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;

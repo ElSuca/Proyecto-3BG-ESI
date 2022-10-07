@@ -14,7 +14,7 @@ namespace CapDeDatos
         public DataTable playerTable(string PlayerName)
         {
             string NombreJugador = PlayerName;
-            command.CommandText = "SELECT PLAYER.NAME, PLAYER.LNAME1, PLAYER.LNAME2, PLAYER.STATUS, PLAYER.AGE FROM PLAYER WHERE PLAYER.NAME = @PlayerName";
+            command.CommandText = "SELECT PLAYER.NAME, PLAYER.LNAME1, PLAYER.LNAME2, PLAYER.STATUS, PLAYER.BIRTHDATE FROM PLAYER WHERE PLAYER.NAME = @PlayerName";
             this.command.Parameters.AddWithValue("@PlayerName", PlayerName);
             table.Load(command.ExecuteReader());
             table = limpiarTablaJugador(table);
@@ -150,7 +150,7 @@ namespace CapDeDatos
             return t;
         }
         #endregion
-        public DataTable ejecutarComando()
+        public DataTable GetAllEventDataForTable()
         {
             this.command.CommandText = "SELECT FAMILY.NAME ," +
                 " EVENT.NAME ," +

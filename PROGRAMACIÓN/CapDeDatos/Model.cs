@@ -31,6 +31,8 @@ namespace CapaDeDatos
         private void conectDataBase()
         {   
                 this.startConection();
+            try
+            {
                 this.conection = new MySqlConnection(
                     $"server={this.IpDataBase};" +
                     $"userid={this.UserDataBase};" +
@@ -38,15 +40,30 @@ namespace CapaDeDatos
                     $"database={this.NameDataBase};" +
                     $"port={this.PuertoDataBase}"
                 );
-                this.conection.Open(); 
+                
+            }
+            catch
+            {
+               
+            }
+            this.conection.Open();
         }
         private void startConection()
         {
-            this.IpDataBase = "127.0.0.1";
-            this.NameDataBase = "olympus";
-            this.UserDataBase = "bd_adm";
-            this.PasswordDataBase = "password";
-            this.PuertoDataBase = "3306"; 
+            /*
+                this.IpDataBase = "192.168.5.50";
+                this.NameDataBase = "ptahtechnologies";
+                this.UserDataBase = "santiago.garcia";
+                this.PasswordDataBase = "54605454";
+                this.PuertoDataBase = "3306";*/
+            
+           
+                this.IpDataBase = "127.0.0.1";
+                this.NameDataBase = "olympus";
+                this.UserDataBase = "bd_adm";
+                this.PasswordDataBase = "password";
+                this.PuertoDataBase = "3306";
+           
         }
     }
 }
