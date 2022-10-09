@@ -37,6 +37,8 @@ namespace Apis
             {
                 result = l.ReadToEnd().Trim();
             }
+            Dictionary<string, string> credenciales = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
+            new SafeSystemBuffer().SetResponse(credenciales["codigo"]);
             return result;
         }
     }

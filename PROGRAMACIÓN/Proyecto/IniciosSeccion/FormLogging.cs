@@ -3,6 +3,7 @@ using Apis;
 using CapaLogica;
 using CapaLoogica;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -18,11 +19,9 @@ namespace Proyecto.IniciosSeccion
         private void btnLoggin_Click(object sender, EventArgs e)
         {
             UserControler uc = new UserControler();
-
-            new ApiListener();
+            controlApi();
             string a = SendRequest.GetPost("http://127.0.0.1:8888//autenticar", txtUserName.Text, txtPassword.Text);
-
-            if (UserControler.Autenticar(txtUserName.Text, txtPassword.Text))
+            if (Int32.Parse(new AplicationControler().getResponse()) == 1)
             {
                 uc.SetStaticUsername(txtUserName.Text);
                 uc.SetStaticPassword(txtPassword.Text);
@@ -33,7 +32,19 @@ namespace Proyecto.IniciosSeccion
                 lbMessage.ForeColor = Color.FromArgb(255, 0, 0);
                 lbMessage.Text = ErrorMesageTranslation(new AplicationControler().getLanguage());
             }
+            controlApi();
         }
+        private void controlApi()
+        {
+            ProcessStartInfo startinfo = new ProcessStartInfo();
+            startinfo.FileName = @"..\..\..\..\PROGRAMACIÓN\ApiAutentificacion\bin\Debug\ApiAutentificacion.exe";
+            startinfo.CreateNoWindow = true;
+            startinfo.UseShellExecute = true;
+            if (!isRunning("ApiAutentificacion")) Process.Start(startinfo).Start();
+            else Process.Start(startinfo).Kill();
+        }
+       
+
 
         private void FormLogging_Load(object sender, EventArgs e)
         {
@@ -86,34 +97,12 @@ namespace Proyecto.IniciosSeccion
                 lbMessage.Location = new Point(13, 146);
             }
         }
-        private void label1_Click(object sender, EventArgs e)
+
+        public static bool isRunning(string ProcessName)
         {
-
-        }
-
-        private void lbPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbUserName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            Process[] processes = Process.GetProcessesByName(ProcessName);
+            if (processes.Length == 0) return false;
+            else return true;
         }
     }
 }

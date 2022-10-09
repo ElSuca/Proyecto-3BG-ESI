@@ -60,7 +60,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(287, 20);
             this.txtUserName.TabIndex = 1;
-            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
+
             // 
             // lbUserName
             // 
@@ -72,7 +72,7 @@
             this.lbUserName.Size = new System.Drawing.Size(91, 20);
             this.lbUserName.TabIndex = 2;
             this.lbUserName.Text = "Username";
-            this.lbUserName.Click += new System.EventHandler(this.lbUserName_Click);
+
             // 
             // txtPassword
             // 
@@ -83,7 +83,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(287, 20);
             this.txtPassword.TabIndex = 3;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+
             // 
             // lbPassword
             // 
@@ -95,7 +95,7 @@
             this.lbPassword.Size = new System.Drawing.Size(86, 20);
             this.lbPassword.TabIndex = 4;
             this.lbPassword.Text = "Password";
-            this.lbPassword.Click += new System.EventHandler(this.lbPassword_Click);
+
             // 
             // lbTitle
             // 
@@ -107,7 +107,6 @@
             this.lbTitle.Size = new System.Drawing.Size(93, 31);
             this.lbTitle.TabIndex = 5;
             this.lbTitle.Text = "Log in";
-            this.lbTitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnEntrar
             // 
@@ -130,7 +129,6 @@
             this.lbMessage.Name = "lbMessage";
             this.lbMessage.Size = new System.Drawing.Size(0, 13);
             this.lbMessage.TabIndex = 7;
-            this.lbMessage.Click += new System.EventHandler(this.label2_Click);
             // 
             // FormLogging
             // 

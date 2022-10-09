@@ -26,7 +26,7 @@ namespace ApiAutenitficacion
         {
             Dictionary<string, string> credenciales = JsonConvert.DeserializeObject<Dictionary<string, string>>(cuerpo);
             Dictionary<string, string> resultadoAutenticacion = new Dictionary<string, string>();
-            if (UserControler.Autenticar(credenciales["usuario"], credenciales["password"]) == true)
+            if (UserControler.Autenticar(credenciales["Username"], credenciales["Password"]) == true)
             {
                 resultadoAutenticacion.Add("codigo", "1");
                 resultadoAutenticacion.Add("mensaje", "Credenciales correctas");

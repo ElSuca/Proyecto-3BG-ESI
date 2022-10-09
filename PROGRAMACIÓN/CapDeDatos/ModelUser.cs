@@ -61,7 +61,7 @@ namespace CapaDeDatos
         {
             try
             {
-                this.command.CommandText = $"SELECT ID FROM USER WHERE UNAME = '{this.UserName}'";
+                this.command.CommandText = $"SELECT ID FROM USER WHERE UNAME = '{Username}'";
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
                 this.dataReader.Read();

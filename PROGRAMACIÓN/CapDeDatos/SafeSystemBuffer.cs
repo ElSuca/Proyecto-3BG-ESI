@@ -5,6 +5,8 @@
         public static int Menu1Choice;
         public static string startPath;
         public static int Language;
+        public static string Response ;
+        public static string ApiAutentificationPath { get; set; }
 
         public SafeSystemBuffer()
         {
@@ -24,5 +26,8 @@
 
         public int GetLanguage() => Language;
         public void SetLanguage(int l) => Language = l;
+
+        public string GetResponse() => Response;
+        public void SetResponse (string l) => Response = l;
     }
 }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5ECC57A8-0490-4958-A2E1-8ABB31074C1E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Apis</RootNamespace>
-    <AssemblyName>Apis</AssemblyName>
+    <RootNamespace>ApiAutentificacion</RootNamespace>
+    <AssemblyName>ApiAutentificacion</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -78,7 +78,9 @@
     <Compile Include="Autentificador.cs" />
     <Compile Include="GetRequest.cs" />
     <Compile Include="SendRequest.cs" />
-    <Compile Include="ApiListener.cs" />
+    <Compile Include="..\ApiAutentificacion\ApiListener.cs">
+      <Link>ApiListener.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
