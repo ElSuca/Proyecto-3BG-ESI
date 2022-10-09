@@ -49,10 +49,10 @@ namespace BackOffice.ResultManager
 
             n = getVisibility() ? false : true;
 
-            if(menu == 1)
-            {
-                panelEventMenu.Visible = n;
-            }
+            if(menu == 1) panelEventMenu.Visible = n;
+            if(menu == 2) panelTeamsMenu.Visible = n;
+
+         
 
         }
         private bool getVisibility()
@@ -62,6 +62,19 @@ namespace BackOffice.ResultManager
         private void setInitial()
         {
             panelEventMenu.Visible = false;
+            panelTeamsMenu.Visible = false;
+
+
+        }
+
+        private void btnTeamsMenu_Click(object sender, EventArgs e)
+        {
+            toggleMenus(2);
+        }
+
+        private void panelTeamsMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

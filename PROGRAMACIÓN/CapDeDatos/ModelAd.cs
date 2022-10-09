@@ -23,7 +23,7 @@ namespace CapDeDatos
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
             this.Id = int.Parse(this.dataReader["id"].ToString());
-            this.Name = this.dataReader["AD_Name"].ToString();
+            this.Name = this.dataReader["Name"].ToString();
             this.Category = this.dataReader["CAT"].ToString();
             this.Path = this.dataReader["PATH"].ToString();
             this.dataReader.Close();
@@ -89,7 +89,7 @@ namespace CapDeDatos
         public DataTable GetAdDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM Ad";
+            command.CommandText = "SELECT * FROM AD";
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;

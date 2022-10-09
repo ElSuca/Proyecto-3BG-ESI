@@ -29,21 +29,6 @@ namespace ApiPublica
             txtPassword.Text = uc.GetStaticPassword;
             txtRole.Text = uc.GetStaticRole;
         }
-
-        private void UserData_Load(object sender, EventArgs e) { }
-        private void dgridUserData_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
-        private void lbUserName_Click(object sender, EventArgs e) { }
-        private void label1_Click(object sender, EventArgs e) { }
-        private void lbPhoneNumber_Click(object sender, EventArgs e) { }
-        private void lbPassword_Click(object sender, EventArgs e) { }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) { }
-        private void label_Click(object sender, EventArgs e) { }
-
-        private void textRole_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             try
@@ -99,7 +84,6 @@ namespace ApiPublica
                 btnUpgradeAccount.Text = "Mejorar plan";
             }
         }
-
         private void btnShowPassword_Click(object sender, EventArgs e) => txtPassword.PasswordChar = txtPassword.PasswordChar == '*' ? txtPassword.PasswordChar = (char)0 : txtPassword.PasswordChar = '*';
 
         private void btnUpgradeAccount_Click(object sender, EventArgs e)

@@ -1,4 +1,6 @@
-﻿using CapaLogica;
+﻿using ApiAurentificacion;
+using Apis;
+using CapaLogica;
 using CapaLoogica;
 using System;
 using System.Drawing;
@@ -16,6 +18,10 @@ namespace Proyecto.IniciosSeccion
         private void btnLoggin_Click(object sender, EventArgs e)
         {
             UserControler uc = new UserControler();
+
+            new ApiListener();
+            string a = SendRequest.GetPost("http://127.0.0.1:8888//autenticar", txtUserName.Text, txtPassword.Text);
+
             if (UserControler.Autenticar(txtUserName.Text, txtPassword.Text))
             {
                 uc.SetStaticUsername(txtUserName.Text);

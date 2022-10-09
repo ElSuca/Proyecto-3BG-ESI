@@ -28,167 +28,169 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackOfficeAdManager));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnAddAd = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtAdId = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtAdCategory = new System.Windows.Forms.TextBox();
             this.btnList = new System.Windows.Forms.Button();
             this.dataGrid1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdModify = new System.Windows.Forms.Button();
             this.txtAdPath = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtAdName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnMoveBanner = new System.Windows.Forms.Button();
+            this.pictureBoxPreVisualization = new System.Windows.Forms.PictureBox();
+            this.lbAdId = new System.Windows.Forms.Label();
+            this.lbAdName = new System.Windows.Forms.Label();
+            this.lbAdCategory = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreVisualization)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnAddAd
             // 
-            this.BtnAddAd.Location = new System.Drawing.Point(21, 211);
+            this.BtnAddAd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            resources.ApplyResources(this.BtnAddAd, "BtnAddAd");
             this.BtnAddAd.Name = "BtnAddAd";
-            this.BtnAddAd.Size = new System.Drawing.Size(75, 23);
-            this.BtnAddAd.TabIndex = 0;
-            this.BtnAddAd.Text = "Add Ad";
-            this.BtnAddAd.UseVisualStyleBackColor = true;
+            this.BtnAddAd.UseVisualStyleBackColor = false;
             this.BtnAddAd.Click += new System.EventHandler(this.BtnAddAd_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "AdId";
             // 
             // txtAdId
             // 
-            this.txtAdId.Location = new System.Drawing.Point(72, 61);
+            this.txtAdId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtAdId.ForeColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.txtAdId, "txtAdId");
             this.txtAdId.Name = "txtAdId";
-            this.txtAdId.Size = new System.Drawing.Size(174, 20);
-            this.txtAdId.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Ad Category";
             // 
             // txtAdCategory
             // 
-            this.txtAdCategory.Location = new System.Drawing.Point(72, 113);
+            this.txtAdCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtAdCategory.ForeColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.txtAdCategory, "txtAdCategory");
             this.txtAdCategory.Name = "txtAdCategory";
-            this.txtAdCategory.Size = new System.Drawing.Size(174, 20);
-            this.txtAdCategory.TabIndex = 6;
-            this.txtAdCategory.TextChanged += new System.EventHandler(this.txtAdCategory_TextChanged);
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(183, 211);
+            this.btnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnList.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.btnList, "btnList");
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(75, 23);
-            this.btnList.TabIndex = 7;
-            this.btnList.Text = "List";
-            this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.UseVisualStyleBackColor = false;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // dataGrid1
             // 
+            this.dataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid1.Location = new System.Drawing.Point(292, 41);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGrid1.GridColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.dataGrid1, "dataGrid1");
             this.dataGrid1.Name = "dataGrid1";
-            this.dataGrid1.Size = new System.Drawing.Size(399, 139);
-            this.dataGrid1.TabIndex = 8;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(264, 212);
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdModify
             // 
-            this.btnAdModify.Location = new System.Drawing.Point(102, 212);
+            this.btnAdModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnAdModify.Cursor = System.Windows.Forms.Cursors.Cross;
+            resources.ApplyResources(this.btnAdModify, "btnAdModify");
             this.btnAdModify.Name = "btnAdModify";
-            this.btnAdModify.Size = new System.Drawing.Size(75, 23);
-            this.btnAdModify.TabIndex = 10;
-            this.btnAdModify.Text = "Modify";
-            this.btnAdModify.UseVisualStyleBackColor = true;
+            this.btnAdModify.UseVisualStyleBackColor = false;
             this.btnAdModify.Click += new System.EventHandler(this.btnAdModify_Click);
             // 
             // txtAdPath
             // 
-            this.txtAdPath.Location = new System.Drawing.Point(72, 171);
+            this.txtAdPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtAdPath.ForeColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.txtAdPath, "txtAdPath");
             this.txtAdPath.Name = "txtAdPath";
-            this.txtAdPath.Size = new System.Drawing.Size(174, 20);
-            this.txtAdPath.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Ad Path";
             // 
             // txtAdName
             // 
-            this.txtAdName.Location = new System.Drawing.Point(72, 87);
+            this.txtAdName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtAdName.ForeColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.txtAdName, "txtAdName");
             this.txtAdName.Name = "txtAdName";
-            this.txtAdName.Size = new System.Drawing.Size(174, 20);
-            this.txtAdName.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "AdName";
             // 
             // btnMoveBanner
             // 
-            this.btnMoveBanner.Location = new System.Drawing.Point(72, 137);
+            this.btnMoveBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            resources.ApplyResources(this.btnMoveBanner, "btnMoveBanner");
             this.btnMoveBanner.Name = "btnMoveBanner";
-            this.btnMoveBanner.Size = new System.Drawing.Size(75, 23);
-            this.btnMoveBanner.TabIndex = 18;
-            this.btnMoveBanner.Text = "SetBanner";
-            this.btnMoveBanner.UseVisualStyleBackColor = true;
+            this.btnMoveBanner.UseVisualStyleBackColor = false;
             this.btnMoveBanner.Click += new System.EventHandler(this.btnMoveBanner_Click);
+            // 
+            // pictureBoxPreVisualization
+            // 
+            resources.ApplyResources(this.pictureBoxPreVisualization, "pictureBoxPreVisualization");
+            this.pictureBoxPreVisualization.Name = "pictureBoxPreVisualization";
+            this.pictureBoxPreVisualization.TabStop = false;
+            // 
+            // lbAdId
+            // 
+            resources.ApplyResources(this.lbAdId, "lbAdId");
+            this.lbAdId.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbAdId.Name = "lbAdId";
+            // 
+            // lbAdName
+            // 
+            resources.ApplyResources(this.lbAdName, "lbAdName");
+            this.lbAdName.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbAdName.Name = "lbAdName";
+            // 
+            // lbAdCategory
+            // 
+            resources.ApplyResources(this.lbAdCategory, "lbAdCategory");
+            this.lbAdCategory.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbAdCategory.Name = "lbAdCategory";
             // 
             // BackOfficeAdManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.lbAdCategory);
+            this.Controls.Add(this.lbAdName);
+            this.Controls.Add(this.lbAdId);
+            this.Controls.Add(this.pictureBoxPreVisualization);
             this.Controls.Add(this.btnMoveBanner);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtAdName);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAdPath);
             this.Controls.Add(this.btnAdModify);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.txtAdCategory);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtAdId);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnAddAd);
+            this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "BackOfficeAdManager";
-            this.Size = new System.Drawing.Size(760, 375);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreVisualization)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,18 +199,18 @@
         #endregion
 
         private System.Windows.Forms.Button BtnAddAd;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAdId;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAdCategory;
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.DataGridView dataGrid1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdModify;
         private System.Windows.Forms.TextBox txtAdPath;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAdName;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnMoveBanner;
+        private System.Windows.Forms.PictureBox pictureBoxPreVisualization;
+        private System.Windows.Forms.Label lbAdId;
+        private System.Windows.Forms.Label lbAdName;
+        private System.Windows.Forms.Label lbAdCategory;
     }
 }

@@ -636,3 +636,6 @@ C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\bin\Debug\M
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.FormLanguageMenu.resources
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.LanguageMenu.resources
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\Apis.exe
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\Apis.pdb
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\Apis.exe.config

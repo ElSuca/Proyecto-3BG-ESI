@@ -26,7 +26,6 @@ namespace CapaDeDatos
         public void GetUserData(int id)
         {           
             this.command.CommandText = $"Select USER.*, PHONES.Num From USER LEFT JOIN PHONES on USER.ID = PHONES.ID_USER where USER.ID={id}";
-            this.command.Parameters.AddWithValue("@id", id);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
@@ -46,8 +45,7 @@ namespace CapaDeDatos
         {
             try
             {
-                this.command.CommandText = "SELECT * FROM USER WHERE UNAME = @UNAME";
-                this.command.Parameters.AddWithValue("@UNAME", UserName);
+                this.command.CommandText = $"SELECT * FROM USER WHERE UNAME ='{this.UserName}'";
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
                 this.dataReader.Read();
@@ -63,8 +61,7 @@ namespace CapaDeDatos
         {
             try
             {
-                this.command.CommandText = "SELECT * FROM USER WHERE UNAME = @Uname";
-                this.command.Parameters.AddWithValue("@Uname", Username);
+                this.command.CommandText = $"SELECT ID FROM USER WHERE UNAME = '{this.UserName}'";
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
                 this.dataReader.Read();
@@ -77,37 +74,6 @@ namespace CapaDeDatos
                 return 0;
             }
         }
-     /*   public List<ModelUser> GetUserDataID(int id)
-        {
-            List<ModelUser> users = new List<ModelUser>();
-            try
-            {
-                this.command.CommandText = "SELECT * FROM USER WHERE ID = @id";
-                this.command.Parameters.AddWithValue("@id", id);
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                this.Id = int.Parse(this.dataReader["id"].ToString());
-                this.UserName = this.dataReader["username"].ToString();
-                this.Name = this.dataReader["nombre"].ToString();
-                this.LastName = this.dataReader["apellido"].ToString();
-                this.LastName2 = this.dataReader["apellido2"].ToString();
-                this.Email = this.dataReader["email"].ToString();
-                this.Password = this.dataReader["password"].ToString();
-
-                this.command.CommandText = "SELECT * FROM Telefonos WHERE ID = @id";
-                this.command.Parameters.AddWithValue("@id", id);
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.PhoneNumber = this.dataReader["telefono"].ToString();
-                return users;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }*/
-
         public List<ModelUser> GetUserData()
         {
             List<ModelUser> users = new List<ModelUser>();
@@ -218,9 +184,7 @@ namespace CapaDeDatos
         {
             commanditou.CommandText = "INSERT INTO " +
                "PHONES (id_user,num) " +
-               "VALUES (@id_user,@Num)";
-            this.commanditou.Parameters.AddWithValue("@id_user", GetId(UserName));
-            this.commanditou.Parameters.AddWithValue("@Num", this.PhoneNumber);
+               $"VALUES ({GetId(UserName)},'{this.PhoneNumber}')";
             this.commanditou.Prepare();
             this.commanditou.ExecuteNonQuery();
         }
@@ -261,13 +225,14 @@ namespace CapaDeDatos
         public bool Autenticar(string passwordEntrada)
         {
             GetUserDataForUserName(new SafeUserData().GetUsername());
+           
             if (this.UserName == "") return false;
             if (this.Password == hashearPassword(passwordEntrada)) return true;
             return false;
         }
         public void ObtenerCredencialesPorNombre()
         {
-            this.command.CommandText = "SELECT UNAME,PASS FROM user WHERE UNAME = @UserName";
+            this.command.CommandText = "SELECT UNAME,PASS FROM USER WHERE UNAME = @UserName";
             this.command.Parameters.AddWithValue("@UserName", this.UserName);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
@@ -275,7 +240,7 @@ namespace CapaDeDatos
             this.dataReader.Read();
             this.UserName = this.dataReader["UNAME"].ToString();
             this.Password = this.dataReader["PASS"].ToString();
-
+            this.dataReader.Close();
         }
         public void GetUserDataForUserName(string UserName)
         {

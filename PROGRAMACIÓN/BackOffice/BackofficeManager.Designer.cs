@@ -94,6 +94,9 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainPanel.AutoScroll = true;
+            this.MainPanel.AutoScrollMinSize = new System.Drawing.Size(150, 150);
             this.MainPanel.Location = new System.Drawing.Point(138, 94);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1618, 676);
@@ -130,7 +133,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(1768, 791);
+            this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.Lblanguaje);
             this.Controls.Add(this.btnResultManager);
             this.Controls.Add(this.MainPanel);

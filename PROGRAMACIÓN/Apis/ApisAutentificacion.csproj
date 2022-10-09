@@ -76,7 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autentificador.cs" />
-    <Compile Include="Web.cs" />
+    <Compile Include="GetRequest.cs" />
+    <Compile Include="SendRequest.cs" />
+    <Compile Include="ApiListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaLoogica\CapaLogica.csproj">
-      <Project>{145b1adb-bc7a-4013-8311-88959ac2a71a}</Project>
+      <Project>{145B1ADB-BC7A-4013-8311-88959AC2A71A}</Project>
       <Name>CapaLogica</Name>
     </ProjectReference>
     <ProjectReference Include="..\CapDeDatos\CapaDeDatos.csproj">

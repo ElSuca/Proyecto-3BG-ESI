@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -81,18 +82,18 @@ namespace BackOffice
             string path = @"C:\Users\" + Environment.UserName + @"\Desktop\Olympus\Cache";
            if (!Directory.Exists(path)) Directory.CreateDirectory(path);
         }
-        private void txtAdCategory_TextChanged(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        //private void btnMoveBanner_Click(object sender, EventArgs e) => MoveFlies(txtPathBanner.Text);
         private void btnMoveBanner_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) pictureBoxPreVisualization.Image = ResizeImage(new Bitmap(openFileDialog1.FileName),new Size(628, 89));
+            txtAdPath.Text = openFileDialog1.FileName;
             openFileDialog1.ShowDialog();
             AdControler.setStartPath(openFileDialog1.FileName); 
         }
+        public static Image ResizeImage(Image imgOriginal, Size size) => new Bitmap(imgOriginal, size);
 
     }
 }

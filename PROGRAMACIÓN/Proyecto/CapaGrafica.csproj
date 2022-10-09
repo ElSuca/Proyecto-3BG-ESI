@@ -179,6 +179,10 @@
       <Project>{eab0cd5c-6f60-4bfa-80ec-d07a595d3f32}</Project>
       <Name>ApiPublicidad</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Apis\ApisAutentificacion.csproj">
+      <Project>{5ECC57A8-0490-4958-A2E1-8ABB31074C1E}</Project>
+      <Name>ApisAutentificacion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BackOffice\BackOffice.csproj">
       <Project>{ad3f7e90-2c30-4d95-95f3-6d2b7af2864b}</Project>
       <Name>BackOffice</Name>

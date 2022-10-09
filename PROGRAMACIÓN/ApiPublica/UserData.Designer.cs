@@ -60,7 +60,6 @@
             this.lbNameDisplay.Size = new System.Drawing.Size(93, 25);
             this.lbNameDisplay.TabIndex = 0;
             this.lbNameDisplay.Text = "Nombre";
-            this.lbNameDisplay.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbEmailDisplay
             // 
@@ -209,7 +208,6 @@
             this.txtRole.ReadOnly = true;
             this.txtRole.Size = new System.Drawing.Size(218, 26);
             this.txtRole.TabIndex = 20;
-            this.txtRole.TextChanged += new System.EventHandler(this.textRole_TextChanged);
             // 
             // btnSaveChanges
             // 
@@ -299,7 +297,6 @@
             this.Controls.Add(this.lbNameDisplay);
             this.Name = "UserData";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.UserData_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
