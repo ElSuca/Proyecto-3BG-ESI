@@ -1,5 +1,6 @@
 ﻿using CapaLoogica;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Proyecto
@@ -17,7 +18,22 @@ namespace Proyecto
         }
         private void btnApply_Click(object sender, EventArgs e)
         {
-            new AplicationControler().setLanguage(ComboBoxLanguage.FindStringExact(ComboBoxLanguage.Text));
+            string path = "..\\..\\..\\Config.txt";
+            File.WriteAllText(path,"Language ="+ComboBoxLanguage.FindStringExact(ComboBoxLanguage.Text));
+
+            using (StreamReader archivo = File.OpenText(path))
+            {
+                string linea = null;
+                int i = 0;
+                while (!archivo.EndOfStream)
+                {
+                    linea = archivo.ReadLine();
+                    if (++i == 2) break;
+                }
+
+                int selection = Int32.Parse(linea[10].ToString());
+                new AplicationControler().setLanguage(selection);
+            }
             Traduction(new AplicationControler().getLanguage());
             new StarterMenu();
             new Form1().Refresh();

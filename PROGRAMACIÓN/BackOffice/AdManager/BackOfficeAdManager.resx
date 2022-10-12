@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnAddAd.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="txtAdId.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 27</value>
@@ -175,31 +175,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAdId.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
-  <data name="txtAdCategory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 133</value>
+  <data name="txtAddCategory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 347</value>
   </data>
-  <data name="txtAdCategory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="txtAddCategory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
-  <data name="txtAdCategory.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtAddCategory.Size" type="System.Drawing.Size, System.Drawing">
     <value>324, 21</value>
   </data>
-  <data name="txtAdCategory.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtAddCategory.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;txtAdCategory.Name" xml:space="preserve">
-    <value>txtAdCategory</value>
+  <data name="&gt;&gt;txtAddCategory.Name" xml:space="preserve">
+    <value>txtAddCategory</value>
   </data>
-  <data name="&gt;&gt;txtAdCategory.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtAddCategory.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtAdCategory.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtAddCategory.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtAdCategory.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;txtAddCategory.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="btnList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -232,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnList.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="dataGrid1.Location" type="System.Drawing.Point, System.Drawing">
     <value>332, 27</value>
@@ -256,7 +256,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGrid1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="btnDelete.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -289,7 +289,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="btnAdModify.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -322,10 +322,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAdModify.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="txtAdPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 213</value>
+    <value>0, 237</value>
   </data>
   <data name="txtAdPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
@@ -346,7 +346,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAdPath.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="txtAdName.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 80</value>
@@ -370,7 +370,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAdName.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="btnMoveBanner.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -379,7 +379,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="btnMoveBanner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-12, 180</value>
+    <value>-12, 204</value>
   </data>
   <data name="btnMoveBanner.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
@@ -403,7 +403,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMoveBanner.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="pictureBoxPreVisualization.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, 264</value>
@@ -430,7 +430,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxPreVisualization.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="lbAdId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -463,7 +463,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbAdId.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lbAdName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -496,7 +496,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbAdName.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lbAdCategory.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -529,6 +529,72 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbAdCategory.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnAddCategory.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnAddCategory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="btnAddCategory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAddCategory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 374</value>
+  </data>
+  <data name="btnAddCategory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="btnAddCategory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 27</value>
+  </data>
+  <data name="btnAddCategory.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="btnAddCategory.Text" xml:space="preserve">
+    <value>Add Category</value>
+  </data>
+  <data name="&gt;&gt;btnAddCategory.Name" xml:space="preserve">
+    <value>btnAddCategory</value>
+  </data>
+  <data name="&gt;&gt;btnAddCategory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddCategory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAddCategory.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBoxCategory.Items" xml:space="preserve">
+    <value>Football</value>
+  </data>
+  <data name="comboBoxCategory.Items1" xml:space="preserve">
+    <value>BascketBall</value>
+  </data>
+  <data name="comboBoxCategory.Items2" xml:space="preserve">
+    <value>Food</value>
+  </data>
+  <data name="comboBoxCategory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 129</value>
+  </data>
+  <data name="comboBoxCategory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 23</value>
+  </data>
+  <data name="comboBoxCategory.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;comboBoxCategory.Name" xml:space="preserve">
+    <value>comboBoxCategory</value>
+  </data>
+  <data name="&gt;&gt;comboBoxCategory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxCategory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBoxCategory.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
