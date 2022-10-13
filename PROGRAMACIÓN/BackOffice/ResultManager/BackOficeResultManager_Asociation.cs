@@ -32,11 +32,24 @@ namespace BackOffice.ResultManager
             setInitial();
         }
         private void btnList_Click(object sender, EventArgs e) => reloadList();
-        private void reloadList() => dataGrid1.DataSource = new AsociationControler().GetAsociationDataTable();
+        private void reloadList()
+        {
+           /* if(panelEventMenu.Visible)*/ dataGrid1.DataSource = new EventControler().GetEventDataTable();
+          //  else dataGrid1.DataSource = new AsociationControler().GetAsociationDataTable();
+            
+        }
 
         private void btnRegisterAcc_Click(object sender, EventArgs e)
         {
-
+            if (panelEventMenu.Visible) EventControler.Alta(txtEventName.Text, 
+                txtEventDate.Text,
+                txtStageName.Text,
+                txtStageCity.Text,
+                txtStageCountry.Text,
+                txtStageStreet.Text,
+                Int32.Parse(txtStageNum.Text));
+           // else if (panelTeamsMenu.Visible) TeamC
+                else MessageBox.Show("Por favor, seleccione un menu");
         }
 
         private void btnEventMenu_Click(object sender, EventArgs e)
@@ -45,34 +58,38 @@ namespace BackOffice.ResultManager
         }
         private void toggleMenus(int menu)
         {
-            bool n;
+ 
+            panelTeamsMenu.Visible = false;
+            panelEventMenu.Visible = false;
 
-            n = getVisibility() ? false : true;
+            if (menu == 1) panelEventMenu.Visible = true; 
+            if (menu == 2) panelTeamsMenu.Visible = true;
+            
 
-            if(menu == 1) panelEventMenu.Visible = n;
-            if(menu == 2) panelTeamsMenu.Visible = n;
 
-         
 
-        }
-        private bool getVisibility()
-        {
-           return panelEventMenu.Visible;
         }
         private void setInitial()
         {
             panelEventMenu.Visible = false;
             panelTeamsMenu.Visible = false;
-
-
         }
-
+        private bool isActivePanel()
+        {
+            if(panelEventMenu.Visible || panelTeamsMenu.Visible) return true;
+            else return false;
+        }
         private void btnTeamsMenu_Click(object sender, EventArgs e)
         {
             toggleMenus(2);
         }
 
         private void panelTeamsMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelEventMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }

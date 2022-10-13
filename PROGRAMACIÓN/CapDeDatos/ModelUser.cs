@@ -8,14 +8,19 @@ namespace CapaDeDatos
     public class ModelUser : Model
     {
         public int Id;
-        public string UserName;
-        public string Name;
-        public string LastName;
-        public string LastName2;
-        public string PhoneNumber;
-        public string Email;
-        public string Password;
-        public string UserRole;
+        public string UserName { get; set;}
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string LastName2 { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string UserRole { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string State { get; set; }
+        public int Num { get; set; }
+        public string Country { get; set; }
 
         public ModelUser(int id) => this.GetUserData(id);
 
@@ -167,18 +172,10 @@ namespace CapaDeDatos
         private void Insert()
         {
             command.CommandText = "INSERT INTO " +
-               "USER (NAME,LNAME1,LNAME2,EMAIL,UNAME,PASS,ROLE) " +
-               "VALUES (@Name,@Lastname1,@Lastname2,@Email,@Username,@Password,@UserRole)";
-            this.command.Parameters.AddWithValue("@Name", this.Name);
-            this.command.Parameters.AddWithValue("@Lastname1", this.LastName);
-            this.command.Parameters.AddWithValue("@Lastname2", this.LastName);
-            this.command.Parameters.AddWithValue("@Email", this.Email);
-            this.command.Parameters.AddWithValue("@Username", this.UserName);
-            this.command.Parameters.AddWithValue("@Password", this.Password);
-            this.command.Parameters.AddWithValue("@UserRole", this.UserRole);
+               "USER (NAME,LNAME1,LNAME2,EMAIL,UNAME,PASS,ROLE,CITY,STREET,NUM,STATE,COUNTRY) " +
+               $"VALUES ('{Name}','{LastName}','{LastName2}','{Email}','{UserName}','{Password}','{UserRole}','{City}','{Street}',{Num},'{State}','{Country}')";
             this.command.Prepare();
-            this.command.ExecuteNonQuery();
-           
+            this.command.ExecuteNonQuery();       
         }
         private void InsertPhone()
         {
@@ -199,7 +196,11 @@ namespace CapaDeDatos
                 $"UNAME = '{this.UserName}'," +
                 $"PASS = '{this.Password}'," +
                 $"ROLE = '{this.UserRole}'," +
-                $"NUM = {this.PhoneNumber} " +
+                $"CITY = '{this.City}',"+
+                $"STREET = '{this.Street}',"+
+                $"USER.NUM = '{this.Num}',"+
+                $"STATE = '{this.State}',"+
+                $"COUNTRY = '{this.Country} '"+ 
                 $"WHERE USER.id = PHONES.ID_USER and USER.id = {this.Id}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
@@ -224,7 +225,7 @@ namespace CapaDeDatos
 
         public bool Autenticar(string passwordEntrada)
         {
-            GetUserDataForUserName(new SafeUserData().GetUsername());
+            GetUserDataForUserName(SafeUserData.Username);
            
             if (this.UserName == "") return false;
             if (this.Password == hashearPassword(passwordEntrada)) return true;
@@ -322,28 +323,27 @@ namespace CapaDeDatos
             return tabla;
         }
 
-        public void setUsername(string un) => UserName = un;
-        public string getEmail() => Email;
-        public string getUserName() => UserName;
+
+
         #region Set static
-        public void SetUsernameBuffer(string UserName) => new SafeUserData().SetUsername(UserName);
-        public void SetNameStaticBuffer(string Name) => new SafeUserData().SetName(Name);
-        public void SetLastNameStaticBuffer(string lastname) => new SafeUserData().SetLastName(lastname);
-        public void SetLastName2StaticBuffer(string lastname2) => new SafeUserData().SetLastName2(lastname2);
-        public void SetEmailStaticBuffer(string email) => new SafeUserData().SetEmail(email);
-        public void SetPhoneNumberStaticBuffer(int phonenumber) => new SafeUserData().SetPhoneNumber(phonenumber);
-        public void SetPasswordStaticBuffer(string password) => new SafeUserData().SetPassword(password);
-        public void SetRoleStaticBuffer(string role) => new SafeUserData().SetRole(role);
+        public void SetUsernameBuffer(string UserName) => SafeUserData.Username = UserName;
+        public void SetNameStaticBuffer(string Name) => SafeUserData.Name = Name;
+        public void SetLastNameStaticBuffer(string lastname) => SafeUserData.LastName = lastname;
+        public void SetLastName2StaticBuffer(string lastname2) => SafeUserData.LastName2 = lastname2;
+        public void SetEmailStaticBuffer(string email) => SafeUserData.Email = email;
+        public void SetPhoneNumberStaticBuffer(int phonenumber) => SafeUserData.PhoneNumber = phonenumber;
+        public void SetPasswordStaticBuffer(string password) => SafeUserData.Password = password;
+        public void SetRoleStaticBuffer(string role) => SafeUserData.Role = role;
         #endregion
         #region getStatic
-        public string GetUsernameBuffer() => new SafeUserData().GetUsername();
-        public string GetNameBuffer() => new SafeUserData().GetName();
-        public string GetLastNameBuffer() => new SafeUserData().GetLastName();
-        public string GetLastName2Buffer() => new SafeUserData().GetLastName2();
-        public string GetEmailBuffer() => new SafeUserData().GetEmail();
-        public int GetPhoneNumberBuffer() => new SafeUserData().GetPhoneNumber();
-        public string GetPasswordBuffer() => new SafeUserData().GetPassword();
-        public string GetRoleBuffer() => new SafeUserData().GetRole();
+        public string GetUsernameBuffer() => SafeUserData.Username;
+        public string GetNameBuffer() => SafeUserData.Name;
+        public string GetLastNameBuffer() => SafeUserData.LastName;
+        public string GetLastName2Buffer() => SafeUserData.LastName2;
+        public string GetEmailBuffer() => SafeUserData.Email;
+        public int GetPhoneNumberBuffer() => SafeUserData.PhoneNumber;
+        public string GetPasswordBuffer() => SafeUserData.Password;
+        public string GetRoleBuffer() =>  SafeUserData.Role;
         #endregion
     }
     public class User

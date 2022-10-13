@@ -42,8 +42,15 @@ namespace ApiPublica
                     txtUsername.Text,
                     txtRole.Text,
                     MD5Hash.Hash.Content(txtPassword.Text),
-                    txtPhone.Text
+                    txtPhone.Text,
+
+                    txtCity.Text,
+                    txtStreet.Text,
+                    Int32.Parse(txtNum.Text),
+                    txtState.Text,
+                    txtCountry.Text
                     );
+              
                 errorTranslation(new AplicationControler().getLanguage(), "DataUpdate", Color.FromArgb(0, 204, 0));
             }
             catch (Exception ex)

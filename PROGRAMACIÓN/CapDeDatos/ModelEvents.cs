@@ -8,8 +8,13 @@ namespace CapDeDatos
     {
         public int ID;
         public string EventName;
-        public string Date;
+        public string EventDate;
         public string PreEvent;
+        public string StageName;
+        public string EventCity;
+        public string EventCountry;
+        public string EventStreet;
+        public int EventNum;
 
         public ModelEvents()
         {
@@ -19,14 +24,17 @@ namespace CapDeDatos
 
         public void GetEventData(int id)
         {
-            this.command.CommandText = $"Select * FROM event where event.ID={id}";
+            this.command.CommandText = $"Select * FROM event ID={id}";
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
             this.ID = int.Parse(this.dataReader["ID"].ToString());
             this.EventName = this.dataReader["NAME"].ToString();
-            this.Date = this.dataReader["DATE"].ToString();
-            this.PreEvent = this.dataReader["PRE_EVENT"].ToString();
+            this.EventDate = this.dataReader["DATE"].ToString();
+            this.EventCity = this.dataReader["CITY"].ToString();
+            this.EventCountry = this.dataReader["COUNTRY"].ToString();
+            this.EventStreet = this.dataReader["STREET"].ToString();
+            this.EventNum = Int32.Parse(this.dataReader["NUM"].ToString());
             this.dataReader.Close();
         }
         public DataTable GetEventDataTable()
@@ -41,19 +49,20 @@ namespace CapDeDatos
         public void Save()
         {
             if (this.ID.ToString() != "0") Update();
-            else Insert();
+            else
+            {
+              //  insertStage();
+                insertEvent();
+            }
         }
 
-        private void Insert()
+        private void insertEvent()
         {
             try
             {
                 command.CommandText = "INSERT INTO " +
-                   "event (Name,Date,Pre_Event) " +
-                   $"VALUES (@EventName,@Date,@PreEvent)";
-                this.command.Parameters.AddWithValue("@EventName", this.EventName);
-                this.command.Parameters.AddWithValue("@Date", this.Date);
-                this.command.Parameters.AddWithValue("@PreEvent", this.PreEvent);
+                   "event (Name,Date) " +
+                   $"VALUES ('{EventName}','{EventDate}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -62,9 +71,24 @@ namespace CapDeDatos
                 throw e;
             }
         }
+      /*  private void insertStage()
+        {
+            try
+            {
+                command.CommandText = "INSERT INTO " +
+                  "STAGE(name,city,country,street,num) " +
+                  $"VALUES ('{StageName}','{EventCity}','{EventCountry}','{EventStreet}',{EventNum})";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }*/
         private void Update()
         {
-            this.command.CommandText = "UPDATE user SET " +
+         /*   this.command.CommandText = "UPDATE user SET " +
                 "EventName = @EventName," +
                 "Date = @Date," +
                 "PreEvent = @PreEvent," +
@@ -73,14 +97,14 @@ namespace CapDeDatos
             this.command.Parameters.AddWithValue("@Date", this.Date);
             this.command.Parameters.AddWithValue("@PreEvent", this.PreEvent);
             this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            this.command.ExecuteNonQuery();*/
 
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"delete event.* from event where Id= {Id}";
+                this.command.CommandText = $"delete * from EVENT where Id= {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }

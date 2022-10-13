@@ -31,28 +31,26 @@
             this.btnRegisterAcc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAsocID = new System.Windows.Forms.TextBox();
-            this.txtAsocName = new System.Windows.Forms.TextBox();
+            this.txtEventName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGrid1 = new System.Windows.Forms.DataGridView();
             this.btnList = new System.Windows.Forms.Button();
             this.btnEventMenu = new System.Windows.Forms.Button();
             this.panelEventMenu = new System.Windows.Forms.Panel();
-            this.txtCountry = new System.Windows.Forms.MaskedTextBox();
-            this.lbCountry = new System.Windows.Forms.Label();
-            this.txtState = new System.Windows.Forms.MaskedTextBox();
-            this.lbState = new System.Windows.Forms.Label();
-            this.txtCity = new System.Windows.Forms.MaskedTextBox();
+            this.txtStageCity = new System.Windows.Forms.MaskedTextBox();
             this.lbCity = new System.Windows.Forms.Label();
-            this.txtNum = new System.Windows.Forms.MaskedTextBox();
+            this.txtStageNum = new System.Windows.Forms.MaskedTextBox();
             this.lbNum = new System.Windows.Forms.Label();
-            this.txtStreet = new System.Windows.Forms.MaskedTextBox();
+            this.txtStageStreet = new System.Windows.Forms.MaskedTextBox();
             this.lbStreet = new System.Windows.Forms.Label();
-            this.txtSeason = new System.Windows.Forms.MaskedTextBox();
-            this.lbSeason = new System.Windows.Forms.Label();
-            this.txtDate = new System.Windows.Forms.MaskedTextBox();
+            this.txtStageCountry = new System.Windows.Forms.MaskedTextBox();
+            this.lbStageCountry = new System.Windows.Forms.Label();
+            this.txtEventDate = new System.Windows.Forms.MaskedTextBox();
             this.lbDate = new System.Windows.Forms.Label();
             this.btnTeamsMenu = new System.Windows.Forms.Button();
             this.panelTeamsMenu = new System.Windows.Forms.Panel();
+            this.comboBoxTeamState = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
@@ -63,8 +61,8 @@
             this.txtIDTeam = new System.Windows.Forms.TextBox();
             this.lbTeamsName = new System.Windows.Forms.Label();
             this.txtTeamsName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxTeamState = new System.Windows.Forms.ComboBox();
+            this.txtStageName = new System.Windows.Forms.MaskedTextBox();
+            this.lbStageName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelEventMenu.SuspendLayout();
             this.panelTeamsMenu.SuspendLayout();
@@ -76,7 +74,7 @@
             this.btnRegisterAcc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegisterAcc.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegisterAcc.Location = new System.Drawing.Point(36, 563);
+            this.btnRegisterAcc.Location = new System.Drawing.Point(56, 516);
             this.btnRegisterAcc.Name = "btnRegisterAcc";
             this.btnRegisterAcc.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterAcc.TabIndex = 0;
@@ -98,18 +96,20 @@
             // txtAsocID
             // 
             this.txtAsocID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtAsocID.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAsocID.Location = new System.Drawing.Point(19, 33);
             this.txtAsocID.Name = "txtAsocID";
             this.txtAsocID.Size = new System.Drawing.Size(253, 20);
             this.txtAsocID.TabIndex = 2;
             // 
-            // txtAsocName
+            // txtEventName
             // 
-            this.txtAsocName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtAsocName.Location = new System.Drawing.Point(19, 79);
-            this.txtAsocName.Name = "txtAsocName";
-            this.txtAsocName.Size = new System.Drawing.Size(253, 20);
-            this.txtAsocName.TabIndex = 3;
+            this.txtEventName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtEventName.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtEventName.Location = new System.Drawing.Point(19, 79);
+            this.txtEventName.Name = "txtEventName";
+            this.txtEventName.Size = new System.Drawing.Size(253, 20);
+            this.txtEventName.TabIndex = 3;
             // 
             // label2
             // 
@@ -136,7 +136,7 @@
             this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(117, 563);
+            this.btnList.Location = new System.Drawing.Point(137, 516);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 10;
@@ -160,150 +160,117 @@
             // 
             // panelEventMenu
             // 
-            this.panelEventMenu.Controls.Add(this.txtCountry);
-            this.panelEventMenu.Controls.Add(this.lbCountry);
-            this.panelEventMenu.Controls.Add(this.txtState);
-            this.panelEventMenu.Controls.Add(this.lbState);
-            this.panelEventMenu.Controls.Add(this.txtCity);
+            this.panelEventMenu.Controls.Add(this.panelTeamsMenu);
+            this.panelEventMenu.Controls.Add(this.lbStageName);
+            this.panelEventMenu.Controls.Add(this.txtStageName);
+            this.panelEventMenu.Controls.Add(this.txtStageCity);
             this.panelEventMenu.Controls.Add(this.lbCity);
-            this.panelEventMenu.Controls.Add(this.txtNum);
+            this.panelEventMenu.Controls.Add(this.txtStageNum);
             this.panelEventMenu.Controls.Add(this.lbNum);
-            this.panelEventMenu.Controls.Add(this.txtStreet);
+            this.panelEventMenu.Controls.Add(this.txtStageStreet);
             this.panelEventMenu.Controls.Add(this.lbStreet);
-            this.panelEventMenu.Controls.Add(this.txtSeason);
-            this.panelEventMenu.Controls.Add(this.lbSeason);
-            this.panelEventMenu.Controls.Add(this.txtDate);
+            this.panelEventMenu.Controls.Add(this.txtStageCountry);
+            this.panelEventMenu.Controls.Add(this.lbStageCountry);
+            this.panelEventMenu.Controls.Add(this.txtEventDate);
             this.panelEventMenu.Controls.Add(this.lbDate);
             this.panelEventMenu.Controls.Add(this.label1);
             this.panelEventMenu.Controls.Add(this.txtAsocID);
             this.panelEventMenu.Controls.Add(this.label2);
-            this.panelEventMenu.Controls.Add(this.txtAsocName);
+            this.panelEventMenu.Controls.Add(this.txtEventName);
             this.panelEventMenu.Location = new System.Drawing.Point(36, 111);
             this.panelEventMenu.Name = "panelEventMenu";
-            this.panelEventMenu.Size = new System.Drawing.Size(293, 446);
+            this.panelEventMenu.Size = new System.Drawing.Size(293, 399);
             this.panelEventMenu.TabIndex = 13;
+            this.panelEventMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEventMenu_Paint);
             // 
-            // txtCountry
+            // txtStageCity
             // 
-            this.txtCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtCountry.Location = new System.Drawing.Point(19, 402);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(253, 20);
-            this.txtCountry.TabIndex = 14;
-            // 
-            // lbCountry
-            // 
-            this.lbCountry.AutoSize = true;
-            this.lbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCountry.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbCountry.Location = new System.Drawing.Point(15, 379);
-            this.lbCountry.Name = "lbCountry";
-            this.lbCountry.Size = new System.Drawing.Size(71, 20);
-            this.lbCountry.TabIndex = 14;
-            this.lbCountry.Text = "Country";
-            // 
-            // txtState
-            // 
-            this.txtState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtState.Location = new System.Drawing.Point(19, 356);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(253, 20);
-            this.txtState.TabIndex = 14;
-            // 
-            // lbState
-            // 
-            this.lbState.AutoSize = true;
-            this.lbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbState.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbState.Location = new System.Drawing.Point(15, 333);
-            this.lbState.Name = "lbState";
-            this.lbState.Size = new System.Drawing.Size(53, 20);
-            this.lbState.TabIndex = 14;
-            this.lbState.Text = "State";
-            // 
-            // txtCity
-            // 
-            this.txtCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtCity.Location = new System.Drawing.Point(19, 310);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(253, 20);
-            this.txtCity.TabIndex = 14;
+            this.txtStageCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageCity.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageCity.Location = new System.Drawing.Point(19, 216);
+            this.txtStageCity.Name = "txtStageCity";
+            this.txtStageCity.Size = new System.Drawing.Size(253, 20);
+            this.txtStageCity.TabIndex = 14;
             // 
             // lbCity
             // 
             this.lbCity.AutoSize = true;
             this.lbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCity.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbCity.Location = new System.Drawing.Point(15, 287);
+            this.lbCity.Location = new System.Drawing.Point(16, 194);
             this.lbCity.Name = "lbCity";
             this.lbCity.Size = new System.Drawing.Size(39, 20);
             this.lbCity.TabIndex = 14;
             this.lbCity.Text = "City";
             // 
-            // txtNum
+            // txtStageNum
             // 
-            this.txtNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtNum.Location = new System.Drawing.Point(19, 264);
-            this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(253, 20);
-            this.txtNum.TabIndex = 14;
+            this.txtStageNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageNum.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageNum.Location = new System.Drawing.Point(19, 354);
+            this.txtStageNum.Name = "txtStageNum";
+            this.txtStageNum.Size = new System.Drawing.Size(253, 20);
+            this.txtStageNum.TabIndex = 14;
             // 
             // lbNum
             // 
             this.lbNum.AutoSize = true;
             this.lbNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNum.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbNum.Location = new System.Drawing.Point(15, 240);
+            this.lbNum.Location = new System.Drawing.Point(15, 331);
             this.lbNum.Name = "lbNum";
             this.lbNum.Size = new System.Drawing.Size(45, 20);
             this.lbNum.TabIndex = 14;
             this.lbNum.Text = "Num";
             // 
-            // txtStreet
+            // txtStageStreet
             // 
-            this.txtStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtStreet.Location = new System.Drawing.Point(19, 217);
-            this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(253, 20);
-            this.txtStreet.TabIndex = 14;
+            this.txtStageStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageStreet.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageStreet.Location = new System.Drawing.Point(19, 308);
+            this.txtStageStreet.Name = "txtStageStreet";
+            this.txtStageStreet.Size = new System.Drawing.Size(253, 20);
+            this.txtStageStreet.TabIndex = 14;
             // 
             // lbStreet
             // 
             this.lbStreet.AutoSize = true;
             this.lbStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStreet.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStreet.Location = new System.Drawing.Point(15, 194);
+            this.lbStreet.Location = new System.Drawing.Point(16, 285);
             this.lbStreet.Name = "lbStreet";
             this.lbStreet.Size = new System.Drawing.Size(59, 20);
             this.lbStreet.TabIndex = 17;
             this.lbStreet.Text = "Street";
             // 
-            // txtSeason
+            // txtStageCountry
             // 
-            this.txtSeason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtSeason.Location = new System.Drawing.Point(19, 171);
-            this.txtSeason.Name = "txtSeason";
-            this.txtSeason.Size = new System.Drawing.Size(253, 20);
-            this.txtSeason.TabIndex = 16;
+            this.txtStageCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageCountry.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageCountry.Location = new System.Drawing.Point(19, 262);
+            this.txtStageCountry.Name = "txtStageCountry";
+            this.txtStageCountry.Size = new System.Drawing.Size(253, 20);
+            this.txtStageCountry.TabIndex = 16;
             // 
-            // lbSeason
+            // lbStageCountry
             // 
-            this.lbSeason.AutoSize = true;
-            this.lbSeason.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSeason.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbSeason.Location = new System.Drawing.Point(15, 148);
-            this.lbSeason.Name = "lbSeason";
-            this.lbSeason.Size = new System.Drawing.Size(70, 20);
-            this.lbSeason.TabIndex = 15;
-            this.lbSeason.Text = "Season";
+            this.lbStageCountry.AutoSize = true;
+            this.lbStageCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageCountry.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageCountry.Location = new System.Drawing.Point(16, 239);
+            this.lbStageCountry.Name = "lbStageCountry";
+            this.lbStageCountry.Size = new System.Drawing.Size(71, 20);
+            this.lbStageCountry.TabIndex = 15;
+            this.lbStageCountry.Text = "Country";
             // 
-            // txtDate
+            // txtEventDate
             // 
-            this.txtDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtDate.Location = new System.Drawing.Point(19, 125);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(253, 20);
-            this.txtDate.TabIndex = 14;
+            this.txtEventDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtEventDate.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtEventDate.Location = new System.Drawing.Point(19, 125);
+            this.txtEventDate.Name = "txtEventDate";
+            this.txtEventDate.Size = new System.Drawing.Size(253, 20);
+            this.txtEventDate.TabIndex = 14;
             // 
             // lbDate
             // 
@@ -344,15 +311,37 @@
             this.panelTeamsMenu.Controls.Add(this.txtIDTeam);
             this.panelTeamsMenu.Controls.Add(this.lbTeamsName);
             this.panelTeamsMenu.Controls.Add(this.txtTeamsName);
-            this.panelTeamsMenu.Location = new System.Drawing.Point(36, 111);
+            this.panelTeamsMenu.Location = new System.Drawing.Point(0, 0);
             this.panelTeamsMenu.Name = "panelTeamsMenu";
             this.panelTeamsMenu.Size = new System.Drawing.Size(293, 301);
             this.panelTeamsMenu.TabIndex = 18;
             this.panelTeamsMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTeamsMenu_Paint);
             // 
+            // comboBoxTeamState
+            // 
+            this.comboBoxTeamState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxTeamState.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxTeamState.FormattingEnabled = true;
+            this.comboBoxTeamState.Location = new System.Drawing.Point(19, 263);
+            this.comboBoxTeamState.Name = "comboBoxTeamState";
+            this.comboBoxTeamState.Size = new System.Drawing.Size(250, 21);
+            this.comboBoxTeamState.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(15, 240);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Street";
+            // 
             // maskedTextBox5
             // 
             this.maskedTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.maskedTextBox5.ForeColor = System.Drawing.SystemColors.Window;
             this.maskedTextBox5.Location = new System.Drawing.Point(19, 217);
             this.maskedTextBox5.Name = "maskedTextBox5";
             this.maskedTextBox5.Size = new System.Drawing.Size(253, 20);
@@ -372,6 +361,7 @@
             // maskedTextBox6
             // 
             this.maskedTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.maskedTextBox6.ForeColor = System.Drawing.SystemColors.Window;
             this.maskedTextBox6.Location = new System.Drawing.Point(19, 171);
             this.maskedTextBox6.Name = "maskedTextBox6";
             this.maskedTextBox6.Size = new System.Drawing.Size(253, 20);
@@ -391,6 +381,7 @@
             // txtTeamCity
             // 
             this.txtTeamCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtTeamCity.ForeColor = System.Drawing.SystemColors.Window;
             this.txtTeamCity.Location = new System.Drawing.Point(19, 125);
             this.txtTeamCity.Name = "txtTeamCity";
             this.txtTeamCity.Size = new System.Drawing.Size(253, 20);
@@ -422,6 +413,7 @@
             // txtIDTeam
             // 
             this.txtIDTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtIDTeam.ForeColor = System.Drawing.SystemColors.Window;
             this.txtIDTeam.Location = new System.Drawing.Point(19, 33);
             this.txtIDTeam.Name = "txtIDTeam";
             this.txtIDTeam.Size = new System.Drawing.Size(253, 20);
@@ -441,38 +433,37 @@
             // txtTeamsName
             // 
             this.txtTeamsName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtTeamsName.ForeColor = System.Drawing.SystemColors.Window;
             this.txtTeamsName.Location = new System.Drawing.Point(19, 79);
             this.txtTeamsName.Name = "txtTeamsName";
             this.txtTeamsName.Size = new System.Drawing.Size(253, 20);
             this.txtTeamsName.TabIndex = 3;
             // 
-            // label3
+            // txtStageName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(15, 240);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Street";
+            this.txtStageName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageName.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageName.Location = new System.Drawing.Point(19, 171);
+            this.txtStageName.Name = "txtStageName";
+            this.txtStageName.Size = new System.Drawing.Size(253, 20);
+            this.txtStageName.TabIndex = 18;
             // 
-            // comboBoxTeamState
+            // lbStageName
             // 
-            this.comboBoxTeamState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.comboBoxTeamState.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBoxTeamState.FormattingEnabled = true;
-            this.comboBoxTeamState.Location = new System.Drawing.Point(19, 263);
-            this.comboBoxTeamState.Name = "comboBoxTeamState";
-            this.comboBoxTeamState.Size = new System.Drawing.Size(250, 21);
-            this.comboBoxTeamState.TabIndex = 19;
+            this.lbStageName.AutoSize = true;
+            this.lbStageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageName.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageName.Location = new System.Drawing.Point(16, 148);
+            this.lbStageName.Name = "lbStageName";
+            this.lbStageName.Size = new System.Drawing.Size(108, 20);
+            this.lbStageName.TabIndex = 19;
+            this.lbStageName.Text = "Stage Name";
             // 
             // BackOficeResultManager_Asociation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.Controls.Add(this.panelTeamsMenu);
             this.Controls.Add(this.btnTeamsMenu);
             this.Controls.Add(this.panelEventMenu);
             this.Controls.Add(this.btnEventMenu);
@@ -495,25 +486,21 @@
         private System.Windows.Forms.Button btnRegisterAcc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAsocID;
-        private System.Windows.Forms.TextBox txtAsocName;
+        private System.Windows.Forms.TextBox txtEventName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGrid1;
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnEventMenu;
         private System.Windows.Forms.Panel panelEventMenu;
-        private System.Windows.Forms.MaskedTextBox txtCountry;
-        private System.Windows.Forms.Label lbCountry;
-        private System.Windows.Forms.MaskedTextBox txtState;
-        private System.Windows.Forms.Label lbState;
-        private System.Windows.Forms.MaskedTextBox txtCity;
+        private System.Windows.Forms.MaskedTextBox txtStageCity;
         private System.Windows.Forms.Label lbCity;
-        private System.Windows.Forms.MaskedTextBox txtNum;
+        private System.Windows.Forms.MaskedTextBox txtStageNum;
         private System.Windows.Forms.Label lbNum;
-        private System.Windows.Forms.MaskedTextBox txtStreet;
+        private System.Windows.Forms.MaskedTextBox txtStageStreet;
         private System.Windows.Forms.Label lbStreet;
-        private System.Windows.Forms.MaskedTextBox txtSeason;
-        private System.Windows.Forms.Label lbSeason;
-        private System.Windows.Forms.MaskedTextBox txtDate;
+        private System.Windows.Forms.MaskedTextBox txtStageCountry;
+        private System.Windows.Forms.Label lbStageCountry;
+        private System.Windows.Forms.MaskedTextBox txtEventDate;
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.Button btnTeamsMenu;
         private System.Windows.Forms.Panel panelTeamsMenu;
@@ -529,5 +516,7 @@
         private System.Windows.Forms.TextBox txtTeamsName;
         private System.Windows.Forms.ComboBox comboBoxTeamState;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbStageName;
+        private System.Windows.Forms.MaskedTextBox txtStageName;
     }
 }

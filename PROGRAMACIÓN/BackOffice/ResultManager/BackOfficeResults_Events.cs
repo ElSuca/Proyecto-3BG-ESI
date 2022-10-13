@@ -22,11 +22,11 @@ namespace BackOffice.ResultManager
         public BackOfficeResults_Events() => InitializeComponent();
         private void btnRegisterEvent_Click(object sender, EventArgs e)
         {
-            EventControler.Alta(
+            /*EventControler.Alta(
                 txtEventName.Text,
                 txtDate.Text,
                 txtPreEvent.Text
-            );
+            );*/
             MessageBox.Show("Evento cargado");
         }
         private void reloadList() => dataGrid1.DataSource = new EventControler().GetEventDataTable();

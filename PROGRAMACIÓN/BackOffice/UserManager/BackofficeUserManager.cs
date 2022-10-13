@@ -35,8 +35,13 @@ namespace BackOffice
                     txtEmailRegister.Text,
                     txtUserNameRegister.Text,
                     ComboBoxRole.Items[ComboBoxRole.SelectedIndex].ToString(),
-                     MD5Hash.Hash.Content(txtPassword.Text),
-                    txtTelefonoRegister.Text
+                    MD5Hash.Hash.Content(txtPassword.Text),
+                    txtTelefonoRegister.Text,
+                    txtCity.Text,
+                    txtStreet.Text,
+                    Int32.Parse(txtNum.Text),
+                    txtState.Text,
+                    txtCountry.Text
                 );
                 reloadList();
                 MessageBox.Show("Usuario cargado");
@@ -47,7 +52,8 @@ namespace BackOffice
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un problema inesperado");
+                MessageBox.Show(ex.ToString());
+            //    MessageBox.Show("Hubo un problema inesperado");
             }
         }
 
@@ -82,7 +88,12 @@ namespace BackOffice
                     txtUserNameRegister.Text,
                     ComboBoxRole.Items[ComboBoxRole.SelectedIndex].ToString(),
                     MD5Hash.Hash.Content(txtPassword.Text),
-                    txtTelefonoRegister.Text
+                    txtTelefonoRegister.Text,
+                    txtCity.Text,
+                    txtStreet.Text,
+                    Int32.Parse(txtNum.Text),
+                    txtState.Text,
+                    txtCountry.Text
                     );
                 MessageBox.Show("Usuario " + txtID.Text + " modificado");
                 reloadList();

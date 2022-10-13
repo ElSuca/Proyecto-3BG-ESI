@@ -41,9 +41,9 @@ namespace Proyecto
             else
             {
                 btnRegister.Text = "Registrar";
-                btnLoggin.Text = "Iniciar Seción";
+                btnLoggin.Text = "Iniciar Sesión";
                 Lblanguaje.Text = "Idioma";
-                labelTitle.Text = "Pryecto Olympus";
+                labelTitle.Text = "Proyecto Olympus";
             }
         }
     }

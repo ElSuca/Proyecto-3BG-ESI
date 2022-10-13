@@ -9,7 +9,7 @@ namespace CapaLogica
     public class UserControler
     {
         #region FuncionesBasicas  
-        public static void Alta(string name, string lastName1, string lastName2, string email, string username, string role, string password, string phoneNumber)
+        public static void Alta(string name,string lastName1,string lastName2,string email,string username,string role,string password,string phoneNumber,string city,string street,int num,string state,string country)
         {
             ModelUser p = new ModelUser
             {
@@ -20,12 +20,17 @@ namespace CapaLogica
                 Email = email,
                 UserName = username,
                 Password = password,
-                UserRole = role
+                UserRole = role,
+                City = city,
+                Street = street,
+                Num = num,
+                State = state,
+                Country = country
             };
             p.Save();
         }
 
-        public static void Modificar(int id, string name, string lastName1, string lastName2, string email, string username, string role, string password, string phoneNumber)
+        public static void Modificar(int id, string name, string lastName1, string lastName2, string email, string username, string role, string password, string phoneNumber, string city, string street, int num, string state, string country)
         {
             ModelUser p = new ModelUser(id)
             {
@@ -36,7 +41,12 @@ namespace CapaLogica
                 Email = email,
                 UserName = username,
                 Password = password,
-                UserRole = role
+                UserRole = role,
+                City = city,
+                Street = street,
+                Num = num,
+                State = state,
+                Country = country
             };
             p.Save();
         }
@@ -63,8 +73,8 @@ namespace CapaLogica
         }
         public DataTable GetUserDataTable() => new ModelUser().GetUserDataTable();
         #region get
-        public string GetEmail() => new ModelUser().getEmail();
-        public string GetUsername() => new ModelUser().getUserName();
+        public string GetEmail() => new ModelUser().Email;
+        public string GetUsername() => new ModelUser().UserName;
         #endregion
         #region SetStatic
         public void SetStaticUsername(string name) => new ModelUser().SetUsernameBuffer(name);
