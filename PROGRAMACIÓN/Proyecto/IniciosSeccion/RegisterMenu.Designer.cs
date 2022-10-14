@@ -11,15 +11,7 @@
         /// Limpiar los recursos que se estén usando.
         /// </summary>
         /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
+     
         #region Código generado por el Diseñador de componentes
 
         /// <summary> 
@@ -44,7 +36,7 @@
             this.txtPhoneRegister = new System.Windows.Forms.TextBox();
             this.txtApellidoRegister = new System.Windows.Forms.TextBox();
             this.txtUserNameRegister = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+
             // 
             // label3
             // 
@@ -126,7 +118,7 @@
             this.btnRegister.TabIndex = 29;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+
             // 
             // lbNumber
             // 
@@ -190,30 +182,7 @@
             // 
             // RegisterMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNameRegister);
-            this.Controls.Add(this.txtEmailRegister);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtLastName2Register);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.lbNumber);
-            this.Controls.Add(this.lbMail);
-            this.Controls.Add(this.lbLastname);
-            this.Controls.Add(this.lbUsername);
-            this.Controls.Add(this.txtPhoneRegister);
-            this.Controls.Add(this.txtApellidoRegister);
-            this.Controls.Add(this.txtUserNameRegister);
-            this.Name = "RegisterMenu";
-            this.Size = new System.Drawing.Size(231, 310);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+           
         }
 
         #endregion

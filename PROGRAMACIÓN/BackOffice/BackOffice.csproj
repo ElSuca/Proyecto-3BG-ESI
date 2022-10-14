@@ -104,17 +104,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultManager\BackOfficeResults_Events.cs">
+    <Compile Include="ResultManager\BackOficeResultManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ResultManager\BackOfficeResults_Events.Designer.cs">
-      <DependentUpon>BackOfficeResults_Events.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ResultManager\BackOficeResultManager_Asociation.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ResultManager\BackOficeResultManager_Asociation.Designer.cs">
-      <DependentUpon>BackOficeResultManager_Asociation.cs</DependentUpon>
+    <Compile Include="ResultManager\BackOficeResultManager.Designer.cs">
+      <DependentUpon>BackOficeResultManager.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdManager\BackOfficeAdManager.resx">
       <DependentUpon>BackOfficeAdManager.cs</DependentUpon>
@@ -137,11 +131,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ResultManager\BackOfficeResults_Events.resx">
-      <DependentUpon>BackOfficeResults_Events.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ResultManager\BackOficeResultManager_Asociation.resx">
-      <DependentUpon>BackOficeResultManager_Asociation.cs</DependentUpon>
+    <EmbeddedResource Include="ResultManager\BackOficeResultManager.resx">
+      <DependentUpon>BackOficeResultManager.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

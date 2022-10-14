@@ -25,26 +25,16 @@ namespace BackOffice
 
         public void selectMenu(int selection)
         {
-            if (selection == 1)
-            {
-                if (!Panel.Contains(BackOfficeResults_Events.Instance))
-                {
-                    Panel.Controls.Add(BackOfficeResults_Events.Instance);
-                    BackOfficeResults_Events.Instance.Dock = DockStyle.Fill;
-                    BackOfficeResults_Events.Instance.BringToFront();
-                }
-                else BackOfficeResults_Events.Instance.BringToFront();
-            }
 
             if (selection == 2)
             {
-                if (!Panel.Contains(BackOficeResultManager_Asociation.Instance))
+                if (!Panel.Contains(BackOficeResultManager.Instance))
                 {
-                    Panel.Controls.Add(BackOficeResultManager_Asociation.Instance);
-                    BackOficeResultManager_Asociation.Instance.Dock = DockStyle.Fill;
-                    BackOficeResultManager_Asociation.Instance.BringToFront();
+                    Panel.Controls.Add(BackOficeResultManager.Instance);
+                    BackOficeResultManager.Instance.Dock = DockStyle.Fill;
+                    BackOficeResultManager.Instance.BringToFront();
                 }
-                else BackOficeResultManager_Asociation.Instance.BringToFront();
+                else BackOficeResultManager.Instance.BringToFront();
             }
             if (selection == 3)
             {

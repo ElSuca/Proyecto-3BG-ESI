@@ -11,14 +11,7 @@
         /// Limpiar los recursos que se estén usando.
         /// </summary>
         /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+  
 
         #region Código generado por el Diseñador de componentes
 
@@ -35,7 +28,7 @@
             this.lbUserName = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.btnLoggin = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+
             // 
             // btnEntrar
             // 
@@ -45,7 +38,7 @@
             this.btnEntrar.TabIndex = 13;
             this.btnEntrar.Text = "Entrar de una";
             this.btnEntrar.UseVisualStyleBackColor = true;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+
             // 
             // label1
             // 
@@ -101,25 +94,11 @@
             this.btnLoggin.TabIndex = 7;
             this.btnLoggin.Text = "Accept";
             this.btnLoggin.UseVisualStyleBackColor = false;
-            this.btnLoggin.Click += new System.EventHandler(this.btnLoggin_Click);
+
             // 
             // LoggingMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
-            this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lbUserName);
-            this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.btnLoggin);
-            this.Name = "LoggingMenu";
-            this.Size = new System.Drawing.Size(233, 170);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+           
         }
 
         #endregion

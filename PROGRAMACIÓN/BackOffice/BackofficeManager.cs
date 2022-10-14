@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using CapaLogica;
 using CapaLoogica;
 using BackOffice;
+using System.Drawing;
 
 namespace Proyecto.Backoffice
 {
@@ -16,6 +17,7 @@ namespace Proyecto.Backoffice
         public BackofficeManager()
         {
             InitializeComponent();
+            loadResources();
             selectMenu(0);
         }
         private void BackofficeUserManager_Load(object sender, EventArgs e)
@@ -84,6 +86,12 @@ namespace Proyecto.Backoffice
 
         private void btnResultManager_Click(object sender, EventArgs e) => selectMenu(3);
 
+        private Bitmap MyImage;
+        private void loadResources()
+        {
+        }
+
+        public static Image ResizeImage(Image imgOriginal, Size size) => new Bitmap(imgOriginal, size);
         private void Lblanguaje_Click(object sender, EventArgs e)
         {
 

@@ -108,15 +108,9 @@
     <Compile Include="LanguageMenu.Designer.cs">
       <DependentUpon>LanguageMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="IniciosSeccion\LoggingMenu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="IniciosSeccion\LoggingMenu.designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IniciosSeccion\RegisterMenu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="IniciosSeccion\RegisterMenu.designer.cs" />
     <Compile Include="StarterMenu.cs">
       <SubType>UserControl</SubType>
@@ -150,9 +144,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="IniciosSeccion\RegisterMenu.resx">
-      <DependentUpon>RegisterMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StarterMenu.resx">
       <DependentUpon>StarterMenu.cs</DependentUpon>
     </EmbeddedResource>

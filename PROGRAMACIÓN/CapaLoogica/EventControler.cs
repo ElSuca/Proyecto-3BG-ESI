@@ -10,9 +10,23 @@ namespace CapaLoogica
         }
         public DataTable GetEventDataTable() => new ModelEvents().GetEventDataTable();
 
-        public static void Alta(string eventname, string eventdate,string stagename, string stagecity,string stagecountry,string stagestreet, int stagenum)
+        public static void Alta(string eventname, string eventdate,string state, string stagecity,string stagecountry,string stagestreet, int stagenum)
         {
             ModelEvents e = new ModelEvents
+            {
+                EventName = eventname,
+                EventDate = eventdate,
+                EventState = state,
+                EventCity = stagecity,
+                EventCountry = stagecity,
+                EventStreet = stagestreet,
+                EventNum = stagenum
+            };
+            e.Save();
+        }
+        public static void Modificar(int id, string eventname, string eventdate, string stagename, string stagecity, string stagecountry, string stagestreet, int stagenum)
+        {
+            ModelEvents e = new ModelEvents(id)
             {
                 EventName = eventname,
                 EventDate = eventdate,

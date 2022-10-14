@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackofficeManager));
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.btnUserManagerToggle = new System.Windows.Forms.Button();
             this.btnAdManager = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.btnResultManager = new System.Windows.Forms.Button();
             this.Lblanguaje = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,15 +54,15 @@
             this.label1.Text = "Back Office ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pictureBox1
+            // pictureBoxLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(88, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 53);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(88, 3);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(185, 53);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 36;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // btnUserManagerToggle
             // 
@@ -97,9 +97,9 @@
             this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.MainPanel.AutoScroll = true;
             this.MainPanel.AutoScrollMinSize = new System.Drawing.Size(150, 150);
-            this.MainPanel.Location = new System.Drawing.Point(138, 94);
+            this.MainPanel.Location = new System.Drawing.Point(138, 120);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1618, 676);
+            this.MainPanel.Size = new System.Drawing.Size(1623, 644);
             this.MainPanel.TabIndex = 45;
             // 
             // btnResultManager
@@ -133,18 +133,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(1773, 803);
             this.Controls.Add(this.Lblanguaje);
             this.Controls.Add(this.btnResultManager);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.btnAdManager);
             this.Controls.Add(this.btnUserManagerToggle);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.label1);
             this.Name = "BackofficeManager";
             this.Text = "BackofficeUserManager";
             this.Load += new System.EventHandler(this.BackofficeUserManager_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +152,7 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button btnUserManagerToggle;
         private System.Windows.Forms.Button btnAdManager;
         private System.Windows.Forms.Panel MainPanel;

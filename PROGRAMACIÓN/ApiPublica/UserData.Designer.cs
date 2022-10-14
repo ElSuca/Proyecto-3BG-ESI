@@ -48,6 +48,16 @@
             this.btnShowPassword = new System.Windows.Forms.Button();
             this.btnUpgradeAccount = new System.Windows.Forms.Button();
             this.btnSendMail = new System.Windows.Forms.Button();
+            this.lbCity = new System.Windows.Forms.Label();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.lbStreet = new System.Windows.Forms.Label();
+            this.txtStreet = new System.Windows.Forms.TextBox();
+            this.lbStreetNumb = new System.Windows.Forms.Label();
+            this.txtStreetNumber = new System.Windows.Forms.TextBox();
+            this.lbState = new System.Windows.Forms.Label();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.lbCountry = new System.Windows.Forms.Label();
+            this.txtCountry = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbNameDisplay
@@ -215,7 +225,7 @@
             this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSaveChanges.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanges.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSaveChanges.Location = new System.Drawing.Point(17, 467);
+            this.btnSaveChanges.Location = new System.Drawing.Point(12, 749);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(218, 31);
             this.btnSaveChanges.TabIndex = 21;
@@ -261,7 +271,7 @@
             // 
             // btnSendMail
             // 
-            this.btnSendMail.Location = new System.Drawing.Point(303, 467);
+            this.btnSendMail.Location = new System.Drawing.Point(285, 757);
             this.btnSendMail.Name = "btnSendMail";
             this.btnSendMail.Size = new System.Drawing.Size(75, 23);
             this.btnSendMail.TabIndex = 25;
@@ -269,12 +279,132 @@
             this.btnSendMail.UseVisualStyleBackColor = true;
             this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
             // 
+            // lbCity
+            // 
+            this.lbCity.AutoSize = true;
+            this.lbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCity.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbCity.Location = new System.Drawing.Point(12, 446);
+            this.lbCity.Name = "lbCity";
+            this.lbCity.Size = new System.Drawing.Size(53, 25);
+            this.lbCity.TabIndex = 26;
+            this.lbCity.Text = "City";
+            // 
+            // txtCity
+            // 
+            this.txtCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCity.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtCity.Location = new System.Drawing.Point(17, 474);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.PasswordChar = '*';
+            this.txtCity.Size = new System.Drawing.Size(333, 26);
+            this.txtCity.TabIndex = 27;
+            // 
+            // lbStreet
+            // 
+            this.lbStreet.AutoSize = true;
+            this.lbStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStreet.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStreet.Location = new System.Drawing.Point(12, 503);
+            this.lbStreet.Name = "lbStreet";
+            this.lbStreet.Size = new System.Drawing.Size(75, 25);
+            this.lbStreet.TabIndex = 28;
+            this.lbStreet.Text = "Street";
+            // 
+            // txtStreet
+            // 
+            this.txtStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStreet.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStreet.Location = new System.Drawing.Point(17, 531);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.PasswordChar = '*';
+            this.txtStreet.Size = new System.Drawing.Size(333, 26);
+            this.txtStreet.TabIndex = 29;
+            // 
+            // lbStreetNumb
+            // 
+            this.lbStreetNumb.AutoSize = true;
+            this.lbStreetNumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStreetNumb.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStreetNumb.Location = new System.Drawing.Point(12, 560);
+            this.lbStreetNumb.Name = "lbStreetNumb";
+            this.lbStreetNumb.Size = new System.Drawing.Size(163, 25);
+            this.lbStreetNumb.TabIndex = 30;
+            this.lbStreetNumb.Text = "Street Number";
+            // 
+            // txtStreetNumber
+            // 
+            this.txtStreetNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStreetNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStreetNumber.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStreetNumber.Location = new System.Drawing.Point(17, 588);
+            this.txtStreetNumber.Name = "txtStreetNumber";
+            this.txtStreetNumber.PasswordChar = '*';
+            this.txtStreetNumber.Size = new System.Drawing.Size(333, 26);
+            this.txtStreetNumber.TabIndex = 31;
+            // 
+            // lbState
+            // 
+            this.lbState.AutoSize = true;
+            this.lbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbState.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbState.Location = new System.Drawing.Point(12, 617);
+            this.lbState.Name = "lbState";
+            this.lbState.Size = new System.Drawing.Size(67, 25);
+            this.lbState.TabIndex = 32;
+            this.lbState.Text = "State";
+            // 
+            // txtState
+            // 
+            this.txtState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtState.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtState.Location = new System.Drawing.Point(17, 645);
+            this.txtState.Name = "txtState";
+            this.txtState.PasswordChar = '*';
+            this.txtState.Size = new System.Drawing.Size(333, 26);
+            this.txtState.TabIndex = 33;
+            // 
+            // lbCountry
+            // 
+            this.lbCountry.AutoSize = true;
+            this.lbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCountry.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbCountry.Location = new System.Drawing.Point(12, 674);
+            this.lbCountry.Name = "lbCountry";
+            this.lbCountry.Size = new System.Drawing.Size(94, 25);
+            this.lbCountry.TabIndex = 34;
+            this.lbCountry.Text = "Country";
+            // 
+            // txtCountry
+            // 
+            this.txtCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCountry.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtCountry.Location = new System.Drawing.Point(17, 702);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.PasswordChar = '*';
+            this.txtCountry.Size = new System.Drawing.Size(333, 26);
+            this.txtCountry.TabIndex = 35;
+            // 
             // UserData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(448, 510);
+            this.ClientSize = new System.Drawing.Size(428, 791);
+            this.Controls.Add(this.txtCountry);
+            this.Controls.Add(this.lbCountry);
+            this.Controls.Add(this.txtState);
+            this.Controls.Add(this.lbState);
+            this.Controls.Add(this.txtStreetNumber);
+            this.Controls.Add(this.lbStreetNumb);
+            this.Controls.Add(this.txtStreet);
+            this.Controls.Add(this.lbStreet);
+            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.lbCity);
             this.Controls.Add(this.btnSendMail);
             this.Controls.Add(this.btnUpgradeAccount);
             this.Controls.Add(this.btnShowPassword);
@@ -324,6 +454,16 @@
         private System.Windows.Forms.Button btnShowPassword;
         private System.Windows.Forms.Button btnUpgradeAccount;
         private System.Windows.Forms.Button btnSendMail;
+        private System.Windows.Forms.Label lbCity;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.Label lbStreet;
+        private System.Windows.Forms.TextBox txtStreet;
+        private System.Windows.Forms.Label lbStreetNumb;
+        private System.Windows.Forms.TextBox txtStreetNumber;
+        private System.Windows.Forms.Label lbState;
+        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.Label lbCountry;
+        private System.Windows.Forms.TextBox txtCountry;
     }
 }
 

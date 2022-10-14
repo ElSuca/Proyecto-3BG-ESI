@@ -522,7 +522,6 @@ C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\P
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.IniciosSeccion.FormLogging.resources
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.IniciosSeccion.FormRegistro.resources
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.IniciosSeccion.LoggingMenu.resources
-C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.IniciosSeccion.RegisterMenu.resources
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\Proyecto.StarterMenu.resources
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\CapaGrafica.csproj.GenerateResource.cache
@@ -639,3 +638,6 @@ C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\obj\Debug\P
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\ApiAutentificacion.exe
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\ApiAutentificacion.pdb
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\Proyecto\bin\Debug\ApiAutentificacion.exe.config
+C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\bin\Debug\ApiAutentificacion.exe
+C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\bin\Debug\ApiAutentificacion.pdb
+C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\Proyecto\bin\Debug\ApiAutentificacion.exe.config

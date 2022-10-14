@@ -213,7 +213,7 @@ namespace CapaDeDatos
                 this.command.CommandText = $"DELETE PHONES.* from PHONES where ID_USER = {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
-                this.command.CommandText = $"delete USER.* from USER where ID= {Id}";
+                this.command.CommandText = $"DELETE USER.* from USER where ID= {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }

@@ -44,6 +44,16 @@
             this.txtEmailRegister = new System.Windows.Forms.TextBox();
             this.txtNameRegister = new System.Windows.Forms.TextBox();
             this.lbRealName = new System.Windows.Forms.Label();
+            this.lbCity = new System.Windows.Forms.Label();
+            this.txtCityRegister = new System.Windows.Forms.TextBox();
+            this.lbStreet = new System.Windows.Forms.Label();
+            this.txtStreetRegister = new System.Windows.Forms.TextBox();
+            this.lbStreetNumber = new System.Windows.Forms.Label();
+            this.txtStreetNumberRegister = new System.Windows.Forms.TextBox();
+            this.lbState = new System.Windows.Forms.Label();
+            this.txtStateRegister = new System.Windows.Forms.TextBox();
+            this.lbCountry = new System.Windows.Forms.Label();
+            this.txtCountryRegister = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtUserNameRegister
@@ -125,7 +135,7 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegister.Location = new System.Drawing.Point(11, 409);
+            this.btnRegister.Location = new System.Drawing.Point(259, 353);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(224, 30);
             this.btnRegister.TabIndex = 11;
@@ -160,7 +170,7 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbTitle.Location = new System.Drawing.Point(46, 22);
+            this.lbTitle.Location = new System.Drawing.Point(182, 20);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(132, 33);
             this.lbTitle.TabIndex = 16;
@@ -215,12 +225,122 @@
             this.lbRealName.TabIndex = 21;
             this.lbRealName.Text = "Real Name";
             // 
+            // lbCity
+            // 
+            this.lbCity.AutoSize = true;
+            this.lbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCity.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbCity.Location = new System.Drawing.Point(255, 82);
+            this.lbCity.Name = "lbCity";
+            this.lbCity.Size = new System.Drawing.Size(39, 20);
+            this.lbCity.TabIndex = 22;
+            this.lbCity.Text = "City";
+            // 
+            // txtCityRegister
+            // 
+            this.txtCityRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtCityRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtCityRegister.Location = new System.Drawing.Point(259, 108);
+            this.txtCityRegister.Name = "txtCityRegister";
+            this.txtCityRegister.Size = new System.Drawing.Size(224, 20);
+            this.txtCityRegister.TabIndex = 23;
+            // 
+            // lbStreet
+            // 
+            this.lbStreet.AutoSize = true;
+            this.lbStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStreet.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStreet.Location = new System.Drawing.Point(255, 131);
+            this.lbStreet.Name = "lbStreet";
+            this.lbStreet.Size = new System.Drawing.Size(59, 20);
+            this.lbStreet.TabIndex = 24;
+            this.lbStreet.Text = "Street";
+            // 
+            // txtStreetRegister
+            // 
+            this.txtStreetRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStreetRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStreetRegister.Location = new System.Drawing.Point(259, 154);
+            this.txtStreetRegister.Name = "txtStreetRegister";
+            this.txtStreetRegister.Size = new System.Drawing.Size(224, 20);
+            this.txtStreetRegister.TabIndex = 25;
+            // 
+            // lbStreetNumber
+            // 
+            this.lbStreetNumber.AutoSize = true;
+            this.lbStreetNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStreetNumber.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStreetNumber.Location = new System.Drawing.Point(255, 177);
+            this.lbStreetNumber.Name = "lbStreetNumber";
+            this.lbStreetNumber.Size = new System.Drawing.Size(126, 20);
+            this.lbStreetNumber.TabIndex = 26;
+            this.lbStreetNumber.Text = "Street Number";
+            // 
+            // txtStreetNumberRegister
+            // 
+            this.txtStreetNumberRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStreetNumberRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStreetNumberRegister.Location = new System.Drawing.Point(259, 200);
+            this.txtStreetNumberRegister.Name = "txtStreetNumberRegister";
+            this.txtStreetNumberRegister.Size = new System.Drawing.Size(224, 20);
+            this.txtStreetNumberRegister.TabIndex = 27;
+            // 
+            // lbState
+            // 
+            this.lbState.AutoSize = true;
+            this.lbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbState.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbState.Location = new System.Drawing.Point(255, 223);
+            this.lbState.Name = "lbState";
+            this.lbState.Size = new System.Drawing.Size(53, 20);
+            this.lbState.TabIndex = 28;
+            this.lbState.Text = "State";
+            // 
+            // txtStateRegister
+            // 
+            this.txtStateRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStateRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStateRegister.Location = new System.Drawing.Point(259, 246);
+            this.txtStateRegister.Name = "txtStateRegister";
+            this.txtStateRegister.Size = new System.Drawing.Size(224, 20);
+            this.txtStateRegister.TabIndex = 29;
+            // 
+            // lbCountry
+            // 
+            this.lbCountry.AutoSize = true;
+            this.lbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCountry.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbCountry.Location = new System.Drawing.Point(255, 269);
+            this.lbCountry.Name = "lbCountry";
+            this.lbCountry.Size = new System.Drawing.Size(71, 20);
+            this.lbCountry.TabIndex = 30;
+            this.lbCountry.Text = "Country";
+            // 
+            // txtCountryRegister
+            // 
+            this.txtCountryRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtCountryRegister.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtCountryRegister.Location = new System.Drawing.Point(259, 294);
+            this.txtCountryRegister.Name = "txtCountryRegister";
+            this.txtCountryRegister.Size = new System.Drawing.Size(224, 20);
+            this.txtCountryRegister.TabIndex = 31;
+            // 
             // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(252, 466);
+            this.ClientSize = new System.Drawing.Size(507, 402);
+            this.Controls.Add(this.txtCountryRegister);
+            this.Controls.Add(this.lbCountry);
+            this.Controls.Add(this.txtStateRegister);
+            this.Controls.Add(this.lbState);
+            this.Controls.Add(this.txtStreetNumberRegister);
+            this.Controls.Add(this.lbStreetNumber);
+            this.Controls.Add(this.txtStreetRegister);
+            this.Controls.Add(this.lbStreet);
+            this.Controls.Add(this.txtCityRegister);
+            this.Controls.Add(this.lbCity);
             this.Controls.Add(this.lbRealName);
             this.Controls.Add(this.txtNameRegister);
             this.Controls.Add(this.txtEmailRegister);
@@ -263,5 +383,15 @@
         private System.Windows.Forms.TextBox txtEmailRegister;
         private System.Windows.Forms.TextBox txtNameRegister;
         private System.Windows.Forms.Label lbRealName;
+        private System.Windows.Forms.Label lbCity;
+        private System.Windows.Forms.TextBox txtCityRegister;
+        private System.Windows.Forms.Label lbStreet;
+        private System.Windows.Forms.TextBox txtStreetRegister;
+        private System.Windows.Forms.Label lbStreetNumber;
+        private System.Windows.Forms.TextBox txtStreetNumberRegister;
+        private System.Windows.Forms.Label lbState;
+        private System.Windows.Forms.TextBox txtStateRegister;
+        private System.Windows.Forms.Label lbCountry;
+        private System.Windows.Forms.TextBox txtCountryRegister;
     }
 }

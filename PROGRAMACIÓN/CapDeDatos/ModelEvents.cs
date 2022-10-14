@@ -14,6 +14,7 @@ namespace CapDeDatos
         public string EventCity;
         public string EventCountry;
         public string EventStreet;
+        public string EventState;
         public int EventNum;
 
         public ModelEvents()
@@ -24,7 +25,7 @@ namespace CapDeDatos
 
         public void GetEventData(int id)
         {
-            this.command.CommandText = $"Select * FROM event ID={id}";
+            this.command.CommandText = $"Select EVENT.* FROM EVENT WHERE ID={id}";
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
@@ -35,6 +36,7 @@ namespace CapDeDatos
             this.EventCountry = this.dataReader["COUNTRY"].ToString();
             this.EventStreet = this.dataReader["STREET"].ToString();
             this.EventNum = Int32.Parse(this.dataReader["NUM"].ToString());
+            this.EventState = this.dataReader["STATE"].ToString();
             this.dataReader.Close();
         }
         public DataTable GetEventDataTable()
@@ -61,8 +63,8 @@ namespace CapDeDatos
             try
             {
                 command.CommandText = "INSERT INTO " +
-                   "event (Name,Date) " +
-                   $"VALUES ('{EventName}','{EventDate}')";
+                   "EVENT (name,date,city,street,num,state,country) " +
+                   $"VALUES ('{EventName}','{EventDate}','{EventCity}','{EventStreet}','{EventNum}','{EventState}','{EventCountry}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -88,23 +90,25 @@ namespace CapDeDatos
         }*/
         private void Update()
         {
-         /*   this.command.CommandText = "UPDATE user SET " +
-                "EventName = @EventName," +
-                "Date = @Date," +
-                "PreEvent = @PreEvent," +
-                 "WHERE ID = @ID";
-            this.command.Parameters.AddWithValue("@EventName", this.EventName);
-            this.command.Parameters.AddWithValue("@Date", this.Date);
-            this.command.Parameters.AddWithValue("@PreEvent", this.PreEvent);
+           this.command.CommandText = "UPDATE EVENT SET " +
+                $"NAME = '{EventName}'," +
+                $"DATE = '{EventDate}'," +
+                $"CITY = '{EventCity}'," +
+                $"STREET = '{EventStreet}'," +
+                $"NUM = '{EventNum}'," +
+                $"STATE = '{EventState}'," +
+                $"COUNTRY = '{EventCountry}' " +
+                $"WHERE ID = {this.ID}";
             this.command.Prepare();
-            this.command.ExecuteNonQuery();*/
+            this.command.ExecuteNonQuery();
+            
 
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"delete * from EVENT where Id= {Id}";
+                this.command.CommandText = $"DELETE EVENT.* FROM EVENT WHERE ID = {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }

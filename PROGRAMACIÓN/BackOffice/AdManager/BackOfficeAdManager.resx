@@ -325,7 +325,7 @@
     <value>9</value>
   </data>
   <data name="txtAdPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 237</value>
+    <value>0, 201</value>
   </data>
   <data name="txtAdPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
@@ -379,13 +379,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="btnMoveBanner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-12, 204</value>
+    <value>-2, 168</value>
   </data>
   <data name="btnMoveBanner.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="btnMoveBanner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 27</value>
+    <value>325, 27</value>
   </data>
   <data name="btnMoveBanner.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>

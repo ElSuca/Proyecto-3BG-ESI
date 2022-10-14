@@ -28,7 +28,7 @@ namespace Proyecto
         private void loadMenu(int Choice)
         {
             if (Choice == 0) OpenMainMenu();
-            else if (Choice == 1) OpenLoggingMenu();
+            else if (Choice == 1) ; //OpenLoggingMenu();
             else if (Choice == 2) new BackofficeManager().Show();
             else if (Choice == 3) OpenRegisterMenu();
             else if (Choice == 4) new FormLanguageMenu().Show();
@@ -37,7 +37,7 @@ namespace Proyecto
       
         public void OpenRegisterMenu()
         {
-            if (!MainPanel.Contains(RegisterMenu.Instance))
+          /*  if (!MainPanel.Contains(RegisterMenu.Instance))
             {
                 MainPanel.Controls.Add(RegisterMenu.Instance);
                 RegisterMenu.Instance.Dock = DockStyle.Fill;
@@ -53,7 +53,7 @@ namespace Proyecto
                 LoggingMenu.Instance.Dock = DockStyle.Fill;
                 LoggingMenu.Instance.BringToFront();
             }
-            else  LoggingMenu.Instance.BringToFront(); 
+            else  LoggingMenu.Instance.BringToFront(); */
         }
         public void OpenMainMenu()
         {

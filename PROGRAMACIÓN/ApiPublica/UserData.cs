@@ -43,10 +43,9 @@ namespace ApiPublica
                     txtRole.Text,
                     MD5Hash.Hash.Content(txtPassword.Text),
                     txtPhone.Text,
-
                     txtCity.Text,
                     txtStreet.Text,
-                    Int32.Parse(txtNum.Text),
+                    Int32.Parse(txtStreetNumber.Text),
                     txtState.Text,
                     txtCountry.Text
                     );
@@ -109,7 +108,12 @@ namespace ApiPublica
                         txtUsername.Text,
                         "Premiun",
                         MD5Hash.Hash.Content(txtPassword.Text),
-                        txtPhone.Text
+                        txtPhone.Text,
+                        txtCity.Text,
+                        txtStreet.Text,
+                        Int32.Parse(txtStreetNumber.Text),
+                        txtState.Text,
+                        txtCountry.Text
                         );
                     txtRole.Text = new UserControler().GetStaticRole;
                     errorTranslation(new AplicationControler().getLanguage(), "DataUpdate", Color.FromArgb(0, 204, 0));

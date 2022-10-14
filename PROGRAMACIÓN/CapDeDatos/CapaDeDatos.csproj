@@ -78,6 +78,7 @@
     <Compile Include="ModelAsociation.cs" />
     <Compile Include="ModelEvents.cs" />
     <Compile Include="ModelSport.cs" />
+    <Compile Include="ModelTeam.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ModelUser.cs" />

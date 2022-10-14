@@ -152,12 +152,7 @@ namespace CapDeDatos
         #endregion
         public DataTable GetAllEventDataForTable()
         {
-            this.command.CommandText = "SELECT FAMILY.NAME ," +
-                " EVENT.NAME ," +
-                " SCORE.QUANTITY ," +
-                " TEAM.NAME FROM EVENT STRAIGHT_JOIN ( TIME, TMTI, TEAM, PLYR_TM_TI_SC, SCORE, EVENT_FAMILY, FAMILY) ON " +
-                "(EVENT.ID = TIME.ID_EVENT AND TMTI.ID_TIME = TIME.ID AND TMTI.ID_TEAM = TEAM.ID AND PLYR_TM_TI_SC.ID_TIME = TIME.ID AND PLYR_TM_TI_SC.ID_TEAM" +
-                " = TEAM.ID AND PLYR_TM_TI_SC.ID_SC = SCORE.ID AND EVENT.ID = EVENT_FAMILY.ID_EVENT AND EVENT_FAMILY.ID_FAM = FAMILY.ID) LIMIT 5000; ";
+            this.command.CommandText = "SELECT * FROM EVENT ";
             table.Load(command.ExecuteReader());
             table = limpiarTabla(table);
             return table;

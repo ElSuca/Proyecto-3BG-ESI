@@ -99,6 +99,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SportControler.cs" />
+    <Compile Include="TeamControler.cs" />
     <Compile Include="UserControler.cs" />
   </ItemGroup>
   <ItemGroup>
