@@ -49,23 +49,20 @@
             this.lbStageCountry = new System.Windows.Forms.Label();
             this.txtEventDate = new System.Windows.Forms.MaskedTextBox();
             this.lbDate = new System.Windows.Forms.Label();
-            this.panelTeamsMenu = new System.Windows.Forms.Panel();
-            this.txtTeamCountry = new System.Windows.Forms.MaskedTextBox();
-            this.lbTeamCountry = new System.Windows.Forms.Label();
-            this.txtTeamState = new System.Windows.Forms.MaskedTextBox();
-            this.lbTeamState = new System.Windows.Forms.Label();
-            this.txtTeamCity = new System.Windows.Forms.MaskedTextBox();
-            this.lbTeamCity = new System.Windows.Forms.Label();
-            this.lbTeams = new System.Windows.Forms.Label();
-            this.txtIDTeam = new System.Windows.Forms.TextBox();
-            this.lbTeamsName = new System.Windows.Forms.Label();
-            this.txtTeamsName = new System.Windows.Forms.TextBox();
-            this.btnTeamsMenu = new System.Windows.Forms.Button();
             this.btnModifiy = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnJudgesMenu = new System.Windows.Forms.Button();
+            this.panelJudgeMenu = new System.Windows.Forms.Panel();
+            this.txtJudgeLastName2 = new System.Windows.Forms.TextBox();
+            this.lbJudgeLastName1 = new System.Windows.Forms.Label();
+            this.txtJudgeLastName1 = new System.Windows.Forms.TextBox();
+            this.lbJudgeName = new System.Windows.Forms.Label();
+            this.txtJudgeName = new System.Windows.Forms.TextBox();
+            this.lbJudgeID = new System.Windows.Forms.Label();
+            this.txtJudgeId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelEventMenu.SuspendLayout();
-            this.panelTeamsMenu.SuspendLayout();
+            this.panelJudgeMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRegisterAcc
@@ -180,7 +177,6 @@
             this.panelEventMenu.Name = "panelEventMenu";
             this.panelEventMenu.Size = new System.Drawing.Size(293, 399);
             this.panelEventMenu.TabIndex = 13;
-            this.panelEventMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEventMenu_Paint);
             // 
             // lbEventState
             // 
@@ -302,139 +298,6 @@
             this.lbDate.TabIndex = 14;
             this.lbDate.Text = "Date";
             // 
-            // panelTeamsMenu
-            // 
-            this.panelTeamsMenu.Controls.Add(this.txtTeamCountry);
-            this.panelTeamsMenu.Controls.Add(this.lbTeamCountry);
-            this.panelTeamsMenu.Controls.Add(this.txtTeamState);
-            this.panelTeamsMenu.Controls.Add(this.lbTeamState);
-            this.panelTeamsMenu.Controls.Add(this.txtTeamCity);
-            this.panelTeamsMenu.Controls.Add(this.lbTeamCity);
-            this.panelTeamsMenu.Controls.Add(this.lbTeams);
-            this.panelTeamsMenu.Controls.Add(this.txtIDTeam);
-            this.panelTeamsMenu.Controls.Add(this.lbTeamsName);
-            this.panelTeamsMenu.Controls.Add(this.txtTeamsName);
-            this.panelTeamsMenu.Location = new System.Drawing.Point(36, 111);
-            this.panelTeamsMenu.Name = "panelTeamsMenu";
-            this.panelTeamsMenu.Size = new System.Drawing.Size(293, 256);
-            this.panelTeamsMenu.TabIndex = 18;
-            this.panelTeamsMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTeamsMenu_Paint);
-            // 
-            // txtTeamCountry
-            // 
-            this.txtTeamCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtTeamCountry.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtTeamCountry.Location = new System.Drawing.Point(19, 217);
-            this.txtTeamCountry.Name = "txtTeamCountry";
-            this.txtTeamCountry.Size = new System.Drawing.Size(253, 20);
-            this.txtTeamCountry.TabIndex = 14;
-            // 
-            // lbTeamCountry
-            // 
-            this.lbTeamCountry.AutoSize = true;
-            this.lbTeamCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeamCountry.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbTeamCountry.Location = new System.Drawing.Point(15, 194);
-            this.lbTeamCountry.Name = "lbTeamCountry";
-            this.lbTeamCountry.Size = new System.Drawing.Size(71, 20);
-            this.lbTeamCountry.TabIndex = 17;
-            this.lbTeamCountry.Text = "Country";
-            // 
-            // txtTeamState
-            // 
-            this.txtTeamState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtTeamState.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtTeamState.Location = new System.Drawing.Point(19, 171);
-            this.txtTeamState.Name = "txtTeamState";
-            this.txtTeamState.Size = new System.Drawing.Size(253, 20);
-            this.txtTeamState.TabIndex = 16;
-            // 
-            // lbTeamState
-            // 
-            this.lbTeamState.AutoSize = true;
-            this.lbTeamState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeamState.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbTeamState.Location = new System.Drawing.Point(15, 148);
-            this.lbTeamState.Name = "lbTeamState";
-            this.lbTeamState.Size = new System.Drawing.Size(53, 20);
-            this.lbTeamState.TabIndex = 15;
-            this.lbTeamState.Text = "State";
-            // 
-            // txtTeamCity
-            // 
-            this.txtTeamCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtTeamCity.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtTeamCity.Location = new System.Drawing.Point(19, 125);
-            this.txtTeamCity.Name = "txtTeamCity";
-            this.txtTeamCity.Size = new System.Drawing.Size(253, 20);
-            this.txtTeamCity.TabIndex = 14;
-            // 
-            // lbTeamCity
-            // 
-            this.lbTeamCity.AutoSize = true;
-            this.lbTeamCity.CausesValidation = false;
-            this.lbTeamCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeamCity.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbTeamCity.Location = new System.Drawing.Point(15, 102);
-            this.lbTeamCity.Name = "lbTeamCity";
-            this.lbTeamCity.Size = new System.Drawing.Size(39, 20);
-            this.lbTeamCity.TabIndex = 14;
-            this.lbTeamCity.Text = "City";
-            // 
-            // lbTeams
-            // 
-            this.lbTeams.AutoSize = true;
-            this.lbTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeams.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbTeams.Location = new System.Drawing.Point(15, 10);
-            this.lbTeams.Name = "lbTeams";
-            this.lbTeams.Size = new System.Drawing.Size(28, 20);
-            this.lbTeams.TabIndex = 1;
-            this.lbTeams.Text = "ID";
-            // 
-            // txtIDTeam
-            // 
-            this.txtIDTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtIDTeam.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtIDTeam.Location = new System.Drawing.Point(19, 33);
-            this.txtIDTeam.Name = "txtIDTeam";
-            this.txtIDTeam.Size = new System.Drawing.Size(253, 20);
-            this.txtIDTeam.TabIndex = 2;
-            // 
-            // lbTeamsName
-            // 
-            this.lbTeamsName.AutoSize = true;
-            this.lbTeamsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeamsName.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbTeamsName.Location = new System.Drawing.Point(15, 56);
-            this.lbTeamsName.Name = "lbTeamsName";
-            this.lbTeamsName.Size = new System.Drawing.Size(55, 20);
-            this.lbTeamsName.TabIndex = 4;
-            this.lbTeamsName.Text = "Name";
-            // 
-            // txtTeamsName
-            // 
-            this.txtTeamsName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtTeamsName.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtTeamsName.Location = new System.Drawing.Point(19, 79);
-            this.txtTeamsName.Name = "txtTeamsName";
-            this.txtTeamsName.Size = new System.Drawing.Size(253, 20);
-            this.txtTeamsName.TabIndex = 3;
-            // 
-            // btnTeamsMenu
-            // 
-            this.btnTeamsMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnTeamsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTeamsMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTeamsMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnTeamsMenu.Location = new System.Drawing.Point(132, 85);
-            this.btnTeamsMenu.Name = "btnTeamsMenu";
-            this.btnTeamsMenu.Size = new System.Drawing.Size(75, 23);
-            this.btnTeamsMenu.TabIndex = 14;
-            this.btnTeamsMenu.Text = "Teams";
-            this.btnTeamsMenu.UseVisualStyleBackColor = false;
-            this.btnTeamsMenu.Click += new System.EventHandler(this.btnTeamsMenu_Click);
-            // 
             // btnModifiy
             // 
             this.btnModifiy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
@@ -463,15 +326,112 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnJudgesMenu
+            // 
+            this.btnJudgesMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnJudgesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnJudgesMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJudgesMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnJudgesMenu.Location = new System.Drawing.Point(117, 85);
+            this.btnJudgesMenu.Name = "btnJudgesMenu";
+            this.btnJudgesMenu.Size = new System.Drawing.Size(75, 23);
+            this.btnJudgesMenu.TabIndex = 21;
+            this.btnJudgesMenu.Text = "Judge";
+            this.btnJudgesMenu.UseVisualStyleBackColor = false;
+            this.btnJudgesMenu.Click += new System.EventHandler(this.btnJudgesMenu_Click);
+            // 
+            // panelJudgeMenu
+            // 
+            this.panelJudgeMenu.Controls.Add(this.txtJudgeLastName2);
+            this.panelJudgeMenu.Controls.Add(this.lbJudgeLastName1);
+            this.panelJudgeMenu.Controls.Add(this.txtJudgeLastName1);
+            this.panelJudgeMenu.Controls.Add(this.lbJudgeName);
+            this.panelJudgeMenu.Controls.Add(this.txtJudgeName);
+            this.panelJudgeMenu.Controls.Add(this.lbJudgeID);
+            this.panelJudgeMenu.Controls.Add(this.txtJudgeId);
+            this.panelJudgeMenu.Location = new System.Drawing.Point(36, 111);
+            this.panelJudgeMenu.Name = "panelJudgeMenu";
+            this.panelJudgeMenu.Size = new System.Drawing.Size(293, 180);
+            this.panelJudgeMenu.TabIndex = 22;
+            // 
+            // txtJudgeLastName2
+            // 
+            this.txtJudgeLastName2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtJudgeLastName2.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtJudgeLastName2.Location = new System.Drawing.Point(143, 137);
+            this.txtJudgeLastName2.Name = "txtJudgeLastName2";
+            this.txtJudgeLastName2.Size = new System.Drawing.Size(124, 20);
+            this.txtJudgeLastName2.TabIndex = 26;
+            // 
+            // lbJudgeLastName1
+            // 
+            this.lbJudgeLastName1.AutoSize = true;
+            this.lbJudgeLastName1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJudgeLastName1.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbJudgeLastName1.Location = new System.Drawing.Point(12, 115);
+            this.lbJudgeLastName1.Name = "lbJudgeLastName1";
+            this.lbJudgeLastName1.Size = new System.Drawing.Size(95, 20);
+            this.lbJudgeLastName1.TabIndex = 25;
+            this.lbJudgeLastName1.Text = "Last Name";
+            // 
+            // txtJudgeLastName1
+            // 
+            this.txtJudgeLastName1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtJudgeLastName1.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtJudgeLastName1.Location = new System.Drawing.Point(16, 137);
+            this.txtJudgeLastName1.Name = "txtJudgeLastName1";
+            this.txtJudgeLastName1.Size = new System.Drawing.Size(122, 20);
+            this.txtJudgeLastName1.TabIndex = 24;
+            // 
+            // lbJudgeName
+            // 
+            this.lbJudgeName.AutoSize = true;
+            this.lbJudgeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJudgeName.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbJudgeName.Location = new System.Drawing.Point(11, 69);
+            this.lbJudgeName.Name = "lbJudgeName";
+            this.lbJudgeName.Size = new System.Drawing.Size(55, 20);
+            this.lbJudgeName.TabIndex = 23;
+            this.lbJudgeName.Text = "Name";
+            // 
+            // txtJudgeName
+            // 
+            this.txtJudgeName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtJudgeName.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtJudgeName.Location = new System.Drawing.Point(14, 92);
+            this.txtJudgeName.Name = "txtJudgeName";
+            this.txtJudgeName.Size = new System.Drawing.Size(253, 20);
+            this.txtJudgeName.TabIndex = 22;
+            // 
+            // lbJudgeID
+            // 
+            this.lbJudgeID.AutoSize = true;
+            this.lbJudgeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJudgeID.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbJudgeID.Location = new System.Drawing.Point(10, 13);
+            this.lbJudgeID.Name = "lbJudgeID";
+            this.lbJudgeID.Size = new System.Drawing.Size(28, 20);
+            this.lbJudgeID.TabIndex = 20;
+            this.lbJudgeID.Text = "ID";
+            // 
+            // txtJudgeId
+            // 
+            this.txtJudgeId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtJudgeId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtJudgeId.Location = new System.Drawing.Point(14, 36);
+            this.txtJudgeId.Name = "txtJudgeId";
+            this.txtJudgeId.Size = new System.Drawing.Size(253, 20);
+            this.txtJudgeId.TabIndex = 21;
+            // 
             // BackOficeResultManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.panelJudgeMenu);
+            this.Controls.Add(this.btnJudgesMenu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModifiy);
-            this.Controls.Add(this.panelTeamsMenu);
-            this.Controls.Add(this.btnTeamsMenu);
             this.Controls.Add(this.panelEventMenu);
             this.Controls.Add(this.btnEventMenu);
             this.Controls.Add(this.btnList);
@@ -482,8 +442,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
             this.panelEventMenu.ResumeLayout(false);
             this.panelEventMenu.PerformLayout();
-            this.panelTeamsMenu.ResumeLayout(false);
-            this.panelTeamsMenu.PerformLayout();
+            this.panelJudgeMenu.ResumeLayout(false);
+            this.panelJudgeMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -509,21 +469,18 @@
         private System.Windows.Forms.Label lbStageCountry;
         private System.Windows.Forms.MaskedTextBox txtEventDate;
         private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.Button btnTeamsMenu;
-        private System.Windows.Forms.Panel panelTeamsMenu;
-        private System.Windows.Forms.MaskedTextBox txtTeamCountry;
-        private System.Windows.Forms.Label lbTeamCountry;
-        private System.Windows.Forms.MaskedTextBox txtTeamState;
-        private System.Windows.Forms.Label lbTeamState;
-        private System.Windows.Forms.MaskedTextBox txtTeamCity;
-        private System.Windows.Forms.Label lbTeamCity;
-        private System.Windows.Forms.Label lbTeams;
-        private System.Windows.Forms.TextBox txtIDTeam;
-        private System.Windows.Forms.Label lbTeamsName;
-        private System.Windows.Forms.TextBox txtTeamsName;
         private System.Windows.Forms.Label lbEventState;
         private System.Windows.Forms.MaskedTextBox txtEventState;
         private System.Windows.Forms.Button btnModifiy;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnJudgesMenu;
+        private System.Windows.Forms.Panel panelJudgeMenu;
+        private System.Windows.Forms.TextBox txtJudgeLastName2;
+        private System.Windows.Forms.Label lbJudgeLastName1;
+        private System.Windows.Forms.TextBox txtJudgeLastName1;
+        private System.Windows.Forms.Label lbJudgeName;
+        private System.Windows.Forms.TextBox txtJudgeName;
+        private System.Windows.Forms.Label lbJudgeID;
+        private System.Windows.Forms.TextBox txtJudgeId;
     }
 }

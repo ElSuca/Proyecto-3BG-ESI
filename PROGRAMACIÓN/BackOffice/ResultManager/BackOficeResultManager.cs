@@ -35,7 +35,8 @@ namespace BackOffice.ResultManager
         private void reloadList()
         {
             if(panelEventMenu.Visible) dataGrid1.DataSource = new EventControler().GetEventDataTable();
-              else dataGrid1.DataSource = new TeamControler().GetTeamDataTable();
+           //   else if(panelTeamsMenu.Visible) dataGrid1.DataSource = new TeamControler().GetTeamDataTable();
+                else if(panelJudgeMenu.Visible) dataGrid1.DataSource = new JudgeControler().GetJudgeDataTable();
         }
 
         private void btnRegisterAcc_Click(object sender, EventArgs e)
@@ -45,29 +46,28 @@ namespace BackOffice.ResultManager
                 EventControler.Alta(txtEventName.Text, txtEventDate.Text, txtEventState.Text, txtStageCity.Text, txtStageCountry.Text, txtStageStreet.Text, Int32.Parse(txtStageNum.Text));
                 MessageBox.Show("Evento cargado");
             }
-            else if (panelTeamsMenu.Visible)
+           /* else if (panelTeamsMenu.Visible)
             {
                 TeamControler.Alta(txtTeamsName.Text, txtTeamCity.Text, txtTeamState.Text, txtTeamCountry.Text);
                 MessageBox.Show("Equipo cargado");
-            }
+            }*/
             else MessageBox.Show("Por favor, seleccione un menu");
             reloadList();
         }
 
-        private void btnEventMenu_Click(object sender, EventArgs e)
-        {
-            toggleMenus(1);
-        }
+        private void btnEventMenu_Click(object sender, EventArgs e) => toggleMenus(1);
+        private void btnTeamsMenu_Click(object sender, EventArgs e) => toggleMenus(2);
+        private void btnJudgesMenu_Click(object sender, EventArgs e) => toggleMenus(3);
+
         private void toggleMenus(int menu)
         {
-
-            
             panelEventMenu.Visible = false;
+            panelJudgeMenu.Visible = false;
             ToggleTeamsMenu(false);
 
             if (menu == 1) panelEventMenu.Visible = true;
             if (menu == 2) ToggleTeamsMenu(true);
-
+            if (menu == 3) panelJudgeMenu.Visible = true;
 
 
 
@@ -75,32 +75,23 @@ namespace BackOffice.ResultManager
         }
         private void ToggleTeamsMenu(bool n)
         {
-
-            panelTeamsMenu.Visible = n;
+      /*      panelTeamsMenu.Visible = n;
             txtIDTeam.Visible = n;
             txtTeamCity.Visible = n;
             txtTeamsName.Visible = n;
             txtTeamState.Visible = n;
-            txtTeamCountry.Visible = n;
+            txtTeamCountry.Visible = n;*/
         }
+     
+        
         private void setInitial()
         {
             panelEventMenu.Visible = false;
-            panelTeamsMenu.Visible = false;
+            panelJudgeMenu.Visible = false;
         }
        
-        private void btnTeamsMenu_Click(object sender, EventArgs e)
-        {
-            toggleMenus(2);
-        }
+       
 
-        private void panelTeamsMenu_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void panelEventMenu_Paint(object sender, PaintEventArgs e)
-        {  
-        }
 
         private void btnModifiy_Click(object sender, EventArgs e)
         {
@@ -109,11 +100,11 @@ namespace BackOffice.ResultManager
                 EventControler.Modificar(Int32.Parse(txtEventID.Text),txtEventName.Text, txtEventDate.Text, txtEventState.Text, txtStageCity.Text, txtStageCountry.Text, txtStageStreet.Text, Int32.Parse(txtStageNum.Text));
                 MessageBox.Show("Evento cargado");
             }
-            else if (panelTeamsMenu.Visible)
+           /* else if (panelTeamsMenu.Visible)
             {
                 TeamControler.Modificar(Int32.Parse(txtIDTeam.Text),txtTeamsName.Text, txtTeamCity.Text, txtTeamState.Text, txtTeamCountry.Text);
                 MessageBox.Show("Equipo cargado");
-            }
+            }*/
             else MessageBox.Show("Por favor, seleccione un menu");
             reloadList();
         }
@@ -125,13 +116,15 @@ namespace BackOffice.ResultManager
                 EventControler.Eliminar(Int32.Parse(txtEventID.Text));
                 MessageBox.Show($"Evento {txtEventID.Text} Eliminado");
             }
-            else if (panelTeamsMenu.Visible)
+          /*  else if (panelTeamsMenu.Visible)
             {
                 TeamControler.Eliminar(Int32.Parse(txtIDTeam.Text));
                 MessageBox.Show($"Equipo {txtIDTeam.Text} Eliminado");
-            }
+            }*/
             else MessageBox.Show("Por favor, seleccione un menu");
             reloadList();
         }
+
+       
     }
 }

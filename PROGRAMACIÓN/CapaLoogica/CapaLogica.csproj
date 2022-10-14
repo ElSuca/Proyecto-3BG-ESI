@@ -96,6 +96,7 @@
     <Compile Include="AplicationControler.cs" />
     <Compile Include="AsociationControler.cs" />
     <Compile Include="EventControler.cs" />
+    <Compile Include="JudgeControler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SportControler.cs" />

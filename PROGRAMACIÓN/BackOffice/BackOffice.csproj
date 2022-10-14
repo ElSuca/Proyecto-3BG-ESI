@@ -90,6 +90,12 @@
     <Compile Include="BackofficeManager.Designer.cs">
       <DependentUpon>BackofficeManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultManager\BackOfficePlayerManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResultManager\BackOfficePlayerManager.Designer.cs">
+      <DependentUpon>BackOfficePlayerManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResultManager\BackOfficeResultsManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BackofficeManager.resx">
       <DependentUpon>BackofficeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultManager\BackOfficePlayerManager.resx">
+      <DependentUpon>BackOfficePlayerManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResultManager\BackOfficeResultsManager.resx">
       <DependentUpon>BackOfficeResultsManager.cs</DependentUpon>

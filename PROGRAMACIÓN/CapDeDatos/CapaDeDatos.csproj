@@ -77,6 +77,7 @@
     <Compile Include="Model.cs" />
     <Compile Include="ModelAsociation.cs" />
     <Compile Include="ModelEvents.cs" />
+    <Compile Include="ModelJudge.cs" />
     <Compile Include="ModelSport.cs" />
     <Compile Include="ModelTeam.cs" />
     <Compile Include="Post.cs" />

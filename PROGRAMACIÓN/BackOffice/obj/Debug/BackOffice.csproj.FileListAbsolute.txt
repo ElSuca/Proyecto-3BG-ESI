@@ -507,3 +507,4 @@ C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\BackOffice\bin\Debug
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\BackOffice\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\alumno\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\BackOffice\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.ResultManager.BackOficeResultManager.resources
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.ResultManager.BackOfficePlayerManager.resources

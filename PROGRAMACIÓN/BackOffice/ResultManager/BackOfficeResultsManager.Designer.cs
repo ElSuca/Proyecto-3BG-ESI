@@ -31,6 +31,7 @@
             this.Panel = new System.Windows.Forms.Panel();
             this.btnEventManager = new System.Windows.Forms.Button();
             this.btnAsociation = new System.Windows.Forms.Button();
+            this.btnTeam = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Panel
@@ -46,9 +47,9 @@
             this.btnEventManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEventManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEventManager.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEventManager.Location = new System.Drawing.Point(17, 25);
+            this.btnEventManager.Location = new System.Drawing.Point(3, 25);
             this.btnEventManager.Name = "btnEventManager";
-            this.btnEventManager.Size = new System.Drawing.Size(172, 29);
+            this.btnEventManager.Size = new System.Drawing.Size(196, 29);
             this.btnEventManager.TabIndex = 47;
             this.btnEventManager.Text = "Event Manager";
             this.btnEventManager.UseVisualStyleBackColor = false;
@@ -60,25 +61,39 @@
             this.btnAsociation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsociation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsociation.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAsociation.Location = new System.Drawing.Point(17, 60);
+            this.btnAsociation.Location = new System.Drawing.Point(3, 60);
             this.btnAsociation.Name = "btnAsociation";
-            this.btnAsociation.Size = new System.Drawing.Size(172, 28);
+            this.btnAsociation.Size = new System.Drawing.Size(196, 28);
             this.btnAsociation.TabIndex = 48;
             this.btnAsociation.Text = "Asociation Manager";
             this.btnAsociation.UseVisualStyleBackColor = false;
             this.btnAsociation.Click += new System.EventHandler(this.btnAsociation_Click);
+            // 
+            // btnTeam
+            // 
+            this.btnTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnTeam.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTeam.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnTeam.Location = new System.Drawing.Point(3, 94);
+            this.btnTeam.Name = "btnTeam";
+            this.btnTeam.Size = new System.Drawing.Size(196, 28);
+            this.btnTeam.TabIndex = 49;
+            this.btnTeam.Text = "Team Manager";
+            this.btnTeam.UseVisualStyleBackColor = false;
+            this.btnTeam.Click += new System.EventHandler(this.btnTeam_Click);
             // 
             // BackOfficeResultsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.btnTeam);
             this.Controls.Add(this.btnAsociation);
             this.Controls.Add(this.btnEventManager);
             this.Controls.Add(this.Panel);
             this.Name = "BackOfficeResultsManager";
             this.Size = new System.Drawing.Size(1744, 810);
-            this.Load += new System.EventHandler(this.BackOfficeResultsManager_Load);
             this.ResumeLayout(false);
 
         }
@@ -87,5 +102,6 @@
         private System.Windows.Forms.Panel Panel;
         private System.Windows.Forms.Button btnEventManager;
         private System.Windows.Forms.Button btnAsociation;
+        private System.Windows.Forms.Button btnTeam;
     }
 }

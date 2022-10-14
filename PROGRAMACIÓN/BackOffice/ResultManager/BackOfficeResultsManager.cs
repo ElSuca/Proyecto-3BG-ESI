@@ -38,73 +38,29 @@ namespace BackOffice
             }
             if (selection == 3)
             {
-                if (!Panel.Contains(BackOfficeResultsManager.Instance))
+                if (!Panel.Contains(BackOfficePlayerManager.Instance))
                 {
-                    Panel.Controls.Add(BackOfficeResultsManager.Instance);
-                    BackOfficeResultsManager.Instance.Dock = DockStyle.Fill;
-                    BackOfficeResultsManager.Instance.BringToFront();
+                    Panel.Controls.Add(BackOfficePlayerManager.Instance);
+                    BackOfficePlayerManager.Instance.Dock = DockStyle.Fill;
+                    BackOfficePlayerManager.Instance.BringToFront();
                 }
-                else BackOfficeResultsManager.Instance.BringToFront();
+                else BackOfficePlayerManager.Instance.BringToFront();
             }
-        }
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEvenScore_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BackOfficeResultsManager_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEventManager_Click(object sender, EventArgs e)
         {
-            selectMenu(1);
+            selectMenu(2);
         }
 
         private void btnAsociation_Click(object sender, EventArgs e)
         {
-            selectMenu(2);
+            selectMenu(1);
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void btnTeam_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtPreEvent_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEventName_TextChanged(object sender, EventArgs e)
-        {
-
+            selectMenu(3);
         }
     }
 }
