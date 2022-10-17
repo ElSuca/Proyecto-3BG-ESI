@@ -25,7 +25,16 @@ namespace BackOffice
 
         public void selectMenu(int selection)
         {
-
+            if (selection == 1)
+            {
+                if (!Panel.Contains(BackOfficeAsociationManager.Instance))
+                {
+                    Panel.Controls.Add(BackOfficeAsociationManager.Instance);
+                    BackOfficeAsociationManager.Instance.Dock = DockStyle.Fill;
+                    BackOfficeAsociationManager.Instance.BringToFront();
+                }
+                else BackOfficeAsociationManager.Instance.BringToFront();
+            }
             if (selection == 2)
             {
                 if (!Panel.Contains(BackOficeResultManager.Instance))

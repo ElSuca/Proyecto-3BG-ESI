@@ -43,10 +43,7 @@ namespace BackOffice
             reloadList();
         }
 
-        private void btnList_Click(object sender, EventArgs e)
-        {
-            reloadList();
-        }
+        private void btnList_Click(object sender, EventArgs e) => reloadList();
         private void btnDelete_Click(object sender, EventArgs e)
         {
             AdControler.Delete(int.Parse(txtAdId.Text));

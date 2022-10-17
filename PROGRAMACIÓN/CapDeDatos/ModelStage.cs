@@ -4,39 +4,39 @@ using System.Data;
 
 namespace CapDeDatos
 {
-    public class ModelJudge : Model
+    public class ModelStage : Model
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string LastaName1 { get; set; }
-        public string LastaName2 { get; set; }
-        public string Country { get; set; }
-        public string State { get; set; }
-        public string City { get; set; }
+        public int ID;
+        public string City;
+        public string Street;
+        public int Num;
+        public string State;
+        public string Country;
 
-        public ModelJudge() { }
-        public ModelJudge(int id) => this.GetJudgeData(id);
-
-        public void GetJudgeData(int id)
+        public ModelStage()
         {
-            this.command.CommandText = $"Select JUDGE.* FROM EVENT WHERE ID={id}";
+        }
+        public ModelStage(int id) => this.GetStageData(id);
+
+
+        public void GetStageData(int id)
+        {
+            this.command.CommandText = $"Select STAGE.* FROM EVENT WHERE ID={id}";
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
             this.ID = int.Parse(this.dataReader["ID"].ToString());
-            this.Name = this.dataReader["NAME"].ToString();
-            this.LastaName1 = this.dataReader["LNAME1"].ToString();
-            this.LastaName2 = this.dataReader["LNAME2"].ToString();
-            this.Country = this.dataReader["COUNTRY"].ToString();
-            this.State = this.dataReader["STATE"].ToString();
             this.City = this.dataReader["CITY"].ToString();
+            this.Country = this.dataReader["COUNTRY"].ToString();
+            this.Street = this.dataReader["STREET"].ToString();
+            this.Num = Int32.Parse(this.dataReader["NUM"].ToString());
+            this.State = this.dataReader["STATE"].ToString();
             this.dataReader.Close();
         }
-
-        public DataTable GetJudgeDataTable()
+        public DataTable GetStageDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM JUDGE";
+            command.CommandText = "SELECT * FROM STAGE";
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;
@@ -47,18 +47,17 @@ namespace CapDeDatos
             if (this.ID.ToString() != "0") Update();
             else
             {
-
-                insertJudge();
+                Insert();
             }
         }
 
-        private void insertJudge()
+        private void Insert()
         {
             try
             {
                 command.CommandText = "INSERT INTO " +
-                   "JUDGE (NAME,LNAME1,LNAME2,COUNTRY,STATE,CITY) " +
-                   $"VALUES ('{Name}','{LastaName1}','{LastaName2}','{Country}','{State}','{City}')";
+                  "STAGE(CITY,STREET,NUM,STATE,COUNTRY) " +
+                  $"VALUES ('{City}','{Street}',{Num},'{State}','{Country}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -69,23 +68,23 @@ namespace CapDeDatos
         }
         private void Update()
         {
-            this.command.CommandText = "UPDATE JUDGE SET " +
-                 $"NAME = '{Name}'," +
-                 $"LNAME1 = '{LastaName1}'," +
-                 $"LNAME2 = '{LastaName2}'," +
-                 $"COUNTRY = '{Country}'," +
-                 $"STATE = '{State}'," +
+            this.command.CommandText = "UPDATE STAGE SET " +
                  $"CITY = '{City}'," +
+                 $"STREET = '{Street}'," +
+                 $"NUM = {Num}," +
+                 $"STATE = '{State}'," +
+                 $"COUNTRY = '{Country}'," +
                  $"WHERE ID = {this.ID}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
+
 
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"DELETE JUDGE.* FROM EVENT WHERE ID = {Id}";
+                this.command.CommandText = $"DELETE Stage.* FROM Stage WHERE ID = {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -96,3 +95,4 @@ namespace CapDeDatos
         }
     }
 }
+

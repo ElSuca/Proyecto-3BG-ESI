@@ -11,5 +11,34 @@ namespace CapaLoogica
     public class JudgeControler
     {
         public DataTable GetJudgeDataTable() => new ModelJudge().GetJudgeDataTable();
+
+        public static void Alta(string name, string lastName1, string lastName2, string city, string state, string country)
+        {
+            ModelJudge e = new ModelJudge
+            {
+                Name = name,
+                LastaName1 = lastName1,
+                LastaName2 = lastName2,
+                City = city,
+                State = state,
+                Country = country
+            };
+            e.Save();
+        }
+        public static void Modificar(int id, string name, string lastaName1, string lastaName2, string city, string state, string country)
+        {
+            ModelJudge e = new ModelJudge(id)
+            {
+                Name = name,
+                LastaName1 = lastaName1,
+                LastaName2 = lastaName2,
+                City = city,
+                State = state,
+                Country = country
+            };
+            e.Save();
+        }
+        public static void Eliminar(int id) => new ModelJudge(id).Delete(id);
+
     }
 }

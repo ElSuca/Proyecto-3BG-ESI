@@ -52,8 +52,7 @@ namespace BackOffice
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
-            //    MessageBox.Show("Hubo un problema inesperado");
+               MessageBox.Show("Hubo un problema inesperado");
             }
         }
 
@@ -117,6 +116,11 @@ namespace BackOffice
         }
 
         private void lbRole_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

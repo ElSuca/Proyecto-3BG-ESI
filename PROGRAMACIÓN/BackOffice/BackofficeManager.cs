@@ -86,6 +86,8 @@ namespace Proyecto.Backoffice
 
         private void btnResultManager_Click(object sender, EventArgs e) => selectMenu(3);
 
+        private void btnSportManager_Click(object sender, EventArgs e) => selectMenu(4);
+
         private Bitmap MyImage;
         private void loadResources()
         {
@@ -96,5 +98,7 @@ namespace Proyecto.Backoffice
         {
 
         }
+
+       
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRegisterAcc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEventID = new System.Windows.Forms.TextBox();
@@ -37,22 +38,48 @@
             this.btnList = new System.Windows.Forms.Button();
             this.btnEventMenu = new System.Windows.Forms.Button();
             this.panelEventMenu = new System.Windows.Forms.Panel();
-            this.lbEventState = new System.Windows.Forms.Label();
-            this.txtEventState = new System.Windows.Forms.MaskedTextBox();
-            this.txtStageCity = new System.Windows.Forms.MaskedTextBox();
-            this.lbCity = new System.Windows.Forms.Label();
-            this.txtStageNum = new System.Windows.Forms.MaskedTextBox();
-            this.lbNum = new System.Windows.Forms.Label();
-            this.txtStageStreet = new System.Windows.Forms.MaskedTextBox();
-            this.lbStreet = new System.Windows.Forms.Label();
+            this.lbPreviounsFamilyInfo = new System.Windows.Forms.Label();
+            this.lbPreviounsFamilyType = new System.Windows.Forms.Label();
+            this.lbChirldId = new System.Windows.Forms.Label();
+            this.btnRegisterPreviousFamily = new System.Windows.Forms.Button();
+            this.txtPreviounsFamilyInfo = new System.Windows.Forms.TextBox();
+            this.txtPreviounsFamilyType = new System.Windows.Forms.TextBox();
+            this.txtChirldId = new System.Windows.Forms.TextBox();
+            this.lbPreviounsFamily = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxEventStartDateMoth = new System.Windows.Forms.ComboBox();
+            this.comboBoxEventStartDateDay = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbEventEndDate = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtEventEndDateYear = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxEventEndDateMoth = new System.Windows.Forms.ComboBox();
+            this.txtStageJudgeId = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxEventEndDateDay = new System.Windows.Forms.ComboBox();
+            this.lbStageJudgeId = new System.Windows.Forms.Label();
+            this.txtEventStartDateYear = new System.Windows.Forms.MaskedTextBox();
+            this.lbStartDate = new System.Windows.Forms.Label();
+            this.panelStageMenu = new System.Windows.Forms.Panel();
+            this.txtStageState = new System.Windows.Forms.MaskedTextBox();
+            this.lbStageState = new System.Windows.Forms.Label();
             this.txtStageCountry = new System.Windows.Forms.MaskedTextBox();
+            this.txtStageNum = new System.Windows.Forms.MaskedTextBox();
+            this.lbStageNum = new System.Windows.Forms.Label();
             this.lbStageCountry = new System.Windows.Forms.Label();
-            this.txtEventDate = new System.Windows.Forms.MaskedTextBox();
-            this.lbDate = new System.Windows.Forms.Label();
-            this.btnModifiy = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnJudgesMenu = new System.Windows.Forms.Button();
+            this.lbStageStreet = new System.Windows.Forms.Label();
+            this.txtStageStreet = new System.Windows.Forms.TextBox();
+            this.lbStageCity = new System.Windows.Forms.Label();
+            this.txtStageCity = new System.Windows.Forms.TextBox();
+            this.lbStageId = new System.Windows.Forms.Label();
+            this.txtStageId = new System.Windows.Forms.TextBox();
             this.panelJudgeMenu = new System.Windows.Forms.Panel();
+            this.txtJudgeState = new System.Windows.Forms.MaskedTextBox();
+            this.lbJudgeState = new System.Windows.Forms.Label();
+            this.txtJudgeCountry = new System.Windows.Forms.MaskedTextBox();
+            this.txtJudgeCity = new System.Windows.Forms.MaskedTextBox();
+            this.lbJudgeCity = new System.Windows.Forms.Label();
+            this.lbJudgeCountry = new System.Windows.Forms.Label();
             this.txtJudgeLastName2 = new System.Windows.Forms.TextBox();
             this.lbJudgeLastName1 = new System.Windows.Forms.Label();
             this.txtJudgeLastName1 = new System.Windows.Forms.TextBox();
@@ -60,8 +87,13 @@
             this.txtJudgeName = new System.Windows.Forms.TextBox();
             this.lbJudgeID = new System.Windows.Forms.Label();
             this.txtJudgeId = new System.Windows.Forms.TextBox();
+            this.btnModifiy = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnJudgesMenu = new System.Windows.Forms.Button();
+            this.btnStageMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelEventMenu.SuspendLayout();
+            this.panelStageMenu.SuspendLayout();
             this.panelJudgeMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +103,7 @@
             this.btnRegisterAcc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegisterAcc.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegisterAcc.Location = new System.Drawing.Point(36, 516);
+            this.btnRegisterAcc.Location = new System.Drawing.Point(351, 413);
             this.btnRegisterAcc.Name = "btnRegisterAcc";
             this.btnRegisterAcc.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterAcc.TabIndex = 0;
@@ -121,6 +153,15 @@
             // 
             // dataGrid1
             // 
+            this.dataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid1.Location = new System.Drawing.Point(345, 111);
             this.dataGrid1.Name = "dataGrid1";
@@ -133,7 +174,7 @@
             this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(117, 516);
+            this.btnList.Location = new System.Drawing.Point(432, 413);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 10;
@@ -147,7 +188,7 @@
             this.btnEventMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEventMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEventMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEventMenu.Location = new System.Drawing.Point(36, 85);
+            this.btnEventMenu.Location = new System.Drawing.Point(20, 69);
             this.btnEventMenu.Name = "btnEventMenu";
             this.btnEventMenu.Size = new System.Drawing.Size(75, 23);
             this.btnEventMenu.TabIndex = 12;
@@ -157,191 +198,507 @@
             // 
             // panelEventMenu
             // 
-            this.panelEventMenu.Controls.Add(this.lbEventState);
-            this.panelEventMenu.Controls.Add(this.txtEventState);
-            this.panelEventMenu.Controls.Add(this.txtStageCity);
-            this.panelEventMenu.Controls.Add(this.lbCity);
-            this.panelEventMenu.Controls.Add(this.txtStageNum);
-            this.panelEventMenu.Controls.Add(this.lbNum);
-            this.panelEventMenu.Controls.Add(this.txtStageStreet);
-            this.panelEventMenu.Controls.Add(this.lbStreet);
-            this.panelEventMenu.Controls.Add(this.txtStageCountry);
-            this.panelEventMenu.Controls.Add(this.lbStageCountry);
-            this.panelEventMenu.Controls.Add(this.txtEventDate);
-            this.panelEventMenu.Controls.Add(this.lbDate);
+            this.panelEventMenu.Controls.Add(this.lbPreviounsFamilyInfo);
+            this.panelEventMenu.Controls.Add(this.lbPreviounsFamilyType);
+            this.panelEventMenu.Controls.Add(this.lbChirldId);
+            this.panelEventMenu.Controls.Add(this.btnRegisterPreviousFamily);
+            this.panelEventMenu.Controls.Add(this.txtPreviounsFamilyInfo);
+            this.panelEventMenu.Controls.Add(this.txtPreviounsFamilyType);
+            this.panelEventMenu.Controls.Add(this.txtChirldId);
+            this.panelEventMenu.Controls.Add(this.lbPreviounsFamily);
+            this.panelEventMenu.Controls.Add(this.label3);
+            this.panelEventMenu.Controls.Add(this.label6);
+            this.panelEventMenu.Controls.Add(this.comboBoxEventStartDateMoth);
+            this.panelEventMenu.Controls.Add(this.comboBoxEventStartDateDay);
+            this.panelEventMenu.Controls.Add(this.label5);
+            this.panelEventMenu.Controls.Add(this.lbEventEndDate);
+            this.panelEventMenu.Controls.Add(this.label4);
+            this.panelEventMenu.Controls.Add(this.txtEventEndDateYear);
+            this.panelEventMenu.Controls.Add(this.comboBoxEventEndDateMoth);
+            this.panelEventMenu.Controls.Add(this.txtStageJudgeId);
+            this.panelEventMenu.Controls.Add(this.comboBoxEventEndDateDay);
+            this.panelEventMenu.Controls.Add(this.lbStageJudgeId);
+            this.panelEventMenu.Controls.Add(this.txtEventStartDateYear);
+            this.panelEventMenu.Controls.Add(this.lbStartDate);
             this.panelEventMenu.Controls.Add(this.label1);
             this.panelEventMenu.Controls.Add(this.txtEventID);
             this.panelEventMenu.Controls.Add(this.label2);
             this.panelEventMenu.Controls.Add(this.txtEventName);
-            this.panelEventMenu.Location = new System.Drawing.Point(36, 111);
+            this.panelEventMenu.Location = new System.Drawing.Point(20, 98);
             this.panelEventMenu.Name = "panelEventMenu";
-            this.panelEventMenu.Size = new System.Drawing.Size(293, 399);
+            this.panelEventMenu.Size = new System.Drawing.Size(293, 445);
             this.panelEventMenu.TabIndex = 13;
+            this.panelEventMenu.Visible = false;
             // 
-            // lbEventState
+            // lbPreviounsFamilyInfo
             // 
-            this.lbEventState.AutoSize = true;
-            this.lbEventState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEventState.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbEventState.Location = new System.Drawing.Point(16, 148);
-            this.lbEventState.Name = "lbEventState";
-            this.lbEventState.Size = new System.Drawing.Size(53, 20);
-            this.lbEventState.TabIndex = 19;
-            this.lbEventState.Text = "State";
+            this.lbPreviounsFamilyInfo.AutoSize = true;
+            this.lbPreviounsFamilyInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPreviounsFamilyInfo.Location = new System.Drawing.Point(17, 360);
+            this.lbPreviounsFamilyInfo.Name = "lbPreviounsFamilyInfo";
+            this.lbPreviounsFamilyInfo.Size = new System.Drawing.Size(41, 20);
+            this.lbPreviounsFamilyInfo.TabIndex = 70;
+            this.lbPreviounsFamilyInfo.Text = "Info";
             // 
-            // txtEventState
+            // lbPreviounsFamilyType
             // 
-            this.txtEventState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtEventState.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEventState.Location = new System.Drawing.Point(19, 171);
-            this.txtEventState.Name = "txtEventState";
-            this.txtEventState.Size = new System.Drawing.Size(253, 20);
-            this.txtEventState.TabIndex = 18;
+            this.lbPreviounsFamilyType.AutoSize = true;
+            this.lbPreviounsFamilyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPreviounsFamilyType.Location = new System.Drawing.Point(16, 316);
+            this.lbPreviounsFamilyType.Name = "lbPreviounsFamilyType";
+            this.lbPreviounsFamilyType.Size = new System.Drawing.Size(47, 20);
+            this.lbPreviounsFamilyType.TabIndex = 69;
+            this.lbPreviounsFamilyType.Text = "Type";
             // 
-            // txtStageCity
+            // lbChirldId
             // 
-            this.txtStageCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtStageCity.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageCity.Location = new System.Drawing.Point(19, 216);
-            this.txtStageCity.Name = "txtStageCity";
-            this.txtStageCity.Size = new System.Drawing.Size(253, 20);
-            this.txtStageCity.TabIndex = 14;
+            this.lbChirldId.AutoSize = true;
+            this.lbChirldId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChirldId.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbChirldId.Location = new System.Drawing.Point(17, 274);
+            this.lbChirldId.Name = "lbChirldId";
+            this.lbChirldId.Size = new System.Drawing.Size(76, 20);
+            this.lbChirldId.TabIndex = 68;
+            this.lbChirldId.Text = "Chirld Id";
             // 
-            // lbCity
+            // btnRegisterPreviousFamily
             // 
-            this.lbCity.AutoSize = true;
-            this.lbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCity.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbCity.Location = new System.Drawing.Point(16, 194);
-            this.lbCity.Name = "lbCity";
-            this.lbCity.Size = new System.Drawing.Size(39, 20);
-            this.lbCity.TabIndex = 14;
-            this.lbCity.Text = "City";
+            this.btnRegisterPreviousFamily.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnRegisterPreviousFamily.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegisterPreviousFamily.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegisterPreviousFamily.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegisterPreviousFamily.Location = new System.Drawing.Point(20, 409);
+            this.btnRegisterPreviousFamily.Name = "btnRegisterPreviousFamily";
+            this.btnRegisterPreviousFamily.Size = new System.Drawing.Size(262, 23);
+            this.btnRegisterPreviousFamily.TabIndex = 67;
+            this.btnRegisterPreviousFamily.Text = " Register previous family";
+            this.btnRegisterPreviousFamily.UseVisualStyleBackColor = false;
+            this.btnRegisterPreviousFamily.Click += new System.EventHandler(this.btnRegisterPreviousFamily_Click);
             // 
-            // txtStageNum
+            // txtPreviounsFamilyInfo
             // 
-            this.txtStageNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtStageNum.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageNum.Location = new System.Drawing.Point(19, 354);
-            this.txtStageNum.Name = "txtStageNum";
-            this.txtStageNum.Size = new System.Drawing.Size(253, 20);
-            this.txtStageNum.TabIndex = 14;
+            this.txtPreviounsFamilyInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPreviounsFamilyInfo.Location = new System.Drawing.Point(21, 383);
+            this.txtPreviounsFamilyInfo.Name = "txtPreviounsFamilyInfo";
+            this.txtPreviounsFamilyInfo.Size = new System.Drawing.Size(261, 20);
+            this.txtPreviounsFamilyInfo.TabIndex = 66;
             // 
-            // lbNum
+            // txtPreviounsFamilyType
             // 
-            this.lbNum.AutoSize = true;
-            this.lbNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNum.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbNum.Location = new System.Drawing.Point(15, 331);
-            this.lbNum.Name = "lbNum";
-            this.lbNum.Size = new System.Drawing.Size(45, 20);
-            this.lbNum.TabIndex = 14;
-            this.lbNum.Text = "Num";
+            this.txtPreviounsFamilyType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPreviounsFamilyType.Location = new System.Drawing.Point(21, 337);
+            this.txtPreviounsFamilyType.Name = "txtPreviounsFamilyType";
+            this.txtPreviounsFamilyType.Size = new System.Drawing.Size(261, 20);
+            this.txtPreviounsFamilyType.TabIndex = 65;
             // 
-            // txtStageStreet
+            // txtChirldId
             // 
-            this.txtStageStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtStageStreet.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageStreet.Location = new System.Drawing.Point(19, 308);
-            this.txtStageStreet.Name = "txtStageStreet";
-            this.txtStageStreet.Size = new System.Drawing.Size(253, 20);
-            this.txtStageStreet.TabIndex = 14;
+            this.txtChirldId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtChirldId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtChirldId.Location = new System.Drawing.Point(21, 293);
+            this.txtChirldId.Name = "txtChirldId";
+            this.txtChirldId.Size = new System.Drawing.Size(257, 20);
+            this.txtChirldId.TabIndex = 64;
             // 
-            // lbStreet
+            // lbPreviounsFamily
             // 
-            this.lbStreet.AutoSize = true;
-            this.lbStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStreet.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStreet.Location = new System.Drawing.Point(16, 285);
-            this.lbStreet.Name = "lbStreet";
-            this.lbStreet.Size = new System.Drawing.Size(59, 20);
-            this.lbStreet.TabIndex = 17;
-            this.lbStreet.Text = "Street";
+            this.lbPreviounsFamily.AutoSize = true;
+            this.lbPreviounsFamily.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPreviounsFamily.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPreviounsFamily.Location = new System.Drawing.Point(9, 245);
+            this.lbPreviounsFamily.Name = "lbPreviounsFamily";
+            this.lbPreviounsFamily.Size = new System.Drawing.Size(222, 20);
+            this.lbPreviounsFamily.TabIndex = 63;
+            this.lbPreviounsFamily.Text = "Previouns family (Optional)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(168, 125);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 24);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "/";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(83, 122);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(16, 24);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "/";
+            // 
+            // comboBoxEventStartDateMoth
+            // 
+            this.comboBoxEventStartDateMoth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxEventStartDateMoth.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxEventStartDateMoth.FormattingEnabled = true;
+            this.comboBoxEventStartDateMoth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBoxEventStartDateMoth.Location = new System.Drawing.Point(104, 125);
+            this.comboBoxEventStartDateMoth.Name = "comboBoxEventStartDateMoth";
+            this.comboBoxEventStartDateMoth.Size = new System.Drawing.Size(58, 21);
+            this.comboBoxEventStartDateMoth.TabIndex = 43;
+            // 
+            // comboBoxEventStartDateDay
+            // 
+            this.comboBoxEventStartDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxEventStartDateDay.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxEventStartDateDay.FormattingEnabled = true;
+            this.comboBoxEventStartDateDay.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBoxEventStartDateDay.Location = new System.Drawing.Point(20, 125);
+            this.comboBoxEventStartDateDay.Name = "comboBoxEventStartDateDay";
+            this.comboBoxEventStartDateDay.Size = new System.Drawing.Size(55, 21);
+            this.comboBoxEventStartDateDay.TabIndex = 42;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(165, 170);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 24);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "/";
+            // 
+            // lbEventEndDate
+            // 
+            this.lbEventEndDate.AutoSize = true;
+            this.lbEventEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEventEndDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbEventEndDate.Location = new System.Drawing.Point(16, 148);
+            this.lbEventEndDate.Name = "lbEventEndDate";
+            this.lbEventEndDate.Size = new System.Drawing.Size(85, 20);
+            this.lbEventEndDate.TabIndex = 19;
+            this.lbEventEndDate.Text = "End Date";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(80, 167);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(16, 24);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "/";
+            // 
+            // txtEventEndDateYear
+            // 
+            this.txtEventEndDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtEventEndDateYear.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtEventEndDateYear.Location = new System.Drawing.Point(185, 171);
+            this.txtEventEndDateYear.Name = "txtEventEndDateYear";
+            this.txtEventEndDateYear.Size = new System.Drawing.Size(87, 20);
+            this.txtEventEndDateYear.TabIndex = 18;
+            // 
+            // comboBoxEventEndDateMoth
+            // 
+            this.comboBoxEventEndDateMoth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxEventEndDateMoth.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxEventEndDateMoth.FormattingEnabled = true;
+            this.comboBoxEventEndDateMoth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBoxEventEndDateMoth.Location = new System.Drawing.Point(101, 170);
+            this.comboBoxEventEndDateMoth.Name = "comboBoxEventEndDateMoth";
+            this.comboBoxEventEndDateMoth.Size = new System.Drawing.Size(61, 21);
+            this.comboBoxEventEndDateMoth.TabIndex = 39;
+            // 
+            // txtStageJudgeId
+            // 
+            this.txtStageJudgeId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageJudgeId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageJudgeId.Location = new System.Drawing.Point(19, 216);
+            this.txtStageJudgeId.Name = "txtStageJudgeId";
+            this.txtStageJudgeId.Size = new System.Drawing.Size(253, 20);
+            this.txtStageJudgeId.TabIndex = 14;
+            // 
+            // comboBoxEventEndDateDay
+            // 
+            this.comboBoxEventEndDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxEventEndDateDay.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxEventEndDateDay.FormattingEnabled = true;
+            this.comboBoxEventEndDateDay.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBoxEventEndDateDay.Location = new System.Drawing.Point(20, 170);
+            this.comboBoxEventEndDateDay.Name = "comboBoxEventEndDateDay";
+            this.comboBoxEventEndDateDay.Size = new System.Drawing.Size(55, 21);
+            this.comboBoxEventEndDateDay.TabIndex = 38;
+            // 
+            // lbStageJudgeId
+            // 
+            this.lbStageJudgeId.AutoSize = true;
+            this.lbStageJudgeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageJudgeId.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageJudgeId.Location = new System.Drawing.Point(16, 193);
+            this.lbStageJudgeId.Name = "lbStageJudgeId";
+            this.lbStageJudgeId.Size = new System.Drawing.Size(78, 20);
+            this.lbStageJudgeId.TabIndex = 14;
+            this.lbStageJudgeId.Text = "Stage Id";
+            // 
+            // txtEventStartDateYear
+            // 
+            this.txtEventStartDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtEventStartDateYear.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtEventStartDateYear.Location = new System.Drawing.Point(185, 125);
+            this.txtEventStartDateYear.Name = "txtEventStartDateYear";
+            this.txtEventStartDateYear.Size = new System.Drawing.Size(87, 20);
+            this.txtEventStartDateYear.TabIndex = 14;
+            // 
+            // lbStartDate
+            // 
+            this.lbStartDate.AutoSize = true;
+            this.lbStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStartDate.Location = new System.Drawing.Point(15, 102);
+            this.lbStartDate.Name = "lbStartDate";
+            this.lbStartDate.Size = new System.Drawing.Size(93, 20);
+            this.lbStartDate.TabIndex = 14;
+            this.lbStartDate.Text = "Start Date";
+            // 
+            // panelStageMenu
+            // 
+            this.panelStageMenu.Controls.Add(this.txtStageState);
+            this.panelStageMenu.Controls.Add(this.lbStageState);
+            this.panelStageMenu.Controls.Add(this.txtStageCountry);
+            this.panelStageMenu.Controls.Add(this.txtStageNum);
+            this.panelStageMenu.Controls.Add(this.lbStageNum);
+            this.panelStageMenu.Controls.Add(this.lbStageCountry);
+            this.panelStageMenu.Controls.Add(this.lbStageStreet);
+            this.panelStageMenu.Controls.Add(this.txtStageStreet);
+            this.panelStageMenu.Controls.Add(this.lbStageCity);
+            this.panelStageMenu.Controls.Add(this.txtStageCity);
+            this.panelStageMenu.Controls.Add(this.lbStageId);
+            this.panelStageMenu.Controls.Add(this.txtStageId);
+            this.panelStageMenu.Location = new System.Drawing.Point(20, 111);
+            this.panelStageMenu.Name = "panelStageMenu";
+            this.panelStageMenu.Size = new System.Drawing.Size(293, 305);
+            this.panelStageMenu.TabIndex = 33;
+            this.panelStageMenu.Visible = false;
+            // 
+            // txtStageState
+            // 
+            this.txtStageState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageState.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageState.Location = new System.Drawing.Point(14, 276);
+            this.txtStageState.Name = "txtStageState";
+            this.txtStageState.Size = new System.Drawing.Size(253, 20);
+            this.txtStageState.TabIndex = 32;
+            // 
+            // lbStageState
+            // 
+            this.lbStageState.AutoSize = true;
+            this.lbStageState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageState.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageState.Location = new System.Drawing.Point(11, 253);
+            this.lbStageState.Name = "lbStageState";
+            this.lbStageState.Size = new System.Drawing.Size(53, 20);
+            this.lbStageState.TabIndex = 31;
+            this.lbStageState.Text = "State";
             // 
             // txtStageCountry
             // 
             this.txtStageCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtStageCountry.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageCountry.Location = new System.Drawing.Point(19, 262);
+            this.txtStageCountry.Location = new System.Drawing.Point(14, 230);
             this.txtStageCountry.Name = "txtStageCountry";
             this.txtStageCountry.Size = new System.Drawing.Size(253, 20);
-            this.txtStageCountry.TabIndex = 16;
+            this.txtStageCountry.TabIndex = 30;
+            // 
+            // txtStageNum
+            // 
+            this.txtStageNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageNum.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageNum.Location = new System.Drawing.Point(14, 184);
+            this.txtStageNum.Name = "txtStageNum";
+            this.txtStageNum.Size = new System.Drawing.Size(253, 20);
+            this.txtStageNum.TabIndex = 27;
+            // 
+            // lbStageNum
+            // 
+            this.lbStageNum.AutoSize = true;
+            this.lbStageNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageNum.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageNum.Location = new System.Drawing.Point(13, 162);
+            this.lbStageNum.Name = "lbStageNum";
+            this.lbStageNum.Size = new System.Drawing.Size(45, 20);
+            this.lbStageNum.TabIndex = 28;
+            this.lbStageNum.Text = "Num";
             // 
             // lbStageCountry
             // 
             this.lbStageCountry.AutoSize = true;
             this.lbStageCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStageCountry.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStageCountry.Location = new System.Drawing.Point(16, 239);
+            this.lbStageCountry.Location = new System.Drawing.Point(13, 207);
             this.lbStageCountry.Name = "lbStageCountry";
             this.lbStageCountry.Size = new System.Drawing.Size(71, 20);
-            this.lbStageCountry.TabIndex = 15;
+            this.lbStageCountry.TabIndex = 29;
             this.lbStageCountry.Text = "Country";
             // 
-            // txtEventDate
+            // lbStageStreet
             // 
-            this.txtEventDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtEventDate.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEventDate.Location = new System.Drawing.Point(19, 125);
-            this.txtEventDate.Name = "txtEventDate";
-            this.txtEventDate.Size = new System.Drawing.Size(253, 20);
-            this.txtEventDate.TabIndex = 14;
+            this.lbStageStreet.AutoSize = true;
+            this.lbStageStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageStreet.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageStreet.Location = new System.Drawing.Point(12, 115);
+            this.lbStageStreet.Name = "lbStageStreet";
+            this.lbStageStreet.Size = new System.Drawing.Size(59, 20);
+            this.lbStageStreet.TabIndex = 25;
+            this.lbStageStreet.Text = "Street";
             // 
-            // lbDate
+            // txtStageStreet
             // 
-            this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbDate.Location = new System.Drawing.Point(15, 102);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(48, 20);
-            this.lbDate.TabIndex = 14;
-            this.lbDate.Text = "Date";
+            this.txtStageStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageStreet.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageStreet.Location = new System.Drawing.Point(14, 137);
+            this.txtStageStreet.Name = "txtStageStreet";
+            this.txtStageStreet.Size = new System.Drawing.Size(253, 20);
+            this.txtStageStreet.TabIndex = 24;
             // 
-            // btnModifiy
+            // lbStageCity
             // 
-            this.btnModifiy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnModifiy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModifiy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifiy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModifiy.Location = new System.Drawing.Point(198, 516);
-            this.btnModifiy.Name = "btnModifiy";
-            this.btnModifiy.Size = new System.Drawing.Size(75, 23);
-            this.btnModifiy.TabIndex = 19;
-            this.btnModifiy.Text = "Modify";
-            this.btnModifiy.UseVisualStyleBackColor = false;
-            this.btnModifiy.Click += new System.EventHandler(this.btnModifiy_Click);
+            this.lbStageCity.AutoSize = true;
+            this.lbStageCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageCity.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageCity.Location = new System.Drawing.Point(11, 69);
+            this.lbStageCity.Name = "lbStageCity";
+            this.lbStageCity.Size = new System.Drawing.Size(39, 20);
+            this.lbStageCity.TabIndex = 23;
+            this.lbStageCity.Text = "City";
             // 
-            // btnDelete
+            // txtStageCity
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(279, 516);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 20;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.txtStageCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageCity.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageCity.Location = new System.Drawing.Point(14, 92);
+            this.txtStageCity.Name = "txtStageCity";
+            this.txtStageCity.Size = new System.Drawing.Size(253, 20);
+            this.txtStageCity.TabIndex = 22;
             // 
-            // btnJudgesMenu
+            // lbStageId
             // 
-            this.btnJudgesMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnJudgesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnJudgesMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJudgesMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnJudgesMenu.Location = new System.Drawing.Point(117, 85);
-            this.btnJudgesMenu.Name = "btnJudgesMenu";
-            this.btnJudgesMenu.Size = new System.Drawing.Size(75, 23);
-            this.btnJudgesMenu.TabIndex = 21;
-            this.btnJudgesMenu.Text = "Judge";
-            this.btnJudgesMenu.UseVisualStyleBackColor = false;
-            this.btnJudgesMenu.Click += new System.EventHandler(this.btnJudgesMenu_Click);
+            this.lbStageId.AutoSize = true;
+            this.lbStageId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageId.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageId.Location = new System.Drawing.Point(10, 13);
+            this.lbStageId.Name = "lbStageId";
+            this.lbStageId.Size = new System.Drawing.Size(28, 20);
+            this.lbStageId.TabIndex = 20;
+            this.lbStageId.Text = "ID";
+            // 
+            // txtStageId
+            // 
+            this.txtStageId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageId.Location = new System.Drawing.Point(14, 36);
+            this.txtStageId.Name = "txtStageId";
+            this.txtStageId.Size = new System.Drawing.Size(253, 20);
+            this.txtStageId.TabIndex = 21;
             // 
             // panelJudgeMenu
             // 
+            this.panelJudgeMenu.Controls.Add(this.txtJudgeState);
+            this.panelJudgeMenu.Controls.Add(this.lbJudgeState);
+            this.panelJudgeMenu.Controls.Add(this.txtJudgeCountry);
+            this.panelJudgeMenu.Controls.Add(this.txtJudgeCity);
+            this.panelJudgeMenu.Controls.Add(this.lbJudgeCity);
+            this.panelJudgeMenu.Controls.Add(this.lbJudgeCountry);
             this.panelJudgeMenu.Controls.Add(this.txtJudgeLastName2);
             this.panelJudgeMenu.Controls.Add(this.lbJudgeLastName1);
             this.panelJudgeMenu.Controls.Add(this.txtJudgeLastName1);
@@ -349,10 +706,71 @@
             this.panelJudgeMenu.Controls.Add(this.txtJudgeName);
             this.panelJudgeMenu.Controls.Add(this.lbJudgeID);
             this.panelJudgeMenu.Controls.Add(this.txtJudgeId);
-            this.panelJudgeMenu.Location = new System.Drawing.Point(36, 111);
+            this.panelJudgeMenu.Location = new System.Drawing.Point(20, 107);
             this.panelJudgeMenu.Name = "panelJudgeMenu";
-            this.panelJudgeMenu.Size = new System.Drawing.Size(293, 180);
+            this.panelJudgeMenu.Size = new System.Drawing.Size(293, 305);
             this.panelJudgeMenu.TabIndex = 22;
+            this.panelJudgeMenu.Visible = false;
+            // 
+            // txtJudgeState
+            // 
+            this.txtJudgeState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtJudgeState.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtJudgeState.Location = new System.Drawing.Point(14, 276);
+            this.txtJudgeState.Name = "txtJudgeState";
+            this.txtJudgeState.Size = new System.Drawing.Size(253, 20);
+            this.txtJudgeState.TabIndex = 32;
+            // 
+            // lbJudgeState
+            // 
+            this.lbJudgeState.AutoSize = true;
+            this.lbJudgeState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJudgeState.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbJudgeState.Location = new System.Drawing.Point(11, 253);
+            this.lbJudgeState.Name = "lbJudgeState";
+            this.lbJudgeState.Size = new System.Drawing.Size(53, 20);
+            this.lbJudgeState.TabIndex = 31;
+            this.lbJudgeState.Text = "State";
+            // 
+            // txtJudgeCountry
+            // 
+            this.txtJudgeCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtJudgeCountry.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtJudgeCountry.Location = new System.Drawing.Point(14, 230);
+            this.txtJudgeCountry.Name = "txtJudgeCountry";
+            this.txtJudgeCountry.Size = new System.Drawing.Size(253, 20);
+            this.txtJudgeCountry.TabIndex = 30;
+            // 
+            // txtJudgeCity
+            // 
+            this.txtJudgeCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtJudgeCity.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtJudgeCity.Location = new System.Drawing.Point(14, 184);
+            this.txtJudgeCity.Name = "txtJudgeCity";
+            this.txtJudgeCity.Size = new System.Drawing.Size(253, 20);
+            this.txtJudgeCity.TabIndex = 27;
+            // 
+            // lbJudgeCity
+            // 
+            this.lbJudgeCity.AutoSize = true;
+            this.lbJudgeCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJudgeCity.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbJudgeCity.Location = new System.Drawing.Point(13, 162);
+            this.lbJudgeCity.Name = "lbJudgeCity";
+            this.lbJudgeCity.Size = new System.Drawing.Size(39, 20);
+            this.lbJudgeCity.TabIndex = 28;
+            this.lbJudgeCity.Text = "City";
+            // 
+            // lbJudgeCountry
+            // 
+            this.lbJudgeCountry.AutoSize = true;
+            this.lbJudgeCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJudgeCountry.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbJudgeCountry.Location = new System.Drawing.Point(13, 207);
+            this.lbJudgeCountry.Name = "lbJudgeCountry";
+            this.lbJudgeCountry.Size = new System.Drawing.Size(71, 20);
+            this.lbJudgeCountry.TabIndex = 29;
+            this.lbJudgeCountry.Text = "Country";
             // 
             // txtJudgeLastName2
             // 
@@ -378,7 +796,7 @@
             // 
             this.txtJudgeLastName1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtJudgeLastName1.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtJudgeLastName1.Location = new System.Drawing.Point(16, 137);
+            this.txtJudgeLastName1.Location = new System.Drawing.Point(14, 137);
             this.txtJudgeLastName1.Name = "txtJudgeLastName1";
             this.txtJudgeLastName1.Size = new System.Drawing.Size(122, 20);
             this.txtJudgeLastName1.TabIndex = 24;
@@ -423,11 +841,69 @@
             this.txtJudgeId.Size = new System.Drawing.Size(253, 20);
             this.txtJudgeId.TabIndex = 21;
             // 
+            // btnModifiy
+            // 
+            this.btnModifiy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnModifiy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModifiy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifiy.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnModifiy.Location = new System.Drawing.Point(513, 413);
+            this.btnModifiy.Name = "btnModifiy";
+            this.btnModifiy.Size = new System.Drawing.Size(75, 23);
+            this.btnModifiy.TabIndex = 19;
+            this.btnModifiy.Text = "Modify";
+            this.btnModifiy.UseVisualStyleBackColor = false;
+            this.btnModifiy.Click += new System.EventHandler(this.btnModifiy_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.Location = new System.Drawing.Point(594, 413);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 20;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnJudgesMenu
+            // 
+            this.btnJudgesMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnJudgesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnJudgesMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJudgesMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnJudgesMenu.Location = new System.Drawing.Point(101, 69);
+            this.btnJudgesMenu.Name = "btnJudgesMenu";
+            this.btnJudgesMenu.Size = new System.Drawing.Size(75, 23);
+            this.btnJudgesMenu.TabIndex = 21;
+            this.btnJudgesMenu.Text = "Judge";
+            this.btnJudgesMenu.UseVisualStyleBackColor = false;
+            this.btnJudgesMenu.Click += new System.EventHandler(this.btnJudgesMenu_Click);
+            // 
+            // btnStageMenu
+            // 
+            this.btnStageMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnStageMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStageMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStageMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnStageMenu.Location = new System.Drawing.Point(182, 69);
+            this.btnStageMenu.Name = "btnStageMenu";
+            this.btnStageMenu.Size = new System.Drawing.Size(75, 23);
+            this.btnStageMenu.TabIndex = 23;
+            this.btnStageMenu.Text = "Stage";
+            this.btnStageMenu.UseVisualStyleBackColor = false;
+            this.btnStageMenu.Click += new System.EventHandler(this.btnStageMenu_Click);
+            // 
             // BackOficeResultManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.panelStageMenu);
+            this.Controls.Add(this.btnStageMenu);
             this.Controls.Add(this.panelJudgeMenu);
             this.Controls.Add(this.btnJudgesMenu);
             this.Controls.Add(this.btnDelete);
@@ -442,6 +918,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
             this.panelEventMenu.ResumeLayout(false);
             this.panelEventMenu.PerformLayout();
+            this.panelStageMenu.ResumeLayout(false);
+            this.panelStageMenu.PerformLayout();
             this.panelJudgeMenu.ResumeLayout(false);
             this.panelJudgeMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -459,22 +937,15 @@
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnEventMenu;
         private System.Windows.Forms.Panel panelEventMenu;
-        private System.Windows.Forms.MaskedTextBox txtStageCity;
-        private System.Windows.Forms.Label lbCity;
-        private System.Windows.Forms.MaskedTextBox txtStageNum;
-        private System.Windows.Forms.Label lbNum;
-        private System.Windows.Forms.MaskedTextBox txtStageStreet;
-        private System.Windows.Forms.Label lbStreet;
-        private System.Windows.Forms.MaskedTextBox txtStageCountry;
-        private System.Windows.Forms.Label lbStageCountry;
-        private System.Windows.Forms.MaskedTextBox txtEventDate;
-        private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.Label lbEventState;
-        private System.Windows.Forms.MaskedTextBox txtEventState;
+        private System.Windows.Forms.MaskedTextBox txtStageJudgeId;
+        private System.Windows.Forms.Label lbStageJudgeId;
+        private System.Windows.Forms.MaskedTextBox txtEventStartDateYear;
+        private System.Windows.Forms.Label lbStartDate;
+        private System.Windows.Forms.Label lbEventEndDate;
+        private System.Windows.Forms.MaskedTextBox txtEventEndDateYear;
         private System.Windows.Forms.Button btnModifiy;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnJudgesMenu;
-        private System.Windows.Forms.Panel panelJudgeMenu;
         private System.Windows.Forms.TextBox txtJudgeLastName2;
         private System.Windows.Forms.Label lbJudgeLastName1;
         private System.Windows.Forms.TextBox txtJudgeLastName1;
@@ -482,5 +953,42 @@
         private System.Windows.Forms.TextBox txtJudgeName;
         private System.Windows.Forms.Label lbJudgeID;
         private System.Windows.Forms.TextBox txtJudgeId;
+        private System.Windows.Forms.MaskedTextBox txtJudgeState;
+        private System.Windows.Forms.Label lbJudgeState;
+        private System.Windows.Forms.MaskedTextBox txtJudgeCountry;
+        private System.Windows.Forms.MaskedTextBox txtJudgeCity;
+        private System.Windows.Forms.Label lbJudgeCity;
+        private System.Windows.Forms.Label lbJudgeCountry;
+        public System.Windows.Forms.Panel panelJudgeMenu;
+        private System.Windows.Forms.Button btnStageMenu;
+        public System.Windows.Forms.Panel panelStageMenu;
+        private System.Windows.Forms.MaskedTextBox txtStageState;
+        private System.Windows.Forms.Label lbStageState;
+        private System.Windows.Forms.MaskedTextBox txtStageCountry;
+        private System.Windows.Forms.MaskedTextBox txtStageNum;
+        private System.Windows.Forms.Label lbStageNum;
+        private System.Windows.Forms.Label lbStageCountry;
+        private System.Windows.Forms.Label lbStageStreet;
+        private System.Windows.Forms.TextBox txtStageStreet;
+        private System.Windows.Forms.Label lbStageCity;
+        private System.Windows.Forms.TextBox txtStageCity;
+        private System.Windows.Forms.Label lbStageId;
+        private System.Windows.Forms.TextBox txtStageId;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxEventEndDateMoth;
+        private System.Windows.Forms.ComboBox comboBoxEventEndDateDay;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxEventStartDateMoth;
+        private System.Windows.Forms.ComboBox comboBoxEventStartDateDay;
+        private System.Windows.Forms.Button btnRegisterPreviousFamily;
+        private System.Windows.Forms.TextBox txtPreviounsFamilyInfo;
+        private System.Windows.Forms.TextBox txtPreviounsFamilyType;
+        private System.Windows.Forms.TextBox txtChirldId;
+        private System.Windows.Forms.Label lbPreviounsFamily;
+        private System.Windows.Forms.Label lbChirldId;
+        private System.Windows.Forms.Label lbPreviounsFamilyType;
+        private System.Windows.Forms.Label lbPreviounsFamilyInfo;
     }
 }

@@ -36,6 +36,7 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.btnResultManager = new System.Windows.Forms.Button();
             this.Lblanguaje = new System.Windows.Forms.Label();
+            this.btnSportManager = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,12 +129,27 @@
             this.Lblanguaje.Text = "Languaje";
             this.Lblanguaje.Click += new System.EventHandler(this.Lblanguaje_Click);
             // 
+            // btnSportManager
+            // 
+            this.btnSportManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnSportManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSportManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSportManager.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSportManager.Location = new System.Drawing.Point(12, 187);
+            this.btnSportManager.Name = "btnSportManager";
+            this.btnSportManager.Size = new System.Drawing.Size(120, 23);
+            this.btnSportManager.TabIndex = 48;
+            this.btnSportManager.Text = "Sport Manager";
+            this.btnSportManager.UseVisualStyleBackColor = false;
+            this.btnSportManager.Click += new System.EventHandler(this.btnSportManager_Click);
+            // 
             // BackofficeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1773, 803);
+            this.Controls.Add(this.btnSportManager);
             this.Controls.Add(this.Lblanguaje);
             this.Controls.Add(this.btnResultManager);
             this.Controls.Add(this.MainPanel);
@@ -158,5 +174,6 @@
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button btnResultManager;
         private System.Windows.Forms.Label Lblanguaje;
+        private System.Windows.Forms.Button btnSportManager;
     }
 }

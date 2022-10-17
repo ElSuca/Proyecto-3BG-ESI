@@ -6,16 +6,14 @@ namespace CapDeDatos
 {
     public class ModelEvents : Model
     {
-        public int ID;
-        public string EventName;
-        public string EventDate;
-        public string PreEvent;
-        public string StageName;
-        public string EventCity;
-        public string EventCountry;
-        public string EventStreet;
-        public string EventState;
-        public int EventNum;
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
+        public int StageId { get; set; }
+        public string Type { get; set; }
+        public int ParentId { get; set; }
+        public string Info { get; set; }
 
         public ModelEvents()
         {
@@ -30,19 +28,16 @@ namespace CapDeDatos
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
             this.ID = int.Parse(this.dataReader["ID"].ToString());
-            this.EventName = this.dataReader["NAME"].ToString();
-            this.EventDate = this.dataReader["DATE"].ToString();
-            this.EventCity = this.dataReader["CITY"].ToString();
-            this.EventCountry = this.dataReader["COUNTRY"].ToString();
-            this.EventStreet = this.dataReader["STREET"].ToString();
-            this.EventNum = Int32.Parse(this.dataReader["NUM"].ToString());
-            this.EventState = this.dataReader["STATE"].ToString();
+            this.Name = this.dataReader["NAME"].ToString();
+            this.StartDate = this.dataReader["STARTDATE"].ToString();
+            this.EndDate = this.dataReader["ENDDATE"].ToString();
+            this.StageId = Int32.Parse(this.dataReader["STAGE"].ToString());
             this.dataReader.Close();
         }
         public DataTable GetEventDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM event";
+            command.CommandText = "SELECT EVENT.*,PRE_EVENT.ID_PARENT, PRE_EVENT.TYPE,PRE_EVENT.INFO FROM EVENT LEFT JOIN PRE_EVENT on PRE_EVENT.ID_CHILD = EVENT.ID"; 
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;
@@ -51,20 +46,16 @@ namespace CapDeDatos
         public void Save()
         {
             if (this.ID.ToString() != "0") Update();
-            else
-            {
-              //  insertStage();
-                insertEvent();
-            }
+            else Insert(); 
         }
 
-        private void insertEvent()
+        private void Insert()
         {
             try
             {
                 command.CommandText = "INSERT INTO " +
-                   "EVENT (name,date,city,street,num,state,country) " +
-                   $"VALUES ('{EventName}','{EventDate}','{EventCity}','{EventStreet}','{EventNum}','{EventState}','{EventCountry}')";
+                   "EVENT (NAME,STARTDATE,ENDDATE,STAGE) " +
+                   $"VALUES ('{Name}','{StartDate}','{EndDate}',{StageId})";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -73,31 +64,14 @@ namespace CapDeDatos
                 throw e;
             }
         }
-      /*  private void insertStage()
-        {
-            try
-            {
-                command.CommandText = "INSERT INTO " +
-                  "STAGE(name,city,country,street,num) " +
-                  $"VALUES ('{StageName}','{EventCity}','{EventCountry}','{EventStreet}',{EventNum})";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }*/
+       
         private void Update()
         {
            this.command.CommandText = "UPDATE EVENT SET " +
-                $"NAME = '{EventName}'," +
-                $"DATE = '{EventDate}'," +
-                $"CITY = '{EventCity}'," +
-                $"STREET = '{EventStreet}'," +
-                $"NUM = '{EventNum}'," +
-                $"STATE = '{EventState}'," +
-                $"COUNTRY = '{EventCountry}' " +
+                $"NAME = '{Name}'," +
+                $"STARTDATE = '{StartDate}'," +
+                $"ENDDATE = '{EndDate}'," +
+                $"STAGE = {StageId}" +
                 $"WHERE ID = {this.ID}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
@@ -109,6 +83,22 @@ namespace CapDeDatos
             try
             {
                 this.command.CommandText = $"DELETE EVENT.* FROM EVENT WHERE ID = {Id}";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void InsertParents()
+        {
+            try
+            {
+                command.CommandText = "INSERT " +
+                   "PRE_EVENT (ID_CHILD,ID_PARENT ,TYPE ,INFO ) " +
+                   $"VALUES ({ID},{ParentId},'{Type}','{Info}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }

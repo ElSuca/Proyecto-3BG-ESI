@@ -77,8 +77,12 @@
     <Compile Include="Model.cs" />
     <Compile Include="ModelAsociation.cs" />
     <Compile Include="ModelEvents.cs" />
+    <Compile Include="ModelFamily.cs" />
     <Compile Include="ModelJudge.cs" />
+    <Compile Include="ModelManager.cs" />
+    <Compile Include="ModelPlayer.cs" />
     <Compile Include="ModelSport.cs" />
+    <Compile Include="ModelStage.cs" />
     <Compile Include="ModelTeam.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

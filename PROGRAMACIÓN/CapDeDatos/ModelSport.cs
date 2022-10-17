@@ -1,4 +1,5 @@
 ﻿using CapaDeDatos;
+using System;
 using System.Data;
 
 namespace CapDeDatos
@@ -7,10 +8,10 @@ namespace CapDeDatos
     {
         public DataTable table;
 
-        public ModelSport()
+       /* public ModelSport()
         {
             table = new DataTable();
-        }
+        }*/
         public DataTable playerTable(string PlayerName)
         {
             string NombreJugador = PlayerName;
@@ -157,5 +158,133 @@ namespace CapDeDatos
             table = limpiarTabla(table);
             return table;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        public int Id;
+        public string Name { get; set; }
+        public string Type { get; set; }
+
+        public ModelSport(int id) => this.GetTeamData(id);
+        public ModelSport()
+        {
+
+        }
+
+        public void Save()
+        {
+            if (this.Id.ToString() != "0") Update();
+            else
+            {
+                insert();
+                insertType();
+            }
+
+        }
+
+        private void insert()
+        {
+            try
+            {
+                command.CommandText = "INSERT INTO " +
+                   "SPORT (Name) " +
+                   $"VALUES ('{Name}')";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        private void insertType()
+        {
+            try
+            {
+                command.CommandText = "INSERT INTO " +
+                   "T_SPO (ID_SP,TYPE) " +
+                   $"VALUES ({GetId(Name)}'{Type}')";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        private void Update()
+        {
+            this.command.CommandText = "UPDATE TEAM SET " +
+                 $"NAME = '{Name}'," +
+                 $"CITY = '{City}'," +
+                 $"COUNTRY = '{Country}'," +
+                 $"STATE = '{State}'" +
+                 $"WHERE ID = {this.Id}";
+            this.command.Prepare();
+            this.command.ExecuteNonQuery();
+
+        }
+        public void Delete(int Id)
+        {
+            try
+            {
+                this.command.CommandText = $"Delete TEAM.* from TEAM where Id= {Id}";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public void GetTeamData(int id)
+        {
+            this.command.CommandText = $"Select * From TEAM where ID={id}";
+            this.command.Prepare();
+            this.dataReader = this.command.ExecuteReader();
+            this.dataReader.Read();
+            this.Id = int.Parse(this.dataReader["id"].ToString());
+            this.Name = this.dataReader["NAME"].ToString();
+            this.City = this.dataReader["CITY"].ToString();
+            this.Country = this.dataReader["COUNTRY"].ToString();
+            this.State = this.dataReader["STATE"].ToString();
+            this.dataReader.Close();
+        }
+        public DataTable GetTeamDataTable()
+        {
+            DataTable tabla = new DataTable();
+            command.CommandText = "SELECT * FROM TEAM";
+            tabla.Load(command.ExecuteReader());
+            conection.Close();
+            return tabla;
+        }
+
+        public int GetId(string Name)
+        {
+            try
+            {
+                this.command.CommandText = $"SELECT ID FROM SPORT WHERE NAME  = '{Name}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["id"].ToString());
+                this.dataReader.Close();
+                return Id;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
     }
 }
+

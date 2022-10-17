@@ -90,17 +90,29 @@
     <Compile Include="BackofficeManager.Designer.cs">
       <DependentUpon>BackofficeManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultManager\BackOfficeAsociationManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResultManager\BackOfficeAsociationManager.Designer.cs">
+      <DependentUpon>BackOfficeAsociationManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResultManager\BackOfficePlayerManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ResultManager\BackOfficePlayerManager.Designer.cs">
       <DependentUpon>BackOfficePlayerManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="ResultManager\BackOfficeResultsManager.cs">
+    <Compile Include="ResultManager\BackOfficeResultsMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ResultManager\BackOfficeResultsManager.Designer.cs">
-      <DependentUpon>BackOfficeResultsManager.cs</DependentUpon>
+    <Compile Include="ResultManager\BackOfficeResultsMenu.Designer.cs">
+      <DependentUpon>BackOfficeResultsMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SportManager\BackOfficeSportManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SportManager\BackOfficeSportManager.Designer.cs">
+      <DependentUpon>BackOfficeSportManager.cs</DependentUpon>
     </Compile>
     <Compile Include="UserManager\BackofficeUserManager.cs">
       <SubType>UserControl</SubType>
@@ -122,11 +134,17 @@
     <EmbeddedResource Include="BackofficeManager.resx">
       <DependentUpon>BackofficeManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResultManager\BackOfficeAsociationManager.resx">
+      <DependentUpon>BackOfficeAsociationManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResultManager\BackOfficePlayerManager.resx">
       <DependentUpon>BackOfficePlayerManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResultManager\BackOfficeResultsManager.resx">
-      <DependentUpon>BackOfficeResultsManager.cs</DependentUpon>
+    <EmbeddedResource Include="ResultManager\BackOfficeResultsMenu.resx">
+      <DependentUpon>BackOfficeResultsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SportManager\BackOfficeSportManager.resx">
+      <DependentUpon>BackOfficeSportManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManager\BackofficeUserManager.resx">
       <DependentUpon>BackofficeUserManager.cs</DependentUpon>

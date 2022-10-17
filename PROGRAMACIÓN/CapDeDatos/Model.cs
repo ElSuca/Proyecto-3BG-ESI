@@ -51,7 +51,7 @@ namespace CapaDeDatos
         private void startConection()
         {
             #region credenciales
-            /*this.IpDataBase = "192.168.5.50";
+          /*  this.IpDataBase = "192.168.5.50";
                 this.NameDataBase = "ptahtechnologies";
                 this.UserDataBase = "santiago.garcia";
                 this.PasswordDataBase = "54605454";

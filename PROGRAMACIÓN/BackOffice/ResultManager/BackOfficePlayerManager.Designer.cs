@@ -68,6 +68,22 @@
             this.btnList = new System.Windows.Forms.Button();
             this.btnRegisterAcc = new System.Windows.Forms.Button();
             this.btnPlayer = new System.Windows.Forms.Button();
+            this.lbIdAsoc = new System.Windows.Forms.Label();
+            this.btnRegisterPlayerAsociation = new System.Windows.Forms.Button();
+            this.txtAsociationId = new System.Windows.Forms.TextBox();
+            this.lbPlayerAsociation = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxPlayerAsociationStartDateMoth = new System.Windows.Forms.ComboBox();
+            this.comboBoxPlayerAsociationStartDateDay = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbEventEndDate = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPlayerAsociationEndDateYear = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxPlayerAsociationEndDateMoth = new System.Windows.Forms.ComboBox();
+            this.comboBoxPlayerAsociationEndDateDay = new System.Windows.Forms.ComboBox();
+            this.txtStartEventPlayerAsociationDateYear = new System.Windows.Forms.MaskedTextBox();
+            this.lbStartDate = new System.Windows.Forms.Label();
             this.panelTeamsMenu.SuspendLayout();
             this.panelPlayerMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
@@ -176,7 +192,6 @@
             // 
             // panelTeamsMenu
             // 
-            this.panelTeamsMenu.Controls.Add(this.panelPlayerMenu);
             this.panelTeamsMenu.Controls.Add(this.txtTeamCountry);
             this.panelTeamsMenu.Controls.Add(this.lbTeamCountry);
             this.panelTeamsMenu.Controls.Add(this.txtTeamState);
@@ -194,13 +209,29 @@
             // 
             // panelPlayerMenu
             // 
+            this.panelPlayerMenu.Controls.Add(this.label3);
+            this.panelPlayerMenu.Controls.Add(this.label6);
+            this.panelPlayerMenu.Controls.Add(this.comboBoxPlayerAsociationStartDateMoth);
+            this.panelPlayerMenu.Controls.Add(this.comboBoxPlayerAsociationStartDateDay);
+            this.panelPlayerMenu.Controls.Add(this.label1);
+            this.panelPlayerMenu.Controls.Add(this.lbEventEndDate);
+            this.panelPlayerMenu.Controls.Add(this.label2);
+            this.panelPlayerMenu.Controls.Add(this.txtPlayerAsociationEndDateYear);
+            this.panelPlayerMenu.Controls.Add(this.comboBoxPlayerAsociationEndDateMoth);
+            this.panelPlayerMenu.Controls.Add(this.comboBoxPlayerAsociationEndDateDay);
+            this.panelPlayerMenu.Controls.Add(this.txtStartEventPlayerAsociationDateYear);
+            this.panelPlayerMenu.Controls.Add(this.lbStartDate);
             this.panelPlayerMenu.Controls.Add(this.label5);
             this.panelPlayerMenu.Controls.Add(this.label4);
+            this.panelPlayerMenu.Controls.Add(this.lbIdAsoc);
             this.panelPlayerMenu.Controls.Add(this.txtBirthdateYear);
+            this.panelPlayerMenu.Controls.Add(this.btnRegisterPlayerAsociation);
             this.panelPlayerMenu.Controls.Add(this.comboBoxBirthdateMoth);
             this.panelPlayerMenu.Controls.Add(this.comboBoxBirthdateDay);
             this.panelPlayerMenu.Controls.Add(this.lbBirthdate);
+            this.panelPlayerMenu.Controls.Add(this.txtAsociationId);
             this.panelPlayerMenu.Controls.Add(this.txtPlayerStatus);
+            this.panelPlayerMenu.Controls.Add(this.lbPlayerAsociation);
             this.panelPlayerMenu.Controls.Add(this.lbPlayerStatus);
             this.panelPlayerMenu.Controls.Add(this.txtPlayerLastName2);
             this.panelPlayerMenu.Controls.Add(this.lbPlayerLastName1);
@@ -215,10 +246,12 @@
             this.panelPlayerMenu.Controls.Add(this.txtPlayerID);
             this.panelPlayerMenu.Controls.Add(this.lbPlayerName);
             this.panelPlayerMenu.Controls.Add(this.txtPlayerName);
-            this.panelPlayerMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelPlayerMenu.Location = new System.Drawing.Point(43, 53);
             this.panelPlayerMenu.Name = "panelPlayerMenu";
-            this.panelPlayerMenu.Size = new System.Drawing.Size(293, 393);
+            this.panelPlayerMenu.Size = new System.Drawing.Size(297, 610);
             this.panelPlayerMenu.TabIndex = 20;
+            this.panelPlayerMenu.Visible = false;
+            this.panelPlayerMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPlayerMenu_Paint);
             // 
             // label5
             // 
@@ -497,7 +530,7 @@
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid1.Location = new System.Drawing.Point(351, 53);
             this.dataGrid1.Name = "dataGrid1";
-            this.dataGrid1.Size = new System.Drawing.Size(929, 545);
+            this.dataGrid1.Size = new System.Drawing.Size(929, 390);
             this.dataGrid1.TabIndex = 21;
             // 
             // btnDelete
@@ -506,7 +539,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(286, 604);
+            this.btnDelete.Location = new System.Drawing.Point(595, 449);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 25;
@@ -520,7 +553,7 @@
             this.btnModifiy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifiy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifiy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModifiy.Location = new System.Drawing.Point(205, 604);
+            this.btnModifiy.Location = new System.Drawing.Point(514, 449);
             this.btnModifiy.Name = "btnModifiy";
             this.btnModifiy.Size = new System.Drawing.Size(75, 23);
             this.btnModifiy.TabIndex = 24;
@@ -534,7 +567,7 @@
             this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(124, 604);
+            this.btnList.Location = new System.Drawing.Point(433, 449);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 23;
@@ -548,7 +581,7 @@
             this.btnRegisterAcc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegisterAcc.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegisterAcc.Location = new System.Drawing.Point(48, 604);
+            this.btnRegisterAcc.Location = new System.Drawing.Point(357, 449);
             this.btnRegisterAcc.Name = "btnRegisterAcc";
             this.btnRegisterAcc.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterAcc.TabIndex = 22;
@@ -570,11 +603,273 @@
             this.btnPlayer.UseVisualStyleBackColor = false;
             this.btnPlayer.Click += new System.EventHandler(this.btnPlayer_Click);
             // 
+            // lbIdAsoc
+            // 
+            this.lbIdAsoc.AutoSize = true;
+            this.lbIdAsoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdAsoc.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbIdAsoc.Location = new System.Drawing.Point(23, 425);
+            this.lbIdAsoc.Name = "lbIdAsoc";
+            this.lbIdAsoc.Size = new System.Drawing.Size(114, 20);
+            this.lbIdAsoc.TabIndex = 76;
+            this.lbIdAsoc.Text = "Asociation Id";
+            // 
+            // btnRegisterPlayerAsociation
+            // 
+            this.btnRegisterPlayerAsociation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnRegisterPlayerAsociation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegisterPlayerAsociation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegisterPlayerAsociation.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegisterPlayerAsociation.Location = new System.Drawing.Point(26, 560);
+            this.btnRegisterPlayerAsociation.Name = "btnRegisterPlayerAsociation";
+            this.btnRegisterPlayerAsociation.Size = new System.Drawing.Size(262, 23);
+            this.btnRegisterPlayerAsociation.TabIndex = 75;
+            this.btnRegisterPlayerAsociation.Text = " Register Player Asociation";
+            this.btnRegisterPlayerAsociation.UseVisualStyleBackColor = false;
+            this.btnRegisterPlayerAsociation.Click += new System.EventHandler(this.btnRegisterPlayerAsociation_Click);
+            // 
+            // txtAsociationId
+            // 
+            this.txtAsociationId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtAsociationId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtAsociationId.Location = new System.Drawing.Point(27, 444);
+            this.txtAsociationId.Name = "txtAsociationId";
+            this.txtAsociationId.Size = new System.Drawing.Size(257, 20);
+            this.txtAsociationId.TabIndex = 72;
+            // 
+            // lbPlayerAsociation
+            // 
+            this.lbPlayerAsociation.AutoSize = true;
+            this.lbPlayerAsociation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlayerAsociation.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPlayerAsociation.Location = new System.Drawing.Point(15, 396);
+            this.lbPlayerAsociation.Name = "lbPlayerAsociation";
+            this.lbPlayerAsociation.Size = new System.Drawing.Size(222, 20);
+            this.lbPlayerAsociation.TabIndex = 71;
+            this.lbPlayerAsociation.Text = "Previouns family (Optional)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(175, 490);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 24);
+            this.label3.TabIndex = 88;
+            this.label3.Text = "/";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(90, 487);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(16, 24);
+            this.label6.TabIndex = 87;
+            this.label6.Text = "/";
+            // 
+            // comboBoxPlayerAsociationStartDateMoth
+            // 
+            this.comboBoxPlayerAsociationStartDateMoth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxPlayerAsociationStartDateMoth.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxPlayerAsociationStartDateMoth.FormattingEnabled = true;
+            this.comboBoxPlayerAsociationStartDateMoth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBoxPlayerAsociationStartDateMoth.Location = new System.Drawing.Point(111, 490);
+            this.comboBoxPlayerAsociationStartDateMoth.Name = "comboBoxPlayerAsociationStartDateMoth";
+            this.comboBoxPlayerAsociationStartDateMoth.Size = new System.Drawing.Size(58, 21);
+            this.comboBoxPlayerAsociationStartDateMoth.TabIndex = 86;
+            // 
+            // comboBoxPlayerAsociationStartDateDay
+            // 
+            this.comboBoxPlayerAsociationStartDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxPlayerAsociationStartDateDay.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxPlayerAsociationStartDateDay.FormattingEnabled = true;
+            this.comboBoxPlayerAsociationStartDateDay.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBoxPlayerAsociationStartDateDay.Location = new System.Drawing.Point(27, 490);
+            this.comboBoxPlayerAsociationStartDateDay.Name = "comboBoxPlayerAsociationStartDateDay";
+            this.comboBoxPlayerAsociationStartDateDay.Size = new System.Drawing.Size(55, 21);
+            this.comboBoxPlayerAsociationStartDateDay.TabIndex = 85;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(172, 535);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 24);
+            this.label1.TabIndex = 84;
+            this.label1.Text = "/";
+            // 
+            // lbEventEndDate
+            // 
+            this.lbEventEndDate.AutoSize = true;
+            this.lbEventEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEventEndDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbEventEndDate.Location = new System.Drawing.Point(23, 513);
+            this.lbEventEndDate.Name = "lbEventEndDate";
+            this.lbEventEndDate.Size = new System.Drawing.Size(85, 20);
+            this.lbEventEndDate.TabIndex = 80;
+            this.lbEventEndDate.Text = "End Date";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(87, 532);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 24);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "/";
+            // 
+            // txtPlayerAsociationEndDateYear
+            // 
+            this.txtPlayerAsociationEndDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPlayerAsociationEndDateYear.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPlayerAsociationEndDateYear.Location = new System.Drawing.Point(192, 536);
+            this.txtPlayerAsociationEndDateYear.Name = "txtPlayerAsociationEndDateYear";
+            this.txtPlayerAsociationEndDateYear.Size = new System.Drawing.Size(87, 20);
+            this.txtPlayerAsociationEndDateYear.TabIndex = 79;
+            // 
+            // comboBoxPlayerAsociationEndDateMoth
+            // 
+            this.comboBoxPlayerAsociationEndDateMoth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxPlayerAsociationEndDateMoth.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxPlayerAsociationEndDateMoth.FormattingEnabled = true;
+            this.comboBoxPlayerAsociationEndDateMoth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBoxPlayerAsociationEndDateMoth.Location = new System.Drawing.Point(108, 535);
+            this.comboBoxPlayerAsociationEndDateMoth.Name = "comboBoxPlayerAsociationEndDateMoth";
+            this.comboBoxPlayerAsociationEndDateMoth.Size = new System.Drawing.Size(61, 21);
+            this.comboBoxPlayerAsociationEndDateMoth.TabIndex = 82;
+            // 
+            // comboBoxPlayerAsociationEndDateDay
+            // 
+            this.comboBoxPlayerAsociationEndDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxPlayerAsociationEndDateDay.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxPlayerAsociationEndDateDay.FormattingEnabled = true;
+            this.comboBoxPlayerAsociationEndDateDay.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBoxPlayerAsociationEndDateDay.Location = new System.Drawing.Point(27, 535);
+            this.comboBoxPlayerAsociationEndDateDay.Name = "comboBoxPlayerAsociationEndDateDay";
+            this.comboBoxPlayerAsociationEndDateDay.Size = new System.Drawing.Size(55, 21);
+            this.comboBoxPlayerAsociationEndDateDay.TabIndex = 81;
+            // 
+            // txtStartEventPlayerAsociationDateYear
+            // 
+            this.txtStartEventPlayerAsociationDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStartEventPlayerAsociationDateYear.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStartEventPlayerAsociationDateYear.Location = new System.Drawing.Point(192, 490);
+            this.txtStartEventPlayerAsociationDateYear.Name = "txtStartEventPlayerAsociationDateYear";
+            this.txtStartEventPlayerAsociationDateYear.Size = new System.Drawing.Size(87, 20);
+            this.txtStartEventPlayerAsociationDateYear.TabIndex = 77;
+            // 
+            // lbStartDate
+            // 
+            this.lbStartDate.AutoSize = true;
+            this.lbStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStartDate.Location = new System.Drawing.Point(22, 467);
+            this.lbStartDate.Name = "lbStartDate";
+            this.lbStartDate.Size = new System.Drawing.Size(93, 20);
+            this.lbStartDate.TabIndex = 78;
+            this.lbStartDate.Text = "Start Date";
+            // 
             // BackOfficePlayerManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.panelPlayerMenu);
             this.Controls.Add(this.btnPlayer);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModifiy);
@@ -585,6 +880,7 @@
             this.Controls.Add(this.panelTeamsMenu);
             this.Name = "BackOfficePlayerManager";
             this.Size = new System.Drawing.Size(1393, 694);
+            this.Load += new System.EventHandler(this.BackOfficePlayerManager_Load);
             this.panelTeamsMenu.ResumeLayout(false);
             this.panelTeamsMenu.PerformLayout();
             this.panelPlayerMenu.ResumeLayout(false);
@@ -636,5 +932,21 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnPlayer;
+        private System.Windows.Forms.Label lbIdAsoc;
+        private System.Windows.Forms.Button btnRegisterPlayerAsociation;
+        private System.Windows.Forms.TextBox txtAsociationId;
+        private System.Windows.Forms.Label lbPlayerAsociation;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxPlayerAsociationStartDateMoth;
+        private System.Windows.Forms.ComboBox comboBoxPlayerAsociationStartDateDay;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbEventEndDate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txtPlayerAsociationEndDateYear;
+        private System.Windows.Forms.ComboBox comboBoxPlayerAsociationEndDateMoth;
+        private System.Windows.Forms.ComboBox comboBoxPlayerAsociationEndDateDay;
+        private System.Windows.Forms.MaskedTextBox txtStartEventPlayerAsociationDateYear;
+        private System.Windows.Forms.Label lbStartDate;
     }
 }

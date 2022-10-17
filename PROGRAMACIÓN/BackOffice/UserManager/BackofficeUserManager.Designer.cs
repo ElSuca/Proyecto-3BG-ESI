@@ -238,6 +238,7 @@
             this.dgrid1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgrid1.Size = new System.Drawing.Size(942, 489);
             this.dgrid1.TabIndex = 54;
+            this.dgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid1_CellContentClick);
             // 
             // btnRegister
             // 
