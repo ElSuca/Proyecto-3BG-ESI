@@ -14,14 +14,14 @@ namespace Proyecto
         {
             InitializeComponent(); 
             selection = new Random().Next(3);
-            GetInfo();
+   //         GetInfo();
             SearchEventMenuToggle(false);
         }
         private void BannerPic_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(new ApiPublicidad.AddManager().SelectUrllink(selection));
 
         public void SetAnuncio() => BannerPic.Image = Image.FromFile(new ApiPublicidad.AddManager().GetBanner(selection));
 
-        public void GetInfo() => dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
+       // public void GetInfo() => dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
 
         private void UserInformationMenuItem_Click(object sender, EventArgs e) => new UserData().Show();
 
@@ -29,13 +29,13 @@ namespace Proyecto
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) => Console.Write(e);
 
-        private void btnBusqueda_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetEventData(txtBusquedaEvento.Text);
+        //private void btnBusqueda_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetEventData(txtBusquedaEvento.Text);
 
         private void MenuPrincipal_Load(object sender, EventArgs e){}
 
-        private void btnBack_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
+        //private void btnBack_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
 
-        private void btnBusquedaJugador_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetPlayerData(txtBusquedaJugador.Text);
+       // private void btnBusquedaJugador_Click(object sender, EventArgs e) => dataGridView1.DataSource = new SportControler().GetPlayerData(txtBusquedaJugador.Text);
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -51,7 +51,7 @@ namespace Proyecto
             txtCategory.Visible = n;
         }
 
-        private void btnSearchCategory_Click(object sender, EventArgs e) => new SportControler().GetPlayerData(txtBusquedaJugador.Text);
+       // private void btnSearchCategory_Click(object sender, EventArgs e) => new SportControler().GetPlayerData(txtBusquedaJugador.Text);
     }
 }
        

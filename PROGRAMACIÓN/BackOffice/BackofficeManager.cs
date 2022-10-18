@@ -7,6 +7,7 @@ using CapaLogica;
 using CapaLoogica;
 using BackOffice;
 using System.Drawing;
+using BackOffice.SportManager;
 
 namespace Proyecto.Backoffice
 {
@@ -58,28 +59,18 @@ namespace Proyecto.Backoffice
                 }
                 else BackOfficeResultsManager.Instance.BringToFront();
             }
-
+            if (selection == 4)
+            {
+                if (!MainPanel.Contains(BackOfficeSportManager.Instance))
+                {
+                    MainPanel.Controls.Add(BackOfficeSportManager.Instance);
+                    BackOfficeSportManager.Instance.Dock = DockStyle.Fill;
+                    BackOfficeSportManager.Instance.BringToFront();
+                }
+                else BackOfficeSportManager.Instance.BringToFront();
+            }
         }
-        public void closeMenu()
-        {
-          
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTelefonoRegister_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ComboBoxBackofficeMenu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         private void btnUserManagerToggle_Click(object sender, EventArgs e) => selectMenu(1);
 
         private void btnAdManager_Click(object sender, EventArgs e) => selectMenu(2);
@@ -88,7 +79,7 @@ namespace Proyecto.Backoffice
 
         private void btnSportManager_Click(object sender, EventArgs e) => selectMenu(4);
 
-        private Bitmap MyImage;
+
         private void loadResources()
         {
         }

@@ -19,7 +19,7 @@ namespace Proyecto.IniciosSeccion
         {
             UserControler uc = new UserControler();
             controlApi();
-            string a = SendRequest.GetPost("http://127.0.0.1:8888//autenticar", txtUserName.Text, txtPassword.Text);
+           /* string a = */ SendRequest.GetPost("http://127.0.0.1:8888//autenticar", txtUserName.Text, txtPassword.Text);
             if (Int32.Parse(new AplicationControler().getResponse()) == 1)
             {
                 uc.SetStaticUsername(txtUserName.Text);

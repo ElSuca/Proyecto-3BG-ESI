@@ -111,7 +111,7 @@
             this.btnSearchName.TabIndex = 5;
             this.btnSearchName.Text = "🔎";
             this.btnSearchName.UseVisualStyleBackColor = true;
-            this.btnSearchName.Click += new System.EventHandler(this.btnBusqueda_Click);
+
             // 
             // lbName
             // 
@@ -130,7 +130,7 @@
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "< Volver";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+
             // 
             // txtBusquedaJugador
             // 
@@ -163,7 +163,6 @@
             this.btnBusquedaJugador.TabIndex = 11;
             this.btnBusquedaJugador.Text = "🔎";
             this.btnBusquedaJugador.UseVisualStyleBackColor = true;
-            this.btnBusquedaJugador.Click += new System.EventHandler(this.btnBusquedaJugador_Click);
             // 
             // btnSearch
             // 
@@ -197,7 +196,6 @@
             this.btnSearchCategory.TabIndex = 13;
             this.btnSearchCategory.Text = "🔎";
             this.btnSearchCategory.UseVisualStyleBackColor = true;
-            this.btnSearchCategory.Click += new System.EventHandler(this.btnSearchCategory_Click);
             // 
             // txtCategory
             // 

@@ -53,7 +53,6 @@
             this.label1.Size = new System.Drawing.Size(233, 44);
             this.label1.TabIndex = 35;
             this.label1.Text = "Back Office ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBoxLogo
             // 

@@ -12,7 +12,7 @@ namespace CapDeDatos
         {
             table = new DataTable();
         }*/
-        public DataTable playerTable(string PlayerName)
+       /* public DataTable playerTable(string PlayerName)
         {
             string NombreJugador = PlayerName;
             command.CommandText = "SELECT PLAYER.NAME, PLAYER.LNAME1, PLAYER.LNAME2, PLAYER.STATUS, PLAYER.BIRTHDATE FROM PLAYER WHERE PLAYER.NAME = @PlayerName";
@@ -105,7 +105,7 @@ namespace CapDeDatos
             table.Load(command.ExecuteReader());
             table = RenombrarTablaEvento(table);
             return table;
-        }*/
+        }
         public DataTable RenombrarTablaEvento(DataTable t)
         {
             t.Columns[1].ColumnName = "NOMBRE FAMILIA";
@@ -157,7 +157,7 @@ namespace CapDeDatos
             table.Load(command.ExecuteReader());
             table = limpiarTabla(table);
             return table;
-        }
+        }*/
 
 
 
@@ -174,7 +174,7 @@ namespace CapDeDatos
         public string Name { get; set; }
         public string Type { get; set; }
 
-        public ModelSport(int id) => this.GetTeamData(id);
+        public ModelSport(int id) => this.GetSportData(id);
         public ModelSport()
         {
 
@@ -212,7 +212,7 @@ namespace CapDeDatos
             {
                 command.CommandText = "INSERT INTO " +
                    "T_SPO (ID_SP,TYPE) " +
-                   $"VALUES ({GetId(Name)}'{Type}')";
+                   $"VALUES ({GetId(Name)},'{Type}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -223,12 +223,11 @@ namespace CapDeDatos
         }
         private void Update()
         {
-            this.command.CommandText = "UPDATE TEAM SET " +
+            this.command.CommandText = "UPDATE SPORT,T_SPO SET " +
                  $"NAME = '{Name}'," +
-                 $"CITY = '{City}'," +
-                 $"COUNTRY = '{Country}'," +
-                 $"STATE = '{State}'" +
-                 $"WHERE ID = {this.Id}";
+                 $"TYPE = '{Type}'" +
+
+                 $"WHERE SPORT.ID = T_SPO.ID_SP AND SPORT.ID = {this.Id}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
 
@@ -237,7 +236,10 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"Delete TEAM.* from TEAM where Id= {Id}";
+                this.command.CommandText = $"Delete T_SPO.* from T_SPO where ID_SP= {Id}";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+                this.command.CommandText = $"Delete SPORT.* from SPORT where Id= {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -246,23 +248,21 @@ namespace CapDeDatos
                 throw e;
             }
         }
-        public void GetTeamData(int id)
+        public void GetSportData(int id)
         {
-            this.command.CommandText = $"Select * From TEAM where ID={id}";
+            this.command.CommandText = $"Select SPORT.*,T_SPO.TYPE From SPORT LEFT JOIN T_SPO ON SPORT.ID = T_SPO.ID_SP where ID={id}";
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
             this.Id = int.Parse(this.dataReader["id"].ToString());
             this.Name = this.dataReader["NAME"].ToString();
-            this.City = this.dataReader["CITY"].ToString();
-            this.Country = this.dataReader["COUNTRY"].ToString();
-            this.State = this.dataReader["STATE"].ToString();
+            this.Type = this.dataReader["TYPE"].ToString();
             this.dataReader.Close();
         }
-        public DataTable GetTeamDataTable()
+        public DataTable GetSportDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM TEAM";
+            command.CommandText = "SELECT SPORT.*,T_SPO.TYPE FROM SPORT LEFT JOIN T_SPO on SPORT.ID = T_SPO.ID_SP";
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;

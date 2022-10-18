@@ -690,3 +690,4 @@ C:\Users\Admin\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\BackOffice\obj\Debug\
 C:\Users\Admin\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.exe
 C:\Users\Admin\Desktop\Proyecto-3BG-ESI-Apis\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.pdb
 C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.ResultManager.BackOfficeAsociationManager.resources
+C:\Users\Admin\Desktop\Deberes S\2022\Proyecto\Proyecto-3BG-ESI\PROGRAMACIÓN\BackOffice\obj\Debug\BackOffice.SportManager.BackOfficeSportManager.resources
