@@ -77,6 +77,8 @@ namespace CapaLogica
         public string GetUsername() => new ModelUser().UserName;
         #endregion
         #region SetStatic
+        public void SetStaticUserData(string name) => new ModelUser().GetUserDataForUserName(name);
+
         public void SetStaticUsername(string name) => new ModelUser().SetUsernameBuffer(name);
 
         public void SetStaticName(string name) => new ModelUser().SetUsernameBuffer(name);
@@ -92,6 +94,16 @@ namespace CapaLogica
         public void SetStaticPassword(string password) => new ModelUser().SetPasswordStaticBuffer(password);
 
         public void SetStaticRole(string role) => new ModelUser().SetRoleStaticBuffer(role);
+
+        public void SetStaticCity(string city) => new ModelUser().SetCityStaticBuffer(city);
+
+        public void SetStaticStreet(string street) => new ModelUser().SetStreetStaticBuffer(street);
+
+        public void SetStaticNum(int num) => new ModelUser().SetNumStaticBuffer(num);
+
+        public void SetStaticState(string state) => new ModelUser().SetStateStaticBuffer(state);
+
+        public void SetStaticCountry(string country) => new ModelUser().SetCountryStaticBuffer(country);
         #endregion
         #region GetStatic
         public string GetStaticUsername => new ModelUser().GetUsernameBuffer();
@@ -109,6 +121,16 @@ namespace CapaLogica
         public string GetStaticPassword => new ModelUser().GetPasswordBuffer();
 
         public string GetStaticRole => new ModelUser().GetRoleBuffer();
+
+        public string GetStaticCity => new ModelUser().GetCityBuffer();
+
+        public string GetStaticStreet => new ModelUser().GetStreetBuffer();
+
+        public int GetStaticNum => new ModelUser().GetNumBuffer();
+
+        public string GetStaticState => new ModelUser().GetStateBuffer();
+
+        public string GetStaticCountry => new ModelUser().GetCountryBuffer();
         #endregion
 
 

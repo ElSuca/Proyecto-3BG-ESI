@@ -260,8 +260,13 @@ namespace CapaDeDatos
                 this.Password = this.dataReader["PASS"].ToString();
                 this.UserRole = this.dataReader["ROLE"].ToString();
                 this.PhoneNumber = this.dataReader["Num"].ToString();
+                this.City = this.dataReader["CITY"].ToString();
+                this.Street = this.dataReader["STREET"].ToString();
+                this.Num = Int32.Parse(this.dataReader["NUM"].ToString());
+                this.State = this.dataReader["STATE"].ToString();
+                this.Country = this.dataReader["COUNTRY"].ToString();
                 conection.Close();
-                SetAllStaticUserData(UserName, Name, LastName, LastName2, Email, Int32.Parse(PhoneNumber), Password, UserRole);
+                SetAllStaticUserData(UserName, Name, LastName, LastName2, Email, Int32.Parse(PhoneNumber), Password, UserRole,City,Street,Num,State,Country);
             }
             catch(Exception ex)
             {
@@ -303,7 +308,7 @@ namespace CapaDeDatos
             else conection.Close();
         }
        
-        public void SetAllStaticUserData(string Username, string Name ,string LastName, string LastName2, string Email, int PhoneNumber, string password, string role)
+        public void SetAllStaticUserData(string Username ,string Name ,string LastName ,string LastName2, string Email, int PhoneNumber, string password, string role,string city,string street,int num,string state,string country)
         {
             SetUsernameBuffer(Username);
             SetNameStaticBuffer(Name);
@@ -312,6 +317,12 @@ namespace CapaDeDatos
             SetEmailStaticBuffer(Email);
             SetPhoneNumberStaticBuffer(PhoneNumber);
             SetRoleStaticBuffer(role);
+            SetCityStaticBuffer(city);
+            SetStreetStaticBuffer(street);
+            SetNumStaticBuffer(num);
+            SetStateStaticBuffer(state);
+            SetCountryStaticBuffer(country);
+
         }
 
         public DataTable GetUserDataTable()
@@ -334,6 +345,12 @@ namespace CapaDeDatos
         public void SetPhoneNumberStaticBuffer(int phonenumber) => SafeUserData.PhoneNumber = phonenumber;
         public void SetPasswordStaticBuffer(string password) => SafeUserData.Password = password;
         public void SetRoleStaticBuffer(string role) => SafeUserData.Role = role;
+        public void SetCityStaticBuffer(string city) => SafeUserData.City = city;
+        public void SetStreetStaticBuffer(string street) => SafeUserData.Street = street;
+        public void SetNumStaticBuffer(int num) => SafeUserData.Num = num;
+        public void SetStateStaticBuffer(string state) => SafeUserData.State = state;
+        public void SetCountryStaticBuffer(string country) => SafeUserData.Country = country;
+
         #endregion
         #region getStatic
         public string GetUsernameBuffer() => SafeUserData.Username;
@@ -344,6 +361,11 @@ namespace CapaDeDatos
         public int GetPhoneNumberBuffer() => SafeUserData.PhoneNumber;
         public string GetPasswordBuffer() => SafeUserData.Password;
         public string GetRoleBuffer() =>  SafeUserData.Role;
+        public string GetCityBuffer() => SafeUserData.City;
+        public string GetStreetBuffer() => SafeUserData.Street;
+        public int GetNumBuffer() => SafeUserData.Num;
+        public string GetStateBuffer() => SafeUserData.State;
+        public string GetCountryBuffer() => SafeUserData.Country;
         #endregion
     }
     public class User

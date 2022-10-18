@@ -28,6 +28,11 @@ namespace ApiPublica
             txtPhone.Text = uc.GetStaticPhoneNumber.ToString();
             txtPassword.Text = uc.GetStaticPassword;
             txtRole.Text = uc.GetStaticRole;
+            txtCity.Text = uc.GetStaticCity;
+            txtStreet.Text = uc.GetStaticStreet;
+            txtStreetNumber.Text = uc.GetStaticNum.ToString();
+            txtState.Text = uc.GetStaticState;
+            txtCountry.Text = uc.GetStaticCountry;
         }
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {

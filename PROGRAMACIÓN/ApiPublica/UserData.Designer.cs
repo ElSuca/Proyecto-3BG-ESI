@@ -297,7 +297,6 @@
             this.txtCity.ForeColor = System.Drawing.SystemColors.Window;
             this.txtCity.Location = new System.Drawing.Point(17, 474);
             this.txtCity.Name = "txtCity";
-            this.txtCity.PasswordChar = '*';
             this.txtCity.Size = new System.Drawing.Size(333, 26);
             this.txtCity.TabIndex = 27;
             // 
@@ -319,7 +318,6 @@
             this.txtStreet.ForeColor = System.Drawing.SystemColors.Window;
             this.txtStreet.Location = new System.Drawing.Point(17, 531);
             this.txtStreet.Name = "txtStreet";
-            this.txtStreet.PasswordChar = '*';
             this.txtStreet.Size = new System.Drawing.Size(333, 26);
             this.txtStreet.TabIndex = 29;
             // 
@@ -341,7 +339,6 @@
             this.txtStreetNumber.ForeColor = System.Drawing.SystemColors.Window;
             this.txtStreetNumber.Location = new System.Drawing.Point(17, 588);
             this.txtStreetNumber.Name = "txtStreetNumber";
-            this.txtStreetNumber.PasswordChar = '*';
             this.txtStreetNumber.Size = new System.Drawing.Size(333, 26);
             this.txtStreetNumber.TabIndex = 31;
             // 
@@ -363,7 +360,6 @@
             this.txtState.ForeColor = System.Drawing.SystemColors.Window;
             this.txtState.Location = new System.Drawing.Point(17, 645);
             this.txtState.Name = "txtState";
-            this.txtState.PasswordChar = '*';
             this.txtState.Size = new System.Drawing.Size(333, 26);
             this.txtState.TabIndex = 33;
             // 
@@ -385,7 +381,6 @@
             this.txtCountry.ForeColor = System.Drawing.SystemColors.Window;
             this.txtCountry.Location = new System.Drawing.Point(17, 702);
             this.txtCountry.Name = "txtCountry";
-            this.txtCountry.PasswordChar = '*';
             this.txtCountry.Size = new System.Drawing.Size(333, 26);
             this.txtCountry.TabIndex = 35;
             // 
