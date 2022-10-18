@@ -31,7 +31,26 @@ namespace BackOffice.ResultManager
                 string date = $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}/" +
                     $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}/" +
                     $"{txtBirthdateYear.Text}";
-                ManagerControler.Alta(txtManagerName.Text, txtManagerLastName1.Text, txtManagerLastName2.Text, txtManagerStatus.Text, date, txtManagerCity.Text, TxtManagerState.Text, txtManagerCountry.Text);
+                string Start = $"{comboBoxAsociationStartDateDay.Items[comboBoxAsociationStartDateDay.SelectedIndex].ToString()}";
+                string Startdate = $"{comboBoxAsociationStartDateDay.Items[comboBoxAsociationStartDateDay.SelectedIndex].ToString()}/" +
+                   $"{comboBoxAsociationStartDateMoth.Items[comboBoxAsociationStartDateMoth.SelectedIndex].ToString()}/" +
+                   $"{txtStartAsociationDateYear.Text}";
+
+                string Enddate = $"{comboBoxAsociationEndDateDay.Items[comboBoxAsociationEndDateDay.SelectedIndex].ToString()}/" +
+                   $"{comboBoxAsociationEndDateMoth.Items[comboBoxAsociationEndDateMoth.SelectedIndex].ToString()}/" +
+                   $"{txtAsociationEndDateYear.Text}";
+
+                ManagerControler.Alta(txtManagerName.Text,
+                    txtManagerLastName1.Text,
+                    txtManagerLastName2.Text,
+                    txtManagerStatus.Text, date,
+                    txtManagerCity.Text,
+                    TxtManagerState.Text,
+                    txtManagerCountry.Text,
+                    Int32.Parse(txtIdAsociation.Text),
+                    Startdate,
+                    Enddate
+                    );
                 MessageBox.Show("Jugador cargado");
             }
             else if (panelFamilyMenu.Visible)
@@ -153,6 +172,11 @@ namespace BackOffice.ResultManager
             FamilyControler.AltaParents(Int32.Parse(txtFamilyId.Text),Int32.Parse(txtChirldId.Text),txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
             MessageBox.Show($"Datos cargados");
             reloadList();
+        }
+
+        private void panelManagerMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

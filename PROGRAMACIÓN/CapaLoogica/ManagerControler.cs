@@ -7,7 +7,7 @@ namespace CapaLoogica
     {
         public DataTable GetManagerDataTable() => new ModelManager().GetManagerDataTable();
 
-        public static void Alta(string name, string lastname1, string lastname2, string status, string birthDate, string city, string state, string country)
+        public static void Alta(string name, string lastname1, string lastname2, string status, string birthDate, string city, string state, string country,int idAsociation,string startDate,string endDate)
         {
             ModelManager e = new ModelManager
             {
@@ -18,7 +18,10 @@ namespace CapaLoogica
                 BirthDate = birthDate,
                 City = city,
                 State = state,
-                Country = country
+                Country = country,
+                IdAsociation = idAsociation,
+                StartDateAsociation = startDate,
+                EndDateAsociation = endDate
             };
             e.Save();
         }

@@ -15,6 +15,9 @@ namespace CapDeDatos
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
+        public int IdAsociation { get; set; }
+        public string StartDateAsociation { get; set; }
+        public string EndDateAsociation { get; set; }
 
         public ModelManager(int id) => this.GetManagerData(id);
         public ModelManager()
@@ -24,7 +27,11 @@ namespace CapDeDatos
         public void Save()
         {
             if (this.Id.ToString() != "0") Update();
-            else insert();
+            else
+            {
+                insert();
+                insertManagerAsociation();
+            }
 
         }
 
@@ -35,6 +42,21 @@ namespace CapDeDatos
                 command.CommandText = "INSERT " +
                    "MANAGER (NAME,LNAME1,LNAME2,STATUS,BIRTHDATE,STATE,COUNTRY) " +
                    $"VALUES ('{Name}','{LastName1}','{LastName2}','{Status}','{BirthDate}','{State}','{Country}')";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        private void insertManagerAsociation()
+        {
+            try
+            {
+                command.CommandText = "INSERT " +
+                   "MANA_ASOC (ID_MANA ,ID_ASOC,STARTDATE,ENDDATE) " +
+                   $"VALUES ({Id},{IdAsociation},'{StartDateAsociation}','{EndDateAsociation}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -91,7 +113,7 @@ namespace CapDeDatos
         public DataTable GetManagerDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM MANAGER";
+            command.CommandText = "SELECT MANAGER.*,MANA_ASOC.ID_ASOC,MANA_ASOC.STARTDATE,MANA_ASOC.ENDDATE FROM MANAGER LEFT JOIN MANA_ASOC ON MANAGER.ID = MANA_ASOC.ID_MANA";
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;

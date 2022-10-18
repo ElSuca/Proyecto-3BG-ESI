@@ -90,7 +90,7 @@ namespace CapDeDatos
         }
         private void InsertStatus()
         {
-            command.CommandText = "INSERT INTO " +
+            commanditou.CommandText = "INSERT INTO " +
                   "ASOC_STATUS (ID_ASOC,STARTDATE ,ENDDATE ,SPORT ,CAT ,QUANTITY) " +
                   $"VALUES ({GetId(Name)},'{StartDate}','{EndDate}',{Sport},'{Category}',{Quantity})";
             this.commanditou.Prepare();
