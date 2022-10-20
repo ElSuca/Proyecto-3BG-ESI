@@ -62,11 +62,12 @@ namespace ApiPublica
                 errorTranslation(new AplicationControler().getLanguage(),"Error", Color.FromArgb(255,0,0));
             }
         }
-        private void errorTranslation(int language,string message, Color color)
+       
+        private void errorTranslation(int language, string message, Color color)
         {
             lbMessage.ForeColor = color;
-            if(message == "Error") lbMessage.Text = language == 0 ? "There was a problem, please try again" : "Hubo un error, intentelo mas tarde";
-            else if(message == "DataUpdate") lbMessage.Text = language == 0 ? "Changes saved" : "Cambios guardados";
+            if (message == "Error") lbMessage.Text = language == 0 ? "There was a problem, please try again" : "Hubo un error, intentelo mas tarde";
+            else if (message == "DataUpdate") lbMessage.Text = language == 0 ? "Changes saved" : "Cambios guardados";
         }
         private void translation(int l)
         {
@@ -171,5 +172,7 @@ namespace ApiPublica
                 MessageBox.Show(ex.ToString());
             }
         }
+
+       
     }
 }

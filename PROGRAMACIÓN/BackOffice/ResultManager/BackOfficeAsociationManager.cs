@@ -31,14 +31,14 @@ namespace BackOffice.ResultManager
                 string date = $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}/" +
                     $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}/" +
                     $"{txtBirthdateYear.Text}";
-                string Start = $"{comboBoxAsociationStartDateDay.Items[comboBoxAsociationStartDateDay.SelectedIndex].ToString()}";
-                string Startdate = $"{comboBoxAsociationStartDateDay.Items[comboBoxAsociationStartDateDay.SelectedIndex].ToString()}/" +
-                   $"{comboBoxAsociationStartDateMoth.Items[comboBoxAsociationStartDateMoth.SelectedIndex].ToString()}/" +
-                   $"{txtStartAsociationDateYear.Text}";
+                string Start = $"{comboBoxStartManagerAsociationDateDay.Items[comboBoxStartManagerAsociationDateDay.SelectedIndex].ToString()}";
+                string Startdate = $"{comboBoxStartManagerAsociationDateDay.Items[comboBoxStartManagerAsociationDateDay.SelectedIndex].ToString()}/" +
+                   $"{comboBoxStartManagerAsociationDateMoth.Items[comboBoxStartManagerAsociationDateMoth.SelectedIndex].ToString()}/" +
+                   $"{txtStartManagerAsociationDateYear.Text}";
 
-                string Enddate = $"{comboBoxAsociationEndDateDay.Items[comboBoxAsociationEndDateDay.SelectedIndex].ToString()}/" +
-                   $"{comboBoxAsociationEndDateMoth.Items[comboBoxAsociationEndDateMoth.SelectedIndex].ToString()}/" +
-                   $"{txtAsociationEndDateYear.Text}";
+                string Enddate = $"{comboBoxEndManagerAsociationDateDay.Items[comboBoxEndManagerAsociationDateDay.SelectedIndex].ToString()}/" +
+                   $"{comboBoxEndManagerAsociationDateMoth.Items[comboBoxEndManagerAsociationDateMoth.SelectedIndex].ToString()}/" +
+                   $"{txtEndManagerAsociationDateYear.Text}";
 
                 ManagerControler.Alta(txtManagerName.Text,
                     txtManagerLastName1.Text,
@@ -146,7 +146,7 @@ namespace BackOffice.ResultManager
         {
             if (panelManagerMenu.Visible)
             {
-                FamilyControler.Eliminar(Int32.Parse(txtManagerID.Text));
+                ManagerControler.Eliminar(Int32.Parse(txtManagerID.Text));
                 MessageBox.Show($"Jugador {txtManagerID.Text} eliminado");
             }
             else if (panelFamilyMenu.Visible)

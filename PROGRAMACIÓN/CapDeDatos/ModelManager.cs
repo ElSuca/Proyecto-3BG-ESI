@@ -56,13 +56,31 @@ namespace CapDeDatos
             {
                 command.CommandText = "INSERT " +
                    "MANA_ASOC (ID_MANA ,ID_ASOC,STARTDATE,ENDDATE) " +
-                   $"VALUES ({Id},{IdAsociation},'{StartDateAsociation}','{EndDateAsociation}')";
+                   $"VALUES ({GetId(Name)},{IdAsociation},'{StartDateAsociation}','{EndDateAsociation}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
                 throw e;
+            }
+        }
+
+        public int GetId(string Name)
+        {
+            try
+            {
+                this.command.CommandText = $"SELECT ID FROM MANAGER WHERE NAME = '{Name}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["ID"].ToString());
+                this.dataReader.Close();
+                return Id;
+            }
+            catch (Exception ex)
+            {
+                return 0;
             }
         }
         private void Update()

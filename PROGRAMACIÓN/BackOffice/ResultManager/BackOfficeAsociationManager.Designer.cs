@@ -31,6 +31,20 @@
             this.dataGrid1 = new System.Windows.Forms.DataGridView();
             this.btnManagerMenu = new System.Windows.Forms.Button();
             this.panelManagerMenu = new System.Windows.Forms.Panel();
+            this.lbIdAsociation = new System.Windows.Forms.Label();
+            this.txtIdAsociation = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxEndManagerAsociationDateMoth = new System.Windows.Forms.ComboBox();
+            this.comboBoxEndManagerAsociationDateDay = new System.Windows.Forms.ComboBox();
+            this.txtEndManagerAsociationDateYear = new System.Windows.Forms.MaskedTextBox();
+            this.lbEndManagerAsociationDate = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxStartManagerAsociationDateMoth = new System.Windows.Forms.ComboBox();
+            this.comboBoxStartManagerAsociationDateDay = new System.Windows.Forms.ComboBox();
+            this.txtStartManagerAsociationDateYear = new System.Windows.Forms.MaskedTextBox();
+            this.lbStartManagerAsociationDate = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBirthdateYear = new System.Windows.Forms.MaskedTextBox();
@@ -112,20 +126,6 @@
             this.txtAsociationName = new System.Windows.Forms.TextBox();
             this.lbAsociationId = new System.Windows.Forms.Label();
             this.txtAsociationId = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxStartManagerAsociationDateMoth = new System.Windows.Forms.ComboBox();
-            this.comboBoxStartManagerAsociationDateDay = new System.Windows.Forms.ComboBox();
-            this.txtStartManagerAsociationDateYear = new System.Windows.Forms.MaskedTextBox();
-            this.lbStartManagerAsociationDate = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBoxEndManagerAsociationDateMoth = new System.Windows.Forms.ComboBox();
-            this.comboBoxEndManagerAsociationDateDay = new System.Windows.Forms.ComboBox();
-            this.txtEndManagerAsociationDateYear = new System.Windows.Forms.MaskedTextBox();
-            this.lbEndManagerAsociationDate = new System.Windows.Forms.Label();
-            this.lbIdAsociation = new System.Windows.Forms.Label();
-            this.txtIdAsociation = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelManagerMenu.SuspendLayout();
             this.panelFamilyMenu.SuspendLayout();
@@ -191,11 +191,247 @@
             this.panelManagerMenu.Controls.Add(this.txtManagerID);
             this.panelManagerMenu.Controls.Add(this.lbManagerName);
             this.panelManagerMenu.Controls.Add(this.txtManagerName);
-            this.panelManagerMenu.Location = new System.Drawing.Point(37, 72);
+            this.panelManagerMenu.Location = new System.Drawing.Point(37, 79);
             this.panelManagerMenu.Name = "panelManagerMenu";
             this.panelManagerMenu.Size = new System.Drawing.Size(401, 401);
             this.panelManagerMenu.TabIndex = 24;
             this.panelManagerMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelManagerMenu_Paint);
+            // 
+            // lbIdAsociation
+            // 
+            this.lbIdAsociation.AutoSize = true;
+            this.lbIdAsociation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdAsociation.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbIdAsociation.Location = new System.Drawing.Point(17, 243);
+            this.lbIdAsociation.Name = "lbIdAsociation";
+            this.lbIdAsociation.Size = new System.Drawing.Size(117, 20);
+            this.lbIdAsociation.TabIndex = 113;
+            this.lbIdAsociation.Text = "ID Asociation";
+            // 
+            // txtIdAsociation
+            // 
+            this.txtIdAsociation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtIdAsociation.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtIdAsociation.Location = new System.Drawing.Point(18, 266);
+            this.txtIdAsociation.Name = "txtIdAsociation";
+            this.txtIdAsociation.Size = new System.Drawing.Size(359, 20);
+            this.txtIdAsociation.TabIndex = 114;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.Control;
+            this.label9.Location = new System.Drawing.Point(167, 353);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 24);
+            this.label9.TabIndex = 112;
+            this.label9.Text = "/";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.Control;
+            this.label10.Location = new System.Drawing.Point(82, 353);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(16, 24);
+            this.label10.TabIndex = 111;
+            this.label10.Text = "/";
+            // 
+            // comboBoxEndManagerAsociationDateMoth
+            // 
+            this.comboBoxEndManagerAsociationDateMoth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxEndManagerAsociationDateMoth.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxEndManagerAsociationDateMoth.FormattingEnabled = true;
+            this.comboBoxEndManagerAsociationDateMoth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBoxEndManagerAsociationDateMoth.Location = new System.Drawing.Point(103, 353);
+            this.comboBoxEndManagerAsociationDateMoth.Name = "comboBoxEndManagerAsociationDateMoth";
+            this.comboBoxEndManagerAsociationDateMoth.Size = new System.Drawing.Size(58, 21);
+            this.comboBoxEndManagerAsociationDateMoth.TabIndex = 110;
+            // 
+            // comboBoxEndManagerAsociationDateDay
+            // 
+            this.comboBoxEndManagerAsociationDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxEndManagerAsociationDateDay.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxEndManagerAsociationDateDay.FormattingEnabled = true;
+            this.comboBoxEndManagerAsociationDateDay.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBoxEndManagerAsociationDateDay.Location = new System.Drawing.Point(19, 354);
+            this.comboBoxEndManagerAsociationDateDay.Name = "comboBoxEndManagerAsociationDateDay";
+            this.comboBoxEndManagerAsociationDateDay.Size = new System.Drawing.Size(59, 21);
+            this.comboBoxEndManagerAsociationDateDay.TabIndex = 109;
+            // 
+            // txtEndManagerAsociationDateYear
+            // 
+            this.txtEndManagerAsociationDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtEndManagerAsociationDateYear.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtEndManagerAsociationDateYear.Location = new System.Drawing.Point(189, 353);
+            this.txtEndManagerAsociationDateYear.Name = "txtEndManagerAsociationDateYear";
+            this.txtEndManagerAsociationDateYear.Size = new System.Drawing.Size(188, 20);
+            this.txtEndManagerAsociationDateYear.TabIndex = 107;
+            // 
+            // lbEndManagerAsociationDate
+            // 
+            this.lbEndManagerAsociationDate.AutoSize = true;
+            this.lbEndManagerAsociationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEndManagerAsociationDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbEndManagerAsociationDate.Location = new System.Drawing.Point(15, 331);
+            this.lbEndManagerAsociationDate.Name = "lbEndManagerAsociationDate";
+            this.lbEndManagerAsociationDate.Size = new System.Drawing.Size(188, 20);
+            this.lbEndManagerAsociationDate.TabIndex = 108;
+            this.lbEndManagerAsociationDate.Text = "End date in asociation";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(167, 308);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 24);
+            this.label7.TabIndex = 106;
+            this.label7.Text = "/";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(82, 308);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(16, 24);
+            this.label8.TabIndex = 105;
+            this.label8.Text = "/";
+            // 
+            // comboBoxStartManagerAsociationDateMoth
+            // 
+            this.comboBoxStartManagerAsociationDateMoth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxStartManagerAsociationDateMoth.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxStartManagerAsociationDateMoth.FormattingEnabled = true;
+            this.comboBoxStartManagerAsociationDateMoth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBoxStartManagerAsociationDateMoth.Location = new System.Drawing.Point(103, 308);
+            this.comboBoxStartManagerAsociationDateMoth.Name = "comboBoxStartManagerAsociationDateMoth";
+            this.comboBoxStartManagerAsociationDateMoth.Size = new System.Drawing.Size(58, 21);
+            this.comboBoxStartManagerAsociationDateMoth.TabIndex = 104;
+            // 
+            // comboBoxStartManagerAsociationDateDay
+            // 
+            this.comboBoxStartManagerAsociationDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxStartManagerAsociationDateDay.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxStartManagerAsociationDateDay.FormattingEnabled = true;
+            this.comboBoxStartManagerAsociationDateDay.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBoxStartManagerAsociationDateDay.Location = new System.Drawing.Point(19, 309);
+            this.comboBoxStartManagerAsociationDateDay.Name = "comboBoxStartManagerAsociationDateDay";
+            this.comboBoxStartManagerAsociationDateDay.Size = new System.Drawing.Size(59, 21);
+            this.comboBoxStartManagerAsociationDateDay.TabIndex = 103;
+            // 
+            // txtStartManagerAsociationDateYear
+            // 
+            this.txtStartManagerAsociationDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStartManagerAsociationDateYear.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStartManagerAsociationDateYear.Location = new System.Drawing.Point(189, 308);
+            this.txtStartManagerAsociationDateYear.Name = "txtStartManagerAsociationDateYear";
+            this.txtStartManagerAsociationDateYear.Size = new System.Drawing.Size(188, 20);
+            this.txtStartManagerAsociationDateYear.TabIndex = 101;
+            // 
+            // lbStartManagerAsociationDate
+            // 
+            this.lbStartManagerAsociationDate.AutoSize = true;
+            this.lbStartManagerAsociationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartManagerAsociationDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStartManagerAsociationDate.Location = new System.Drawing.Point(17, 288);
+            this.lbStartManagerAsociationDate.Name = "lbStartManagerAsociationDate";
+            this.lbStartManagerAsociationDate.Size = new System.Drawing.Size(196, 20);
+            this.lbStartManagerAsociationDate.TabIndex = 102;
+            this.lbStartManagerAsociationDate.Text = "Start date in asociation";
             // 
             // label5
             // 
@@ -545,7 +781,7 @@
             this.panelFamilyMenu.Controls.Add(this.txtFamilyId);
             this.panelFamilyMenu.Controls.Add(this.lbFamilyName);
             this.panelFamilyMenu.Controls.Add(this.txtFamilyName);
-            this.panelFamilyMenu.Location = new System.Drawing.Point(37, 65);
+            this.panelFamilyMenu.Location = new System.Drawing.Point(37, 72);
             this.panelFamilyMenu.Name = "panelFamilyMenu";
             this.panelFamilyMenu.Size = new System.Drawing.Size(296, 448);
             this.panelFamilyMenu.TabIndex = 59;
@@ -785,7 +1021,7 @@
             this.panelAsociationMenu.Controls.Add(this.txtAsociationName);
             this.panelAsociationMenu.Controls.Add(this.lbAsociationId);
             this.panelAsociationMenu.Controls.Add(this.txtAsociationId);
-            this.panelAsociationMenu.Location = new System.Drawing.Point(37, 62);
+            this.panelAsociationMenu.Location = new System.Drawing.Point(37, 63);
             this.panelAsociationMenu.Name = "panelAsociationMenu";
             this.panelAsociationMenu.Size = new System.Drawing.Size(390, 408);
             this.panelAsociationMenu.TabIndex = 61;
@@ -1225,242 +1461,6 @@
             this.txtAsociationId.Name = "txtAsociationId";
             this.txtAsociationId.Size = new System.Drawing.Size(177, 20);
             this.txtAsociationId.TabIndex = 45;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(167, 308);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(16, 24);
-            this.label7.TabIndex = 106;
-            this.label7.Text = "/";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(82, 308);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(16, 24);
-            this.label8.TabIndex = 105;
-            this.label8.Text = "/";
-            // 
-            // comboBoxStartManagerAsociationDateMoth
-            // 
-            this.comboBoxStartManagerAsociationDateMoth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.comboBoxStartManagerAsociationDateMoth.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBoxStartManagerAsociationDateMoth.FormattingEnabled = true;
-            this.comboBoxStartManagerAsociationDateMoth.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.comboBoxStartManagerAsociationDateMoth.Location = new System.Drawing.Point(103, 308);
-            this.comboBoxStartManagerAsociationDateMoth.Name = "comboBoxStartManagerAsociationDateMoth";
-            this.comboBoxStartManagerAsociationDateMoth.Size = new System.Drawing.Size(58, 21);
-            this.comboBoxStartManagerAsociationDateMoth.TabIndex = 104;
-            // 
-            // comboBoxStartManagerAsociationDateDay
-            // 
-            this.comboBoxStartManagerAsociationDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.comboBoxStartManagerAsociationDateDay.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBoxStartManagerAsociationDateDay.FormattingEnabled = true;
-            this.comboBoxStartManagerAsociationDateDay.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31"});
-            this.comboBoxStartManagerAsociationDateDay.Location = new System.Drawing.Point(19, 309);
-            this.comboBoxStartManagerAsociationDateDay.Name = "comboBoxStartManagerAsociationDateDay";
-            this.comboBoxStartManagerAsociationDateDay.Size = new System.Drawing.Size(59, 21);
-            this.comboBoxStartManagerAsociationDateDay.TabIndex = 103;
-            // 
-            // txtStartManagerAsociationDateYear
-            // 
-            this.txtStartManagerAsociationDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtStartManagerAsociationDateYear.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStartManagerAsociationDateYear.Location = new System.Drawing.Point(189, 308);
-            this.txtStartManagerAsociationDateYear.Name = "txtStartManagerAsociationDateYear";
-            this.txtStartManagerAsociationDateYear.Size = new System.Drawing.Size(188, 20);
-            this.txtStartManagerAsociationDateYear.TabIndex = 101;
-            // 
-            // lbStartManagerAsociationDate
-            // 
-            this.lbStartManagerAsociationDate.AutoSize = true;
-            this.lbStartManagerAsociationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStartManagerAsociationDate.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStartManagerAsociationDate.Location = new System.Drawing.Point(17, 288);
-            this.lbStartManagerAsociationDate.Name = "lbStartManagerAsociationDate";
-            this.lbStartManagerAsociationDate.Size = new System.Drawing.Size(196, 20);
-            this.lbStartManagerAsociationDate.TabIndex = 102;
-            this.lbStartManagerAsociationDate.Text = "Start date in asociation";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(167, 353);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(16, 24);
-            this.label9.TabIndex = 112;
-            this.label9.Text = "/";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(82, 353);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(16, 24);
-            this.label10.TabIndex = 111;
-            this.label10.Text = "/";
-            // 
-            // comboBoxEndManagerAsociationDateMoth
-            // 
-            this.comboBoxEndManagerAsociationDateMoth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.comboBoxEndManagerAsociationDateMoth.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBoxEndManagerAsociationDateMoth.FormattingEnabled = true;
-            this.comboBoxEndManagerAsociationDateMoth.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.comboBoxEndManagerAsociationDateMoth.Location = new System.Drawing.Point(103, 353);
-            this.comboBoxEndManagerAsociationDateMoth.Name = "comboBoxEndManagerAsociationDateMoth";
-            this.comboBoxEndManagerAsociationDateMoth.Size = new System.Drawing.Size(58, 21);
-            this.comboBoxEndManagerAsociationDateMoth.TabIndex = 110;
-            // 
-            // comboBoxEndManagerAsociationDateDay
-            // 
-            this.comboBoxEndManagerAsociationDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.comboBoxEndManagerAsociationDateDay.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBoxEndManagerAsociationDateDay.FormattingEnabled = true;
-            this.comboBoxEndManagerAsociationDateDay.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31"});
-            this.comboBoxEndManagerAsociationDateDay.Location = new System.Drawing.Point(19, 354);
-            this.comboBoxEndManagerAsociationDateDay.Name = "comboBoxEndManagerAsociationDateDay";
-            this.comboBoxEndManagerAsociationDateDay.Size = new System.Drawing.Size(59, 21);
-            this.comboBoxEndManagerAsociationDateDay.TabIndex = 109;
-            // 
-            // txtEndManagerAsociationDateYear
-            // 
-            this.txtEndManagerAsociationDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtEndManagerAsociationDateYear.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEndManagerAsociationDateYear.Location = new System.Drawing.Point(189, 353);
-            this.txtEndManagerAsociationDateYear.Name = "txtEndManagerAsociationDateYear";
-            this.txtEndManagerAsociationDateYear.Size = new System.Drawing.Size(188, 20);
-            this.txtEndManagerAsociationDateYear.TabIndex = 107;
-            // 
-            // lbEndManagerAsociationDate
-            // 
-            this.lbEndManagerAsociationDate.AutoSize = true;
-            this.lbEndManagerAsociationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndManagerAsociationDate.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbEndManagerAsociationDate.Location = new System.Drawing.Point(15, 331);
-            this.lbEndManagerAsociationDate.Name = "lbEndManagerAsociationDate";
-            this.lbEndManagerAsociationDate.Size = new System.Drawing.Size(188, 20);
-            this.lbEndManagerAsociationDate.TabIndex = 108;
-            this.lbEndManagerAsociationDate.Text = "End date in asociation";
-            // 
-            // lbIdAsociation
-            // 
-            this.lbIdAsociation.AutoSize = true;
-            this.lbIdAsociation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdAsociation.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbIdAsociation.Location = new System.Drawing.Point(17, 243);
-            this.lbIdAsociation.Name = "lbIdAsociation";
-            this.lbIdAsociation.Size = new System.Drawing.Size(117, 20);
-            this.lbIdAsociation.TabIndex = 113;
-            this.lbIdAsociation.Text = "ID Asociation";
-            // 
-            // txtIdAsociation
-            // 
-            this.txtIdAsociation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtIdAsociation.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtIdAsociation.Location = new System.Drawing.Point(18, 266);
-            this.txtIdAsociation.Name = "txtIdAsociation";
-            this.txtIdAsociation.Size = new System.Drawing.Size(359, 20);
-            this.txtIdAsociation.TabIndex = 114;
             // 
             // BackOfficeAsociationManager
             // 
