@@ -111,7 +111,6 @@
             this.btnSearchName.TabIndex = 5;
             this.btnSearchName.Text = "🔎";
             this.btnSearchName.UseVisualStyleBackColor = true;
-
             // 
             // lbName
             // 
@@ -130,7 +129,6 @@
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "< Volver";
             this.btnBack.UseVisualStyleBackColor = true;
-
             // 
             // txtBusquedaJugador
             // 
@@ -163,6 +161,7 @@
             this.btnBusquedaJugador.TabIndex = 11;
             this.btnBusquedaJugador.Text = "🔎";
             this.btnBusquedaJugador.UseVisualStyleBackColor = true;
+            this.btnBusquedaJugador.Click += new System.EventHandler(this.btnBusquedaJugador_Click);
             // 
             // btnSearch
             // 

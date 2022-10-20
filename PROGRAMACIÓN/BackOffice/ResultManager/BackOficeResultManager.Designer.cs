@@ -39,7 +39,6 @@
             this.btnEventMenu = new System.Windows.Forms.Button();
             this.panelEventMenu = new System.Windows.Forms.Panel();
             this.panelEventFamilyMenu = new System.Windows.Forms.Panel();
-            this.chbxHasChild = new System.Windows.Forms.CheckBox();
             this.txtPreviounsFamilyInfo = new System.Windows.Forms.TextBox();
             this.txtParentId = new System.Windows.Forms.TextBox();
             this.txtPreviounsFamilyType = new System.Windows.Forms.TextBox();
@@ -237,7 +236,6 @@
             // 
             // panelEventFamilyMenu
             // 
-            this.panelEventFamilyMenu.Controls.Add(this.chbxHasChild);
             this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyInfo);
             this.panelEventFamilyMenu.Controls.Add(this.txtParentId);
             this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyType);
@@ -249,17 +247,6 @@
             this.panelEventFamilyMenu.Size = new System.Drawing.Size(480, 153);
             this.panelEventFamilyMenu.TabIndex = 75;
             this.panelEventFamilyMenu.Visible = false;
-            // 
-            // chbxHasChild
-            // 
-            this.chbxHasChild.AutoSize = true;
-            this.chbxHasChild.ForeColor = System.Drawing.SystemColors.Window;
-            this.chbxHasChild.Location = new System.Drawing.Point(16, 22);
-            this.chbxHasChild.Name = "chbxHasChild";
-            this.chbxHasChild.Size = new System.Drawing.Size(122, 17);
-            this.chbxHasChild.TabIndex = 71;
-            this.chbxHasChild.Text = "Is it a CHILD event?";
-            this.chbxHasChild.UseVisualStyleBackColor = true;
             // 
             // txtPreviounsFamilyInfo
             // 
@@ -1056,6 +1043,5 @@
         private System.Windows.Forms.MaskedTextBox txtTimeNumber;
         private System.Windows.Forms.Label lbTimeNum;
         private System.Windows.Forms.Panel panelEventFamilyMenu;
-        private System.Windows.Forms.CheckBox chbxHasChild;
     }
 }

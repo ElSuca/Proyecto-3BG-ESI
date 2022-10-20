@@ -47,6 +47,7 @@ namespace CapDeDatos
                 "on EVENT.ID = TIME.ID_EVENT";
             tabla.Load(command.ExecuteReader());
             conection.Close();
+            RenameTableEvent(tabla);
             return tabla;
         }
         public DataTable GetEventDataTableWithFamily()
@@ -63,6 +64,7 @@ namespace CapDeDatos
                 "on PRE_EVENT.ID_PARENT = EVENT.ID and EVENT.ID = TIME.ID_EVENT"; 
             tabla.Load(command.ExecuteReader());
             conection.Close();
+            RenameTableEventFamily(tabla);
             return tabla;
         }
 
@@ -171,18 +173,31 @@ namespace CapDeDatos
                 throw e;
             }
         }
-
-        public bool HaveFamily()
+        public DataTable RenameTableEvent(DataTable t)
         {
-            this.command.CommandText = $"Select EVENT.ID PRE_EVENT.ID_CHILD,PRE_EVENT.TYPE FROM EVENT JOIN PRE_EVENT on EVENT.ID = PRE_EVENT.ID_CHILD WHERE ID={ID}";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Type = this.dataReader["TYPE "].ToString();
-            this.dataReader.Close();
-
-            if (Type != null) return true;
-            return false;
+            t.Columns[1].ColumnName = "Name";
+            t.Columns[2].ColumnName = "Start Date";
+            t.Columns[3].ColumnName = "End Date";
+            t.Columns[4].ColumnName = "Stage";
+            t.Columns[5].ColumnName = "Time ID";
+            t.Columns[6].ColumnName = "Time Number";
+            t.Columns[7].ColumnName = "Time Description";
+            return t;
+        }
+        public DataTable RenameTableEventFamily(DataTable t)
+        {
+            t.Columns[0].ColumnName = "ID";
+            t.Columns[1].ColumnName = "Name";
+            t.Columns[2].ColumnName = "Start Date";
+            t.Columns[3].ColumnName = "End Date";
+            t.Columns[4].ColumnName = "Stage";
+            t.Columns[5].ColumnName = "Time ID";
+            t.Columns[6].ColumnName = "Time Number";
+            t.Columns[7].ColumnName = "Time Description";
+            t.Columns[8].ColumnName = "ID Chirld";
+            t.Columns[9].ColumnName = "Number";
+            t.Columns[10].ColumnName = "Description";
+            return t;
         }
     }
 }

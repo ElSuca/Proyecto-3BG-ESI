@@ -33,9 +33,9 @@ namespace BackOffice.ResultManager
         }
         private void btnList_Click(object sender, EventArgs e) => reloadList();
         private void reloadList()
-        {   
-            if(panelEventMenu.Visible) dataGrid1.DataSource = new EventControler().GetEventDataTable();    
-                else if(panelJudgeMenu.Visible) dataGrid1.DataSource = new JudgeControler().GetJudgeDataTable();
+        {
+            if (panelEventMenu.Visible) dataGrid1.DataSource = panelEventFamilyMenu.Visible ? new EventControler().GetEventFamilyDataTable() : new EventControler().GetEventDataTable();  
+            else if (panelJudgeMenu.Visible) dataGrid1.DataSource = new JudgeControler().GetJudgeDataTable();
             else if (panelStageMenu.Visible) dataGrid1.DataSource = new StageControler().GetStageDataTable();
         }
 
@@ -53,9 +53,7 @@ namespace BackOffice.ResultManager
 
                 EventControler.Alta(txtEventName.Text, StartDate, EndDate, Int32.Parse(txtStageJudgeId.Text),Int32.Parse(txtTimeNumber.Text),txtTimeDescription.Text);
                 parsearEvento();
-                int ParentId = Int32.Parse(txtParentId.Text);
-                if (!chbxHasChild.Checked) ParentId = Int32.Parse(txtEventID.Text);
-                EventControler.AltaParents(ParentId, txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text, txtEventName.Text);
+                if (panelEventFamilyMenu.Visible) EventControler.AltaParents(Int32.Parse(txtParentId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text, txtEventName.Text);
                 MessageBox.Show("Evento cargado");
             }
             else if (panelJudgeMenu.Visible)

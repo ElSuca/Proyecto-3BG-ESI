@@ -10,10 +10,11 @@ namespace CapaLoogica
         }
         public DataTable GetEventDataTable()
         {
-            // if(new ModelEvents().HaveFamily()) return new ModelEvents().GetEventDataTableWithFamily();
-            // else
+            return new ModelEvents().GetEventDataTable();
+        }
+        public DataTable GetEventFamilyDataTable()
+        {
             return new ModelEvents().GetEventDataTableWithFamily();
-            //return new ModelEvents().GetEventDataTable();
         }
 
         public static void Alta(string name, string startDate, string endDate, int stageid, int timeNumber, string timeDescription)
@@ -22,7 +23,7 @@ namespace CapaLoogica
             {
                 Name = name,
                 StartDate = startDate,
-                EndDate= endDate,
+                EndDate = endDate,
                 StageId = stageid,
                 TimeDescription = timeDescription,
                 TimeNumber = timeNumber
@@ -44,7 +45,7 @@ namespace CapaLoogica
         }
         public static void Eliminar(int id) => new ModelEvents(id).Delete(id);
 
-        public static void AltaParents( int ParentId, string type, string Info, string Name)
+        public static void AltaParents(int ParentId, string type, string Info, string Name)
         {
             ModelEvents e = new ModelEvents
             {

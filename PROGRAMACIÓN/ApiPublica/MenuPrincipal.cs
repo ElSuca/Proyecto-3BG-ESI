@@ -51,7 +51,12 @@ namespace Proyecto
             txtCategory.Visible = n;
         }
 
-       // private void btnSearchCategory_Click(object sender, EventArgs e) => new SportControler().GetPlayerData(txtBusquedaJugador.Text);
+        private void btnBusquedaJugador_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // private void btnSearchCategory_Click(object sender, EventArgs e) => new SportControler().GetPlayerData(txtBusquedaJugador.Text);
     }
 }
        
