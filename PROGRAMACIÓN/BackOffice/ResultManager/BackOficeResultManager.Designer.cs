@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRegisterAcc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEventID = new System.Windows.Forms.TextBox();
@@ -38,13 +38,17 @@
             this.btnList = new System.Windows.Forms.Button();
             this.btnEventMenu = new System.Windows.Forms.Button();
             this.panelEventMenu = new System.Windows.Forms.Panel();
-            this.lbPreviounsFamilyInfo = new System.Windows.Forms.Label();
-            this.lbPreviounsFamilyType = new System.Windows.Forms.Label();
-            this.lbChirldId = new System.Windows.Forms.Label();
-            this.btnRegisterPreviousFamily = new System.Windows.Forms.Button();
+            this.panelEventFamilyMenu = new System.Windows.Forms.Panel();
             this.txtPreviounsFamilyInfo = new System.Windows.Forms.TextBox();
-            this.txtPreviounsFamilyType = new System.Windows.Forms.TextBox();
             this.txtChirldId = new System.Windows.Forms.TextBox();
+            this.txtPreviounsFamilyType = new System.Windows.Forms.TextBox();
+            this.lbPreviounsFamilyInfo = new System.Windows.Forms.Label();
+            this.lbChirldId = new System.Windows.Forms.Label();
+            this.lbPreviounsFamilyType = new System.Windows.Forms.Label();
+            this.txtTimeDescription = new System.Windows.Forms.MaskedTextBox();
+            this.lbTimeDescription = new System.Windows.Forms.Label();
+            this.txtTimeNumber = new System.Windows.Forms.MaskedTextBox();
+            this.lbTimeNum = new System.Windows.Forms.Label();
             this.lbPreviounsFamily = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -93,6 +97,7 @@
             this.btnStageMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelEventMenu.SuspendLayout();
+            this.panelEventFamilyMenu.SuspendLayout();
             this.panelStageMenu.SuspendLayout();
             this.panelJudgeMenu.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +108,7 @@
             this.btnRegisterAcc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegisterAcc.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegisterAcc.Location = new System.Drawing.Point(351, 413);
+            this.btnRegisterAcc.Location = new System.Drawing.Point(512, 401);
             this.btnRegisterAcc.Name = "btnRegisterAcc";
             this.btnRegisterAcc.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterAcc.TabIndex = 0;
@@ -128,16 +133,16 @@
             this.txtEventID.ForeColor = System.Drawing.SystemColors.Window;
             this.txtEventID.Location = new System.Drawing.Point(19, 33);
             this.txtEventID.Name = "txtEventID";
-            this.txtEventID.Size = new System.Drawing.Size(253, 20);
+            this.txtEventID.Size = new System.Drawing.Size(143, 20);
             this.txtEventID.TabIndex = 2;
             // 
             // txtEventName
             // 
             this.txtEventName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtEventName.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEventName.Location = new System.Drawing.Point(19, 79);
+            this.txtEventName.Location = new System.Drawing.Point(172, 33);
             this.txtEventName.Name = "txtEventName";
-            this.txtEventName.Size = new System.Drawing.Size(253, 20);
+            this.txtEventName.Size = new System.Drawing.Size(300, 20);
             this.txtEventName.TabIndex = 3;
             // 
             // label2
@@ -145,7 +150,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(15, 56);
+            this.label2.Location = new System.Drawing.Point(168, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 4;
@@ -154,18 +159,18 @@
             // dataGrid1
             // 
             this.dataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid1.Location = new System.Drawing.Point(345, 111);
+            this.dataGrid1.Location = new System.Drawing.Point(513, 111);
             this.dataGrid1.Name = "dataGrid1";
-            this.dataGrid1.Size = new System.Drawing.Size(929, 284);
+            this.dataGrid1.Size = new System.Drawing.Size(761, 284);
             this.dataGrid1.TabIndex = 9;
             // 
             // btnList
@@ -174,7 +179,7 @@
             this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(432, 413);
+            this.btnList.Location = new System.Drawing.Point(593, 401);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 10;
@@ -198,13 +203,11 @@
             // 
             // panelEventMenu
             // 
-            this.panelEventMenu.Controls.Add(this.lbPreviounsFamilyInfo);
-            this.panelEventMenu.Controls.Add(this.lbPreviounsFamilyType);
-            this.panelEventMenu.Controls.Add(this.lbChirldId);
-            this.panelEventMenu.Controls.Add(this.btnRegisterPreviousFamily);
-            this.panelEventMenu.Controls.Add(this.txtPreviounsFamilyInfo);
-            this.panelEventMenu.Controls.Add(this.txtPreviounsFamilyType);
-            this.panelEventMenu.Controls.Add(this.txtChirldId);
+            this.panelEventMenu.Controls.Add(this.panelEventFamilyMenu);
+            this.panelEventMenu.Controls.Add(this.txtTimeDescription);
+            this.panelEventMenu.Controls.Add(this.lbTimeDescription);
+            this.panelEventMenu.Controls.Add(this.txtTimeNumber);
+            this.panelEventMenu.Controls.Add(this.lbTimeNum);
             this.panelEventMenu.Controls.Add(this.lbPreviounsFamily);
             this.panelEventMenu.Controls.Add(this.label3);
             this.panelEventMenu.Controls.Add(this.label6);
@@ -226,101 +229,144 @@
             this.panelEventMenu.Controls.Add(this.txtEventName);
             this.panelEventMenu.Location = new System.Drawing.Point(20, 98);
             this.panelEventMenu.Name = "panelEventMenu";
-            this.panelEventMenu.Size = new System.Drawing.Size(293, 445);
+            this.panelEventMenu.Size = new System.Drawing.Size(486, 471);
             this.panelEventMenu.TabIndex = 13;
             this.panelEventMenu.Visible = false;
+            // 
+            // panelEventFamilyMenu
+            // 
+            this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyInfo);
+            this.panelEventFamilyMenu.Controls.Add(this.txtChirldId);
+            this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyType);
+            this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyInfo);
+            this.panelEventFamilyMenu.Controls.Add(this.lbChirldId);
+            this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyType);
+            this.panelEventFamilyMenu.Location = new System.Drawing.Point(6, 318);
+            this.panelEventFamilyMenu.Name = "panelEventFamilyMenu";
+            this.panelEventFamilyMenu.Size = new System.Drawing.Size(480, 153);
+            this.panelEventFamilyMenu.TabIndex = 75;
+            this.panelEventFamilyMenu.Visible = false;
+            // 
+            // txtPreviounsFamilyInfo
+            // 
+            this.txtPreviounsFamilyInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPreviounsFamilyInfo.Location = new System.Drawing.Point(16, 89);
+            this.txtPreviounsFamilyInfo.Name = "txtPreviounsFamilyInfo";
+            this.txtPreviounsFamilyInfo.Size = new System.Drawing.Size(453, 20);
+            this.txtPreviounsFamilyInfo.TabIndex = 66;
+            // 
+            // txtChirldId
+            // 
+            this.txtChirldId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtChirldId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtChirldId.Location = new System.Drawing.Point(16, 43);
+            this.txtChirldId.Name = "txtChirldId";
+            this.txtChirldId.Size = new System.Drawing.Size(147, 20);
+            this.txtChirldId.TabIndex = 64;
+            // 
+            // txtPreviounsFamilyType
+            // 
+            this.txtPreviounsFamilyType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPreviounsFamilyType.Location = new System.Drawing.Point(169, 43);
+            this.txtPreviounsFamilyType.Name = "txtPreviounsFamilyType";
+            this.txtPreviounsFamilyType.Size = new System.Drawing.Size(300, 20);
+            this.txtPreviounsFamilyType.TabIndex = 65;
             // 
             // lbPreviounsFamilyInfo
             // 
             this.lbPreviounsFamilyInfo.AutoSize = true;
             this.lbPreviounsFamilyInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPreviounsFamilyInfo.Location = new System.Drawing.Point(17, 360);
+            this.lbPreviounsFamilyInfo.Location = new System.Drawing.Point(12, 66);
             this.lbPreviounsFamilyInfo.Name = "lbPreviounsFamilyInfo";
             this.lbPreviounsFamilyInfo.Size = new System.Drawing.Size(41, 20);
             this.lbPreviounsFamilyInfo.TabIndex = 70;
             this.lbPreviounsFamilyInfo.Text = "Info";
-            // 
-            // lbPreviounsFamilyType
-            // 
-            this.lbPreviounsFamilyType.AutoSize = true;
-            this.lbPreviounsFamilyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPreviounsFamilyType.Location = new System.Drawing.Point(16, 316);
-            this.lbPreviounsFamilyType.Name = "lbPreviounsFamilyType";
-            this.lbPreviounsFamilyType.Size = new System.Drawing.Size(47, 20);
-            this.lbPreviounsFamilyType.TabIndex = 69;
-            this.lbPreviounsFamilyType.Text = "Type";
             // 
             // lbChirldId
             // 
             this.lbChirldId.AutoSize = true;
             this.lbChirldId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChirldId.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbChirldId.Location = new System.Drawing.Point(17, 274);
+            this.lbChirldId.Location = new System.Drawing.Point(16, 20);
             this.lbChirldId.Name = "lbChirldId";
             this.lbChirldId.Size = new System.Drawing.Size(76, 20);
             this.lbChirldId.TabIndex = 68;
             this.lbChirldId.Text = "Chirld Id";
             // 
-            // btnRegisterPreviousFamily
+            // lbPreviounsFamilyType
             // 
-            this.btnRegisterPreviousFamily.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnRegisterPreviousFamily.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegisterPreviousFamily.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegisterPreviousFamily.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegisterPreviousFamily.Location = new System.Drawing.Point(20, 409);
-            this.btnRegisterPreviousFamily.Name = "btnRegisterPreviousFamily";
-            this.btnRegisterPreviousFamily.Size = new System.Drawing.Size(262, 23);
-            this.btnRegisterPreviousFamily.TabIndex = 67;
-            this.btnRegisterPreviousFamily.Text = " Register previous family";
-            this.btnRegisterPreviousFamily.UseVisualStyleBackColor = false;
-            this.btnRegisterPreviousFamily.Click += new System.EventHandler(this.btnRegisterPreviousFamily_Click);
+            this.lbPreviounsFamilyType.AutoSize = true;
+            this.lbPreviounsFamilyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPreviounsFamilyType.Location = new System.Drawing.Point(165, 20);
+            this.lbPreviounsFamilyType.Name = "lbPreviounsFamilyType";
+            this.lbPreviounsFamilyType.Size = new System.Drawing.Size(47, 20);
+            this.lbPreviounsFamilyType.TabIndex = 69;
+            this.lbPreviounsFamilyType.Text = "Type";
             // 
-            // txtPreviounsFamilyInfo
+            // txtTimeDescription
             // 
-            this.txtPreviounsFamilyInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPreviounsFamilyInfo.Location = new System.Drawing.Point(21, 383);
-            this.txtPreviounsFamilyInfo.Name = "txtPreviounsFamilyInfo";
-            this.txtPreviounsFamilyInfo.Size = new System.Drawing.Size(261, 20);
-            this.txtPreviounsFamilyInfo.TabIndex = 66;
+            this.txtTimeDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtTimeDescription.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtTimeDescription.Location = new System.Drawing.Point(173, 247);
+            this.txtTimeDescription.Name = "txtTimeDescription";
+            this.txtTimeDescription.Size = new System.Drawing.Size(299, 20);
+            this.txtTimeDescription.TabIndex = 74;
             // 
-            // txtPreviounsFamilyType
+            // lbTimeDescription
             // 
-            this.txtPreviounsFamilyType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPreviounsFamilyType.Location = new System.Drawing.Point(21, 337);
-            this.txtPreviounsFamilyType.Name = "txtPreviounsFamilyType";
-            this.txtPreviounsFamilyType.Size = new System.Drawing.Size(261, 20);
-            this.txtPreviounsFamilyType.TabIndex = 65;
+            this.lbTimeDescription.AutoSize = true;
+            this.lbTimeDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeDescription.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbTimeDescription.Location = new System.Drawing.Point(173, 224);
+            this.lbTimeDescription.Name = "lbTimeDescription";
+            this.lbTimeDescription.Size = new System.Drawing.Size(143, 20);
+            this.lbTimeDescription.TabIndex = 73;
+            this.lbTimeDescription.Text = "Time Description";
             // 
-            // txtChirldId
+            // txtTimeNumber
             // 
-            this.txtChirldId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtChirldId.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtChirldId.Location = new System.Drawing.Point(21, 293);
-            this.txtChirldId.Name = "txtChirldId";
-            this.txtChirldId.Size = new System.Drawing.Size(257, 20);
-            this.txtChirldId.TabIndex = 64;
+            this.txtTimeNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtTimeNumber.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtTimeNumber.Location = new System.Drawing.Point(21, 247);
+            this.txtTimeNumber.Name = "txtTimeNumber";
+            this.txtTimeNumber.Size = new System.Drawing.Size(141, 20);
+            this.txtTimeNumber.TabIndex = 72;
+            // 
+            // lbTimeNum
+            // 
+            this.lbTimeNum.AutoSize = true;
+            this.lbTimeNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeNum.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbTimeNum.Location = new System.Drawing.Point(15, 224);
+            this.lbTimeNum.Name = "lbTimeNum";
+            this.lbTimeNum.Size = new System.Drawing.Size(112, 20);
+            this.lbTimeNum.TabIndex = 71;
+            this.lbTimeNum.Text = "Time number";
             // 
             // lbPreviounsFamily
             // 
             this.lbPreviounsFamily.AutoSize = true;
             this.lbPreviounsFamily.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPreviounsFamily.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPreviounsFamily.Location = new System.Drawing.Point(9, 245);
+            this.lbPreviounsFamily.Location = new System.Drawing.Point(3, 286);
             this.lbPreviounsFamily.Name = "lbPreviounsFamily";
             this.lbPreviounsFamily.Size = new System.Drawing.Size(222, 20);
             this.lbPreviounsFamily.TabIndex = 63;
             this.lbPreviounsFamily.Text = "Previouns family (Optional)";
+            this.lbPreviounsFamily.Click += new System.EventHandler(this.lbPreviounsFamily_Click);
+            this.lbPreviounsFamily.MouseLeave += new System.EventHandler(this.lbPreviounsFamily_MouseLeave);
+            this.lbPreviounsFamily.MouseHover += new System.EventHandler(this.lbPreviounsFamily_MouseHover_1);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(168, 125);
+            this.label3.Location = new System.Drawing.Point(158, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(16, 24);
             this.label3.TabIndex = 45;
@@ -331,7 +377,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(83, 122);
+            this.label6.Location = new System.Drawing.Point(78, 97);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 24);
             this.label6.TabIndex = 44;
@@ -355,7 +401,7 @@
             "10",
             "11",
             "12"});
-            this.comboBoxEventStartDateMoth.Location = new System.Drawing.Point(104, 125);
+            this.comboBoxEventStartDateMoth.Location = new System.Drawing.Point(98, 97);
             this.comboBoxEventStartDateMoth.Name = "comboBoxEventStartDateMoth";
             this.comboBoxEventStartDateMoth.Size = new System.Drawing.Size(58, 21);
             this.comboBoxEventStartDateMoth.TabIndex = 43;
@@ -398,7 +444,7 @@
             "29",
             "30",
             "31"});
-            this.comboBoxEventStartDateDay.Location = new System.Drawing.Point(20, 125);
+            this.comboBoxEventStartDateDay.Location = new System.Drawing.Point(21, 97);
             this.comboBoxEventStartDateDay.Name = "comboBoxEventStartDateDay";
             this.comboBoxEventStartDateDay.Size = new System.Drawing.Size(55, 21);
             this.comboBoxEventStartDateDay.TabIndex = 42;
@@ -408,7 +454,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(165, 170);
+            this.label5.Location = new System.Drawing.Point(158, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(16, 24);
             this.label5.TabIndex = 41;
@@ -419,7 +465,7 @@
             this.lbEventEndDate.AutoSize = true;
             this.lbEventEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEventEndDate.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbEventEndDate.Location = new System.Drawing.Point(16, 148);
+            this.lbEventEndDate.Location = new System.Drawing.Point(15, 121);
             this.lbEventEndDate.Name = "lbEventEndDate";
             this.lbEventEndDate.Size = new System.Drawing.Size(85, 20);
             this.lbEventEndDate.TabIndex = 19;
@@ -430,7 +476,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(80, 167);
+            this.label4.Location = new System.Drawing.Point(79, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(16, 24);
             this.label4.TabIndex = 40;
@@ -440,9 +486,9 @@
             // 
             this.txtEventEndDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtEventEndDateYear.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEventEndDateYear.Location = new System.Drawing.Point(185, 171);
+            this.txtEventEndDateYear.Location = new System.Drawing.Point(177, 144);
             this.txtEventEndDateYear.Name = "txtEventEndDateYear";
-            this.txtEventEndDateYear.Size = new System.Drawing.Size(87, 20);
+            this.txtEventEndDateYear.Size = new System.Drawing.Size(60, 20);
             this.txtEventEndDateYear.TabIndex = 18;
             // 
             // comboBoxEventEndDateMoth
@@ -463,18 +509,18 @@
             "10",
             "11",
             "12"});
-            this.comboBoxEventEndDateMoth.Location = new System.Drawing.Point(101, 170);
+            this.comboBoxEventEndDateMoth.Location = new System.Drawing.Point(98, 144);
             this.comboBoxEventEndDateMoth.Name = "comboBoxEventEndDateMoth";
-            this.comboBoxEventEndDateMoth.Size = new System.Drawing.Size(61, 21);
+            this.comboBoxEventEndDateMoth.Size = new System.Drawing.Size(58, 21);
             this.comboBoxEventEndDateMoth.TabIndex = 39;
             // 
             // txtStageJudgeId
             // 
             this.txtStageJudgeId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtStageJudgeId.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageJudgeId.Location = new System.Drawing.Point(19, 216);
+            this.txtStageJudgeId.Location = new System.Drawing.Point(21, 201);
             this.txtStageJudgeId.Name = "txtStageJudgeId";
-            this.txtStageJudgeId.Size = new System.Drawing.Size(253, 20);
+            this.txtStageJudgeId.Size = new System.Drawing.Size(141, 20);
             this.txtStageJudgeId.TabIndex = 14;
             // 
             // comboBoxEventEndDateDay
@@ -515,7 +561,7 @@
             "29",
             "30",
             "31"});
-            this.comboBoxEventEndDateDay.Location = new System.Drawing.Point(20, 170);
+            this.comboBoxEventEndDateDay.Location = new System.Drawing.Point(21, 144);
             this.comboBoxEventEndDateDay.Name = "comboBoxEventEndDateDay";
             this.comboBoxEventEndDateDay.Size = new System.Drawing.Size(55, 21);
             this.comboBoxEventEndDateDay.TabIndex = 38;
@@ -525,7 +571,7 @@
             this.lbStageJudgeId.AutoSize = true;
             this.lbStageJudgeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStageJudgeId.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStageJudgeId.Location = new System.Drawing.Point(16, 193);
+            this.lbStageJudgeId.Location = new System.Drawing.Point(17, 178);
             this.lbStageJudgeId.Name = "lbStageJudgeId";
             this.lbStageJudgeId.Size = new System.Drawing.Size(78, 20);
             this.lbStageJudgeId.TabIndex = 14;
@@ -535,9 +581,9 @@
             // 
             this.txtEventStartDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtEventStartDateYear.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEventStartDateYear.Location = new System.Drawing.Point(185, 125);
+            this.txtEventStartDateYear.Location = new System.Drawing.Point(177, 99);
             this.txtEventStartDateYear.Name = "txtEventStartDateYear";
-            this.txtEventStartDateYear.Size = new System.Drawing.Size(87, 20);
+            this.txtEventStartDateYear.Size = new System.Drawing.Size(60, 20);
             this.txtEventStartDateYear.TabIndex = 14;
             // 
             // lbStartDate
@@ -545,7 +591,7 @@
             this.lbStartDate.AutoSize = true;
             this.lbStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStartDate.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStartDate.Location = new System.Drawing.Point(15, 102);
+            this.lbStartDate.Location = new System.Drawing.Point(15, 64);
             this.lbStartDate.Name = "lbStartDate";
             this.lbStartDate.Size = new System.Drawing.Size(93, 20);
             this.lbStartDate.TabIndex = 14;
@@ -565,7 +611,7 @@
             this.panelStageMenu.Controls.Add(this.txtStageCity);
             this.panelStageMenu.Controls.Add(this.lbStageId);
             this.panelStageMenu.Controls.Add(this.txtStageId);
-            this.panelStageMenu.Location = new System.Drawing.Point(20, 111);
+            this.panelStageMenu.Location = new System.Drawing.Point(20, 102);
             this.panelStageMenu.Name = "panelStageMenu";
             this.panelStageMenu.Size = new System.Drawing.Size(293, 305);
             this.panelStageMenu.TabIndex = 33;
@@ -706,7 +752,7 @@
             this.panelJudgeMenu.Controls.Add(this.txtJudgeName);
             this.panelJudgeMenu.Controls.Add(this.lbJudgeID);
             this.panelJudgeMenu.Controls.Add(this.txtJudgeId);
-            this.panelJudgeMenu.Location = new System.Drawing.Point(20, 107);
+            this.panelJudgeMenu.Location = new System.Drawing.Point(20, 111);
             this.panelJudgeMenu.Name = "panelJudgeMenu";
             this.panelJudgeMenu.Size = new System.Drawing.Size(293, 305);
             this.panelJudgeMenu.TabIndex = 22;
@@ -847,7 +893,7 @@
             this.btnModifiy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifiy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifiy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModifiy.Location = new System.Drawing.Point(513, 413);
+            this.btnModifiy.Location = new System.Drawing.Point(674, 401);
             this.btnModifiy.Name = "btnModifiy";
             this.btnModifiy.Size = new System.Drawing.Size(75, 23);
             this.btnModifiy.TabIndex = 19;
@@ -861,7 +907,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(594, 413);
+            this.btnDelete.Location = new System.Drawing.Point(755, 401);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 20;
@@ -918,6 +964,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
             this.panelEventMenu.ResumeLayout(false);
             this.panelEventMenu.PerformLayout();
+            this.panelEventFamilyMenu.ResumeLayout(false);
+            this.panelEventFamilyMenu.PerformLayout();
             this.panelStageMenu.ResumeLayout(false);
             this.panelStageMenu.PerformLayout();
             this.panelJudgeMenu.ResumeLayout(false);
@@ -982,7 +1030,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxEventStartDateMoth;
         private System.Windows.Forms.ComboBox comboBoxEventStartDateDay;
-        private System.Windows.Forms.Button btnRegisterPreviousFamily;
         private System.Windows.Forms.TextBox txtPreviounsFamilyInfo;
         private System.Windows.Forms.TextBox txtPreviounsFamilyType;
         private System.Windows.Forms.TextBox txtChirldId;
@@ -990,5 +1037,10 @@
         private System.Windows.Forms.Label lbChirldId;
         private System.Windows.Forms.Label lbPreviounsFamilyType;
         private System.Windows.Forms.Label lbPreviounsFamilyInfo;
+        private System.Windows.Forms.MaskedTextBox txtTimeDescription;
+        private System.Windows.Forms.Label lbTimeDescription;
+        private System.Windows.Forms.MaskedTextBox txtTimeNumber;
+        private System.Windows.Forms.Label lbTimeNum;
+        private System.Windows.Forms.Panel panelEventFamilyMenu;
     }
 }

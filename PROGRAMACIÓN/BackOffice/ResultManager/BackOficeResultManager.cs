@@ -51,7 +51,9 @@ namespace BackOffice.ResultManager
                     $"{comboBoxEventStartDateMoth.Items[comboBoxEventEndDateMoth.SelectedIndex].ToString()}-" +
                     $"{comboBoxEventEndDateDay.Items[comboBoxEventEndDateMoth.SelectedIndex].ToString()}";
 
-                EventControler.Alta(txtEventName.Text, StartDate, EndDate, Int32.Parse(txtStageJudgeId.Text));
+                EventControler.Alta(txtEventName.Text, StartDate, EndDate, Int32.Parse(txtStageJudgeId.Text),Int32.Parse(txtTimeNumber.Text),txtTimeDescription.Text);
+                parsearEvento();
+                EventControler.AltaParents(Int32.Parse(txtChirldId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
                 MessageBox.Show("Evento cargado");
             }
             else if (panelJudgeMenu.Visible)
@@ -67,6 +69,13 @@ namespace BackOffice.ResultManager
             else MessageBox.Show("Por favor, seleccione un menu");
             reloadList();
         }
+        private void parsearEvento()
+        {
+            if (string.IsNullOrEmpty(txtChirldId.Text)) txtChirldId.Text = "0";
+            if (string.IsNullOrEmpty(txtPreviounsFamilyInfo.Text)) txtPreviounsFamilyInfo.Text = "...";
+            if (string.IsNullOrEmpty(txtPreviounsFamilyType.Text)) txtPreviounsFamilyType.Text = "...";
+        }
+
 
         private void btnEventMenu_Click(object sender, EventArgs e) => toggleMenus(1);
         private void btnJudgesMenu_Click(object sender, EventArgs e) => toggleMenus(2);
@@ -92,7 +101,7 @@ namespace BackOffice.ResultManager
         {
             if (panelEventMenu.Visible)
             {
-                EventControler.Modificar(Int32.Parse(txtEventID.Text),txtEventName.Text, txtEventStartDateYear.Text, txtEventEndDateYear.Text, Int32.Parse(txtStageNum.Text));
+                EventControler.Modificar(Int32.Parse(txtEventID.Text),txtEventName.Text, txtEventStartDateYear.Text, txtEventEndDateYear.Text, Int32.Parse(txtStageNum.Text),Int32.Parse(txtTimeNumber.Text), txtTimeDescription.Text);
                 MessageBox.Show("Evento"+ txtEventID.Text + "modificado");
             }
             else if (panelJudgeMenu.Visible)
@@ -132,9 +141,22 @@ namespace BackOffice.ResultManager
 
         private void btnRegisterPreviousFamily_Click(object sender, EventArgs e)
         {
-            EventControler.AltaParents(Int32.Parse(txtEventID.Text), Int32.Parse(txtChirldId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
+            EventControler.AltaParents(Int32.Parse(txtChirldId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
             MessageBox.Show($"Datos cargados");
             reloadList();
+        }
+
+        private void lbPreviounsFamily_Click(object sender, EventArgs e) => panelEventFamilyMenu.Visible = panelEventFamilyMenu.Visible ? false : true;
+        private void lbPreviounsFamily_MouseHover(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.Blue;
+
+        private void lbPreviounsFamily_MouseHover_1(object sender, EventArgs e)
+        {
+            lbPreviounsFamily.ForeColor = Color.Blue;
+        }
+
+        private void lbPreviounsFamily_MouseLeave(object sender, EventArgs e)
+        {
+            lbPreviounsFamily.ForeColor = Color.White;
         }
     }
 }
