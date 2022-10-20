@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRegisterAcc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEventID = new System.Windows.Forms.TextBox();
@@ -39,8 +39,9 @@
             this.btnEventMenu = new System.Windows.Forms.Button();
             this.panelEventMenu = new System.Windows.Forms.Panel();
             this.panelEventFamilyMenu = new System.Windows.Forms.Panel();
+            this.chbxHasChild = new System.Windows.Forms.CheckBox();
             this.txtPreviounsFamilyInfo = new System.Windows.Forms.TextBox();
-            this.txtChirldId = new System.Windows.Forms.TextBox();
+            this.txtParentId = new System.Windows.Forms.TextBox();
             this.txtPreviounsFamilyType = new System.Windows.Forms.TextBox();
             this.lbPreviounsFamilyInfo = new System.Windows.Forms.Label();
             this.lbChirldId = new System.Windows.Forms.Label();
@@ -159,19 +160,20 @@
             // dataGrid1
             // 
             this.dataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid1.Location = new System.Drawing.Point(513, 111);
             this.dataGrid1.Name = "dataGrid1";
             this.dataGrid1.Size = new System.Drawing.Size(761, 284);
             this.dataGrid1.TabIndex = 9;
+            this.dataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid1_CellContentClick);
             // 
             // btnList
             // 
@@ -235,8 +237,9 @@
             // 
             // panelEventFamilyMenu
             // 
+            this.panelEventFamilyMenu.Controls.Add(this.chbxHasChild);
             this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyInfo);
-            this.panelEventFamilyMenu.Controls.Add(this.txtChirldId);
+            this.panelEventFamilyMenu.Controls.Add(this.txtParentId);
             this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyType);
             this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyInfo);
             this.panelEventFamilyMenu.Controls.Add(this.lbChirldId);
@@ -247,29 +250,40 @@
             this.panelEventFamilyMenu.TabIndex = 75;
             this.panelEventFamilyMenu.Visible = false;
             // 
+            // chbxHasChild
+            // 
+            this.chbxHasChild.AutoSize = true;
+            this.chbxHasChild.ForeColor = System.Drawing.SystemColors.Window;
+            this.chbxHasChild.Location = new System.Drawing.Point(16, 22);
+            this.chbxHasChild.Name = "chbxHasChild";
+            this.chbxHasChild.Size = new System.Drawing.Size(122, 17);
+            this.chbxHasChild.TabIndex = 71;
+            this.chbxHasChild.Text = "Is it a CHILD event?";
+            this.chbxHasChild.UseVisualStyleBackColor = true;
+            // 
             // txtPreviounsFamilyInfo
             // 
             this.txtPreviounsFamilyInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPreviounsFamilyInfo.Location = new System.Drawing.Point(16, 89);
+            this.txtPreviounsFamilyInfo.Location = new System.Drawing.Point(15, 111);
             this.txtPreviounsFamilyInfo.Name = "txtPreviounsFamilyInfo";
             this.txtPreviounsFamilyInfo.Size = new System.Drawing.Size(453, 20);
             this.txtPreviounsFamilyInfo.TabIndex = 66;
             // 
-            // txtChirldId
+            // txtParentId
             // 
-            this.txtChirldId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtChirldId.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtChirldId.Location = new System.Drawing.Point(16, 43);
-            this.txtChirldId.Name = "txtChirldId";
-            this.txtChirldId.Size = new System.Drawing.Size(147, 20);
-            this.txtChirldId.TabIndex = 64;
+            this.txtParentId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtParentId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtParentId.Location = new System.Drawing.Point(16, 65);
+            this.txtParentId.Name = "txtParentId";
+            this.txtParentId.Size = new System.Drawing.Size(147, 20);
+            this.txtParentId.TabIndex = 64;
             // 
             // txtPreviounsFamilyType
             // 
             this.txtPreviounsFamilyType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPreviounsFamilyType.Location = new System.Drawing.Point(169, 43);
+            this.txtPreviounsFamilyType.Location = new System.Drawing.Point(169, 65);
             this.txtPreviounsFamilyType.Name = "txtPreviounsFamilyType";
             this.txtPreviounsFamilyType.Size = new System.Drawing.Size(300, 20);
             this.txtPreviounsFamilyType.TabIndex = 65;
@@ -279,7 +293,7 @@
             this.lbPreviounsFamilyInfo.AutoSize = true;
             this.lbPreviounsFamilyInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPreviounsFamilyInfo.Location = new System.Drawing.Point(12, 66);
+            this.lbPreviounsFamilyInfo.Location = new System.Drawing.Point(12, 88);
             this.lbPreviounsFamilyInfo.Name = "lbPreviounsFamilyInfo";
             this.lbPreviounsFamilyInfo.Size = new System.Drawing.Size(41, 20);
             this.lbPreviounsFamilyInfo.TabIndex = 70;
@@ -290,18 +304,18 @@
             this.lbChirldId.AutoSize = true;
             this.lbChirldId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChirldId.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbChirldId.Location = new System.Drawing.Point(16, 20);
+            this.lbChirldId.Location = new System.Drawing.Point(16, 42);
             this.lbChirldId.Name = "lbChirldId";
-            this.lbChirldId.Size = new System.Drawing.Size(76, 20);
+            this.lbChirldId.Size = new System.Drawing.Size(103, 20);
             this.lbChirldId.TabIndex = 68;
-            this.lbChirldId.Text = "Chirld Id";
+            this.lbChirldId.Text = "PARENT ID";
             // 
             // lbPreviounsFamilyType
             // 
             this.lbPreviounsFamilyType.AutoSize = true;
             this.lbPreviounsFamilyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPreviounsFamilyType.Location = new System.Drawing.Point(165, 20);
+            this.lbPreviounsFamilyType.Location = new System.Drawing.Point(165, 42);
             this.lbPreviounsFamilyType.Name = "lbPreviounsFamilyType";
             this.lbPreviounsFamilyType.Size = new System.Drawing.Size(47, 20);
             this.lbPreviounsFamilyType.TabIndex = 69;
@@ -1032,7 +1046,7 @@
         private System.Windows.Forms.ComboBox comboBoxEventStartDateDay;
         private System.Windows.Forms.TextBox txtPreviounsFamilyInfo;
         private System.Windows.Forms.TextBox txtPreviounsFamilyType;
-        private System.Windows.Forms.TextBox txtChirldId;
+        private System.Windows.Forms.TextBox txtParentId;
         private System.Windows.Forms.Label lbPreviounsFamily;
         private System.Windows.Forms.Label lbChirldId;
         private System.Windows.Forms.Label lbPreviounsFamilyType;
@@ -1042,5 +1056,6 @@
         private System.Windows.Forms.MaskedTextBox txtTimeNumber;
         private System.Windows.Forms.Label lbTimeNum;
         private System.Windows.Forms.Panel panelEventFamilyMenu;
+        private System.Windows.Forms.CheckBox chbxHasChild;
     }
 }

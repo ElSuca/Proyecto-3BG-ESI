@@ -54,13 +54,13 @@ namespace CapDeDatos
             DataTable tabla = new DataTable();
            
             command.CommandText = "SELECT EVENT.*," +
-                "PRE_EVENT.ID_PARENT," +
+                "PRE_EVENT.ID_CHILD," +
                 " PRE_EVENT.TYPE," +
                 "PRE_EVENT.INFO," +
                 "TIME.ID,TIME.NUM," +
                 "TIME.DESCR " +
                 "FROM EVENT JOIN PRE_EVENT JOIN TIME " +
-                "on PRE_EVENT.ID_CHILD = EVENT.ID and EVENT.ID = TIME.ID_EVENT"; 
+                "on PRE_EVENT.ID_PARENT = EVENT.ID and EVENT.ID = TIME.ID_EVENT"; 
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;
@@ -155,7 +155,7 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT " +
+                command.CommandText = "INSERT INTO " +
                    "PRE_EVENT (ID_CHILD,ID_PARENT ,TYPE ,INFO ) " +
                    $"VALUES ({GetId(Name)},{ParentId},'{Type}','{Info}')";
                 this.command.Prepare();

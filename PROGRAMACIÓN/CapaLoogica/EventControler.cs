@@ -44,13 +44,14 @@ namespace CapaLoogica
         }
         public static void Eliminar(int id) => new ModelEvents(id).Delete(id);
 
-        public static void AltaParents( int ParentId, string type, string Info)
+        public static void AltaParents( int ParentId, string type, string Info, string Name)
         {
             ModelEvents e = new ModelEvents
             {
                 ParentId = ParentId,
                 Type = type,
-                Info = Info
+                Info = Info,
+                Name = Name
             };
             e.InsertParents();
         }

@@ -53,7 +53,9 @@ namespace BackOffice.ResultManager
 
                 EventControler.Alta(txtEventName.Text, StartDate, EndDate, Int32.Parse(txtStageJudgeId.Text),Int32.Parse(txtTimeNumber.Text),txtTimeDescription.Text);
                 parsearEvento();
-                EventControler.AltaParents(Int32.Parse(txtChirldId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
+                int ParentId = Int32.Parse(txtParentId.Text);
+                if (!chbxHasChild.Checked) ParentId = Int32.Parse(txtEventID.Text);
+                EventControler.AltaParents(ParentId, txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text, txtEventName.Text);
                 MessageBox.Show("Evento cargado");
             }
             else if (panelJudgeMenu.Visible)
@@ -71,7 +73,7 @@ namespace BackOffice.ResultManager
         }
         private void parsearEvento()
         {
-            if (string.IsNullOrEmpty(txtChirldId.Text)) txtChirldId.Text = "0";
+            if (string.IsNullOrEmpty(txtParentId.Text)) txtParentId.Text = "0";
             if (string.IsNullOrEmpty(txtPreviounsFamilyInfo.Text)) txtPreviounsFamilyInfo.Text = "...";
             if (string.IsNullOrEmpty(txtPreviounsFamilyType.Text)) txtPreviounsFamilyType.Text = "...";
         }
@@ -141,9 +143,9 @@ namespace BackOffice.ResultManager
 
         private void btnRegisterPreviousFamily_Click(object sender, EventArgs e)
         {
-            EventControler.AltaParents(Int32.Parse(txtChirldId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
+           /* EventControler.AltaParents(Int32.Parse(txtParentId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
             MessageBox.Show($"Datos cargados");
-            reloadList();
+            reloadList();*/
         }
 
         private void lbPreviounsFamily_Click(object sender, EventArgs e) => panelEventFamilyMenu.Visible = panelEventFamilyMenu.Visible ? false : true;
@@ -157,6 +159,11 @@ namespace BackOffice.ResultManager
         private void lbPreviounsFamily_MouseLeave(object sender, EventArgs e)
         {
             lbPreviounsFamily.ForeColor = Color.White;
+        }
+
+        private void dataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
