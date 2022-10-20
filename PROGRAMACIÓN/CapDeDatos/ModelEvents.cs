@@ -73,7 +73,13 @@ namespace CapDeDatos
             {
                 Insert();
                 InsertTime();
+                
             }
+        }
+        public void SaveParents()
+        {
+            if (this.ID.ToString() != "0") ;//Update();
+            else InsertParents();
         }
 
         private void Insert()
@@ -83,6 +89,21 @@ namespace CapDeDatos
                 command.CommandText = "INSERT INTO " +
                    "EVENT (NAME,STARTDATE,ENDDATE,STAGE) " +
                    $"VALUES ('{Name}','{StartDate}','{EndDate}',{StageId})";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public void InsertParents()
+        {
+            try
+            {
+                command.CommandText = "INSERT INTO " +
+                   "PRE_EVENT (ID_CHILD,ID_PARENT ,TYPE ,INFO ) " +
+                   $"VALUES ({GetId(Name)},{ParentId},'{Type}','{Info}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -151,21 +172,7 @@ namespace CapDeDatos
             }
         }
 
-        public void InsertParents()
-        {
-            try
-            {
-                command.CommandText = "INSERT " +
-                   "PRE_EVENT (ID_CHILD,ID_PARENT ,TYPE ,INFO ) " +
-                   $"VALUES ({GetId(Name)},{ParentId},'{Type}','{Info}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
+        
         public bool HaveFamily()
         {
             this.command.CommandText = $"Select EVENT.ID PRE_EVENT.ID_CHILD,PRE_EVENT.TYPE FROM EVENT JOIN PRE_EVENT on EVENT.ID = PRE_EVENT.ID_CHILD WHERE ID={ID}";
