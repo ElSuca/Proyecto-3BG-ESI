@@ -53,7 +53,7 @@ namespace CapaLoogica
                 Info = Info,
                 Name = Name
             };
-            e.InsertParents();
+            e.SaveParents();
         }
     }
 }
