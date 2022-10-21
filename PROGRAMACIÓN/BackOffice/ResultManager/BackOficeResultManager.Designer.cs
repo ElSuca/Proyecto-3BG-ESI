@@ -95,11 +95,40 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnJudgesMenu = new System.Windows.Forms.Button();
             this.btnStageMenu = new System.Windows.Forms.Button();
+            this.panelActionMenu = new System.Windows.Forms.Panel();
+            this.lbActionHour = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxActionHour = new System.Windows.Forms.ComboBox();
+            this.comboBoxActionMinute = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBoxActionDateMoth = new System.Windows.Forms.ComboBox();
+            this.comboBoxActionDateDay = new System.Windows.Forms.ComboBox();
+            this.txtActionDateYear = new System.Windows.Forms.MaskedTextBox();
+            this.lbActionDate = new System.Windows.Forms.Label();
+            this.lbActionCategory = new System.Windows.Forms.Label();
+            this.txtActionCategory = new System.Windows.Forms.TextBox();
+            this.lbActionContext = new System.Windows.Forms.Label();
+            this.txtActionContext = new System.Windows.Forms.TextBox();
+            this.lbActionType = new System.Windows.Forms.Label();
+            this.txtActionType = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtActionQuantity = new System.Windows.Forms.TextBox();
+            this.lbIdPlayer = new System.Windows.Forms.Label();
+            this.txtIdPlayer = new System.Windows.Forms.TextBox();
+            this.lbIdTime = new System.Windows.Forms.Label();
+            this.txtIdTime = new System.Windows.Forms.TextBox();
+            this.lbIdTeam = new System.Windows.Forms.Label();
+            this.txtIdTeam = new System.Windows.Forms.TextBox();
+            this.lbActionId = new System.Windows.Forms.Label();
+            this.txtActionId = new System.Windows.Forms.TextBox();
+            this.btnActionMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelEventMenu.SuspendLayout();
             this.panelEventFamilyMenu.SuspendLayout();
             this.panelStageMenu.SuspendLayout();
             this.panelJudgeMenu.SuspendLayout();
+            this.panelActionMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRegisterAcc
@@ -108,7 +137,7 @@
             this.btnRegisterAcc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegisterAcc.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegisterAcc.Location = new System.Drawing.Point(512, 401);
+            this.btnRegisterAcc.Location = new System.Drawing.Point(430, 398);
             this.btnRegisterAcc.Name = "btnRegisterAcc";
             this.btnRegisterAcc.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterAcc.TabIndex = 0;
@@ -142,7 +171,7 @@
             this.txtEventName.ForeColor = System.Drawing.SystemColors.Window;
             this.txtEventName.Location = new System.Drawing.Point(172, 33);
             this.txtEventName.Name = "txtEventName";
-            this.txtEventName.Size = new System.Drawing.Size(300, 20);
+            this.txtEventName.Size = new System.Drawing.Size(213, 20);
             this.txtEventName.TabIndex = 3;
             // 
             // label2
@@ -168,9 +197,9 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid1.Location = new System.Drawing.Point(513, 111);
+            this.dataGrid1.Location = new System.Drawing.Point(429, 108);
             this.dataGrid1.Name = "dataGrid1";
-            this.dataGrid1.Size = new System.Drawing.Size(761, 284);
+            this.dataGrid1.Size = new System.Drawing.Size(435, 284);
             this.dataGrid1.TabIndex = 9;
             this.dataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid1_CellContentClick);
             // 
@@ -180,7 +209,7 @@
             this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(593, 401);
+            this.btnList.Location = new System.Drawing.Point(511, 398);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 10;
@@ -228,9 +257,9 @@
             this.panelEventMenu.Controls.Add(this.txtEventID);
             this.panelEventMenu.Controls.Add(this.label2);
             this.panelEventMenu.Controls.Add(this.txtEventName);
-            this.panelEventMenu.Location = new System.Drawing.Point(20, 98);
+            this.panelEventMenu.Location = new System.Drawing.Point(23, 98);
             this.panelEventMenu.Name = "panelEventMenu";
-            this.panelEventMenu.Size = new System.Drawing.Size(486, 471);
+            this.panelEventMenu.Size = new System.Drawing.Size(400, 435);
             this.panelEventMenu.TabIndex = 13;
             this.panelEventMenu.Visible = false;
             // 
@@ -244,7 +273,7 @@
             this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyType);
             this.panelEventFamilyMenu.Location = new System.Drawing.Point(6, 318);
             this.panelEventFamilyMenu.Name = "panelEventFamilyMenu";
-            this.panelEventFamilyMenu.Size = new System.Drawing.Size(480, 153);
+            this.panelEventFamilyMenu.Size = new System.Drawing.Size(391, 111);
             this.panelEventFamilyMenu.TabIndex = 75;
             this.panelEventFamilyMenu.Visible = false;
             // 
@@ -252,16 +281,16 @@
             // 
             this.txtPreviounsFamilyInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPreviounsFamilyInfo.Location = new System.Drawing.Point(15, 111);
+            this.txtPreviounsFamilyInfo.Location = new System.Drawing.Point(15, 80);
             this.txtPreviounsFamilyInfo.Name = "txtPreviounsFamilyInfo";
-            this.txtPreviounsFamilyInfo.Size = new System.Drawing.Size(453, 20);
+            this.txtPreviounsFamilyInfo.Size = new System.Drawing.Size(364, 20);
             this.txtPreviounsFamilyInfo.TabIndex = 66;
             // 
             // txtParentId
             // 
             this.txtParentId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtParentId.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtParentId.Location = new System.Drawing.Point(16, 65);
+            this.txtParentId.Location = new System.Drawing.Point(16, 34);
             this.txtParentId.Name = "txtParentId";
             this.txtParentId.Size = new System.Drawing.Size(147, 20);
             this.txtParentId.TabIndex = 64;
@@ -270,9 +299,9 @@
             // 
             this.txtPreviounsFamilyType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPreviounsFamilyType.Location = new System.Drawing.Point(169, 65);
+            this.txtPreviounsFamilyType.Location = new System.Drawing.Point(169, 34);
             this.txtPreviounsFamilyType.Name = "txtPreviounsFamilyType";
-            this.txtPreviounsFamilyType.Size = new System.Drawing.Size(300, 20);
+            this.txtPreviounsFamilyType.Size = new System.Drawing.Size(210, 20);
             this.txtPreviounsFamilyType.TabIndex = 65;
             // 
             // lbPreviounsFamilyInfo
@@ -280,7 +309,7 @@
             this.lbPreviounsFamilyInfo.AutoSize = true;
             this.lbPreviounsFamilyInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPreviounsFamilyInfo.Location = new System.Drawing.Point(12, 88);
+            this.lbPreviounsFamilyInfo.Location = new System.Drawing.Point(12, 57);
             this.lbPreviounsFamilyInfo.Name = "lbPreviounsFamilyInfo";
             this.lbPreviounsFamilyInfo.Size = new System.Drawing.Size(41, 20);
             this.lbPreviounsFamilyInfo.TabIndex = 70;
@@ -291,7 +320,7 @@
             this.lbChirldId.AutoSize = true;
             this.lbChirldId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChirldId.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbChirldId.Location = new System.Drawing.Point(16, 42);
+            this.lbChirldId.Location = new System.Drawing.Point(16, 11);
             this.lbChirldId.Name = "lbChirldId";
             this.lbChirldId.Size = new System.Drawing.Size(103, 20);
             this.lbChirldId.TabIndex = 68;
@@ -302,7 +331,7 @@
             this.lbPreviounsFamilyType.AutoSize = true;
             this.lbPreviounsFamilyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPreviounsFamilyType.Location = new System.Drawing.Point(165, 42);
+            this.lbPreviounsFamilyType.Location = new System.Drawing.Point(165, 11);
             this.lbPreviounsFamilyType.Name = "lbPreviounsFamilyType";
             this.lbPreviounsFamilyType.Size = new System.Drawing.Size(47, 20);
             this.lbPreviounsFamilyType.TabIndex = 69;
@@ -314,7 +343,7 @@
             this.txtTimeDescription.ForeColor = System.Drawing.SystemColors.Window;
             this.txtTimeDescription.Location = new System.Drawing.Point(173, 247);
             this.txtTimeDescription.Name = "txtTimeDescription";
-            this.txtTimeDescription.Size = new System.Drawing.Size(299, 20);
+            this.txtTimeDescription.Size = new System.Drawing.Size(212, 20);
             this.txtTimeDescription.TabIndex = 74;
             // 
             // lbTimeDescription
@@ -894,7 +923,7 @@
             this.btnModifiy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifiy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifiy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModifiy.Location = new System.Drawing.Point(674, 401);
+            this.btnModifiy.Location = new System.Drawing.Point(592, 398);
             this.btnModifiy.Name = "btnModifiy";
             this.btnModifiy.Size = new System.Drawing.Size(75, 23);
             this.btnModifiy.TabIndex = 19;
@@ -908,7 +937,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(755, 401);
+            this.btnDelete.Location = new System.Drawing.Point(673, 398);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 20;
@@ -944,11 +973,457 @@
             this.btnStageMenu.UseVisualStyleBackColor = false;
             this.btnStageMenu.Click += new System.EventHandler(this.btnStageMenu_Click);
             // 
+            // panelActionMenu
+            // 
+            this.panelActionMenu.Controls.Add(this.lbActionHour);
+            this.panelActionMenu.Controls.Add(this.label10);
+            this.panelActionMenu.Controls.Add(this.comboBoxActionHour);
+            this.panelActionMenu.Controls.Add(this.comboBoxActionMinute);
+            this.panelActionMenu.Controls.Add(this.label8);
+            this.panelActionMenu.Controls.Add(this.label9);
+            this.panelActionMenu.Controls.Add(this.comboBoxActionDateMoth);
+            this.panelActionMenu.Controls.Add(this.comboBoxActionDateDay);
+            this.panelActionMenu.Controls.Add(this.txtActionDateYear);
+            this.panelActionMenu.Controls.Add(this.lbActionDate);
+            this.panelActionMenu.Controls.Add(this.lbActionCategory);
+            this.panelActionMenu.Controls.Add(this.txtActionCategory);
+            this.panelActionMenu.Controls.Add(this.lbActionContext);
+            this.panelActionMenu.Controls.Add(this.txtActionContext);
+            this.panelActionMenu.Controls.Add(this.lbActionType);
+            this.panelActionMenu.Controls.Add(this.txtActionType);
+            this.panelActionMenu.Controls.Add(this.label7);
+            this.panelActionMenu.Controls.Add(this.txtActionQuantity);
+            this.panelActionMenu.Controls.Add(this.lbIdPlayer);
+            this.panelActionMenu.Controls.Add(this.txtIdPlayer);
+            this.panelActionMenu.Controls.Add(this.lbIdTime);
+            this.panelActionMenu.Controls.Add(this.txtIdTime);
+            this.panelActionMenu.Controls.Add(this.lbIdTeam);
+            this.panelActionMenu.Controls.Add(this.txtIdTeam);
+            this.panelActionMenu.Controls.Add(this.lbActionId);
+            this.panelActionMenu.Controls.Add(this.txtActionId);
+            this.panelActionMenu.Location = new System.Drawing.Point(20, 97);
+            this.panelActionMenu.Name = "panelActionMenu";
+            this.panelActionMenu.Size = new System.Drawing.Size(322, 393);
+            this.panelActionMenu.TabIndex = 34;
+            // 
+            // lbActionHour
+            // 
+            this.lbActionHour.AutoSize = true;
+            this.lbActionHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbActionHour.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbActionHour.Location = new System.Drawing.Point(19, 335);
+            this.lbActionHour.Name = "lbActionHour";
+            this.lbActionHour.Size = new System.Drawing.Size(48, 20);
+            this.lbActionHour.TabIndex = 109;
+            this.lbActionHour.Text = "Hour";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.Control;
+            this.label10.Location = new System.Drawing.Point(81, 350);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(16, 24);
+            this.label10.TabIndex = 108;
+            this.label10.Text = ":";
+            // 
+            // comboBoxActionHour
+            // 
+            this.comboBoxActionHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxActionHour.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxActionHour.FormattingEnabled = true;
+            this.comboBoxActionHour.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
+            this.comboBoxActionHour.Location = new System.Drawing.Point(23, 355);
+            this.comboBoxActionHour.Name = "comboBoxActionHour";
+            this.comboBoxActionHour.Size = new System.Drawing.Size(55, 21);
+            this.comboBoxActionHour.TabIndex = 107;
+            // 
+            // comboBoxActionMinute
+            // 
+            this.comboBoxActionMinute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxActionMinute.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxActionMinute.FormattingEnabled = true;
+            this.comboBoxActionMinute.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.comboBoxActionMinute.Location = new System.Drawing.Point(101, 355);
+            this.comboBoxActionMinute.Name = "comboBoxActionMinute";
+            this.comboBoxActionMinute.Size = new System.Drawing.Size(55, 21);
+            this.comboBoxActionMinute.TabIndex = 107;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(162, 311);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(16, 24);
+            this.label8.TabIndex = 106;
+            this.label8.Text = "/";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.Control;
+            this.label9.Location = new System.Drawing.Point(79, 308);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 24);
+            this.label9.TabIndex = 105;
+            this.label9.Text = "/";
+            // 
+            // comboBoxActionDateMoth
+            // 
+            this.comboBoxActionDateMoth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxActionDateMoth.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxActionDateMoth.FormattingEnabled = true;
+            this.comboBoxActionDateMoth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBoxActionDateMoth.Location = new System.Drawing.Point(101, 311);
+            this.comboBoxActionDateMoth.Name = "comboBoxActionDateMoth";
+            this.comboBoxActionDateMoth.Size = new System.Drawing.Size(58, 21);
+            this.comboBoxActionDateMoth.TabIndex = 104;
+            // 
+            // comboBoxActionDateDay
+            // 
+            this.comboBoxActionDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxActionDateDay.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxActionDateDay.FormattingEnabled = true;
+            this.comboBoxActionDateDay.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBoxActionDateDay.Location = new System.Drawing.Point(23, 311);
+            this.comboBoxActionDateDay.Name = "comboBoxActionDateDay";
+            this.comboBoxActionDateDay.Size = new System.Drawing.Size(55, 21);
+            this.comboBoxActionDateDay.TabIndex = 103;
+            // 
+            // txtActionDateYear
+            // 
+            this.txtActionDateYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtActionDateYear.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtActionDateYear.Location = new System.Drawing.Point(184, 311);
+            this.txtActionDateYear.Name = "txtActionDateYear";
+            this.txtActionDateYear.Size = new System.Drawing.Size(119, 20);
+            this.txtActionDateYear.TabIndex = 101;
+            // 
+            // lbActionDate
+            // 
+            this.lbActionDate.AutoSize = true;
+            this.lbActionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbActionDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbActionDate.Location = new System.Drawing.Point(19, 288);
+            this.lbActionDate.Name = "lbActionDate";
+            this.lbActionDate.Size = new System.Drawing.Size(48, 20);
+            this.lbActionDate.TabIndex = 102;
+            this.lbActionDate.Text = "Date";
+            // 
+            // lbActionCategory
+            // 
+            this.lbActionCategory.AutoSize = true;
+            this.lbActionCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbActionCategory.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbActionCategory.Location = new System.Drawing.Point(19, 246);
+            this.lbActionCategory.Name = "lbActionCategory";
+            this.lbActionCategory.Size = new System.Drawing.Size(81, 20);
+            this.lbActionCategory.TabIndex = 47;
+            this.lbActionCategory.Text = "Category";
+            // 
+            // txtActionCategory
+            // 
+            this.txtActionCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtActionCategory.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtActionCategory.Location = new System.Drawing.Point(23, 269);
+            this.txtActionCategory.Name = "txtActionCategory";
+            this.txtActionCategory.Size = new System.Drawing.Size(280, 20);
+            this.txtActionCategory.TabIndex = 48;
+            // 
+            // lbActionContext
+            // 
+            this.lbActionContext.AutoSize = true;
+            this.lbActionContext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbActionContext.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbActionContext.Location = new System.Drawing.Point(19, 200);
+            this.lbActionContext.Name = "lbActionContext";
+            this.lbActionContext.Size = new System.Drawing.Size(71, 20);
+            this.lbActionContext.TabIndex = 45;
+            this.lbActionContext.Text = "Context";
+            // 
+            // txtActionContext
+            // 
+            this.txtActionContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtActionContext.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtActionContext.Location = new System.Drawing.Point(23, 223);
+            this.txtActionContext.Name = "txtActionContext";
+            this.txtActionContext.Size = new System.Drawing.Size(280, 20);
+            this.txtActionContext.TabIndex = 46;
+            // 
+            // lbActionType
+            // 
+            this.lbActionType.AutoSize = true;
+            this.lbActionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbActionType.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbActionType.Location = new System.Drawing.Point(19, 152);
+            this.lbActionType.Name = "lbActionType";
+            this.lbActionType.Size = new System.Drawing.Size(47, 20);
+            this.lbActionType.TabIndex = 43;
+            this.lbActionType.Text = "Type";
+            // 
+            // txtActionType
+            // 
+            this.txtActionType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtActionType.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtActionType.Location = new System.Drawing.Point(23, 175);
+            this.txtActionType.Name = "txtActionType";
+            this.txtActionType.Size = new System.Drawing.Size(280, 20);
+            this.txtActionType.TabIndex = 44;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(19, 108);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 20);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Quantity";
+            // 
+            // txtActionQuantity
+            // 
+            this.txtActionQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtActionQuantity.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtActionQuantity.Location = new System.Drawing.Point(23, 129);
+            this.txtActionQuantity.Name = "txtActionQuantity";
+            this.txtActionQuantity.Size = new System.Drawing.Size(280, 20);
+            this.txtActionQuantity.TabIndex = 42;
+            // 
+            // lbIdPlayer
+            // 
+            this.lbIdPlayer.AutoSize = true;
+            this.lbIdPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdPlayer.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbIdPlayer.Location = new System.Drawing.Point(162, 62);
+            this.lbIdPlayer.Name = "lbIdPlayer";
+            this.lbIdPlayer.Size = new System.Drawing.Size(82, 20);
+            this.lbIdPlayer.TabIndex = 39;
+            this.lbIdPlayer.Text = "ID Player";
+            // 
+            // txtIdPlayer
+            // 
+            this.txtIdPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtIdPlayer.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtIdPlayer.Location = new System.Drawing.Point(166, 85);
+            this.txtIdPlayer.Name = "txtIdPlayer";
+            this.txtIdPlayer.Size = new System.Drawing.Size(137, 20);
+            this.txtIdPlayer.TabIndex = 40;
+            // 
+            // lbIdTime
+            // 
+            this.lbIdTime.AutoSize = true;
+            this.lbIdTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdTime.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbIdTime.Location = new System.Drawing.Point(19, 62);
+            this.lbIdTime.Name = "lbIdTime";
+            this.lbIdTime.Size = new System.Drawing.Size(71, 20);
+            this.lbIdTime.TabIndex = 37;
+            this.lbIdTime.Text = "ID Time";
+            // 
+            // txtIdTime
+            // 
+            this.txtIdTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtIdTime.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtIdTime.Location = new System.Drawing.Point(23, 85);
+            this.txtIdTime.Name = "txtIdTime";
+            this.txtIdTime.Size = new System.Drawing.Size(137, 20);
+            this.txtIdTime.TabIndex = 38;
+            // 
+            // lbIdTeam
+            // 
+            this.lbIdTeam.AutoSize = true;
+            this.lbIdTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdTeam.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbIdTeam.Location = new System.Drawing.Point(162, 18);
+            this.lbIdTeam.Name = "lbIdTeam";
+            this.lbIdTeam.Size = new System.Drawing.Size(77, 20);
+            this.lbIdTeam.TabIndex = 35;
+            this.lbIdTeam.Text = "ID Team";
+            this.lbIdTeam.Click += new System.EventHandler(this.lbIdTeam_Click);
+            // 
+            // txtIdTeam
+            // 
+            this.txtIdTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtIdTeam.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtIdTeam.Location = new System.Drawing.Point(166, 39);
+            this.txtIdTeam.Name = "txtIdTeam";
+            this.txtIdTeam.Size = new System.Drawing.Size(137, 20);
+            this.txtIdTeam.TabIndex = 36;
+            // 
+            // lbActionId
+            // 
+            this.lbActionId.AutoSize = true;
+            this.lbActionId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbActionId.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbActionId.Location = new System.Drawing.Point(19, 18);
+            this.lbActionId.Name = "lbActionId";
+            this.lbActionId.Size = new System.Drawing.Size(28, 20);
+            this.lbActionId.TabIndex = 33;
+            this.lbActionId.Text = "ID";
+            // 
+            // txtActionId
+            // 
+            this.txtActionId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtActionId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtActionId.Location = new System.Drawing.Point(23, 39);
+            this.txtActionId.Name = "txtActionId";
+            this.txtActionId.Size = new System.Drawing.Size(137, 20);
+            this.txtActionId.TabIndex = 34;
+            // 
+            // btnActionMenu
+            // 
+            this.btnActionMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
+            this.btnActionMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnActionMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActionMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnActionMenu.Location = new System.Drawing.Point(264, 69);
+            this.btnActionMenu.Name = "btnActionMenu";
+            this.btnActionMenu.Size = new System.Drawing.Size(75, 23);
+            this.btnActionMenu.TabIndex = 35;
+            this.btnActionMenu.Text = "Action";
+            this.btnActionMenu.UseVisualStyleBackColor = false;
+            this.btnActionMenu.Click += new System.EventHandler(this.btnActionMenu_Click);
+            // 
             // BackOficeResultManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.btnActionMenu);
+            this.Controls.Add(this.panelActionMenu);
             this.Controls.Add(this.panelStageMenu);
             this.Controls.Add(this.btnStageMenu);
             this.Controls.Add(this.panelJudgeMenu);
@@ -971,6 +1446,8 @@
             this.panelStageMenu.PerformLayout();
             this.panelJudgeMenu.ResumeLayout(false);
             this.panelJudgeMenu.PerformLayout();
+            this.panelActionMenu.ResumeLayout(false);
+            this.panelActionMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1043,5 +1520,33 @@
         private System.Windows.Forms.MaskedTextBox txtTimeNumber;
         private System.Windows.Forms.Label lbTimeNum;
         private System.Windows.Forms.Panel panelEventFamilyMenu;
+        private System.Windows.Forms.Panel panelActionMenu;
+        private System.Windows.Forms.Button btnActionMenu;
+        private System.Windows.Forms.Label lbIdTeam;
+        private System.Windows.Forms.TextBox txtIdTeam;
+        private System.Windows.Forms.Label lbActionId;
+        private System.Windows.Forms.TextBox txtActionId;
+        private System.Windows.Forms.Label lbActionCategory;
+        private System.Windows.Forms.TextBox txtActionCategory;
+        private System.Windows.Forms.Label lbActionContext;
+        private System.Windows.Forms.TextBox txtActionContext;
+        private System.Windows.Forms.Label lbActionType;
+        private System.Windows.Forms.TextBox txtActionType;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtActionQuantity;
+        private System.Windows.Forms.Label lbIdPlayer;
+        private System.Windows.Forms.TextBox txtIdPlayer;
+        private System.Windows.Forms.Label lbIdTime;
+        private System.Windows.Forms.TextBox txtIdTime;
+        private System.Windows.Forms.Label lbActionHour;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBoxActionHour;
+        private System.Windows.Forms.ComboBox comboBoxActionMinute;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBoxActionDateMoth;
+        private System.Windows.Forms.ComboBox comboBoxActionDateDay;
+        private System.Windows.Forms.MaskedTextBox txtActionDateYear;
+        private System.Windows.Forms.Label lbActionDate;
     }
 }

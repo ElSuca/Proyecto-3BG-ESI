@@ -13,7 +13,7 @@ namespace CapaDeDatos
         public MySqlCommand command;
         public MySqlDataReader dataReader;
         public MySqlCommand commanditou;
-                
+
 
         public Model()
         {
@@ -29,8 +29,8 @@ namespace CapaDeDatos
 
         }
         private void conectDataBase()
-        {   
-                this.startConection();
+        {
+            this.startConection();
             try
             {
                 this.conection = new MySqlConnection(
@@ -40,31 +40,31 @@ namespace CapaDeDatos
                     $"database={this.NameDataBase};" +
                     $"port={this.PuertoDataBase}"
                 );
-                
+
             }
             catch
             {
-               
+
             }
             this.conection.Open();
         }
         private void startConection()
         {
             #region credenciales
-          /*  this.IpDataBase = "192.168.5.50";
-                this.NameDataBase = "ptahtechnologies";
-                this.UserDataBase = "santiago.garcia";
-                this.PasswordDataBase = "54605454";
-                this.PuertoDataBase = "3306";*/
+           /* this.IpDataBase = "192.168.5.50";
+            this.NameDataBase = "ptahtechnologies";
+            this.UserDataBase = "santiago.garcia";
+            this.PasswordDataBase = "54605454";
+            this.PuertoDataBase = "3306";*/
             #endregion
             #region credenciales casa
-            
-                 this.IpDataBase = "127.0.0.1";
-                 this.NameDataBase = "olympus";
-                 this.UserDataBase = "bd_adm";
-                 this.PasswordDataBase = "password";
-                 this.PuertoDataBase = "3306";
-            
+
+              this.IpDataBase = "127.0.0.1";
+              this.NameDataBase = "olympus";
+              this.UserDataBase = "bd_adm";
+              this.PasswordDataBase = "password";
+              this.PuertoDataBase = "3306";
+         
             #endregion
         }
     }

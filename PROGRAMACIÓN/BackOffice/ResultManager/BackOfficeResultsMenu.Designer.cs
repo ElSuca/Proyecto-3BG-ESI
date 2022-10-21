@@ -36,9 +36,10 @@
             // 
             // Panel
             // 
-            this.Panel.Location = new System.Drawing.Point(205, 8);
+            this.Panel.AutoSize = true;
+            this.Panel.Location = new System.Drawing.Point(205, 22);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(1490, 785);
+            this.Panel.Size = new System.Drawing.Size(937, 687);
             this.Panel.TabIndex = 46;
             // 
             // btnEventManager
@@ -85,8 +86,8 @@
             // 
             // BackOfficeResultsManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.Controls.Add(this.btnTeam);
             this.Controls.Add(this.btnAsociation);
@@ -95,6 +96,7 @@
             this.Name = "BackOfficeResultsManager";
             this.Size = new System.Drawing.Size(1744, 810);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

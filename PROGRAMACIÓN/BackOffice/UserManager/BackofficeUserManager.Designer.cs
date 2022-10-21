@@ -236,7 +236,7 @@
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             this.dgrid1.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgrid1.Size = new System.Drawing.Size(942, 489);
+            this.dgrid1.Size = new System.Drawing.Size(620, 489);
             this.dgrid1.TabIndex = 54;
             this.dgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid1_CellContentClick);
             // 
@@ -494,7 +494,7 @@
             this.Controls.Add(this.txtLastName1Register);
             this.Controls.Add(this.txtUserNameRegister);
             this.Name = "BackOfficeUserManager";
-            this.Size = new System.Drawing.Size(1266, 567);
+            this.Size = new System.Drawing.Size(954, 567);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

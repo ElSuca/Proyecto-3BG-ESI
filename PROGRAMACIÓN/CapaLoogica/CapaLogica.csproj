@@ -92,6 +92,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionControler.cs" />
     <Compile Include="AdControler.cs" />
     <Compile Include="AplicationControler.cs" />
     <Compile Include="AsociationControler.cs" />

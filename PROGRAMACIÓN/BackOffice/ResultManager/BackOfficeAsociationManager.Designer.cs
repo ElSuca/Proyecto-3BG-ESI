@@ -135,9 +135,9 @@
             // dataGrid1
             // 
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid1.Location = new System.Drawing.Point(444, 65);
+            this.dataGrid1.Location = new System.Drawing.Point(428, 66);
             this.dataGrid1.Name = "dataGrid1";
-            this.dataGrid1.Size = new System.Drawing.Size(840, 390);
+            this.dataGrid1.Size = new System.Drawing.Size(500, 390);
             this.dataGrid1.TabIndex = 22;
             // 
             // btnManagerMenu
@@ -146,7 +146,7 @@
             this.btnManagerMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnManagerMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManagerMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnManagerMenu.Location = new System.Drawing.Point(37, 36);
+            this.btnManagerMenu.Location = new System.Drawing.Point(37, 29);
             this.btnManagerMenu.Name = "btnManagerMenu";
             this.btnManagerMenu.Size = new System.Drawing.Size(75, 23);
             this.btnManagerMenu.TabIndex = 23;
@@ -191,9 +191,9 @@
             this.panelManagerMenu.Controls.Add(this.txtManagerID);
             this.panelManagerMenu.Controls.Add(this.lbManagerName);
             this.panelManagerMenu.Controls.Add(this.txtManagerName);
-            this.panelManagerMenu.Location = new System.Drawing.Point(37, 79);
+            this.panelManagerMenu.Location = new System.Drawing.Point(37, 58);
             this.panelManagerMenu.Name = "panelManagerMenu";
-            this.panelManagerMenu.Size = new System.Drawing.Size(401, 401);
+            this.panelManagerMenu.Size = new System.Drawing.Size(385, 401);
             this.panelManagerMenu.TabIndex = 24;
             this.panelManagerMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelManagerMenu_Paint);
             // 
@@ -567,7 +567,7 @@
             this.txtManagerLastName2.ForeColor = System.Drawing.SystemColors.Window;
             this.txtManagerLastName2.Location = new System.Drawing.Point(189, 69);
             this.txtManagerLastName2.Name = "txtManagerLastName2";
-            this.txtManagerLastName2.Size = new System.Drawing.Size(199, 20);
+            this.txtManagerLastName2.Size = new System.Drawing.Size(188, 20);
             this.txtManagerLastName2.TabIndex = 50;
             // 
             // lbManagerLastName1
@@ -596,7 +596,7 @@
             this.txtManagerCountry.ForeColor = System.Drawing.SystemColors.Window;
             this.txtManagerCountry.Location = new System.Drawing.Point(189, 162);
             this.txtManagerCountry.Name = "txtManagerCountry";
-            this.txtManagerCountry.Size = new System.Drawing.Size(199, 20);
+            this.txtManagerCountry.Size = new System.Drawing.Size(188, 20);
             this.txtManagerCountry.TabIndex = 44;
             // 
             // lbManagerCountry
@@ -636,7 +636,7 @@
             this.txtManagerCity.ForeColor = System.Drawing.SystemColors.Window;
             this.txtManagerCity.Location = new System.Drawing.Point(189, 115);
             this.txtManagerCity.Name = "txtManagerCity";
-            this.txtManagerCity.Size = new System.Drawing.Size(199, 20);
+            this.txtManagerCity.Size = new System.Drawing.Size(188, 20);
             this.txtManagerCity.TabIndex = 43;
             // 
             // lbManagerCity
@@ -688,7 +688,7 @@
             this.txtManagerName.ForeColor = System.Drawing.SystemColors.Window;
             this.txtManagerName.Location = new System.Drawing.Point(189, 27);
             this.txtManagerName.Name = "txtManagerName";
-            this.txtManagerName.Size = new System.Drawing.Size(199, 20);
+            this.txtManagerName.Size = new System.Drawing.Size(188, 20);
             this.txtManagerName.TabIndex = 40;
             // 
             // btnDelete
@@ -697,7 +697,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(826, 458);
+            this.btnDelete.Location = new System.Drawing.Point(810, 458);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(118, 39);
             this.btnDelete.TabIndex = 26;
@@ -711,7 +711,7 @@
             this.btnModifiy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifiy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifiy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModifiy.Location = new System.Drawing.Point(576, 458);
+            this.btnModifiy.Location = new System.Drawing.Point(560, 458);
             this.btnModifiy.Name = "btnModifiy";
             this.btnModifiy.Size = new System.Drawing.Size(120, 39);
             this.btnModifiy.TabIndex = 27;
@@ -725,7 +725,7 @@
             this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(702, 458);
+            this.btnList.Location = new System.Drawing.Point(686, 458);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(118, 39);
             this.btnList.TabIndex = 28;
@@ -739,7 +739,7 @@
             this.btnRegisterAcc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegisterAcc.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegisterAcc.Location = new System.Drawing.Point(444, 458);
+            this.btnRegisterAcc.Location = new System.Drawing.Point(428, 458);
             this.btnRegisterAcc.Name = "btnRegisterAcc";
             this.btnRegisterAcc.Size = new System.Drawing.Size(126, 39);
             this.btnRegisterAcc.TabIndex = 29;
@@ -753,7 +753,7 @@
             this.btnFamilyMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFamilyMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFamilyMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnFamilyMenu.Location = new System.Drawing.Point(118, 36);
+            this.btnFamilyMenu.Location = new System.Drawing.Point(116, 29);
             this.btnFamilyMenu.Name = "btnFamilyMenu";
             this.btnFamilyMenu.Size = new System.Drawing.Size(75, 23);
             this.btnFamilyMenu.TabIndex = 30;
@@ -783,7 +783,7 @@
             this.panelFamilyMenu.Controls.Add(this.txtFamilyName);
             this.panelFamilyMenu.Location = new System.Drawing.Point(37, 72);
             this.panelFamilyMenu.Name = "panelFamilyMenu";
-            this.panelFamilyMenu.Size = new System.Drawing.Size(296, 448);
+            this.panelFamilyMenu.Size = new System.Drawing.Size(296, 438);
             this.panelFamilyMenu.TabIndex = 59;
             // 
             // btnRegisterPreviousFamily
@@ -977,7 +977,7 @@
             this.btnAsociationMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsociationMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsociationMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAsociationMenu.Location = new System.Drawing.Point(199, 36);
+            this.btnAsociationMenu.Location = new System.Drawing.Point(197, 29);
             this.btnAsociationMenu.Name = "btnAsociationMenu";
             this.btnAsociationMenu.Size = new System.Drawing.Size(81, 23);
             this.btnAsociationMenu.TabIndex = 60;
@@ -1021,9 +1021,9 @@
             this.panelAsociationMenu.Controls.Add(this.txtAsociationName);
             this.panelAsociationMenu.Controls.Add(this.lbAsociationId);
             this.panelAsociationMenu.Controls.Add(this.txtAsociationId);
-            this.panelAsociationMenu.Location = new System.Drawing.Point(37, 63);
+            this.panelAsociationMenu.Location = new System.Drawing.Point(37, 66);
             this.panelAsociationMenu.Name = "panelAsociationMenu";
-            this.panelAsociationMenu.Size = new System.Drawing.Size(390, 408);
+            this.panelAsociationMenu.Size = new System.Drawing.Size(355, 393);
             this.panelAsociationMenu.TabIndex = 61;
             // 
             // lbQuantity
@@ -1043,7 +1043,7 @@
             this.txtAsociationQuantity.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAsociationQuantity.Location = new System.Drawing.Point(19, 366);
             this.txtAsociationQuantity.Name = "txtAsociationQuantity";
-            this.txtAsociationQuantity.Size = new System.Drawing.Size(360, 20);
+            this.txtAsociationQuantity.Size = new System.Drawing.Size(323, 20);
             this.txtAsociationQuantity.TabIndex = 105;
             // 
             // lbCategory
@@ -1063,7 +1063,7 @@
             this.txtAsociationCategory.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAsociationCategory.Location = new System.Drawing.Point(200, 315);
             this.txtAsociationCategory.Name = "txtAsociationCategory";
-            this.txtAsociationCategory.Size = new System.Drawing.Size(177, 20);
+            this.txtAsociationCategory.Size = new System.Drawing.Size(142, 20);
             this.txtAsociationCategory.TabIndex = 103;
             // 
             // lbSportId
@@ -1213,7 +1213,7 @@
             this.txtAsociationEndDateYear.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAsociationEndDateYear.Location = new System.Drawing.Point(180, 268);
             this.txtAsociationEndDateYear.Name = "txtAsociationEndDateYear";
-            this.txtAsociationEndDateYear.Size = new System.Drawing.Size(197, 20);
+            this.txtAsociationEndDateYear.Size = new System.Drawing.Size(162, 20);
             this.txtAsociationEndDateYear.TabIndex = 91;
             // 
             // comboBoxAsociationEndDateMoth
@@ -1288,7 +1288,7 @@
             this.txtStartAsociationDateYear.ForeColor = System.Drawing.SystemColors.Window;
             this.txtStartAsociationDateYear.Location = new System.Drawing.Point(180, 221);
             this.txtStartAsociationDateYear.Name = "txtStartAsociationDateYear";
-            this.txtStartAsociationDateYear.Size = new System.Drawing.Size(197, 20);
+            this.txtStartAsociationDateYear.Size = new System.Drawing.Size(162, 20);
             this.txtStartAsociationDateYear.TabIndex = 89;
             // 
             // lbStartDate
@@ -1319,7 +1319,7 @@
             this.txtAsociationCountry.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAsociationCountry.Location = new System.Drawing.Point(200, 172);
             this.txtAsociationCountry.Name = "txtAsociationCountry";
-            this.txtAsociationCountry.Size = new System.Drawing.Size(177, 20);
+            this.txtAsociationCountry.Size = new System.Drawing.Size(142, 20);
             this.txtAsociationCountry.TabIndex = 58;
             // 
             // lbAsociationState
@@ -1359,7 +1359,7 @@
             this.txtAsociationNumber.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAsociationNumber.Location = new System.Drawing.Point(200, 127);
             this.txtAsociationNumber.Name = "txtAsociationNumber";
-            this.txtAsociationNumber.Size = new System.Drawing.Size(177, 20);
+            this.txtAsociationNumber.Size = new System.Drawing.Size(142, 20);
             this.txtAsociationNumber.TabIndex = 54;
             // 
             // lbAsociationStreet
@@ -1419,7 +1419,7 @@
             this.txtAsociationStatus.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAsociationStatus.Location = new System.Drawing.Point(200, 80);
             this.txtAsociationStatus.Name = "txtAsociationStatus";
-            this.txtAsociationStatus.Size = new System.Drawing.Size(177, 20);
+            this.txtAsociationStatus.Size = new System.Drawing.Size(142, 20);
             this.txtAsociationStatus.TabIndex = 48;
             // 
             // lbAsociationName
@@ -1439,7 +1439,7 @@
             this.txtAsociationName.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAsociationName.Location = new System.Drawing.Point(200, 34);
             this.txtAsociationName.Name = "txtAsociationName";
-            this.txtAsociationName.Size = new System.Drawing.Size(177, 20);
+            this.txtAsociationName.Size = new System.Drawing.Size(142, 20);
             this.txtAsociationName.TabIndex = 46;
             // 
             // lbAsociationId
