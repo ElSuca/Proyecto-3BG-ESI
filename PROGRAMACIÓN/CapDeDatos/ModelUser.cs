@@ -335,7 +335,6 @@ namespace CapaDeDatos
         }
 
 
-
         #region Set static
         public void SetUsernameBuffer(string UserName) => SafeUserData.Username = UserName;
         public void SetNameStaticBuffer(string Name) => SafeUserData.Name = Name;
