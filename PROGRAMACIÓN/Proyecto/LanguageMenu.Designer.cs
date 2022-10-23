@@ -52,7 +52,6 @@
             this.ComboBoxLanguage.Name = "ComboBoxLanguage";
             this.ComboBoxLanguage.Size = new System.Drawing.Size(121, 21);
             this.ComboBoxLanguage.TabIndex = 2;
-            this.ComboBoxLanguage.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLanguage_SelectedIndexChanged);
             // 
             // LanguageMenu
             // 
@@ -61,7 +60,6 @@
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.ComboBoxLanguage);
             this.Name = "LanguageMenu";
-            this.Load += new System.EventHandler(this.LanguageMenu_Load_1);
             this.ResumeLayout(false);
 
         }

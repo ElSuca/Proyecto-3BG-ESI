@@ -58,6 +58,6 @@ namespace ApiAurentificacion
              return camposJsonDeSalida;
          }
 
-        public static void Log(HttpListenerRequest request) => Console.WriteLine(request.RemoteEndPoint + " " + request.HttpMethod + " " + request.RawUrl);
+         public static void Log(HttpListenerRequest request) => Console.WriteLine(request.RemoteEndPoint + " " + request.HttpMethod + " " + request.RawUrl);
     }
 }

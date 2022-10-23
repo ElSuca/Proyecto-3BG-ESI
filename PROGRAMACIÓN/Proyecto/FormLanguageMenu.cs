@@ -10,9 +10,9 @@ namespace Proyecto
         public FormLanguageMenu()
         {
             InitializeComponent();
-            Traduction(new AplicationControler().getLanguage());
+            traduction(new AplicationControler().getLanguage());
         }
-        private void LanguageMenu_Load(object sender, EventArgs e)
+        private void languageMenu_Load(object sender, EventArgs e)
         {
             ComboBoxLanguage.SelectedItem = 0;
         }
@@ -34,19 +34,11 @@ namespace Proyecto
                 int selection = Int32.Parse(linea[10].ToString());
                 new AplicationControler().setLanguage(selection);
             }
-            Traduction(new AplicationControler().getLanguage());
+            traduction(new AplicationControler().getLanguage());
             new StarterMenu();
             new Form1().Refresh();
-         
-
         }
-
-        private void ComboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Traduction(int l)
+        private void traduction(int l)
         {
             if (l == 0) btnApply.Text = "Apply";
             else btnApply.Text = "Aplicar";

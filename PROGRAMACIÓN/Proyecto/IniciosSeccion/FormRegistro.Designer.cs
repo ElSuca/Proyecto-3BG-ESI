@@ -93,7 +93,6 @@
             this.lbUsername.Size = new System.Drawing.Size(91, 20);
             this.lbUsername.TabIndex = 7;
             this.lbUsername.Text = "Username";
-            this.lbUsername.Click += new System.EventHandler(this.lbUsername_Click);
             // 
             // lbLastname
             // 
@@ -116,7 +115,6 @@
             this.lbMail.Size = new System.Drawing.Size(59, 20);
             this.lbMail.TabIndex = 9;
             this.lbMail.Text = "E-Mail";
-            this.lbMail.Click += new System.EventHandler(this.lbMail_Click);
             // 
             // lbNumber
             // 
@@ -360,7 +358,6 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "FormRegistro";
             this.Text = "FormRegistro";
-            this.Load += new System.EventHandler(this.FormRegistro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

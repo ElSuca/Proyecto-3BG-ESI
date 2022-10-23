@@ -27,11 +27,11 @@ namespace CapDeDatos
 
         public void Save()
         {
-            if (this.Id.ToString() != "0") Update();
+            if (this.Id.ToString() != "0") update();
             else
             {
-                Insert();
-                InsertStatus();
+                insert();
+                insertStatus();
             }
         }
 
@@ -73,7 +73,7 @@ namespace CapDeDatos
             return AdressID;
         }
 
-        private void Insert()
+        private void insert()
         {
             try
             {
@@ -88,7 +88,7 @@ namespace CapDeDatos
                 throw e;
             }
         }
-        private void InsertStatus()
+        private void insertStatus()
         {
             Commanditou.CommandText = "INSERT INTO " +
                   "ASOC_STATUS (ID_ASOC,STARTDATE ,ENDDATE ,SPORT ,CAT ,QUANTITY) " +
@@ -97,7 +97,7 @@ namespace CapDeDatos
             this.Commanditou.ExecuteNonQuery();
         }
 
-        private void Update()
+        private void update()
         {
             this.Command.CommandText = "UPDATE ASOC SET " +
                  $"NAME = '{Name}'," +

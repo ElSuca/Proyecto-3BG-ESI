@@ -23,14 +23,8 @@ namespace BackOffice.ResultManager
             setInitial();
         }
 
-        private void btnTeamsMenu_Click(object sender, EventArgs e)
-        {
-            toggleMenus(1);
-        }
-        private void btnPlayer_Click(object sender, EventArgs e)
-        {
-            toggleMenus(2);
-        }
+        private void btnTeamsMenu_Click(object sender, EventArgs e) => toggleMenus(1);
+        private void btnPlayer_Click(object sender, EventArgs e) => toggleMenus(2);
         private void btnRegisterAcc_Click(object sender, EventArgs e)
         {
             if(panelPlayerMenu.Visible)
@@ -101,16 +95,6 @@ namespace BackOffice.ResultManager
         {
             panelPlayerMenu.Visible = false;
             panelTeamsMenu.Visible = false; 
-        }
-
-        private void BackOfficePlayerManager_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelPlayerMenu_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnRegisterPlayerAsociation_Click(object sender, EventArgs e)

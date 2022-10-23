@@ -251,7 +251,6 @@
             this.panelPlayerMenu.Size = new System.Drawing.Size(297, 575);
             this.panelPlayerMenu.TabIndex = 20;
             this.panelPlayerMenu.Visible = false;
-            this.panelPlayerMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPlayerMenu_Paint);
             // 
             // label3
             // 
@@ -880,7 +879,6 @@
             this.Controls.Add(this.panelTeamsMenu);
             this.Name = "BackOfficePlayerManager";
             this.Size = new System.Drawing.Size(1393, 694);
-            this.Load += new System.EventHandler(this.BackOfficePlayerManager_Load);
             this.panelTeamsMenu.ResumeLayout(false);
             this.panelTeamsMenu.PerformLayout();
             this.panelPlayerMenu.ResumeLayout(false);

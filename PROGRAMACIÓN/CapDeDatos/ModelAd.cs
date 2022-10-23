@@ -37,11 +37,11 @@ namespace CapDeDatos
 
         public void Save()
         {
-            if (this.Id.ToString() != "0") Update();
-            else Insert();
+            if (this.Id.ToString() != "0") update();
+            else insert();
         }
 
-        private void Update()
+        private void update()
         {
             try
             {
@@ -58,7 +58,7 @@ namespace CapDeDatos
                 throw e;
             }
         } 
-        private void Insert()
+        private void insert()
         {
             try
             {

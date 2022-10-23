@@ -1,12 +1,8 @@
 ﻿using CapDeDatos;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Apis
 {
@@ -15,7 +11,7 @@ namespace Apis
         public SendRequest()
         {
         }
-        public static string GetPost(string url, string Uname, string Pass) //si
+        public static string GetPost(string url, string Uname, string Pass) 
         {
             WebRequest request = WebRequest.Create(url);
             Post u = new Post() { Username = Uname, Password = Pass };

@@ -34,7 +34,12 @@ namespace CapDeDatos
 
         }
 
-        private void insert()
+
+
+
+
+
+        void insert()
         {
             try
             {

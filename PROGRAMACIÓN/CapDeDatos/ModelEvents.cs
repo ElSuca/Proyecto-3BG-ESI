@@ -95,7 +95,7 @@ namespace CapDeDatos
             if (this.ID.ToString() != "0") Update();
             else
             {
-                Insert();
+                insert();
                 InsertTime();
                 
             }
@@ -106,7 +106,7 @@ namespace CapDeDatos
             else InsertParents();
         }
 
-        private void Insert()
+        private void insert()
         {
             try
             {

@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autentificador.cs" />
-    <Compile Include="GetRequest.cs" />
     <Compile Include="SendRequest.cs" />
     <Compile Include="ApiListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

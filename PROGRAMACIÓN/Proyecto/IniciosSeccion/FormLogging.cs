@@ -13,9 +13,9 @@ namespace Proyecto.IniciosSeccion
         public FormLogging()
         {
             InitializeComponent();
-            Traduction(new AplicationControler().getLanguage());
+            traduction(new AplicationControler().getLanguage());
         }
-        private void btnLoggin_Click(object sender, EventArgs e) //si
+        private void btnLoggin_Click(object sender, EventArgs e) 
         {
             UserControler uc = new UserControler();
             controlApi();
@@ -30,11 +30,11 @@ namespace Proyecto.IniciosSeccion
             else
             {
                 lbMessage.ForeColor = Color.FromArgb(255, 0, 0);
-                lbMessage.Text = ErrorMesageTranslation(new AplicationControler().getLanguage());
+                lbMessage.Text = errorMesageTranslation(new AplicationControler().getLanguage());
             }
             controlApi();
         }
-        private void controlApi() //si
+        private void controlApi() 
         {
             ProcessStartInfo startinfo = new ProcessStartInfo();
             startinfo.FileName = @"..\..\..\..\PROGRAMACIÓN\ApiAutentificacion\bin\Debug\ApiAutentificacion.exe";
@@ -46,7 +46,7 @@ namespace Proyecto.IniciosSeccion
        
         private void btnEntrar_Click(object sender, EventArgs e) => new MenuPrincipal().Show();
 
-        private void Traduction(int l)
+        private void traduction(int l)
         {
             if (l == 0)
             {
@@ -66,7 +66,7 @@ namespace Proyecto.IniciosSeccion
             }
             correctlabelposition(l);
         }
-        private string ErrorMesageTranslation(int l)
+        private string errorMesageTranslation(int l)
         {
             string v = l == 0? "There was a problem, please try again":"Hubo un error, intentelo mas tarde";
             return v;

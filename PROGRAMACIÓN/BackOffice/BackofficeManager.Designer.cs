@@ -35,7 +35,7 @@
             this.btnAdManager = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.btnResultManager = new System.Windows.Forms.Button();
-            this.Lblanguaje = new System.Windows.Forms.Label();
+            this.Lblanguage = new System.Windows.Forms.Label();
             this.btnSportManager = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -116,17 +116,17 @@
             this.btnResultManager.UseVisualStyleBackColor = false;
             this.btnResultManager.Click += new System.EventHandler(this.btnResultManager_Click);
             // 
-            // Lblanguaje
+            // Lblanguage
             // 
-            this.Lblanguaje.AutoSize = true;
-            this.Lblanguaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblanguaje.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lblanguaje.Location = new System.Drawing.Point(9, 12);
-            this.Lblanguaje.Name = "Lblanguaje";
-            this.Lblanguaje.Size = new System.Drawing.Size(59, 13);
-            this.Lblanguaje.TabIndex = 47;
-            this.Lblanguaje.Text = "Languaje";
-            this.Lblanguaje.Click += new System.EventHandler(this.Lblanguaje_Click);
+            this.Lblanguage.AutoSize = true;
+            this.Lblanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblanguage.ForeColor = System.Drawing.SystemColors.Control;
+            this.Lblanguage.Location = new System.Drawing.Point(9, 12);
+            this.Lblanguage.Name = "Lblanguage";
+            this.Lblanguage.Size = new System.Drawing.Size(63, 13);
+            this.Lblanguage.TabIndex = 47;
+            this.Lblanguage.Text = "Language";
+            this.Lblanguage.Click += new System.EventHandler(this.Lblanguaje_Click);
             // 
             // btnSportManager
             // 
@@ -149,7 +149,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1284, 803);
             this.Controls.Add(this.btnSportManager);
-            this.Controls.Add(this.Lblanguaje);
+            this.Controls.Add(this.Lblanguage);
             this.Controls.Add(this.btnResultManager);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.btnAdManager);
@@ -172,7 +172,7 @@
         private System.Windows.Forms.Button btnAdManager;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button btnResultManager;
-        private System.Windows.Forms.Label Lblanguaje;
+        private System.Windows.Forms.Label Lblanguage;
         private System.Windows.Forms.Button btnSportManager;
     }
 }

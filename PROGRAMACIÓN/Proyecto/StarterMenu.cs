@@ -20,7 +20,7 @@ namespace Proyecto
         public StarterMenu()
         {
             InitializeComponent();
-            Traduction(new AplicationControler().getLanguage());
+            traduction(new AplicationControler().getLanguage());
         }
 
         private void btnLoggin_Click(object sender, EventArgs e) => new FormLogging().Show();
@@ -29,7 +29,7 @@ namespace Proyecto
 
         private void Lblanguaje_Click(object sender, EventArgs e) => new Form1().setSelection(4);
 
-        private void Traduction(int l)
+        private void traduction(int l)
         {
             if (l == 0)
             {

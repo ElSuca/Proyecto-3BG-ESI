@@ -10,7 +10,7 @@ namespace Proyecto.IniciosSeccion
         public FormRegistro()
         {
             InitializeComponent();
-            Traduction(new AplicationControler().getLanguage());
+            traduction(new AplicationControler().getLanguage());
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace Proyecto.IniciosSeccion
                 MessageBox.Show(ex.ToString());
             }
         }
-        private void Traduction(int l)
+        private void traduction(int l)
         {
             if (l == 0)
             {
@@ -65,25 +65,6 @@ namespace Proyecto.IniciosSeccion
                 lbPassword.Text = "Contraseña";
                 lbTitle.Text = "Registro";
             }
-        }
-        private void FormRegistro_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbMail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmailRegister_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbUsername_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -49,7 +49,14 @@ namespace CapDeDatos
             
         }
 
-        private void insertJudge()
+
+
+
+
+
+
+
+        void insertJudge()
         {
             try
             {
