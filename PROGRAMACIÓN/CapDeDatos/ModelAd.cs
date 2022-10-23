@@ -17,8 +17,7 @@ namespace CapDeDatos
 
         public void GetUserData(int id)
         {
-            this.command.CommandText = "SELECT * FROM AD WHERE id = @id";
-            this.command.Parameters.AddWithValue("@id", id);
+            this.command.CommandText = $"SELECT * FROM AD WHERE id = {id}";
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
@@ -38,14 +37,10 @@ namespace CapDeDatos
         private void Update()
         {
             this.command.CommandText = "UPDATE AD SET " +
-                "PATH = @PATH," +
-                "CAT = @CAT " +
-                "AD_NAME = @AD_NAME " +
-                 "WHERE id = @id";
-
-            this.command.Parameters.AddWithValue("@PATH", this.Path);
-            this.command.Parameters.AddWithValue("@CAT", this.Category);
-            this.command.Parameters.AddWithValue("@AD_NAME", this.Name);
+                $"PATH = '{this.Path}'," +
+                $"CAT = '{this.Category}'," +
+                $"NAME = '{this.Name}' " +
+                $"WHERE id = {Id}";          
             this.command.Prepare();
             this.command.ExecuteNonQuery();
         }
@@ -55,10 +50,7 @@ namespace CapDeDatos
             {
                 command.CommandText = "INSERT INTO " +
                    "AD (PATH,CAT,NAME) " +
-                   "VALUES (@PATH,@CAT,@NAME)";
-                this.command.Parameters.AddWithValue("@PATH", this.Path);
-                this.command.Parameters.AddWithValue("@CAT", this.Category);
-                this.command.Parameters.AddWithValue("@NAME", this.Name);
+                   $"VALUES ('{this.Path}','{this.Category}','{this.Category}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -69,15 +61,13 @@ namespace CapDeDatos
         }
         public void Delete(int Id)
         {
-            this.command.CommandText = "DELETE FROM AD WHERE id = @id";
-            this.command.Parameters.AddWithValue("@id", this.Id);
+            this.command.CommandText = $"DELETE FROM AD WHERE id = {this.Id}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
         }
         public int GetId(string Name)
         {
-            this.command.CommandText = "SELECT * FROM AD WHERE Name = @Name";
-            this.command.Parameters.AddWithValue("@Name", Name);
+            this.command.CommandText = $"SELECT * FROM AD WHERE Name = '{Name}'";
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
@@ -93,6 +83,45 @@ namespace CapDeDatos
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;
+        }
+
+        public bool ExistAd(string Name)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM AD WHERE NAME = '{Name}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string Check;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM AD WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Check = this.dataReader["PATH"].ToString();
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Check == "n") return true;
+            else return false;
         }
     }
 }

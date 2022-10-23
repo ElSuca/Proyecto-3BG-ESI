@@ -12,7 +12,6 @@ namespace CapDeDatos
         public string LastName2 { get; set; }
         public string Status { get; set; }
         public string BirthDate { get; set; }
-        public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
         public int IdAsociation { get; set; }
@@ -102,6 +101,9 @@ namespace CapDeDatos
         {
             try
             {
+                this.command.CommandText = $"Delete MANA_ASOC.* from MANA_ASOC where ID_MANA= {Id}";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
                 this.command.CommandText = $"Delete MANAGER.* from MANAGER where Id= {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
@@ -123,7 +125,6 @@ namespace CapDeDatos
             this.LastName2 = this.dataReader["LNAME2"].ToString();
             this.Status = this.dataReader["STATUS"].ToString();
             this.BirthDate = this.dataReader["BIRTHDATE"].ToString();
-            //this.City = this.dataReader["CITY"].ToString();
             this.State = this.dataReader["STATE"].ToString();
             this.Country = this.dataReader["COUNTRY"].ToString();
             this.dataReader.Close();
@@ -135,6 +136,44 @@ namespace CapDeDatos
             tabla.Load(command.ExecuteReader());
             conection.Close();
             return tabla;
+        }
+        public bool ExistManager(int id)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM MANAGER WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string Check;
+            try
+            {
+                this.command.CommandText = $"SELECT MANAGER.*,MANA_ASOC.ID_ASOC,MANA_ASOC.STARTDATE,MANA_ASOC.ENDDATE FROM MANAGER LEFT JOIN MANA_ASOC ON MANAGER.ID = MANA_ASOC.ID_MANA where MANAGER.ID = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Check = this.dataReader["STATE"].ToString();
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Check == "n") return true;
+            else return false;
         }
     }
 }

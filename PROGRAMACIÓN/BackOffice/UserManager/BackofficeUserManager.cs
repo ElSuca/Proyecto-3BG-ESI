@@ -36,7 +36,7 @@ namespace BackOffice
                     txtUserNameRegister.Text,
                     ComboBoxRole.Items[ComboBoxRole.SelectedIndex].ToString(),
                     MD5Hash.Hash.Content(txtPassword.Text),
-                    txtTelefonoRegister.Text,
+                    Int32.Parse(txtTelefonoRegister.Text),
                     txtCity.Text,
                     txtStreet.Text,
                     Int32.Parse(txtNum.Text),
@@ -52,7 +52,7 @@ namespace BackOffice
             }
             catch (Exception ex)
             {
-               MessageBox.Show("Hubo un problema inesperado");
+                MessageBox.Show("Hubo un problema inesperado");
             }
         }
 
@@ -87,7 +87,7 @@ namespace BackOffice
                     txtUserNameRegister.Text,
                     ComboBoxRole.Items[ComboBoxRole.SelectedIndex].ToString(),
                     MD5Hash.Hash.Content(txtPassword.Text),
-                    txtTelefonoRegister.Text,
+                    Int32.Parse(txtTelefonoRegister.Text),
                     txtCity.Text,
                     txtStreet.Text,
                     Int32.Parse(txtNum.Text),

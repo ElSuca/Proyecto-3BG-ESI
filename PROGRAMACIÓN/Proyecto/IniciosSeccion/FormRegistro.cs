@@ -23,7 +23,7 @@ namespace Proyecto.IniciosSeccion
                 txtUserNameRegister.Text,
                 "USER",
                 MD5Hash.Hash.Content(txtPassword.Text),
-                txtPhoneRegister.Text,
+                Int32.Parse(txtPhoneRegister.Text),
                 txtCityRegister.Text,
                 txtStreetRegister.Text,
                 Int32.Parse(txtStreetNumberRegister.Text),

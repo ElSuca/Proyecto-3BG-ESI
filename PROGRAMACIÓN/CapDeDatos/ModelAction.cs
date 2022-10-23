@@ -10,7 +10,7 @@ namespace CapDeDatos
 {
     public class ModelAction : Model
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public int IdTeam { get; set; }
         public int IdTime { get; set; }
         public int IdPlayer { get; set; }
@@ -32,7 +32,7 @@ namespace CapDeDatos
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
-            this.ID = Int32.Parse(this.dataReader["ID"].ToString());
+            this.Id = Int32.Parse(this.dataReader["ID"].ToString());
             this.IdTeam = Int32.Parse(this.dataReader["ID_TM"].ToString());
             this.IdTime = Int32.Parse(this.dataReader["ID_TI"].ToString());
             this.IdPlayer = Int32.Parse(this.dataReader["ID_PLYR"].ToString());
@@ -54,7 +54,7 @@ namespace CapDeDatos
         } 
         public void Save()
         {
-            if (this.ID.ToString() != "0") Update();
+            if (this.Id.ToString() != "0") Update();
             else
             {
                 Insert();
@@ -86,8 +86,8 @@ namespace CapDeDatos
                  $"TYPE = '{Type}'," +
                  $"CONTEXT = '{Context}'," +
                  $"CAT = '{Category}'," +
-                 $"Time = '{Time}'" +
-                 $"WHERE ID = {this.ID}";
+                 $"Time = '{Time}' " +
+                 $"WHERE ID = {this.Id}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
         }
@@ -95,7 +95,7 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"DELETE * FROM ACTION WHERE ID = {Id}";
+                this.command.CommandText = $"DELETE ACTION.* FROM ACTION WHERE ID = {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();   
             }
@@ -103,6 +103,62 @@ namespace CapDeDatos
             {
                 throw e;
             }
+        }
+
+        public int GetId(string Category)
+        {
+            try
+            {
+                this.command.CommandText = $"SELECT ID FROM ACTION WHERE CAT = '{Category}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["ID"].ToString());
+                this.dataReader.Close();
+                return Id;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public bool ExistAction(int id)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM ACTION WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string Type;
+            try
+            {
+                this.command.CommandText = $"SELECT* from ACTION where ID = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Type = this.dataReader["TYPE"].ToString();
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Type == "n") return true;
+            else return false;
         }
     }
 }

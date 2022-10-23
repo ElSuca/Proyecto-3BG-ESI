@@ -123,6 +123,8 @@
             this.lbActionId = new System.Windows.Forms.Label();
             this.txtActionId = new System.Windows.Forms.TextBox();
             this.btnActionMenu = new System.Windows.Forms.Button();
+            this.lbStageName = new System.Windows.Forms.Label();
+            this.txtStageName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelEventMenu.SuspendLayout();
             this.panelEventFamilyMenu.SuspendLayout();
@@ -262,6 +264,7 @@
             this.panelEventMenu.Size = new System.Drawing.Size(400, 435);
             this.panelEventMenu.TabIndex = 13;
             this.panelEventMenu.Visible = false;
+            this.panelEventMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEventMenu_Paint);
             // 
             // panelEventFamilyMenu
             // 
@@ -629,6 +632,8 @@
             // 
             // panelStageMenu
             // 
+            this.panelStageMenu.Controls.Add(this.lbStageName);
+            this.panelStageMenu.Controls.Add(this.txtStageName);
             this.panelStageMenu.Controls.Add(this.txtStageState);
             this.panelStageMenu.Controls.Add(this.lbStageState);
             this.panelStageMenu.Controls.Add(this.txtStageCountry);
@@ -643,7 +648,7 @@
             this.panelStageMenu.Controls.Add(this.txtStageId);
             this.panelStageMenu.Location = new System.Drawing.Point(20, 102);
             this.panelStageMenu.Name = "panelStageMenu";
-            this.panelStageMenu.Size = new System.Drawing.Size(293, 305);
+            this.panelStageMenu.Size = new System.Drawing.Size(293, 342);
             this.panelStageMenu.TabIndex = 33;
             this.panelStageMenu.Visible = false;
             // 
@@ -651,7 +656,7 @@
             // 
             this.txtStageState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtStageState.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageState.Location = new System.Drawing.Point(14, 276);
+            this.txtStageState.Location = new System.Drawing.Point(16, 305);
             this.txtStageState.Name = "txtStageState";
             this.txtStageState.Size = new System.Drawing.Size(253, 20);
             this.txtStageState.TabIndex = 32;
@@ -661,7 +666,7 @@
             this.lbStageState.AutoSize = true;
             this.lbStageState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStageState.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStageState.Location = new System.Drawing.Point(11, 253);
+            this.lbStageState.Location = new System.Drawing.Point(13, 283);
             this.lbStageState.Name = "lbStageState";
             this.lbStageState.Size = new System.Drawing.Size(53, 20);
             this.lbStageState.TabIndex = 31;
@@ -671,7 +676,7 @@
             // 
             this.txtStageCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtStageCountry.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageCountry.Location = new System.Drawing.Point(14, 230);
+            this.txtStageCountry.Location = new System.Drawing.Point(16, 260);
             this.txtStageCountry.Name = "txtStageCountry";
             this.txtStageCountry.Size = new System.Drawing.Size(253, 20);
             this.txtStageCountry.TabIndex = 30;
@@ -680,7 +685,7 @@
             // 
             this.txtStageNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtStageNum.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageNum.Location = new System.Drawing.Point(14, 184);
+            this.txtStageNum.Location = new System.Drawing.Point(16, 214);
             this.txtStageNum.Name = "txtStageNum";
             this.txtStageNum.Size = new System.Drawing.Size(253, 20);
             this.txtStageNum.TabIndex = 27;
@@ -690,7 +695,7 @@
             this.lbStageNum.AutoSize = true;
             this.lbStageNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStageNum.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStageNum.Location = new System.Drawing.Point(13, 162);
+            this.lbStageNum.Location = new System.Drawing.Point(15, 192);
             this.lbStageNum.Name = "lbStageNum";
             this.lbStageNum.Size = new System.Drawing.Size(45, 20);
             this.lbStageNum.TabIndex = 28;
@@ -701,7 +706,7 @@
             this.lbStageCountry.AutoSize = true;
             this.lbStageCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStageCountry.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStageCountry.Location = new System.Drawing.Point(13, 207);
+            this.lbStageCountry.Location = new System.Drawing.Point(15, 237);
             this.lbStageCountry.Name = "lbStageCountry";
             this.lbStageCountry.Size = new System.Drawing.Size(71, 20);
             this.lbStageCountry.TabIndex = 29;
@@ -712,7 +717,7 @@
             this.lbStageStreet.AutoSize = true;
             this.lbStageStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStageStreet.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStageStreet.Location = new System.Drawing.Point(12, 115);
+            this.lbStageStreet.Location = new System.Drawing.Point(14, 145);
             this.lbStageStreet.Name = "lbStageStreet";
             this.lbStageStreet.Size = new System.Drawing.Size(59, 20);
             this.lbStageStreet.TabIndex = 25;
@@ -722,7 +727,7 @@
             // 
             this.txtStageStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtStageStreet.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageStreet.Location = new System.Drawing.Point(14, 137);
+            this.txtStageStreet.Location = new System.Drawing.Point(16, 167);
             this.txtStageStreet.Name = "txtStageStreet";
             this.txtStageStreet.Size = new System.Drawing.Size(253, 20);
             this.txtStageStreet.TabIndex = 24;
@@ -732,7 +737,7 @@
             this.lbStageCity.AutoSize = true;
             this.lbStageCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStageCity.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStageCity.Location = new System.Drawing.Point(11, 69);
+            this.lbStageCity.Location = new System.Drawing.Point(13, 99);
             this.lbStageCity.Name = "lbStageCity";
             this.lbStageCity.Size = new System.Drawing.Size(39, 20);
             this.lbStageCity.TabIndex = 23;
@@ -742,7 +747,7 @@
             // 
             this.txtStageCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtStageCity.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageCity.Location = new System.Drawing.Point(14, 92);
+            this.txtStageCity.Location = new System.Drawing.Point(16, 122);
             this.txtStageCity.Name = "txtStageCity";
             this.txtStageCity.Size = new System.Drawing.Size(253, 20);
             this.txtStageCity.TabIndex = 22;
@@ -752,7 +757,7 @@
             this.lbStageId.AutoSize = true;
             this.lbStageId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStageId.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStageId.Location = new System.Drawing.Point(10, 13);
+            this.lbStageId.Location = new System.Drawing.Point(13, 13);
             this.lbStageId.Name = "lbStageId";
             this.lbStageId.Size = new System.Drawing.Size(28, 20);
             this.lbStageId.TabIndex = 20;
@@ -1417,6 +1422,26 @@
             this.btnActionMenu.UseVisualStyleBackColor = false;
             this.btnActionMenu.Click += new System.EventHandler(this.btnActionMenu_Click);
             // 
+            // lbStageName
+            // 
+            this.lbStageName.AutoSize = true;
+            this.lbStageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageName.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageName.Location = new System.Drawing.Point(11, 57);
+            this.lbStageName.Name = "lbStageName";
+            this.lbStageName.Size = new System.Drawing.Size(55, 20);
+            this.lbStageName.TabIndex = 34;
+            this.lbStageName.Text = "Name";
+            // 
+            // txtStageName
+            // 
+            this.txtStageName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageName.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageName.Location = new System.Drawing.Point(14, 80);
+            this.txtStageName.Name = "txtStageName";
+            this.txtStageName.Size = new System.Drawing.Size(253, 20);
+            this.txtStageName.TabIndex = 33;
+            // 
             // BackOficeResultManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1548,5 +1573,7 @@
         private System.Windows.Forms.ComboBox comboBoxActionDateDay;
         private System.Windows.Forms.MaskedTextBox txtActionDateYear;
         private System.Windows.Forms.Label lbActionDate;
+        private System.Windows.Forms.Label lbStageName;
+        private System.Windows.Forms.TextBox txtStageName;
     }
 }

@@ -9,7 +9,7 @@ namespace CapaLogica
     public class UserControler
     {
         #region FuncionesBasicas  
-        public static void Alta(string name,string lastName1,string lastName2,string email,string username,string role,string password,string phoneNumber,string city,string street,int num,string state,string country)
+        public static void Alta(string name,string lastName1,string lastName2,string email,string username,string role,string password,int phoneNumber,string city,string street,int num,string state,string country)
         {
             ModelUser p = new ModelUser
             {
@@ -30,7 +30,7 @@ namespace CapaLogica
             p.Save();
         }
 
-        public static void Modificar(int id, string name, string lastName1, string lastName2, string email, string username, string role, string password, string phoneNumber, string city, string street, int num, string state, string country)
+        public static void Modificar(int id, string name, string lastName1, string lastName2, string email, string username, string role, string password, int phoneNumber, string city, string street, int num, string state, string country)
         {
             ModelUser p = new ModelUser(id)
             {
@@ -54,17 +54,14 @@ namespace CapaLogica
         #endregion
         #region GetUserData
         public static List<ModelUser> GetUserData(int id) => new ModelUser(id).GetUserData();
-        public List<ModelUser> GetUserData(string Username) => new ModelUser().GetUserData(Username);
+       
+        public bool ExistUser(string Username) => new ModelUser().ExistUser(Username);
+        public bool HaveChange(string Username) => new ModelUser().HaveChange(Username);
         #endregion
         #region GetId
         public void GetId(int id) => new ModelUser(id).GetId(id);
         public int GetId(string Name) => new ModelUser().GetId(Name);
         #endregion
-        public static DataTable ObtenerTodos()
-        {
-            List<ModelUser> personitas = new ModelUser().GetUserData();
-            return new DataTable();
-        }
         public static bool Autenticar(string nombre, string password)
         {
             ModelUser u = new ModelUser();

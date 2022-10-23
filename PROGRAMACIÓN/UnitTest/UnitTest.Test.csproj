@@ -49,7 +49,17 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackofficePlayerTest.cs" />
+    <Compile Include="BackOfficActionTest.cs" />
+    <Compile Include="BackOfficeAdTest.cs" />
+    <Compile Include="BackOfficeAsociationTest.cs" />
+    <Compile Include="BackOfficeEventTest.cs" />
+    <Compile Include="BackOfficeFamilyTest.cs" />
+    <Compile Include="BackOfficeJudgeTest.cs" />
+    <Compile Include="BackOfficeManagerTest.cs" />
+    <Compile Include="BackOfficePlayerTest.cs" />
+    <Compile Include="BackOfficeSportTest.cs" />
+    <Compile Include="BackOfficeStageTest.cs" />
+    <Compile Include="BackOfficeTeamsTest.cs" />
     <Compile Include="BackOfficeUserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

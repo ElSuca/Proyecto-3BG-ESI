@@ -56,5 +56,19 @@ namespace CapaLoogica
             };
             e.SaveParents();
         }
+        public static void AltaTime(int EventId, int num, string Description)
+        {
+            ModelEvents e = new ModelEvents
+            {
+                ID = EventId,
+                TimeNumber = num,
+                TimeDescription = Description
+            };
+            e.InsertTime();
+        }
+        public bool ExistEvent(string name) => new ModelEvents().ExistEvent(name);
+        public int GetId(string Name) => new ModelEvents().GetId(Name);
+        public int GetIdTime(int num) => new ModelEvents().GetIdTime(num);
+        public bool HaveChange(int id) => new ModelEvents().HaveChange(id);
     }
 }

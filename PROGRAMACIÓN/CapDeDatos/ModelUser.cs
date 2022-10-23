@@ -12,7 +12,7 @@ namespace CapaDeDatos
         public string Name { get; set; }
         public string LastName { get; set; }
         public string LastName2 { get; set; }
-        public string PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string UserRole { get; set; }
@@ -43,7 +43,7 @@ namespace CapaDeDatos
             this.Email = this.dataReader["Email"].ToString();
             this.Password = this.dataReader["PASS"].ToString();
             this.UserRole = this.dataReader["ROLE"].ToString();
-            this.PhoneNumber = this.dataReader["NUM"].ToString();
+            this.PhoneNumber = Int32.Parse(this.dataReader["NUM"].ToString());
             this.dataReader.Close();
         }
         public void GetId(int UserName)
@@ -94,7 +94,7 @@ namespace CapaDeDatos
                         Id = Int32.Parse(dataReader["Id"].ToString()),
                         Name = dataReader["Nombre"].ToString(),
                         LastName = dataReader["Apellido"].ToString(),
-                        PhoneNumber = dataReader["Telefono"].ToString(),
+                        PhoneNumber = Int32.Parse(dataReader["Telefono"].ToString()),
                         Email = dataReader["Email"].ToString(),
                         Password = dataReader["password"].ToString()
                     };
@@ -108,39 +108,50 @@ namespace CapaDeDatos
                 throw e;
             }
         }
-        public List<ModelUser> GetUserData(string Username)
+        public bool ExistUser(string Username)
         {
-            List<ModelUser> users = new List<ModelUser>();
+            bool exist;
             try
             {
-                this.command.CommandText = "SELECT * FROM USER WHERE Nombre = @Nombre";
+                this.command.CommandText = $"SELECT * FROM USER WHERE UNAME = '{Username}'";
+                this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
-                while (this.dataReader.Read())
-                {
-                    ModelUser p = new ModelUser
-                    {
-                        Id = Int32.Parse(dataReader["id"].ToString()),
-                        UserName = dataReader["username"].ToString(),
-                        Name = dataReader["nombre"].ToString(),
-                        LastName = dataReader["apellido"].ToString(),
-                        LastName2 = dataReader["apellido2"].ToString(),
-                        Email = dataReader["Email"].ToString(),
-                        Password = dataReader["password"].ToString()
-                    };
-                    users.Add(p);
-                }
-                return users;
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
             }
-            catch (Exception e)
+            catch(Exception ex)
             {
-                throw e;
+                throw new Exception(ex.ToString());
             }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(string Username)
+        {
+            string Name;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM USER WHERE UNAME = '{Username}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Name = this.dataReader["NAME"].ToString();
+                this.dataReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Name == "n") return true;
+            else return false;
         }
         public string GetUserDataLogging(string Nombre, string type)
         {
             try
             {
-                this.command.CommandText = "SELECT * FROM USER WHERE username = @username";
+                this.command.CommandText = "SELECT * FROM USER WHERE UNAME = @username";
                 this.command.Parameters.AddWithValue("@Nombre", Nombre);
                 this.command.Prepare();
                 this.dataReader = this.command.ExecuteReader();
@@ -171,17 +182,24 @@ namespace CapaDeDatos
         }
         private void Insert()
         {
-            command.CommandText = "INSERT INTO " +
-               "USER (NAME,LNAME1,LNAME2,EMAIL,UNAME,PASS,ROLE,CITY,STREET,NUM,STATE,COUNTRY) " +
-               $"VALUES ('{Name}','{LastName}','{LastName2}','{Email}','{UserName}','{Password}','{UserRole}','{City}','{Street}',{Num},'{State}','{Country}')";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();       
+            try
+            {
+                command.CommandText = "INSERT INTO " +
+                   "USER (NAME,LNAME1,LNAME2,EMAIL,UNAME,PASS,ROLE,CITY,STREET,NUM,STATE,COUNTRY) " +
+                   $"VALUES ('{Name}','{LastName}','{LastName2}','{Email}','{UserName}','{Password}','{UserRole}','{City}','{Street}',{Num},'{State}','{Country}')";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
         }
         private void InsertPhone()
         {
             commanditou.CommandText = "INSERT INTO " +
                "PHONES (id_user,num) " +
-               $"VALUES ({GetId(UserName)},'{this.PhoneNumber}')";
+               $"VALUES ({GetId(UserName)},{this.PhoneNumber})";
             this.commanditou.Prepare();
             this.commanditou.ExecuteNonQuery();
         }
@@ -259,14 +277,14 @@ namespace CapaDeDatos
                 this.Email = this.dataReader["Email"].ToString();
                 this.Password = this.dataReader["PASS"].ToString();
                 this.UserRole = this.dataReader["ROLE"].ToString();
-                this.PhoneNumber = this.dataReader["Num"].ToString();
+                this.PhoneNumber = Int32.Parse(this.dataReader["Num"].ToString());
                 this.City = this.dataReader["CITY"].ToString();
                 this.Street = this.dataReader["STREET"].ToString();
                 this.Num = Int32.Parse(this.dataReader["NUM"].ToString());
                 this.State = this.dataReader["STATE"].ToString();
                 this.Country = this.dataReader["COUNTRY"].ToString();
                 conection.Close();
-                SetAllStaticUserData(UserName, Name, LastName, LastName2, Email, Int32.Parse(PhoneNumber), Password, UserRole,City,Street,Num,State,Country);
+                SetAllStaticUserData(UserName, Name, LastName, LastName2, Email, PhoneNumber, Password, UserRole,City,Street,Num,State,Country);
             }
             catch(Exception ex)
             {

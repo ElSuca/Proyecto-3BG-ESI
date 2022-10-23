@@ -36,6 +36,8 @@ namespace CapDeDatos
 
         }
 
+        
+
         private void insert()
         {
             try
@@ -119,6 +121,63 @@ namespace CapDeDatos
             catch (Exception e)
             {
                 throw e;
+            }
+        }
+
+        public bool ExistPlayer(int id)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM PLAYER WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string Name;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM PLAYER WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Name = this.dataReader["LNAME1"].ToString();
+                this.dataReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Name == "n") return true;
+            else return false;
+        }
+        public int GetId(string Username)
+        {
+            try
+            {
+                this.command.CommandText = $"SELECT ID FROM PLAYER WHERE NAME = '{Username}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["id"].ToString());
+                this.dataReader.Close();
+                return Id;
+            }
+            catch (Exception ex)
+            {
+                return 0;
             }
         }
     }

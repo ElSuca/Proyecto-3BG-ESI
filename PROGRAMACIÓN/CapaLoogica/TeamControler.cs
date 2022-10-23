@@ -1,10 +1,5 @@
 ﻿using CapDeDatos;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaLoogica
 {
@@ -34,5 +29,8 @@ namespace CapaLoogica
             };
             p.Save();
         }
+        public bool ExistTeam(int id) => new ModelTeam().ExistTeam(id);
+        public int GetId(string Name) => new ModelTeam().GetId(Name);
+        public bool HaveChange(int id) => new ModelTeam().HaveChange(id);
     }
 }

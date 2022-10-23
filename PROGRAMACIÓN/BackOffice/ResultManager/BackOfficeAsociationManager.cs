@@ -44,7 +44,6 @@ namespace BackOffice.ResultManager
                     txtManagerLastName1.Text,
                     txtManagerLastName2.Text,
                     txtManagerStatus.Text, date,
-                    txtManagerCity.Text,
                     TxtManagerState.Text,
                     txtManagerCountry.Text,
                     Int32.Parse(txtIdAsociation.Text),
@@ -68,7 +67,8 @@ namespace BackOffice.ResultManager
                    $"{comboBoxAsociationEndDateMoth.Items[comboBoxAsociationEndDateMoth.SelectedIndex].ToString()}/" +
                    $"{txtAsociationEndDateYear.Text}";
 
-                AsociationControler.Alta(txtAsociationName.Text,
+                AsociationControler.Alta(
+                    txtAsociationName.Text,
                     txtAsociationStatus.Text,
                     txtAsociationCity.Text,
                     txtAsociationStreet.Text,
@@ -117,7 +117,7 @@ namespace BackOffice.ResultManager
                 string date = $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}/" +
                     $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}/" +
                     $"{txtBirthdateYear.Text}";
-                ManagerControler.Modificar(Int32.Parse(txtManagerID.Text), txtManagerName.Text, txtManagerLastName1.Text, txtManagerLastName2.Text, txtManagerStatus.Text, date, txtManagerCity.Text, TxtManagerState.Text, txtManagerCountry.Text);
+                ManagerControler.Modificar(Int32.Parse(txtManagerID.Text), txtManagerName.Text, txtManagerLastName1.Text, txtManagerLastName2.Text, txtManagerStatus.Text, date, TxtManagerState.Text, txtManagerCountry.Text);
                 MessageBox.Show($"Jugador {txtManagerID.Text} cargado");
             }
             else if (panelFamilyMenu.Visible)
@@ -127,6 +127,14 @@ namespace BackOffice.ResultManager
             }
             else if (panelAsociationMenu.Visible)
             {
+                string StartDate = $"{comboBoxAsociationStartDateDay.Items[comboBoxAsociationStartDateDay.SelectedIndex].ToString()}/" +
+                 $"{comboBoxAsociationStartDateMoth.Items[comboBoxAsociationStartDateMoth.SelectedIndex].ToString()}/" +
+                 $"{txtStartAsociationDateYear.Text}";
+
+                string EndDate = $"{comboBoxAsociationEndDateDay.Items[comboBoxAsociationEndDateDay.SelectedIndex].ToString()}/" +
+                   $"{comboBoxAsociationEndDateMoth.Items[comboBoxAsociationEndDateMoth.SelectedIndex].ToString()}/" +
+                   $"{txtAsociationEndDateYear.Text}";
+
                 AsociationControler.Modificar(Int32.Parse(txtAsociationId.Text),
                     txtAsociationName.Text,
                     txtAsociationStatus.Text,
@@ -134,7 +142,13 @@ namespace BackOffice.ResultManager
                     txtAsociationStreet.Text,
                     Int32.Parse(txtAsociationNumber.Text),
                     txtAsociationState.Text,
-                    txtAsociationCountry.Text);
+                    txtAsociationCountry.Text,
+                    StartDate,
+                    EndDate,
+                    Int32.Parse(txtAsociationSportID.Text),
+                    txtAsociationCategory.Text,
+                    Int32.Parse(txtAsociationQuantity.Text)
+                    );
                 MessageBox.Show($"Asociacion {txtAsociationId.Text} cargada");
             }
             reloadList();

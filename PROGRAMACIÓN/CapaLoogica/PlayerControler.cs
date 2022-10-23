@@ -51,5 +51,8 @@ namespace CapaLoogica
             };
             e.insertAsociation();
         }
+        public bool ExistPlayer(int id) => new ModelPlayer().ExistPlayer(id);
+        public int GetId(string Name) => new ModelPlayer().GetId(Name);
+        public bool HaveChange(int id) => new ModelPlayer().HaveChange(id);
     }
 }

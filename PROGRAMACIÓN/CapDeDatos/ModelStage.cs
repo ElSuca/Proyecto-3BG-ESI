@@ -7,6 +7,7 @@ namespace CapDeDatos
     public class ModelStage : Model
     {
         public int ID;
+        public string Name;
         public string City;
         public string Street;
         public int Num;
@@ -26,6 +27,7 @@ namespace CapDeDatos
             this.dataReader = this.command.ExecuteReader();
             this.dataReader.Read();
             this.ID = int.Parse(this.dataReader["ID"].ToString());
+            this.Name = this.dataReader["NAME"].ToString();
             this.City = this.dataReader["CITY"].ToString();
             this.Country = this.dataReader["COUNTRY"].ToString();
             this.Street = this.dataReader["STREET"].ToString();
@@ -56,8 +58,8 @@ namespace CapDeDatos
             try
             {
                 command.CommandText = "INSERT INTO " +
-                  "STAGE(CITY,STREET,NUM,STATE,COUNTRY) " +
-                  $"VALUES ('{City}','{Street}',{Num},'{State}','{Country}')";
+                  "STAGE(NAME,CITY,STREET,NUM,STATE,COUNTRY) " +
+                  $"VALUES ('{Name}','{City}','{Street}',{Num},'{State}','{Country}')";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
@@ -69,6 +71,7 @@ namespace CapDeDatos
         private void Update()
         {
             this.command.CommandText = "UPDATE STAGE SET " +
+                 $"NAME = '{Name}',"+
                  $"CITY = '{City}'," +
                  $"STREET = '{Street}'," +
                  $"NUM = {Num}," +
@@ -77,20 +80,74 @@ namespace CapDeDatos
                  $"WHERE ID = {this.ID}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
-
-
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"DELETE Stage.* FROM Stage WHERE ID = {Id}";
+                this.command.CommandText = $"DELETE * FROM STAGE WHERE ID = {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
                 throw e;
+            }
+        }
+        public bool ExistStage(int id)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM STAGE WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string Check;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM STAGE WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Check = this.dataReader["CITY"].ToString();
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Check == "n") return true;
+            else return false;
+        }
+        public int GetId(string Username)
+        {
+            int Id;
+            try
+            {
+                this.command.CommandText = $"SELECT ID FROM STAGE WHERE NAME = '{Username}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Id = int.Parse(this.dataReader["id"].ToString());
+                this.dataReader.Close();
+                return Id;
+            }
+            catch (Exception ex)
+            {
+                return 0;
             }
         }
     }

@@ -285,6 +285,44 @@ namespace CapDeDatos
                 return 0;
             }
         }
+        public bool ExistSport(int id)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM SPORT WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string Type;
+            try
+            {
+                this.command.CommandText = $"SELECT SPORT.*,T_SPO.TYPE FROM SPORT LEFT JOIN T_SPO on SPORT.ID = T_SPO.ID_SP where SPORT.ID = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Type = this.dataReader["TYPE"].ToString();
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Type == "n") return true;
+            else return false;
+        }    
     }
 }
 

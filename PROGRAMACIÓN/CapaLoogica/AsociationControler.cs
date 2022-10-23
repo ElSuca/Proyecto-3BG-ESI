@@ -29,7 +29,7 @@ namespace CapaLoogica
             };
             e.Save();
         }
-        public static void Modificar(int id, string name, string status, string city, string street, int num, string state, string country)
+        public static void Modificar(int id, string name, string status, string city, string street, int num, string state, string country, string startDate, string endDate, int sport, string category, int quantity)
         {
             ModelAsociation e = new ModelAsociation(id)
             {
@@ -39,10 +39,18 @@ namespace CapaLoogica
                 Street = street,
                 Num = num,
                 State = state,
-                Country = country
+                Country = country,
+                StartDate = startDate,
+                EndDate = endDate,
+                Sport = sport,
+                Category = category,
+                Quantity = quantity
             };
             e.Save();
         }
         public static void Eliminar(int id) => new ModelAsociation(id).Delete(id);
+        public bool ExistAsociation(int id) => new ModelAsociation().ExistAsociation(id);
+        public int GetId(string Name) => new ModelAsociation().GetId(Name);
+        public bool HaveChange(int id) => new ModelAsociation().HaveChange(id);
     }
 }

@@ -41,6 +41,10 @@ namespace CapaLoogica
             e.Save();
         }
         public static void Eliminar(int id) => new ModelAction(id).Delete(id);
+
+        public bool ExistAction(int id) => new ModelAction().ExistAction(id);
+        public int GetId(string Name) => new ModelAction().GetId(Name);
+        public bool HaveChange(int id) => new ModelAction().HaveChange(id);
     }
 }
 

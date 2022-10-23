@@ -34,5 +34,9 @@ namespace CapaLoogica
         public static void setStartPath(string path) => SafeSystemBuffer.startPath = path;
         public static string GetStartPath() => SafeSystemBuffer.startPath;
         public DataTable GetAdDataTable() => new ModelAd().GetAdDataTable();
+
+        public bool ExistAd(string name) => new ModelAd().ExistAd(name);
+        public int GetId(string Name) => new ModelAd().GetId(Name);
+        public bool HaveChange(int id) => new ModelAd().HaveChange(id);
     }
 }

@@ -103,10 +103,10 @@ namespace CapDeDatos
                  $"NAME = '{Name}'," +
                  $"STATUS = '{Status}'," +
                  $"CITY = '{City}'," +
-                 $"STREET = '{Street}' ," +
-                 $"NUM = {Num}" +
-                 $"STATE = '{State}'" +
-                 $"COUNTRY = '{Country}'," +
+                 $"STREET = '{Street}'," +
+                 $"NUM = {Num}," +
+                 $"STATE = '{State}'," +
+                 $"COUNTRY = '{Country}' " +
                  $"WHERE ID = {this.Id}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
@@ -116,6 +116,9 @@ namespace CapDeDatos
         {
             try
             {
+                this.command.CommandText = $"Delete ASOC_STATUS.* from ASOC_STATUS where ID_ASOC = {Id}";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
                 this.command.CommandText = $"Delete ASOC.* from ASOC where Id= {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
@@ -125,6 +128,7 @@ namespace CapDeDatos
                 throw e;
             }
         }
+
         public int GetId(string name)
         {
             try
@@ -142,7 +146,44 @@ namespace CapDeDatos
                 return 0;
             }
         }
-
+        public bool ExistAsociation(int id)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM ASOC WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string Check;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM ASOC WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Check = this.dataReader["City"].ToString();
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Check == "n") return true;
+            else return false;
+        } 
     }
 }
 

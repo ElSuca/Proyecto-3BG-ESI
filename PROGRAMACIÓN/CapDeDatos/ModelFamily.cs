@@ -52,7 +52,7 @@ namespace CapDeDatos
                  $"NAME = '{Name}'," +
                  $"RECURRENCY = '{Recurrency}'," +
                  $"DOMAIN = '{Domain}'," +
-                 $"Type = '{Type}'," +
+                 $"Type = '{Type}' " +
                  $"WHERE ID = {this.Id}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
@@ -62,7 +62,7 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"Delete PRE_FAMILY.* from FAMILY where ID_CHILD = {Id}";
+                this.command.CommandText = $"Delete PRE_FAMILY.* from PRE_FAMILY where ID_CHILD = {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
                 this.command.CommandText = $"Delete FAMILY.* from FAMILY where Id= {Id}";
@@ -95,7 +95,6 @@ namespace CapDeDatos
             conection.Close();
             return tabla;
         }
-
 
         private void InsertParents()
         {
@@ -137,6 +136,62 @@ namespace CapDeDatos
             }
         }
 
+        public bool ExistFamily(string name)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM FAMILY WHERE NAME = '{name}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string Check;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM FAMILY WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Check = this.dataReader["TYPE"].ToString();
+                this.dataReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Check == "n") return true;
+            else return false;
+        }
+        public int GetId(string Name)
+        {
+            try
+            {
+                this.command.CommandText = $"SELECT ID FROM FAMILY WHERE NAME = '{Name}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["ID"].ToString());
+                this.dataReader.Close();
+                return Id;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
     }
 }
 

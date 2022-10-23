@@ -57,7 +57,7 @@ namespace BackOffice.ResultManager
             }
             else if (panelStageMenu.Visible)
             {
-                StageControler.Alta(txtStageCity.Text,txtStageStreet.Text,Int32.Parse(txtStageNum.Text), txtStageState.Text,txtStageCountry.Text);
+                StageControler.Alta(txtStageName.Text,txtStageCity.Text,txtStageStreet.Text,Int32.Parse(txtStageNum.Text), txtStageState.Text,txtStageCountry.Text);
                 MessageBox.Show("Estadio cargado");
             }
             else if (panelActionMenu.Visible)
@@ -111,7 +111,7 @@ namespace BackOffice.ResultManager
             }
             else if (panelStageMenu.Visible)
             {
-                StageControler.Modificar(Int32.Parse(txtStageId.Text),txtStageCity.Text, txtStageStreet.Text, Int32.Parse(txtStageNum.Text), txtStageState.Text, txtStageCountry.Text);
+                StageControler.Modificar(Int32.Parse(txtStageId.Text),txtStageName.Text,txtStageCity.Text, txtStageStreet.Text, Int32.Parse(txtStageNum.Text), txtStageState.Text, txtStageCountry.Text);
                 MessageBox.Show("Estadio" + txtStageId.Text + "modificado");
             }
             else if (panelActionMenu.Visible)
@@ -171,6 +171,11 @@ namespace BackOffice.ResultManager
         }
 
         private void lbIdTeam_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelEventMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }

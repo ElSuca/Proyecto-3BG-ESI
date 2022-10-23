@@ -51,5 +51,10 @@ namespace CapaLoogica
             e.Save();
         }
         public static void Eliminar(int id) => new ModelFamily(id).Delete(id);
+
+
+        public bool ExistFamilty(string name) => new ModelFamily().ExistFamily(name);
+        public int GetId(string Name) => new ModelFamily().GetId(Name);
+        public bool HaveChange(int id) => new ModelFamily().HaveChange(id);
     }
 }

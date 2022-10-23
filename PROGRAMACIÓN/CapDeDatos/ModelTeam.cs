@@ -90,5 +90,62 @@ namespace CapDeDatos
             conection.Close();
             return tabla;
         }
+
+        public bool ExistTeam(int id)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM TEAM WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string City;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM TEAM WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                City = this.dataReader["CITY"].ToString();
+                this.dataReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (City == "n") return true;
+            else return false;
+        }
+        public int GetId(string Name)
+        {
+            try
+            {
+                this.command.CommandText = $"SELECT ID FROM TEAM WHERE NAME = '{Name}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.Id = int.Parse(this.dataReader["id"].ToString());
+                this.dataReader.Close();
+                return Id;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
     }
 }

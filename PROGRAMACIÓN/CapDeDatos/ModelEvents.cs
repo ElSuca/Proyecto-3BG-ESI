@@ -114,7 +114,7 @@ namespace CapDeDatos
                 throw e;
             }
         }
-        private void InsertTime()
+        public void InsertTime()
         {
             try
             {
@@ -135,7 +135,7 @@ namespace CapDeDatos
                  $"NAME = '{Name}'," +
                  $"STARTDATE = '{StartDate}'," +
                  $"ENDDATE = '{EndDate}'," +
-                 $"STAGE = {StageId}" +
+                 $"STAGE = {StageId} " +
                  $"WHERE ID = {this.ID}";
             this.command.Prepare();
             this.command.ExecuteNonQuery();
@@ -161,6 +161,9 @@ namespace CapDeDatos
         {
             try
             {
+                this.command.CommandText = $"DELETE PRE_EVENT.* FROM PRE_EVENT WHERE ID_PARENT = {Id}";
+                this.command.Prepare();
+                this.command.ExecuteNonQuery();
                 this.command.CommandText = $"DELETE TIME.* FROM TIME WHERE ID_EVENT = {Id}";
                 this.command.Prepare();
                 this.command.ExecuteNonQuery();
@@ -199,5 +202,61 @@ namespace CapDeDatos
             t.Columns[10].ColumnName = "Description";
             return t;
         }
+        public int GetIdTime(int num)
+        {
+            try
+            {
+                this.command.CommandText = $"SELECT ID FROM TIME WHERE num = '{num}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                this.ID = int.Parse(this.dataReader["id"].ToString());
+                this.dataReader.Close();
+                return ID;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public bool ExistEvent(string name)
+        {
+            bool exist;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM EVENT WHERE NAME = '{name}'";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                exist = this.dataReader.HasRows;
+                this.dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (exist) return true;
+            else return false;
+        }
+        public bool HaveChange(int id)
+        {
+            string Check;
+            try
+            {
+                this.command.CommandText = $"SELECT * FROM EVENT WHERE Id = {id}";
+                this.command.Prepare();
+                this.dataReader = this.command.ExecuteReader();
+                this.dataReader.Read();
+                Check = this.dataReader["STARTDATE"].ToString();
+                this.dataReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            if (Check == "27/10/2022 0:00:00") return true;
+            else return false;
+        }    
     }
 }

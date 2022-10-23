@@ -40,5 +40,8 @@ namespace CapaLoogica
         }
         public static void Eliminar(int id) => new ModelJudge(id).Delete(id);
 
+        public bool ExistJudge(string name) => new ModelJudge().ExistJudge(name);
+        public int GetId(string Name) => new ModelJudge().GetId(Name);
+        public bool HaveChange(int id) => new ModelJudge().HaveChange(id);
     }
 }
