@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using CapaDeDatos;
-using MySql.Data.MySqlClient;
 
 namespace CapaLogica
 {
@@ -52,14 +49,9 @@ namespace CapaLogica
         }
         public static void Eliminar(int id) => new ModelUser(id).Delete(id);
         #endregion
-        #region GetUserData
-        public static List<ModelUser> GetUserData(int id) => new ModelUser(id).GetUserData();
-       
         public bool ExistUser(string Username) => new ModelUser().ExistUser(Username);
         public bool HaveChange(string Username) => new ModelUser().HaveChange(Username);
-        #endregion
         #region GetId
-        public void GetId(int id) => new ModelUser(id).GetId(id);
         public int GetId(string Name) => new ModelUser().GetId(Name);
         #endregion
         public static bool Autenticar(string nombre, string password)
@@ -129,9 +121,6 @@ namespace CapaLogica
 
         public string GetStaticCountry => new ModelUser().GetCountryBuffer();
         #endregion
-
-
-
     }
 }
 

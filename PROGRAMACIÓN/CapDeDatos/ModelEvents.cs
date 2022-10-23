@@ -25,47 +25,69 @@ namespace CapDeDatos
 
         public void GetEventData(int id)
         {
-            this.command.CommandText = $"Select EVENT.* FROM EVENT WHERE ID={id}";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.ID = int.Parse(this.dataReader["ID"].ToString());
-            this.Name = this.dataReader["NAME"].ToString();
-            this.StartDate = this.dataReader["STARTDATE"].ToString();
-            this.EndDate = this.dataReader["ENDDATE"].ToString();
-            this.StageId = Int32.Parse(this.dataReader["STAGE"].ToString());
-            this.dataReader.Close();
+            try
+            {
+                this.Command.CommandText = $"Select EVENT.* FROM EVENT WHERE ID={id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.ID = int.Parse(this.DataReader["ID"].ToString());
+                this.Name = this.DataReader["NAME"].ToString();
+                this.StartDate = this.DataReader["STARTDATE"].ToString();
+                this.EndDate = this.DataReader["ENDDATE"].ToString();
+                this.StageId = Int32.Parse(this.DataReader["STAGE"].ToString());
+                this.DataReader.Close();
+            }
+            catch(Exception e)
+            {
+
+            }
         }
         public DataTable GetEventDataTable()
         {
-            DataTable tabla = new DataTable();
+            try
+            {
+                DataTable tabla = new DataTable();
 
-            command.CommandText = "SELECT EVENT.*," +
-                "TIME.ID,TIME.NUM," +
-                "TIME.DESCR " +
-                "FROM EVENT JOIN TIME " +
-                "on EVENT.ID = TIME.ID_EVENT";
-            tabla.Load(command.ExecuteReader());
-            conection.Close();
-            RenameTableEvent(tabla);
-            return tabla;
+                Command.CommandText = "SELECT EVENT.*," +
+                    "TIME.ID,TIME.NUM," +
+                    "TIME.DESCR " +
+                    "FROM EVENT JOIN TIME " +
+                    "on EVENT.ID = TIME.ID_EVENT";
+                tabla.Load(Command.ExecuteReader());
+                Conection.Close();
+                RenameTableEvent(tabla);
+                return tabla;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
         }
         public DataTable GetEventDataTableWithFamily()
         {
-            DataTable tabla = new DataTable();
-           
-            command.CommandText = "SELECT EVENT.*," +
-                "PRE_EVENT.ID_CHILD," +
-                " PRE_EVENT.TYPE," +
-                "PRE_EVENT.INFO," +
-                "TIME.ID,TIME.NUM," +
-                "TIME.DESCR " +
-                "FROM EVENT JOIN PRE_EVENT JOIN TIME " +
-                "on PRE_EVENT.ID_PARENT = EVENT.ID and EVENT.ID = TIME.ID_EVENT"; 
-            tabla.Load(command.ExecuteReader());
-            conection.Close();
-            RenameTableEventFamily(tabla);
-            return tabla;
+            try
+            {
+                DataTable tabla = new DataTable();
+
+                Command.CommandText = "SELECT EVENT.*," +
+                    "PRE_EVENT.ID_CHILD," +
+                    " PRE_EVENT.TYPE," +
+                    "PRE_EVENT.INFO," +
+                    "TIME.ID,TIME.NUM," +
+                    "TIME.DESCR " +
+                    "FROM EVENT JOIN PRE_EVENT JOIN TIME " +
+                    "on PRE_EVENT.ID_PARENT = EVENT.ID and EVENT.ID = TIME.ID_EVENT";
+                tabla.Load(Command.ExecuteReader());
+                Conection.Close();
+                RenameTableEventFamily(tabla);
+
+                return tabla;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
         }
 
         public void Save()
@@ -88,11 +110,11 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT INTO " +
+                Command.CommandText = "INSERT INTO " +
                    "EVENT (NAME,STARTDATE,ENDDATE,STAGE) " +
                    $"VALUES ('{Name}','{StartDate}','{EndDate}',{StageId})";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -103,11 +125,11 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT INTO " +
+                Command.CommandText = "INSERT INTO " +
                    "PRE_EVENT (ID_CHILD,ID_PARENT ,TYPE ,INFO ) " +
                    $"VALUES ({GetId(Name)},{ParentId},'{Type}','{Info}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -118,11 +140,11 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT INTO " +
+                Command.CommandText = "INSERT INTO " +
                    "TIME (ID_EVENT,NUM,DESCR) " +
                    $"VALUES ('{GetId(Name)}',{TimeNumber},'{TimeDescription}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -131,25 +153,32 @@ namespace CapDeDatos
         }
         private void Update()
         {
-            this.command.CommandText = "UPDATE EVENT SET " +
-                 $"NAME = '{Name}'," +
-                 $"STARTDATE = '{StartDate}'," +
-                 $"ENDDATE = '{EndDate}'," +
-                 $"STAGE = {StageId} " +
-                 $"WHERE ID = {this.ID}";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            try
+            {
+                this.Command.CommandText = "UPDATE EVENT SET " +
+                     $"NAME = '{Name}'," +
+                     $"STARTDATE = '{StartDate}'," +
+                     $"ENDDATE = '{EndDate}'," +
+                     $"STAGE = {StageId} " +
+                     $"WHERE ID = {this.ID}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
+
+            }
         }
         public int GetId(string Name)
         {
             try
             {
-                this.command.CommandText = $"SELECT ID FROM EVENT WHERE NAME = '{Name}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                this.ID = int.Parse(this.dataReader["id"].ToString());
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT ID FROM EVENT WHERE NAME = '{Name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.ID = int.Parse(this.DataReader["id"].ToString());
+                this.DataReader.Close();
                 return ID;
             }
             catch (Exception ex)
@@ -161,15 +190,15 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"DELETE PRE_EVENT.* FROM PRE_EVENT WHERE ID_PARENT = {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
-                this.command.CommandText = $"DELETE TIME.* FROM TIME WHERE ID_EVENT = {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
-                this.command.CommandText = $"DELETE EVENT.* FROM EVENT WHERE ID = {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.CommandText = $"DELETE PRE_EVENT.* FROM PRE_EVENT WHERE ID_PARENT = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+                this.Command.CommandText = $"DELETE TIME.* FROM TIME WHERE ID_EVENT = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+                this.Command.CommandText = $"DELETE EVENT.* FROM EVENT WHERE ID = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -206,12 +235,12 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"SELECT ID FROM TIME WHERE num = '{num}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                this.ID = int.Parse(this.dataReader["id"].ToString());
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT ID FROM TIME WHERE num = '{num}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.ID = int.Parse(this.DataReader["id"].ToString());
+                this.DataReader.Close();
                 return ID;
             }
             catch (Exception ex)
@@ -224,12 +253,12 @@ namespace CapDeDatos
             bool exist;
             try
             {
-                this.command.CommandText = $"SELECT * FROM EVENT WHERE NAME = '{name}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                exist = this.dataReader.HasRows;
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM EVENT WHERE NAME = '{name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                exist = this.DataReader.HasRows;
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {
@@ -243,12 +272,12 @@ namespace CapDeDatos
             string Check;
             try
             {
-                this.command.CommandText = $"SELECT * FROM EVENT WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                Check = this.dataReader["STARTDATE"].ToString();
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM EVENT WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                Check = this.DataReader["STARTDATE"].ToString();
+                this.DataReader.Close();
 
             }
             catch (Exception ex)

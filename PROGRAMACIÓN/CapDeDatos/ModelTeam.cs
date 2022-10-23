@@ -1,10 +1,6 @@
 ﻿using CapaDeDatos;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapDeDatos
 {
@@ -19,25 +15,23 @@ namespace CapDeDatos
         public ModelTeam(int id) => this.GetTeamData(id);
         public ModelTeam()
         {
-
         }
 
         public void Save()
         {
             if (this.Id.ToString() != "0") Update();
             else insert();
-            
         }
 
         private void insert()
         {
             try
             {
-                command.CommandText = "INSERT INTO " +
+                Command.CommandText = "INSERT INTO " +
                    "TEAM (Name,City,Country,State) " +
                    $"VALUES ('{Name}','{City}','{Country}','{State}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -46,23 +40,29 @@ namespace CapDeDatos
         }
         private void Update()
         {
-            this.command.CommandText = "UPDATE TEAM SET " +
-                 $"NAME = '{Name}'," +
-                 $"CITY = '{City}'," +
-                 $"COUNTRY = '{Country}'," +
-                 $"STATE = '{State}'" +
-                 $"WHERE ID = {this.Id}";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            try
+            {
+                this.Command.CommandText = "UPDATE TEAM SET " +
+                     $"NAME = '{Name}'," +
+                     $"CITY = '{City}'," +
+                     $"COUNTRY = '{Country}'," +
+                     $"STATE = '{State}'" +
+                     $"WHERE ID = {this.Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
 
+            }
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"Delete TEAM.* from TEAM where Id= {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.CommandText = $"Delete TEAM.* from TEAM where Id= {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -71,37 +71,36 @@ namespace CapDeDatos
         }
         public void GetTeamData(int id)
         {
-            this.command.CommandText = $"Select * From TEAM where ID={id}";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["id"].ToString());
-            this.Name = this.dataReader["NAME"].ToString();
-            this.City = this.dataReader["CITY"].ToString();
-            this.Country = this.dataReader["COUNTRY"].ToString();
-            this.State = this.dataReader["STATE"].ToString();
-            this.dataReader.Close();
+            this.Command.CommandText = $"Select * From TEAM where ID={id}";
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            this.DataReader.Read();
+            this.Id = int.Parse(this.DataReader["id"].ToString());
+            this.Name = this.DataReader["NAME"].ToString();
+            this.City = this.DataReader["CITY"].ToString();
+            this.Country = this.DataReader["COUNTRY"].ToString();
+            this.State = this.DataReader["STATE"].ToString();
+            this.DataReader.Close();
         }
         public DataTable GetTeamDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM TEAM";
-            tabla.Load(command.ExecuteReader());
-            conection.Close();
+            Command.CommandText = "SELECT * FROM TEAM";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
             return tabla;
         }
-
         public bool ExistTeam(int id)
         {
             bool exist;
             try
             {
-                this.command.CommandText = $"SELECT * FROM TEAM WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                exist = this.dataReader.HasRows;
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM TEAM WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                exist = this.DataReader.HasRows;
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {
@@ -115,12 +114,12 @@ namespace CapDeDatos
             string City;
             try
             {
-                this.command.CommandText = $"SELECT * FROM TEAM WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                City = this.dataReader["CITY"].ToString();
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM TEAM WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                City = this.DataReader["CITY"].ToString();
+                this.DataReader.Close();
 
             }
             catch (Exception ex)
@@ -134,12 +133,12 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"SELECT ID FROM TEAM WHERE NAME = '{Name}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                this.Id = int.Parse(this.dataReader["id"].ToString());
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT ID FROM TEAM WHERE NAME = '{Name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.Id = int.Parse(this.DataReader["id"].ToString());
+                this.DataReader.Close();
                 return Id;
             }
             catch (Exception ex)

@@ -28,8 +28,18 @@ namespace UnitTest
         [TestMethod]
         public void Delete()
         {
+            int id2;
             int id = new ActionControler().GetId("Test");
             ActionControler.Eliminar(id);
+            id2 = new EventControler().GetId("Test2");
+            EventControler.Eliminar(id2);
+            id2 = new StageControler().GetId("Test2");
+            StageControler.Eliminar(id2);
+
+            id2 = new PlayerControler().GetId("Test2");
+            PlayerControler.Eliminar(id2);
+            id2 = new TeamControler().GetId("Test2");
+            TeamControler.Eliminar(id2);
             bool response = new ActionControler().ExistAction(id);
             Assert.AreEqual(false, response);
         }

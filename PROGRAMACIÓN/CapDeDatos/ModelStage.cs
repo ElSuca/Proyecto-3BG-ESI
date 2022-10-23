@@ -22,25 +22,25 @@ namespace CapDeDatos
 
         public void GetStageData(int id)
         {
-            this.command.CommandText = $"Select STAGE.* FROM EVENT WHERE ID={id}";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.ID = int.Parse(this.dataReader["ID"].ToString());
-            this.Name = this.dataReader["NAME"].ToString();
-            this.City = this.dataReader["CITY"].ToString();
-            this.Country = this.dataReader["COUNTRY"].ToString();
-            this.Street = this.dataReader["STREET"].ToString();
-            this.Num = Int32.Parse(this.dataReader["NUM"].ToString());
-            this.State = this.dataReader["STATE"].ToString();
-            this.dataReader.Close();
+            this.Command.CommandText = $"Select STAGE.* FROM STAGE WHERE ID={id}";
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            this.DataReader.Read();
+            this.ID = int.Parse(this.DataReader["ID"].ToString());
+            this.Name = this.DataReader["NAME"].ToString();
+            this.City = this.DataReader["CITY"].ToString();
+            this.Country = this.DataReader["COUNTRY"].ToString();
+            this.Street = this.DataReader["STREET"].ToString();
+            this.Num = Int32.Parse(this.DataReader["NUM"].ToString());
+            this.State = this.DataReader["STATE"].ToString();
+            this.DataReader.Close();
         }
         public DataTable GetStageDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM STAGE";
-            tabla.Load(command.ExecuteReader());
-            conection.Close();
+            Command.CommandText = "SELECT * FROM STAGE";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
             return tabla;
         }
 
@@ -57,11 +57,11 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT INTO " +
+                Command.CommandText = "INSERT INTO " +
                   "STAGE(NAME,CITY,STREET,NUM,STATE,COUNTRY) " +
                   $"VALUES ('{Name}','{City}','{Street}',{Num},'{State}','{Country}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -70,7 +70,7 @@ namespace CapDeDatos
         }
         private void Update()
         {
-            this.command.CommandText = "UPDATE STAGE SET " +
+            this.Command.CommandText = "UPDATE STAGE SET " +
                  $"NAME = '{Name}',"+
                  $"CITY = '{City}'," +
                  $"STREET = '{Street}'," +
@@ -78,16 +78,16 @@ namespace CapDeDatos
                  $"STATE = '{State}'," +
                  $"COUNTRY = '{Country}'," +
                  $"WHERE ID = {this.ID}";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            this.Command.Prepare();
+            this.Command.ExecuteNonQuery();
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"DELETE * FROM STAGE WHERE ID = {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.CommandText = $"DELETE STAGE.* FROM STAGE WHERE ID = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -99,12 +99,12 @@ namespace CapDeDatos
             bool exist;
             try
             {
-                this.command.CommandText = $"SELECT * FROM STAGE WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                exist = this.dataReader.HasRows;
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM STAGE WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                exist = this.DataReader.HasRows;
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {
@@ -118,12 +118,12 @@ namespace CapDeDatos
             string Check;
             try
             {
-                this.command.CommandText = $"SELECT * FROM STAGE WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                Check = this.dataReader["CITY"].ToString();
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM STAGE WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                Check = this.DataReader["CITY"].ToString();
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {
@@ -137,12 +137,12 @@ namespace CapDeDatos
             int Id;
             try
             {
-                this.command.CommandText = $"SELECT ID FROM STAGE WHERE NAME = '{Username}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                Id = int.Parse(this.dataReader["id"].ToString());
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT ID FROM STAGE WHERE NAME = '{Username}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                Id = int.Parse(this.DataReader["id"].ToString());
+                this.DataReader.Close();
                 return Id;
             }
             catch (Exception ex)

@@ -15,22 +15,29 @@ namespace Proyecto.IniciosSeccion
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            UserControler.Alta(
-                txtNameRegister.Text,
-                txtApellidoRegister.Text,
-                txtLastName2Register.Text,
-                txtEmailRegister.Text,
-                txtUserNameRegister.Text,
-                "USER",
-                MD5Hash.Hash.Content(txtPassword.Text),
-                Int32.Parse(txtPhoneRegister.Text),
-                txtCityRegister.Text,
-                txtStreetRegister.Text,
-                Int32.Parse(txtStreetNumberRegister.Text),
-                txtStateRegister.Text,
-                txtCountryRegister.Text
-            );
-            MessageBox.Show("Usuario cargado");
+            try
+            {
+                UserControler.Alta(
+                    txtNameRegister.Text,
+                    txtApellidoRegister.Text,
+                    txtLastName2Register.Text,
+                    txtEmailRegister.Text,
+                    txtUserNameRegister.Text,
+                    "USER",
+                    MD5Hash.Hash.Content(txtPassword.Text),
+                    Int32.Parse(txtPhoneRegister.Text),
+                    txtCityRegister.Text,
+                    txtStreetRegister.Text,
+                    Int32.Parse(txtStreetNumberRegister.Text),
+                    txtStateRegister.Text,
+                    txtCountryRegister.Text
+                );
+                MessageBox.Show("Usuario cargado");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         private void Traduction(int l)
         {

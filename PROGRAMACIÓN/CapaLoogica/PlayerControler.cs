@@ -49,7 +49,7 @@ namespace CapaLoogica
                 StartDate = startDate,
                 EndDate = endDate
             };
-            e.insertAsociation();
+            e.InsertAsociation();
         }
         public bool ExistPlayer(int id) => new ModelPlayer().ExistPlayer(id);
         public int GetId(string Name) => new ModelPlayer().GetId(Name);

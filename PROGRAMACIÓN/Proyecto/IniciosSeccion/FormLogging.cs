@@ -15,11 +15,11 @@ namespace Proyecto.IniciosSeccion
             InitializeComponent();
             Traduction(new AplicationControler().getLanguage());
         }
-        private void btnLoggin_Click(object sender, EventArgs e)
+        private void btnLoggin_Click(object sender, EventArgs e) //si
         {
             UserControler uc = new UserControler();
             controlApi();
-           /* string a = */ SendRequest.GetPost("http://127.0.0.1:8888//autenticar", txtUserName.Text, txtPassword.Text);
+            SendRequest.GetPost("http://127.0.0.1:8888//autenticar", txtUserName.Text, txtPassword.Text);
             if (Int32.Parse(new AplicationControler().getResponse()) == 1)
             {
                 new UserControler().SetStaticUserData(txtUserName.Text);
@@ -34,7 +34,7 @@ namespace Proyecto.IniciosSeccion
             }
             controlApi();
         }
-        private void controlApi()
+        private void controlApi() //si
         {
             ProcessStartInfo startinfo = new ProcessStartInfo();
             startinfo.FileName = @"..\..\..\..\PROGRAMACIÓN\ApiAutentificacion\bin\Debug\ApiAutentificacion.exe";
@@ -44,12 +44,6 @@ namespace Proyecto.IniciosSeccion
             else Process.Start(startinfo).Kill();
         }
        
-
-
-        private void FormLogging_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btnEntrar_Click(object sender, EventArgs e) => new MenuPrincipal().Show();
 
         private void Traduction(int l)

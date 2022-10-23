@@ -35,11 +35,11 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT " +
+                Command.CommandText = "INSERT " +
                    "FAMILY (NAME,RECURRENCY,DOMAIN,TYPE) " +
                    $"VALUES ('{Name}','{Recurrency}','{Domain}','{Type}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -48,26 +48,26 @@ namespace CapDeDatos
         }
         private void Update()
         {
-            this.command.CommandText = "UPDATE FAMILY SET " +
+            this.Command.CommandText = "UPDATE FAMILY SET " +
                  $"NAME = '{Name}'," +
                  $"RECURRENCY = '{Recurrency}'," +
                  $"DOMAIN = '{Domain}'," +
                  $"Type = '{Type}' " +
                  $"WHERE ID = {this.Id}";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            this.Command.Prepare();
+            this.Command.ExecuteNonQuery();
 
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"Delete PRE_FAMILY.* from PRE_FAMILY where ID_CHILD = {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
-                this.command.CommandText = $"Delete FAMILY.* from FAMILY where Id= {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.CommandText = $"Delete PRE_FAMILY.* from PRE_FAMILY where ID_CHILD = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+                this.Command.CommandText = $"Delete FAMILY.* from FAMILY where Id= {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -76,23 +76,23 @@ namespace CapDeDatos
         }
         public void GetFamilyData(int id)
         {
-            this.command.CommandText = $"Select * From FAMILY where ID={id}";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["id"].ToString());
-            this.Name = this.dataReader["NAME"].ToString();
-            this.Recurrency = this.dataReader["RECURRENCY"].ToString();
-            this.Domain = this.dataReader["DOMAIN"].ToString();
-            this.Type = this.dataReader["TYPE"].ToString();
-            this.dataReader.Close();
+            this.Command.CommandText = $"Select * From FAMILY where ID={id}";
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            this.DataReader.Read();
+            this.Id = int.Parse(this.DataReader["id"].ToString());
+            this.Name = this.DataReader["NAME"].ToString();
+            this.Recurrency = this.DataReader["RECURRENCY"].ToString();
+            this.Domain = this.DataReader["DOMAIN"].ToString();
+            this.Type = this.DataReader["TYPE"].ToString();
+            this.DataReader.Close();
         }
         public DataTable GetFamilyDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT FAMILY.*, PRE_FAMILY.ID_PARENT, PRE_FAMILY.TYPE,PRE_FAMILY.INFO FROM FAMILY LEFT JOIN PRE_FAMILY on PRE_FAMILY.ID_CHILD = FAMILY.ID";
-            tabla.Load(command.ExecuteReader());
-            conection.Close();
+            Command.CommandText = "SELECT FAMILY.*, PRE_FAMILY.ID_PARENT, PRE_FAMILY.TYPE,PRE_FAMILY.INFO FROM FAMILY LEFT JOIN PRE_FAMILY on PRE_FAMILY.ID_CHILD = FAMILY.ID";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
             return tabla;
         }
 
@@ -100,11 +100,11 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT " +
+                Command.CommandText = "INSERT " +
                    "PRE_FAMILY (ID_CHILD,ID_PARENT ,TYPE ,INFO ) " +
                    $"VALUES ({Id},{ParentId},'{Type}','{Info}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -113,22 +113,22 @@ namespace CapDeDatos
         }
         private void UpdateParents()
         {
-            this.command.CommandText = "UPDATE PRE_FAMILY SET " +
+            this.Command.CommandText = "UPDATE PRE_FAMILY SET " +
                  $"ID_CHILD = {Id}," +
                  $"ID_PARENT = {ParentId}," +
                  $"TYPE = '{Type}'," +
                  $"INFO = '{Info}'" +
                  $"WHERE ID_CHILD = {this.Id} AND ID_PARENT = {ParentId}";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();     
+            this.Command.Prepare();
+            this.Command.ExecuteNonQuery();     
         }
         public void DeleteParents(int Id)
         {
             try
             {
-                this.command.CommandText = $"Delete FAMILY.* from PRE_FAMILY where ID_CHILD = {this.Id} AND ID_PARENT = {ParentId}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.CommandText = $"Delete FAMILY.* from PRE_FAMILY where ID_CHILD = {this.Id} AND ID_PARENT = {ParentId}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -141,12 +141,12 @@ namespace CapDeDatos
             bool exist;
             try
             {
-                this.command.CommandText = $"SELECT * FROM FAMILY WHERE NAME = '{name}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                exist = this.dataReader.HasRows;
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM FAMILY WHERE NAME = '{name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                exist = this.DataReader.HasRows;
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {
@@ -160,12 +160,12 @@ namespace CapDeDatos
             string Check;
             try
             {
-                this.command.CommandText = $"SELECT * FROM FAMILY WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                Check = this.dataReader["TYPE"].ToString();
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM FAMILY WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                Check = this.DataReader["TYPE"].ToString();
+                this.DataReader.Close();
 
             }
             catch (Exception ex)
@@ -179,12 +179,12 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"SELECT ID FROM FAMILY WHERE NAME = '{Name}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                this.Id = int.Parse(this.dataReader["ID"].ToString());
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT ID FROM FAMILY WHERE NAME = '{Name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.Id = int.Parse(this.DataReader["ID"].ToString());
+                this.DataReader.Close();
                 return Id;
             }
             catch (Exception ex)

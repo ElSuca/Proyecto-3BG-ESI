@@ -191,7 +191,7 @@
             this.panelManagerMenu.Controls.Add(this.txtManagerID);
             this.panelManagerMenu.Controls.Add(this.lbManagerName);
             this.panelManagerMenu.Controls.Add(this.txtManagerName);
-            this.panelManagerMenu.Location = new System.Drawing.Point(37, 58);
+            this.panelManagerMenu.Location = new System.Drawing.Point(37, 66);
             this.panelManagerMenu.Name = "panelManagerMenu";
             this.panelManagerMenu.Size = new System.Drawing.Size(385, 401);
             this.panelManagerMenu.TabIndex = 24;
@@ -781,7 +781,7 @@
             this.panelFamilyMenu.Controls.Add(this.txtFamilyId);
             this.panelFamilyMenu.Controls.Add(this.lbFamilyName);
             this.panelFamilyMenu.Controls.Add(this.txtFamilyName);
-            this.panelFamilyMenu.Location = new System.Drawing.Point(37, 72);
+            this.panelFamilyMenu.Location = new System.Drawing.Point(40, 59);
             this.panelFamilyMenu.Name = "panelFamilyMenu";
             this.panelFamilyMenu.Size = new System.Drawing.Size(296, 438);
             this.panelFamilyMenu.TabIndex = 59;
@@ -1021,7 +1021,7 @@
             this.panelAsociationMenu.Controls.Add(this.txtAsociationName);
             this.panelAsociationMenu.Controls.Add(this.lbAsociationId);
             this.panelAsociationMenu.Controls.Add(this.txtAsociationId);
-            this.panelAsociationMenu.Location = new System.Drawing.Point(37, 66);
+            this.panelAsociationMenu.Location = new System.Drawing.Point(27, 58);
             this.panelAsociationMenu.Name = "panelAsociationMenu";
             this.panelAsociationMenu.Size = new System.Drawing.Size(355, 393);
             this.panelAsociationMenu.TabIndex = 61;

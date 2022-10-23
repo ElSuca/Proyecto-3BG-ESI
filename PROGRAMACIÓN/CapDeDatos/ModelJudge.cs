@@ -19,26 +19,26 @@ namespace CapDeDatos
 
         public void GetJudgeData(int id)
         {
-            this.command.CommandText = $"Select JUDGE.* FROM JUDGE WHERE ID={id}";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["ID"].ToString());
-            this.Name = this.dataReader["NAME"].ToString();
-            this.LastaName1 = this.dataReader["LNAME1"].ToString();
-            this.LastaName2 = this.dataReader["LNAME2"].ToString();
-            this.Country = this.dataReader["COUNTRY"].ToString();
-            this.State = this.dataReader["STATE"].ToString();
-            this.City = this.dataReader["CITY"].ToString();
-            this.dataReader.Close();
+            this.Command.CommandText = $"Select JUDGE.* FROM JUDGE WHERE ID={id}";
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            this.DataReader.Read();
+            this.Id = int.Parse(this.DataReader["ID"].ToString());
+            this.Name = this.DataReader["NAME"].ToString();
+            this.LastaName1 = this.DataReader["LNAME1"].ToString();
+            this.LastaName2 = this.DataReader["LNAME2"].ToString();
+            this.Country = this.DataReader["COUNTRY"].ToString();
+            this.State = this.DataReader["STATE"].ToString();
+            this.City = this.DataReader["CITY"].ToString();
+            this.DataReader.Close();
         }
 
         public DataTable GetJudgeDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM JUDGE";
-            tabla.Load(command.ExecuteReader());
-            conection.Close();
+            Command.CommandText = "SELECT * FROM JUDGE";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
             return tabla;
         }
 
@@ -53,11 +53,11 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT INTO " +
+                Command.CommandText = "INSERT INTO " +
                    "JUDGE (NAME,LNAME1,LNAME2,COUNTRY,STATE,CITY) " +
                    $"VALUES ('{Name}','{LastaName1}','{LastaName2}','{Country}','{State}','{City}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -66,7 +66,7 @@ namespace CapDeDatos
         }
         private void Update()
         {
-            this.command.CommandText = "UPDATE JUDGE SET " +
+            this.Command.CommandText = "UPDATE JUDGE SET " +
                  $"NAME = '{Name}'," +
                  $"LNAME1 = '{LastaName1}'," +
                  $"LNAME2 = '{LastaName2}'," +
@@ -74,17 +74,17 @@ namespace CapDeDatos
                  $"STATE = '{State}'," +
                  $"CITY = '{City}'" +
                  $"WHERE ID = {this.Id}";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            this.Command.Prepare();
+            this.Command.ExecuteNonQuery();
 
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"DELETE JUDGE.* FROM JUDGE WHERE ID = {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.CommandText = $"DELETE JUDGE.* FROM JUDGE WHERE ID = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -97,12 +97,12 @@ namespace CapDeDatos
             bool exist;
             try
             {
-                this.command.CommandText = $"SELECT * FROM JUDGE WHERE NAME = '{name}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                exist = this.dataReader.HasRows;
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM JUDGE WHERE NAME = '{name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                exist = this.DataReader.HasRows;
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {
@@ -116,12 +116,12 @@ namespace CapDeDatos
             string Check;
             try
             {
-                this.command.CommandText = $"SELECT * FROM JUDGE WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                Check = this.dataReader["CITY"].ToString();
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM JUDGE WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                Check = this.DataReader["CITY"].ToString();
+                this.DataReader.Close();
 
             }
             catch (Exception ex)
@@ -135,12 +135,12 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"SELECT ID FROM JUDGE WHERE NAME = '{Name}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                this.Id = int.Parse(this.dataReader["ID"].ToString());
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT ID FROM JUDGE WHERE NAME = '{Name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.Id = int.Parse(this.DataReader["ID"].ToString());
+                this.DataReader.Close();
                 return Id;
             }
             catch (Exception ex)

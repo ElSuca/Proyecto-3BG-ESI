@@ -17,15 +17,22 @@ namespace CapDeDatos
 
         public void GetUserData(int id)
         {
-            this.command.CommandText = $"SELECT * FROM AD WHERE id = {id}";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["id"].ToString());
-            this.Name = this.dataReader["Name"].ToString();
-            this.Category = this.dataReader["CAT"].ToString();
-            this.Path = this.dataReader["PATH"].ToString();
-            this.dataReader.Close();
+            try
+            {
+                this.Command.CommandText = $"SELECT * FROM AD WHERE id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.Id = int.Parse(this.DataReader["id"].ToString());
+                this.Name = this.DataReader["Name"].ToString();
+                this.Category = this.DataReader["CAT"].ToString();
+                this.Path = this.DataReader["PATH"].ToString();
+                this.DataReader.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
         }
 
         public void Save()
@@ -36,23 +43,30 @@ namespace CapDeDatos
 
         private void Update()
         {
-            this.command.CommandText = "UPDATE AD SET " +
-                $"PATH = '{this.Path}'," +
-                $"CAT = '{this.Category}'," +
-                $"NAME = '{this.Name}' " +
-                $"WHERE id = {Id}";          
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
-        }
+            try
+            {
+                this.Command.CommandText = "UPDATE AD SET " +
+                    $"PATH = '{this.Path}'," +
+                    $"CAT = '{this.Category}'," +
+                    $"NAME = '{this.Name}' " +
+                    $"WHERE id = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        } 
         private void Insert()
         {
             try
             {
-                command.CommandText = "INSERT INTO " +
+                Command.CommandText = "INSERT INTO " +
                    "AD (PATH,CAT,NAME) " +
                    $"VALUES ('{this.Path}','{this.Category}','{this.Category}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -61,28 +75,49 @@ namespace CapDeDatos
         }
         public void Delete(int Id)
         {
-            this.command.CommandText = $"DELETE FROM AD WHERE id = {this.Id}";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
-        }
+            try
+            {
+                this.Command.CommandText = $"DELETE FROM AD WHERE id = {this.Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+            }  
+            catch (Exception e)
+            {
+                throw e;
+            }
+}
         public int GetId(string Name)
         {
-            this.command.CommandText = $"SELECT * FROM AD WHERE Name = '{Name}'";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["ID"].ToString());
-            this.dataReader.Close();
-            return Id;
+            try
+            {
+                this.Command.CommandText = $"SELECT * FROM AD WHERE Name = '{Name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.Id = int.Parse(this.DataReader["ID"].ToString());
+                this.DataReader.Close();
+                return Id;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public DataTable GetAdDataTable()
         {
-            DataTable tabla = new DataTable();
-            command.CommandText = "SELECT * FROM AD";
-            tabla.Load(command.ExecuteReader());
-            conection.Close();
-            return tabla;
+            try
+            {
+                DataTable tabla = new DataTable();
+                Command.CommandText = "SELECT * FROM AD";
+                tabla.Load(Command.ExecuteReader());
+                Conection.Close();
+                return tabla;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public bool ExistAd(string Name)
@@ -90,12 +125,12 @@ namespace CapDeDatos
             bool exist;
             try
             {
-                this.command.CommandText = $"SELECT * FROM AD WHERE NAME = '{Name}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                exist = this.dataReader.HasRows;
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM AD WHERE NAME = '{Name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                exist = this.DataReader.HasRows;
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {
@@ -109,12 +144,12 @@ namespace CapDeDatos
             string Check;
             try
             {
-                this.command.CommandText = $"SELECT * FROM AD WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                Check = this.dataReader["PATH"].ToString();
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM AD WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                Check = this.DataReader["PATH"].ToString();
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {

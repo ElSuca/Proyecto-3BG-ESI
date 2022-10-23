@@ -15,7 +15,7 @@ namespace Apis
         public SendRequest()
         {
         }
-        public static string GetPost(string url, string Uname, string Pass)
+        public static string GetPost(string url, string Uname, string Pass) //si
         {
             WebRequest request = WebRequest.Create(url);
             Post u = new Post() { Username = Uname, Password = Pass };
@@ -38,7 +38,7 @@ namespace Apis
                 result = l.ReadToEnd().Trim();
             }
             Dictionary<string, string> credenciales = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
-            new SafeSystemBuffer().SetResponse(credenciales["codigo"]);
+            SafeSystemBuffer.Response =credenciales["codigo"];
             return result;
         }
     }

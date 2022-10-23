@@ -38,11 +38,11 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT " +
+                Command.CommandText = "INSERT " +
                    "MANAGER (NAME,LNAME1,LNAME2,STATUS,BIRTHDATE,STATE,COUNTRY) " +
                    $"VALUES ('{Name}','{LastName1}','{LastName2}','{Status}','{BirthDate}','{State}','{Country}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -53,11 +53,11 @@ namespace CapDeDatos
         {
             try
             {
-                command.CommandText = "INSERT " +
+                Command.CommandText = "INSERT " +
                    "MANA_ASOC (ID_MANA ,ID_ASOC,STARTDATE,ENDDATE) " +
                    $"VALUES ({GetId(Name)},{IdAsociation},'{StartDateAsociation}','{EndDateAsociation}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -69,12 +69,12 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"SELECT ID FROM MANAGER WHERE NAME = '{Name}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                this.Id = int.Parse(this.dataReader["ID"].ToString());
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT ID FROM MANAGER WHERE NAME = '{Name}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.Id = int.Parse(this.DataReader["ID"].ToString());
+                this.DataReader.Close();
                 return Id;
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace CapDeDatos
         }
         private void Update()
         {
-            this.command.CommandText = "UPDATE MANAGER SET " +
+            this.Command.CommandText = "UPDATE MANAGER SET " +
                  $"NAME = '{Name}'," +
                  $"LNAME1 = '{LastName1}'," +
                  $"LNAME2 = '{LastName2}'," +
@@ -93,20 +93,20 @@ namespace CapDeDatos
                  $"STATE = '{State}'," +
                  $"COUNTRY = '{Country}'" +
                  $"WHERE ID = {this.Id}";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            this.Command.Prepare();
+            this.Command.ExecuteNonQuery();
 
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"Delete MANA_ASOC.* from MANA_ASOC where ID_MANA= {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
-                this.command.CommandText = $"Delete MANAGER.* from MANAGER where Id= {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.CommandText = $"Delete MANA_ASOC.* from MANA_ASOC where ID_MANA= {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+                this.Command.CommandText = $"Delete MANAGER.* from MANAGER where Id= {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -115,26 +115,26 @@ namespace CapDeDatos
         }
         public void GetManagerData(int id)
         {
-            this.command.CommandText = $"Select * From MANAGER where ID={id}";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["id"].ToString());
-            this.Name = this.dataReader["NAME"].ToString();
-            this.LastName1 = this.dataReader["LNAME1"].ToString();
-            this.LastName2 = this.dataReader["LNAME2"].ToString();
-            this.Status = this.dataReader["STATUS"].ToString();
-            this.BirthDate = this.dataReader["BIRTHDATE"].ToString();
-            this.State = this.dataReader["STATE"].ToString();
-            this.Country = this.dataReader["COUNTRY"].ToString();
-            this.dataReader.Close();
+            this.Command.CommandText = $"Select * From MANAGER where ID={id}";
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            this.DataReader.Read();
+            this.Id = int.Parse(this.DataReader["id"].ToString());
+            this.Name = this.DataReader["NAME"].ToString();
+            this.LastName1 = this.DataReader["LNAME1"].ToString();
+            this.LastName2 = this.DataReader["LNAME2"].ToString();
+            this.Status = this.DataReader["STATUS"].ToString();
+            this.BirthDate = this.DataReader["BIRTHDATE"].ToString();
+            this.State = this.DataReader["STATE"].ToString();
+            this.Country = this.DataReader["COUNTRY"].ToString();
+            this.DataReader.Close();
         }
         public DataTable GetManagerDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT MANAGER.*,MANA_ASOC.ID_ASOC,MANA_ASOC.STARTDATE,MANA_ASOC.ENDDATE FROM MANAGER LEFT JOIN MANA_ASOC ON MANAGER.ID = MANA_ASOC.ID_MANA";
-            tabla.Load(command.ExecuteReader());
-            conection.Close();
+            Command.CommandText = "SELECT MANAGER.*,MANA_ASOC.ID_ASOC,MANA_ASOC.STARTDATE,MANA_ASOC.ENDDATE FROM MANAGER LEFT JOIN MANA_ASOC ON MANAGER.ID = MANA_ASOC.ID_MANA";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
             return tabla;
         }
         public bool ExistManager(int id)
@@ -142,12 +142,12 @@ namespace CapDeDatos
             bool exist;
             try
             {
-                this.command.CommandText = $"SELECT * FROM MANAGER WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                exist = this.dataReader.HasRows;
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM MANAGER WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                exist = this.DataReader.HasRows;
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {
@@ -161,12 +161,12 @@ namespace CapDeDatos
             string Check;
             try
             {
-                this.command.CommandText = $"SELECT MANAGER.*,MANA_ASOC.ID_ASOC,MANA_ASOC.STARTDATE,MANA_ASOC.ENDDATE FROM MANAGER LEFT JOIN MANA_ASOC ON MANAGER.ID = MANA_ASOC.ID_MANA where MANAGER.ID = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                Check = this.dataReader["STATE"].ToString();
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT MANAGER.*,MANA_ASOC.ID_ASOC,MANA_ASOC.STARTDATE,MANA_ASOC.ENDDATE FROM MANAGER LEFT JOIN MANA_ASOC ON MANAGER.ID = MANA_ASOC.ID_MANA where MANAGER.ID = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                Check = this.DataReader["STATE"].ToString();
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {

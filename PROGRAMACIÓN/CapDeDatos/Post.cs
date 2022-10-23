@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CapDeDatos
+﻿namespace CapDeDatos
 {
-    public class Post
+    public class Post //si
     {
         public string Username { get; set; }
         public string Password { get; set; }

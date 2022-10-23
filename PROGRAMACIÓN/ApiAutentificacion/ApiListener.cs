@@ -17,7 +17,6 @@ namespace ApiAurentificacion
             listener.Prefixes.Add("http://127.0.0.1:8888/");
             listener.Start();
             Console.WriteLine("Listening...");
-            SafeSystemBuffer.ApiAutentificationPath = Environment.CurrentDirectory;
             while (true)
             {
                 HttpListenerContext context = listener.GetContext();
@@ -43,7 +42,7 @@ namespace ApiAurentificacion
             response.ContentLength64 = buffer.Length;
             Stream output = response.OutputStream;
             output.Write(buffer, 0, buffer.Length);
-            new SafeSystemBuffer().SetResponse(output.ToString());
+            SafeSystemBuffer.Response = output.ToString();
             return output.ToString();
         }
 

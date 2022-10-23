@@ -1,10 +1,6 @@
 ﻿using CapaDeDatos;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapDeDatos
 {
@@ -26,27 +22,22 @@ namespace CapDeDatos
         public ModelPlayer(int id) => this.GetTeamData(id);
         public ModelPlayer()
         {
-
         }
 
         public void Save()
         {
             if (this.Id.ToString() != "0") Update();
             else insert();
-
         }
-
-        
-
         private void insert()
         {
             try
             {
-                command.CommandText = "INSERT " +
+                Command.CommandText = "INSERT " +
                    "PLAYER (NAME,LNAME1,LNAME2,STATUS,BIRTHDATE,CITY,STATE,COUNTRY) " +
                    $"VALUES ('{Name}','{LastName1}','{LastName2}','{Status}','{BirthDate}','{City}','{State}','{Country}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -55,27 +46,33 @@ namespace CapDeDatos
         }
         private void Update()
         {
-            this.command.CommandText = "UPDATE PLAYER SET " +
-                 $"NAME = '{Name}'," +
-                 $"LNAME1 = '{LastName1}',"+
-                 $"LNAME2 = '{LastName2}'," +
-                 $"STATUS = '{Status}'," +
-                 $"BIRTHDATE = '{BirthDate}'," +
-                 $"CITY = '{City}'," +
-                 $"STATE = '{State}'," +
-                 $"COUNTRY = '{Country}'" +
-                 $"WHERE ID = {this.Id}";
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
+            try
+            {
+                this.Command.CommandText = "UPDATE PLAYER SET " +
+                     $"NAME = '{Name}'," +
+                     $"LNAME1 = '{LastName1}'," +
+                     $"LNAME2 = '{LastName2}'," +
+                     $"STATUS = '{Status}'," +
+                     $"BIRTHDATE = '{BirthDate}'," +
+                     $"CITY = '{City}'," +
+                     $"STATE = '{State}'," +
+                     $"COUNTRY = '{Country}'" +
+                     $"WHERE ID = {this.Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
 
+            }
         }
         public void Delete(int Id)
         {
             try
             {
-                this.command.CommandText = $"Delete PLAYER.* from PLAYER where Id= {Id}";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.CommandText = $"Delete PLAYER.* from PLAYER where Id= {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -84,39 +81,45 @@ namespace CapDeDatos
         }
         public void GetTeamData(int id)
         {
-            this.command.CommandText = $"Select * From PLAYER where ID={id}";
-            this.command.Prepare();
-            this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
-            this.Id = int.Parse(this.dataReader["id"].ToString());
-            this.Name = this.dataReader["NAME"].ToString();
-            this.LastName1 = this.dataReader["LNAME1"].ToString();
-            this.LastName2 = this.dataReader["LNAME2"].ToString();
-            this.Status = this.dataReader["STATUS"].ToString();
-            this.BirthDate = this.dataReader["BIRTHDATE"].ToString();
-            this.City = this.dataReader["CITY"].ToString();
-            this.State = this.dataReader["STATE"].ToString();
-            this.Country = this.dataReader["COUNTRY"].ToString();
-            this.dataReader.Close();
+            try
+            {
+                this.Command.CommandText = $"Select * From PLAYER where ID={id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.Id = int.Parse(this.DataReader["id"].ToString());
+                this.Name = this.DataReader["NAME"].ToString();
+                this.LastName1 = this.DataReader["LNAME1"].ToString();
+                this.LastName2 = this.DataReader["LNAME2"].ToString();
+                this.Status = this.DataReader["STATUS"].ToString();
+                this.BirthDate = this.DataReader["BIRTHDATE"].ToString();
+                this.City = this.DataReader["CITY"].ToString();
+                this.State = this.DataReader["STATE"].ToString();
+                this.Country = this.DataReader["COUNTRY"].ToString();
+                this.DataReader.Close();
+            }
+            catch(Exception e)
+            {
+
+            }
         }
         public DataTable GetPlayerDataTable()
         {
             DataTable tabla = new DataTable();
-            command.CommandText = "SELECT PLAYER.*,ASOC_PLYR.ID_ASOC,ASOC_PLYR.STARTDATE,ASOC_PLYR.ENDDATE FROM PLAYER LEFT JOIN ASOC_PLYR on PLAYER.ID = ASOC_PLYR.ID_PLYR";
-            tabla.Load(command.ExecuteReader());
-            conection.Close();
+            Command.CommandText = "SELECT PLAYER.*,ASOC_PLYR.ID_ASOC,ASOC_PLYR.STARTDATE,ASOC_PLYR.ENDDATE FROM PLAYER LEFT JOIN ASOC_PLYR on PLAYER.ID = ASOC_PLYR.ID_PLYR";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
             return tabla;
         }
-
-        public void insertAsociation()
+        public void InsertAsociation()
         {
             try
             {
-                command.CommandText = "INSERT " +
+                Command.CommandText = "INSERT " +
                    "ASOC_PLYR (ID_ASOC,ID_PLYR,STARTDATE ,ENDDATE) " +
                    $"VALUES ({IdAsoc},{Id},'{StartDate}','{EndDate}')";
-                this.command.Prepare();
-                this.command.ExecuteNonQuery();
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -129,12 +132,12 @@ namespace CapDeDatos
             bool exist;
             try
             {
-                this.command.CommandText = $"SELECT * FROM PLAYER WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                exist = this.dataReader.HasRows;
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM PLAYER WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                exist = this.DataReader.HasRows;
+                this.DataReader.Close();
             }
             catch (Exception ex)
             {
@@ -148,12 +151,12 @@ namespace CapDeDatos
             string Name;
             try
             {
-                this.command.CommandText = $"SELECT * FROM PLAYER WHERE Id = {id}";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                Name = this.dataReader["LNAME1"].ToString();
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT * FROM PLAYER WHERE Id = {id}";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                Name = this.DataReader["LNAME1"].ToString();
+                this.DataReader.Close();
 
             }
             catch (Exception ex)
@@ -167,12 +170,12 @@ namespace CapDeDatos
         {
             try
             {
-                this.command.CommandText = $"SELECT ID FROM PLAYER WHERE NAME = '{Username}'";
-                this.command.Prepare();
-                this.dataReader = this.command.ExecuteReader();
-                this.dataReader.Read();
-                this.Id = int.Parse(this.dataReader["id"].ToString());
-                this.dataReader.Close();
+                this.Command.CommandText = $"SELECT ID FROM PLAYER WHERE NAME = '{Username}'";
+                this.Command.Prepare();
+                this.DataReader = this.Command.ExecuteReader();
+                this.DataReader.Read();
+                this.Id = int.Parse(this.DataReader["id"].ToString());
+                this.DataReader.Close();
                 return Id;
             }
             catch (Exception ex)
