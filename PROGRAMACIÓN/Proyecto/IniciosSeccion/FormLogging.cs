@@ -1,4 +1,5 @@
-﻿using Apis;
+﻿using ApiPublica;
+using Apis;
 using CapaLogica;
 using CapaLoogica;
 using System;
@@ -25,7 +26,8 @@ namespace Proyecto.IniciosSeccion
                 new UserControler().SetStaticUserData(txtUserName.Text);
                 uc.SetStaticUsername(txtUserName.Text);
                 uc.SetStaticPassword(txtPassword.Text);
-                new MenuPrincipal().Show();
+                //  new MenuPrincipal().Show();
+                new FormPincipalMenu().Show();
             }
             else
             {
@@ -44,7 +46,7 @@ namespace Proyecto.IniciosSeccion
             else Process.Start(startinfo).Kill();
         }
        
-        private void btnEntrar_Click(object sender, EventArgs e) => new MenuPrincipal().Show();
+        private void btnEntrar_Click(object sender, EventArgs e) => new FormPincipalMenu().Show();//new MenuPrincipal().Show();
 
         private void traduction(int l)
         {

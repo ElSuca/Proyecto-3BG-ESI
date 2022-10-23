@@ -138,6 +138,12 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuResultPreviewModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuResultPreviewModel.Designer.cs">
+      <DependentUpon>MenuResultPreviewModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuResultPreviewModel.resx">
+      <DependentUpon>MenuResultPreviewModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
