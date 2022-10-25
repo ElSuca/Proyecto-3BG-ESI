@@ -78,11 +78,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormPincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormPincipal.Designer.cs">
+      <DependentUpon>FormPincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLanguageMenu.cs">
       <SubType>Form</SubType>
@@ -102,12 +102,6 @@
     <Compile Include="IniciosSeccion\FormRegistro.Designer.cs">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="LanguageMenu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LanguageMenu.Designer.cs">
-      <DependentUpon>LanguageMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="IniciosSeccion\LoggingMenu.designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,8 +112,8 @@
     <Compile Include="StarterMenu.Designer.cs">
       <DependentUpon>StarterMenu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormPincipal.resx">
+      <DependentUpon>FormPincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLanguageMenu.resx">
       <DependentUpon>FormLanguageMenu.cs</DependentUpon>
@@ -129,9 +123,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IniciosSeccion\FormRegistro.resx">
       <DependentUpon>FormRegistro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LanguageMenu.resx">
-      <DependentUpon>LanguageMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciosSeccion\LoggingMenu.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">

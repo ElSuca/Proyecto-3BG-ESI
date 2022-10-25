@@ -84,7 +84,6 @@
             this.UserInformationMenuItem.Name = "UserInformationMenuItem";
             this.UserInformationMenuItem.Size = new System.Drawing.Size(157, 22);
             this.UserInformationMenuItem.Text = "My information";
-            this.UserInformationMenuItem.Click += new System.EventHandler(this.UserInformationMenuItem_Click);
             // 
             // dataGridView1
             // 

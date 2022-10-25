@@ -5,10 +5,10 @@ using System;
 using System.Windows.Forms;
 namespace Proyecto
 {
-    public partial class Form1 : Form
+    public partial class FormPincipal : Form
     {
         public static bool start = false;
-        public Form1()
+        public FormPincipal()
         { 
             InitializeComponent();
             if (!start)
@@ -50,6 +50,14 @@ namespace Proyecto
             }
             else LanguageMenu.Instance.BringToFront();
         } 
+        public void CloseApp()
+        {
+            this.Close();
+        }
+        public void GetAppVisivility(bool n)
+        {
+            this.Visible = n;
+        }
         private void MainPanel_Paint(object sender, PaintEventArgs e)
         {
 

@@ -155,7 +155,7 @@ namespace ApiPublica
             }
         }
 
-        private void btnSendMail_Click(object sender, EventArgs e)
+     /*   private void btnSendMail_Click(object sender, EventArgs e)
         {
             string Correo = "ptahtechnologiesolympus@gmail.com";
             System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
@@ -182,7 +182,7 @@ namespace ApiPublica
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
+        }*/
 
         private void btnShowPassword_Click_1(object sender, EventArgs e) => txtPassword.PasswordChar = txtPassword.PasswordChar == '*' ? txtPassword.PasswordChar = (char)0 : txtPassword.PasswordChar = '*';
     }

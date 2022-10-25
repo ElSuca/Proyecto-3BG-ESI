@@ -27,7 +27,7 @@ namespace Proyecto
 
         private void btnRegister_Click(object sender, EventArgs e) => new FormRegistro().Show();
 
-        private void Lblanguaje_Click(object sender, EventArgs e) => new Form1().setSelection(4);
+        private void Lblanguaje_Click(object sender, EventArgs e) => new FormPincipal().setSelection(4);
 
         private void traduction(int l)
         {

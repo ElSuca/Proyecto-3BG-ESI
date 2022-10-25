@@ -23,7 +23,7 @@ namespace Proyecto
 
        // public void GetInfo() => dataGridView1.DataSource = new SportControler().GetSimpifiedEventData();
 
-        private void UserInformationMenuItem_Click(object sender, EventArgs e) => new UserData().Show();
+       // private void UserInformationMenuItem_Click(object sender, EventArgs e) => new UserData().Show();
 
         private void panel1_Paint(object sender, PaintEventArgs e){}
 

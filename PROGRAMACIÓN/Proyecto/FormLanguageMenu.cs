@@ -36,12 +36,17 @@ namespace Proyecto
             }
             traduction(new AplicationControler().getLanguage());
             new StarterMenu();
-            new Form1().Refresh();
+            new FormPincipal().Refresh();
         }
         private void traduction(int l)
         {
             if (l == 0) btnApply.Text = "Apply";
             else btnApply.Text = "Aplicar";
+        }
+
+        private void ComboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

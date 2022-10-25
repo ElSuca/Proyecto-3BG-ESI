@@ -26,8 +26,9 @@ namespace Proyecto.IniciosSeccion
                 new UserControler().SetStaticUserData(txtUserName.Text);
                 uc.SetStaticUsername(txtUserName.Text);
                 uc.SetStaticPassword(txtPassword.Text);
-                //  new MenuPrincipal().Show();
                 new FormPincipalMenu().Show();
+                this.Close();
+                new FormPincipal().GetAppVisivility(false);
             }
             else
             {
@@ -35,6 +36,7 @@ namespace Proyecto.IniciosSeccion
                 lbMessage.Text = errorMesageTranslation(new AplicationControler().getLanguage());
             }
             controlApi();
+
         }
         private void controlApi() 
         {
@@ -45,8 +47,13 @@ namespace Proyecto.IniciosSeccion
             if (!isRunning("ApiAutentificacion")) Process.Start(startinfo).Start();
             else Process.Start(startinfo).Kill();
         }
-       
-        private void btnEntrar_Click(object sender, EventArgs e) => new FormPincipalMenu().Show();//new MenuPrincipal().Show();
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            new FormPincipalMenu().Show();
+            this.Close();
+            new FormPincipal().GetAppVisivility(false);
+        }
 
         private void traduction(int l)
         {
