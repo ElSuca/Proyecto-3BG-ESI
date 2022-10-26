@@ -23,10 +23,12 @@ namespace Proyecto.IniciosSeccion
             SendRequest.GetPost("http://127.0.0.1:8888//autenticar", txtUserName.Text, txtPassword.Text);
             if (Int32.Parse(new AplicationControler().getResponse()) == 1)
             {
+                FormPincipalMenu mp = new FormPincipalMenu();
                 new UserControler().SetStaticUserData(txtUserName.Text);
                 uc.SetStaticUsername(txtUserName.Text);
-                uc.SetStaticPassword(txtPassword.Text);
-                new FormPincipalMenu().Show();
+                uc.SetStaticPassword(txtPassword.Text);              
+                mp.Show();
+
                 this.Close();
                 new FormPincipal().GetAppVisivility(false);
             }

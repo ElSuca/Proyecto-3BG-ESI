@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using ApiPublica;
 using CapaLoogica;
 
 namespace Proyecto
@@ -71,6 +72,11 @@ namespace Proyecto
         private void checkBoxEnglish_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbBack_Click(object sender, EventArgs e)
+        {
+            new FormPincipalMenu().GetPanelMenuVisivility();
         }
     }
 }

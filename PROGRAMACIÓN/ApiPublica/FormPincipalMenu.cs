@@ -14,6 +14,8 @@ namespace ApiPublica
         public int Score2 { get; set; }
         public string Date { get; set; }
         private int selection;
+        private int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+        private int screenWidth = Screen.PrimaryScreen.Bounds.Width;
 
         public FormPincipalMenu()
         {
@@ -21,7 +23,7 @@ namespace ApiPublica
             loadDafaults();
             selection = new Random().Next(3);
         }
-
+        #region Fill Results
         private void FillResults(int n)
         {
             MenuResultPreviewModel[] listItem = new MenuResultPreviewModel[n];
@@ -64,8 +66,11 @@ namespace ApiPublica
 
             }
         }
+        #endregion
         private void loadDafaults()
         {
+
+
             FillResults(10);
             FillResultsPremiun(10);
             Team1 = "Nacional";
@@ -74,32 +79,33 @@ namespace ApiPublica
             Score2 = 0;
             Date = "22/10/2022 10:20";
 
+
+
+            
+            this.Size = new Size(screenWidth, screenHeight);
+            panelTopPage.Size = new Size(screenWidth, 53);
+        }
+        public void GetPanelMenuVisivility()
+        {
+            setMenuDefaults();
+            panelMenus.Visible = panelMenus.Visible ? false : true;
+            checkPanelVisivility();
+            this.BringToFront();
         }
         private void setMenuDefaults()
         {
-            if (panelMenus.Size == new Size(1247, 741))
+            if (panelMenus.Size == new Size(screenWidth, screenHeight))
             {
                 panelMenus.Size = new Size(34, 31);
                 panelMenus.Location = new Point(1389, 12);
             }
             else
             {
-                panelMenus.Size = new Size(1247, 741);
-                panelMenus.Location = new Point(227, 12);
+                panelMenus.Size = new Size(screenWidth, screenHeight);
+                panelMenus.Location = new Point(0, 12);
             }
         }
-
-        private void panelResult_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-      
-        private void FormPincipalMenu_Load(object sender, EventArgs e)
-        {
-            panelPremiunBlock.Visible = new UserControler().GetStaticRole == "Premiun" ? false : true; 
-        }
+        private void FormPincipalMenu_Load(object sender, EventArgs e) => panelPremiunBlock.Visible = new UserControler().GetStaticRole == "Premiun" ? false : true;
         #region click
         private void btnsendinfo_Click(object sender, EventArgs e)
         {
@@ -145,14 +151,14 @@ namespace ApiPublica
         {
             setMenuDefaults();
             panelMenus.Visible = panelMenus.Visible ? false : true;
-          
-                if (!panelMenus.Contains(UserDataMenu.Instance))
-                {
-                    panelMenus.Controls.Add(UserDataMenu.Instance);
-                    UserDataMenu.Instance.Dock = DockStyle.Fill;
-                    UserDataMenu.Instance.BringToFront();
-                }
-                else UserDataMenu.Instance.BringToFront();
+
+            if (!panelMenus.Contains(UserDataMenu.Instance))
+            {
+                panelMenus.Controls.Add(UserDataMenu.Instance);
+                UserDataMenu.Instance.Dock = DockStyle.Fill;
+                UserDataMenu.Instance.BringToFront();
+            }
+            else UserDataMenu.Instance.BringToFront();
 
             checkPanelVisivility();
         }
@@ -161,8 +167,7 @@ namespace ApiPublica
         {
             if (!IsAtFront(panelMenus))
             {
-                panelPremiunBlock.SendToBack();
-                if (!panelMenus.Visible) panelResultPremiun.SendToBack();
+                panelMenus.BringToFront();
             }
         }
         private bool IsAtFront(Control control) => control.Parent.Controls.GetChildIndex(control) == 0;
@@ -191,6 +196,7 @@ namespace ApiPublica
             panelLowMark.Location = new Point(pictureBoxBtnConfig.Location.X, pictureBoxBtnConfig.Location.Y + 52);
             panelLowMark.Show();
             panelLowMark.Visible = true;
+            panelLowMark.BringToFront();
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e) => panelLowMark.Visible = false;
@@ -205,5 +211,10 @@ namespace ApiPublica
         #endregion
 
         private void BannerPic_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(new ApiPublicidad.AddManager().SelectUrllink(selection));
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

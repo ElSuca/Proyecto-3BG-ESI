@@ -55,21 +55,24 @@
             this.panelMenus = new System.Windows.Forms.Panel();
             this.pictureBoxBtnConfig = new System.Windows.Forms.PictureBox();
             this.BannerPic = new System.Windows.Forms.PictureBox();
+            this.panelTopPage = new System.Windows.Forms.Panel();
+            this.panelBackgroun1 = new System.Windows.Forms.Panel();
             this.panelDebugg.SuspendLayout();
             this.panelPremiunBlock.SuspendLayout();
             this.panelConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).BeginInit();
+            this.panelTopPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelResult
             // 
             this.panelResult.AutoScroll = true;
-            this.panelResult.Location = new System.Drawing.Point(376, 113);
+            this.panelResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelResult.Location = new System.Drawing.Point(376, 188);
             this.panelResult.Name = "panelResult";
             this.panelResult.Size = new System.Drawing.Size(754, 306);
             this.panelResult.TabIndex = 0;
-            this.panelResult.Paint += new System.Windows.Forms.PaintEventHandler(this.panelResult_Paint_1);
             // 
             // txtNumberItems
             // 
@@ -223,18 +226,19 @@
             // panelResultPremiun
             // 
             this.panelResultPremiun.AutoScroll = true;
-            this.panelResultPremiun.Location = new System.Drawing.Point(376, 434);
+            this.panelResultPremiun.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelResultPremiun.Location = new System.Drawing.Point(376, 572);
             this.panelResultPremiun.Name = "panelResultPremiun";
-            this.panelResultPremiun.Size = new System.Drawing.Size(754, 313);
+            this.panelResultPremiun.Size = new System.Drawing.Size(754, 236);
             this.panelResultPremiun.TabIndex = 11;
             // 
             // panelPremiunBlock
             // 
             this.panelPremiunBlock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panelPremiunBlock.Controls.Add(this.lbPremiunResultBlockMessage);
-            this.panelPremiunBlock.Location = new System.Drawing.Point(325, 434);
+            this.panelPremiunBlock.Location = new System.Drawing.Point(325, 516);
             this.panelPremiunBlock.Name = "panelPremiunBlock";
-            this.panelPremiunBlock.Size = new System.Drawing.Size(849, 313);
+            this.panelPremiunBlock.Size = new System.Drawing.Size(861, 313);
             this.panelPremiunBlock.TabIndex = 12;
             // 
             // lbPremiunResultBlockMessage
@@ -250,6 +254,7 @@
             // 
             // panelConfig
             // 
+            this.panelConfig.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelConfig.Controls.Add(this.lbBtnLanguge);
             this.panelConfig.Controls.Add(this.panelLowMark2);
             this.panelConfig.Controls.Add(this.lbBtnPersonalInformation);
@@ -299,7 +304,7 @@
             // panelLowMark
             // 
             this.panelLowMark.BackColor = System.Drawing.SystemColors.Control;
-            this.panelLowMark.Location = new System.Drawing.Point(18, 64);
+            this.panelLowMark.Location = new System.Drawing.Point(17, 48);
             this.panelLowMark.Name = "panelLowMark";
             this.panelLowMark.Size = new System.Drawing.Size(55, 2);
             this.panelLowMark.TabIndex = 1;
@@ -315,7 +320,7 @@
             // pictureBoxBtnConfig
             // 
             this.pictureBoxBtnConfig.Image = global::ApiPublica.Properties.Resources.UserMenuIcon;
-            this.pictureBoxBtnConfig.Location = new System.Drawing.Point(18, 12);
+            this.pictureBoxBtnConfig.Location = new System.Drawing.Point(18, -1);
             this.pictureBoxBtnConfig.Name = "pictureBoxBtnConfig";
             this.pictureBoxBtnConfig.Size = new System.Drawing.Size(54, 53);
             this.pictureBoxBtnConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -327,7 +332,7 @@
             // 
             // BannerPic
             // 
-            this.BannerPic.Location = new System.Drawing.Point(250, 10);
+            this.BannerPic.Location = new System.Drawing.Point(273, 72);
             this.BannerPic.Name = "BannerPic";
             this.BannerPic.Size = new System.Drawing.Size(1017, 90);
             this.BannerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -335,25 +340,45 @@
             this.BannerPic.TabStop = false;
             this.BannerPic.Click += new System.EventHandler(this.BannerPic_Click);
             // 
+            // panelTopPage
+            // 
+            this.panelTopPage.BackColor = System.Drawing.Color.DimGray;
+            this.panelTopPage.Controls.Add(this.pictureBoxBtnConfig);
+            this.panelTopPage.Controls.Add(this.panelLowMark);
+            this.panelTopPage.Location = new System.Drawing.Point(0, 13);
+            this.panelTopPage.Name = "panelTopPage";
+            this.panelTopPage.Size = new System.Drawing.Size(1813, 53);
+            this.panelTopPage.TabIndex = 16;
+            this.panelTopPage.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panelBackgroun1
+            // 
+            this.panelBackgroun1.BackColor = System.Drawing.Color.DimGray;
+            this.panelBackgroun1.Location = new System.Drawing.Point(1296, 188);
+            this.panelBackgroun1.Name = "panelBackgroun1";
+            this.panelBackgroun1.Size = new System.Drawing.Size(207, 641);
+            this.panelBackgroun1.TabIndex = 17;
+            // 
             // FormPincipalMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(1557, 772);
+            this.ClientSize = new System.Drawing.Size(1813, 841);
+            this.Controls.Add(this.panelBackgroun1);
+            this.Controls.Add(this.panelTopPage);
             this.Controls.Add(this.BannerPic);
-            this.Controls.Add(this.panelPremiunBlock);
             this.Controls.Add(this.panelMenus);
-            this.Controls.Add(this.panelLowMark);
             this.Controls.Add(this.panelConfig);
-            this.Controls.Add(this.pictureBoxBtnConfig);
-            this.Controls.Add(this.panelResultPremiun);
             this.Controls.Add(this.lbDebuggButton);
             this.Controls.Add(this.panelDebugg);
             this.Controls.Add(this.panelResult);
+            this.Controls.Add(this.panelPremiunBlock);
+            this.Controls.Add(this.panelResultPremiun);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormPincipalMenu";
             this.Text = "FormPincipalMenu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormPincipalMenu_Load);
             this.panelDebugg.ResumeLayout(false);
             this.panelDebugg.PerformLayout();
@@ -363,6 +388,7 @@
             this.panelConfig.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).EndInit();
+            this.panelTopPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +423,7 @@
         private System.Windows.Forms.Panel panelMenus;
         private System.Windows.Forms.Label lbBtnLanguge;
         private System.Windows.Forms.PictureBox BannerPic;
+        private System.Windows.Forms.Panel panelTopPage;
+        private System.Windows.Forms.Panel panelBackgroun1;
     }
 }
