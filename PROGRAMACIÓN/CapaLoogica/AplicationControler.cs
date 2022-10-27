@@ -21,7 +21,7 @@ namespace CapaLoogica
                     linea = archivo.ReadLine();
                     if (++i == 2) break;
                 }
-                selection = Int32.Parse(linea[10].ToString());
+                selection = Int32.Parse(linea[11].ToString());
             }
             return selection;
         }

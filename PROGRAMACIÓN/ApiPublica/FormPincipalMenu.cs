@@ -87,10 +87,12 @@ namespace ApiPublica
         }
         public void GetPanelMenuVisivility()
         {
-            setMenuDefaults();
-            panelMenus.Visible = panelMenus.Visible ? false : true;
-            checkPanelVisivility();
-            this.BringToFront();
+            // setMenuDefaults();
+            panelMenus.Controls.Clear();
+            panelMenus.Visible = false;
+
+           // checkPanelVisivility();
+           // this.BringToFront();
         }
         private void setMenuDefaults()
         {
@@ -218,6 +220,21 @@ namespace ApiPublica
         }
 
         private void panelPremiunBlock_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMenus_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbSport_Click(object sender, EventArgs e)
         {
 
         }

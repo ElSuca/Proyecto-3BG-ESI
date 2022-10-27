@@ -57,12 +57,17 @@
             this.BannerPic = new System.Windows.Forms.PictureBox();
             this.panelTopPage = new System.Windows.Forms.Panel();
             this.panelBackgroun1 = new System.Windows.Forms.Panel();
+            this.comboBoxSport = new System.Windows.Forms.ComboBox();
+            this.lbSport = new System.Windows.Forms.Label();
+            this.txtTeam = new System.Windows.Forms.TextBox();
+            this.lbTeam = new System.Windows.Forms.Label();
             this.panelDebugg.SuspendLayout();
             this.panelPremiunBlock.SuspendLayout();
             this.panelConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).BeginInit();
             this.panelTopPage.SuspendLayout();
+            this.panelBackgroun1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelResult
@@ -314,10 +319,11 @@
             // 
             // panelMenus
             // 
-            this.panelMenus.Location = new System.Drawing.Point(1389, 12);
+            this.panelMenus.Location = new System.Drawing.Point(1296, 131);
             this.panelMenus.Name = "panelMenus";
             this.panelMenus.Size = new System.Drawing.Size(34, 31);
             this.panelMenus.TabIndex = 3;
+            this.panelMenus.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenus_Paint);
             // 
             // pictureBoxBtnConfig
             // 
@@ -349,17 +355,60 @@
             this.panelTopPage.Controls.Add(this.panelLowMark);
             this.panelTopPage.Location = new System.Drawing.Point(0, 13);
             this.panelTopPage.Name = "panelTopPage";
-            this.panelTopPage.Size = new System.Drawing.Size(1813, 53);
+            this.panelTopPage.Size = new System.Drawing.Size(1801, 53);
             this.panelTopPage.TabIndex = 16;
             this.panelTopPage.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panelBackgroun1
             // 
             this.panelBackgroun1.BackColor = System.Drawing.Color.DimGray;
+            this.panelBackgroun1.Controls.Add(this.lbTeam);
+            this.panelBackgroun1.Controls.Add(this.txtTeam);
+            this.panelBackgroun1.Controls.Add(this.lbSport);
+            this.panelBackgroun1.Controls.Add(this.comboBoxSport);
             this.panelBackgroun1.Location = new System.Drawing.Point(1296, 188);
             this.panelBackgroun1.Name = "panelBackgroun1";
             this.panelBackgroun1.Size = new System.Drawing.Size(207, 641);
             this.panelBackgroun1.TabIndex = 17;
+            // 
+            // comboBoxSport
+            // 
+            this.comboBoxSport.FormattingEnabled = true;
+            this.comboBoxSport.Location = new System.Drawing.Point(41, 49);
+            this.comboBoxSport.Name = "comboBoxSport";
+            this.comboBoxSport.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSport.TabIndex = 0;
+            // 
+            // lbSport
+            // 
+            this.lbSport.AutoSize = true;
+            this.lbSport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSport.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbSport.Location = new System.Drawing.Point(37, 22);
+            this.lbSport.Name = "lbSport";
+            this.lbSport.Size = new System.Drawing.Size(59, 24);
+            this.lbSport.TabIndex = 1;
+            this.lbSport.Text = "Sport";
+            this.lbSport.Click += new System.EventHandler(this.lbSport_Click);
+            // 
+            // txtTeam
+            // 
+            this.txtTeam.Location = new System.Drawing.Point(41, 128);
+            this.txtTeam.Name = "txtTeam";
+            this.txtTeam.Size = new System.Drawing.Size(121, 20);
+            this.txtTeam.TabIndex = 2;
+            this.txtTeam.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // lbTeam
+            // 
+            this.lbTeam.AutoSize = true;
+            this.lbTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeam.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbTeam.Location = new System.Drawing.Point(37, 101);
+            this.lbTeam.Name = "lbTeam";
+            this.lbTeam.Size = new System.Drawing.Size(63, 24);
+            this.lbTeam.TabIndex = 3;
+            this.lbTeam.Text = "Team";
             // 
             // FormPincipalMenu
             // 
@@ -391,6 +440,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).EndInit();
             this.panelTopPage.ResumeLayout(false);
+            this.panelBackgroun1.ResumeLayout(false);
+            this.panelBackgroun1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,5 +478,9 @@
         private System.Windows.Forms.PictureBox BannerPic;
         private System.Windows.Forms.Panel panelTopPage;
         private System.Windows.Forms.Panel panelBackgroun1;
+        private System.Windows.Forms.Label lbSport;
+        private System.Windows.Forms.ComboBox comboBoxSport;
+        private System.Windows.Forms.TextBox txtTeam;
+        private System.Windows.Forms.Label lbTeam;
     }
 }
