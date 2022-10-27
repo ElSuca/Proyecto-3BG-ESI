@@ -151,7 +151,7 @@
             this.panelDebugg.Controls.Add(this.txtTeam2);
             this.panelDebugg.Controls.Add(this.txtScore2);
             this.panelDebugg.Controls.Add(this.txtScore1);
-            this.panelDebugg.Location = new System.Drawing.Point(12, 422);
+            this.panelDebugg.Location = new System.Drawing.Point(12, 498);
             this.panelDebugg.Name = "panelDebugg";
             this.panelDebugg.Size = new System.Drawing.Size(200, 315);
             this.panelDebugg.TabIndex = 9;
@@ -215,8 +215,9 @@
             // lbDebuggButton
             // 
             this.lbDebuggButton.AutoSize = true;
+            this.lbDebuggButton.BackColor = System.Drawing.Color.Gray;
             this.lbDebuggButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.lbDebuggButton.Location = new System.Drawing.Point(12, 740);
+            this.lbDebuggButton.Location = new System.Drawing.Point(12, 816);
             this.lbDebuggButton.Name = "lbDebuggButton";
             this.lbDebuggButton.Size = new System.Drawing.Size(80, 13);
             this.lbDebuggButton.TabIndex = 10;
@@ -240,6 +241,7 @@
             this.panelPremiunBlock.Name = "panelPremiunBlock";
             this.panelPremiunBlock.Size = new System.Drawing.Size(861, 313);
             this.panelPremiunBlock.TabIndex = 12;
+            this.panelPremiunBlock.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPremiunBlock_Paint);
             // 
             // lbPremiunResultBlockMessage
             // 
@@ -248,9 +250,9 @@
             this.lbPremiunResultBlockMessage.ForeColor = System.Drawing.SystemColors.Control;
             this.lbPremiunResultBlockMessage.Location = new System.Drawing.Point(16, 143);
             this.lbPremiunResultBlockMessage.Name = "lbPremiunResultBlockMessage";
-            this.lbPremiunResultBlockMessage.Size = new System.Drawing.Size(817, 25);
+            this.lbPremiunResultBlockMessage.Size = new System.Drawing.Size(830, 25);
             this.lbPremiunResultBlockMessage.TabIndex = 0;
-            this.lbPremiunResultBlockMessage.Text = "Bocked content, please upgrade your accoun to premiun to view this content";
+            this.lbPremiunResultBlockMessage.Text = "Blocked content, please upgrade your account to premiun to view this content";
             // 
             // panelConfig
             // 

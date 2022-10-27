@@ -10,7 +10,7 @@ namespace UnitTest
         public void Register()
         {
             TeamControler.Alta("Test2", "Test2", "Test2","Test2");
-            PlayerControler.Alta("Test2", "Test2", "Test2", "Test2", "Test2", "Test2", "Test2", "Test2");
+            PlayerControler.Alta("Test2", "Test2", "Test2", "Test2", "1111/11/11 10:10", "Test2", "Test2", "Test2");
             StageControler.Alta("Test2", "Test2", "Test2", 1, "Test2", "Test2");
             EventControler.Alta("Test2", "1111-11-11", "1111-11-11", new StageControler().GetId("Test2"), 1, "Test2");
          

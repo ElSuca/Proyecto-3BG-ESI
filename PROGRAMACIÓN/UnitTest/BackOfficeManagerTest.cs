@@ -19,7 +19,7 @@ namespace UnitTest
                 response = new AsociationControler().ExistAsociation(new AsociationControler().GetId("Test2"));
                 if(response)
                 {
-                    ManagerControler.Alta("Test", "Test", "Test", "Test", "Test", "Test", "Test", new AsociationControler().GetId("Test2"), "11-11-1111", "11-11-1111");
+                    ManagerControler.Alta("Test", "Test", "Test", "Test", "1111-11-11", "Test", "Test", new AsociationControler().GetId("Test2"), "1111-11-11", "1111-11-11");
                     response = new ManagerControler().ExistManager(new ManagerControler().GetId("Test"));
                     Assert.AreEqual(true, response);
                 }
@@ -41,7 +41,7 @@ namespace UnitTest
                 if (response)
                 {
                     int id = new ManagerControler().GetId("Test");
-                    ManagerControler.Modificar(id, "Test", "Test", "Test", "Test", "Test", "n", "Test");
+                    ManagerControler.Modificar(id, "Test", "Test", "Test", "Test", "1111-11-11", "n", "Test");
                     response = new ManagerControler().HaveChange(id);
                     Assert.AreEqual(true, response);
                 }

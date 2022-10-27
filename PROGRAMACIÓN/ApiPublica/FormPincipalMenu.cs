@@ -216,5 +216,10 @@ namespace ApiPublica
         {
 
         }
+
+        private void panelPremiunBlock_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

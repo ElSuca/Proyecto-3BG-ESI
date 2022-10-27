@@ -9,7 +9,7 @@ namespace UnitTest
         [TestMethod]
         public void Register()
         {
-            PlayerControler.Alta("Test", "Test", "Test", "Test", "Test", "Test", "Test", "Test");
+            PlayerControler.Alta("Test", "Test", "Test", "Test", "1111-11-11", "Test", "Test", "Test");
             bool response = new PlayerControler().ExistPlayer(new PlayerControler().GetId("Test"));
             Assert.AreEqual(true, response);
         }
@@ -17,7 +17,7 @@ namespace UnitTest
         public void Modify()
         {
             int id = new PlayerControler().GetId("Test");
-            PlayerControler.Modificar(id, "Test", "n", "Test", "Test", "Test", "Test", "Test", "Test");
+            PlayerControler.Modificar(id, "Test", "n", "Test", "Test", "1111-11-11", "Test", "Test", "Test");
             bool response = new PlayerControler().HaveChange(id);
             Assert.AreEqual(true, response);
         }
