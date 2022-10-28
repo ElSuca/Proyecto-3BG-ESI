@@ -71,10 +71,7 @@ namespace Proyecto
         {
 
         }
-        private void lbBack_Click(object sender, EventArgs e)
-        {
-            new FormPincipalMenu().GetPanelMenuVisivility();
-        }
+        
 
         private void checkBoxSpanish_CheckStateChanged(object sender, EventArgs e)
         {

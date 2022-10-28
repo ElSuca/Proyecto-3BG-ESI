@@ -44,10 +44,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbDebuggButton = new System.Windows.Forms.Label();
-            this.panelResultPremiun = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelPremiunBlock = new System.Windows.Forms.Panel();
-            this.lbPremiunResultBlockMessage = new System.Windows.Forms.Label();
             this.panelConfig = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panelBack = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.lbBtnLanguge = new System.Windows.Forms.Label();
             this.panelLowMark2 = new System.Windows.Forms.Panel();
             this.lbBtnPersonalInformation = new System.Windows.Forms.Label();
@@ -56,14 +57,17 @@
             this.pictureBoxBtnConfig = new System.Windows.Forms.PictureBox();
             this.BannerPic = new System.Windows.Forms.PictureBox();
             this.panelTopPage = new System.Windows.Forms.Panel();
+            this.lbButtonFootbal = new System.Windows.Forms.Label();
+            this.lbSportListButtomMenu = new System.Windows.Forms.Label();
             this.panelBackgroun1 = new System.Windows.Forms.Panel();
-            this.comboBoxSport = new System.Windows.Forms.ComboBox();
-            this.lbSport = new System.Windows.Forms.Label();
-            this.txtTeam = new System.Windows.Forms.TextBox();
             this.lbTeam = new System.Windows.Forms.Label();
+            this.txtTeam = new System.Windows.Forms.TextBox();
+            this.lbSport = new System.Windows.Forms.Label();
+            this.comboBoxSport = new System.Windows.Forms.ComboBox();
+            this.panelSportList = new System.Windows.Forms.Panel();
             this.panelDebugg.SuspendLayout();
-            this.panelPremiunBlock.SuspendLayout();
             this.panelConfig.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).BeginInit();
             this.panelTopPage.SuspendLayout();
@@ -74,9 +78,9 @@
             // 
             this.panelResult.AutoScroll = true;
             this.panelResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelResult.Location = new System.Drawing.Point(376, 188);
+            this.panelResult.Location = new System.Drawing.Point(218, 204);
             this.panelResult.Name = "panelResult";
-            this.panelResult.Size = new System.Drawing.Size(754, 306);
+            this.panelResult.Size = new System.Drawing.Size(608, 495);
             this.panelResult.TabIndex = 0;
             // 
             // txtNumberItems
@@ -129,7 +133,6 @@
             this.btnsendinfo.TabIndex = 7;
             this.btnsendinfo.Text = "SendTest";
             this.btnsendinfo.UseVisualStyleBackColor = true;
-            this.btnsendinfo.Click += new System.EventHandler(this.btnsendinfo_Click);
             // 
             // btnClear
             // 
@@ -139,7 +142,6 @@
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // panelDebugg
             // 
@@ -229,39 +231,10 @@
             this.lbDebuggButton.Text = "Debug test.......";
             this.lbDebuggButton.Click += new System.EventHandler(this.lbDebuggButton_Click);
             // 
-            // panelResultPremiun
-            // 
-            this.panelResultPremiun.AutoScroll = true;
-            this.panelResultPremiun.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelResultPremiun.Location = new System.Drawing.Point(376, 572);
-            this.panelResultPremiun.Name = "panelResultPremiun";
-            this.panelResultPremiun.Size = new System.Drawing.Size(754, 236);
-            this.panelResultPremiun.TabIndex = 11;
-            // 
-            // panelPremiunBlock
-            // 
-            this.panelPremiunBlock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.panelPremiunBlock.Controls.Add(this.lbPremiunResultBlockMessage);
-            this.panelPremiunBlock.Location = new System.Drawing.Point(325, 516);
-            this.panelPremiunBlock.Name = "panelPremiunBlock";
-            this.panelPremiunBlock.Size = new System.Drawing.Size(861, 313);
-            this.panelPremiunBlock.TabIndex = 12;
-            this.panelPremiunBlock.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPremiunBlock_Paint);
-            // 
-            // lbPremiunResultBlockMessage
-            // 
-            this.lbPremiunResultBlockMessage.AutoSize = true;
-            this.lbPremiunResultBlockMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPremiunResultBlockMessage.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPremiunResultBlockMessage.Location = new System.Drawing.Point(16, 143);
-            this.lbPremiunResultBlockMessage.Name = "lbPremiunResultBlockMessage";
-            this.lbPremiunResultBlockMessage.Size = new System.Drawing.Size(830, 25);
-            this.lbPremiunResultBlockMessage.TabIndex = 0;
-            this.lbPremiunResultBlockMessage.Text = "Blocked content, please upgrade your account to premiun to view this content";
-            // 
             // panelConfig
             // 
             this.panelConfig.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelConfig.Controls.Add(this.panel1);
             this.panelConfig.Controls.Add(this.lbBtnLanguge);
             this.panelConfig.Controls.Add(this.panelLowMark2);
             this.panelConfig.Controls.Add(this.lbBtnPersonalInformation);
@@ -270,6 +243,50 @@
             this.panelConfig.Size = new System.Drawing.Size(155, 161);
             this.panelConfig.TabIndex = 14;
             this.panelConfig.Visible = false;
+            this.panelConfig.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConfig_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.panelBack);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Location = new System.Drawing.Point(-2, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(155, 161);
+            this.panel1.TabIndex = 15;
+            this.panel1.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(4, 56);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Language";
+            // 
+            // panelBack
+            // 
+            this.panelBack.BackColor = System.Drawing.SystemColors.Control;
+            this.panelBack.Location = new System.Drawing.Point(7, 41);
+            this.panelBack.Name = "panelBack";
+            this.panelBack.Size = new System.Drawing.Size(55, 2);
+            this.panelBack.TabIndex = 2;
+            this.panelBack.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(4, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(143, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "My Personal Information";
             // 
             // lbBtnLanguge
             // 
@@ -319,7 +336,7 @@
             // 
             // panelMenus
             // 
-            this.panelMenus.Location = new System.Drawing.Point(1296, 131);
+            this.panelMenus.Location = new System.Drawing.Point(842, 204);
             this.panelMenus.Name = "panelMenus";
             this.panelMenus.Size = new System.Drawing.Size(34, 31);
             this.panelMenus.TabIndex = 3;
@@ -334,13 +351,13 @@
             this.pictureBoxBtnConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBtnConfig.TabIndex = 13;
             this.pictureBoxBtnConfig.TabStop = false;
-            this.pictureBoxBtnConfig.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBoxBtnConfig.Click += new System.EventHandler(this.pictureBoxBtnConfig_Click);
             this.pictureBoxBtnConfig.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBoxBtnConfig.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // BannerPic
             // 
-            this.BannerPic.Location = new System.Drawing.Point(273, 72);
+            this.BannerPic.Location = new System.Drawing.Point(176, 72);
             this.BannerPic.Name = "BannerPic";
             this.BannerPic.Size = new System.Drawing.Size(1017, 90);
             this.BannerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -351,6 +368,8 @@
             // panelTopPage
             // 
             this.panelTopPage.BackColor = System.Drawing.Color.DimGray;
+            this.panelTopPage.Controls.Add(this.lbButtonFootbal);
+            this.panelTopPage.Controls.Add(this.lbSportListButtomMenu);
             this.panelTopPage.Controls.Add(this.pictureBoxBtnConfig);
             this.panelTopPage.Controls.Add(this.panelLowMark);
             this.panelTopPage.Location = new System.Drawing.Point(0, 13);
@@ -359,6 +378,31 @@
             this.panelTopPage.TabIndex = 16;
             this.panelTopPage.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // lbButtonFootbal
+            // 
+            this.lbButtonFootbal.AutoSize = true;
+            this.lbButtonFootbal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbButtonFootbal.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbButtonFootbal.Location = new System.Drawing.Point(212, 17);
+            this.lbButtonFootbal.Name = "lbButtonFootbal";
+            this.lbButtonFootbal.Size = new System.Drawing.Size(127, 33);
+            this.lbButtonFootbal.TabIndex = 14;
+            this.lbButtonFootbal.Text = "Football";
+            this.lbButtonFootbal.Click += new System.EventHandler(this.lbButtonFootbal_Click);
+            // 
+            // lbSportListButtomMenu
+            // 
+            this.lbSportListButtomMenu.AutoSize = true;
+            this.lbSportListButtomMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSportListButtomMenu.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbSportListButtomMenu.Location = new System.Drawing.Point(851, 17);
+            this.lbSportListButtomMenu.Name = "lbSportListButtomMenu";
+            this.lbSportListButtomMenu.Size = new System.Drawing.Size(105, 33);
+            this.lbSportListButtomMenu.TabIndex = 4;
+            this.lbSportListButtomMenu.Text = "Sports";
+            this.lbSportListButtomMenu.MouseLeave += new System.EventHandler(this.lbSportListButtomMenu_MouseLeave);
+            this.lbSportListButtomMenu.MouseHover += new System.EventHandler(this.lbSportListButtomMenu_MouseHover);
+            // 
             // panelBackgroun1
             // 
             this.panelBackgroun1.BackColor = System.Drawing.Color.DimGray;
@@ -366,18 +410,29 @@
             this.panelBackgroun1.Controls.Add(this.txtTeam);
             this.panelBackgroun1.Controls.Add(this.lbSport);
             this.panelBackgroun1.Controls.Add(this.comboBoxSport);
-            this.panelBackgroun1.Location = new System.Drawing.Point(1296, 188);
+            this.panelBackgroun1.Location = new System.Drawing.Point(882, 204);
             this.panelBackgroun1.Name = "panelBackgroun1";
             this.panelBackgroun1.Size = new System.Drawing.Size(207, 641);
             this.panelBackgroun1.TabIndex = 17;
             // 
-            // comboBoxSport
+            // lbTeam
             // 
-            this.comboBoxSport.FormattingEnabled = true;
-            this.comboBoxSport.Location = new System.Drawing.Point(41, 49);
-            this.comboBoxSport.Name = "comboBoxSport";
-            this.comboBoxSport.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSport.TabIndex = 0;
+            this.lbTeam.AutoSize = true;
+            this.lbTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeam.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbTeam.Location = new System.Drawing.Point(37, 101);
+            this.lbTeam.Name = "lbTeam";
+            this.lbTeam.Size = new System.Drawing.Size(63, 24);
+            this.lbTeam.TabIndex = 3;
+            this.lbTeam.Text = "Team";
+            // 
+            // txtTeam
+            // 
+            this.txtTeam.Location = new System.Drawing.Point(41, 128);
+            this.txtTeam.Name = "txtTeam";
+            this.txtTeam.Size = new System.Drawing.Size(121, 20);
+            this.txtTeam.TabIndex = 2;
+            this.txtTeam.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lbSport
             // 
@@ -391,31 +446,33 @@
             this.lbSport.Text = "Sport";
             this.lbSport.Click += new System.EventHandler(this.lbSport_Click);
             // 
-            // txtTeam
+            // comboBoxSport
             // 
-            this.txtTeam.Location = new System.Drawing.Point(41, 128);
-            this.txtTeam.Name = "txtTeam";
-            this.txtTeam.Size = new System.Drawing.Size(121, 20);
-            this.txtTeam.TabIndex = 2;
-            this.txtTeam.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.comboBoxSport.FormattingEnabled = true;
+            this.comboBoxSport.Location = new System.Drawing.Point(41, 49);
+            this.comboBoxSport.Name = "comboBoxSport";
+            this.comboBoxSport.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSport.TabIndex = 0;
             // 
-            // lbTeam
+            // panelSportList
             // 
-            this.lbTeam.AutoSize = true;
-            this.lbTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeam.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbTeam.Location = new System.Drawing.Point(37, 101);
-            this.lbTeam.Name = "lbTeam";
-            this.lbTeam.Size = new System.Drawing.Size(63, 24);
-            this.lbTeam.TabIndex = 3;
-            this.lbTeam.Text = "Team";
+            this.panelSportList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelSportList.Location = new System.Drawing.Point(832, 72);
+            this.panelSportList.Name = "panelSportList";
+            this.panelSportList.Size = new System.Drawing.Size(155, 444);
+            this.panelSportList.TabIndex = 16;
+            this.panelSportList.Visible = false;
+            this.panelSportList.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panelSportList.MouseLeave += new System.EventHandler(this.panelSportList_MouseLeave);
+            this.panelSportList.MouseHover += new System.EventHandler(this.panelSportList_MouseHover);
             // 
             // FormPincipalMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(1813, 841);
+            this.ClientSize = new System.Drawing.Size(1170, 841);
+            this.Controls.Add(this.panelSportList);
             this.Controls.Add(this.panelBackgroun1);
             this.Controls.Add(this.panelTopPage);
             this.Controls.Add(this.BannerPic);
@@ -424,22 +481,20 @@
             this.Controls.Add(this.lbDebuggButton);
             this.Controls.Add(this.panelDebugg);
             this.Controls.Add(this.panelResult);
-            this.Controls.Add(this.panelPremiunBlock);
-            this.Controls.Add(this.panelResultPremiun);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormPincipalMenu";
             this.Text = "FormPincipalMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormPincipalMenu_Load);
             this.panelDebugg.ResumeLayout(false);
             this.panelDebugg.PerformLayout();
-            this.panelPremiunBlock.ResumeLayout(false);
-            this.panelPremiunBlock.PerformLayout();
             this.panelConfig.ResumeLayout(false);
             this.panelConfig.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).EndInit();
             this.panelTopPage.ResumeLayout(false);
+            this.panelTopPage.PerformLayout();
             this.panelBackgroun1.ResumeLayout(false);
             this.panelBackgroun1.PerformLayout();
             this.ResumeLayout(false);
@@ -465,9 +520,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel panelResultPremiun;
-        private System.Windows.Forms.Panel panelPremiunBlock;
-        private System.Windows.Forms.Label lbPremiunResultBlockMessage;
         private System.Windows.Forms.PictureBox pictureBoxBtnConfig;
         private System.Windows.Forms.Panel panelConfig;
         private System.Windows.Forms.Label lbBtnPersonalInformation;
@@ -482,5 +534,12 @@
         private System.Windows.Forms.ComboBox comboBoxSport;
         private System.Windows.Forms.TextBox txtTeam;
         private System.Windows.Forms.Label lbTeam;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelBack;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panelSportList;
+        private System.Windows.Forms.Label lbSportListButtomMenu;
+        private System.Windows.Forms.Label lbButtonFootbal;
     }
 }

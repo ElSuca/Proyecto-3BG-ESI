@@ -1,4 +1,5 @@
 ﻿using CapaLogica;
+using CapaLoogica;
 using Proyecto;
 using System;
 using System.Drawing;
@@ -24,18 +25,18 @@ namespace ApiPublica
             selection = new Random().Next(3);
         }
         #region Fill Results
-        private void FillResults(int n)
+        private void FillResults2vs2(int n,string team1,string team2,int result1,int result2,string date)
         {
             MenuResultPreviewModel[] listItem = new MenuResultPreviewModel[n];
 
             for (int i = 0; i < listItem.Length; i++)
             {
                 listItem[i] = new MenuResultPreviewModel();
-                listItem[i].Team1 = Team1;
-                listItem[i].Team2 = Team2;
-                listItem[i].Score1 = Score1;
-                listItem[i].Score2 = Score2;
-                listItem[i].Date = Date;
+                listItem[i].Team1 = team1;
+                listItem[i].Team2 = team2;
+                listItem[i].Score1 = result1;
+                listItem[i].Score2 = result2;
+                listItem[i].Date = date;
 
                 if (panelResult.Controls.Count < 0) panelResult.Controls.Clear();
                 else
@@ -45,43 +46,12 @@ namespace ApiPublica
 
             }
         }
-        private void FillResultsPremiun(int n)
-        {
-            MenuResultPreviewModel[] listItem = new MenuResultPreviewModel[n];
-
-            for (int i = 0; i < listItem.Length; i++)
-            {
-                listItem[i] = new MenuResultPreviewModel();
-                listItem[i].Team1 = Team1;
-                listItem[i].Team2 = Team2;
-                listItem[i].Score1 = Score1;
-                listItem[i].Score2 = Score2;
-                listItem[i].Date = Date;
-
-                if (panelResultPremiun.Controls.Count < 0) panelResultPremiun.Controls.Clear();
-                else
-                {
-                    panelResultPremiun.Controls.Add(listItem[i]);
-                }
-
-            }
-        }
         #endregion
         private void loadDafaults()
         {
 
 
-            FillResults(10);
-            FillResultsPremiun(10);
-            Team1 = "Nacional";
-            Team2 = "Peñarol";
-            Score1 = 1;
-            Score2 = 0;
-            Date = "22/10/2022 10:20";
-
-
-
-            
+            FillResults2vs2(10, "n","P", 1, 0," 10 / 10 / 1010 10:10"); 
             this.Size = new Size(screenWidth, screenHeight);
             panelTopPage.Size = new Size(screenWidth, 53);
         }
@@ -96,81 +66,23 @@ namespace ApiPublica
         }
         private void setMenuDefaults()
         {
-            if (panelMenus.Size == new Size(screenWidth, screenHeight))
+            if (panelMenus.Size == new Size(screenWidth, screenHeight-50))
             {
                 panelMenus.Size = new Size(34, 31);
                 panelMenus.Location = new Point(1389, 12);
             }
             else
             {
-                panelMenus.Size = new Size(screenWidth, screenHeight);
-                panelMenus.Location = new Point(0, 12);
+                panelMenus.Size = new Size(screenWidth, screenHeight-50);
+                panelMenus.Location = new Point(0, (12)+50);
             }
         }
-        private void FormPincipalMenu_Load(object sender, EventArgs e) => panelPremiunBlock.Visible = new UserControler().GetStaticRole == "Premiun" ? false : true;
-        #region click
-        private void btnsendinfo_Click(object sender, EventArgs e)
-        {
-            Team1 = txtTeam1.Text;
-            Team2 = txtTeam2.Text;
-            Score1 = Int32.Parse(txtScore1.Text);
-            Score2 = Int32.Parse(txtScore2.Text);
-            Date = txtDate.Text;
-            FillResults(Int32.Parse(txtNumberItems.Text));
-            FillResultsPremiun(Int32.Parse(txtNumberItems.Text));
-        }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            panelResult.Controls.Clear();
-            panelResultPremiun.Controls.Clear();
-        }
-
-        private void lbDebuggButton_Click(object sender, EventArgs e) => panelDebugg.Visible = panelDebugg.Visible ? false : true;
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            panelConfig.Visible = panelConfig.Visible ? false : true;
-            if (panelMenus.Visible) panelMenus.Visible = false;
-            checkPanelVisivility();
-        }
-
-        private void lbBtnLanguge_Click(object sender, EventArgs e)
-        {
-            setMenuDefaults();
-            panelMenus.Visible = panelMenus.Visible ? false : true;
-            if (!panelMenus.Contains(LanguageMenu.Instance))
-            {
-                panelMenus.Controls.Add(LanguageMenu.Instance);
-                LanguageMenu.Instance.Dock = DockStyle.Fill;
-                LanguageMenu.Instance.BringToFront();
-            }
-            else LanguageMenu.Instance.BringToFront();
-            checkPanelVisivility();
-        }
-
-        private void lbBtnPersonalInformation_Click(object sender, EventArgs e)
-        {
-            setMenuDefaults();
-            panelMenus.Visible = panelMenus.Visible ? false : true;
-
-            if (!panelMenus.Contains(UserDataMenu.Instance))
-            {
-                panelMenus.Controls.Add(UserDataMenu.Instance);
-                UserDataMenu.Instance.Dock = DockStyle.Fill;
-                UserDataMenu.Instance.BringToFront();
-            }
-            else UserDataMenu.Instance.BringToFront();
-
-            checkPanelVisivility();
-        }
-        #endregion
         private void checkPanelVisivility()
         {
-            if (!IsAtFront(panelMenus))
-            {
-                panelMenus.BringToFront();
-            }
+            if (!IsAtFront(panelMenus))panelMenus.BringToFront();
+            
+        
         }
         private bool IsAtFront(Control control) => control.Parent.Controls.GetChildIndex(control) == 0;
 
@@ -237,6 +149,78 @@ namespace ApiPublica
         private void lbSport_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBoxBtnConfig_Click(object sender, EventArgs e)
+        {
+            panelConfig.Visible = panelConfig.Visible ? false : true;
+            panelConfig.BringToFront();
+        }
+
+        private void lbBtnPersonalInformation_Click(object sender, EventArgs e)
+        {
+            setMenuDefaults();
+            if (!panelMenus.Contains(UserDataMenu.Instance))
+            {
+                panelMenus.Controls.Add(UserDataMenu.Instance);
+                UserDataMenu.Instance.Dock = DockStyle.Fill;
+                UserDataMenu.Instance.BringToFront();
+            }
+            else UserDataMenu.Instance.BringToFront();
+            checkPanelVisivility();
+        }
+
+        private void panelConfig_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbBtnLanguge_Click(object sender, EventArgs e)
+        {
+            setMenuDefaults();
+            if (!panelMenus.Contains(LanguageMenu.Instance))
+            {
+                panelMenus.Controls.Add(LanguageMenu.Instance);
+                LanguageMenu.Instance.Dock = DockStyle.Fill;
+                LanguageMenu.Instance.BringToFront();
+            }
+            else LanguageMenu.Instance.BringToFront();
+            checkPanelVisivility();
+        }
+
+        private void lbDebuggButton_Click(object sender, EventArgs e) => panelDebugg.Visible = panelDebugg.Visible ? false : true;
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbSportListButtomMenu_MouseHover(object sender, EventArgs e)
+        {
+            panelSportList.Visible = true;
+        }
+
+        private void lbSportListButtomMenu_MouseLeave(object sender, EventArgs e)
+        {
+
+           /// panelSportList.Visible = false;
+
+        }
+
+        private void panelSportList_MouseHover(object sender, EventArgs e) => panelSportList.Visible = true;
+
+        private void panelSportList_MouseLeave(object sender, EventArgs e) => panelSportList.Visible = false;
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbButtonFootbal_Click(object sender, EventArgs e)
+        {
+            panelResult.Controls.Clear();
+            new EventControler().GetEventBySport("Football");
+            FillResults2vs2(1,new EventControler().ge)
         }
     }
 }

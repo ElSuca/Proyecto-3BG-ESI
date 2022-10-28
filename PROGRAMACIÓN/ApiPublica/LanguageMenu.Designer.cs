@@ -30,7 +30,6 @@
         {
             this.checkBoxSpanish = new System.Windows.Forms.CheckBox();
             this.checkBoxEnglish = new System.Windows.Forms.CheckBox();
-            this.lbBack = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkBoxSpanish
@@ -60,24 +59,11 @@
             this.checkBoxEnglish.UseVisualStyleBackColor = true;
             this.checkBoxEnglish.CheckedChanged += new System.EventHandler(this.checkBoxEnglish_CheckedChanged);
             // 
-            // lbBack
-            // 
-            this.lbBack.AutoSize = true;
-            this.lbBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBack.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbBack.Location = new System.Drawing.Point(5, 16);
-            this.lbBack.Name = "lbBack";
-            this.lbBack.Size = new System.Drawing.Size(64, 20);
-            this.lbBack.TabIndex = 10;
-            this.lbBack.Text = "Return";
-            this.lbBack.Click += new System.EventHandler(this.lbBack_Click);
-            // 
             // LanguageMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.Controls.Add(this.lbBack);
             this.Controls.Add(this.checkBoxEnglish);
             this.Controls.Add(this.checkBoxSpanish);
             this.Name = "LanguageMenu";
@@ -91,6 +77,5 @@
         #endregion
         private System.Windows.Forms.CheckBox checkBoxSpanish;
         private System.Windows.Forms.CheckBox checkBoxEnglish;
-        private System.Windows.Forms.Label lbBack;
     }
 }

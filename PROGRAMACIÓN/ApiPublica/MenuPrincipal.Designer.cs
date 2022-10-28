@@ -110,6 +110,7 @@
             this.btnSearchName.TabIndex = 5;
             this.btnSearchName.Text = "🔎";
             this.btnSearchName.UseVisualStyleBackColor = true;
+            this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
             // 
             // lbName
             // 

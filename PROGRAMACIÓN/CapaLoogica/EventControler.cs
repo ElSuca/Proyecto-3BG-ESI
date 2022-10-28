@@ -66,9 +66,13 @@ namespace CapaLoogica
             };
             e.InsertTime();
         }
+        public void GetEventBySport(string sport) => new ModelEvents().GetEventBySport(sport);
         public bool ExistEvent(string name) => new ModelEvents().ExistEvent(name);
         public int GetId(string Name) => new ModelEvents().GetId(Name);
         public int GetIdTime(int num) => new ModelEvents().GetIdTime(num);
         public bool HaveChange(int id) => new ModelEvents().HaveChange(id);
+
+        public string GetStartDate() => new ModelEvents().StartDate;
+        public
     }
 }

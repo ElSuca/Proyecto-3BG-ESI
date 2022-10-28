@@ -41,12 +41,13 @@ namespace CapaDeDatos
                     $"database={this.NameDataBase};" +
                     $"port={this.DataBasePort}"
                 );
+            
+            this.Conection.Open();
             }
             catch
             {
                 throw new Exception("Data Base Not Found");
             }
-            this.Conection.Open();
         }
         private void startConection()
         {

@@ -56,6 +56,11 @@ namespace Proyecto
 
         }
 
+        private void btnSearchName_Click(object sender, EventArgs e)
+        {
+
+        }
+
         // private void btnSearchCategory_Click(object sender, EventArgs e) => new SportControler().GetPlayerData(txtBusquedaJugador.Text);
     }
 }

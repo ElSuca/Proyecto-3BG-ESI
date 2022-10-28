@@ -287,5 +287,9 @@ namespace CapDeDatos
             if (Check == "27/10/2022 0:00:00") return true;
             else return false;
         }    
+        public void GetEventBySport(string sport)
+        {
+
+        }
     }
 }
