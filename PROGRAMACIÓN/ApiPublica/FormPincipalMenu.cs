@@ -220,7 +220,6 @@ namespace ApiPublica
         {
             panelResult.Controls.Clear();
             new EventControler().GetEventBySport("Football");
-            FillResults2vs2(1,new EventControler().ge)
         }
     }
 }
