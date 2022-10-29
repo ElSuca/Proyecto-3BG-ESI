@@ -144,11 +144,17 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuResultPreviewModel.cs">
+    <Compile Include="MenuResult2vs2PreviewModel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuResultPreviewModel.Designer.cs">
-      <DependentUpon>MenuResultPreviewModel.cs</DependentUpon>
+    <Compile Include="MenuResult2vs2PreviewModel.Designer.cs">
+      <DependentUpon>MenuResult2vs2PreviewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuResultMultiplePreviewModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuResultMultiplePreviewModel.Designer.cs">
+      <DependentUpon>MenuResultMultiplePreviewModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,8 +173,11 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuResultPreviewModel.resx">
-      <DependentUpon>MenuResultPreviewModel.cs</DependentUpon>
+    <EmbeddedResource Include="MenuResult2vs2PreviewModel.resx">
+      <DependentUpon>MenuResult2vs2PreviewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuResultMultiplePreviewModel.resx">
+      <DependentUpon>MenuResultMultiplePreviewModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

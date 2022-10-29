@@ -27,11 +27,11 @@ namespace ApiPublica
         #region Fill Results
         private void FillResults2vs2(int n,string team1,string team2,int result1,int result2,string date)
         {
-            MenuResultPreviewModel[] listItem = new MenuResultPreviewModel[n];
+            MenuResult2vs2PreviewModel[] listItem = new MenuResult2vs2PreviewModel[n];
 
             for (int i = 0; i < listItem.Length; i++)
             {
-                listItem[i] = new MenuResultPreviewModel();
+                listItem[i] = new MenuResult2vs2PreviewModel();
                 listItem[i].Team1 = team1;
                 listItem[i].Team2 = team2;
                 listItem[i].Score1 = result1;
@@ -220,7 +220,7 @@ namespace ApiPublica
         {
             panelResult.Controls.Clear();
             new EventControler().GetEventBySport("Football");
-            FillResults2vs2(1,new EventControler().ge)
+
         }
     }
 }
