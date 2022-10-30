@@ -52,7 +52,7 @@ namespace ApiPublica
 
 
             FillResults2vs2(10, "n","P", 1, 0," 10 / 10 / 1010 10:10"); 
-            this.Size = new Size(screenWidth, screenHeight);
+            this.Size = new Size(1280, 1024);
             panelTopPage.Size = new Size(screenWidth, 53);
         }
         public void GetPanelMenuVisivility()
@@ -220,7 +220,16 @@ namespace ApiPublica
         {
             panelResult.Controls.Clear();
             new EventControler().GetEventBySport("Football");
+        }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            panelResult.Controls.Clear();
+        }
+
+        private void btnsendinfo_Click(object sender, EventArgs e)
+        {
+            FillResults2vs2(Int32.Parse(txtNumberItems.Text), txtTeam1.Text, txtTeam2.Text, Int32.Parse(txtScore1.Text), Int32.Parse(txtScore2.Text), txtDate.Text);
         }
     }
 }

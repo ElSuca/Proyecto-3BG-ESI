@@ -65,6 +65,8 @@
             this.txtEventStartDateYear = new System.Windows.Forms.MaskedTextBox();
             this.lbStartDate = new System.Windows.Forms.Label();
             this.panelStageMenu = new System.Windows.Forms.Panel();
+            this.lbStageName = new System.Windows.Forms.Label();
+            this.txtStageName = new System.Windows.Forms.TextBox();
             this.txtStageState = new System.Windows.Forms.MaskedTextBox();
             this.lbStageState = new System.Windows.Forms.Label();
             this.txtStageCountry = new System.Windows.Forms.MaskedTextBox();
@@ -123,8 +125,6 @@
             this.lbActionId = new System.Windows.Forms.Label();
             this.txtActionId = new System.Windows.Forms.TextBox();
             this.btnActionMenu = new System.Windows.Forms.Button();
-            this.lbStageName = new System.Windows.Forms.Label();
-            this.txtStageName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelEventMenu.SuspendLayout();
             this.panelEventFamilyMenu.SuspendLayout();
@@ -651,6 +651,26 @@
             this.panelStageMenu.Size = new System.Drawing.Size(293, 342);
             this.panelStageMenu.TabIndex = 33;
             this.panelStageMenu.Visible = false;
+            // 
+            // lbStageName
+            // 
+            this.lbStageName.AutoSize = true;
+            this.lbStageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStageName.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStageName.Location = new System.Drawing.Point(11, 57);
+            this.lbStageName.Name = "lbStageName";
+            this.lbStageName.Size = new System.Drawing.Size(55, 20);
+            this.lbStageName.TabIndex = 34;
+            this.lbStageName.Text = "Name";
+            // 
+            // txtStageName
+            // 
+            this.txtStageName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtStageName.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtStageName.Location = new System.Drawing.Point(14, 80);
+            this.txtStageName.Name = "txtStageName";
+            this.txtStageName.Size = new System.Drawing.Size(253, 20);
+            this.txtStageName.TabIndex = 33;
             // 
             // txtStageState
             // 
@@ -1422,36 +1442,13 @@
             this.btnActionMenu.UseVisualStyleBackColor = false;
             this.btnActionMenu.Click += new System.EventHandler(this.btnActionMenu_Click);
             // 
-            // lbStageName
-            // 
-            this.lbStageName.AutoSize = true;
-            this.lbStageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStageName.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStageName.Location = new System.Drawing.Point(11, 57);
-            this.lbStageName.Name = "lbStageName";
-            this.lbStageName.Size = new System.Drawing.Size(55, 20);
-            this.lbStageName.TabIndex = 34;
-            this.lbStageName.Text = "Name";
-            // 
-            // txtStageName
-            // 
-            this.txtStageName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtStageName.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtStageName.Location = new System.Drawing.Point(14, 80);
-            this.txtStageName.Name = "txtStageName";
-            this.txtStageName.Size = new System.Drawing.Size(253, 20);
-            this.txtStageName.TabIndex = 33;
-            // 
             // BackOficeResultManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.Controls.Add(this.btnActionMenu);
-            this.Controls.Add(this.panelActionMenu);
-            this.Controls.Add(this.panelStageMenu);
             this.Controls.Add(this.btnStageMenu);
-            this.Controls.Add(this.panelJudgeMenu);
             this.Controls.Add(this.btnJudgesMenu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModifiy);
@@ -1460,6 +1457,9 @@
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.btnRegisterAcc);
+            this.Controls.Add(this.panelActionMenu);
+            this.Controls.Add(this.panelStageMenu);
+            this.Controls.Add(this.panelJudgeMenu);
             this.Name = "BackOficeResultManager";
             this.Size = new System.Drawing.Size(1301, 685);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();

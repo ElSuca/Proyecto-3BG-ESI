@@ -73,6 +73,5 @@ namespace CapaLoogica
         public bool HaveChange(int id) => new ModelEvents().HaveChange(id);
 
         public string GetStartDate() => new ModelEvents().StartDate;
-        public
     }
 }

@@ -32,12 +32,9 @@ namespace BackOffice
 
         private void BtnAddAd_Click(object sender, EventArgs e)
         {
-            string p = "";
-            AdControler.Alta(
-               txtAdName.Text,
-               comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString(),
-               p
-                );
+            string category = comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString();
+            string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\Olympus\\Cache\\{category}\\";
+            AdControler.Alta(txtAdName.Text,comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString(), path);
             MoveFlies(AdControler.GetStartPath(), comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString());
             MessageBox.Show("Anuncio cargado");
             reloadList();
@@ -69,20 +66,34 @@ namespace BackOffice
 
         private void MoveFlies(string startpath, string category)
         {
+            
             string basepath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Olympus\\Cache\\{category}\\";
-            string finalpath = basepath + new AdControler().GetAdId(txtAdName.Text) + txtAddCategory.Text + ".jpg";
-
+            string finalpath = basepath + category + ".jpg";
+            string Filename = GetNextFileName(finalpath, category);
             if (!Directory.Exists(basepath)) CreateDirectory(category);
-            File.Copy(startpath, finalpath);
+            File.Copy(startpath, Filename);
             txtAdPath.Text = finalpath;
+        }
+        private string GetNextFileName(string path, string category)
+        {
+            string filename = category;
+            string extension = ".jpg";
+            string pathName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Olympus\\Cache\\{category}\\";
+            string fileNameOnly = Path.Combine(pathName, Path.GetFileNameWithoutExtension(category));
+            int i = 0; 
+            while (File.Exists(path))
+            {
+                i += 1;
+                filename = fileNameOnly + i + extension;
+                path = filename;
+            }
+            return filename;
         }
         private void CreateDirectory(string category)
         {
             string path = @"C:\Users\" + Environment.UserName + @"\Desktop\Olympus\Cache\" + category;
             if (!Directory.Exists(path)) Directory.CreateDirectory(path);
         }
-
-
         private void btnMoveBanner_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -94,10 +105,7 @@ namespace BackOffice
         }
         public static Image ResizeImage(Image imgOriginal, Size size) => new Bitmap(imgOriginal, size);
 
-        public void LoadConfigs()
-        {
-            LoadCategory();
-        }
+        public void LoadConfigs() => LoadCategory();
         public void LoadCategory()
         {
             using (StreamReader archivo = File.OpenText("..\\..\\AdManager\\CategoryConfig.txt"))
@@ -159,7 +167,6 @@ namespace BackOffice
                 }
                 return false;
             }
-            return true;
         }
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)

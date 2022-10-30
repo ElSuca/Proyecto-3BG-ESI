@@ -45,10 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbDebuggButton = new System.Windows.Forms.Label();
             this.panelConfig = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panelBack = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.lbBtnLanguge = new System.Windows.Forms.Label();
             this.panelLowMark2 = new System.Windows.Forms.Panel();
             this.lbBtnPersonalInformation = new System.Windows.Forms.Label();
@@ -67,7 +63,6 @@
             this.panelSportList = new System.Windows.Forms.Panel();
             this.panelDebugg.SuspendLayout();
             this.panelConfig.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).BeginInit();
             this.panelTopPage.SuspendLayout();
@@ -133,6 +128,7 @@
             this.btnsendinfo.TabIndex = 7;
             this.btnsendinfo.Text = "SendTest";
             this.btnsendinfo.UseVisualStyleBackColor = true;
+            this.btnsendinfo.Click += new System.EventHandler(this.btnsendinfo_Click);
             // 
             // btnClear
             // 
@@ -142,6 +138,7 @@
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // panelDebugg
             // 
@@ -234,7 +231,6 @@
             // panelConfig
             // 
             this.panelConfig.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelConfig.Controls.Add(this.panel1);
             this.panelConfig.Controls.Add(this.lbBtnLanguge);
             this.panelConfig.Controls.Add(this.panelLowMark2);
             this.panelConfig.Controls.Add(this.lbBtnPersonalInformation);
@@ -244,49 +240,6 @@
             this.panelConfig.TabIndex = 14;
             this.panelConfig.Visible = false;
             this.panelConfig.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConfig_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.panelBack);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(-2, -2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(155, 161);
-            this.panel1.TabIndex = 15;
-            this.panel1.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(4, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Language";
-            // 
-            // panelBack
-            // 
-            this.panelBack.BackColor = System.Drawing.SystemColors.Control;
-            this.panelBack.Location = new System.Drawing.Point(7, 41);
-            this.panelBack.Name = "panelBack";
-            this.panelBack.Size = new System.Drawing.Size(55, 2);
-            this.panelBack.TabIndex = 2;
-            this.panelBack.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(4, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "My Personal Information";
             // 
             // lbBtnLanguge
             // 
@@ -471,7 +424,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(1170, 841);
+            this.ClientSize = new System.Drawing.Size(1264, 985);
             this.Controls.Add(this.panelSportList);
             this.Controls.Add(this.panelBackgroun1);
             this.Controls.Add(this.panelTopPage);
@@ -481,7 +434,7 @@
             this.Controls.Add(this.lbDebuggButton);
             this.Controls.Add(this.panelDebugg);
             this.Controls.Add(this.panelResult);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormPincipalMenu";
             this.Text = "FormPincipalMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -489,8 +442,6 @@
             this.panelDebugg.PerformLayout();
             this.panelConfig.ResumeLayout(false);
             this.panelConfig.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).EndInit();
             this.panelTopPage.ResumeLayout(false);
@@ -534,10 +485,6 @@
         private System.Windows.Forms.ComboBox comboBoxSport;
         private System.Windows.Forms.TextBox txtTeam;
         private System.Windows.Forms.Label lbTeam;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panelBack;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panelSportList;
         private System.Windows.Forms.Label lbSportListButtomMenu;
         private System.Windows.Forms.Label lbButtonFootbal;

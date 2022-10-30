@@ -19,7 +19,7 @@ namespace CapDeDatos
         public string StartDate { get; set; }
         public string EndDate { get; set; }
 
-        public ModelPlayer(int id) => this.GetTeamData(id);
+        public ModelPlayer(int id) => this.GetPlayerData(id);
         public ModelPlayer()
         {
         }
@@ -79,11 +79,11 @@ namespace CapDeDatos
                 throw e;
             }
         }
-        public void GetTeamData(int id)
+        public void GetPlayerData(int id)
         {
             try
             {
-                this.Command.CommandText = $"Select * From PLAYER where ID={id}";
+                this.Command.CommandText = $"SELECT PLAYER.*,ASOC_PLYR.ID_ASOC,ASOC_PLYR.STARTDATE,ASOC_PLYR.ENDDATE FROM PLAYER LEFT JOIN ASOC_PLYR on (PLAYER.ID = ASOC_PLYR.ID_PLYR) where PLAYER.ID={id}";
                 this.Command.Prepare();
                 this.DataReader = this.Command.ExecuteReader();
                 this.DataReader.Read();

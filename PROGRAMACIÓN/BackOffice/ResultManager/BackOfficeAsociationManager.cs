@@ -1,5 +1,6 @@
 ﻿using CapaLoogica;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BackOffice.ResultManager
@@ -54,7 +55,11 @@ namespace BackOffice.ResultManager
             }
             else if (panelFamilyMenu.Visible)
             {
-                FamilyControler.Alta(txtFamilyName.Text, txtFamilyRecurrency.Text, txtFamilyDomain.Text, txtFamilyType.Text);
+                if (string.IsNullOrEmpty(txtFamilyId.Text))
+                    FamilyControler.Alta(txtFamilyName.Text, txtFamilyRecurrency.Text, txtFamilyDomain.Text, txtFamilyType.Text);
+                if(panelEventFamilyMenu.Visible)
+                    
+                    FamilyControler.AltaParents(Int32.Parse(txtFamilyId.Text), Int32.Parse(txtChirldId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
                 MessageBox.Show("Equipo cargado");
             }
             else if (panelAsociationMenu.Visible)
@@ -180,17 +185,15 @@ namespace BackOffice.ResultManager
         {
 
         }
-
-        private void btnRegisterPreviousFamily_Click(object sender, EventArgs e)
-        {
-            FamilyControler.AltaParents(Int32.Parse(txtFamilyId.Text),Int32.Parse(txtChirldId.Text),txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
-            MessageBox.Show($"Datos cargados");
-            reloadList();
-        }
-
         private void panelManagerMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void lbPreviounsFamily_Click(object sender, EventArgs e) => panelEventFamilyMenu.Visible = panelEventFamilyMenu.Visible ? false : true;
+
+        private void lbPreviounsFamily_MouseHover(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.Blue;
+
+        private void lbPreviounsFamily_MouseLeave(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.White;
     }
 }

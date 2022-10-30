@@ -64,7 +64,7 @@ namespace CapDeDatos
             {
                 Command.CommandText = "INSERT INTO " +
                    "AD (PATH,CAT,NAME) " +
-                   $"VALUES ('{this.Path}','{this.Category}','{this.Category}')";
+                   $"VALUES ('{this.Path}{this.Category}','{this.Category}','{this.Category}')";
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();
             }
