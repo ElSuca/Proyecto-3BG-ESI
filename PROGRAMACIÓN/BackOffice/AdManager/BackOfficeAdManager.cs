@@ -30,11 +30,14 @@ namespace BackOffice
 
         public string Finalpath;
 
+
         private void BtnAddAd_Click(object sender, EventArgs e)
         {
             string category = comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString();
             string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\Olympus\\Cache\\{category}\\";
-            AdControler.Alta(txtAdName.Text,comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString(), path);
+            GetNextFileName(path + category, category);
+            string finalpath = fixPathExtention(fixPath(Finalpath,category));
+            AdControler.Alta(txtAdName.Text,comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString(), finalpath);
             MoveFlies(AdControler.GetStartPath(), comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString());
             MessageBox.Show("Anuncio cargado");
             reloadList();
@@ -66,28 +69,44 @@ namespace BackOffice
 
         private void MoveFlies(string startpath, string category)
         {
-            
             string basepath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Olympus\\Cache\\{category}\\";
-            string finalpath = basepath + category + ".jpg";
-            string Filename = GetNextFileName(finalpath, category);
+            string Filename = fixPathExtention(this.Finalpath);
             if (!Directory.Exists(basepath)) CreateDirectory(category);
-            File.Copy(startpath, Filename);
-            txtAdPath.Text = finalpath;
+            try
+            {
+                File.Copy(startpath, Finalpath);
+            }
+            catch
+            {
+                Finalpath = basepath + Filename;
+                File.Copy(startpath, Finalpath + ".jpg");
+            }
+            txtAdPath.Text = Finalpath;
         }
-        private string GetNextFileName(string path, string category)
-        {
-            string filename = category;
+        private void GetNextFileName(string path, string category)
+        {   
             string extension = ".jpg";
             string pathName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\Olympus\\Cache\\{category}\\";
-            string fileNameOnly = Path.Combine(pathName, Path.GetFileNameWithoutExtension(category));
-            int i = 0; 
-            while (File.Exists(path))
+            string fileNameOnly = Path.Combine(pathName, Path.GetFileNameWithoutExtension(path));
+            int i = 1;
+            string filename = fileNameOnly + i + extension;
+            while (File.Exists(fixPathExtention(filename)))
             {
                 i += 1;
                 filename = fileNameOnly + i + extension;
                 path = filename;
             }
-            return filename;
+            Finalpath = filename;
+        }
+        private string fixPath(string path,string category)
+        {
+            if (path.Contains($"\\Olympus\\Cache\\{category}\\")) return path;
+            else return $"\\Olympus\\Cache\\{category}\\" + path;
+        }
+        private string fixPathExtention(string fileName)
+        {
+            if (fileName.Contains(".jpg")) return fileName;
+            else return fileName + ".jpg";
         }
         private void CreateDirectory(string category)
         {
