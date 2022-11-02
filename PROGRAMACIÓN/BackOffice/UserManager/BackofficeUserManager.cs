@@ -46,13 +46,25 @@ namespace BackOffice
                 reloadList();
                 MessageBox.Show("Usuario cargado");
             }
-            catch (SqlException ex)
+            catch (IndexOutOfRangeException)
             {
-                MessageBox.Show("Hubo un problema c");
+                MessageBox.Show("Please enter a role for user");
             }
-            catch (Exception ex)
+            catch (FormatException)
             {
-                MessageBox.Show("Hubo un problema inesperado");
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This user aldery exist");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
             }
         }
 
@@ -64,13 +76,21 @@ namespace BackOffice
                 reloadList();
                 MessageBox.Show("Usuario " + txtID.Text + " eliminado");
             }
-            catch(SqlException ex)
+            catch (IndexOutOfRangeException)
             {
-                MessageBox.Show("Hubo un problema c");
+                MessageBox.Show("Please enter a role for user");
             }
-            catch(Exception ex)
+            catch (FormatException)
             {
-                MessageBox.Show("El usuario no existe");
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This user aldery exist");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
             }
         }
 
@@ -97,32 +117,39 @@ namespace BackOffice
                 MessageBox.Show("Usuario " + txtID.Text + " modificado");
                 reloadList();
             }
-            catch (SqlException ex)
+            catch (IndexOutOfRangeException)
             {
-                MessageBox.Show("Hubo un problema c");
+                MessageBox.Show("Please enter a role for user");
             }
-            catch (Exception ex)
+            catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("El usuario no existe");
+                MessageBox.Show("Please enter a role for user");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This user aldery exist");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
             }
         }
 
         private void btnList_Click_1(object sender, EventArgs e) => reloadList();
-        private void reloadList() => dgrid1.DataSource = new UserControler().GetUserDataTable();
-
-        private void lbNumber_Click(object sender, EventArgs e)
+        private void reloadList()
         {
-
-        }
-
-        private void lbRole_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            try
+            {
+                dgrid1.DataSource = new UserControler().GetUserDataTable();
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
         }
     }
 }

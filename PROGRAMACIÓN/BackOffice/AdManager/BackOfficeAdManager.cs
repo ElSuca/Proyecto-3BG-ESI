@@ -23,44 +23,65 @@ namespace BackOffice
         }
 
         public BackOfficeAdManager()
-        {
+        {   
             InitializeComponent();
             LoadConfigs();
         }
 
         public string Finalpath;
-
+        
 
         private void BtnAddAd_Click(object sender, EventArgs e)
         {
-            string category = comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString();
-            string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\Olympus\\Cache\\{category}\\";
-            GetNextFileName(path + category, category);
-            string finalpath = fixPathExtention(fixPath(Finalpath,category));
-            AdControler.Alta(txtAdName.Text,comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString(), finalpath);
-            MoveFlies(AdControler.GetStartPath(), comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString());
-            MessageBox.Show("Anuncio cargado");
-            reloadList();
+            try
+            {
+                string category = comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString();
+                string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\Olympus\\Cache\\{category}\\";
+                GetNextFileName(path + category, category);
+                string finalpath = fixPathExtention(fixPath(Finalpath, category));
+                AdControler.Alta(txtAdName.Text, comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString(), finalpath);
+                MoveFlies(AdControler.GetStartPath(), comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString());
+                MessageBox.Show("Anuncio cargado");
+                reloadList();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Hubo un problema inesperado");
+            }
         }
 
         private void btnList_Click(object sender, EventArgs e) => reloadList();
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            AdControler.Delete(int.Parse(txtAdId.Text));
-            MessageBox.Show("Anuncio " + txtAdId.Text + " eliminado");
-            reloadList();
+            try
+            {
+                AdControler.Delete(int.Parse(txtAdId.Text));
+                MessageBox.Show("Anuncio " + txtAdId.Text + " eliminado");
+                reloadList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El anuncio no existe");
+            }
         }
 
         private void btnAdModify_Click(object sender, EventArgs e)
         {
-            AdControler.Modify(
-                 txtAdName.Text,
-                 Int32.Parse(txtAdId.Text),
-                 txtAddCategory.Text,
-                 GetFinalPath()
-                 );
-            MessageBox.Show("Anuncio " + txtAdId.Text + " modificado");
-            reloadList();
+            try
+            {
+                AdControler.Modify(
+                     txtAdName.Text,
+                     Int32.Parse(txtAdId.Text),
+                     txtAddCategory.Text,
+                     GetFinalPath()
+                     );
+                MessageBox.Show("Anuncio " + txtAdId.Text + " modificado");
+                reloadList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El anuncio no existe");
+            }
         }
 
         private void reloadList() => dataGrid1.DataSource = new AdControler().GetAdDataTable();

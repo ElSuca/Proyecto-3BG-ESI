@@ -79,7 +79,6 @@
             this.lbRole.Size = new System.Drawing.Size(33, 13);
             this.lbRole.TabIndex = 65;
             this.lbRole.Text = "Role";
-            this.lbRole.Click += new System.EventHandler(this.lbRole_Click);
             // 
             // ComboBoxRole
             // 
@@ -238,7 +237,6 @@
             this.dgrid1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgrid1.Size = new System.Drawing.Size(620, 489);
             this.dgrid1.TabIndex = 54;
-            this.dgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid1_CellContentClick);
             // 
             // btnRegister
             // 
@@ -264,7 +262,6 @@
             this.lbNumber.Size = new System.Drawing.Size(101, 15);
             this.lbNumber.TabIndex = 52;
             this.lbNumber.Text = "Phone number";
-            this.lbNumber.Click += new System.EventHandler(this.lbNumber_Click);
             // 
             // lbMail
             // 

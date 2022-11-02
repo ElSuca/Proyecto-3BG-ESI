@@ -150,7 +150,7 @@ namespace CapDeDatos
                 this.DataReader.Close();
                 return Id;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }

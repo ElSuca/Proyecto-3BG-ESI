@@ -38,7 +38,7 @@ namespace CapDeDatos
                 this.StageId = Int32.Parse(this.DataReader["STAGE"].ToString());
                 this.DataReader.Close();
             }
-            catch(Exception e)
+            catch(Exception)
             {
 
             }
@@ -164,7 +164,7 @@ namespace CapDeDatos
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();
             }
-            catch(Exception e)
+            catch(Exception)
             {
 
             }
@@ -181,7 +181,7 @@ namespace CapDeDatos
                 this.DataReader.Close();
                 return ID;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }
@@ -243,7 +243,7 @@ namespace CapDeDatos
                 this.DataReader.Close();
                 return ID;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }

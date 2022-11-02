@@ -29,7 +29,7 @@ namespace CapDeDatos
                 this.Path = this.DataReader["PATH"].ToString();
                 this.DataReader.Close();
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

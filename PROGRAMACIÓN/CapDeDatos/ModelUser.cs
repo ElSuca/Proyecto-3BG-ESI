@@ -57,7 +57,7 @@ namespace CapaDeDatos
                 this.DataReader.Close();
                 return Id;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }
@@ -206,7 +206,7 @@ namespace CapaDeDatos
                 Conection.Close();
                 SetAllStaticUserData(UserName, Name, LastName, LastName2, Email, PhoneNumber, Password, UserRole,City,Street,Num,State,Country);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
 
             }

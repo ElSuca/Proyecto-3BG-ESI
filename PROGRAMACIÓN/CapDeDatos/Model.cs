@@ -46,7 +46,7 @@ namespace CapaDeDatos
             }
             catch
             {
-                throw new Exception("Data Base Not Found");
+                throw new TimeoutException("DatabaseNotFound");
             }
         }
         private void startConection()

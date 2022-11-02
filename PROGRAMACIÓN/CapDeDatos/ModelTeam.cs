@@ -51,7 +51,7 @@ namespace CapDeDatos
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();
             }
-            catch(Exception e)
+            catch(Exception)
             {
 
             }
@@ -141,7 +141,7 @@ namespace CapDeDatos
                 this.DataReader.Close();
                 return Id;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }
