@@ -15,7 +15,7 @@ namespace ApiResultados
     {
         static void Main(string[] args)
         {
-            GetPost("http://127.0.0.1:8888/autenticar","a","a");
+            GetPost("http://127.0.0.1:8888/Resultados", "a","a");
 
             /*
             HttpListener listener = new HttpListener();
