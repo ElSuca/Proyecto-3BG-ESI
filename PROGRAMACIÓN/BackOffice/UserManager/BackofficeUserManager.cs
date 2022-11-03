@@ -92,6 +92,10 @@ namespace BackOffice
             {
                 MessageBox.Show("Database disconeced");
             }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
 
         private void btnModify_Click_1(object sender, EventArgs e)
@@ -137,6 +141,10 @@ namespace BackOffice
             {
                 MessageBox.Show("Database disconeced");
             }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
 
         private void btnList_Click_1(object sender, EventArgs e) => reloadList();
@@ -149,6 +157,10 @@ namespace BackOffice
             catch (TimeoutException)
             {
                 MessageBox.Show("Database disconeced");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
             }
         }
     }

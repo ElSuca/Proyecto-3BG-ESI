@@ -64,7 +64,7 @@ namespace CapDeDatos
             {
                 Command.CommandText = "INSERT INTO " +
                    "AD (PATH,CAT,NAME) " +
-                   $"VALUES ('{this.Path}{this.Category}','{this.Category}','{this.Category}')";
+                   $"VALUES ('{this.Path}{this.Category}','{this.Category}','{this.Name}')";
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();
             }
@@ -106,18 +106,11 @@ namespace CapDeDatos
 
         public DataTable GetAdDataTable()
         {
-            try
-            {
-                DataTable tabla = new DataTable();
-                Command.CommandText = "SELECT * FROM AD";
-                tabla.Load(Command.ExecuteReader());
-                Conection.Close();
-                return tabla;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            DataTable tabla = new DataTable();
+            Command.CommandText = "SELECT * FROM AD";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
+            return tabla;
         }
 
         public bool ExistAd(string Name)

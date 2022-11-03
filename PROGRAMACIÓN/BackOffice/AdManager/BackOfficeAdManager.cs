@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -39,15 +40,38 @@ namespace BackOffice
                 string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\Olympus\\Cache\\{category}\\";
                 GetNextFileName(path + category, category);
                 string finalpath = fixPathExtention(fixPath(Finalpath, category));
-                AdControler.Alta(txtAdName.Text, comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString(), finalpath);
+                AdControler.Alta(txtAdName.Text, comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString(), formatPath(finalpath));
                 MoveFlies(AdControler.GetStartPath(), comboBoxCategory.Items[comboBoxCategory.SelectedIndex].ToString());
                 MessageBox.Show("Anuncio cargado");
                 reloadList();
             }
-            catch(Exception)
+            catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Hubo un problema inesperado");
+                MessageBox.Show("Please insert a category");
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This user aldery exist");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
+        }
+
+        private string formatPath(string path)
+        {
+            
+           var  p = path.Replace(@"\", "-");
+            return p;
         }
 
         private void btnList_Click(object sender, EventArgs e) => reloadList();
@@ -59,9 +83,25 @@ namespace BackOffice
                 MessageBox.Show("Anuncio " + txtAdId.Text + " eliminado");
                 reloadList();
             }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please insert a category");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This user aldery exist");
+            }
             catch (Exception)
             {
-                MessageBox.Show("El anuncio no existe");
+                MessageBox.Show("There was an unexpected error");
             }
         }
 
@@ -78,13 +118,47 @@ namespace BackOffice
                 MessageBox.Show("Anuncio " + txtAdId.Text + " modificado");
                 reloadList();
             }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("Please enter a role for user");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please enter a role for user");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This ad aldery exist");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
             catch (Exception)
             {
-                MessageBox.Show("El anuncio no existe");
+                MessageBox.Show("There was an unexpected error");
             }
         }
 
-        private void reloadList() => dataGrid1.DataSource = new AdControler().GetAdDataTable();
+        private void reloadList()
+        {
+            try
+            {
+                dataGrid1.DataSource = new AdControler().GetAdDataTable();
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
+        }
         public void SetFinalPath(string path) => Finalpath = path;
         public string GetFinalPath() => Finalpath;
 
@@ -136,12 +210,19 @@ namespace BackOffice
         }
         private void btnMoveBanner_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) pictureBoxPreVisualization.Image = ResizeImage(new Bitmap(openFileDialog1.FileName), new Size(628, 89));
-            txtAdPath.Text = openFileDialog1.FileName;
-            openFileDialog1.ShowDialog();
-            AdControler.setStartPath(openFileDialog1.FileName);
+            try
+            {
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                if (openFileDialog1.ShowDialog() == DialogResult.OK) pictureBoxPreVisualization.Image = ResizeImage(new Bitmap(openFileDialog1.FileName), new Size(628, 89));
+                txtAdPath.Text = openFileDialog1.FileName;
+                openFileDialog1.ShowDialog();
+                AdControler.setStartPath(openFileDialog1.FileName);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
         public static Image ResizeImage(Image imgOriginal, Size size) => new Bitmap(imgOriginal, size);
 
@@ -168,7 +249,8 @@ namespace BackOffice
         {
             try
             {
-                if (!ExistCategory(txtAddCategory.Text))
+                if(txtAddCategory.Text == "") throw new NullReferenceException();   
+                else if (!ExistCategory(txtAddCategory.Text))
                 {
                     using (StreamWriter file = new StreamWriter("..\\..\\AdManager\\CategoryConfig.txt", true))
                     {
@@ -178,14 +260,21 @@ namespace BackOffice
                 }
                 else
                 {
-                    throw new Exception("Categoria repetida");
+                    throw new FileNotFoundException();
                 }
                 LoadCategory();
             }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("The category already exists");
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Please insert a value in the text box");
+            }
             catch(Exception ex)
             {
-                if(ex.Message == "Categoria repetida") MessageBox.Show("La categoria ya existe");
-                else MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
         }
 
