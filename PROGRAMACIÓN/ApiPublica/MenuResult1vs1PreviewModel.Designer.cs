@@ -1,6 +1,6 @@
 ﻿namespace ApiPublica
 {
-    partial class MenuResult2vs2PreviewModel
+    partial class MenuResult1vs1PreviewModel
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

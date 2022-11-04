@@ -76,17 +76,13 @@ namespace BackOffice
                 reloadList();
                 MessageBox.Show("Usuario " + txtID.Text + " eliminado");
             }
-            catch (IndexOutOfRangeException)
-            {
-                MessageBox.Show("Please enter a role for user");
-            }
             catch (FormatException)
             {
                 MessageBox.Show("There was an error, please check that the information is correct");
             }
             catch (SqlException)
             {
-                MessageBox.Show("This user aldery exist");
+                MessageBox.Show("This user no exist");
             }
             catch (TimeoutException)
             {

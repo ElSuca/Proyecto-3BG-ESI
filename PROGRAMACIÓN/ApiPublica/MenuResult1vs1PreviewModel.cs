@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ApiPublica
 {
-    public partial class MenuResult2vs2PreviewModel : UserControl
+    public partial class MenuResult1vs1PreviewModel : UserControl
     {
         private string _team1;
         private string _team2;
@@ -39,7 +39,7 @@ namespace ApiPublica
             set { _date = value; lbDate.Text = value; }
         }
 
-        public MenuResult2vs2PreviewModel()
+        public MenuResult1vs1PreviewModel()
         {
             InitializeComponent();
         }

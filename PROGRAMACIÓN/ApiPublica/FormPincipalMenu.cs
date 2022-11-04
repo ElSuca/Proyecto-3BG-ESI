@@ -27,11 +27,11 @@ namespace ApiPublica
         #region Fill Results
         private void FillResults2vs2(int n,string team1,string team2,int result1,int result2,string date)
         {
-            MenuResult2vs2PreviewModel[] listItem = new MenuResult2vs2PreviewModel[n];
+            MenuResult1vs1PreviewModel[] listItem = new MenuResult1vs1PreviewModel[n];
 
             for (int i = 0; i < listItem.Length; i++)
             {
-                listItem[i] = new MenuResult2vs2PreviewModel();
+                listItem[i] = new MenuResult1vs1PreviewModel();
                 listItem[i].Team1 = team1;
                 listItem[i].Team2 = team2;
                 listItem[i].Score1 = result1;

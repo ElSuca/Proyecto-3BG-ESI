@@ -14,7 +14,7 @@ namespace Proyecto.IniciosSeccion
         public FormLogging()
         {
             InitializeComponent();
-            traduction(new AplicationControler().getLanguage());
+            traduction(new AplicationControler().Language);
         }
         private void btnLoggin_Click(object sender, EventArgs e) 
         {
@@ -35,7 +35,7 @@ namespace Proyecto.IniciosSeccion
             else
             {
                 lbMessage.ForeColor = Color.FromArgb(255, 0, 0);
-                lbMessage.Text = errorMesageTranslation(new AplicationControler().getLanguage());
+                lbMessage.Text = errorMesageTranslation(new AplicationControler().Language);
             }
             controlApi();
 

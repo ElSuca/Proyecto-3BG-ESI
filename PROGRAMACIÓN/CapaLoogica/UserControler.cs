@@ -64,6 +64,7 @@ namespace CapaLogica
         #region get
         public string GetEmail() => new ModelUser().Email;
         public string GetUsername() => new ModelUser().UserName;
+        public int getSubscriptionIndex() => new ModelUser().getSubscriptionIndex();
         #endregion
         #region SetStatic
         public void SetStaticUserData(string name) => new ModelUser().GetUserDataForUserName(name);

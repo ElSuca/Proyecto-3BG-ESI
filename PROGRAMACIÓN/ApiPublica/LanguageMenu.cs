@@ -21,7 +21,7 @@ namespace Proyecto
         public LanguageMenu()
         {
             InitializeComponent();
-            traduction(new AplicationControler().getLanguage());
+            traduction(new AplicationControler().Language);
         }
         private void languageMenu_Load(object sender, EventArgs e)
         {
@@ -61,9 +61,9 @@ namespace Proyecto
                 }
 
                 int selection = Int32.Parse(linea[11].ToString());
-                new AplicationControler().setLanguage(selection);
+                new AplicationControler().Language = selection;
             }
-            traduction(new AplicationControler().getLanguage());
+            traduction(new AplicationControler().Language);
         }
 
 
