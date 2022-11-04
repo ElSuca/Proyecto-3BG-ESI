@@ -27,8 +27,35 @@ namespace BackOffice
         {   
             InitializeComponent();
             LoadConfigs();
+            reloadList();
+            traduction(new AplicationControler().Language);
         }
 
+        private void traduction(int l)
+        {
+            if(l == 0)
+            {
+                lbAdId.Text = "Ad Id";
+                lbAdName.Text = "Ad name";
+                lbAdCategory.Text = "Ad category";
+                btnMoveBanner.Text = "Select picture";
+                BtnAddAd.Text = "Register";
+                btnAdModify.Text = "Modify";
+                btnDelete.Text = "Delete";
+                btnAddCategory.Text = "Register Category";
+            }
+            else
+            {
+                lbAdId.Text = "Id de publicidad";
+                lbAdName.Text = "Nombre de publicidad";
+                lbAdCategory.Text = "Categoria de anuncio";
+                btnMoveBanner.Text = "Seleccionar imagen";
+                BtnAddAd.Text = "Registrar";
+                btnAdModify.Text = "Modificar";
+                btnDelete.Text = "Eliminar";
+                btnAddCategory.Text = "Registrar Categoria";
+            }
+        }
         public string Finalpath;
         
 
@@ -74,13 +101,12 @@ namespace BackOffice
             return p;
         }
 
-        private void btnList_Click(object sender, EventArgs e) => reloadList();
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
                 AdControler.Delete(int.Parse(txtAdId.Text));
-                MessageBox.Show("Anuncio " + txtAdId.Text + " eliminado");
+                MessageBox.Show("Ad " + txtAdId.Text + " deleted");
                 reloadList();
             }
             catch (ArgumentOutOfRangeException)
@@ -302,5 +328,7 @@ namespace BackOffice
         {
 
         }
+
+        private void pictureBoxBtnRefresh_Click(object sender, EventArgs e) => reloadList();
     }
 }

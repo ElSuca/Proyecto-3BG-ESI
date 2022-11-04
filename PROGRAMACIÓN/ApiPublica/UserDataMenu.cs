@@ -24,7 +24,7 @@ namespace ApiPublica
         {
             InitializeComponent();
             SetUserData();
-            translation(new AplicationControler().getLanguage());
+            translation(new AplicationControler().Language);
             ajustSize();
         }
         public void SetUserName(string n) => UserName = n;
@@ -66,11 +66,11 @@ namespace ApiPublica
                     txtCountry.Text
                     );
 
-                errorTranslation(new AplicationControler().getLanguage(), "DataUpdate", Color.FromArgb(0, 204, 0));
+                errorTranslation(new AplicationControler().Language, "DataUpdate", Color.FromArgb(0, 204, 0));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                errorTranslation(new AplicationControler().getLanguage(), "Error", Color.FromArgb(255, 0, 0));
+                errorTranslation(new AplicationControler().Language, "Error", Color.FromArgb(255, 0, 0));
             }
         }
 
@@ -133,12 +133,12 @@ namespace ApiPublica
                         txtCountry.Text
                         );
                     txtRole.Text = new UserControler().GetStaticRole;
-                    errorTranslation(new AplicationControler().getLanguage(), "DataUpdate", Color.FromArgb(0, 204, 0));
+                    errorTranslation(new AplicationControler().Language, "DataUpdate", Color.FromArgb(0, 204, 0));
                 }
             }
             catch (Exception ex)
             {
-                errorTranslation(new AplicationControler().getLanguage(), "Error", Color.FromArgb(255, 0, 0));
+                errorTranslation(new AplicationControler().Language, "Error", Color.FromArgb(255, 0, 0));
             }
         }
         private void ajustSize()

@@ -6,10 +6,15 @@ namespace CapaLoogica
 {
     public class AplicationControler
     {
-        public void setLanguage(int l) => SafeSystemBuffer.Language = l;
+        private int _language;
+        public int Language
+        { 
+            get { return _language = getLanguage(); }
+            set { _language = value; SafeSystemBuffer.Language = value; }
+        }
         public string getResponse() => SafeSystemBuffer.Response;
 
-        public int getLanguage()
+        private int getLanguage()
         {
             int selection;
             using (StreamReader archivo = File.OpenText("..\\..\\..\\Config.txt"))

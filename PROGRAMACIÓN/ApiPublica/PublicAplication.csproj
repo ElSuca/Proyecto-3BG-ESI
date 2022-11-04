@@ -144,11 +144,11 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuResult2vs2PreviewModel.cs">
+    <Compile Include="MenuResult1vs1PreviewModel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuResult2vs2PreviewModel.Designer.cs">
-      <DependentUpon>MenuResult2vs2PreviewModel.cs</DependentUpon>
+    <Compile Include="MenuResult1vs1PreviewModel.Designer.cs">
+      <DependentUpon>MenuResult1vs1PreviewModel.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuResultMultiplePreviewModel.cs">
       <SubType>UserControl</SubType>
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuResult2vs2PreviewModel.resx">
-      <DependentUpon>MenuResult2vs2PreviewModel.cs</DependentUpon>
+    <EmbeddedResource Include="MenuResult1vs1PreviewModel.resx">
+      <DependentUpon>MenuResult1vs1PreviewModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuResultMultiplePreviewModel.resx">
       <DependentUpon>MenuResultMultiplePreviewModel.cs</DependentUpon>

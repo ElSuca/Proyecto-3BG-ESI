@@ -10,7 +10,7 @@ namespace Proyecto.IniciosSeccion
         public FormRegistro()
         {
             InitializeComponent();
-            traduction(new AplicationControler().getLanguage());
+            traduction(new AplicationControler().Language);
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
