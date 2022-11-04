@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using CapaLoogica;
@@ -28,79 +29,163 @@ namespace BackOffice.ResultManager
         private void btnPlayer_Click(object sender, EventArgs e) => toggleMenus(2);
         private void btnRegisterAcc_Click(object sender, EventArgs e)
         {
-            if (panelPlayerMenu.Visible)
+            try
             {
-                if (!panelParentAsociationFamilyMenu.Visible)
+                if (panelPlayerMenu.Visible)
                 {
-                    string date = $"{txtBirthdateYear.Text}-" +
-                    $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}-" +
-                    $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}";
-                    PlayerControler.Alta(txtPlayerName.Text, txtPlayerLastName1.Text, txtPlayerLastName2.Text, txtPlayerStatus.Text, date, txtPlayerCity.Text, TxtPlayerState.Text, txtPlayerCountry.Text);
-                    MessageBox.Show("Jugador cargado");
+                    if (!panelParentAsociationFamilyMenu.Visible)
+                    {
+                        string date = $"{txtBirthdateYear.Text}-" +
+                        $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}-" +
+                        $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}";
+                        PlayerControler.Alta(txtPlayerName.Text, txtPlayerLastName1.Text, txtPlayerLastName2.Text, txtPlayerStatus.Text, date, txtPlayerCity.Text, TxtPlayerState.Text, txtPlayerCountry.Text);
+                        MessageBox.Show("Jugador cargado");
+                    }
+                    else
+                    {
+                        string StartDate = $"{txtStartEventPlayerAsociationDateYear.Text}-" +
+                        $"{comboBoxPlayerAsociationStartDateMoth.Items[comboBoxPlayerAsociationStartDateMoth.SelectedIndex].ToString()}-" +
+                        $"{comboBoxPlayerAsociationStartDateDay.Items[comboBoxPlayerAsociationStartDateDay.SelectedIndex].ToString()}";
+
+                        string EndDate = $"{txtPlayerAsociationEndDateYear.Text}-" +
+                        $"{comboBoxPlayerAsociationEndDateMoth.Items[comboBoxPlayerAsociationEndDateMoth.SelectedIndex].ToString()}-" +
+                        $"{comboBoxPlayerAsociationEndDateDay.Items[comboBoxPlayerAsociationEndDateDay.SelectedIndex].ToString()}";
+
+                        PlayerControler.AltaParents(Int32.Parse(txtPlayerID.Text), Int32.Parse(txtAsociationId.Text), StartDate, EndDate);
+                        MessageBox.Show($"Familia cargada");
+                        reloadList();
+                    }
                 }
-                else
+                else if (panelTeamsMenu.Visible)
                 {
-                    string StartDate = $"{txtStartEventPlayerAsociationDateYear.Text}-" +
-                    $"{comboBoxPlayerAsociationStartDateMoth.Items[comboBoxPlayerAsociationStartDateMoth.SelectedIndex].ToString()}-" +
-                    $"{comboBoxPlayerAsociationStartDateDay.Items[comboBoxPlayerAsociationStartDateDay.SelectedIndex].ToString()}";
-
-                    string EndDate = $"{txtPlayerAsociationEndDateYear.Text}-" +
-                    $"{comboBoxPlayerAsociationEndDateMoth.Items[comboBoxPlayerAsociationEndDateMoth.SelectedIndex].ToString()}-" +
-                    $"{comboBoxPlayerAsociationEndDateDay.Items[comboBoxPlayerAsociationEndDateDay.SelectedIndex].ToString()}";
-
-                    PlayerControler.AltaParents(Int32.Parse(txtPlayerID.Text), Int32.Parse(txtAsociationId.Text), StartDate, EndDate);
-                    MessageBox.Show($"Familia cargada");
-                    reloadList();
+                    if (txtTeamsName.Text == "" || txtTeamCity.Text == "" || txtTeamState.Text == "" || txtTeamCountry.Text == "") throw new MissingFieldException();
+                    TeamControler.Alta(txtTeamsName.Text, txtTeamCity.Text, txtTeamState.Text, txtTeamCountry.Text);
+                    MessageBox.Show("Equipo cargado");
                 }
+                reloadList();
             }
-
-            else if (panelTeamsMenu.Visible)
+            catch (IndexOutOfRangeException)
             {
-                TeamControler.Alta(txtTeamsName.Text, txtTeamCity.Text, txtTeamState.Text, txtTeamCountry.Text);
-                MessageBox.Show("Equipo cargado");
+                MessageBox.Show("Please enter a date");
             }
-            reloadList();
+            catch (MissingFieldException)
+            {
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This result aldery exist");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
 
         private void btnList_Click(object sender, EventArgs e) => reloadList();
 
         private void reloadList()
         {
-            if (panelPlayerMenu.Visible) dataGrid1.DataSource = new PlayerControler().GetPlayerDataTable();
-            else if (panelTeamsMenu.Visible) dataGrid1.DataSource = new TeamControler().GetTeamDataTable();
+            try
+            {
+                if (panelPlayerMenu.Visible) dataGrid1.DataSource = new PlayerControler().GetPlayerDataTable();
+                else if (panelTeamsMenu.Visible) dataGrid1.DataSource = new TeamControler().GetTeamDataTable();
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
 
         private void btnModifiy_Click(object sender, EventArgs e)
         {
-            if (panelPlayerMenu.Visible)
+            try
             {
-                string date = $"{txtBirthdateYear.Text}-" +
-                $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}-" +
-                $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}";
-                PlayerControler.Modificar(Int32.Parse(txtPlayerID.Text), txtPlayerName.Text, txtPlayerLastName1.Text, txtPlayerLastName2.Text, txtPlayerStatus.Text, date, txtPlayerCity.Text, TxtPlayerState.Text, txtPlayerCountry.Text);
-                MessageBox.Show($"Jugador {txtPlayerID.Text} cargado");
+                if (panelPlayerMenu.Visible)
+                {
+                    string date = $"{txtBirthdateYear.Text}-" +
+                    $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}-" +
+                    $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}";
+                    PlayerControler.Modificar(Int32.Parse(txtPlayerID.Text), txtPlayerName.Text, txtPlayerLastName1.Text, txtPlayerLastName2.Text, txtPlayerStatus.Text, date, txtPlayerCity.Text, TxtPlayerState.Text, txtPlayerCountry.Text);
+                    MessageBox.Show($"Jugador {txtPlayerID.Text} cargado");
+                }
+                else if (panelTeamsMenu.Visible)
+                {
+                    TeamControler.Modificar(Int32.Parse(txtIDTeam.Text), txtTeamsName.Text, txtTeamCity.Text, txtTeamState.Text, txtTeamCountry.Text);
+                    MessageBox.Show($"Equipo {txtIDTeam.Text} cargado");
+                }
+                reloadList();
             }
-            else if (panelTeamsMenu.Visible)
+            catch (IndexOutOfRangeException)
             {
-                TeamControler.Modificar(Int32.Parse(txtIDTeam.Text), txtTeamsName.Text, txtTeamCity.Text, txtTeamState.Text, txtTeamCountry.Text);
-                MessageBox.Show($"Equipo {txtIDTeam.Text} cargado");
+                MessageBox.Show("Please enter a date");
             }
-            reloadList();
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please enter a date");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This data aldery exist");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (panelPlayerMenu.Visible)
+            try
             {
-                PlayerControler.Eliminar(Int32.Parse(txtPlayerID.Text));
-                MessageBox.Show($"Jugador {txtPlayerID.Text} eliminado");
+                if (panelPlayerMenu.Visible)
+                {
+                    PlayerControler.Eliminar(Int32.Parse(txtPlayerID.Text));
+                    MessageBox.Show($"Player {txtPlayerID.Text} deleted");
+                }
+                else if (panelTeamsMenu.Visible)
+                {
+                    TeamControler.Eliminar(Int32.Parse(txtIDTeam.Text));
+                    MessageBox.Show($"Team {txtIDTeam.Text} deleted");
+                }
+                reloadList();
             }
-            else if (panelTeamsMenu.Visible)
+            catch (FormatException)
             {
-                TeamControler.Eliminar(Int32.Parse(txtIDTeam.Text));
-                MessageBox.Show($"Equipo {txtIDTeam.Text} eliminado");
+                MessageBox.Show("There was an error, please check that the information is correct");
             }
-            reloadList();
+            catch (SqlException)
+            {
+                MessageBox.Show("This data no exist");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
         private void toggleMenus(int menu)
         {
@@ -127,7 +212,7 @@ namespace BackOffice.ResultManager
             $"{comboBoxPlayerAsociationEndDateDay.Items[comboBoxPlayerAsociationEndDateDay.SelectedIndex].ToString()}";
 
             PlayerControler.AltaParents(Int32.Parse(txtPlayerID.Text), Int32.Parse(txtAsociationId.Text), StartDate, EndDate);
-            MessageBox.Show($"Asociacion cargada");
+            MessageBox.Show($"Asociation load");
             reloadList();
         } 
 

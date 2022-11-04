@@ -196,7 +196,6 @@
             this.panelManagerMenu.Name = "panelManagerMenu";
             this.panelManagerMenu.Size = new System.Drawing.Size(385, 401);
             this.panelManagerMenu.TabIndex = 24;
-            this.panelManagerMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelManagerMenu_Paint);
             // 
             // lbIdAsociation
             // 
@@ -1478,7 +1477,6 @@
             this.Controls.Add(this.panelAsociationMenu);
             this.Name = "BackOfficeAsociationManager";
             this.Size = new System.Drawing.Size(1393, 535);
-            this.Load += new System.EventHandler(this.BackOfficeAsociationManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
             this.panelManagerMenu.ResumeLayout(false);
             this.panelManagerMenu.PerformLayout();

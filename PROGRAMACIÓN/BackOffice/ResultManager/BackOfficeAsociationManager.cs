@@ -1,5 +1,6 @@
 ﻿using CapaLoogica;
 using System;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -27,70 +28,96 @@ namespace BackOffice.ResultManager
 
         private void btnRegisterAcc_Click(object sender, EventArgs e)
         {
-            if (panelManagerMenu.Visible)
-            {
-                string date = $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}/" +
-                    $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}/" +
-                    $"{txtBirthdateYear.Text}";
+            try {
+                if (panelManagerMenu.Visible)
+                {
+                    string date = $"{txtBirthdateYear.Text}-" +
+                    $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}-" +
+                    $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}";
 
-                string Startdate = $"{txtStartManagerAsociationDateYear.Text}-" +
-                    $"{comboBoxStartManagerAsociationDateMoth.Items[comboBoxStartManagerAsociationDateMoth.SelectedIndex].ToString()}-" +
-                    $"{comboBoxStartManagerAsociationDateDay.Items[comboBoxStartManagerAsociationDateDay.SelectedIndex].ToString()}";
+                    string Startdate = $"{txtStartManagerAsociationDateYear.Text}-" +
+                        $"{comboBoxStartManagerAsociationDateMoth.Items[comboBoxStartManagerAsociationDateMoth.SelectedIndex].ToString()}-" +
+                        $"{comboBoxStartManagerAsociationDateDay.Items[comboBoxStartManagerAsociationDateDay.SelectedIndex].ToString()}";
 
-                string Enddate = $"{txtEndManagerAsociationDateYear.Text}-" +
-                   $"{comboBoxEndManagerAsociationDateMoth.Items[comboBoxEndManagerAsociationDateMoth.SelectedIndex].ToString()}-" +
-                   $"{comboBoxEndManagerAsociationDateDay.Items[comboBoxEndManagerAsociationDateDay.SelectedIndex].ToString()}";
+                    string Enddate = $"{txtEndManagerAsociationDateYear.Text}-" +
+                       $"{comboBoxEndManagerAsociationDateMoth.Items[comboBoxEndManagerAsociationDateMoth.SelectedIndex].ToString()}-" +
+                       $"{comboBoxEndManagerAsociationDateDay.Items[comboBoxEndManagerAsociationDateDay.SelectedIndex].ToString()}";
 
-                ManagerControler.Alta(txtManagerName.Text,
-                    txtManagerLastName1.Text,
-                    txtManagerLastName2.Text,
-                    txtManagerStatus.Text,
-                    date,
-                    TxtManagerState.Text,
-                    txtManagerCountry.Text,
-                    Int32.Parse(txtIdAsociation.Text),
-                    Startdate,
-                    Enddate
-                    );
+                    ManagerControler.Alta(txtManagerName.Text,
+                        txtManagerLastName1.Text,
+                        txtManagerLastName2.Text,
+                        txtManagerStatus.Text,
+                        date,
+                        TxtManagerState.Text,
+                        txtManagerCountry.Text,
+                        Int32.Parse(txtIdAsociation.Text),
+                        Startdate,
+                        Enddate
+                        );
 
-                MessageBox.Show("Manager cargado");
+                    MessageBox.Show("Manager cargado");
+                }
+                else if (panelFamilyMenu.Visible)
+                {
+                    if (string.IsNullOrEmpty(txtFamilyId.Text))
+                        FamilyControler.Alta(txtFamilyName.Text, txtFamilyRecurrency.Text, txtFamilyDomain.Text, txtFamilyType.Text);
+                    if (panelEventFamilyMenu.Visible)
+
+                        FamilyControler.AltaParents(Int32.Parse(txtFamilyId.Text), Int32.Parse(txtChirldId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
+                    MessageBox.Show("Equipo cargado");
+                }
+                else if (panelAsociationMenu.Visible)
+                {
+                    string StartDate = $"{txtStartAsociationDateYear.Text}-" +
+                        $"{comboBoxAsociationStartDateMoth.Items[comboBoxAsociationStartDateMoth.SelectedIndex].ToString()}-" +
+                        $"{comboBoxAsociationStartDateDay.Items[comboBoxAsociationStartDateDay.SelectedIndex].ToString()}";
+
+                    string EndDate = $"{txtAsociationEndDateYear.Text}-" +
+                         $"{comboBoxAsociationEndDateMoth.Items[comboBoxAsociationEndDateMoth.SelectedIndex].ToString()}-" +
+                         $"{comboBoxAsociationEndDateDay.Items[comboBoxAsociationEndDateDay.SelectedIndex].ToString()}";
+
+                    AsociationControler.Alta(
+                        txtAsociationName.Text,
+                        txtAsociationStatus.Text,
+                        txtAsociationCity.Text,
+                        txtAsociationStreet.Text,
+                        Int32.Parse(txtAsociationNumber.Text),
+                        txtAsociationState.Text,
+                        txtAsociationCountry.Text,
+                        StartDate,
+                        EndDate,
+                        Int32.Parse(txtAsociationSportID.Text),
+                        txtAsociationCategory.Text,
+                        Int32.Parse(txtAsociationQuantity.Text)
+                        );
+                    MessageBox.Show("Asociacion cargada");
+                }
+                reloadList();
             }
-            else if (panelFamilyMenu.Visible)
+            catch (IndexOutOfRangeException)
             {
-                if (string.IsNullOrEmpty(txtFamilyId.Text))
-                    FamilyControler.Alta(txtFamilyName.Text, txtFamilyRecurrency.Text, txtFamilyDomain.Text, txtFamilyType.Text);
-                if (panelEventFamilyMenu.Visible)
-
-                FamilyControler.AltaParents(Int32.Parse(txtFamilyId.Text), Int32.Parse(txtChirldId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
-                MessageBox.Show("Equipo cargado");
+                MessageBox.Show("Please enter a date");
             }
-            else if (panelAsociationMenu.Visible)
+            catch (ArgumentOutOfRangeException)
             {
-                string StartDate = $"{txtStartAsociationDateYear.Text}-" +
-                    $"{comboBoxAsociationStartDateMoth.Items[comboBoxAsociationStartDateMoth.SelectedIndex].ToString()}-" +
-                    $"{comboBoxAsociationStartDateDay.Items[comboBoxAsociationStartDateDay.SelectedIndex].ToString()}";
-
-                string EndDate = $"{txtAsociationEndDateYear.Text}-" +
-                     $"{comboBoxAsociationEndDateMoth.Items[comboBoxAsociationEndDateMoth.SelectedIndex].ToString()}-" +
-                     $"{comboBoxAsociationEndDateDay.Items[comboBoxAsociationEndDateDay.SelectedIndex].ToString()}";
-
-                AsociationControler.Alta(
-                    txtAsociationName.Text,
-                    txtAsociationStatus.Text,
-                    txtAsociationCity.Text,
-                    txtAsociationStreet.Text,
-                    Int32.Parse(txtAsociationNumber.Text),
-                    txtAsociationState.Text,
-                    txtAsociationCountry.Text,
-                    StartDate,
-                    EndDate,
-                    Int32.Parse(txtAsociationSportID.Text),
-                    txtAsociationCategory.Text,
-                    Int32.Parse(txtAsociationQuantity.Text)
-                    );
-                MessageBox.Show("Asociacion cargada");
+                MessageBox.Show("Please enter a date");
             }
-            reloadList();
+            catch (FormatException)
+            {
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This data aldery exist");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
 
         private void reloadList()
@@ -119,81 +146,117 @@ namespace BackOffice.ResultManager
 
         private void btnModifiy_Click_1(object sender, EventArgs e)
         {
-            if (panelManagerMenu.Visible)
+            try
             {
-                string date = $"{txtBirthdateYear.Text}-" +
-                    $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}-" +
-                    $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}";
-                ManagerControler.Modificar(Int32.Parse(txtManagerID.Text), txtManagerName.Text, txtManagerLastName1.Text, txtManagerLastName2.Text, txtManagerStatus.Text, date, TxtManagerState.Text, txtManagerCountry.Text);
-                MessageBox.Show($"Jugador {txtManagerID.Text} cargado");
-            }
-            else if (panelFamilyMenu.Visible)
-            {
-                FamilyControler.Modificar(Int32.Parse(txtFamilyId.Text), txtFamilyName.Text, txtFamilyRecurrency.Text, txtFamilyDomain.Text, txtFamilyType.Text);
-                MessageBox.Show($"Familia {txtFamilyId.Text} cargada");
-            }
-            else if (panelAsociationMenu.Visible)
-            {
-                string StartDate = $"{txtStartAsociationDateYear.Text}-" +
-                    $"{comboBoxAsociationStartDateMoth.Items[comboBoxAsociationStartDateMoth.SelectedIndex].ToString()}-" +
-                    $"{comboBoxAsociationStartDateDay.Items[comboBoxAsociationStartDateDay.SelectedIndex].ToString()}";
+                if (panelManagerMenu.Visible)
+                {
+                    string date = $"{txtBirthdateYear.Text}-" +
+                        $"{comboBoxBirthdateMoth.Items[comboBoxBirthdateMoth.SelectedIndex].ToString()}-" +
+                        $"{comboBoxBirthdateDay.Items[comboBoxBirthdateDay.SelectedIndex].ToString()}";
+                    ManagerControler.Modificar(Int32.Parse(txtManagerID.Text), txtManagerName.Text, txtManagerLastName1.Text, txtManagerLastName2.Text, txtManagerStatus.Text, date, TxtManagerState.Text, txtManagerCountry.Text);
+                    MessageBox.Show($"Jugador {txtManagerID.Text} cargado");
+                }
+                else if (panelFamilyMenu.Visible)
+                {
+                    FamilyControler.Modificar(Int32.Parse(txtFamilyId.Text), txtFamilyName.Text, txtFamilyRecurrency.Text, txtFamilyDomain.Text, txtFamilyType.Text);
+                    MessageBox.Show($"Familia {txtFamilyId.Text} cargada");
+                }
+                else if (panelAsociationMenu.Visible)
+                {
+                    string StartDate = $"{txtStartAsociationDateYear.Text}-" +
+                        $"{comboBoxAsociationStartDateMoth.Items[comboBoxAsociationStartDateMoth.SelectedIndex].ToString()}-" +
+                        $"{comboBoxAsociationStartDateDay.Items[comboBoxAsociationStartDateDay.SelectedIndex].ToString()}";
 
-                string EndDate = $"{txtAsociationEndDateYear.Text}-" +
-                     $"{comboBoxAsociationEndDateMoth.Items[comboBoxAsociationEndDateMoth.SelectedIndex].ToString()}-" +
-                $"{comboBoxAsociationEndDateDay.Items[comboBoxAsociationEndDateDay.SelectedIndex].ToString()}";
-                  
-                  
+                    string EndDate = $"{txtAsociationEndDateYear.Text}-" +
+                         $"{comboBoxAsociationEndDateMoth.Items[comboBoxAsociationEndDateMoth.SelectedIndex].ToString()}-" +
+                    $"{comboBoxAsociationEndDateDay.Items[comboBoxAsociationEndDateDay.SelectedIndex].ToString()}";
 
-                AsociationControler.Modificar(Int32.Parse(txtAsociationId.Text),
-                    txtAsociationName.Text,
-                    txtAsociationStatus.Text,
-                    txtAsociationCity.Text,
-                    txtAsociationStreet.Text,
-                    Int32.Parse(txtAsociationNumber.Text),
-                    txtAsociationState.Text,
-                    txtAsociationCountry.Text,
-                    StartDate,
-                    EndDate,
-                    Int32.Parse(txtAsociationSportID.Text),
-                    txtAsociationCategory.Text,
-                    Int32.Parse(txtAsociationQuantity.Text)
-                    );
-                MessageBox.Show($"Asociacion {txtAsociationId.Text} cargada");
+
+
+                    AsociationControler.Modificar(Int32.Parse(txtAsociationId.Text),
+                        txtAsociationName.Text,
+                        txtAsociationStatus.Text,
+                        txtAsociationCity.Text,
+                        txtAsociationStreet.Text,
+                        Int32.Parse(txtAsociationNumber.Text),
+                        txtAsociationState.Text,
+                        txtAsociationCountry.Text,
+                        StartDate,
+                        EndDate,
+                        Int32.Parse(txtAsociationSportID.Text),
+                        txtAsociationCategory.Text,
+                        Int32.Parse(txtAsociationQuantity.Text)
+                        );
+                    MessageBox.Show($"Asociacion {txtAsociationId.Text} cargada");
+                }
+                reloadList();
             }
-            reloadList();
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("Please enter a date");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please enter a date");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("There was an error, please check that the information is correct");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("This data aldery exist");
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
 
         private void btnList_Click_1(object sender, EventArgs e) => reloadList();
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
-            if (panelManagerMenu.Visible)
+            try
             {
-                ManagerControler.Eliminar(Int32.Parse(txtManagerID.Text));
-                MessageBox.Show($"Jugador {txtManagerID.Text} eliminado");
+                if (panelManagerMenu.Visible)
+                {
+                    ManagerControler.Eliminar(Int32.Parse(txtManagerID.Text));
+                    MessageBox.Show($"Jugador {txtManagerID.Text} eliminado");
+                }
+                else if (panelFamilyMenu.Visible)
+                {
+                    FamilyControler.Eliminar(Int32.Parse(txtFamilyId.Text));
+                    MessageBox.Show($"Familia {txtFamilyId.Text} eliminada");
+                }
+                else if (panelAsociationMenu.Visible)
+                {
+                    AsociationControler.Eliminar(Int32.Parse(txtAsociationId.Text));
+                    MessageBox.Show($"Asociacion  {txtAsociationId.Text} eliminada");
+                }
+                reloadList();
             }
-            else if (panelFamilyMenu.Visible)
+            catch (FormatException)
             {
-                FamilyControler.Eliminar(Int32.Parse(txtFamilyId.Text));
-                MessageBox.Show($"Familia {txtFamilyId.Text} eliminada");
+                MessageBox.Show("There was an error, please check that the information is correct");
             }
-            else if (panelAsociationMenu.Visible)
+            catch (SqlException)
             {
-                AsociationControler.Eliminar(Int32.Parse(txtAsociationId.Text));
-                MessageBox.Show($"Asociacion  {txtAsociationId.Text} eliminada");
+                MessageBox.Show("This data no exist");
             }
-            reloadList();
+            catch (TimeoutException)
+            {
+                MessageBox.Show("Database disconeced");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an unexpected error");
+            }
         }
-
-        private void BackOfficeAsociationManager_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void panelManagerMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void lbPreviounsFamily_Click(object sender, EventArgs e) => panelEventFamilyMenu.Visible = panelEventFamilyMenu.Visible ? false : true;
 
         private void lbPreviounsFamily_MouseHover(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.Blue;

@@ -203,7 +203,6 @@
             this.dataGrid1.Name = "dataGrid1";
             this.dataGrid1.Size = new System.Drawing.Size(435, 284);
             this.dataGrid1.TabIndex = 9;
-            this.dataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid1_CellContentClick);
             // 
             // btnList
             // 
@@ -264,7 +263,6 @@
             this.panelEventMenu.Size = new System.Drawing.Size(400, 435);
             this.panelEventMenu.TabIndex = 13;
             this.panelEventMenu.Visible = false;
-            this.panelEventMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEventMenu_Paint);
             // 
             // panelEventFamilyMenu
             // 
@@ -1397,7 +1395,6 @@
             this.lbIdTeam.Size = new System.Drawing.Size(77, 20);
             this.lbIdTeam.TabIndex = 35;
             this.lbIdTeam.Text = "ID Team";
-            this.lbIdTeam.Click += new System.EventHandler(this.lbIdTeam_Click);
             // 
             // txtIdTeam
             // 
@@ -1452,14 +1449,14 @@
             this.Controls.Add(this.btnJudgesMenu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModifiy);
-            this.Controls.Add(this.panelEventMenu);
             this.Controls.Add(this.btnEventMenu);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.btnRegisterAcc);
-            this.Controls.Add(this.panelActionMenu);
             this.Controls.Add(this.panelStageMenu);
             this.Controls.Add(this.panelJudgeMenu);
+            this.Controls.Add(this.panelEventMenu);
+            this.Controls.Add(this.panelActionMenu);
             this.Name = "BackOficeResultManager";
             this.Size = new System.Drawing.Size(1301, 685);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
