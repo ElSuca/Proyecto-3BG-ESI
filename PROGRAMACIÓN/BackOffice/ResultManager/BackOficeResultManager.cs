@@ -63,6 +63,7 @@ namespace BackOffice.ResultManager
                     parsearEvento();
                     if (panelEventFamilyMenu.Visible) EventControler.AltaParents(Int32.Parse(txtParentId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text, txtEventName.Text);
                     MessageBox.Show("Evento cargado");
+                    sendMails();
                 }
                 else if (panelJudgeMenu.Visible)
                 {
@@ -255,6 +256,10 @@ namespace BackOffice.ResultManager
         private void lbPreviounsFamily_MouseHover_1(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.Blue;
         private void lbPreviounsFamily_MouseLeave(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.White;
 
+        private void sendMails()
+        {
+            new AplicationControler().SendMails();
+        }
        
     }
 }

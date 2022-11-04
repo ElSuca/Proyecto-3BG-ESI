@@ -212,7 +212,15 @@ namespace CapaDeDatos
             }
         }
         private string hashPassword(string password) => MD5Hash.Hash.Content(password);
-       
+
+       public int getSubscriptionIndex()
+        {
+            this.Command.CommandText = $"SELECT COUNT(flag_asis) AS cantidad, dni FROM detalle_asistencia WHERE flag_asis = '1' GROUP BY dni";
+            this.Command.Prepare();
+           return Int32.Parse(this.Command.ExecuteReader());
+
+        }
+
         public void SetAllStaticUserData(string Username ,string Name ,string LastName ,string LastName2, string Email, int PhoneNumber, string password, string role,string city,string street,int num,string state,string country)
         {
             SetUsernameBuffer(Username);

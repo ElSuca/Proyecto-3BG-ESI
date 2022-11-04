@@ -1453,10 +1453,10 @@
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.btnRegisterAcc);
-            this.Controls.Add(this.panelStageMenu);
-            this.Controls.Add(this.panelJudgeMenu);
             this.Controls.Add(this.panelEventMenu);
             this.Controls.Add(this.panelActionMenu);
+            this.Controls.Add(this.panelStageMenu);
+            this.Controls.Add(this.panelJudgeMenu);
             this.Name = "BackOficeResultManager";
             this.Size = new System.Drawing.Size(1301, 685);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
