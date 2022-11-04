@@ -43,7 +43,8 @@ namespace CapaLoogica
             };
             e.Save();
         }
-        public static void Eliminar(int id) => new ModelEvents(id).Delete(id);
+        public static void Delete(int id) => new ModelEvents(id).Delete(id);
+        public static void DeleteTime(int id) => new ModelEvents(id).DeleteTime(id);
 
         public static void AltaParents(int ParentId, string type, string Info, string Name)
         {

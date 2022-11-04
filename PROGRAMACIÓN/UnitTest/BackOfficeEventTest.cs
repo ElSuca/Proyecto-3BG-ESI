@@ -31,7 +31,8 @@ namespace UnitTest
         [TestMethod]
         public void Delete()
         {
-            EventControler.Eliminar(new EventControler().GetId("Test"));
+            EventControler.Delete(new EventControler().GetId("Test"));
+            EventControler.DeleteTime(new EventControler().GetId("Test"));
             bool response = new EventControler().ExistEvent("Test");
             Assert.AreEqual(false, response);
         }

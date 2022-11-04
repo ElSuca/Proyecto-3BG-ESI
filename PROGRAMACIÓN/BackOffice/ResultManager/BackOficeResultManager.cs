@@ -137,7 +137,8 @@ namespace BackOffice.ResultManager
         {
             if (panelEventMenu.Visible)
             {
-                EventControler.Eliminar(Int32.Parse(txtEventID.Text));
+                EventControler.Delete(Int32.Parse(txtEventID.Text));
+                EventControler.DeleteTime(Int32.Parse(txtEventID.Text));
                 MessageBox.Show($"Evento {txtEventID.Text} Eliminado");
             }
             else if (panelJudgeMenu.Visible)
