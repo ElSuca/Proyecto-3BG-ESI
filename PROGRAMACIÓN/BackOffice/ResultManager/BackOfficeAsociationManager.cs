@@ -65,6 +65,8 @@ namespace BackOffice.ResultManager
 
                         FamilyControler.AltaParents(Int32.Parse(txtFamilyId.Text), Int32.Parse(txtChirldId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text);
                     MessageBox.Show("Equipo cargado");
+                   
+
                 }
                 else if (panelAsociationMenu.Visible)
                 {
@@ -136,6 +138,7 @@ namespace BackOffice.ResultManager
             if (menu == 2) panelFamilyMenu.Visible = true;
             if (menu == 1) panelManagerMenu.Visible = true;
             if (menu == 3) panelAsociationMenu.Visible = true;
+            reloadList();
         }
         private void setInitial()
         {
@@ -217,8 +220,6 @@ namespace BackOffice.ResultManager
             }
         }
 
-        private void btnList_Click_1(object sender, EventArgs e) => reloadList();
-
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
             try
@@ -262,5 +263,12 @@ namespace BackOffice.ResultManager
         private void lbPreviounsFamily_MouseHover(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.Blue;
 
         private void lbPreviounsFamily_MouseLeave(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.White;
+
+        
+
+        private void pictureBoxBtnRefresh_Click(object sender, EventArgs e)
+        {
+            reloadList();
+        }
     }
 }

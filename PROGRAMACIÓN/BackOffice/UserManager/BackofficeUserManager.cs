@@ -21,6 +21,7 @@ namespace BackOffice
         public BackOfficeUserManager()
         {
             InitializeComponent();
+            reloadList();
         }
 
 
@@ -142,8 +143,6 @@ namespace BackOffice
                 MessageBox.Show("There was an unexpected error");
             }
         }
-
-        private void btnList_Click_1(object sender, EventArgs e) => reloadList();
         private void reloadList()
         {
             try
@@ -159,5 +158,7 @@ namespace BackOffice
                 MessageBox.Show("There was an unexpected error");
             }
         }
+
+        private void pictureBoxBtnRefresh_Click(object sender, EventArgs e) => reloadList();
     }
 }

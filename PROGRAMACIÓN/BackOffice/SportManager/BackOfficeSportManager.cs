@@ -18,7 +18,11 @@ namespace BackOffice.SportManager
             }
         }
 
-        public BackOfficeSportManager() => InitializeComponent();
+        public BackOfficeSportManager()
+        {
+            InitializeComponent();
+            reloadList();
+        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -101,9 +105,12 @@ namespace BackOffice.SportManager
 
         private void btnList_Click(object sender, EventArgs e)
         {
+        }
+        private void reloadList()
+        {
             try
             {
-                reloadList();
+                dgrid1.DataSource = new SportControler().GetSportDataTable();
             }
             catch (TimeoutException)
             {
@@ -114,6 +121,7 @@ namespace BackOffice.SportManager
                 MessageBox.Show("There was an unexpected error");
             }
         }
-        private void reloadList() => dgrid1.DataSource = new SportControler().GetSportDataTable();
+
+        private void pictureBoxBtnRefresh_Click(object sender, EventArgs e) => reloadList();
     }
 }

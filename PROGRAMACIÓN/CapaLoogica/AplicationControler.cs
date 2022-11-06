@@ -1,7 +1,10 @@
 ﻿using CapaLogica;
 using CapDeDatos;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.IO;
+using System.Linq;
 
 namespace CapaLoogica
 {
@@ -31,33 +34,39 @@ namespace CapaLoogica
             }
             return selection;
         }
-        public void SendMails()
+        public void SendMails(string Name, int id)
         {
             string Correo = "ptahtechnologiesolympus@gmail.com";
-            System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
-            for(int i = 0; i <= UserControler.GetSubscriptionIndex(); i++)
-            mmsg.To.Add(txtMail.Text);
-            mmsg.Subject = "Olympus";
-            mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
-            mmsg.Body = "Hola, este es un mensaje enviado desde el proyecto Olympus";
-            mmsg.BodyEncoding = System.Text.Encoding.UTF8;
-            mmsg.IsBodyHtml = true;
-            mmsg.From = new System.Net.Mail.MailAddress(Correo);
+            DataTable tabla = new DataTable();
+            tabla = new UserControler().getSubscriptionIndex(id);
+            System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();    
+            List<string> list = tabla.AsEnumerable().Select(r => r.Field<string>("EMAIL")).ToList();
 
-            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
-            cliente.Credentials = new System.Net.NetworkCredential(Correo, "ebsbhhvqesxpleso");
-            cliente.Port = 587;
-            cliente.EnableSsl = true;
-            cliente.Host = "smtp.gmail.com";
+            foreach (var mail in list)
+            {
+                mmsg.To.Add(mail);
+                mmsg.Subject = "Olympus";
+                mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
+                mmsg.Body = $"The event {Name} was published, come see it";
+                mmsg.BodyEncoding = System.Text.Encoding.UTF8;
+                mmsg.IsBodyHtml = true;
+                mmsg.From = new System.Net.Mail.MailAddress(Correo);
 
-            //try
-            //{
-                cliente.Send(mmsg);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
+                System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+                cliente.Credentials = new System.Net.NetworkCredential(Correo, "ebsbhhvqesxpleso");
+                cliente.Port = 587;
+                cliente.EnableSsl = true;
+                cliente.Host = "smtp.gmail.com";
+
+                try
+                {
+                    cliente.Send(mmsg);
+                    mmsg.To.RemoveAt(0);
+                }
+                catch (Exception)
+                {
+                }
+            }
         }
     }
 }

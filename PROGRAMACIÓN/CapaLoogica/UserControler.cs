@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using CapaDeDatos;
+using CapaLoogica;
 
 namespace CapaLogica
 {
@@ -63,8 +64,12 @@ namespace CapaLogica
         public DataTable GetUserDataTable() => new ModelUser().GetUserDataTable();
         #region get
         public string GetEmail() => new ModelUser().Email;
+
         public string GetUsername() => new ModelUser().UserName;
-        public int getSubscriptionIndex() => new ModelUser().getSubscriptionIndex();
+
+        public DataTable getSubscriptionIndex(int id) => new ModelUser().GetSubscriptionIndex(id);
+
+        public void SetFamilySubscription(string FamilyName, int UserId) => new ModelUser().InsertFamilySubscription(new FamilyControler().GetId(FamilyName), UserId);
         #endregion
         #region SetStatic
         public void SetStaticUserData(string name) => new ModelUser().GetUserDataForUserName(name);

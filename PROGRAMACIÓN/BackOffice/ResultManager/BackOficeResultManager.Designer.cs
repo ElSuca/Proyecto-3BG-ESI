@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackOficeResultManager));
             this.btnRegisterAcc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEventID = new System.Windows.Forms.TextBox();
             this.txtEventName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGrid1 = new System.Windows.Forms.DataGridView();
-            this.btnList = new System.Windows.Forms.Button();
             this.btnEventMenu = new System.Windows.Forms.Button();
             this.panelEventMenu = new System.Windows.Forms.Panel();
-            this.panelEventFamilyMenu = new System.Windows.Forms.Panel();
+            this.lbFamilyId = new System.Windows.Forms.Label();
+            this.txtEventFamilyId = new System.Windows.Forms.MaskedTextBox();
+            this.panelEventPreviousMenu = new System.Windows.Forms.Panel();
             this.txtPreviounsFamilyInfo = new System.Windows.Forms.TextBox();
             this.txtParentId = new System.Windows.Forms.TextBox();
             this.txtPreviounsFamilyType = new System.Windows.Forms.TextBox();
@@ -125,12 +127,14 @@
             this.lbActionId = new System.Windows.Forms.Label();
             this.txtActionId = new System.Windows.Forms.TextBox();
             this.btnActionMenu = new System.Windows.Forms.Button();
+            this.pictureBoxBtnRefresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelEventMenu.SuspendLayout();
-            this.panelEventFamilyMenu.SuspendLayout();
+            this.panelEventPreviousMenu.SuspendLayout();
             this.panelStageMenu.SuspendLayout();
             this.panelJudgeMenu.SuspendLayout();
             this.panelActionMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegisterAcc
@@ -204,20 +208,6 @@
             this.dataGrid1.Size = new System.Drawing.Size(435, 284);
             this.dataGrid1.TabIndex = 9;
             // 
-            // btnList
-            // 
-            this.btnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(511, 398);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(75, 23);
-            this.btnList.TabIndex = 10;
-            this.btnList.Text = "List";
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
-            // 
             // btnEventMenu
             // 
             this.btnEventMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
@@ -234,7 +224,9 @@
             // 
             // panelEventMenu
             // 
-            this.panelEventMenu.Controls.Add(this.panelEventFamilyMenu);
+            this.panelEventMenu.Controls.Add(this.lbFamilyId);
+            this.panelEventMenu.Controls.Add(this.txtEventFamilyId);
+            this.panelEventMenu.Controls.Add(this.panelEventPreviousMenu);
             this.panelEventMenu.Controls.Add(this.txtTimeDescription);
             this.panelEventMenu.Controls.Add(this.lbTimeDescription);
             this.panelEventMenu.Controls.Add(this.txtTimeNumber);
@@ -260,23 +252,43 @@
             this.panelEventMenu.Controls.Add(this.txtEventName);
             this.panelEventMenu.Location = new System.Drawing.Point(23, 98);
             this.panelEventMenu.Name = "panelEventMenu";
-            this.panelEventMenu.Size = new System.Drawing.Size(400, 435);
+            this.panelEventMenu.Size = new System.Drawing.Size(400, 437);
             this.panelEventMenu.TabIndex = 13;
             this.panelEventMenu.Visible = false;
             // 
-            // panelEventFamilyMenu
+            // lbFamilyId
             // 
-            this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyInfo);
-            this.panelEventFamilyMenu.Controls.Add(this.txtParentId);
-            this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyType);
-            this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyInfo);
-            this.panelEventFamilyMenu.Controls.Add(this.lbChirldId);
-            this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyType);
-            this.panelEventFamilyMenu.Location = new System.Drawing.Point(6, 318);
-            this.panelEventFamilyMenu.Name = "panelEventFamilyMenu";
-            this.panelEventFamilyMenu.Size = new System.Drawing.Size(391, 111);
-            this.panelEventFamilyMenu.TabIndex = 75;
-            this.panelEventFamilyMenu.Visible = false;
+            this.lbFamilyId.AutoSize = true;
+            this.lbFamilyId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFamilyId.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbFamilyId.Location = new System.Drawing.Point(171, 178);
+            this.lbFamilyId.Name = "lbFamilyId";
+            this.lbFamilyId.Size = new System.Drawing.Size(165, 20);
+            this.lbFamilyId.TabIndex = 77;
+            this.lbFamilyId.Text = "Family Id (Optional)";
+            // 
+            // txtEventFamilyId
+            // 
+            this.txtEventFamilyId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtEventFamilyId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtEventFamilyId.Location = new System.Drawing.Point(172, 201);
+            this.txtEventFamilyId.Name = "txtEventFamilyId";
+            this.txtEventFamilyId.Size = new System.Drawing.Size(212, 20);
+            this.txtEventFamilyId.TabIndex = 76;
+            // 
+            // panelEventPreviousMenu
+            // 
+            this.panelEventPreviousMenu.Controls.Add(this.txtPreviounsFamilyInfo);
+            this.panelEventPreviousMenu.Controls.Add(this.txtParentId);
+            this.panelEventPreviousMenu.Controls.Add(this.txtPreviounsFamilyType);
+            this.panelEventPreviousMenu.Controls.Add(this.lbPreviounsFamilyInfo);
+            this.panelEventPreviousMenu.Controls.Add(this.lbChirldId);
+            this.panelEventPreviousMenu.Controls.Add(this.lbPreviounsFamilyType);
+            this.panelEventPreviousMenu.Location = new System.Drawing.Point(6, 318);
+            this.panelEventPreviousMenu.Name = "panelEventPreviousMenu";
+            this.panelEventPreviousMenu.Size = new System.Drawing.Size(391, 111);
+            this.panelEventPreviousMenu.TabIndex = 75;
+            this.panelEventPreviousMenu.Visible = false;
             // 
             // txtPreviounsFamilyInfo
             // 
@@ -385,9 +397,9 @@
             this.lbPreviounsFamily.ForeColor = System.Drawing.SystemColors.Control;
             this.lbPreviounsFamily.Location = new System.Drawing.Point(3, 286);
             this.lbPreviounsFamily.Name = "lbPreviounsFamily";
-            this.lbPreviounsFamily.Size = new System.Drawing.Size(222, 20);
+            this.lbPreviounsFamily.Size = new System.Drawing.Size(312, 20);
             this.lbPreviounsFamily.TabIndex = 63;
-            this.lbPreviounsFamily.Text = "Previouns family (Optional)";
+            this.lbPreviounsFamily.Text = "Previouns events asociated (Optional)";
             this.lbPreviounsFamily.Click += new System.EventHandler(this.lbPreviounsFamily_Click);
             this.lbPreviounsFamily.MouseLeave += new System.EventHandler(this.lbPreviounsFamily_MouseLeave);
             this.lbPreviounsFamily.MouseHover += new System.EventHandler(this.lbPreviounsFamily_MouseHover_1);
@@ -946,7 +958,7 @@
             this.btnModifiy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifiy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifiy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModifiy.Location = new System.Drawing.Point(592, 398);
+            this.btnModifiy.Location = new System.Drawing.Point(511, 398);
             this.btnModifiy.Name = "btnModifiy";
             this.btnModifiy.Size = new System.Drawing.Size(75, 23);
             this.btnModifiy.TabIndex = 19;
@@ -960,7 +972,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(673, 398);
+            this.btnDelete.Location = new System.Drawing.Point(592, 398);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 20;
@@ -1439,18 +1451,30 @@
             this.btnActionMenu.UseVisualStyleBackColor = false;
             this.btnActionMenu.Click += new System.EventHandler(this.btnActionMenu_Click);
             // 
+            // pictureBoxBtnRefresh
+            // 
+            this.pictureBoxBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBtnRefresh.Image")));
+            this.pictureBoxBtnRefresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBoxBtnRefresh.Location = new System.Drawing.Point(870, 84);
+            this.pictureBoxBtnRefresh.Name = "pictureBoxBtnRefresh";
+            this.pictureBoxBtnRefresh.Size = new System.Drawing.Size(17, 18);
+            this.pictureBoxBtnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBtnRefresh.TabIndex = 36;
+            this.pictureBoxBtnRefresh.TabStop = false;
+            this.pictureBoxBtnRefresh.Click += new System.EventHandler(this.pictureBoxBtnRefresh_Click);
+            // 
             // BackOficeResultManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.pictureBoxBtnRefresh);
             this.Controls.Add(this.btnActionMenu);
             this.Controls.Add(this.btnStageMenu);
             this.Controls.Add(this.btnJudgesMenu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModifiy);
             this.Controls.Add(this.btnEventMenu);
-            this.Controls.Add(this.btnList);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.btnRegisterAcc);
             this.Controls.Add(this.panelEventMenu);
@@ -1462,14 +1486,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
             this.panelEventMenu.ResumeLayout(false);
             this.panelEventMenu.PerformLayout();
-            this.panelEventFamilyMenu.ResumeLayout(false);
-            this.panelEventFamilyMenu.PerformLayout();
+            this.panelEventPreviousMenu.ResumeLayout(false);
+            this.panelEventPreviousMenu.PerformLayout();
             this.panelStageMenu.ResumeLayout(false);
             this.panelStageMenu.PerformLayout();
             this.panelJudgeMenu.ResumeLayout(false);
             this.panelJudgeMenu.PerformLayout();
             this.panelActionMenu.ResumeLayout(false);
             this.panelActionMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1482,7 +1507,6 @@
         private System.Windows.Forms.TextBox txtEventName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGrid1;
-        private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnEventMenu;
         private System.Windows.Forms.Panel panelEventMenu;
         private System.Windows.Forms.MaskedTextBox txtStageJudgeId;
@@ -1541,7 +1565,7 @@
         private System.Windows.Forms.Label lbTimeDescription;
         private System.Windows.Forms.MaskedTextBox txtTimeNumber;
         private System.Windows.Forms.Label lbTimeNum;
-        private System.Windows.Forms.Panel panelEventFamilyMenu;
+        private System.Windows.Forms.Panel panelEventPreviousMenu;
         private System.Windows.Forms.Panel panelActionMenu;
         private System.Windows.Forms.Button btnActionMenu;
         private System.Windows.Forms.Label lbIdTeam;
@@ -1572,5 +1596,8 @@
         private System.Windows.Forms.Label lbActionDate;
         private System.Windows.Forms.Label lbStageName;
         private System.Windows.Forms.TextBox txtStageName;
+        private System.Windows.Forms.Label lbFamilyId;
+        private System.Windows.Forms.MaskedTextBox txtEventFamilyId;
+        private System.Windows.Forms.PictureBox pictureBoxBtnRefresh;
     }
 }

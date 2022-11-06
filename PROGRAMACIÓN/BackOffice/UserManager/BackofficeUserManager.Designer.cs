@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackOfficeUserManager));
             this.lbRole = new System.Windows.Forms.Label();
             this.ComboBoxRole = new System.Windows.Forms.ComboBox();
             this.lbName = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.btnModify = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
-            this.btnList = new System.Windows.Forms.Button();
             this.dgrid1 = new System.Windows.Forms.DataGridView();
             this.btnRegister = new System.Windows.Forms.Button();
             this.lbNumber = new System.Windows.Forms.Label();
@@ -66,7 +66,9 @@
             this.lbNum = new System.Windows.Forms.Label();
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.lbCountry = new System.Windows.Forms.Label();
+            this.pictureBoxBtnRefresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // lbRole
@@ -140,9 +142,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(541, 527);
+            this.btnDelete.Location = new System.Drawing.Point(732, 534);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 36);
+            this.btnDelete.Size = new System.Drawing.Size(199, 36);
             this.btnDelete.TabIndex = 59;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -154,9 +156,9 @@
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModify.Location = new System.Drawing.Point(426, 527);
+            this.btnModify.Location = new System.Drawing.Point(527, 534);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(109, 37);
+            this.btnModify.Size = new System.Drawing.Size(199, 37);
             this.btnModify.TabIndex = 58;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = false;
@@ -183,20 +185,6 @@
             this.lbPassword.TabIndex = 56;
             this.lbPassword.Text = "Password";
             this.lbPassword.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnList
-            // 
-            this.btnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(656, 527);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(111, 36);
-            this.btnList.TabIndex = 55;
-            this.btnList.Text = "list";
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click_1);
             // 
             // dgrid1
             // 
@@ -244,9 +232,9 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnRegister.Location = new System.Drawing.Point(311, 528);
+            this.btnRegister.Location = new System.Drawing.Point(311, 533);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(109, 36);
+            this.btnRegister.Size = new System.Drawing.Size(210, 36);
             this.btnRegister.TabIndex = 53;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -452,11 +440,24 @@
             this.lbCountry.TabIndex = 75;
             this.lbCountry.Text = "Country";
             // 
+            // pictureBoxBtnRefresh
+            // 
+            this.pictureBoxBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBtnRefresh.Image")));
+            this.pictureBoxBtnRefresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBoxBtnRefresh.Location = new System.Drawing.Point(914, 12);
+            this.pictureBoxBtnRefresh.Name = "pictureBoxBtnRefresh";
+            this.pictureBoxBtnRefresh.Size = new System.Drawing.Size(17, 18);
+            this.pictureBoxBtnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBtnRefresh.TabIndex = 76;
+            this.pictureBoxBtnRefresh.TabStop = false;
+            this.pictureBoxBtnRefresh.Click += new System.EventHandler(this.pictureBoxBtnRefresh_Click);
+            // 
             // BackOfficeUserManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.pictureBoxBtnRefresh);
             this.Controls.Add(this.lbCountry);
             this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.lbNum);
@@ -477,7 +478,6 @@
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.btnList);
             this.Controls.Add(this.dgrid1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lbNumber);
@@ -493,6 +493,7 @@
             this.Name = "BackOfficeUserManager";
             this.Size = new System.Drawing.Size(954, 567);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,7 +511,6 @@
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lbPassword;
-        private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.DataGridView dgrid1;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label lbNumber;
@@ -533,5 +533,6 @@
         private System.Windows.Forms.Label lbNum;
         private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.Label lbCountry;
+        private System.Windows.Forms.PictureBox pictureBoxBtnRefresh;
     }
 }

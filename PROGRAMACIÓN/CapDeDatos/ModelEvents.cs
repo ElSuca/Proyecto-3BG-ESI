@@ -16,6 +16,7 @@ namespace CapDeDatos
         public string Info { get; set; }
         public int TimeNumber { get; set; }
         public string TimeDescription { get; set; }
+        public int? IdFamily { get; set; }
 
         public ModelEvents()
         {
@@ -51,9 +52,11 @@ namespace CapDeDatos
 
                 Command.CommandText = "SELECT EVENT.*," +
                     "TIME.ID,TIME.NUM," +
-                    "TIME.DESCR " +
-                    "FROM EVENT JOIN TIME " +
-                    "on EVENT.ID = TIME.ID_EVENT";
+                    "TIME.DESCR," +
+                    "EVENT_FAMILY.ID_FAM " +
+                    "FROM (EVENT JOIN TIME) JOIN EVENT_FAMILY " +
+                    "on EVENT.ID = TIME.ID_EVENT and " +
+                    "EVENT_FAMILY.ID_EVENT = TIME.ID_EVENT";
                 tabla.Load(Command.ExecuteReader());
                 Conection.Close();
                 RenameTableEvent(tabla);
@@ -72,12 +75,13 @@ namespace CapDeDatos
 
                 Command.CommandText = "SELECT EVENT.*," +
                     "PRE_EVENT.ID_CHILD," +
-                    " PRE_EVENT.TYPE," +
+                    "PRE_EVENT.TYPE," +
                     "PRE_EVENT.INFO," +
                     "TIME.ID,TIME.NUM," +
                     "TIME.DESCR " +
-                    "FROM EVENT JOIN PRE_EVENT JOIN TIME " +
-                    "on PRE_EVENT.ID_PARENT = EVENT.ID and EVENT.ID = TIME.ID_EVENT";
+                    "EVENT_FAMILY.ID_FAM " +
+                    "FROM (EVENT JOIN PRE_EVENT) JOIN (TIME JOIN EVENT_FAMILY) " +
+                    "on PRE_EVENT.ID_PARENT = EVENT.ID and EVENT.ID = TIME.ID_EVENT AND EVENT_FAMILY.ID_EVENT = TIME.ID_EVENT";
                 tabla.Load(Command.ExecuteReader());
                 Conection.Close();
                 RenameTableEventFamily(tabla);
@@ -97,7 +101,7 @@ namespace CapDeDatos
             {
                 insert();
                 InsertTime();
-                
+                InsertFamily();
             }
         }
         public void SaveParents()
@@ -115,6 +119,7 @@ namespace CapDeDatos
                    $"VALUES ('{Name}','{StartDate}','{EndDate}',{StageId})";
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();
+                
             }
             catch (Exception e)
             {
@@ -135,6 +140,14 @@ namespace CapDeDatos
             {
                 throw e;
             }
+        }
+        public void InsertFamily()
+        {
+            Command.CommandText = "INSERT INTO " +
+                  "EVENT_FAMILY (ID_FAM,ID_EVENT) " +
+                  $"VALUES ({IdFamily},{GetId(Name)})";
+            this.Command.Prepare();
+            this.Command.ExecuteNonQuery();
         }
         public void InsertTime()
         {

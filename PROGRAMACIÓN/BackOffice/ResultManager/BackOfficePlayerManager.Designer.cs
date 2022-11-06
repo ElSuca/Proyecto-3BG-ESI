@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackOfficePlayerManager));
             this.txtTeamCountry = new System.Windows.Forms.MaskedTextBox();
             this.lbTeamCountry = new System.Windows.Forms.Label();
             this.txtTeamState = new System.Windows.Forms.MaskedTextBox();
@@ -81,13 +82,14 @@
             this.dataGrid1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnModifiy = new System.Windows.Forms.Button();
-            this.btnList = new System.Windows.Forms.Button();
             this.btnRegisterAcc = new System.Windows.Forms.Button();
             this.btnPlayer = new System.Windows.Forms.Button();
+            this.pictureBoxBtnRefresh = new System.Windows.Forms.PictureBox();
             this.panelTeamsMenu.SuspendLayout();
             this.panelPlayerMenu.SuspendLayout();
             this.panelParentAsociationFamilyMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTeamCountry
@@ -256,7 +258,7 @@
             this.panelParentAsociationFamilyMenu.Controls.Add(this.lbEventEndDate);
             this.panelParentAsociationFamilyMenu.Controls.Add(this.label2);
             this.panelParentAsociationFamilyMenu.Location = new System.Drawing.Point(4, 401);
-            this.panelParentAsociationFamilyMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelParentAsociationFamilyMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelParentAsociationFamilyMenu.Name = "panelParentAsociationFamilyMenu";
             this.panelParentAsociationFamilyMenu.Size = new System.Drawing.Size(293, 162);
             this.panelParentAsociationFamilyMenu.TabIndex = 89;
@@ -786,6 +788,7 @@
             // 
             // dataGrid1
             // 
+            this.dataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid1.Location = new System.Drawing.Point(357, 53);
             this.dataGrid1.Name = "dataGrid1";
@@ -798,9 +801,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(595, 449);
+            this.btnDelete.Location = new System.Drawing.Point(732, 454);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(171, 45);
             this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -812,27 +815,13 @@
             this.btnModifiy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifiy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifiy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModifiy.Location = new System.Drawing.Point(514, 449);
+            this.btnModifiy.Location = new System.Drawing.Point(555, 454);
             this.btnModifiy.Name = "btnModifiy";
-            this.btnModifiy.Size = new System.Drawing.Size(75, 23);
+            this.btnModifiy.Size = new System.Drawing.Size(171, 44);
             this.btnModifiy.TabIndex = 24;
             this.btnModifiy.Text = "Modify";
             this.btnModifiy.UseVisualStyleBackColor = false;
             this.btnModifiy.Click += new System.EventHandler(this.btnModifiy_Click);
-            // 
-            // btnList
-            // 
-            this.btnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(433, 449);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(75, 23);
-            this.btnList.TabIndex = 23;
-            this.btnList.Text = "List";
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // btnRegisterAcc
             // 
@@ -840,9 +829,9 @@
             this.btnRegisterAcc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegisterAcc.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegisterAcc.Location = new System.Drawing.Point(357, 449);
+            this.btnRegisterAcc.Location = new System.Drawing.Point(357, 454);
             this.btnRegisterAcc.Name = "btnRegisterAcc";
-            this.btnRegisterAcc.Size = new System.Drawing.Size(75, 23);
+            this.btnRegisterAcc.Size = new System.Drawing.Size(192, 44);
             this.btnRegisterAcc.TabIndex = 22;
             this.btnRegisterAcc.Text = "Register";
             this.btnRegisterAcc.UseVisualStyleBackColor = false;
@@ -862,15 +851,27 @@
             this.btnPlayer.UseVisualStyleBackColor = false;
             this.btnPlayer.Click += new System.EventHandler(this.btnPlayer_Click);
             // 
+            // pictureBoxBtnRefresh
+            // 
+            this.pictureBoxBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBtnRefresh.Image")));
+            this.pictureBoxBtnRefresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBoxBtnRefresh.Location = new System.Drawing.Point(907, 29);
+            this.pictureBoxBtnRefresh.Name = "pictureBoxBtnRefresh";
+            this.pictureBoxBtnRefresh.Size = new System.Drawing.Size(17, 18);
+            this.pictureBoxBtnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBtnRefresh.TabIndex = 37;
+            this.pictureBoxBtnRefresh.TabStop = false;
+            this.pictureBoxBtnRefresh.Click += new System.EventHandler(this.pictureBoxBtnRefresh_Click);
+            // 
             // BackOfficePlayerManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.pictureBoxBtnRefresh);
             this.Controls.Add(this.btnPlayer);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModifiy);
-            this.Controls.Add(this.btnList);
             this.Controls.Add(this.btnRegisterAcc);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.btnTeamsMenu);
@@ -885,6 +886,7 @@
             this.panelParentAsociationFamilyMenu.ResumeLayout(false);
             this.panelParentAsociationFamilyMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -906,7 +908,6 @@
         private System.Windows.Forms.DataGridView dataGrid1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnModifiy;
-        private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnRegisterAcc;
         private System.Windows.Forms.Panel panelPlayerMenu;
         private System.Windows.Forms.MaskedTextBox txtPlayerCountry;
@@ -947,5 +948,6 @@
         private System.Windows.Forms.MaskedTextBox txtStartEventPlayerAsociationDateYear;
         private System.Windows.Forms.Label lbStartDate;
         private System.Windows.Forms.Panel panelParentAsociationFamilyMenu;
+        private System.Windows.Forms.PictureBox pictureBoxBtnRefresh;
     }
 }

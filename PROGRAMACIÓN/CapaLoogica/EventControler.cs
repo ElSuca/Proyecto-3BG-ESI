@@ -17,7 +17,7 @@ namespace CapaLoogica
             return new ModelEvents().GetEventDataTableWithFamily();
         }
 
-        public static void Alta(string name, string startDate, string endDate, int stageid, int timeNumber, string timeDescription)
+        public static void Alta(string name, string startDate, string endDate, int stageid, int timeNumber, string timeDescription, int? idFamily)
         {
             ModelEvents e = new ModelEvents
             {
@@ -26,7 +26,8 @@ namespace CapaLoogica
                 EndDate = endDate,
                 StageId = stageid,
                 TimeDescription = timeDescription,
-                TimeNumber = timeNumber
+                TimeNumber = timeNumber,
+                IdFamily = idFamily
             };
             e.Save();
         }

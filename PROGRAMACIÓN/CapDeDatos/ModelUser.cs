@@ -214,16 +214,19 @@ namespace CapaDeDatos
         }
         private string hashPassword(string password) => MD5Hash.Hash.Content(password);
 
-       public DataTable getSubscriptionIndex()
+        public void InsertFamilySubscription(int FamilyId,int UserId)
         {
-            List<string> person = new List<string>();
-            this.Command.CommandText = $"SELECT COUNT(flag_asis) AS cantidad, dni FROM detalle_asistencia WHERE flag_asis = '1' GROUP BY dni";
+            Command.CommandText = "INSERT INTO " +
+                  "USER_SUB_FAM (ID_FAM,ID_USER) " +
+                  $"VALUES ({FamilyId},{UserId})";
             this.Command.Prepare();
-           return Int32.Parse(this.Command.ExecuteReader());
-            return person;
+            this.Command.ExecuteNonQuery();
+        }
 
+        public DataTable GetSubscriptionIndex(int id)
+        {
             DataTable tabla = new DataTable();
-            Command.CommandText = "Select USER.*, PHONES.NUM From USER LEFT JOIN PHONES on USER.ID = PHONES.ID_USER";
+            Command.CommandText = $"Select USER.EMAIL From USER LEFT JOIN USER_SUB_FAM on USER.ID = USER_SUB_FAM.ID_USER WHERE USER_SUB_FAM.ID_FAM = {id}";
             tabla.Load(Command.ExecuteReader());
             Conection.Close();
             return tabla;
@@ -252,6 +255,7 @@ namespace CapaDeDatos
             Conection.Close();
             return tabla;
         }
+        
 
         #region Set static
         public void SetUsernameBuffer(string UserName) => SafeUserData.Username = UserName;

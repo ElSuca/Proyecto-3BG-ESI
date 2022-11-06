@@ -25,12 +25,11 @@ namespace BackOffice.ResultManager
             InitializeComponent();
             setInitial();
         }
-        private void btnList_Click(object sender, EventArgs e) => reloadList();
         private void reloadList()
         {
             try
             {
-                if (panelEventMenu.Visible) dataGrid1.DataSource = panelEventFamilyMenu.Visible ? new EventControler().GetEventFamilyDataTable() : new EventControler().GetEventDataTable();
+                if (panelEventMenu.Visible) dataGrid1.DataSource = panelEventPreviousMenu.Visible ? new EventControler().GetEventFamilyDataTable() : new EventControler().GetEventDataTable();
                 else if (panelJudgeMenu.Visible) dataGrid1.DataSource = new JudgeControler().GetJudgeDataTable();
                 else if (panelStageMenu.Visible) dataGrid1.DataSource = new StageControler().GetStageDataTable();
                 else if (panelActionMenu.Visible) dataGrid1.DataSource = new ActionControler().GetActionDataTable();
@@ -40,7 +39,7 @@ namespace BackOffice.ResultManager
                 MessageBox.Show("Database disconeced");
             }
             catch (Exception)
-            {
+            {  
                 MessageBox.Show("There was an unexpected error");
             }
         }
@@ -59,11 +58,16 @@ namespace BackOffice.ResultManager
                         $"{comboBoxEventStartDateMoth.Items[comboBoxEventEndDateMoth.SelectedIndex].ToString()}-" +
                         $"{comboBoxEventEndDateDay.Items[comboBoxEventEndDateMoth.SelectedIndex].ToString()}";
 
-                    EventControler.Alta(txtEventName.Text, StartDate, EndDate, Int32.Parse(txtStageJudgeId.Text), Int32.Parse(txtTimeNumber.Text), txtTimeDescription.Text);
+                    if(string.IsNullOrEmpty(txtEventFamilyId.Text))
+                        EventControler.Alta(txtEventName.Text, StartDate, EndDate, Int32.Parse(txtStageJudgeId.Text), Int32.Parse(txtTimeNumber.Text), txtTimeDescription.Text,null);
+                    else
+                        EventControler.Alta(txtEventName.Text, StartDate, EndDate, Int32.Parse(txtStageJudgeId.Text), Int32.Parse(txtTimeNumber.Text), txtTimeDescription.Text, Int32.Parse(txtEventFamilyId.Text));
                     parsearEvento();
-                    if (panelEventFamilyMenu.Visible) EventControler.AltaParents(Int32.Parse(txtParentId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text, txtEventName.Text);
+                    if (panelEventPreviousMenu.Visible)
+                        EventControler.AltaParents(Int32.Parse(txtParentId.Text), txtPreviounsFamilyType.Text, txtPreviounsFamilyInfo.Text, txtEventName.Text);
                     MessageBox.Show("Evento cargado");
-                    sendMails();
+                    sendMails(txtEventName.Text, Int32.Parse(txtEventFamilyId.Text));
+
                 }
                 else if (panelJudgeMenu.Visible)
                 {
@@ -132,6 +136,7 @@ namespace BackOffice.ResultManager
             panelJudgeMenu.Visible = menu == 2 ? true : false;
             panelStageMenu.Visible = menu == 3 ? true : false;
             panelActionMenu.Visible = menu == 4 ? true : false;
+            reloadList();
         }
        
         private void setInitial()
@@ -211,7 +216,7 @@ namespace BackOffice.ResultManager
             {
                 if (panelEventMenu.Visible)
                 {
-                    EventControler.Eliminar(Int32.Parse(txtEventID.Text));
+                    EventControler.Delete(Int32.Parse(txtEventID.Text));
                     MessageBox.Show($"Evento {txtEventID.Text} Eliminado");
                 }
                 else if (panelJudgeMenu.Visible)
@@ -250,16 +255,13 @@ namespace BackOffice.ResultManager
             }
         }
 
-        private void lbPreviounsFamily_Click(object sender, EventArgs e) => panelEventFamilyMenu.Visible = panelEventFamilyMenu.Visible ? false : true;
+        private void lbPreviounsFamily_Click(object sender, EventArgs e) => panelEventPreviousMenu.Visible = panelEventPreviousMenu.Visible ? false : true;
         private void lbPreviounsFamily_MouseHover(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.Blue;
 
         private void lbPreviounsFamily_MouseHover_1(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.Blue;
         private void lbPreviounsFamily_MouseLeave(object sender, EventArgs e) => lbPreviounsFamily.ForeColor = Color.White;
 
-        private void sendMails()
-        {
-            new AplicationControler().SendMails();
-        }
-       
+        private void pictureBoxBtnRefresh_Click(object sender, EventArgs e) => reloadList();
+        private void sendMails(string Name, int id) => new AplicationControler().SendMails(Name, id);
     }
 }

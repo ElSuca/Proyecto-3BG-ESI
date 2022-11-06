@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackOfficeAsociationManager));
             this.dataGrid1 = new System.Windows.Forms.DataGridView();
             this.btnManagerMenu = new System.Windows.Forms.Button();
             this.panelManagerMenu = new System.Windows.Forms.Panel();
@@ -68,10 +69,15 @@
             this.txtManagerName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnModifiy = new System.Windows.Forms.Button();
-            this.btnList = new System.Windows.Forms.Button();
             this.btnRegisterAcc = new System.Windows.Forms.Button();
             this.btnFamilyMenu = new System.Windows.Forms.Button();
             this.panelFamilyMenu = new System.Windows.Forms.Panel();
+            this.panelEventFamilyMenu = new System.Windows.Forms.Panel();
+            this.txtPreviounsFamilyInfo = new System.Windows.Forms.TextBox();
+            this.txtChirldId = new System.Windows.Forms.TextBox();
+            this.txtPreviounsFamilyType = new System.Windows.Forms.TextBox();
+            this.lbPreviounsFamilyInfo = new System.Windows.Forms.Label();
+            this.lbPreviounsFamilyType = new System.Windows.Forms.Label();
             this.lbChirldId = new System.Windows.Forms.Label();
             this.lbPreviounsFamily = new System.Windows.Forms.Label();
             this.lbFamilyType = new System.Windows.Forms.Label();
@@ -120,21 +126,18 @@
             this.txtAsociationName = new System.Windows.Forms.TextBox();
             this.lbAsociationId = new System.Windows.Forms.Label();
             this.txtAsociationId = new System.Windows.Forms.TextBox();
-            this.panelEventFamilyMenu = new System.Windows.Forms.Panel();
-            this.txtPreviounsFamilyInfo = new System.Windows.Forms.TextBox();
-            this.txtChirldId = new System.Windows.Forms.TextBox();
-            this.txtPreviounsFamilyType = new System.Windows.Forms.TextBox();
-            this.lbPreviounsFamilyInfo = new System.Windows.Forms.Label();
-            this.lbPreviounsFamilyType = new System.Windows.Forms.Label();
+            this.pictureBoxBtnRefresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.panelManagerMenu.SuspendLayout();
             this.panelFamilyMenu.SuspendLayout();
-            this.panelAsociationMenu.SuspendLayout();
             this.panelEventFamilyMenu.SuspendLayout();
+            this.panelAsociationMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGrid1
             // 
+            this.dataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid1.Location = new System.Drawing.Point(428, 66);
             this.dataGrid1.Name = "dataGrid1";
@@ -697,9 +700,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(810, 458);
+            this.btnDelete.Location = new System.Drawing.Point(776, 458);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(118, 39);
+            this.btnDelete.Size = new System.Drawing.Size(152, 39);
             this.btnDelete.TabIndex = 26;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -711,27 +714,13 @@
             this.btnModifiy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifiy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifiy.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModifiy.Location = new System.Drawing.Point(560, 458);
+            this.btnModifiy.Location = new System.Drawing.Point(618, 458);
             this.btnModifiy.Name = "btnModifiy";
-            this.btnModifiy.Size = new System.Drawing.Size(120, 39);
+            this.btnModifiy.Size = new System.Drawing.Size(152, 39);
             this.btnModifiy.TabIndex = 27;
             this.btnModifiy.Text = "Modify";
             this.btnModifiy.UseVisualStyleBackColor = false;
             this.btnModifiy.Click += new System.EventHandler(this.btnModifiy_Click_1);
-            // 
-            // btnList
-            // 
-            this.btnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(686, 458);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(118, 39);
-            this.btnList.TabIndex = 28;
-            this.btnList.Text = "List";
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click_1);
             // 
             // btnRegisterAcc
             // 
@@ -741,7 +730,7 @@
             this.btnRegisterAcc.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRegisterAcc.Location = new System.Drawing.Point(428, 458);
             this.btnRegisterAcc.Name = "btnRegisterAcc";
-            this.btnRegisterAcc.Size = new System.Drawing.Size(126, 39);
+            this.btnRegisterAcc.Size = new System.Drawing.Size(184, 39);
             this.btnRegisterAcc.TabIndex = 29;
             this.btnRegisterAcc.Text = "Register";
             this.btnRegisterAcc.UseVisualStyleBackColor = false;
@@ -779,6 +768,69 @@
             this.panelFamilyMenu.Name = "panelFamilyMenu";
             this.panelFamilyMenu.Size = new System.Drawing.Size(296, 438);
             this.panelFamilyMenu.TabIndex = 59;
+            // 
+            // panelEventFamilyMenu
+            // 
+            this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyInfo);
+            this.panelEventFamilyMenu.Controls.Add(this.txtChirldId);
+            this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyType);
+            this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyInfo);
+            this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyType);
+            this.panelEventFamilyMenu.Controls.Add(this.lbChirldId);
+            this.panelEventFamilyMenu.Location = new System.Drawing.Point(7, 264);
+            this.panelEventFamilyMenu.Name = "panelEventFamilyMenu";
+            this.panelEventFamilyMenu.Size = new System.Drawing.Size(269, 135);
+            this.panelEventFamilyMenu.TabIndex = 76;
+            this.panelEventFamilyMenu.Visible = false;
+            // 
+            // txtPreviounsFamilyInfo
+            // 
+            this.txtPreviounsFamilyInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPreviounsFamilyInfo.Location = new System.Drawing.Point(9, 112);
+            this.txtPreviounsFamilyInfo.Name = "txtPreviounsFamilyInfo";
+            this.txtPreviounsFamilyInfo.Size = new System.Drawing.Size(249, 20);
+            this.txtPreviounsFamilyInfo.TabIndex = 66;
+            // 
+            // txtChirldId
+            // 
+            this.txtChirldId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtChirldId.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtChirldId.Location = new System.Drawing.Point(11, 30);
+            this.txtChirldId.Name = "txtChirldId";
+            this.txtChirldId.Size = new System.Drawing.Size(247, 20);
+            this.txtChirldId.TabIndex = 64;
+            // 
+            // txtPreviounsFamilyType
+            // 
+            this.txtPreviounsFamilyType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPreviounsFamilyType.Location = new System.Drawing.Point(11, 71);
+            this.txtPreviounsFamilyType.Name = "txtPreviounsFamilyType";
+            this.txtPreviounsFamilyType.Size = new System.Drawing.Size(247, 20);
+            this.txtPreviounsFamilyType.TabIndex = 65;
+            // 
+            // lbPreviounsFamilyInfo
+            // 
+            this.lbPreviounsFamilyInfo.AutoSize = true;
+            this.lbPreviounsFamilyInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPreviounsFamilyInfo.Location = new System.Drawing.Point(6, 89);
+            this.lbPreviounsFamilyInfo.Name = "lbPreviounsFamilyInfo";
+            this.lbPreviounsFamilyInfo.Size = new System.Drawing.Size(41, 20);
+            this.lbPreviounsFamilyInfo.TabIndex = 70;
+            this.lbPreviounsFamilyInfo.Text = "Info";
+            // 
+            // lbPreviounsFamilyType
+            // 
+            this.lbPreviounsFamilyType.AutoSize = true;
+            this.lbPreviounsFamilyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPreviounsFamilyType.Location = new System.Drawing.Point(7, 49);
+            this.lbPreviounsFamilyType.Name = "lbPreviounsFamilyType";
+            this.lbPreviounsFamilyType.Size = new System.Drawing.Size(47, 20);
+            this.lbPreviounsFamilyType.TabIndex = 69;
+            this.lbPreviounsFamilyType.Text = "Type";
             // 
             // lbChirldId
             // 
@@ -1396,79 +1448,28 @@
             this.txtAsociationId.Size = new System.Drawing.Size(177, 20);
             this.txtAsociationId.TabIndex = 45;
             // 
-            // panelEventFamilyMenu
+            // pictureBoxBtnRefresh
             // 
-            this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyInfo);
-            this.panelEventFamilyMenu.Controls.Add(this.txtChirldId);
-            this.panelEventFamilyMenu.Controls.Add(this.txtPreviounsFamilyType);
-            this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyInfo);
-            this.panelEventFamilyMenu.Controls.Add(this.lbPreviounsFamilyType);
-            this.panelEventFamilyMenu.Controls.Add(this.lbChirldId);
-            this.panelEventFamilyMenu.Location = new System.Drawing.Point(7, 264);
-            this.panelEventFamilyMenu.Name = "panelEventFamilyMenu";
-            this.panelEventFamilyMenu.Size = new System.Drawing.Size(269, 135);
-            this.panelEventFamilyMenu.TabIndex = 76;
-            this.panelEventFamilyMenu.Visible = false;
-            // 
-            // txtPreviounsFamilyInfo
-            // 
-            this.txtPreviounsFamilyInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPreviounsFamilyInfo.Location = new System.Drawing.Point(9, 112);
-            this.txtPreviounsFamilyInfo.Name = "txtPreviounsFamilyInfo";
-            this.txtPreviounsFamilyInfo.Size = new System.Drawing.Size(249, 20);
-            this.txtPreviounsFamilyInfo.TabIndex = 66;
-            // 
-            // txtChirldId
-            // 
-            this.txtChirldId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtChirldId.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtChirldId.Location = new System.Drawing.Point(11, 30);
-            this.txtChirldId.Name = "txtChirldId";
-            this.txtChirldId.Size = new System.Drawing.Size(247, 20);
-            this.txtChirldId.TabIndex = 64;
-            // 
-            // txtPreviounsFamilyType
-            // 
-            this.txtPreviounsFamilyType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPreviounsFamilyType.Location = new System.Drawing.Point(11, 71);
-            this.txtPreviounsFamilyType.Name = "txtPreviounsFamilyType";
-            this.txtPreviounsFamilyType.Size = new System.Drawing.Size(247, 20);
-            this.txtPreviounsFamilyType.TabIndex = 65;
-            // 
-            // lbPreviounsFamilyInfo
-            // 
-            this.lbPreviounsFamilyInfo.AutoSize = true;
-            this.lbPreviounsFamilyInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPreviounsFamilyInfo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPreviounsFamilyInfo.Location = new System.Drawing.Point(6, 89);
-            this.lbPreviounsFamilyInfo.Name = "lbPreviounsFamilyInfo";
-            this.lbPreviounsFamilyInfo.Size = new System.Drawing.Size(41, 20);
-            this.lbPreviounsFamilyInfo.TabIndex = 70;
-            this.lbPreviounsFamilyInfo.Text = "Info";
-            // 
-            // lbPreviounsFamilyType
-            // 
-            this.lbPreviounsFamilyType.AutoSize = true;
-            this.lbPreviounsFamilyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPreviounsFamilyType.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPreviounsFamilyType.Location = new System.Drawing.Point(7, 49);
-            this.lbPreviounsFamilyType.Name = "lbPreviounsFamilyType";
-            this.lbPreviounsFamilyType.Size = new System.Drawing.Size(47, 20);
-            this.lbPreviounsFamilyType.TabIndex = 69;
-            this.lbPreviounsFamilyType.Text = "Type";
+            this.pictureBoxBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBtnRefresh.Image")));
+            this.pictureBoxBtnRefresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBoxBtnRefresh.Location = new System.Drawing.Point(934, 47);
+            this.pictureBoxBtnRefresh.Name = "pictureBoxBtnRefresh";
+            this.pictureBoxBtnRefresh.Size = new System.Drawing.Size(17, 18);
+            this.pictureBoxBtnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBtnRefresh.TabIndex = 62;
+            this.pictureBoxBtnRefresh.TabStop = false;
+            this.pictureBoxBtnRefresh.Click += new System.EventHandler(this.pictureBoxBtnRefresh_Click);
             // 
             // BackOfficeAsociationManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.pictureBoxBtnRefresh);
             this.Controls.Add(this.btnAsociationMenu);
             this.Controls.Add(this.panelFamilyMenu);
             this.Controls.Add(this.btnFamilyMenu);
             this.Controls.Add(this.btnRegisterAcc);
-            this.Controls.Add(this.btnList);
             this.Controls.Add(this.btnModifiy);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.panelManagerMenu);
@@ -1482,10 +1483,11 @@
             this.panelManagerMenu.PerformLayout();
             this.panelFamilyMenu.ResumeLayout(false);
             this.panelFamilyMenu.PerformLayout();
-            this.panelAsociationMenu.ResumeLayout(false);
-            this.panelAsociationMenu.PerformLayout();
             this.panelEventFamilyMenu.ResumeLayout(false);
             this.panelEventFamilyMenu.PerformLayout();
+            this.panelAsociationMenu.ResumeLayout(false);
+            this.panelAsociationMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1497,7 +1499,6 @@
         private System.Windows.Forms.Panel panelManagerMenu;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnModifiy;
-        private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnRegisterAcc;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -1590,5 +1591,6 @@
         private System.Windows.Forms.TextBox txtPreviounsFamilyType;
         private System.Windows.Forms.Label lbPreviounsFamilyInfo;
         private System.Windows.Forms.Label lbPreviounsFamilyType;
+        private System.Windows.Forms.PictureBox pictureBoxBtnRefresh;
     }
 }

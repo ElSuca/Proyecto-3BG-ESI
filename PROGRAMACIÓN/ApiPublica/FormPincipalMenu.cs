@@ -231,5 +231,10 @@ namespace ApiPublica
         {
             FillResults2vs2(Int32.Parse(txtNumberItems.Text), txtTeam1.Text, txtTeam2.Text, Int32.Parse(txtScore1.Text), Int32.Parse(txtScore2.Text), txtDate.Text);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new UserControler().SetFamilySubscription("a",new UserControler().GetId(new UserControler().GetStaticUsername));
+        }
     }
 }

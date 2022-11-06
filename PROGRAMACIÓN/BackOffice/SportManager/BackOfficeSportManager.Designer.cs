@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackOfficeSportManager));
             this.lbSportType = new System.Windows.Forms.Label();
             this.txtTypeRegister = new System.Windows.Forms.TextBox();
             this.lbSportName = new System.Windows.Forms.Label();
@@ -41,10 +42,11 @@
             this.txtSportName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
-            this.btnList = new System.Windows.Forms.Button();
             this.dgrid1 = new System.Windows.Forms.DataGridView();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.pictureBoxBtnRefresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // lbSportType
@@ -135,20 +137,6 @@
             this.btnModify.UseVisualStyleBackColor = false;
             this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
-            // btnList
-            // 
-            this.btnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(44)))));
-            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnList.Location = new System.Drawing.Point(625, 320);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(111, 36);
-            this.btnList.TabIndex = 73;
-            this.btnList.Text = "list";
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
-            // 
             // dgrid1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -186,7 +174,7 @@
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             this.dgrid1.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgrid1.Size = new System.Drawing.Size(942, 278);
+            this.dgrid1.Size = new System.Drawing.Size(455, 278);
             this.dgrid1.TabIndex = 72;
             // 
             // btnRegister
@@ -203,14 +191,26 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // pictureBoxBtnRefresh
+            // 
+            this.pictureBoxBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBtnRefresh.Image")));
+            this.pictureBoxBtnRefresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBoxBtnRefresh.Location = new System.Drawing.Point(719, 12);
+            this.pictureBoxBtnRefresh.Name = "pictureBoxBtnRefresh";
+            this.pictureBoxBtnRefresh.Size = new System.Drawing.Size(17, 18);
+            this.pictureBoxBtnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBtnRefresh.TabIndex = 77;
+            this.pictureBoxBtnRefresh.TabStop = false;
+            this.pictureBoxBtnRefresh.Click += new System.EventHandler(this.pictureBoxBtnRefresh_Click);
+            // 
             // BackOfficeSportManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.pictureBoxBtnRefresh);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModify);
-            this.Controls.Add(this.btnList);
             this.Controls.Add(this.dgrid1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lbSportType);
@@ -220,8 +220,9 @@
             this.Controls.Add(this.txtSportID);
             this.Controls.Add(this.txtSportName);
             this.Name = "BackOfficeSportManager";
-            this.Size = new System.Drawing.Size(1311, 388);
+            this.Size = new System.Drawing.Size(762, 388);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnRefresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,8 +238,8 @@
         private System.Windows.Forms.TextBox txtSportName;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.DataGridView dgrid1;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.PictureBox pictureBoxBtnRefresh;
     }
 }

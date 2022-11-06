@@ -90,7 +90,6 @@ namespace BackOffice.ResultManager
             }
         }
 
-        private void btnList_Click(object sender, EventArgs e) => reloadList();
 
         private void reloadList()
         {
@@ -194,6 +193,7 @@ namespace BackOffice.ResultManager
 
             if (menu == 1) panelTeamsMenu.Visible = true;
             if (menu == 2) panelPlayerMenu.Visible = true;
+            reloadList();
         }
         private void setInitial()
         {
@@ -221,5 +221,7 @@ namespace BackOffice.ResultManager
         private void lbPlayerAsociationPreviousFamily_MouseHover(object sender, EventArgs e) => lbPlayerAsociationPreviousFamily.ForeColor = Color.Blue;
 
         private void lbPlayerAsociationPreviousFamily_MouseLeave(object sender, EventArgs e) => lbPlayerAsociationPreviousFamily.ForeColor = Color.White;
+
+        private void pictureBoxBtnRefresh_Click(object sender, EventArgs e) => reloadList();
     }
 }
