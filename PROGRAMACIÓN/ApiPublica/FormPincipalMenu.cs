@@ -25,7 +25,7 @@ namespace ApiPublica
             selection = new Random().Next(3);
         }
         #region Fill Results
-        private void FillResults2vs2(int n,string team1,string team2,int result1,int result2,string date)
+        private void FillResults1vs1(int n,string team1,string team2,int result1,int result2,string date)
         {
             MenuResult1vs1PreviewModel[] listItem = new MenuResult1vs1PreviewModel[n];
 
@@ -51,7 +51,7 @@ namespace ApiPublica
         {
 
 
-            FillResults2vs2(10, "n","P", 1, 0," 10 / 10 / 1010 10:10"); 
+            FillResults1vs1(10, "n","P", 1, 0," 10 / 10 / 1010 10:10"); 
             this.Size = new Size(1280, 1024);
             panelTopPage.Size = new Size(screenWidth, 53);
         }
@@ -125,31 +125,6 @@ namespace ApiPublica
         #endregion
 
         private void BannerPic_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(new ApiPublicidad.AddManager().SelectUrllink(selection));
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelPremiunBlock_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelMenus_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbSport_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBoxBtnConfig_Click(object sender, EventArgs e)
         {
@@ -229,7 +204,7 @@ namespace ApiPublica
 
         private void btnsendinfo_Click(object sender, EventArgs e)
         {
-            FillResults2vs2(Int32.Parse(txtNumberItems.Text), txtTeam1.Text, txtTeam2.Text, Int32.Parse(txtScore1.Text), Int32.Parse(txtScore2.Text), txtDate.Text);
+            FillResults1vs1(Int32.Parse(txtNumberItems.Text), txtTeam1.Text, txtTeam2.Text, Int32.Parse(txtScore1.Text), Int32.Parse(txtScore2.Text), txtDate.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)

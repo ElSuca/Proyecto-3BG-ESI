@@ -294,7 +294,6 @@
             this.panelMenus.Name = "panelMenus";
             this.panelMenus.Size = new System.Drawing.Size(34, 31);
             this.panelMenus.TabIndex = 3;
-            this.panelMenus.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenus_Paint);
             // 
             // pictureBoxBtnConfig
             // 
@@ -330,7 +329,6 @@
             this.panelTopPage.Name = "panelTopPage";
             this.panelTopPage.Size = new System.Drawing.Size(1801, 53);
             this.panelTopPage.TabIndex = 16;
-            this.panelTopPage.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lbButtonFootbal
             // 
@@ -386,7 +384,6 @@
             this.txtTeam.Name = "txtTeam";
             this.txtTeam.Size = new System.Drawing.Size(121, 20);
             this.txtTeam.TabIndex = 2;
-            this.txtTeam.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lbSport
             // 
@@ -398,7 +395,6 @@
             this.lbSport.Size = new System.Drawing.Size(59, 24);
             this.lbSport.TabIndex = 1;
             this.lbSport.Text = "Sport";
-            this.lbSport.Click += new System.EventHandler(this.lbSport_Click);
             // 
             // comboBoxSport
             // 

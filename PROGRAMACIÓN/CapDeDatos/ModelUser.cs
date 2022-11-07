@@ -163,6 +163,7 @@ namespace CapaDeDatos
                 this.Command.CommandText = $"DELETE PHONES.* from PHONES where ID_USER = {Id}";
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();
+
                 this.Command.CommandText = $"DELETE USER.* from USER where ID= {Id}";
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();

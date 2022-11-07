@@ -43,22 +43,5 @@ namespace ApiPublica
         {
             InitializeComponent();
         }
-
-      
-
-        private void lbAdCategory_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuResultPreviewModel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbDate_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

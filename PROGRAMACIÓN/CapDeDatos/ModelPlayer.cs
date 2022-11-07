@@ -15,7 +15,7 @@ namespace CapDeDatos
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
-        public int IdAsoc { get; set; }
+        public int? IdAsoc { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
 
@@ -182,6 +182,59 @@ namespace CapDeDatos
             {
                 return 0;
             }
+        }
+        public void PopulatePlayer(int i)
+        {
+            this.Command.CommandText = $"SELECT PLAYER.*,ASOC_PLYR.ID_ASOC,ASOC_PLYR.STARTDATE,ASOC_PLYR.ENDDATE FROM PLAYER LEFT JOIN ASOC_PLYR on (PLAYER.ID = ASOC_PLYR.ID_PLYR) WHERE PLAYER.ID= {i}";
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            this.DataReader.Read();
+            this.Id = GetColumnInt("ID");
+            this.Name = GetColumn("NAME");
+            this.LastName1 = GetColumn("LNAME1");
+            this.LastName2 = GetColumn("LNAME2");
+            this.Status = GetColumn("STATUS");
+            this.BirthDate = GetColumn("BIRTHDATE");
+            this.City = GetColumn("CITY");
+            this.State = GetColumn("STATE");
+            this.Country = GetColumn("COUNTRY");
+            this.IdAsoc = GetColumnInt("ID_ASOC");
+            this.StartDate = GetColumn("STARTDATE");
+            this.EndDate = GetColumn("ENDDATE");
+            this.DataReader.Close();
+        }
+        public void PopulatePlayer(string s)
+        {
+            this.Command.CommandText = $"SELECT PLAYER.*,ASOC_PLYR.ID_ASOC,ASOC_PLYR.STARTDATE,ASOC_PLYR.ENDDATE FROM PLAYER LEFT JOIN ASOC_PLYR on (PLAYER.ID = ASOC_PLYR.ID_PLYR) WHERE PLAYER.NAME={s} OR PLAYER.LNAME1={s} OR PLAYER.LNAME2={s}";
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            this.DataReader.Read();
+            this.Id = GetColumnInt("ID");
+            this.Name = GetColumn("NAME");
+            this.LastName1 = GetColumn("LNAME1");
+            this.LastName2 = GetColumn("LNAME2");
+            this.Status = GetColumn("STATUS");
+            this.BirthDate = GetColumn("BIRTHDATE");
+            this.City = GetColumn("CITY");
+            this.State = GetColumn("STATE");
+            this.Country = GetColumn("COUNTRY");
+            this.IdAsoc = GetColumnInt("ID_ASOC");
+            this.StartDate = GetColumn("STARTDATE");
+            this.EndDate = GetColumn("ENDDATE");
+            this.DataReader.Close();
+        }
+        private string GetColumn(string key, string defaultValue = null)
+        {
+            int ordinal = this.DataReader.GetOrdinal(key);
+            if (this.DataReader.IsDBNull(ordinal)) return defaultValue;
+            return this.DataReader.GetString(ordinal);
+        }
+
+        private int GetColumnInt(string key)
+        {
+            int ordinal = this.DataReader.GetOrdinal(key);
+            if (this.DataReader.IsDBNull(ordinal)) return -1;
+            return this.DataReader.GetInt32(ordinal);
         }
     }
 }

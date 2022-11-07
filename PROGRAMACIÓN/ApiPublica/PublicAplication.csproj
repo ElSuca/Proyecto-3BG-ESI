@@ -53,17 +53,17 @@
     <Reference Include="Google.Apis.PlatformServices, Version=1.57.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.57.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.16.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.16\lib\net46\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.16.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.16\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.7.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.7\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
     <Reference Include="MD5, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MD5.2.0.2\lib\netstandard2.0\MD5.dll</HintPath>
@@ -72,18 +72,18 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.30.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.30\lib\net452\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OptimizedDataReader, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OptimizedDataReader.1.1.0\lib\net46\OptimizedDataReader.dll</HintPath>
-    </Reference>
     <Reference Include="Savage.Data, Version=5.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Savage.Data.5.4.2\lib\net46\Savage.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Savage.OptimizedDataReader, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OptimizedDataReader.1.1.2\lib\net46\Savage.OptimizedDataReader.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -118,14 +118,23 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.30\lib\net452\Ubiety.Dns.Core.dll</HintPath>
-    </Reference>
     <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.30\lib\net452\ZstdNet.dll</HintPath>
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlName.Designer.cs">
+      <DependentUpon>ControlName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendedMenu\MenuResult1vs1Extend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExtendedMenu\MenuResult1vs1Extend.Designer.cs">
+      <DependentUpon>MenuResult1vs1Extend.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPincipalMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,23 +147,17 @@
     <Compile Include="LanguageMenu.Designer.cs">
       <DependentUpon>LanguageMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuResult1vs1PreviewModel.cs">
+    <Compile Include="MenuPreview\MenuResult1vs1Preview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuResult1vs1PreviewModel.Designer.cs">
-      <DependentUpon>MenuResult1vs1PreviewModel.cs</DependentUpon>
+    <Compile Include="MenuPreview\MenuResult1vs1Preview.Designer.cs">
+      <DependentUpon>MenuResult1vs1Preview.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuResultMultiplePreviewModel.cs">
+    <Compile Include="MenuPreview\MenuResultMultiplePreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuResultMultiplePreviewModel.Designer.cs">
-      <DependentUpon>MenuResultMultiplePreviewModel.cs</DependentUpon>
+    <Compile Include="MenuPreview\MenuResultMultiplePreview.Designer.cs">
+      <DependentUpon>MenuResultMultiplePreview.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,20 +167,23 @@
     <Compile Include="UserDataMenu.Designer.cs">
       <DependentUpon>UserDataMenu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ControlName.resx">
+      <DependentUpon>ControlName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendedMenu\MenuResult1vs1Extend.resx">
+      <DependentUpon>MenuResult1vs1Extend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPincipalMenu.resx">
       <DependentUpon>FormPincipalMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LanguageMenu.resx">
       <DependentUpon>LanguageMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPreview\MenuResult1vs1Preview.resx">
+      <DependentUpon>MenuResult1vs1Preview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuResult1vs1PreviewModel.resx">
-      <DependentUpon>MenuResult1vs1PreviewModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuResultMultiplePreviewModel.resx">
-      <DependentUpon>MenuResultMultiplePreviewModel.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPreview\MenuResultMultiplePreview.resx">
+      <DependentUpon>MenuResultMultiplePreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -225,6 +231,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Competition.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />

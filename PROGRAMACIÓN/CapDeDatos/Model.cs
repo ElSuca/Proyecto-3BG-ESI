@@ -1,19 +1,30 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MySqlConnector;
+using Newtonsoft.Json;
 using System;
 
 namespace CapaDeDatos
 {
     public abstract class Model
     {
+        [JsonIgnore]
         public string IpDataBase;
+        [JsonIgnore]
         public string UserDataBase;
+        [JsonIgnore]
         public string PasswordDataBase;
+        [JsonIgnore]
         public string NameDataBase;
+        [JsonIgnore]
         public string DataBasePort;
+        [JsonIgnore]
         public MySqlConnection Conection;
+        [JsonIgnore]
         public MySqlCommand Command;
-        public MySqlCommand Commanditou;
+        [JsonIgnore]
         public MySqlDataReader DataReader;
+        [JsonIgnore]
+        public MySqlCommand Commanditou;
+
 
 
 
@@ -67,6 +78,10 @@ namespace CapaDeDatos
             this.DataBasePort = "3306";
 
             #endregion
+        }
+        public void endConnection()
+        {
+            this.Command.Connection.Close();
         }
     }
 }

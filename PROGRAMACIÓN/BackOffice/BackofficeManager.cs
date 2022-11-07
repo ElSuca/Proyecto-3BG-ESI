@@ -1,13 +1,9 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System;
 using System.Windows.Forms;
-using CapaLogica;
-using CapaLoogica;
 using BackOffice;
 using System.Drawing;
 using BackOffice.SportManager;
+using MySqlConnector;
 
 namespace Proyecto.Backoffice
 {

@@ -42,13 +42,12 @@
             this.lbTeam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeam1.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTeam1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTeam1.Location = new System.Drawing.Point(131, 75);
-            this.lbTeam1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbTeam1.Location = new System.Drawing.Point(98, 61);
+            this.lbTeam1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTeam1.Name = "lbTeam1";
-            this.lbTeam1.Size = new System.Drawing.Size(110, 36);
+            this.lbTeam1.Size = new System.Drawing.Size(94, 29);
             this.lbTeam1.TabIndex = 23;
             this.lbTeam1.Text = "Team1";
-            this.lbTeam1.Click += new System.EventHandler(this.lbAdCategory_Click);
             // 
             // lbTeam2
             // 
@@ -56,10 +55,10 @@
             this.lbTeam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeam2.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTeam2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTeam2.Location = new System.Drawing.Point(415, 75);
-            this.lbTeam2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbTeam2.Location = new System.Drawing.Point(311, 61);
+            this.lbTeam2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTeam2.Name = "lbTeam2";
-            this.lbTeam2.Size = new System.Drawing.Size(110, 36);
+            this.lbTeam2.Size = new System.Drawing.Size(94, 29);
             this.lbTeam2.TabIndex = 24;
             this.lbTeam2.Text = "Team2";
             // 
@@ -69,10 +68,10 @@
             this.lbResult1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbResult1.ForeColor = System.Drawing.SystemColors.Control;
             this.lbResult1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbResult1.Location = new System.Drawing.Point(279, 75);
-            this.lbResult1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbResult1.Location = new System.Drawing.Point(209, 61);
+            this.lbResult1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbResult1.Name = "lbResult1";
-            this.lbResult1.Size = new System.Drawing.Size(33, 36);
+            this.lbResult1.Size = new System.Drawing.Size(27, 29);
             this.lbResult1.TabIndex = 25;
             this.lbResult1.Text = "0";
             // 
@@ -82,10 +81,10 @@
             this.lbResult2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbResult2.ForeColor = System.Drawing.SystemColors.Control;
             this.lbResult2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbResult2.Location = new System.Drawing.Point(368, 75);
-            this.lbResult2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbResult2.Location = new System.Drawing.Point(276, 61);
+            this.lbResult2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbResult2.Name = "lbResult2";
-            this.lbResult2.Size = new System.Drawing.Size(33, 36);
+            this.lbResult2.Size = new System.Drawing.Size(27, 29);
             this.lbResult2.TabIndex = 26;
             this.lbResult2.Text = "0";
             // 
@@ -95,10 +94,10 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(325, 75);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(244, 61);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 39);
+            this.label1.Size = new System.Drawing.Size(24, 31);
             this.label1.TabIndex = 27;
             this.label1.Text = "-";
             // 
@@ -108,17 +107,16 @@
             this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.SystemColors.Control;
             this.lbDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbDate.Location = new System.Drawing.Point(236, 124);
-            this.lbDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbDate.Location = new System.Drawing.Point(177, 101);
+            this.lbDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(183, 25);
+            this.lbDate.Size = new System.Drawing.Size(149, 20);
             this.lbDate.TabIndex = 28;
             this.lbDate.Text = "00/00/0000 00:00";
-            this.lbDate.Click += new System.EventHandler(this.lbDate_Click);
             // 
-            // MenuResult2vs2PreviewModel
+            // MenuResult1vs1PreviewModel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.Controls.Add(this.lbDate);
@@ -127,10 +125,8 @@
             this.Controls.Add(this.lbResult1);
             this.Controls.Add(this.lbTeam2);
             this.Controls.Add(this.lbTeam1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "MenuResult2vs2PreviewModel";
-            this.Size = new System.Drawing.Size(683, 185);
-            this.Load += new System.EventHandler(this.MenuResultPreviewModel_Load);
+            this.Name = "MenuResult1vs1PreviewModel";
+            this.Size = new System.Drawing.Size(512, 150);
             this.ResumeLayout(false);
             this.PerformLayout();
 
