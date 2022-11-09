@@ -85,6 +85,8 @@
             this.btnRegisterAcc = new System.Windows.Forms.Button();
             this.btnPlayer = new System.Windows.Forms.Button();
             this.pictureBoxBtnRefresh = new System.Windows.Forms.PictureBox();
+            this.txtIdAsoc = new System.Windows.Forms.MaskedTextBox();
+            this.lbAsoc = new System.Windows.Forms.Label();
             this.panelTeamsMenu.SuspendLayout();
             this.panelPlayerMenu.SuspendLayout();
             this.panelParentAsociationFamilyMenu.SuspendLayout();
@@ -195,6 +197,8 @@
             // 
             // panelTeamsMenu
             // 
+            this.panelTeamsMenu.Controls.Add(this.txtIdAsoc);
+            this.panelTeamsMenu.Controls.Add(this.lbAsoc);
             this.panelTeamsMenu.Controls.Add(this.txtTeamCountry);
             this.panelTeamsMenu.Controls.Add(this.lbTeamCountry);
             this.panelTeamsMenu.Controls.Add(this.txtTeamState);
@@ -207,7 +211,7 @@
             this.panelTeamsMenu.Controls.Add(this.txtTeamsName);
             this.panelTeamsMenu.Location = new System.Drawing.Point(43, 53);
             this.panelTeamsMenu.Name = "panelTeamsMenu";
-            this.panelTeamsMenu.Size = new System.Drawing.Size(293, 256);
+            this.panelTeamsMenu.Size = new System.Drawing.Size(293, 303);
             this.panelTeamsMenu.TabIndex = 19;
             // 
             // panelPlayerMenu
@@ -863,6 +867,26 @@
             this.pictureBoxBtnRefresh.TabStop = false;
             this.pictureBoxBtnRefresh.Click += new System.EventHandler(this.pictureBoxBtnRefresh_Click);
             // 
+            // txtIdAsoc
+            // 
+            this.txtIdAsoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtIdAsoc.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtIdAsoc.Location = new System.Drawing.Point(19, 263);
+            this.txtIdAsoc.Name = "txtIdAsoc";
+            this.txtIdAsoc.Size = new System.Drawing.Size(253, 20);
+            this.txtIdAsoc.TabIndex = 18;
+            // 
+            // lbAsoc
+            // 
+            this.lbAsoc.AutoSize = true;
+            this.lbAsoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAsoc.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbAsoc.Location = new System.Drawing.Point(15, 240);
+            this.lbAsoc.Name = "lbAsoc";
+            this.lbAsoc.Size = new System.Drawing.Size(154, 20);
+            this.lbAsoc.TabIndex = 19;
+            this.lbAsoc.Text = "Asoc Id (Optional)";
+            // 
             // BackOfficePlayerManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -875,8 +899,8 @@
             this.Controls.Add(this.btnRegisterAcc);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.btnTeamsMenu);
-            this.Controls.Add(this.panelPlayerMenu);
             this.Controls.Add(this.panelTeamsMenu);
+            this.Controls.Add(this.panelPlayerMenu);
             this.Name = "BackOfficePlayerManager";
             this.Size = new System.Drawing.Size(1393, 694);
             this.panelTeamsMenu.ResumeLayout(false);
@@ -949,5 +973,7 @@
         private System.Windows.Forms.Label lbStartDate;
         private System.Windows.Forms.Panel panelParentAsociationFamilyMenu;
         private System.Windows.Forms.PictureBox pictureBoxBtnRefresh;
+        private System.Windows.Forms.MaskedTextBox txtIdAsoc;
+        private System.Windows.Forms.Label lbAsoc;
     }
 }

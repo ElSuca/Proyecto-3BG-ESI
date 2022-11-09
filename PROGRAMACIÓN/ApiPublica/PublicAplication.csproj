@@ -129,11 +129,11 @@
     <Compile Include="ControlName.Designer.cs">
       <DependentUpon>ControlName.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExtendedMenu\MenuResult1vs1Extend.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="ExtendedMenu\FormMenuResult1vs1Extend.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExtendedMenu\MenuResult1vs1Extend.Designer.cs">
-      <DependentUpon>MenuResult1vs1Extend.cs</DependentUpon>
+    <Compile Include="ExtendedMenu\FormMenuResult1vs1Extend.Designer.cs">
+      <DependentUpon>FormMenuResult1vs1Extend.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPincipalMenu.cs">
       <SubType>Form</SubType>
@@ -170,8 +170,8 @@
     <EmbeddedResource Include="ControlName.resx">
       <DependentUpon>ControlName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExtendedMenu\MenuResult1vs1Extend.resx">
-      <DependentUpon>MenuResult1vs1Extend.cs</DependentUpon>
+    <EmbeddedResource Include="ExtendedMenu\FormMenuResult1vs1Extend.resx">
+      <DependentUpon>FormMenuResult1vs1Extend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPincipalMenu.resx">
       <DependentUpon>FormPincipalMenu.cs</DependentUpon>

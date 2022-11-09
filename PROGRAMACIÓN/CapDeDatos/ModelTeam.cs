@@ -11,6 +11,7 @@ namespace CapDeDatos
         public string City { get; set; }
         public string Country { get; set; }
         public string State { get; set; }
+        public int IdAsociation { get; set;}
 
         public ModelTeam(int id) => this.GetTeamData(id);
         public ModelTeam()
@@ -20,7 +21,15 @@ namespace CapDeDatos
         public void Save()
         {
             if (this.Id.ToString() != "0") Update();
-            else insert();
+            else
+            {
+                if (IdAsociation == 0) insert();
+                else
+                {
+                    insert();
+                    insertWithAsociation();
+                }
+            }
         }
 
         private void insert()
@@ -38,6 +47,23 @@ namespace CapDeDatos
                 throw e;
             }
         }
+
+        private void insertWithAsociation()
+        {
+            try
+            {
+                Command.CommandText = "INSERT INTO " +
+                   "TM_ASOC (ID_TEAM ,ID_ASOC) " +
+                   $"VALUES ({GetId(Name)},{IdAsociation})";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         private void Update()
         {
             try
@@ -85,7 +111,7 @@ namespace CapDeDatos
         public DataTable GetTeamDataTable()
         {
             DataTable tabla = new DataTable();
-            Command.CommandText = "SELECT * FROM TEAM";
+            Command.CommandText = "SELECT * FROM TEAM LEFT JOIN TM_ASOC ON TEAM.ID = TM_ASOC.ID_TEAM;";
             tabla.Load(Command.ExecuteReader());
             Conection.Close();
             return tabla;

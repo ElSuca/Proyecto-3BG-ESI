@@ -41,6 +41,7 @@
             this.lbName.Size = new System.Drawing.Size(66, 24);
             this.lbName.TabIndex = 0;
             this.lbName.Text = "label1";
+            this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
             // ControlName
             // 

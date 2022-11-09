@@ -18,6 +18,18 @@ namespace CapaLoogica
             };
             p.Save();
         }
+        public static void Alta(string name, string city, string state, string country,int idAsoc)
+        {
+            ModelTeam p = new ModelTeam
+            {
+                Name = name,
+                City = city,
+                State = state,
+                Country = country,
+                IdAsociation = idAsoc
+            };
+            p.Save();
+        }
         public static void Modificar(int id,string name, string city, string state, string country)
         {
             ModelTeam p = new ModelTeam(id)

@@ -15,5 +15,10 @@ namespace ApiPublica
         {
             InitializeComponent();
         }
+
+        private void lbName_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

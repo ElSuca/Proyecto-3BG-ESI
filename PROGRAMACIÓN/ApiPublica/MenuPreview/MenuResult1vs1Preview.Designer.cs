@@ -61,6 +61,7 @@
             this.lbTeam2.Size = new System.Drawing.Size(94, 29);
             this.lbTeam2.TabIndex = 24;
             this.lbTeam2.Text = "Team2";
+            this.lbTeam2.Click += new System.EventHandler(this.lbTeam2_Click);
             // 
             // lbResult1
             // 
@@ -127,6 +128,7 @@
             this.Controls.Add(this.lbTeam1);
             this.Name = "MenuResult1vs1PreviewModel";
             this.Size = new System.Drawing.Size(512, 150);
+            this.Click += new System.EventHandler(this.MenuResult1vs1PreviewModel_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panelResult = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtNumberItems = new System.Windows.Forms.TextBox();
+            this.txtCompetition = new System.Windows.Forms.TextBox();
             this.txtTeam1 = new System.Windows.Forms.TextBox();
             this.txtTeam2 = new System.Windows.Forms.TextBox();
             this.txtScore1 = new System.Windows.Forms.TextBox();
@@ -50,8 +50,6 @@
             this.lbBtnPersonalInformation = new System.Windows.Forms.Label();
             this.panelLowMark = new System.Windows.Forms.Panel();
             this.panelMenus = new System.Windows.Forms.Panel();
-            this.pictureBoxBtnConfig = new System.Windows.Forms.PictureBox();
-            this.BannerPic = new System.Windows.Forms.PictureBox();
             this.panelTopPage = new System.Windows.Forms.Panel();
             this.lbButtonFootbal = new System.Windows.Forms.Label();
             this.lbSportListButtomMenu = new System.Windows.Forms.Label();
@@ -62,12 +60,21 @@
             this.comboBoxSport = new System.Windows.Forms.ComboBox();
             this.panelSportList = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBoxBtnConfig = new System.Windows.Forms.PictureBox();
+            this.BannerPic = new System.Windows.Forms.PictureBox();
+            this.lbCompetition = new System.Windows.Forms.Label();
+            this.txtStartTime = new System.Windows.Forms.TextBox();
+            this.lbStartTime = new System.Windows.Forms.Label();
+            this.txtEndTime = new System.Windows.Forms.TextBox();
+            this.lbEndTime = new System.Windows.Forms.Label();
+            this.lbStadium = new System.Windows.Forms.Label();
+            this.txtStadium = new System.Windows.Forms.TextBox();
             this.panelDebugg.SuspendLayout();
             this.panelConfig.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).BeginInit();
             this.panelTopPage.SuspendLayout();
             this.panelBackgroun1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).BeginInit();
             this.SuspendLayout();
             // 
             // panelResult
@@ -76,15 +83,15 @@
             this.panelResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelResult.Location = new System.Drawing.Point(218, 204);
             this.panelResult.Name = "panelResult";
-            this.panelResult.Size = new System.Drawing.Size(608, 495);
+            this.panelResult.Size = new System.Drawing.Size(565, 495);
             this.panelResult.TabIndex = 0;
             // 
-            // txtNumberItems
+            // txtCompetition
             // 
-            this.txtNumberItems.Location = new System.Drawing.Point(75, 24);
-            this.txtNumberItems.Name = "txtNumberItems";
-            this.txtNumberItems.Size = new System.Drawing.Size(100, 20);
-            this.txtNumberItems.TabIndex = 1;
+            this.txtCompetition.Location = new System.Drawing.Point(75, 241);
+            this.txtCompetition.Name = "txtCompetition";
+            this.txtCompetition.Size = new System.Drawing.Size(100, 20);
+            this.txtCompetition.TabIndex = 1;
             // 
             // txtTeam1
             // 
@@ -123,7 +130,7 @@
             // 
             // btnsendinfo
             // 
-            this.btnsendinfo.Location = new System.Drawing.Point(75, 240);
+            this.btnsendinfo.Location = new System.Drawing.Point(16, 389);
             this.btnsendinfo.Name = "btnsendinfo";
             this.btnsendinfo.Size = new System.Drawing.Size(75, 23);
             this.btnsendinfo.TabIndex = 7;
@@ -133,7 +140,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(75, 269);
+            this.btnClear.Location = new System.Drawing.Point(100, 389);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 8;
@@ -143,6 +150,13 @@
             // 
             // panelDebugg
             // 
+            this.panelDebugg.Controls.Add(this.txtStadium);
+            this.panelDebugg.Controls.Add(this.lbStadium);
+            this.panelDebugg.Controls.Add(this.lbEndTime);
+            this.panelDebugg.Controls.Add(this.txtEndTime);
+            this.panelDebugg.Controls.Add(this.lbStartTime);
+            this.panelDebugg.Controls.Add(this.txtStartTime);
+            this.panelDebugg.Controls.Add(this.lbCompetition);
             this.panelDebugg.Controls.Add(this.label5);
             this.panelDebugg.Controls.Add(this.label4);
             this.panelDebugg.Controls.Add(this.label3);
@@ -150,15 +164,15 @@
             this.panelDebugg.Controls.Add(this.label1);
             this.panelDebugg.Controls.Add(this.txtDate);
             this.panelDebugg.Controls.Add(this.btnClear);
-            this.panelDebugg.Controls.Add(this.txtNumberItems);
+            this.panelDebugg.Controls.Add(this.txtCompetition);
             this.panelDebugg.Controls.Add(this.btnsendinfo);
             this.panelDebugg.Controls.Add(this.txtTeam1);
             this.panelDebugg.Controls.Add(this.txtTeam2);
             this.panelDebugg.Controls.Add(this.txtScore2);
             this.panelDebugg.Controls.Add(this.txtScore1);
-            this.panelDebugg.Location = new System.Drawing.Point(12, 498);
+            this.panelDebugg.Location = new System.Drawing.Point(12, 384);
             this.panelDebugg.Name = "panelDebugg";
-            this.panelDebugg.Size = new System.Drawing.Size(200, 315);
+            this.panelDebugg.Size = new System.Drawing.Size(200, 429);
             this.panelDebugg.TabIndex = 9;
             this.panelDebugg.Visible = false;
             // 
@@ -167,7 +181,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(13, 207);
+            this.label5.Location = new System.Drawing.Point(33, 211);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 13;
@@ -295,29 +309,6 @@
             this.panelMenus.Size = new System.Drawing.Size(34, 31);
             this.panelMenus.TabIndex = 3;
             // 
-            // pictureBoxBtnConfig
-            // 
-            this.pictureBoxBtnConfig.Image = global::ApiPublica.Properties.Resources.UserMenuIcon;
-            this.pictureBoxBtnConfig.Location = new System.Drawing.Point(18, -1);
-            this.pictureBoxBtnConfig.Name = "pictureBoxBtnConfig";
-            this.pictureBoxBtnConfig.Size = new System.Drawing.Size(54, 53);
-            this.pictureBoxBtnConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBtnConfig.TabIndex = 13;
-            this.pictureBoxBtnConfig.TabStop = false;
-            this.pictureBoxBtnConfig.Click += new System.EventHandler(this.pictureBoxBtnConfig_Click);
-            this.pictureBoxBtnConfig.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBoxBtnConfig.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
-            // 
-            // BannerPic
-            // 
-            this.BannerPic.Location = new System.Drawing.Point(176, 72);
-            this.BannerPic.Name = "BannerPic";
-            this.BannerPic.Size = new System.Drawing.Size(1017, 90);
-            this.BannerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.BannerPic.TabIndex = 15;
-            this.BannerPic.TabStop = false;
-            this.BannerPic.Click += new System.EventHandler(this.BannerPic_Click);
-            // 
             // panelTopPage
             // 
             this.panelTopPage.BackColor = System.Drawing.Color.DimGray;
@@ -426,6 +417,94 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBoxBtnConfig
+            // 
+            this.pictureBoxBtnConfig.Image = global::ApiPublica.Properties.Resources.UserMenuIcon;
+            this.pictureBoxBtnConfig.Location = new System.Drawing.Point(18, -1);
+            this.pictureBoxBtnConfig.Name = "pictureBoxBtnConfig";
+            this.pictureBoxBtnConfig.Size = new System.Drawing.Size(54, 53);
+            this.pictureBoxBtnConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBtnConfig.TabIndex = 13;
+            this.pictureBoxBtnConfig.TabStop = false;
+            this.pictureBoxBtnConfig.Click += new System.EventHandler(this.pictureBoxBtnConfig_Click);
+            this.pictureBoxBtnConfig.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBoxBtnConfig.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
+            // BannerPic
+            // 
+            this.BannerPic.Location = new System.Drawing.Point(176, 72);
+            this.BannerPic.Name = "BannerPic";
+            this.BannerPic.Size = new System.Drawing.Size(1017, 90);
+            this.BannerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.BannerPic.TabIndex = 15;
+            this.BannerPic.TabStop = false;
+            this.BannerPic.Click += new System.EventHandler(this.BannerPic_Click);
+            // 
+            // lbCompetition
+            // 
+            this.lbCompetition.AutoSize = true;
+            this.lbCompetition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCompetition.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbCompetition.Location = new System.Drawing.Point(-4, 248);
+            this.lbCompetition.Name = "lbCompetition";
+            this.lbCompetition.Size = new System.Drawing.Size(73, 13);
+            this.lbCompetition.TabIndex = 14;
+            this.lbCompetition.Text = "Competition";
+            // 
+            // txtStartTime
+            // 
+            this.txtStartTime.Location = new System.Drawing.Point(75, 276);
+            this.txtStartTime.Name = "txtStartTime";
+            this.txtStartTime.Size = new System.Drawing.Size(100, 20);
+            this.txtStartTime.TabIndex = 15;
+            // 
+            // lbStartTime
+            // 
+            this.lbStartTime.AutoSize = true;
+            this.lbStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartTime.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStartTime.Location = new System.Drawing.Point(8, 283);
+            this.lbStartTime.Name = "lbStartTime";
+            this.lbStartTime.Size = new System.Drawing.Size(61, 13);
+            this.lbStartTime.TabIndex = 16;
+            this.lbStartTime.Text = "Start time";
+            // 
+            // txtEndTime
+            // 
+            this.txtEndTime.Location = new System.Drawing.Point(75, 311);
+            this.txtEndTime.Name = "txtEndTime";
+            this.txtEndTime.Size = new System.Drawing.Size(100, 20);
+            this.txtEndTime.TabIndex = 17;
+            // 
+            // lbEndTime
+            // 
+            this.lbEndTime.AutoSize = true;
+            this.lbEndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEndTime.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbEndTime.Location = new System.Drawing.Point(8, 314);
+            this.lbEndTime.Name = "lbEndTime";
+            this.lbEndTime.Size = new System.Drawing.Size(61, 13);
+            this.lbEndTime.TabIndex = 18;
+            this.lbEndTime.Text = "Start time";
+            // 
+            // lbStadium
+            // 
+            this.lbStadium.AutoSize = true;
+            this.lbStadium.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStadium.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStadium.Location = new System.Drawing.Point(6, 347);
+            this.lbStadium.Name = "lbStadium";
+            this.lbStadium.Size = new System.Drawing.Size(61, 13);
+            this.lbStadium.TabIndex = 19;
+            this.lbStadium.Text = "Start time";
+            // 
+            // txtStadium
+            // 
+            this.txtStadium.Location = new System.Drawing.Point(75, 347);
+            this.txtStadium.Name = "txtStadium";
+            this.txtStadium.Size = new System.Drawing.Size(100, 20);
+            this.txtStadium.TabIndex = 20;
+            // 
             // FormPincipalMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -450,12 +529,12 @@
             this.panelDebugg.PerformLayout();
             this.panelConfig.ResumeLayout(false);
             this.panelConfig.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).EndInit();
             this.panelTopPage.ResumeLayout(false);
             this.panelTopPage.PerformLayout();
             this.panelBackgroun1.ResumeLayout(false);
             this.panelBackgroun1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,7 +543,7 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel panelResult;
-        private System.Windows.Forms.TextBox txtNumberItems;
+        private System.Windows.Forms.TextBox txtCompetition;
         private System.Windows.Forms.TextBox txtTeam1;
         private System.Windows.Forms.TextBox txtTeam2;
         private System.Windows.Forms.TextBox txtScore1;
@@ -497,5 +576,12 @@
         private System.Windows.Forms.Label lbSportListButtomMenu;
         private System.Windows.Forms.Label lbButtonFootbal;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbCompetition;
+        private System.Windows.Forms.Label lbEndTime;
+        private System.Windows.Forms.TextBox txtEndTime;
+        private System.Windows.Forms.Label lbStartTime;
+        private System.Windows.Forms.TextBox txtStartTime;
+        private System.Windows.Forms.TextBox txtStadium;
+        private System.Windows.Forms.Label lbStadium;
     }
 }

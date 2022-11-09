@@ -183,6 +183,14 @@ namespace CapDeDatos
                 return 0;
             }
         }
+        public DataTable GetNameByTeam()
+        {
+            DataTable tabla = new DataTable();
+            Command.CommandText = "SELECT PLAYER.NAME FROM PLAYER LEFT JOIN ASOC_PLYR on PLAYER.ID = ASOC_PLYR.ID_PLYR";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
+            return tabla;
+        }
         public void PopulatePlayer(int i)
         {
             this.Command.CommandText = $"SELECT PLAYER.*,ASOC_PLYR.ID_ASOC,ASOC_PLYR.STARTDATE,ASOC_PLYR.ENDDATE FROM PLAYER LEFT JOIN ASOC_PLYR on (PLAYER.ID = ASOC_PLYR.ID_PLYR) WHERE PLAYER.ID= {i}";
@@ -235,6 +243,14 @@ namespace CapDeDatos
             int ordinal = this.DataReader.GetOrdinal(key);
             if (this.DataReader.IsDBNull(ordinal)) return -1;
             return this.DataReader.GetInt32(ordinal);
+        }
+        public DataTable GetNameByTeam(string Name)
+        {
+            DataTable tabla = new DataTable();
+            Command.CommandText = $"SELECT PLAYER.NAME FROM PLAYER JOIN (PLYR_TI, TEAM) ON (TEAM.ID=PLYR_TI.ID_TIME AND PLYR_TI.ID_PLYR = PLAYER.ID);";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
+            return tabla;
         }
     }
 }

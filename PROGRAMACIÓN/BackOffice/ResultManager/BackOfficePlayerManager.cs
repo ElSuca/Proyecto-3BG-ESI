@@ -29,8 +29,8 @@ namespace BackOffice.ResultManager
         private void btnPlayer_Click(object sender, EventArgs e) => toggleMenus(2);
         private void btnRegisterAcc_Click(object sender, EventArgs e)
         {
-            try
-            {
+          /*  try
+            {*/
                 if (panelPlayerMenu.Visible)
                 {
                     if (!panelParentAsociationFamilyMenu.Visible)
@@ -58,23 +58,26 @@ namespace BackOffice.ResultManager
                 }
                 else if (panelTeamsMenu.Visible)
                 {
-                    if (txtTeamsName.Text == "" || txtTeamCity.Text == "" || txtTeamState.Text == "" || txtTeamCountry.Text == "") throw new MissingFieldException();
-                    TeamControler.Alta(txtTeamsName.Text, txtTeamCity.Text, txtTeamState.Text, txtTeamCountry.Text);
+                    if (string.IsNullOrEmpty(txtTeamsName.Text)|| string.IsNullOrEmpty(txtTeamCity.Text)|| string.IsNullOrEmpty(txtTeamState.Text)|| string.IsNullOrEmpty(txtTeamCountry.Text)) throw new MissingFieldException();
+                    if(string.IsNullOrEmpty(txtIdAsoc.Text)) TeamControler.Alta(txtTeamsName.Text, txtTeamCity.Text, txtTeamState.Text, txtTeamCountry.Text);
+                    else TeamControler.Alta(txtTeamsName.Text, txtTeamCity.Text, txtTeamState.Text, txtTeamCountry.Text,Int32.Parse(txtIdAsoc.Text));
                     MessageBox.Show("Equipo cargado");
                 }
                 reloadList();
-            }
+         /*   }
             catch (IndexOutOfRangeException)
             {
                 MessageBox.Show("Please enter a date");
             }
-            catch (MissingFieldException)
+            catch (MissingFieldException ex)
             {
                 MessageBox.Show("There was an error, please check that the information is correct");
+                throw ex;
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
                 MessageBox.Show("There was an error, please check that the information is correct");
+                throw ex;
             }
             catch (TimeoutException)
             {
@@ -84,10 +87,11 @@ namespace BackOffice.ResultManager
             {
                 MessageBox.Show("This result aldery exist");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                throw ex;
                 MessageBox.Show("There was an unexpected error");
-            }
+            }*/
         }
 
 

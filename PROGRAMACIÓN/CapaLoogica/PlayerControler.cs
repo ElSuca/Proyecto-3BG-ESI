@@ -56,6 +56,7 @@ namespace CapaLoogica
         public bool ExistPlayer(int id) => new ModelPlayer().ExistPlayer(id);
         public int GetId(string Name) => new ModelPlayer().GetId(Name);
         public bool HaveChange(int id) => new ModelPlayer().HaveChange(id);
-      //  public List<ModelPlayer> GetAllPlayer() => new ApiPlayerController().GetAllPlayer();
+        public DataTable GetUserNameByTeam(string name) => new ModelPlayer().GetNameByTeam(name);
+        //  public List<ModelPlayer> GetAllPlayer() => new ApiPlayerController().GetAllPlayer();
     }
 }

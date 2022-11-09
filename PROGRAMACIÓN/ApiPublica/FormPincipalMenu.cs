@@ -1,4 +1,5 @@
-﻿using CapaLogica;
+﻿using ApiPublica.ExtendedMenu;
+using CapaLogica;
 using CapaLoogica;
 using Proyecto;
 using System;
@@ -9,11 +10,16 @@ namespace ApiPublica
 {
     public partial class FormPincipalMenu : Form
     {
-        public string Team1 { get; set; }
-        public string Team2 { get; set; }
-        public int Score1 { get; set; }
-        public int Score2 { get; set; }
-        public string Date { get; set; }
+        public static string Team1 { get; set; }
+        public static string Team2 { get; set; }
+        public static int Score1 { get; set; }
+        public static int Score2 { get; set; }
+        public static string Date { get; set; }
+        public static string Competition { get; set; }
+        public static string StartTime { get; set; }
+        public static string EndTime { get; set; }
+        public static string Stadium { get; set; }
+
         private int selection;
         private int screenHeight = Screen.PrimaryScreen.Bounds.Height;
         private int screenWidth = Screen.PrimaryScreen.Bounds.Width;
@@ -25,9 +31,9 @@ namespace ApiPublica
             selection = new Random().Next(3);
         }
         #region Fill Results
-        private void FillResults1vs1(int n,string team1,string team2,int result1,int result2,string date)
+        private void FillResults1vs1(string team1,string team2,int result1,int result2,string date,string competition,string startTime,string endTime,string stadium)
         {
-            MenuResult1vs1PreviewModel[] listItem = new MenuResult1vs1PreviewModel[n];
+            MenuResult1vs1PreviewModel[] listItem = new MenuResult1vs1PreviewModel[1];
 
             for (int i = 0; i < listItem.Length; i++)
             {
@@ -37,6 +43,10 @@ namespace ApiPublica
                 listItem[i].Score1 = result1;
                 listItem[i].Score2 = result2;
                 listItem[i].Date = date;
+                listItem[i].Competition = competition;
+                listItem[i].StartTime = startTime;
+                listItem[i].EndTime = endTime;
+                listItem[i].Stadium = stadium;
 
                 if (panelResult.Controls.Count < 0) panelResult.Controls.Clear();
                 else
@@ -51,7 +61,7 @@ namespace ApiPublica
         {
 
 
-            FillResults1vs1(10, "n","P", 1, 0," 10 / 10 / 1010 10:10"); 
+            FillResults1vs1("n","P", 1, 0,"10/10/1010","a","10:10","12:30","a"); 
             this.Size = new Size(1280, 1024);
             panelTopPage.Size = new Size(screenWidth, 53);
         }
@@ -70,19 +80,19 @@ namespace ApiPublica
             {
                 panelMenus.Size = new Size(34, 31);
                 panelMenus.Location = new Point(1389, 12);
+                checkPanelVisivility();
             }
             else
             {
                 panelMenus.Size = new Size(screenWidth, screenHeight-50);
                 panelMenus.Location = new Point(0, (12)+50);
+                checkPanelVisivility();
             }
         }
 
         private void checkPanelVisivility()
         {
-            if (!IsAtFront(panelMenus))panelMenus.BringToFront();
-            
-        
+            if (!IsAtFront(panelMenus)) panelMenus.BringToFront();
         }
         private bool IsAtFront(Control control) => control.Parent.Controls.GetChildIndex(control) == 0;
 
@@ -145,6 +155,20 @@ namespace ApiPublica
             checkPanelVisivility();
         }
 
+        public void ShowFullInformation(string team1, string team2, string competition, string startTime, string endTime, string date, string stadium, int score1, int score2)
+        {
+            Team1 = team1;
+            Team2 = team2;
+            Competition = competition;
+            StartTime = startTime;
+            EndTime = endTime;
+            Date = date;
+            Stadium = stadium;
+            Score1 = score1;
+            Score2 = Score2;
+            new FormMenuResult1vs1Extend().Show();
+        } 
+
         private void panelConfig_Paint(object sender, PaintEventArgs e)
         {
 
@@ -197,15 +221,9 @@ namespace ApiPublica
             new EventControler().GetEventBySport("Football");
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            panelResult.Controls.Clear();
-        }
+        private void btnClear_Click(object sender, EventArgs e) => panelResult.Controls.Clear();
 
-        private void btnsendinfo_Click(object sender, EventArgs e)
-        {
-            FillResults1vs1(Int32.Parse(txtNumberItems.Text), txtTeam1.Text, txtTeam2.Text, Int32.Parse(txtScore1.Text), Int32.Parse(txtScore2.Text), txtDate.Text);
-        }
+        private void btnsendinfo_Click(object sender, EventArgs e) => FillResults1vs1(txtTeam1.Text, txtTeam2.Text, Int32.Parse(txtScore1.Text), Int32.Parse(txtScore2.Text), txtDate.Text, txtCompetition.Text, txtStartTime.Text, txtEndTime.Text, txtStadium.Text);
 
         private void button1_Click(object sender, EventArgs e)
         {
