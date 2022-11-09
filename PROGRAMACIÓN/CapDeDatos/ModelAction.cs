@@ -19,6 +19,7 @@ namespace CapDeDatos
         public string Context { get; set; }
         public string Category { get; set; }
         public string Time { get; set; }
+        public string PlayerRole { get; set; }
 
         public ModelAction()
         {
@@ -76,8 +77,14 @@ namespace CapDeDatos
             try
             {
                 Command.CommandText = "INSERT INTO " +
-                   "ACTION (ID_TM,ID_TI,ID_PLYR,QUANTITY,TYPE,CONTEXT,CAT,Time) " +
-                   $"VALUES ({IdTeam},{IdTime},{IdPlayer},{Quantity},'{Type}','{Context}','{Category}','{Time}')";
+                   "ACTION (ID_TM,ID_TI,ID_PLYR,QUANTITY,TYPE,CONTEXT,CAT) " +
+                   $"VALUES ({IdTeam},{IdTime},{IdPlayer},{Quantity},'{Type}','{Context}','{Category}')";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+
+                Command.CommandText = "INSERT INTO " +
+                  "PLYR_TI (ID_TEAM ,ID_TIME ,ID_PLYR ,ROLE)" +
+                  $"VALUES ({IdTeam},{IdTime},{IdPlayer},'{PlayerRole}')";
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();
             }

@@ -1,6 +1,5 @@
-﻿using MySqlConnector;
-using Newtonsoft.Json;
-using System;
+﻿using Newtonsoft.Json;
+using MySqlConnector;
 
 namespace CapaDeDatos
 {
@@ -43,7 +42,7 @@ namespace CapaDeDatos
         private void conectDataBase()
         {
             this.startConection();
-            try
+           try
             {
                 this.Conection = new MySqlConnection(
                     $"server={this.IpDataBase};" +

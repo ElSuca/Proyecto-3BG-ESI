@@ -206,7 +206,15 @@ namespace CapDeDatos
                 this.Command.CommandText = $"DELETE PRE_EVENT.* FROM PRE_EVENT WHERE ID_PARENT = {Id}";
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();
-               
+                this.Command.CommandText = $"DELETE TIME.* FROM TIME WHERE ID_EVENT = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+                this.Command.CommandText = $"DELETE EVENT_FAMILY.* FROM EVENT_FAMILY WHERE EVENT_FAMILY.ID_EVENT  = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
+                this.Command.CommandText = $"DELETE EVENT.* FROM EVENT WHERE ID = {Id}";
+                this.Command.Prepare();
+                this.Command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -215,12 +223,7 @@ namespace CapDeDatos
         }
         public  void DeleteTime(int Id)
         {
-            this.Command.CommandText = $"DELETE TIME.* FROM TIME WHERE ID_EVENT = {Id}";
-            this.Command.Prepare();
-            this.Command.ExecuteNonQuery();
-            this.Command.CommandText = $"DELETE EVENT.* FROM EVENT WHERE ID = {Id}";
-            this.Command.Prepare();
-            this.Command.ExecuteNonQuery();
+           
         }
         public DataTable RenameTableEvent(DataTable t)
         {

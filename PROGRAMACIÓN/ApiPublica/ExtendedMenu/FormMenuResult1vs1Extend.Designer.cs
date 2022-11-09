@@ -122,6 +122,7 @@
             this.panelNamesPlayersTeam1.Name = "panelNamesPlayersTeam1";
             this.panelNamesPlayersTeam1.Size = new System.Drawing.Size(147, 159);
             this.panelNamesPlayersTeam1.TabIndex = 37;
+            this.panelNamesPlayersTeam1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNamesPlayersTeam1_Paint);
             // 
             // panelNamesPlayersTeam2
             // 

@@ -15,8 +15,9 @@ namespace UnitTest
         public void Register()
         {
             StageControler.Alta("Test2","Test2","Test2", 2, "Test2", "Test2");
-            EventControler.Alta("Test", "1111-11-11", "1111-11-11",new StageControler().GetId("Test2"),1,"Test");
-            EventControler.Alta("Test2", "2222-12-22", "2222-12-22", new StageControler().GetId("Test2"), 2, "Test2");
+            FamilyControler.Alta("Test2", "Test2", "Test2", "Test2");
+            EventControler.Alta("Test", "1111-11-11", "1111-11-11", new StageControler().GetId("Test2"), 1, "Test2", new FamilyControler().GetId("Test2"));
+            EventControler.Alta("Test2", "2222-12-22", "2222-12-22", new StageControler().GetId("Test2"), 2, "Test2", new FamilyControler().GetId("Test2"));
             EventControler.AltaParents(new EventControler().GetId("Test"),"Test", "Test", "Test");
             bool response = new EventControler().ExistEvent("Test");
             Assert.AreEqual(true, response);

@@ -38,6 +38,13 @@
             this.btnsendinfo = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.panelDebugg = new System.Windows.Forms.Panel();
+            this.txtStadium = new System.Windows.Forms.TextBox();
+            this.lbStadium = new System.Windows.Forms.Label();
+            this.lbEndTime = new System.Windows.Forms.Label();
+            this.txtEndTime = new System.Windows.Forms.TextBox();
+            this.lbStartTime = new System.Windows.Forms.Label();
+            this.txtStartTime = new System.Windows.Forms.TextBox();
+            this.lbCompetition = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +60,7 @@
             this.panelTopPage = new System.Windows.Forms.Panel();
             this.lbButtonFootbal = new System.Windows.Forms.Label();
             this.lbSportListButtomMenu = new System.Windows.Forms.Label();
+            this.pictureBoxBtnConfig = new System.Windows.Forms.PictureBox();
             this.panelBackgroun1 = new System.Windows.Forms.Panel();
             this.lbTeam = new System.Windows.Forms.Label();
             this.txtTeam = new System.Windows.Forms.TextBox();
@@ -60,20 +68,12 @@
             this.comboBoxSport = new System.Windows.Forms.ComboBox();
             this.panelSportList = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBoxBtnConfig = new System.Windows.Forms.PictureBox();
             this.BannerPic = new System.Windows.Forms.PictureBox();
-            this.lbCompetition = new System.Windows.Forms.Label();
-            this.txtStartTime = new System.Windows.Forms.TextBox();
-            this.lbStartTime = new System.Windows.Forms.Label();
-            this.txtEndTime = new System.Windows.Forms.TextBox();
-            this.lbEndTime = new System.Windows.Forms.Label();
-            this.lbStadium = new System.Windows.Forms.Label();
-            this.txtStadium = new System.Windows.Forms.TextBox();
             this.panelDebugg.SuspendLayout();
             this.panelConfig.SuspendLayout();
             this.panelTopPage.SuspendLayout();
-            this.panelBackgroun1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).BeginInit();
+            this.panelBackgroun1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             this.panelResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelResult.Location = new System.Drawing.Point(218, 204);
             this.panelResult.Name = "panelResult";
-            this.panelResult.Size = new System.Drawing.Size(565, 495);
+            this.panelResult.Size = new System.Drawing.Size(531, 495);
             this.panelResult.TabIndex = 0;
             // 
             // txtCompetition
@@ -175,6 +175,71 @@
             this.panelDebugg.Size = new System.Drawing.Size(200, 429);
             this.panelDebugg.TabIndex = 9;
             this.panelDebugg.Visible = false;
+            // 
+            // txtStadium
+            // 
+            this.txtStadium.Location = new System.Drawing.Point(75, 347);
+            this.txtStadium.Name = "txtStadium";
+            this.txtStadium.Size = new System.Drawing.Size(100, 20);
+            this.txtStadium.TabIndex = 20;
+            // 
+            // lbStadium
+            // 
+            this.lbStadium.AutoSize = true;
+            this.lbStadium.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStadium.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStadium.Location = new System.Drawing.Point(6, 347);
+            this.lbStadium.Name = "lbStadium";
+            this.lbStadium.Size = new System.Drawing.Size(61, 13);
+            this.lbStadium.TabIndex = 19;
+            this.lbStadium.Text = "Start time";
+            // 
+            // lbEndTime
+            // 
+            this.lbEndTime.AutoSize = true;
+            this.lbEndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEndTime.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbEndTime.Location = new System.Drawing.Point(8, 314);
+            this.lbEndTime.Name = "lbEndTime";
+            this.lbEndTime.Size = new System.Drawing.Size(61, 13);
+            this.lbEndTime.TabIndex = 18;
+            this.lbEndTime.Text = "Start time";
+            // 
+            // txtEndTime
+            // 
+            this.txtEndTime.Location = new System.Drawing.Point(75, 311);
+            this.txtEndTime.Name = "txtEndTime";
+            this.txtEndTime.Size = new System.Drawing.Size(100, 20);
+            this.txtEndTime.TabIndex = 17;
+            // 
+            // lbStartTime
+            // 
+            this.lbStartTime.AutoSize = true;
+            this.lbStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartTime.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbStartTime.Location = new System.Drawing.Point(8, 283);
+            this.lbStartTime.Name = "lbStartTime";
+            this.lbStartTime.Size = new System.Drawing.Size(61, 13);
+            this.lbStartTime.TabIndex = 16;
+            this.lbStartTime.Text = "Start time";
+            // 
+            // txtStartTime
+            // 
+            this.txtStartTime.Location = new System.Drawing.Point(75, 276);
+            this.txtStartTime.Name = "txtStartTime";
+            this.txtStartTime.Size = new System.Drawing.Size(100, 20);
+            this.txtStartTime.TabIndex = 15;
+            // 
+            // lbCompetition
+            // 
+            this.lbCompetition.AutoSize = true;
+            this.lbCompetition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCompetition.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbCompetition.Location = new System.Drawing.Point(-4, 248);
+            this.lbCompetition.Name = "lbCompetition";
+            this.lbCompetition.Size = new System.Drawing.Size(73, 13);
+            this.lbCompetition.TabIndex = 14;
+            this.lbCompetition.Text = "Competition";
             // 
             // label5
             // 
@@ -346,6 +411,19 @@
             this.lbSportListButtomMenu.MouseLeave += new System.EventHandler(this.lbSportListButtomMenu_MouseLeave);
             this.lbSportListButtomMenu.MouseHover += new System.EventHandler(this.lbSportListButtomMenu_MouseHover);
             // 
+            // pictureBoxBtnConfig
+            // 
+            this.pictureBoxBtnConfig.Image = global::ApiPublica.Properties.Resources.UserMenuIcon;
+            this.pictureBoxBtnConfig.Location = new System.Drawing.Point(18, -1);
+            this.pictureBoxBtnConfig.Name = "pictureBoxBtnConfig";
+            this.pictureBoxBtnConfig.Size = new System.Drawing.Size(54, 53);
+            this.pictureBoxBtnConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBtnConfig.TabIndex = 13;
+            this.pictureBoxBtnConfig.TabStop = false;
+            this.pictureBoxBtnConfig.Click += new System.EventHandler(this.pictureBoxBtnConfig_Click);
+            this.pictureBoxBtnConfig.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBoxBtnConfig.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
             // panelBackgroun1
             // 
             this.panelBackgroun1.BackColor = System.Drawing.Color.DimGray;
@@ -417,19 +495,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBoxBtnConfig
-            // 
-            this.pictureBoxBtnConfig.Image = global::ApiPublica.Properties.Resources.UserMenuIcon;
-            this.pictureBoxBtnConfig.Location = new System.Drawing.Point(18, -1);
-            this.pictureBoxBtnConfig.Name = "pictureBoxBtnConfig";
-            this.pictureBoxBtnConfig.Size = new System.Drawing.Size(54, 53);
-            this.pictureBoxBtnConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBtnConfig.TabIndex = 13;
-            this.pictureBoxBtnConfig.TabStop = false;
-            this.pictureBoxBtnConfig.Click += new System.EventHandler(this.pictureBoxBtnConfig_Click);
-            this.pictureBoxBtnConfig.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBoxBtnConfig.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
-            // 
             // BannerPic
             // 
             this.BannerPic.Location = new System.Drawing.Point(176, 72);
@@ -439,71 +504,6 @@
             this.BannerPic.TabIndex = 15;
             this.BannerPic.TabStop = false;
             this.BannerPic.Click += new System.EventHandler(this.BannerPic_Click);
-            // 
-            // lbCompetition
-            // 
-            this.lbCompetition.AutoSize = true;
-            this.lbCompetition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCompetition.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbCompetition.Location = new System.Drawing.Point(-4, 248);
-            this.lbCompetition.Name = "lbCompetition";
-            this.lbCompetition.Size = new System.Drawing.Size(73, 13);
-            this.lbCompetition.TabIndex = 14;
-            this.lbCompetition.Text = "Competition";
-            // 
-            // txtStartTime
-            // 
-            this.txtStartTime.Location = new System.Drawing.Point(75, 276);
-            this.txtStartTime.Name = "txtStartTime";
-            this.txtStartTime.Size = new System.Drawing.Size(100, 20);
-            this.txtStartTime.TabIndex = 15;
-            // 
-            // lbStartTime
-            // 
-            this.lbStartTime.AutoSize = true;
-            this.lbStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStartTime.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStartTime.Location = new System.Drawing.Point(8, 283);
-            this.lbStartTime.Name = "lbStartTime";
-            this.lbStartTime.Size = new System.Drawing.Size(61, 13);
-            this.lbStartTime.TabIndex = 16;
-            this.lbStartTime.Text = "Start time";
-            // 
-            // txtEndTime
-            // 
-            this.txtEndTime.Location = new System.Drawing.Point(75, 311);
-            this.txtEndTime.Name = "txtEndTime";
-            this.txtEndTime.Size = new System.Drawing.Size(100, 20);
-            this.txtEndTime.TabIndex = 17;
-            // 
-            // lbEndTime
-            // 
-            this.lbEndTime.AutoSize = true;
-            this.lbEndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndTime.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbEndTime.Location = new System.Drawing.Point(8, 314);
-            this.lbEndTime.Name = "lbEndTime";
-            this.lbEndTime.Size = new System.Drawing.Size(61, 13);
-            this.lbEndTime.TabIndex = 18;
-            this.lbEndTime.Text = "Start time";
-            // 
-            // lbStadium
-            // 
-            this.lbStadium.AutoSize = true;
-            this.lbStadium.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStadium.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbStadium.Location = new System.Drawing.Point(6, 347);
-            this.lbStadium.Name = "lbStadium";
-            this.lbStadium.Size = new System.Drawing.Size(61, 13);
-            this.lbStadium.TabIndex = 19;
-            this.lbStadium.Text = "Start time";
-            // 
-            // txtStadium
-            // 
-            this.txtStadium.Location = new System.Drawing.Point(75, 347);
-            this.txtStadium.Name = "txtStadium";
-            this.txtStadium.Size = new System.Drawing.Size(100, 20);
-            this.txtStadium.TabIndex = 20;
             // 
             // FormPincipalMenu
             // 
@@ -531,9 +531,9 @@
             this.panelConfig.PerformLayout();
             this.panelTopPage.ResumeLayout(false);
             this.panelTopPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).EndInit();
             this.panelBackgroun1.ResumeLayout(false);
             this.panelBackgroun1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBtnConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BannerPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

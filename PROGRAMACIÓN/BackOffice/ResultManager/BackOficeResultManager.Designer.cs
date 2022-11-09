@@ -100,6 +100,8 @@
             this.btnJudgesMenu = new System.Windows.Forms.Button();
             this.btnStageMenu = new System.Windows.Forms.Button();
             this.panelActionMenu = new System.Windows.Forms.Panel();
+            this.txtPlayerRole = new System.Windows.Forms.TextBox();
+            this.lbPlayerRole = new System.Windows.Forms.Label();
             this.lbActionHour = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxActionHour = new System.Windows.Forms.ComboBox();
@@ -207,6 +209,7 @@
             this.dataGrid1.Name = "dataGrid1";
             this.dataGrid1.Size = new System.Drawing.Size(435, 284);
             this.dataGrid1.TabIndex = 9;
+            this.dataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid1_CellContentClick);
             // 
             // btnEventMenu
             // 
@@ -255,6 +258,7 @@
             this.panelEventMenu.Size = new System.Drawing.Size(400, 437);
             this.panelEventMenu.TabIndex = 13;
             this.panelEventMenu.Visible = false;
+            this.panelEventMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEventMenu_Paint);
             // 
             // lbFamilyId
             // 
@@ -616,9 +620,9 @@
             this.lbStageJudgeId.ForeColor = System.Drawing.SystemColors.Control;
             this.lbStageJudgeId.Location = new System.Drawing.Point(17, 178);
             this.lbStageJudgeId.Name = "lbStageJudgeId";
-            this.lbStageJudgeId.Size = new System.Drawing.Size(78, 20);
+            this.lbStageJudgeId.Size = new System.Drawing.Size(96, 20);
             this.lbStageJudgeId.TabIndex = 14;
-            this.lbStageJudgeId.Text = "Stage Id";
+            this.lbStageJudgeId.Text = "Stadium Id";
             // 
             // txtEventStartDateYear
             // 
@@ -1004,12 +1008,14 @@
             this.btnStageMenu.Name = "btnStageMenu";
             this.btnStageMenu.Size = new System.Drawing.Size(75, 23);
             this.btnStageMenu.TabIndex = 23;
-            this.btnStageMenu.Text = "Stage";
+            this.btnStageMenu.Text = "Stadium";
             this.btnStageMenu.UseVisualStyleBackColor = false;
             this.btnStageMenu.Click += new System.EventHandler(this.btnStageMenu_Click);
             // 
             // panelActionMenu
             // 
+            this.panelActionMenu.Controls.Add(this.txtPlayerRole);
+            this.panelActionMenu.Controls.Add(this.lbPlayerRole);
             this.panelActionMenu.Controls.Add(this.lbActionHour);
             this.panelActionMenu.Controls.Add(this.label10);
             this.panelActionMenu.Controls.Add(this.comboBoxActionHour);
@@ -1040,6 +1046,26 @@
             this.panelActionMenu.Name = "panelActionMenu";
             this.panelActionMenu.Size = new System.Drawing.Size(322, 393);
             this.panelActionMenu.TabIndex = 34;
+            // 
+            // txtPlayerRole
+            // 
+            this.txtPlayerRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtPlayerRole.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPlayerRole.Location = new System.Drawing.Point(166, 132);
+            this.txtPlayerRole.Name = "txtPlayerRole";
+            this.txtPlayerRole.Size = new System.Drawing.Size(137, 20);
+            this.txtPlayerRole.TabIndex = 111;
+            // 
+            // lbPlayerRole
+            // 
+            this.lbPlayerRole.AutoSize = true;
+            this.lbPlayerRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlayerRole.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbPlayerRole.Location = new System.Drawing.Point(165, 109);
+            this.lbPlayerRole.Name = "lbPlayerRole";
+            this.lbPlayerRole.Size = new System.Drawing.Size(93, 20);
+            this.lbPlayerRole.TabIndex = 110;
+            this.lbPlayerRole.Text = "Player role";
             // 
             // lbActionHour
             // 
@@ -1334,7 +1360,7 @@
             this.txtActionType.ForeColor = System.Drawing.SystemColors.Window;
             this.txtActionType.Location = new System.Drawing.Point(23, 175);
             this.txtActionType.Name = "txtActionType";
-            this.txtActionType.Size = new System.Drawing.Size(280, 20);
+            this.txtActionType.Size = new System.Drawing.Size(137, 20);
             this.txtActionType.TabIndex = 44;
             // 
             // label7
@@ -1342,7 +1368,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(19, 108);
+            this.label7.Location = new System.Drawing.Point(165, 153);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 20);
             this.label7.TabIndex = 41;
@@ -1352,9 +1378,9 @@
             // 
             this.txtActionQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtActionQuantity.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtActionQuantity.Location = new System.Drawing.Point(23, 129);
+            this.txtActionQuantity.Location = new System.Drawing.Point(167, 176);
             this.txtActionQuantity.Name = "txtActionQuantity";
-            this.txtActionQuantity.Size = new System.Drawing.Size(280, 20);
+            this.txtActionQuantity.Size = new System.Drawing.Size(136, 20);
             this.txtActionQuantity.TabIndex = 42;
             // 
             // lbIdPlayer
@@ -1362,7 +1388,7 @@
             this.lbIdPlayer.AutoSize = true;
             this.lbIdPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIdPlayer.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbIdPlayer.Location = new System.Drawing.Point(162, 62);
+            this.lbIdPlayer.Location = new System.Drawing.Point(20, 109);
             this.lbIdPlayer.Name = "lbIdPlayer";
             this.lbIdPlayer.Size = new System.Drawing.Size(82, 20);
             this.lbIdPlayer.TabIndex = 39;
@@ -1372,7 +1398,7 @@
             // 
             this.txtIdPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtIdPlayer.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtIdPlayer.Location = new System.Drawing.Point(166, 85);
+            this.txtIdPlayer.Location = new System.Drawing.Point(23, 132);
             this.txtIdPlayer.Name = "txtIdPlayer";
             this.txtIdPlayer.Size = new System.Drawing.Size(137, 20);
             this.txtIdPlayer.TabIndex = 40;
@@ -1394,7 +1420,7 @@
             this.txtIdTime.ForeColor = System.Drawing.SystemColors.Window;
             this.txtIdTime.Location = new System.Drawing.Point(23, 85);
             this.txtIdTime.Name = "txtIdTime";
-            this.txtIdTime.Size = new System.Drawing.Size(137, 20);
+            this.txtIdTime.Size = new System.Drawing.Size(280, 20);
             this.txtIdTime.TabIndex = 38;
             // 
             // lbIdTeam
@@ -1599,5 +1625,7 @@
         private System.Windows.Forms.Label lbFamilyId;
         private System.Windows.Forms.MaskedTextBox txtEventFamilyId;
         private System.Windows.Forms.PictureBox pictureBoxBtnRefresh;
+        private System.Windows.Forms.TextBox txtPlayerRole;
+        private System.Windows.Forms.Label lbPlayerRole;
     }
 }

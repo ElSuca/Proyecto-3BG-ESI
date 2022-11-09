@@ -10,7 +10,7 @@ namespace CapaLoogica
         }
         public DataTable GetActionDataTable() => new ModelAction().GetActionDataTable();
 
-        public static void Alta(int idTeam, int idPlayer, int idTime, int quantity, string type, string context, string time,string category)
+        public static void Alta(int idTeam, int idPlayer, int idTime, int quantity, string type, string context, string time,string category,string playerRole)
         {
             ModelAction e = new ModelAction
             {
@@ -21,7 +21,8 @@ namespace CapaLoogica
                 Type = type,
                 Context = context,
                 Category = category,
-                Time = time
+                Time = time,
+                PlayerRole = playerRole
             };
             e.Save();
         }

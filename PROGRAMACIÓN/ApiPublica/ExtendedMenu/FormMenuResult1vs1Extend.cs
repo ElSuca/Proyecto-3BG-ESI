@@ -96,5 +96,10 @@ namespace ApiPublica.ExtendedMenu
         {
 
         }
+
+        private void panelNamesPlayersTeam1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

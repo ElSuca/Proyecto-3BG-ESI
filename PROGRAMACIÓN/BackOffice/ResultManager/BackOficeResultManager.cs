@@ -46,8 +46,8 @@ namespace BackOffice.ResultManager
 
         private void btnRegisterAcc_Click(object sender, EventArgs e)
         {
-            try
-            {
+          /*  try
+            {*/
                 if (panelEventMenu.Visible)
                 {
                     string StartDate = $"{txtEventStartDateYear.Text}-" +
@@ -86,12 +86,12 @@ namespace BackOffice.ResultManager
                 else if (panelActionMenu.Visible)
                 {
                     string Time = getTime();
-                    ActionControler.Alta(Int32.Parse(txtIdTeam.Text), Int32.Parse(txtIdPlayer.Text), Int32.Parse(txtIdTime.Text), Int32.Parse(txtActionQuantity.Text), txtActionType.Text, txtActionContext.Text, Time, txtActionCategory.Text);
+                    ActionControler.Alta(Int32.Parse(txtIdTeam.Text), Int32.Parse(txtIdPlayer.Text), Int32.Parse(txtIdTime.Text), Int32.Parse(txtActionQuantity.Text), txtActionType.Text, txtActionContext.Text, Time, txtActionCategory.Text,txtPlayerRole.Text);
                     MessageBox.Show("Acción cargada");
                 }
                 else MessageBox.Show("Por favor, seleccione un menu");
                 reloadList();
-            }
+          /*  }
             catch (IndexOutOfRangeException)
             {
                 MessageBox.Show("Please enter a date");
@@ -115,7 +115,7 @@ namespace BackOffice.ResultManager
             catch (Exception)
             {
                 MessageBox.Show("There was an unexpected error");
-            }
+            }*/
         }
         private void parsearEvento()
         {
@@ -212,31 +212,32 @@ namespace BackOffice.ResultManager
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+            /*  try
+              {*/
+            if (panelEventMenu.Visible)
             {
-                if (panelEventMenu.Visible)
-                {
-                    EventControler.Delete(Int32.Parse(txtEventID.Text));
-                    MessageBox.Show($"Evento {txtEventID.Text} Eliminado");
-                }
-                else if (panelJudgeMenu.Visible)
-                {
-                    JudgeControler.Eliminar(Int32.Parse(txtJudgeId.Text));
-                    MessageBox.Show($"Juez {txtJudgeId.Text} Eliminado");
-                }
-                else if (panelStageMenu.Visible)
-                {
-                    StageControler.Eliminar(Int32.Parse(txtStageId.Text));
-                    MessageBox.Show($"Estadio {txtStageId.Text} Eliminado");
-                }
-                else if (panelActionMenu.Visible)
-                {
-                    StageControler.Eliminar(Int32.Parse(txtActionId.Text));
-                    MessageBox.Show($"Accion {txtActionId.Text} Eliminada");
-                }
-                else MessageBox.Show("Por favor, seleccione un menu");
-                reloadList();
+                EventControler.Delete(Int32.Parse(txtEventID.Text));
+                EventControler.DeleteTime(Int32.Parse(txtEventID.Text));
+                MessageBox.Show($"Evento {txtEventID.Text} Eliminado");
             }
+            else if (panelJudgeMenu.Visible)
+            {
+                JudgeControler.Eliminar(Int32.Parse(txtJudgeId.Text));
+                MessageBox.Show($"Juez {txtJudgeId.Text} Eliminado");
+            }
+            else if (panelStageMenu.Visible)
+            {
+                StageControler.Eliminar(Int32.Parse(txtStageId.Text));
+                MessageBox.Show($"Estadio {txtStageId.Text} Eliminado");
+            }
+            else if (panelActionMenu.Visible)
+            {
+                StageControler.Eliminar(Int32.Parse(txtActionId.Text));
+                MessageBox.Show($"Accion {txtActionId.Text} Eliminada");
+            }
+            else MessageBox.Show("Por favor, seleccione un menu");
+                reloadList();
+           /* }
             catch (FormatException)
             {
                 MessageBox.Show("There was an error, please check that the information is correct");
@@ -252,7 +253,7 @@ namespace BackOffice.ResultManager
             catch (Exception)
             {
                 MessageBox.Show("There was an unexpected error");
-            }
+            }*/
         }
 
         private void lbPreviounsFamily_Click(object sender, EventArgs e) => panelEventPreviousMenu.Visible = panelEventPreviousMenu.Visible ? false : true;
@@ -263,5 +264,15 @@ namespace BackOffice.ResultManager
 
         private void pictureBoxBtnRefresh_Click(object sender, EventArgs e) => reloadList();
         private void sendMails(string Name, int id) => new AplicationControler().SendMails(Name, id);
+
+        private void dataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            reloadList();
+        }
+
+        private void panelEventMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
