@@ -14,7 +14,7 @@ namespace NewAPIResult
             CONFIG.EnableCors();
             CONFIG.Routes.MapHttpRoute(
                 name: "ApiResults",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
                 );
             appBuilder.UseWebApi(CONFIG);
