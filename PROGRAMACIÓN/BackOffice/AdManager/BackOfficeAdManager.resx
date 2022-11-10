@@ -1,0 +1,877 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BtnAddAd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnAddAd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="BtnAddAd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 383</value>
+  </data>
+  <data name="BtnAddAd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="BtnAddAd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 27</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BtnAddAd.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="BtnAddAd.Text" xml:space="preserve">
+    <value>Add Ad</value>
+  </data>
+  <data name="&gt;&gt;BtnAddAd.Name" xml:space="preserve">
+    <value>BtnAddAd</value>
+  </data>
+  <data name="&gt;&gt;BtnAddAd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnAddAd.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BtnAddAd.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="txtAdId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 27</value>
+  </data>
+  <data name="txtAdId.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="txtAdId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 21</value>
+  </data>
+  <data name="txtAdId.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtAdId.Name" xml:space="preserve">
+    <value>txtAdId</value>
+  </data>
+  <data name="&gt;&gt;txtAdId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtAdId.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="txtAddCategory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>508, 356</value>
+  </data>
+  <data name="txtAddCategory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="txtAddCategory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 21</value>
+  </data>
+  <data name="txtAddCategory.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtAddCategory.Name" xml:space="preserve">
+    <value>txtAddCategory</value>
+  </data>
+  <data name="&gt;&gt;txtAddCategory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAddCategory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtAddCategory.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="dataGrid1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 27</value>
+  </data>
+  <data name="dataGrid1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="dataGrid1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 210</value>
+  </data>
+  <data name="dataGrid1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;dataGrid1.Name" xml:space="preserve">
+    <value>dataGrid1</value>
+  </data>
+  <data name="&gt;&gt;dataGrid1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGrid1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGrid1.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="btnDelete.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 383</value>
+  </data>
+  <data name="btnDelete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 27</value>
+  </data>
+  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
+    <value>btnDelete</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="btnAdModify.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnAdModify.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="btnAdModify.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 383</value>
+  </data>
+  <data name="btnAdModify.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="btnAdModify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 27</value>
+  </data>
+  <data name="btnAdModify.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnAdModify.Text" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="&gt;&gt;btnAdModify.Name" xml:space="preserve">
+    <value>btnAdModify</value>
+  </data>
+  <data name="&gt;&gt;btnAdModify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdModify.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAdModify.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtAdPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 201</value>
+  </data>
+  <data name="txtAdPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="txtAdPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 21</value>
+  </data>
+  <data name="txtAdPath.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtAdPath.Name" xml:space="preserve">
+    <value>txtAdPath</value>
+  </data>
+  <data name="&gt;&gt;txtAdPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtAdPath.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtAdName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="txtAdName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="txtAdName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 21</value>
+  </data>
+  <data name="txtAdName.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txtAdName.Name" xml:space="preserve">
+    <value>txtAdName</value>
+  </data>
+  <data name="&gt;&gt;txtAdName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtAdName.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnMoveBanner.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnMoveBanner.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="btnMoveBanner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-2, 168</value>
+  </data>
+  <data name="btnMoveBanner.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="btnMoveBanner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 27</value>
+  </data>
+  <data name="btnMoveBanner.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="btnMoveBanner.Text" xml:space="preserve">
+    <value>SetBanner</value>
+  </data>
+  <data name="&gt;&gt;btnMoveBanner.Name" xml:space="preserve">
+    <value>btnMoveBanner</value>
+  </data>
+  <data name="&gt;&gt;btnMoveBanner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMoveBanner.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnMoveBanner.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="pictureBoxPreVisualization.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-2, 245</value>
+  </data>
+  <data name="pictureBoxPreVisualization.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="pictureBoxPreVisualization.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 66</value>
+  </data>
+  <data name="pictureBoxPreVisualization.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pictureBoxPreVisualization.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreVisualization.Name" xml:space="preserve">
+    <value>pictureBoxPreVisualization</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreVisualization.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreVisualization.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPreVisualization.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbAdId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbAdId.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="lbAdId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-5, 0</value>
+  </data>
+  <data name="lbAdId.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lbAdId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
+  </data>
+  <data name="lbAdId.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lbAdId.Text" xml:space="preserve">
+    <value>Ad Id</value>
+  </data>
+  <data name="&gt;&gt;lbAdId.Name" xml:space="preserve">
+    <value>lbAdId</value>
+  </data>
+  <data name="&gt;&gt;lbAdId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbAdId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbAdId.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lbAdName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbAdName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="lbAdName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 53</value>
+  </data>
+  <data name="lbAdName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lbAdName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="lbAdName.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lbAdName.Text" xml:space="preserve">
+    <value>Ad Name</value>
+  </data>
+  <data name="&gt;&gt;lbAdName.Name" xml:space="preserve">
+    <value>lbAdName</value>
+  </data>
+  <data name="&gt;&gt;lbAdName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbAdName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbAdName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbAdCategory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbAdCategory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="lbAdCategory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 106</value>
+  </data>
+  <data name="lbAdCategory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lbAdCategory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 20</value>
+  </data>
+  <data name="lbAdCategory.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lbAdCategory.Text" xml:space="preserve">
+    <value>Ad Category</value>
+  </data>
+  <data name="&gt;&gt;lbAdCategory.Name" xml:space="preserve">
+    <value>lbAdCategory</value>
+  </data>
+  <data name="&gt;&gt;lbAdCategory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbAdCategory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbAdCategory.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnAddCategory.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnAddCategory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="btnAddCategory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAddCategory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>508, 383</value>
+  </data>
+  <data name="btnAddCategory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="btnAddCategory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 27</value>
+  </data>
+  <data name="btnAddCategory.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="btnAddCategory.Text" xml:space="preserve">
+    <value>Add Category</value>
+  </data>
+  <data name="&gt;&gt;btnAddCategory.Name" xml:space="preserve">
+    <value>btnAddCategory</value>
+  </data>
+  <data name="&gt;&gt;btnAddCategory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddCategory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAddCategory.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="comboBoxCategory.Items" xml:space="preserve">
+    <value>Football</value>
+  </data>
+  <data name="comboBoxCategory.Items1" xml:space="preserve">
+    <value>BascketBall</value>
+  </data>
+  <data name="comboBoxCategory.Items2" xml:space="preserve">
+    <value>Food</value>
+  </data>
+  <data name="comboBoxCategory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 129</value>
+  </data>
+  <data name="comboBoxCategory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 23</value>
+  </data>
+  <data name="comboBoxCategory.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;comboBoxCategory.Name" xml:space="preserve">
+    <value>comboBoxCategory</value>
+  </data>
+  <data name="&gt;&gt;comboBoxCategory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxCategory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBoxCategory.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pictureBoxBtnRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        jP+d5/8D9HVvUzUShQUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pictureBoxBtnRefresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>815, 3</value>
+  </data>
+  <data name="pictureBoxBtnRefresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 18</value>
+  </data>
+  <data name="pictureBoxBtnRefresh.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBoxBtnRefresh.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxBtnRefresh.Name" xml:space="preserve">
+    <value>pictureBoxBtnRefresh</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxBtnRefresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxBtnRefresh.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxBtnRefresh.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>836, 413</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>BackOfficeAdManager</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
