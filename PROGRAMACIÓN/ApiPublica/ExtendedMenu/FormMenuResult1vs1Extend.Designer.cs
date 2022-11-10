@@ -80,7 +80,7 @@
             this.panel3.Controls.Add(this.lbTeam1_);
             this.panel3.Location = new System.Drawing.Point(12, 172);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(506, 244);
+            this.panel3.Size = new System.Drawing.Size(506, 278);
             this.panel3.TabIndex = 38;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -89,7 +89,7 @@
             this.blManagerTeam1.AutoSize = true;
             this.blManagerTeam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.blManagerTeam1.ForeColor = System.Drawing.SystemColors.Control;
-            this.blManagerTeam1.Location = new System.Drawing.Point(42, 209);
+            this.blManagerTeam1.Location = new System.Drawing.Point(62, 245);
             this.blManagerTeam1.Name = "blManagerTeam1";
             this.blManagerTeam1.Size = new System.Drawing.Size(89, 20);
             this.blManagerTeam1.TabIndex = 40;
@@ -100,7 +100,7 @@
             this.blManagerTeam2.AutoSize = true;
             this.blManagerTeam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.blManagerTeam2.ForeColor = System.Drawing.SystemColors.Control;
-            this.blManagerTeam2.Location = new System.Drawing.Point(321, 209);
+            this.blManagerTeam2.Location = new System.Drawing.Point(323, 245);
             this.blManagerTeam2.Name = "blManagerTeam2";
             this.blManagerTeam2.Size = new System.Drawing.Size(89, 20);
             this.blManagerTeam2.TabIndex = 39;
@@ -111,7 +111,7 @@
             this.lbManager.AutoSize = true;
             this.lbManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbManager.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbManager.Location = new System.Drawing.Point(211, 209);
+            this.lbManager.Location = new System.Drawing.Point(214, 245);
             this.lbManager.Name = "lbManager";
             this.lbManager.Size = new System.Drawing.Size(79, 20);
             this.lbManager.TabIndex = 38;
@@ -122,7 +122,7 @@
             this.panelNamesPlayersTeam1.AutoScroll = true;
             this.panelNamesPlayersTeam1.Location = new System.Drawing.Point(27, 47);
             this.panelNamesPlayersTeam1.Name = "panelNamesPlayersTeam1";
-            this.panelNamesPlayersTeam1.Size = new System.Drawing.Size(155, 159);
+            this.panelNamesPlayersTeam1.Size = new System.Drawing.Size(155, 195);
             this.panelNamesPlayersTeam1.TabIndex = 37;
             this.panelNamesPlayersTeam1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNamesPlayersTeam1_Paint);
             // 
@@ -131,7 +131,7 @@
             this.panelNamesPlayersTeam2.AutoScroll = true;
             this.panelNamesPlayersTeam2.Location = new System.Drawing.Point(314, 47);
             this.panelNamesPlayersTeam2.Name = "panelNamesPlayersTeam2";
-            this.panelNamesPlayersTeam2.Size = new System.Drawing.Size(158, 159);
+            this.panelNamesPlayersTeam2.Size = new System.Drawing.Size(158, 195);
             this.panelNamesPlayersTeam2.TabIndex = 36;
             // 
             // lbTeam2_

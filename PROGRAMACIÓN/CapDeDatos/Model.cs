@@ -57,27 +57,28 @@ namespace CapaDeDatos
             }
             catch(Exception ex)
             {
-                throw new TimeoutException("DatabaseNotFound");
+                throw new Exception(ex.ToString());
+               // throw new TimeoutException("DatabaseNotFound");
             }
         }
         private void startConection()
         {
             #region credenciales
-            //this.IpDataBase = "192.168.5.50";
-            //this.NameDataBase = "ptahtechnologies";
-            //this.UserDataBase = "santiago.garcia";
-            //this.PasswordDataBase = "54605454";
-            //this.DataBasePort = "3306";
-            #endregion
-            #region credenciales casa
-
-            this.IpDataBase = "127.0.0.1";
-            this.NameDataBase = "olympus";
-            this.UserDataBase = "bd_adm";
-            this.PasswordDataBase = "password";
+            this.IpDataBase = "192.168.5.50";
+            this.NameDataBase = "ptahtechnologies";
+            this.UserDataBase = "santiago.garcia";
+            this.PasswordDataBase = "54605454";
             this.DataBasePort = "3306";
-
             #endregion
+            //#region credenciales casa
+
+            //this.IpDataBase = "127.0.0.1";
+            //this.NameDataBase = "olympus";
+            //this.UserDataBase = "bd_adm";
+            //this.PasswordDataBase = "password";
+            //this.DataBasePort = "3306";
+
+            //#endregion
         }
         public void endConnection()
         {
