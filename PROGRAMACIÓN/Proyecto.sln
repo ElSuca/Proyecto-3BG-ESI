@@ -24,6 +24,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApisAutentificacion", "ApiAutentificacion\ApisAutentificacion.csproj", "{5ECC57A8-0490-4958-A2E1-8ABB31074C1E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.Test", "UnitTest\UnitTest.Test.csproj", "{8C0D4BB0-893D-4156-86C3-FF38EEE07FA2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C2A71A24-EA6E-4DB3-8F1D-CD8C21901F87} = {C2A71A24-EA6E-4DB3-8F1D-CD8C21901F87}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIResult", "APIResult\APIResult.csproj", "{589071CE-821E-40B2-8A5B-CF442216D51B}"
 EndProject
