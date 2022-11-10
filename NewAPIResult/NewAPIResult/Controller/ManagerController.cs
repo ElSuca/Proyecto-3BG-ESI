@@ -10,8 +10,19 @@ using System.Web.Http;
 
 namespace NewAPIResult.Controller
 {
-    public class ManagerController
+    public class ManagerController : ApiController
     {
-
+        [HttpPost]
+        public DataTable GetAsocInfoByPage([FromBody] PageRequest r)
+        {
+            ManagerModel asoc = new ManagerModel();
+            return asoc.PopulateManagerByPage(r.PageNumber);
+        }
+        [HttpPost]
+        public DataTable GetAsocInfoById([FromBody] IdRequest r)
+        {
+            ManagerModel asoc = new ManagerModel();
+            return asoc.PopulateManagerById(r.Id);
+        }
     }
 }
