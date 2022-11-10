@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using MySqlConnector;
+using System;
 
 namespace CapaDeDatos
 {
