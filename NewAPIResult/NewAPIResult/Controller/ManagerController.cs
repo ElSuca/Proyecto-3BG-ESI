@@ -13,13 +13,13 @@ namespace NewAPIResult.Controller
     public class ManagerController : ApiController
     {
         [HttpPost]
-        public DataTable GetAsocInfoByPage([FromBody] PageRequest r)
+        public DataTable GetManagerInfoByPage([FromBody] PageRequest r)
         {
             ManagerModel asoc = new ManagerModel();
             return asoc.PopulateManagerByPage(r.PageNumber);
         }
         [HttpPost]
-        public DataTable GetAsocInfoById([FromBody] IdRequest r)
+        public DataTable GetManagerInfoById([FromBody] IdRequest r)
         {
             ManagerModel asoc = new ManagerModel();
             return asoc.PopulateManagerById(r.Id);

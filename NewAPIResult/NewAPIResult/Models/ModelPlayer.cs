@@ -51,6 +51,17 @@ namespace NewAPIResult
             t.Load(this.dataReader);
             return t;
         }
+        public DataTable PopulatePlayerById(int i)
+        {
+            this.command.CommandText = $"SELECT PLAYER.*,ASOC_PLYR.ID_ASOC, CONCAT_WS(',', ASOC_PLYR.STARTDATE ,ASOC_PLYR.ENDDATE) AS PARTDATE, ID_MANA AS MANAGER, ID_TEAM AS TEAM FROM PLAYER LEFT JOIN (ASOC_PLYR, PLYR_TI, MANA_PLYR) on (PLAYER.ID = ASOC_PLYR.ID_PLYR AND PLAYER.ID=PLYR_TI.ID_PLYR AND PLAYER.ID=MANA_PLYR.ID_PLYR) WHERE PLAYER.ID = @Id";
+            this.command.Parameters.AddWithValue("@Id", i);
+            this.command.Prepare();
+            this.dataReader = this.command.ExecuteReader();
+            this.dataReader.Read();
+            DataTable t = new DataTable();
+            t.Load(this.dataReader);
+            return t;
+        }
         private string GetColumn(string key, string defaultValue = null)
         {
             int ordinal = this.dataReader.GetOrdinal(key);
