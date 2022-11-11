@@ -11,7 +11,7 @@ namespace NewAPIResult.Models
     {
         public DataTable PopulateAsocByPage(int i)
         {
-            this.command.CommandText = "SELECT ASOC.*, CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
+            this.command.CommandText = "SELECT DISTINCT ASOC.*, CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
 "ASOC_STATUS.SPORT AS SPORTSTAT, ASOC_STATUS.CAT AS CATSTAT, " +
 "ASOC_STATUS.QUANTITY AS STATQUANT, ASOC_PLYR.ID_PLYR AS PLAYER, MANA_ASOC.ID_MANA AS MANAGER, TM_ASOC.ID_TEAM AS TEAM , ASOC_SPO.ID_SPO AS SPORT, " +
 " CONCAT_WS(' - ' , ASOC_PLYR.STARTDATE , ASOC_PLYR.ENDDATE) AS PLAYERDATES, " +
@@ -46,7 +46,8 @@ namespace NewAPIResult.Models
         }
         public DataTable PopulateAsocById(int i)
         {
-            this.command.CommandText = "SELECT ASOC.*, CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
+            Dictionary<int, AsocTemp> asocmap = new Dictionary<int, AsocTemp>();
+            this.command.CommandText = "SELECT DISTINCT ASOC.*, CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
 "ASOC_STATUS.SPORT AS SPORTSTAT, ASOC_STATUS.CAT AS CATSTAT, " +
 "ASOC_STATUS.QUANTITY AS STATQUANT, ASOC_PLYR.ID_PLYR AS PLAYER, MANA_ASOC.ID_MANA AS MANAGER, TM_ASOC.ID_TEAM AS TEAM , ASOC_SPO.ID_SPO AS SPORT, " +
 " CONCAT_WS(' - ' , ASOC_PLYR.STARTDATE , ASOC_PLYR.ENDDATE) AS PLAYERDATES, " +
@@ -78,5 +79,9 @@ namespace NewAPIResult.Models
             }
             return t;
         }
+    }
+    public class AsocTemp
+    {
+
     }
 }

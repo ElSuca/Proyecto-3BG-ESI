@@ -11,7 +11,7 @@ namespace NewAPIResult.Models
     {
         public DataTable PopulateManagerByPage(int i)
         {
-            this.command.CommandText = "SELECT MANAGER.*, CONCAT_WS(', ',MANA_ASOC.STARTDATE, MANA_ASOC.ENDDATE) AS DATES ," +
+            this.command.CommandText = "SELECT DISTINCT MANAGER.*, CONCAT_WS(', ',MANA_ASOC.STARTDATE, MANA_ASOC.ENDDATE) AS DATES ," +
  "MANA_ASOC.ID_ASOC AS ASOC, MANA_TEAM.ID_TEAM AS TEAM , " +
  "MANA_PLYR.ID_PLYR AS PLAYER, MANA_SPO.ID_SPO AS SPORT " +
  "FROM MANAGER " +
@@ -44,7 +44,7 @@ namespace NewAPIResult.Models
         }
         public DataTable PopulateManagerById(int i)
         {
-            this.command.CommandText = "SELECT MANAGER.*, CONCAT_WS(', ',MANA_ASOC.STARTDATE, MANA_ASOC.ENDDATE) AS DATES , " +
+            this.command.CommandText = "SELECT DISTINCT MANAGER.*, CONCAT_WS(', ',MANA_ASOC.STARTDATE, MANA_ASOC.ENDDATE) AS DATES , " +
  "MANA_ASOC.ID_ASOC AS ASOC, MANA_TEAM.ID_TEAM AS TEAM ,  " +
  "MANA_PLYR.ID_PLYR AS PLAYER, MANA_SPO.ID_SPO AS SPORT  " +
  "FROM MANAGER  " +

@@ -8,7 +8,7 @@ namespace NewAPIResult
 {
     public class ModelPlayer : Model
     {
-        public int? Id ;
+        public int? Id;
         public string Name { get; set; }
         public string LastName1 { get; set; }
         public string LastName2 { get; set; }
@@ -28,17 +28,18 @@ namespace NewAPIResult
         {
             base.connectDataBase();
         }
-        public DataTable PopulatePlayer(int i)
+        public Dictionary<int, PlayerTemp> PopulatePlayer(int i)
         {
-            this.command.CommandText = "SELECT PLAYER.*,ASOC_PLYR.ID_ASOC, " +
+            Dictionary<int, PlayerTemp> playertemp = new Dictionary<int, PlayerTemp>();
+            this.command.CommandText = "SELECT DISTINCT PLAYER.*,ASOC_PLYR.ID_ASOC, " +
                 "CONCAT_WS(',', ASOC_PLYR.STARTDATE ,ASOC_PLYR.ENDDATE) AS PARTDATE, ID_MANA AS MANAGER, " +
                 "ID_TEAM AS TEAM FROM " +
                 "PLAYER LEFT JOIN ASOC_PLYR ON PLAYER.ID = ASOC_PLYR.ID_PLYR  " +
                 "LEFT JOIN PLYR_TI ON PLAYER.ID=PLYR_TI.ID_PLYR  " +
                 "LEFT JOIN MANA_PLYR ON PLAYER.ID=MANA_PLYR.ID_PLYR  " +
                 " WHERE PLAYER.ID <= @Id AND PLAYER.ID >=@I";
-            this.command.Parameters.AddWithValue( "@Id", i*5);
-            this.command.Parameters.AddWithValue("@I", ((i-1)*5) +1);
+            this.command.Parameters.AddWithValue("@Id", i * 5);
+            this.command.Parameters.AddWithValue("@I", ((i - 1) * 5) + 1);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
             DataTable t = new DataTable();
@@ -57,11 +58,19 @@ namespace NewAPIResult
                     newRow[col.ColumnName] = this.dataReader[col.ColumnName];
                 }
             }
-            return t;
+            foreach (DataRow row in t.Rows)
+            {
+                PlayerTemp u = playertemp.ContainsKey(int.Parse(row["ID"].ToString())) ? playertemp[int.Parse(row["ID"].ToString())]
+                  : PlayerTemp.FromRow(row);
+                u.AddIds(row);
+                playertemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return playertemp;
         }
-        public DataTable PopulatePlayer(string s)
+        public Dictionary<int, PlayerTemp> PopulatePlayer(string s)
         {
-            this.command.CommandText = "SELECT PLAYER.*,ASOC_PLYR.ID_ASOC, " +
+            Dictionary<int, PlayerTemp> playertemp = new Dictionary<int, PlayerTemp>();
+            this.command.CommandText = "SELECT DISTINCT PLAYER.*,ASOC_PLYR.ID_ASOC, " +
                 "CONCAT_WS(',', ASOC_PLYR.STARTDATE ,ASOC_PLYR.ENDDATE) AS PARTDATE, ID_MANA AS MANAGER, " +
                 "ID_TEAM AS TEAM FROM " +
                 "PLAYER LEFT JOIN ASOC_PLYR ON PLAYER.ID = ASOC_PLYR.ID_PLYR  " +
@@ -87,11 +96,19 @@ namespace NewAPIResult
                     newRow[col.ColumnName] = this.dataReader[col.ColumnName];
                 }
             }
-            return t;
+            foreach (DataRow row in t.Rows)
+            {
+                PlayerTemp u = playertemp.ContainsKey(int.Parse(row["ID"].ToString())) ? playertemp[int.Parse(row["ID"].ToString())]
+                  : PlayerTemp.FromRow(row);
+                u.AddIds(row);
+                playertemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return playertemp;
         }
-        public DataTable PopulatePlayerById(int i)
+        public Dictionary<int, PlayerTemp> PopulatePlayerById(int i)
         {
-            this.command.CommandText = "SELECT PLAYER.* ,ASOC_PLYR.ID_ASOC, " +
+            Dictionary<int, PlayerTemp> playertemp = new Dictionary<int, PlayerTemp>();
+            this.command.CommandText = "SELECT DISTINCT PLAYER.* ,ASOC_PLYR.ID_ASOC, " +
                 "CONCAT_WS(',', ASOC_PLYR.STARTDATE ,ASOC_PLYR.ENDDATE) AS PARTDATE, ID_MANA AS MANAGER, " +
                 "ID_TEAM AS TEAM FROM " +
                 "PLAYER LEFT JOIN ASOC_PLYR ON PLAYER.ID = ASOC_PLYR.ID_PLYR  " +
@@ -117,7 +134,62 @@ namespace NewAPIResult
                     newRow[col.ColumnName] = this.dataReader[col.ColumnName];
                 }
             }
+            foreach (DataRow row in t.Rows)
+            {
+                PlayerTemp u = playertemp.ContainsKey(int.Parse(row["ID"].ToString())) ? playertemp[int.Parse(row["ID"].ToString())]
+                  : PlayerTemp.FromRow(row);
+                u.AddIds(row);
+                playertemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return playertemp;
+        }
+    }
+    public class PlayerTemp
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Lname { get; set; }
+        public string Lname2 { get; set; }
+        public string Status { get; set; }
+        public string Birthdate { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Country { get; set; }
+
+        public List<int?> Id_Asoc { get; set; }
+        public List<string> Times_Asoc { get; set; }
+        public List<int?> Id_Team { get; set; }
+        public List<int?> Id_Mana { get; set; }
+
+        public static PlayerTemp FromRow(DataRow r)
+        {
+            PlayerTemp t = new PlayerTemp();
+            t.Id = int.Parse(r["Id"].ToString());
+            t.Name = r["Name"].ToString();
+            t.Lname = r["Lname"].ToString();
+            t.Lname2 = r["Lname2"].ToString();
+            t.City = r["City"].ToString();
+            t.State = r["State"].ToString();
+            t.Country = r["Country"].ToString();
+            t.Id_Asoc = new List<int?>();
+            t.Id_Mana = new List<int?>();
+            t.Id_Team = new List<int?>();
+            t.Times_Asoc = new List<string>();
+            t.AddIds(r);
             return t;
+        }
+        public void AddIds(DataRow r)
+        {
+            this.Id_Asoc.Add(ParseInt(r["Id_Asoc"].ToString()));
+            this.Id_Team.Add(ParseInt(r["TEAM"].ToString()));
+            this.Id_Mana.Add(ParseInt(r["MANAGER"].ToString()));
+            this.Times_Asoc.Add((r["Partdate"].ToString()));
+
+        }
+        static int? ParseInt(string s)
+        {
+            if (int.TryParse(s, out int res)) return res;
+            return null;
         }
     }
 }

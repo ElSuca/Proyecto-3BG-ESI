@@ -9,9 +9,10 @@ namespace NewAPIResult.Models
 {
     public class SportModel : Model
     {
-        public DataTable PopulateSportByPage(int i)
+        public Dictionary<int, SportTemp> PopulateSportByPage(int i)
         {
-            this.command.CommandText = "SELECT SPORT.*, " +
+            Dictionary<int, SportTemp> sporttemp = new Dictionary<int, SportTemp>();
+            this.command.CommandText = "SELECT DISTINCT SPORT.*, " +
  "T_SPO.TYPE " +
  "FROM SPORT LEFT JOIN(T_SPO) " +
  "ON(T_SPO.ID_SP = SPORT.ID) " +
@@ -36,11 +37,19 @@ namespace NewAPIResult.Models
                     newRow[col.ColumnName] = this.dataReader[col.ColumnName];
                 }
             }
-            return t;
+            foreach (DataRow row in t.Rows)
+            {
+                SportTemp u = sporttemp.ContainsKey(int.Parse(row["ID"].ToString())) ? sporttemp[int.Parse(row["ID"].ToString())]
+                  : SportTemp.FromRow(row);
+                u.AddIds(row);
+                sporttemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return sporttemp;
         }
-        public DataTable PopulateSportById(int i)
+        public Dictionary<int, SportTemp> PopulateSportById(int i)
         {
-            this.command.CommandText = "SELECT SPORT.*, " +
+            Dictionary<int, SportTemp> sporttemp = new Dictionary<int, SportTemp>();
+            this.command.CommandText = "SELECT DISTINCT SPORT.*, " +
 "T_SPO.TYPE " +
 "FROM SPORT LEFT JOIN(T_SPO) " +
 "ON(T_SPO.ID_SP = SPORT.ID) " +
@@ -64,7 +73,37 @@ namespace NewAPIResult.Models
                     newRow[col.ColumnName] = this.dataReader[col.ColumnName];
                 }
             }
+            foreach (DataRow row in t.Rows)
+            {
+                SportTemp u = sporttemp.ContainsKey(int.Parse(row["ID"].ToString())) ? sporttemp[int.Parse(row["ID"].ToString())]
+                  : SportTemp.FromRow(row);
+                u.AddIds(row);
+                sporttemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return sporttemp;
+        }
+    }
+    public class SportTemp
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public List<string> Type { get; set; }
+
+        public static SportTemp FromRow(DataRow r)
+        {
+            SportTemp t = new SportTemp();
+            t.Id = int.Parse(r["Id"].ToString());
+            t.Name = r["Name"].ToString();
+            t.Type = new List<string>();
+            t.AddIds(r);
             return t;
+        }
+        public void AddIds(DataRow r)
+        {
+            this.Type.Add((r["Type"].ToString()));
+            
+
         }
     }
 }

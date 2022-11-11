@@ -12,13 +12,13 @@ namespace NewAPIResult.Controller
     public class SportController : ApiController
     {
         [HttpPost]
-        public DataTable GetSportByPage([FromBody] PageRequest r)
+        public Dictionary<int,SportTemp> GetSportByPage([FromBody] PageRequest r)
         {
             SportModel @sport = new SportModel();
             return @sport.PopulateSportByPage(r.PageNumber);
         }
         [HttpPost]
-        public DataTable GetSportById([FromBody] IdRequest r)
+        public Dictionary<int, SportTemp> GetSportById([FromBody] IdRequest r)
         {
             SportModel @sport = new SportModel();
             return @sport.PopulateSportById(r.Id);

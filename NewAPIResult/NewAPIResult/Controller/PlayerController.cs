@@ -12,19 +12,19 @@ namespace NewAPIResult
     public class PlayerController : ApiController
     {
         [HttpPost]
-        public DataTable GetAllPlayer([FromBody] JsonRequest p)
+        public Dictionary<int, PlayerTemp> GetAllPlayer([FromBody] JsonRequest p)
         {
             ModelPlayer model = new ModelPlayer();
             return model.PopulatePlayer((p.PageNumber));
         }
         [HttpPost]
-        public DataTable GetNamedPlayer([FromBody] JsonRequest p)
+        public Dictionary<int, PlayerTemp> GetNamedPlayer([FromBody] JsonRequest p)
         {
             ModelPlayer model = new ModelPlayer();
             return model.PopulatePlayer((p.SearchBarContent));
         }
         [HttpPost]
-        public DataTable GetPlayerById([FromBody] IdRequest r)
+        public Dictionary<int, PlayerTemp> GetPlayerById([FromBody] IdRequest r)
         {
             ModelPlayer model = new ModelPlayer();
             return model.PopulatePlayerById(r.Id);
