@@ -14,11 +14,11 @@ namespace Apis
         public static string GetPost(string url, int pageNumber, int sportId) 
         {
             WebRequest request = WebRequest.Create(url);
-            PostResultPageSport u = new PostResultPageSport() { PagerNumber = pageNumber, SportId = sportId };
+            PostResultPageSport u = new PostResultPageSport() { PageNumber = pageNumber, SportId = sportId };
 
             string result = "";
 
-            request.Method = "post";
+            request.Method = "POST";
             request.ContentType = "application/json;charset=UTF-8";
 
             using (var m = new StreamWriter(request.GetRequestStream()))
@@ -33,8 +33,8 @@ namespace Apis
             {
                 result = l.ReadToEnd().Trim();
             }
-            Dictionary<string, string> EventId = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
-            SafeSystemBuffer.Response = EventId["ID"];
+            string[] EventId = JsonConvert.DeserializeObject<string[]>(result);
+            SafeSystemBuffer.ResponseArray = EventId;
             return result;
         }    
     }

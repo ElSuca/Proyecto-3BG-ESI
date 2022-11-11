@@ -106,18 +106,18 @@ namespace ApiPublica
 
         public void SetAdBanner(string category)
         {
-            controlApi();
+            controlApi(@"..\..\..\..\PROGRAMACIÓN\ApiPublicidad\bin\Debug\ApiPublicidad.exe", "ApiAutentificacion");
             SendRequestPublicidad.GetPost("http://127.0.0.1:7777//Ad", category);
             BannerPic.Image  = new Bitmap(formatPath(new AplicationControler().getResponse()));
         }
         private string formatPath(string path) => path.Replace("-", @"\");
-        private void controlApi()
+        private void controlApi(string path,string process)
         {
             ProcessStartInfo startinfo = new ProcessStartInfo();
-            startinfo.FileName = @"..\..\..\..\PROGRAMACIÓN\ApiPublicidad\bin\Debug\ApiPublicidad.exe";
+            startinfo.FileName = path;
             startinfo.CreateNoWindow = true;
             startinfo.UseShellExecute = true;
-            if (!isRunning("ApiAutentificacion")) Process.Start(startinfo).Start();
+            if (!isRunning(process)) Process.Start(startinfo).Start();
             else Process.Start(startinfo).Kill();
         }
         public static bool isRunning(string ProcessName)
@@ -246,11 +246,11 @@ namespace ApiPublica
 
         private void lbButtonFootbal_Click(object sender, EventArgs e)
         {
-            
-            SendRequestResult.GetPost("http://localhost:5555/api/EventId/GetEventIdByDate",1, new SportControler().GetId("Football"));
+            controlApi(@"..\..\..\..\PROGRAMACIÓN\APIResult\NewAPIResult\bin\Debug\NewAPIResult.exe", "NewAPIResult");
+            SendRequestResult.GetPost("http://localhost:1111//api//EventId//GetEventIdByDate", 1, new SportControler().GetId("Football"));
 
             panelResult.Controls.Clear();
-
+            FillResults1vs1(Int32.Parse(txtTeam1id.Text), Int32.Parse(txtTeam2id.Text), new TeamControler().GetName(Int32.Parse(txtTeam1id.Text)), new TeamControler().GetName(Int32.Parse(txtTeam2id.Text)), Int32.Parse(txtScore1.Text), Int32.Parse(txtScore2.Text), txtDate.Text, txtCompetition.Text, txtStartTime.Text, txtEndTime.Text, txtStadium.Text);
             new EventControler().GetEventBySport("Football");
         }
 

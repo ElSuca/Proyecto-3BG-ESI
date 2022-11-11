@@ -11,7 +11,7 @@
     }
     public class PostResultPageSport
     {
-        public int PagerNumber { get; set; }
+        public int PageNumber { get; set; }
         public int SportId { get; set; }
     }
 }
