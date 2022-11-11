@@ -1,9 +1,10 @@
 ﻿using CapDeDatos;
 using System.Data;
+using System.Web.Http;
 
 namespace CapaLoogica
 {
-    public class ActionControler
+    public class ActionControler : ApiController
     {
         public ActionControler()
         {

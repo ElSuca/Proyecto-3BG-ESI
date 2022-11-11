@@ -143,6 +143,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -250,6 +251,10 @@
     <ProjectReference Include="..\ApiPublicidad\ApiPublicidad.csproj">
       <Project>{eab0cd5c-6f60-4bfa-80ec-d07a595d3f32}</Project>
       <Name>ApiPublicidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiResult\ApiResult.csproj">
+      <Project>{274d84c4-11db-4f7d-ab98-f5b9d71bb867}</Project>
+      <Name>ApiResult</Name>
     </ProjectReference>
     <ProjectReference Include="..\CapaLoogica\CapaLogica.csproj">
       <Project>{145b1adb-bc7a-4013-8311-88959ac2a71a}</Project>

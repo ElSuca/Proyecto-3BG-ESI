@@ -1,4 +1,5 @@
 ﻿using ApiPublica.ExtendedMenu;
+using ApiResult;
 using Apis;
 using CapaLogica;
 using CapaLoogica;
@@ -106,18 +107,28 @@ namespace ApiPublica
 
         public void SetAdBanner(string category)
         {
-            controlApi(@"..\..\..\..\PROGRAMACIÓN\ApiPublicidad\bin\Debug\ApiPublicidad.exe", "ApiAutentificacion");
+   //         controlApiPub();
+
             SendRequestPublicidad.GetPost("http://127.0.0.1:7777//Ad", category);
             BannerPic.Image  = new Bitmap(formatPath(new AplicationControler().getResponse()));
         }
         private string formatPath(string path) => path.Replace("-", @"\");
-        private void controlApi(string path,string process)
+        private void controlApiPub()
         {
             ProcessStartInfo startinfo = new ProcessStartInfo();
-            startinfo.FileName = path;
+            startinfo.FileName = @"..\..\..\..\PROGRAMACIÓN\ApiPublicidad\bin\Debug\ApiPublicidad.exe";
             startinfo.CreateNoWindow = true;
             startinfo.UseShellExecute = true;
-            if (!isRunning(process)) Process.Start(startinfo).Start();
+            if (!isRunning("ApiAutentificacion")) Process.Start(startinfo).Start();
+            else Process.Start(startinfo).Kill();
+        }
+        private void controlApiRes()
+        {
+            ProcessStartInfo startinfo = new ProcessStartInfo();
+            startinfo.FileName = @"..\..\..\..\PROGRAMACIÓN\APIResult\NewAPIResult\bin\Debug\NewAPIResult.exe";
+            startinfo.CreateNoWindow = true;
+            startinfo.UseShellExecute = true;
+            if (!isRunning("NewAPIResult")) Process.Start(startinfo).Start();
             else Process.Start(startinfo).Kill();
         }
         public static bool isRunning(string ProcessName)
@@ -246,7 +257,7 @@ namespace ApiPublica
 
         private void lbButtonFootbal_Click(object sender, EventArgs e)
         {
-            controlApi(@"..\..\..\..\PROGRAMACIÓN\APIResult\NewAPIResult\bin\Debug\NewAPIResult.exe", "NewAPIResult");
+            controlApiRes();
             SendRequestResult.GetPost("http://localhost:1111//api//EventId//GetEventIdByDate", 1, new SportControler().GetId("Football"));
 
             panelResult.Controls.Clear();

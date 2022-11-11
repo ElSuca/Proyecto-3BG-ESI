@@ -8,8 +8,15 @@ namespace CapDeDatos
         public static int Language { get; set; }
         public static string Response { get; set; }
         public static string[] ResponseArray { get; set; }
+        public int PageNumber { get; set; }
+        public int SportId { get; set; }
+        public int Id { get; set; }
 
-    public SafeSystemBuffer() => SetDefaultLanguage();
+        public int IdPlayer { get; set; }
+        public int PageNumberPlayer { get; set; }
+        public string SearchBarContent { get; set; }
+
+        public SafeSystemBuffer() => SetDefaultLanguage();
 
         public void SetDefaultLanguage()
         {

@@ -1,5 +1,7 @@
 ﻿using CapDeDatos;
+using System.Collections.Generic;
 using System.Data;
+using System.Web.Http;
 
 namespace CapaLoogica
 {
@@ -76,18 +78,18 @@ namespace CapaLoogica
 
         public string GetStartDate() => new ModelEvents().StartDate;
 
+        [HttpPost]
+        public Dictionary<int, ModelEvents> GetEventByPage([FromBody]  SafeSystemBuffer r) => new ModelEvents().PopulateEventByPage(r.PageNumber);
+        [HttpPost]
+        public Dictionary<int, ModelEvents> GetEventById([FromBody] SafeSystemBuffer r) => new ModelEvents().PopulateEventById(r.Id);
+
+        [HttpPost]
+        public HashSet<int?> GetEventIdByDate([FromBody] SafeSystemBuffer r)
+        {
+            r.PageNumber = (r.PageNumber - 1) * 5;
+            return new ModelEvents().PopulatePlayer(r.SportId, r.PageNumber);
+        }
        
-            [HttpPost]
-            public DataTable GetEventByPage([FromBody] PageRequest r)
-            {
-                EventModel @event = new EventModel();
-                return @event.PopulateEventByPage(r.PageNumber);
-            }
-            [HttpPost]
-            public DataTable GetEventById([FromBody] IdRequest r)
-            {
-                EventModel @event = new EventModel();
-                return @event.PopulateEventById(r.Id);
-            }
+
     }
 }

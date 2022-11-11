@@ -1,5 +1,6 @@
 ﻿using CapaDeDatos;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace CapDeDatos
@@ -10,13 +11,30 @@ namespace CapDeDatos
         public string Name { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
-        public int StageId { get; set; }
+        public int? StageId { get; set; }
         public string Type { get; set; }
         public int ParentId { get; set; }
         public string Info { get; set; }
         public int TimeNumber { get; set; }
         public string TimeDescription { get; set; }
         public int? IdFamily { get; set; }
+
+        public List<int?> Id_Child { get; set; }
+        public List<int?> Id_Parent { get; set; }
+        public List<string> Type_ { get; set; }
+        public List<string> Info_ { get; set; }
+
+       // public int? StageId { get; set; }
+        public string StageName { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string StreetNum { get; set; }
+        public string State { get; set; }
+        public string Country { get; set; }
+
+        public List<int?> TimeID { get; set; }
+        public List<int?> TimeNum { get; set; }
+        public List<string> TimeDes { get; set; }
 
         public ModelEvents()
         {
@@ -307,25 +325,19 @@ namespace CapDeDatos
             if (Check == "27/10/2022 0:00:00") return true;
             else return false;
         }
-        public DataTable PopulateEventByPage(int i)
+
+        public Dictionary<int, ModelEvents> PopulateEventByPage(int i)
         {
-            this.Command.CommandText = "SELECT EVENT.*," +
-                " PRE_EVENT.*, " +
-                "EVENT_FAMILY.ID_FAM, EVENT_SPO.ID_SPO, " +
-                " STAGE.ID AS STAGEID," +
-                " STAGE.NAME AS STAGENAME," +
-                " STAGE.CITY, STAGE.STREET," +
-                " STAGE.NUM AS STREETNUM," +
-                " STAGE.STATE AS STAGESTATE," +
-                " STAGE.COUNTRY AS STAGECOUNTRY ," +
-                " TIME.ID AS TIMEID, TIME.NUM," +
-                " TIME.DESCR " +
-                "FROM EVENT LEFT JOIN PRE_EVENT ON ((EVENT.ID = PRE_EVENT.ID_CHILD) OR(EVENT.ID = PRE_EVENT.ID_PARENT)) " +
-                "LEFT JOIN STAGE ON (EVENT.STAGE = STAGE.ID) " +
-                "LEFT JOIN TIME ON (TIME.ID_EVENT = EVENT.ID) " +
-                "LEFT JOIN EVENT_SPO ON (EVENT_SPO.ID_EVENT = EVENT.ID) " +
-                "LEFT JOIN EVENT_FAMILY ON (EVENT_FAMILY.ID_EVENT = EVENT.ID))" +
-                "WHERE EVENT.ID<=@Id AND EVENT.ID>=@I ";
+            Dictionary<int, ModelEvents> eventtemp = new Dictionary<int, ModelEvents>();
+            this.Command.CommandText = "SELECT DISTINCT EVENT.*, PRE_EVENT.*, " +
+                 "EVENT_FAMILY.ID_FAM, EVENT_SPO.ID_SPO, " +
+                 " STAGE.ID AS STAGEID, STAGE.NAME AS STAGENAME, STAGE.CITY, STAGE.STREET, STAGE.NUM AS STREETNUM, STAGE.STATE AS STAGESTATE, STAGE.COUNTRY AS STAGECOUNTRY , TIME.ID AS TIMEID, TIME.NUM, TIME.DESCR " +
+                 "FROM EVENT LEFT JOIN PRE_EVENT ON ((EVENT.ID = PRE_EVENT.ID_CHILD) OR(EVENT.ID = PRE_EVENT.ID_PARENT)) " +
+                 "LEFT JOIN STAGE ON (EVENT.STAGE = STAGE.ID) " +
+                 "LEFT JOIN TIME ON (TIME.ID_EVENT = EVENT.ID) " +
+                 "LEFT JOIN EVENT_SPO ON (EVENT_SPO.ID_EVENT = EVENT.ID) " +
+                 "LEFT JOIN EVENT_FAMILY ON (EVENT_FAMILY.ID_EVENT = EVENT.ID)" +
+                 "WHERE EVENT.ID<=@Id AND EVENT.ID>=@I ";
             this.Command.Parameters.AddWithValue("@Id", i * 5);
             this.Command.Parameters.AddWithValue("@I", ((i - 1) * 5) + 1);
             this.Command.Prepare();
@@ -346,22 +358,30 @@ namespace CapDeDatos
                     newRow[col.ColumnName] = this.DataReader[col.ColumnName];
                 }
             }
-            return t;
+            foreach (DataRow row in t.Rows)
+            {
+                ModelEvents u = eventtemp.ContainsKey(int.Parse(row["ID"].ToString())) ? eventtemp[int.Parse(row["ID"].ToString())]
+                  : ModelEvents.FromRow(row);
+                u.AddIds(row);
+                eventtemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return eventtemp;
         }
-        public DataTable PopulateEventById(int i)
+        public Dictionary<int, ModelEvents> PopulateEventById(int i)
         {
-            this.Command.CommandText = "SELECT EVENT.*," +
-                " PRE_EVENT.*, " +
-                "EVENT_FAMILY.ID_FAM," +
-                " EVENT_SPO.ID_SPO, " +
-                " STAGE.ID AS STAGEID, STAGE.NAME AS STAGENAME," +
-                " STAGE.CITY, STAGE.STREET," +
-                " STAGE.NUM AS STREETNUM," +
-                " STAGE.STATE AS STAGESTATE," +
-                " STAGE.COUNTRY AS STAGECOUNTRY," +
-                " TIME.ID AS TIMEID," +
-                " TIME.NUM," +
-                " TIME.DESCR " +
+            Dictionary<int, ModelEvents> eventtemp = new Dictionary<int, ModelEvents>();
+            this.Command.CommandText = "SELECT DISTINCT EVENT.*, PRE_EVENT.*, " +
+                "EVENT_FAMILY.ID_FAM, " +
+                "EVENT_SPO.ID_SPO, " +
+                " STAGE.ID AS STAGEID, " +
+                "STAGE.NAME AS STAGENAME, " +
+                "STAGE.CITY, STAGE.STREET, " +
+                "STAGE.NUM AS STREETNUM, " +
+                "STAGE.STATE AS STAGESTATE, " +
+                "STAGE.COUNTRY AS STAGECOUNTRY , " +
+                "TIME.ID AS TIMEID, " +
+                "TIME.NUM AS TIMENUM, " +
+                "TIME.DESCR AS TIMEDES " +
                 "FROM EVENT LEFT JOIN PRE_EVENT ON ((EVENT.ID = PRE_EVENT.ID_CHILD) OR(EVENT.ID = PRE_EVENT.ID_PARENT)) " +
                 "LEFT JOIN STAGE ON (EVENT.STAGE = STAGE.ID) " +
                 "LEFT JOIN TIME ON (TIME.ID_EVENT = EVENT.ID) " +
@@ -387,11 +407,66 @@ namespace CapDeDatos
                     newRow[col.ColumnName] = this.DataReader[col.ColumnName];
                 }
             }
+            foreach (DataRow row in t.Rows)
+            {
+                ModelEvents u = eventtemp.ContainsKey(int.Parse(row["ID"].ToString())) ? eventtemp[int.Parse(row["ID"].ToString())]
+                  : ModelEvents.FromRow(row);
+                u.AddIds(row);
+                eventtemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return eventtemp;
+        }
+
+        public void GetEventBySport(string sport)
+        {
+
+        }
+        public static ModelEvents FromRow(DataRow r)
+        {
+            ModelEvents t = new ModelEvents();
+            t.ID = int.Parse(r["Id"].ToString());
+            t.Name = r["Name"].ToString();
+            t.StartDate = r["StartDate"].ToString();
+            t.EndDate = r["EndDate"].ToString();
+            t.StageId = ParseInt(r["StageId"].ToString());
+            t.City = r["City"].ToString();
+            t.Street = r["Street"].ToString();
+            t.StreetNum = r["StreetNum"].ToString();
+            t.State = r["StageState"].ToString();
+            t.Country = r["StageCountry"].ToString();
+            t.Id_Child = new List<int?>();
+            t.Id_Parent = new List<int?>();
+            t.TimeID = new List<int?>();
+            t.Type_ = new List<string>();
+            t.Info_ = new List<string>();
+            t.TimeNum = new List<int?>();
+            t.TimeDes = new List<string>();
+            t.AddIds(r);
             return t;
         }
-        public DataTable PopulatePlayer(int s, int p)
+        public void AddIds(DataRow r)
         {
-            this.Command.CommandText = $"SELECT ID FROM EVENT LEFT JOIN (EVENT_SPO) ON (EVENT.ID = EVENT_SPO.ID_EVENT) WHERE EVENT_SPO.ID_SPO=@S ORDER BY EVENT.STARTDATE LIMIT 5 OFFSET @P";
+            this.Id_Child.Add(ParseInt(r["Id_Child"].ToString()));
+            this.Id_Parent.Add(ParseInt(r["Id_Parent"].ToString()));
+            this.TimeID.Add(ParseInt(r["TimeId"].ToString()));
+            this.TimeNum.Add(ParseInt(r["TimeNum"].ToString()));
+            this.Type_.Add(r["Type"].ToString());
+            this.Info_.Add(r["Info"].ToString());
+            this.TimeDes.Add(r["TimeDes"].ToString());
+        }
+        static int? ParseInt(string s)
+        {
+            if (int.TryParse(s, out int res)) return res;
+            return null;
+        }
+
+
+
+
+        public HashSet<int?> PopulatePlayer(int s, int p)
+        {
+            HashSet<int?> a = new HashSet<int?>();
+            this.Command.CommandText = $"SELECT DISTINCT ID FROM EVENT LEFT JOIN (EVENT_SPO) ON (EVENT.ID = EVENT_SPO.ID_EVENT) WHERE EVENT_SPO.ID_SPO=@S ORDER BY EVENT.STARTDATE LIMIT 5 OFFSET @P";
             this.Command.Parameters.AddWithValue("@S", s);
             this.Command.Parameters.AddWithValue("@P", p);
             this.Command.Prepare();
@@ -412,11 +487,12 @@ namespace CapDeDatos
                     newRow[col.ColumnName] = this.DataReader[col.ColumnName];
                 }
             }
-            return t;
+            foreach (DataRow row in t.Rows)
+            {
+                a.Add(ParseInt(row["ID"].ToString()));
+            }
+            return a;
         }
-        public void GetEventBySport(string sport)
-        {
 
-        }
     }
 }

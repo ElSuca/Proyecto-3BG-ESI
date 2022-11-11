@@ -1,5 +1,6 @@
 ﻿using CapaDeDatos;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace CapDeDatos
@@ -16,9 +17,23 @@ namespace CapDeDatos
         public string Country { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
-        public int Sport { get; set; }
+        public int Sport_ { get; set; }
         public int Quantity { get; set; }
         public string Category { get; set; }
+
+        public List<string> Dates { get; set; }
+        public List<string> SportStats { get; set; }
+        public List<string> CatStat { get; set; }
+        public List<string> StatQuant { get; set; }
+
+        public List<int?> Player { get; set; }
+        public List<int?> Manager { get; set; }
+        public List<int?> Team { get; set; }
+        public List<int?> Sport { get; set; }
+
+        public List<string> PlayerDates { get; set; }
+        public List<string> Managerdates { get; set; }
+
 
         public ModelAsociation()
         {
@@ -92,7 +107,7 @@ namespace CapDeDatos
         {
             Commanditou.CommandText = "INSERT INTO " +
                   "ASOC_STATUS (ID_ASOC,STARTDATE ,ENDDATE ,SPORT ,CAT ,QUANTITY) " +
-                  $"VALUES ({GetId(Name)},'{StartDate}','{EndDate}',{Sport},'{Category}',{Quantity})";
+                  $"VALUES ({GetId(Name)},'{StartDate}','{EndDate}',{Sport_},'{Category}',{Quantity})";
             this.Commanditou.Prepare();
             this.Commanditou.ExecuteNonQuery();
         }
@@ -184,21 +199,26 @@ namespace CapDeDatos
             if (Check == "n") return true;
             else return false;
         }
-        public DataTable PopulateAsocByPage(int i)
+
+
+        public Dictionary<int, ModelAsociation> PopulateAsocByPage(int i)
         {
-            this.Command.CommandText = "SELECT ASOC.*," +
+            Dictionary<int, ModelAsociation> asoctemp = new Dictionary<int, ModelAsociation>();
+            this.Command.CommandText = "SELECT DISTINCT ASOC.*," +
                 " CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
                 "ASOC_STATUS.SPORT AS SPORTSTAT," +
                 " ASOC_STATUS.CAT AS CATSTAT, " +
-                "ASOC_STATUS.QUANTITY AS STATQUANT," +
-                " ASOC_PLYR.ID_PLYR AS PLAYER," +
-                " MANA_ASOC.ID_MANA AS MANAGER," +
-                " TM_ASOC.ID_TEAM AS TEAM ," +
-                " ASOC_SPO.ID_SPO AS SPORT, " +
-                " CONCAT_WS(' - ' , ASOC_PLYR.STARTDATE , ASOC_PLYR.ENDDATE) AS PLAYERDATES, " +
-                " CONCAT_WS(' - ' , MANA_ASOC.STARTDATE , MANA_ASOC.ENDDATE) AS MANAGERDATES " +
+                "ASOC_STATUS.QUANTITY AS STATQUANT, " +
+                "ASOC_PLYR.ID_PLYR AS PLAYER, " +
+                "MANA_ASOC.ID_MANA AS MANAGER, " +
+                "TM_ASOC.ID_TEAM AS TEAM, " +
+                "ASOC_SPO.ID_SPO AS SPORT, " +
+                " CONCAT_WS(' - ' , ASOC_PLYR.STARTDATE , " +
+                "ASOC_PLYR.ENDDATE) AS PLAYERDATES, " +
+                " CONCAT_WS(' - ' , MANA_ASOC.STARTDATE , " +
+                "MANA_ASOC.ENDDATE) AS MANAGERDATES " +
                 " FROM ASOC LEFT JOIN ASOC_STATUS ON ASOC.ID=ASOC_STATUS.ID_ASOC " +
-                "LEFT JOIN ASOC_SPO ON ASOC.ID=ASOC_SPO.ID_ASOC " +
+                " LEFT JOIN ASOC_SPO ON ASOC.ID=ASOC_SPO.ID_ASOC " +
                 "LEFT JOIN MANA_ASOC ON ASOC.ID=MANA_ASOC.ID_ASOC " +
                 "LEFT JOIN ASOC_PLYR ON ASOC.ID=ASOC_PLYR.ID_ASOC " +
                 " LEFT JOIN TM_ASOC ON ASOC.ID=TM_ASOC.ID_ASOC " +
@@ -223,21 +243,30 @@ namespace CapDeDatos
                     newRow[col.ColumnName] = this.DataReader[col.ColumnName];
                 }
             }
-            return t;
+            foreach (DataRow row in t.Rows)
+            {
+                ModelAsociation u = asoctemp.ContainsKey(int.Parse(row["ID"].ToString())) ? asoctemp[int.Parse(row["ID"].ToString())]
+                  : ModelAsociation.FromRow(row);
+                u.AddIds(row);
+                asoctemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return asoctemp;
         }
-        public DataTable PopulateAsocById(int i)
+        public Dictionary<int, ModelAsociation> PopulateAsocById(int i)
         {
-            this.Command.CommandText = "SELECT ASOC.*," +
-                " CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
-                "ASOC_STATUS.SPORT AS SPORTSTAT," +
-                " ASOC_STATUS.CAT AS CATSTAT, " +
+            Dictionary<int, ModelAsociation> asoctemp = new Dictionary<int, ModelAsociation>();
+            this.Command.CommandText = "SELECT DISTINCT ASOC.*, " +
+                "CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
+                "ASOC_STATUS.SPORT AS SPORTSTAT, ASOC_STATUS.CAT AS CATSTAT, " +
                 "ASOC_STATUS.QUANTITY AS STATQUANT," +
                 " ASOC_PLYR.ID_PLYR AS PLAYER," +
                 " MANA_ASOC.ID_MANA AS MANAGER," +
-                " TM_ASOC.ID_TEAM AS TEAM," +
+                " TM_ASOC.ID_TEAM AS TEAM ," +
                 " ASOC_SPO.ID_SPO AS SPORT, " +
-                " CONCAT_WS(' - ' , ASOC_PLYR.STARTDATE , ASOC_PLYR.ENDDATE) AS PLAYERDATES, " +
-                " CONCAT_WS(' - ' , MANA_ASOC.STARTDATE , MANA_ASOC.ENDDATE) AS MANAGERDATES " +
+                " CONCAT_WS(' - ' , ASOC_PLYR.STARTDATE ," +
+                " ASOC_PLYR.ENDDATE) AS PLAYERDATES, " +
+                " CONCAT_WS(' - ' , MANA_ASOC.STARTDATE , " +
+                "MANA_ASOC.ENDDATE) AS MANAGERDATES " +
                 " FROM ASOC LEFT JOIN ASOC_STATUS ON ASOC.ID=ASOC_STATUS.ID_ASOC " +
                 " LEFT JOIN ASOC_SPO ON ASOC.ID=ASOC_SPO.ID_ASOC " +
                 "LEFT JOIN MANA_ASOC ON   ASOC.ID=MANA_ASOC.ID_ASOC " +
@@ -263,7 +292,57 @@ namespace CapDeDatos
                     newRow[col.ColumnName] = this.DataReader[col.ColumnName];
                 }
             }
+            foreach (DataRow row in t.Rows)
+            {
+                ModelAsociation u = asoctemp.ContainsKey(int.Parse(row["ID"].ToString())) ? asoctemp[int.Parse(row["ID"].ToString())]
+                  : ModelAsociation.FromRow(row);
+                u.AddIds(row);
+                asoctemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return asoctemp;
+        }
+
+        public static ModelAsociation FromRow(DataRow r)
+        {
+            ModelAsociation t = new ModelAsociation();
+            t.Id = int.Parse(r["Id"].ToString());
+            t.Name = r["Name"].ToString();
+            t.Street = r["LNAME1"].ToString();
+            t.Num = Int32.Parse(r["NUM"].ToString());
+            t.Status = r["City"].ToString();
+            t.State = r["State"].ToString();
+            t.Country = r["Country"].ToString();
+            t.City = r["CITY"].ToString();
+            t.Dates = new List<string>();
+            t.SportStats = new List<string>();
+            t.CatStat = new List<string>();
+            t.StatQuant = new List<string>();
+            t.PlayerDates = new List<string>();
+            t.Managerdates = new List<string>();
+            t.Player = new List<int?>();
+            t.Manager = new List<int?>();
+            t.Team = new List<int?>();
+            t.Sport = new List<int?>();
+
             return t;
+        }
+        public void AddIds(DataRow r)
+        {
+            this.Player.Add(ParseInt(r["Player"].ToString()));
+            this.Manager.Add(ParseInt(r["Manager"].ToString()));
+            this.Team.Add(ParseInt(r["Team"].ToString()));
+            this.Sport.Add(ParseInt(r["Sport"].ToString()));
+            this.SportStats.Add((r["SportStats"].ToString()));
+            this.CatStat.Add((r["CatStat"].ToString()));
+            this.PlayerDates.Add((r["PlayerDates"].ToString()));
+            this.Managerdates.Add((r["ManagerDates"].ToString()));
+            this.StatQuant.Add((r["StatQuant"].ToString()));
+            this.Dates.Add((r["Dates"].ToString()));
+        }
+        static int? ParseInt(string s)
+        {
+            if (int.TryParse(s, out int res)) return res;
+            return null;
         }
     }
 }

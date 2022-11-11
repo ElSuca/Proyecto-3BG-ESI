@@ -1,9 +1,11 @@
 ﻿using CapDeDatos;
+using System.Collections.Generic;
 using System.Data;
+using System.Web.Http;
 
 namespace CapaLoogica
 {
-    public class AsociationControler
+    public class AsociationControler : ApiController
     {
         public AsociationControler()
         {
@@ -23,7 +25,7 @@ namespace CapaLoogica
                 Country = country,
                 StartDate = startDate,
                 EndDate = endDate,
-                Sport = sport,
+                Sport_ = sport,
                 Category = category,
                 Quantity = quantity
             };
@@ -42,7 +44,7 @@ namespace CapaLoogica
                 Country = country,
                 StartDate = startDate,
                 EndDate = endDate,
-                Sport = sport,
+                Sport_ = sport,
                 Category = category,
                 Quantity = quantity
             };
@@ -52,5 +54,16 @@ namespace CapaLoogica
         public bool ExistAsociation(int id) => new ModelAsociation().ExistAsociation(id);
         public int GetId(string Name) => new ModelAsociation().GetId(Name);
         public bool HaveChange(int id) => new ModelAsociation().HaveChange(id);
+
+        [HttpPost]
+        public Dictionary<int, ModelAsociation> GetAsocInfoByPage([FromBody] SafeSystemBuffer r)
+        {
+            return new ModelAsociation().PopulateAsocByPage(r.PageNumber);
+        }
+        [HttpPost]
+        public Dictionary<int, ModelAsociation> GetAsocInfoById([FromBody] SafeSystemBuffer r)
+        {
+            return new ModelAsociation().PopulateAsocById(r.Id);
+        }
     }
 }

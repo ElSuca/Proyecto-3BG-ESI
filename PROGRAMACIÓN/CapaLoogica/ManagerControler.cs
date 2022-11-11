@@ -1,9 +1,11 @@
 ﻿using CapDeDatos;
+using System.Collections.Generic;
 using System.Data;
+using System.Web.Http;
 
 namespace CapaLoogica
 {
-    public class ManagerControler
+    public class ManagerControler : ApiController
     {
         public DataTable GetManagerDataTable() => new ModelManager().GetManagerDataTable();
 
@@ -43,6 +45,17 @@ namespace CapaLoogica
         public int GetId(string Name) => new ModelManager().GetId(Name);
         public bool HaveChange(int id) => new ModelManager().HaveChange(id);
         public string GetNameByTeam(int id) => new ModelManager().GetNameByTeam(id);
+
+        [HttpPost]
+        public Dictionary<int, ModelManager> GetManagerInfoByPage([FromBody] SafeSystemBuffer r)
+        {
+            return new ModelManager().PopulateManagerByPage(r.PageNumber);
+        }
+        [HttpPost]
+        public Dictionary<int, ModelManager> GetManagerInfoById([FromBody] SafeSystemBuffer r)
+        {
+            return new ModelManager().PopulateManagerById(r.Id);
+        }
     }
 }
 

@@ -16,9 +16,9 @@ namespace CapDeDatos
         /* public DataTable playerTable(string PlayerName)
          {
              string NombreJugador = PlayerName;
-             command.CommandText = "SELECT PLAYER.NAME, PLAYER.LNAME1, PLAYER.LNAME2, PLAYER.STATUS, PLAYER.BIRTHDATE FROM PLAYER WHERE PLAYER.NAME = @PlayerName";
-             this.command.Parameters.AddWithValue("@PlayerName", PlayerName);
-             table.Load(command.ExecuteReader());
+             Command.CommandText = "SELECT PLAYER.NAME, PLAYER.LNAME1, PLAYER.LNAME2, PLAYER.STATUS, PLAYER.BIRTHDATE FROM PLAYER WHERE PLAYER.NAME = @PlayerName";
+             this.Command.Parameters.AddWithValue("@PlayerName", PlayerName);
+             table.Load(Command.ExecuteReader());
              table = limpiarTablaJugador(table);
              return table;
          }
@@ -26,7 +26,7 @@ namespace CapDeDatos
          public DataTable eventTable(string EventName)
          {
              string NombreEvento = EventName;
-             this.command.CommandText = " SELECT FAMILY.NAME," +
+             this.Command.CommandText = " SELECT FAMILY.NAME," +
                  "FAMILY.RECURRENCY," +
                  "FAMILY.DOMAIN," +
                  "FAMILY.TYPE," +
@@ -61,14 +61,14 @@ namespace CapDeDatos
                  "AND JUD_FOUL.ID_FL = FOULS.ID" +
                  "AND JUD_FOUL.ID_JUD = JUDGE.ID)" +
                  "WHERE EVENT.NAME = @EventName;";
-             this.command.Parameters.AddWithValue("@EventName", EventName);
-             table.Load(command.ExecuteReader());
+             this.Command.Parameters.AddWithValue("@EventName", EventName);
+             table.Load(Command.ExecuteReader());
              table = RenombrarTablaEvento(table);
              return table;
          }
         /* public DataTable GetEventTableForCategory(string Category)
          {
-             this.command.CommandText = " SELECT FAMILY.NAME," +
+             this.Command.CommandText = " SELECT FAMILY.NAME," +
                  "FAMILY.RECURRENCY," +
                  "FAMILY.DOMAIN," +
                  "FAMILY.TYPE," +
@@ -102,8 +102,8 @@ namespace CapDeDatos
                  "AND JUD_FOUL.ID_FL = FOULS.ID AND JUD_FOUL.ID_JUD = JUDGE.ID) " +
                  "WHERE EVENT.ID = EVENT_SPO.ID_Spo;";
 
-             this.command.Parameters.AddWithValue("@EventName", EventName);
-             table.Load(command.ExecuteReader());
+             this.Command.Parameters.AddWithValue("@EventName", EventName);
+             table.Load(Command.ExecuteReader());
              table = RenombrarTablaEvento(table);
              return table;
          }
@@ -154,8 +154,8 @@ namespace CapDeDatos
          #endregion
          public DataTable GetAllEventDataForTable()
          {
-             this.command.CommandText = "SELECT * FROM EVENT ";
-             table.Load(command.ExecuteReader());
+             this.Command.CommandText = "SELECT * FROM EVENT ";
+             table.Load(Command.ExecuteReader());
              table = limpiarTabla(table);
              return table;
          }*/
