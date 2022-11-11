@@ -9,8 +9,9 @@ namespace NewAPIResult.Models
 {
     public class EventIdModel : Model
     {
-        public DataTable PopulatePlayer(int s, int p)
+        public HashSet<int?> PopulatePlayer(int s, int p)
         {
+            HashSet<int?> a = new HashSet<int?>();
             this.command.CommandText = $"SELECT DISTINCT ID FROM EVENT LEFT JOIN (EVENT_SPO) ON (EVENT.ID = EVENT_SPO.ID_EVENT) WHERE EVENT_SPO.ID_SPO=@S ORDER BY EVENT.STARTDATE LIMIT 5 OFFSET @P";
             this.command.Parameters.AddWithValue("@S", s);
             this.command.Parameters.AddWithValue("@P", p);
@@ -32,7 +33,16 @@ namespace NewAPIResult.Models
                     newRow[col.ColumnName] = this.dataReader[col.ColumnName];
                 }
             }
-            return t;
+            foreach (DataRow row in t.Rows)
+            {
+                a.Add(ParseInt(row["ID"].ToString()));
+            }
+            return a;
+        }
+        static int? ParseInt(string s)
+        {
+            if (int.TryParse(s, out int res)) return res;
+            return null;
         }
     }
 }

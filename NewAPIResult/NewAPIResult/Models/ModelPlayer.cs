@@ -166,7 +166,7 @@ namespace NewAPIResult
             PlayerTemp t = new PlayerTemp();
             t.Id = int.Parse(r["Id"].ToString());
             t.Name = r["Name"].ToString();
-            t.Lname = r["Lname"].ToString();
+            t.Lname = r["LNAME1"].ToString();
             t.Lname2 = r["Lname2"].ToString();
             t.City = r["City"].ToString();
             t.State = r["State"].ToString();

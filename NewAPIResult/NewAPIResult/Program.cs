@@ -7,7 +7,7 @@ namespace NewAPIResult
     {
         static void Main(string[] args)
         {
-            string domainAddress = "http://localhost:59099";
+            string domainAddress = "http://localhost:39099";
 
             using (WebApp.Start(url: domainAddress))
             {

@@ -9,8 +9,9 @@ namespace NewAPIResult.Models
 {
     public class AsocModel : Model
     {
-        public DataTable PopulateAsocByPage(int i)
+        public Dictionary<int, PlayerTemp> PopulateAsocByPage(int i)
         {
+            Dictionary<int, PlayerTemp> playertemp = new Dictionary<int, PlayerTemp>();
             this.command.CommandText = "SELECT DISTINCT ASOC.*, CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
 "ASOC_STATUS.SPORT AS SPORTSTAT, ASOC_STATUS.CAT AS CATSTAT, " +
 "ASOC_STATUS.QUANTITY AS STATQUANT, ASOC_PLYR.ID_PLYR AS PLAYER, MANA_ASOC.ID_MANA AS MANAGER, TM_ASOC.ID_TEAM AS TEAM , ASOC_SPO.ID_SPO AS SPORT, " +
@@ -42,11 +43,18 @@ namespace NewAPIResult.Models
                     newRow[col.ColumnName] = this.dataReader[col.ColumnName];
                 }
             }
-            return t;
+            foreach (DataRow row in t.Rows)
+            {
+                PlayerTemp u = playertemp.ContainsKey(int.Parse(row["ID"].ToString())) ? playertemp[int.Parse(row["ID"].ToString())]
+                  : PlayerTemp.FromRow(row);
+                u.AddIds(row);
+                playertemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return playertemp;
         }
-        public DataTable PopulateAsocById(int i)
+        public Dictionary<int, PlayerTemp> PopulateAsocById(int i)
         {
-            Dictionary<int, AsocTemp> asocmap = new Dictionary<int, AsocTemp>();
+            Dictionary<int, PlayerTemp> playertemp = new Dictionary<int, PlayerTemp>();
             this.command.CommandText = "SELECT DISTINCT ASOC.*, CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
 "ASOC_STATUS.SPORT AS SPORTSTAT, ASOC_STATUS.CAT AS CATSTAT, " +
 "ASOC_STATUS.QUANTITY AS STATQUANT, ASOC_PLYR.ID_PLYR AS PLAYER, MANA_ASOC.ID_MANA AS MANAGER, TM_ASOC.ID_TEAM AS TEAM , ASOC_SPO.ID_SPO AS SPORT, " +
@@ -77,11 +85,82 @@ namespace NewAPIResult.Models
                     newRow[col.ColumnName] = this.dataReader[col.ColumnName];
                 }
             }
-            return t;
+            foreach (DataRow row in t.Rows)
+            {
+                PlayerTemp u = playertemp.ContainsKey(int.Parse(row["ID"].ToString())) ? playertemp[int.Parse(row["ID"].ToString())]
+                  : PlayerTemp.FromRow(row);
+                u.AddIds(row);
+                playertemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return playertemp;
         }
     }
-    public class AsocTemp
+    public class PlayerTemp
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Street { get; set; }
+        public string StreetNum { get; set; }
+        public string Status { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Country { get; set; }
 
+        public List<string> Dates { get; set; }
+        public List<string> SportStats { get; set; }
+        public List<string> CatStat { get; set; }
+        public List<string> StatQuant { get; set; }
+
+        public List<int?> Player { get; set; }
+        public List<int?> Manager { get; set; }
+        public List<int?> Team { get; set; }
+        public List<int?> Sport { get; set; }
+
+        public List<string> PlayerDates { get; set; }
+        public List<string> Managerdates { get; set; }
+
+        public static PlayerTemp FromRow(DataRow r)
+        {
+            PlayerTemp t = new PlayerTemp();
+            t.Id = int.Parse(r["Id"].ToString());
+            t.Name = r["Name"].ToString();
+            t.Street = r["LNAME1"].ToString();
+            t.StreetNum = r["Lname2"].ToString();
+            t.Status = r["City"].ToString();
+            t.State = r["State"].ToString();
+            t.Country = r["Country"].ToString();
+            t.City = r["CITY"].ToString();
+            t.Dates = new List<string>();
+            t.SportStats = new List<string>();
+            t.CatStat = new List<string>();
+            t.StatQuant = new List<string>();
+            t.PlayerDates = new List<string>();
+            t.Managerdates = new List<string>();
+            t.Player = new List<int?>();
+            t.Manager = new List<int?>();
+            t.Team = new List<int?>();
+            t.Sport = new List<int?>();
+
+            t.AddIds(r);
+            return t;
+        }
+        public void AddIds(DataRow r)
+        {
+            this.Player.Add(ParseInt(r["Player"].ToString()));
+            this.Manager.Add(ParseInt(r["Manager"].ToString()));
+            this.Team.Add(ParseInt(r["Team"].ToString()));
+            this.Sport.Add(ParseInt(r["Sport"].ToString()));
+            this.SportStats.Add((r["SportStats"].ToString()));
+            this.CatStat.Add((r["CatStat"].ToString()));
+            this.PlayerDates.Add((r["PlayerDates"].ToString()));
+            this.Managerdates.Add((r["ManagerDates"].ToString()));
+            this.StatQuant.Add((r["StatQuant"].ToString()));
+            this.Dates.Add((r["Dates"].ToString()));
+        }
+        static int? ParseInt(string s)
+        {
+            if (int.TryParse(s, out int res)) return res;
+            return null;
+        }
     }
 }

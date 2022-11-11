@@ -13,13 +13,13 @@ namespace NewAPIResult.Controller
     public class AsocController : ApiController
     {
        [HttpPost]
-       public DataTable GetAsocInfoByPage ([FromBody] PageRequest r)
+       public Dictionary<int, AsocTemp> GetAsocInfoByPage ([FromBody] PageRequest r)
         {
             AsocModel asoc = new AsocModel();
             return asoc.PopulateAsocByPage(r.PageNumber);
         }
         [HttpPost]
-        public DataTable GetAsocInfoById([FromBody] IdRequest r)
+        public Dictionary<int, AsocTemp> GetAsocInfoById([FromBody] IdRequest r)
         {
             AsocModel asoc = new AsocModel();
             return asoc.PopulateAsocById(r.Id);

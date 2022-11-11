@@ -13,13 +13,13 @@ namespace NewAPIResult.Controller
     public class EventController : ApiController
     {
         [HttpPost]
-        public DataTable GetEventByPage([FromBody] PageRequest r)
+        public Dictionary<int, EventTemp> GetEventByPage([FromBody] PageRequest r)
         {
             EventModel @event = new EventModel();
             return @event.PopulateEventByPage(r.PageNumber);
         }
         [HttpPost]
-        public DataTable GetEventById([FromBody] IdRequest r)
+        public Dictionary<int, EventTemp> GetEventById([FromBody] IdRequest r)
         {
             EventModel @event = new EventModel();
             return @event.PopulateEventById(r.Id);
