@@ -306,7 +306,114 @@ namespace CapDeDatos
             }
             if (Check == "27/10/2022 0:00:00") return true;
             else return false;
-        }    
+        }
+        public DataTable PopulateEventByPage(int i)
+        {
+            this.Command.CommandText = "SELECT EVENT.*," +
+                " PRE_EVENT.*, " +
+                "EVENT_FAMILY.ID_FAM, EVENT_SPO.ID_SPO, " +
+                " STAGE.ID AS STAGEID," +
+                " STAGE.NAME AS STAGENAME," +
+                " STAGE.CITY, STAGE.STREET," +
+                " STAGE.NUM AS STREETNUM," +
+                " STAGE.STATE AS STAGESTATE," +
+                " STAGE.COUNTRY AS STAGECOUNTRY ," +
+                " TIME.ID AS TIMEID, TIME.NUM," +
+                " TIME.DESCR " +
+                "FROM EVENT LEFT JOIN PRE_EVENT ON ((EVENT.ID = PRE_EVENT.ID_CHILD) OR(EVENT.ID = PRE_EVENT.ID_PARENT)) " +
+                "LEFT JOIN STAGE ON (EVENT.STAGE = STAGE.ID) " +
+                "LEFT JOIN TIME ON (TIME.ID_EVENT = EVENT.ID) " +
+                "LEFT JOIN EVENT_SPO ON (EVENT_SPO.ID_EVENT = EVENT.ID) " +
+                "LEFT JOIN EVENT_FAMILY ON (EVENT_FAMILY.ID_EVENT = EVENT.ID))" +
+                "WHERE EVENT.ID<=@Id AND EVENT.ID>=@I ";
+            this.Command.Parameters.AddWithValue("@Id", i * 5);
+            this.Command.Parameters.AddWithValue("@I", ((i - 1) * 5) + 1);
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            DataTable t = new DataTable();
+            DataTable schema = this.DataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.DataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.DataReader[col.ColumnName];
+                }
+            }
+            return t;
+        }
+        public DataTable PopulateEventById(int i)
+        {
+            this.Command.CommandText = "SELECT EVENT.*," +
+                " PRE_EVENT.*, " +
+                "EVENT_FAMILY.ID_FAM," +
+                " EVENT_SPO.ID_SPO, " +
+                " STAGE.ID AS STAGEID, STAGE.NAME AS STAGENAME," +
+                " STAGE.CITY, STAGE.STREET," +
+                " STAGE.NUM AS STREETNUM," +
+                " STAGE.STATE AS STAGESTATE," +
+                " STAGE.COUNTRY AS STAGECOUNTRY," +
+                " TIME.ID AS TIMEID," +
+                " TIME.NUM," +
+                " TIME.DESCR " +
+                "FROM EVENT LEFT JOIN PRE_EVENT ON ((EVENT.ID = PRE_EVENT.ID_CHILD) OR(EVENT.ID = PRE_EVENT.ID_PARENT)) " +
+                "LEFT JOIN STAGE ON (EVENT.STAGE = STAGE.ID) " +
+                "LEFT JOIN TIME ON (TIME.ID_EVENT = EVENT.ID) " +
+                "LEFT JOIN EVENT_SPO ON (EVENT_SPO.ID_EVENT = EVENT.ID) " +
+                "LEFT JOIN EVENT_FAMILY ON (EVENT_FAMILY.ID_EVENT = EVENT.ID)" +
+                " WHERE EVENT.ID=@Id ";
+            this.Command.Parameters.AddWithValue("@Id", i);
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            DataTable t = new DataTable();
+            DataTable schema = this.DataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.DataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.DataReader[col.ColumnName];
+                }
+            }
+            return t;
+        }
+        public DataTable PopulatePlayer(int s, int p)
+        {
+            this.Command.CommandText = $"SELECT ID FROM EVENT LEFT JOIN (EVENT_SPO) ON (EVENT.ID = EVENT_SPO.ID_EVENT) WHERE EVENT_SPO.ID_SPO=@S ORDER BY EVENT.STARTDATE LIMIT 5 OFFSET @P";
+            this.Command.Parameters.AddWithValue("@S", s);
+            this.Command.Parameters.AddWithValue("@P", p);
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            DataTable t = new DataTable();
+            DataTable schema = this.DataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.DataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.DataReader[col.ColumnName];
+                }
+            }
+            return t;
+        }
         public void GetEventBySport(string sport)
         {
 

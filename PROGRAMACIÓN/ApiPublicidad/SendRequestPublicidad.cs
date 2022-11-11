@@ -14,8 +14,8 @@ namespace Apis
         public static string GetPost(string url, string category) 
         {
             WebRequest request = WebRequest.Create(url);
-            PostAd u = new PostAd() { Category = category };
-
+            Dictionary<string, string> u = new Dictionary<string, string>();
+            u.Add("category",category);
             string result = "";
 
             request.Method = "post";

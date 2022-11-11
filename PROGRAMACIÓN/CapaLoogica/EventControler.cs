@@ -3,7 +3,7 @@ using System.Data;
 
 namespace CapaLoogica
 {
-    public class EventControler
+    public class EventControler : ApiController
     {
         public EventControler()
         {
@@ -75,5 +75,19 @@ namespace CapaLoogica
         public bool HaveChange(int id) => new ModelEvents().HaveChange(id);
 
         public string GetStartDate() => new ModelEvents().StartDate;
+
+       
+            [HttpPost]
+            public DataTable GetEventByPage([FromBody] PageRequest r)
+            {
+                EventModel @event = new EventModel();
+                return @event.PopulateEventByPage(r.PageNumber);
+            }
+            [HttpPost]
+            public DataTable GetEventById([FromBody] IdRequest r)
+            {
+                EventModel @event = new EventModel();
+                return @event.PopulateEventById(r.Id);
+            }
     }
 }

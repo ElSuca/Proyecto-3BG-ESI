@@ -1,13 +1,13 @@
-﻿using Microsoft.Owin.Hosting;
-using System;
+﻿using System;
+using Microsoft.Owin.Hosting;
 
-namespace NewAPIResult
+namespace ApiResult
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string domainAddress = "http://localhost:1111";//59099
+            string domainAddress = "http://localhost:59099";
 
             using (WebApp.Start(url: domainAddress))
             {
@@ -17,5 +17,3 @@ namespace NewAPIResult
         }
     }
 }
-
-

@@ -13,9 +13,10 @@ namespace Apis
         }
         public static string GetPost(string url, string Uname, string Pass) 
         {
-            WebRequest request = WebRequest.Create(url);
-            PostAut u = new PostAut() { Username = Uname, Password = Pass };
-
+            WebRequest request = WebRequest.Create(url); 
+            Dictionary<string, string> u = new Dictionary<string, string>();
+            u.Add("Username", Uname);
+            u.Add("Password", Pass);
             string result = "";
 
             request.Method = "post";
