@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace NewAPIResult.Controller
 {
-    public class AsocController
+    public class AsocController : ApiController
     {
        [HttpPost]
        public DataTable GetAsocInfoByPage ([FromBody] PageRequest r)

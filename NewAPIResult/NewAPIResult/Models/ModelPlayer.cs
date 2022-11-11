@@ -30,50 +30,94 @@ namespace NewAPIResult
         }
         public DataTable PopulatePlayer(int i)
         {
-            this.command.CommandText = $"SELECT PLAYER.*,ASOC_PLYR.ID_ASOC, CONCAT_WS(',', ASOC_PLYR.STARTDATE ,ASOC_PLYR.ENDDATE) AS PARTDATE, ID_MANA AS MANAGER, ID_TEAM AS TEAM FROM PLAYER LEFT JOIN (ASOC_PLYR, PLYR_TI, MANA_PLYR) on (PLAYER.ID = ASOC_PLYR.ID_PLYR AND PLAYER.ID=PLYR_TI.ID_PLYR AND PLAYER.ID=MANA_PLYR.ID_PLYR) WHERE PLAYER.ID <= @Id AND PLAYER.ID >=@I";
+            this.command.CommandText = "SELECT PLAYER.*,ASOC_PLYR.ID_ASOC, " +
+                "CONCAT_WS(',', ASOC_PLYR.STARTDATE ,ASOC_PLYR.ENDDATE) AS PARTDATE, ID_MANA AS MANAGER, " +
+                "ID_TEAM AS TEAM FROM " +
+                "PLAYER LEFT JOIN ASOC_PLYR ON PLAYER.ID = ASOC_PLYR.ID_PLYR  " +
+                "LEFT JOIN PLYR_TI ON PLAYER.ID=PLYR_TI.ID_PLYR  " +
+                "LEFT JOIN MANA_PLYR ON PLAYER.ID=MANA_PLYR.ID_PLYR  " +
+                " WHERE PLAYER.ID <= @Id AND PLAYER.ID >=@I";
             this.command.Parameters.AddWithValue( "@Id", i*5);
             this.command.Parameters.AddWithValue("@I", ((i-1)*5) +1);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
             DataTable t = new DataTable();
-            t.Load(this.dataReader);
+            DataTable schema = this.dataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.dataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.dataReader[col.ColumnName];
+                }
+            }
             return t;
         }
         public DataTable PopulatePlayer(string s)
         {
-            this.command.CommandText = $"SELECT PLAYER.*,ASOC_PLYR.ID_ASOC,ASOC_PLYR.STARTDATE,ASOC_PLYR.ENDDATE FROM PLAYER LEFT JOIN ASOC_PLYR on (PLAYER.ID = ASOC_PLYR.ID_PLYR) WHERE PLAYER.NAME=@S OR PLAYER.LNAME1=@S OR PLAYER.LNAME2=@S";
+            this.command.CommandText = "SELECT PLAYER.*,ASOC_PLYR.ID_ASOC, " +
+                "CONCAT_WS(',', ASOC_PLYR.STARTDATE ,ASOC_PLYR.ENDDATE) AS PARTDATE, ID_MANA AS MANAGER, " +
+                "ID_TEAM AS TEAM FROM " +
+                "PLAYER LEFT JOIN ASOC_PLYR ON PLAYER.ID = ASOC_PLYR.ID_PLYR  " +
+                "LEFT JOIN PLYR_TI ON PLAYER.ID=PLYR_TI.ID_PLYR  " +
+                "LEFT JOIN MANA_PLYR ON PLAYER.ID=MANA_PLYR.ID_PLYR  " +
+                " WHERE PLAYER.NAME=@S OR PLAYER.LNAME1=@S OR PLAYER.LNAME2=@S";
             this.command.Parameters.AddWithValue("@S", s);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
             DataTable t = new DataTable();
-            t.Load(this.dataReader);
+            DataTable schema = this.dataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.dataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.dataReader[col.ColumnName];
+                }
+            }
             return t;
         }
         public DataTable PopulatePlayerById(int i)
         {
-            this.command.CommandText = $"SELECT PLAYER.*,ASOC_PLYR.ID_ASOC, CONCAT_WS(',', ASOC_PLYR.STARTDATE ,ASOC_PLYR.ENDDATE) AS PARTDATE, ID_MANA AS MANAGER, ID_TEAM AS TEAM FROM PLAYER LEFT JOIN (ASOC_PLYR, PLYR_TI, MANA_PLYR) on (PLAYER.ID = ASOC_PLYR.ID_PLYR AND PLAYER.ID=PLYR_TI.ID_PLYR AND PLAYER.ID=MANA_PLYR.ID_PLYR) WHERE PLAYER.ID = @Id";
+            this.command.CommandText = "SELECT PLAYER.* ,ASOC_PLYR.ID_ASOC, " +
+                "CONCAT_WS(',', ASOC_PLYR.STARTDATE ,ASOC_PLYR.ENDDATE) AS PARTDATE, ID_MANA AS MANAGER, " +
+                "ID_TEAM AS TEAM FROM " +
+                "PLAYER LEFT JOIN ASOC_PLYR ON PLAYER.ID = ASOC_PLYR.ID_PLYR  " +
+                "LEFT JOIN PLYR_TI ON PLAYER.ID=PLYR_TI.ID_PLYR  " +
+                "LEFT JOIN MANA_PLYR ON PLAYER.ID=MANA_PLYR.ID_PLYR  " +
+                " WHERE PLAYER.ID = @Id";
             this.command.Parameters.AddWithValue("@Id", i);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
             DataTable t = new DataTable();
-            t.Load(this.dataReader);
+            DataTable schema = this.dataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.dataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.dataReader[col.ColumnName];
+                }
+            }
             return t;
-        }
-        private string GetColumn(string key, string defaultValue = null)
-        {
-            int ordinal = this.dataReader.GetOrdinal(key);
-            if (this.dataReader.IsDBNull(ordinal)) return defaultValue;
-            return this.dataReader.GetString(ordinal);
-        }
-
-        private int? GetColumnInt(string key)
-        {
-            int ordinal = this.dataReader.GetOrdinal(key);
-            if (this.dataReader.IsDBNull(ordinal)) return null;
-            return this.dataReader.GetInt32(ordinal);
         }
     }
 }

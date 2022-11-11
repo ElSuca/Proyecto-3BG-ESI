@@ -10,16 +10,16 @@ using System.Web.Http;
 
 namespace NewAPIResult.Controller
 {
-    public class TeamController
+    public class TeamController : ApiController
     {
         [HttpPost]
-        public DataTable GetAsocInfoByPage([FromBody] PageRequest r)
+        public DataTable GetTeamInfoByPage([FromBody] PageRequest r)
         {
             TeamModel team = new TeamModel();
             return team.PopulateTeamByPage(r.PageNumber);
         }
         [HttpPost]
-        public DataTable GetAsocInfoById([FromBody] IdRequest r)
+        public DataTable GetTeamInfoById([FromBody] IdRequest r)
         {
             TeamModel team = new TeamModel();
             return team.PopulateTeamById(r.Id);

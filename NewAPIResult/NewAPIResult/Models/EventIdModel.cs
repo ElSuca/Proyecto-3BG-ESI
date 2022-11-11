@@ -16,9 +16,22 @@ namespace NewAPIResult.Models
             this.command.Parameters.AddWithValue("@P", p);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
             DataTable t = new DataTable();
-            t.Load(this.dataReader);
+            DataTable schema = this.dataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.dataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.dataReader[col.ColumnName];
+                }
+            }
             return t;
         }
     }

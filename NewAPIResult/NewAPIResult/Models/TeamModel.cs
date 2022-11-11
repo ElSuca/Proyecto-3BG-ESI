@@ -13,39 +13,63 @@ namespace NewAPIResult.Models
         {
             this.command.CommandText = "SELECT TEAM.*, " +
  "TM_ASOC.ID_ASOC, PLYR_TI.ID_TIME, PLYR_TI.ID_PLYR, " +
- "MANA_TEAM.ID_MANA, TM_SPO.ID_SPO" +
- "FROM TEAM LEFt JOIN(TM_ASOC, PLYR_TI, MANA_TEAM, TM_SPO) " +
- "ON(TEAM.ID=TM_ASOC.ID_ASOC" +
- "AND(TM_SPO.ID_TEAM=TEAM.ID) " +
- "AND(MANA_TEAM.ID_TEAM=TEAM.ID) " +
- "AND(PLYR_TI.ID_TEAM=TEAM.ID) " +
- ") WHERE TEAM.ID<=@Id AND TEAM.ID>=@I ";
+ "MANA_TEAM.ID_MANA, TM_SPO.ID_SPO " +
+ "FROM TEAM LEFT JOIN PLYR_TI ON PLYR_TI.ID_TEAM=TEAM.ID " +
+ "LEFT JOIN TM_ASOC ON TEAM.ID=TM_ASOC.ID_ASOC " +
+ "LEFT JOIN MANA_TEAM ON MANA_TEAM.ID_TEAM=TEAM.ID " +
+ "LEFT JOIN TM_SPO ON TM_SPO.ID_TEAM=TEAM.ID " +
+ " WHERE TEAM.ID<=@Id AND TEAM.ID>=@I ";
             this.command.Parameters.AddWithValue("@Id", i * 5);
             this.command.Parameters.AddWithValue("@I", ((i - 1) * 5) + 1);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
             DataTable t = new DataTable();
-            t.Load(this.dataReader);
+            DataTable schema = this.dataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.dataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.dataReader[col.ColumnName];
+                }
+            }
             return t;
         }
         public DataTable PopulateTeamById(int i)
         {
             this.command.CommandText = "SELECT TEAM.*, " +
  "TM_ASOC.ID_ASOC, PLYR_TI.ID_TIME, PLYR_TI.ID_PLYR, " +
- "MANA_TEAM.ID_MANA, TM_SPO.ID_SPO" +
- "FROM TEAM LEFT JOIN(TM_ASOC, PLYR_TI, MANA_TEAM, TM_SPO) " +
- "ON(TEAM.ID=TM_ASOC.ID_ASOC" +
- "AND(TM_SPO.ID_TEAM=TEAM.ID) " +
- "AND(MANA_TEAM.ID_TEAM=TEAM.ID) " +
- "AND(PLYR_TI.ID_TEAM=TEAM.ID) " +
-") WHERE TEAM.ID=@Id";
+ "MANA_TEAM.ID_MANA, TM_SPO.ID_SPO " +
+ "FROM TEAM LEFT JOIN PLYR_TI ON PLYR_TI.ID_TEAM=TEAM.ID " +
+ "LEFT JOIN TM_ASOC ON TEAM.ID=TM_ASOC.ID_ASOC " +
+ "LEFT JOIN MANA_TEAM ON MANA_TEAM.ID_TEAM=TEAM.ID " +
+ "LEFT JOIN TM_SPO ON TM_SPO.ID_TEAM=TEAM.ID " +
+"  WHERE TEAM.ID=@Id";
             this.command.Parameters.AddWithValue("@Id", i);
             this.command.Prepare();
             this.dataReader = this.command.ExecuteReader();
-            this.dataReader.Read();
             DataTable t = new DataTable();
-            t.Load(this.dataReader);
+            DataTable schema = this.dataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.dataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.dataReader[col.ColumnName];
+                }
+            }
             return t;
         }
     }
