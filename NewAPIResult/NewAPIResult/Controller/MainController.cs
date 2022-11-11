@@ -13,13 +13,13 @@ namespace NewAPIResult.Controller
     public class MainController : ApiController
         {
         [HttpPost]
-        public DataTable GetMain([FromBody] MainRequest r)
+        public Dictionary<int, MainTemp> GetMain([FromBody] MainRequest r)
         {
             MainPageModel m = new MainPageModel();
             return m.PopulateMainAsScore(r.Id, r.Sport);
         }
         [HttpPost]
-        public DataTable GetMainAsTimed([FromBody] MainRequest r)
+        public Dictionary<int, MainTemp> GetMainAsTimed([FromBody] MainRequest r)
         {
             MainPageModel m = new MainPageModel();
             return m.PopulateMainAsTimed(r.Id, r.Sport);

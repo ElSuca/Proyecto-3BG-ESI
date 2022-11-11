@@ -9,9 +9,9 @@ namespace NewAPIResult.Models
 {
     public class AsocModel : Model
     {
-        public Dictionary<int, PlayerTemp> PopulateAsocByPage(int i)
+        public Dictionary<int, AsocTemp> PopulateAsocByPage(int i)
         {
-            Dictionary<int, PlayerTemp> playertemp = new Dictionary<int, PlayerTemp>();
+            Dictionary<int, AsocTemp> asoctemp = new Dictionary<int, AsocTemp>();
             this.command.CommandText = "SELECT DISTINCT ASOC.*, CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
 "ASOC_STATUS.SPORT AS SPORTSTAT, ASOC_STATUS.CAT AS CATSTAT, " +
 "ASOC_STATUS.QUANTITY AS STATQUANT, ASOC_PLYR.ID_PLYR AS PLAYER, MANA_ASOC.ID_MANA AS MANAGER, TM_ASOC.ID_TEAM AS TEAM , ASOC_SPO.ID_SPO AS SPORT, " +
@@ -45,16 +45,16 @@ namespace NewAPIResult.Models
             }
             foreach (DataRow row in t.Rows)
             {
-                PlayerTemp u = playertemp.ContainsKey(int.Parse(row["ID"].ToString())) ? playertemp[int.Parse(row["ID"].ToString())]
-                  : PlayerTemp.FromRow(row);
+                AsocTemp u = asoctemp.ContainsKey(int.Parse(row["ID"].ToString())) ? asoctemp[int.Parse(row["ID"].ToString())]
+                  : AsocTemp.FromRow(row);
                 u.AddIds(row);
-                playertemp[int.Parse(row["Id"].ToString())] = u;
+                asoctemp[int.Parse(row["Id"].ToString())] = u;
             }
-            return playertemp;
+            return asoctemp;
         }
-        public Dictionary<int, PlayerTemp> PopulateAsocById(int i)
+        public Dictionary<int, AsocTemp> PopulateAsocById(int i)
         {
-            Dictionary<int, PlayerTemp> playertemp = new Dictionary<int, PlayerTemp>();
+            Dictionary<int, AsocTemp> asoctemp = new Dictionary<int, AsocTemp>();
             this.command.CommandText = "SELECT DISTINCT ASOC.*, CONCAT_WS(', ', ASOC_STATUS.STARTDATE, ASOC_STATUS.ENDDATE) AS DATES, " +
 "ASOC_STATUS.SPORT AS SPORTSTAT, ASOC_STATUS.CAT AS CATSTAT, " +
 "ASOC_STATUS.QUANTITY AS STATQUANT, ASOC_PLYR.ID_PLYR AS PLAYER, MANA_ASOC.ID_MANA AS MANAGER, TM_ASOC.ID_TEAM AS TEAM , ASOC_SPO.ID_SPO AS SPORT, " +
@@ -87,15 +87,15 @@ namespace NewAPIResult.Models
             }
             foreach (DataRow row in t.Rows)
             {
-                PlayerTemp u = playertemp.ContainsKey(int.Parse(row["ID"].ToString())) ? playertemp[int.Parse(row["ID"].ToString())]
-                  : PlayerTemp.FromRow(row);
+                AsocTemp u = asoctemp.ContainsKey(int.Parse(row["ID"].ToString())) ? asoctemp[int.Parse(row["ID"].ToString())]
+                  : AsocTemp.FromRow(row);
                 u.AddIds(row);
-                playertemp[int.Parse(row["Id"].ToString())] = u;
+                asoctemp[int.Parse(row["Id"].ToString())] = u;
             }
-            return playertemp;
+            return asoctemp;
         }
     }
-    public class PlayerTemp
+    public class AsocTemp
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -119,9 +119,9 @@ namespace NewAPIResult.Models
         public List<string> PlayerDates { get; set; }
         public List<string> Managerdates { get; set; }
 
-        public static PlayerTemp FromRow(DataRow r)
+        public static AsocTemp FromRow(DataRow r)
         {
-            PlayerTemp t = new PlayerTemp();
+            AsocTemp t = new AsocTemp();
             t.Id = int.Parse(r["Id"].ToString());
             t.Name = r["Name"].ToString();
             t.Street = r["LNAME1"].ToString();
@@ -141,7 +141,6 @@ namespace NewAPIResult.Models
             t.Team = new List<int?>();
             t.Sport = new List<int?>();
 
-            t.AddIds(r);
             return t;
         }
         public void AddIds(DataRow r)
