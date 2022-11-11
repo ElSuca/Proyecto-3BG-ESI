@@ -71,7 +71,7 @@ namespace BackOffice
                 reloadList();
             }
             catch (ArgumentOutOfRangeException)
-            {
+            {            
                 MessageBox.Show("Please insert a category");
             }
             catch (FormatException)

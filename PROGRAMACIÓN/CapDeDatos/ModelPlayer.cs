@@ -26,7 +26,15 @@ namespace CapDeDatos
 
         public void Save()
         {
-            if (this.Id.ToString() != "0") Update();
+            if (this.Id.ToString() != "0")
+            {
+                if (IdAsoc == null) Update();
+                else
+                {
+                    Update();
+                    UpdateWithAsoc();
+                }
+            }
             else
             {
                 if (IdAsoc == null)
@@ -77,15 +85,16 @@ namespace CapDeDatos
 
             }
         }
+  
         private void UpdateWithAsoc()
         {
             try
             {
-                this.Command.CommandText = "UPDATE ASOC_PLYR SET " +
+                this.Command.CommandText = "UPDATE ASOC_PLYR SET " +       
                      $"ID_ASOC = '{IdAsoc}'," +
                      $"ID_PLYR = '{Id}'," +
                      $"STARTDATE = '{StartDate}'," +
-                     $"ENDDATE = '{EndDate}'," +   
+                     $"ENDDATE = '{EndDate}' " +   
                      $"WHERE ID_ASOC = {this.IdAsoc}";
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();

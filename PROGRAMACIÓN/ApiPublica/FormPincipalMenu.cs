@@ -1,8 +1,10 @@
 ﻿using ApiPublica.ExtendedMenu;
+using Apis;
 using CapaLogica;
 using CapaLoogica;
 using Proyecto;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -31,6 +33,7 @@ namespace ApiPublica
             InitializeComponent();  
             loadDafaults();
             selection = new Random().Next(3);
+            SetAdBanner("trotafritas");
         }
         #region Fill Results
         private void FillResults1vs1(int idTeam1,int idTeam2,string team1,string team2,int result1,int result2,string date,string competition,string startTime,string endTime,string stadium)
@@ -63,7 +66,7 @@ namespace ApiPublica
         #endregion
         private void loadDafaults()
         {
-
+            BannerPic.Visible = new UserControler().GetStaticRole == "Premiun" ? false : true;
 
             FillResults1vs1(1,2,"n","P", 1, 0,"10/10/1010","a","10:10","12:30","a"); 
             this.Size = new Size(1280, 1024);
@@ -101,8 +104,28 @@ namespace ApiPublica
         private bool IsAtFront(Control control) => control.Parent.Controls.GetChildIndex(control) == 0;
 
 
-
-
+        public void SetAdBanner(string category)
+        {
+            controlApi();
+            SendRequestPublicidad.GetPost("http://127.0.0.1:7777//Ad", category);
+            BannerPic.Image  = new Bitmap(formatPath(new AplicationControler().getResponse()));
+        }
+        private string formatPath(string path) => path.Replace("-", @"\");
+        private void controlApi()
+        {
+            ProcessStartInfo startinfo = new ProcessStartInfo();
+            startinfo.FileName = @"..\..\..\..\PROGRAMACIÓN\ApiPublicidad\bin\Debug\ApiPublicidad.exe";
+            startinfo.CreateNoWindow = true;
+            startinfo.UseShellExecute = true;
+            if (!isRunning("ApiAutentificacion")) Process.Start(startinfo).Start();
+            else Process.Start(startinfo).Kill();
+        }
+        public static bool isRunning(string ProcessName)
+        {
+            Process[] processes = Process.GetProcessesByName(ProcessName);
+            if (processes.Length == 0) return false;
+            else return true;
+        }
 
         #region Low Mark
 
@@ -223,7 +246,11 @@ namespace ApiPublica
 
         private void lbButtonFootbal_Click(object sender, EventArgs e)
         {
+            
+            SendRequestResult.GetPost("http://localhost:5555/api/EventId/GetEventIdByDate",1, new SportControler().GetId("Football"));
+
             panelResult.Controls.Clear();
+
             new EventControler().GetEventBySport("Football");
         }
 
@@ -234,6 +261,16 @@ namespace ApiPublica
         private void button1_Click(object sender, EventArgs e)
         {
             new UserControler().SetFamilySubscription("a",new UserControler().GetId(new UserControler().GetStaticUsername));
+        }
+
+        private void lbButtonBasketball_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbButtonTenis_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

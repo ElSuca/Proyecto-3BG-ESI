@@ -69,6 +69,8 @@
             this.panelSportList = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.BannerPic = new System.Windows.Forms.PictureBox();
+            this.lbButtonBasketball = new System.Windows.Forms.Label();
+            this.lbButtonTenis = new System.Windows.Forms.Label();
             this.panelDebugg.SuspendLayout();
             this.panelConfig.SuspendLayout();
             this.panelTopPage.SuspendLayout();
@@ -377,6 +379,8 @@
             // panelTopPage
             // 
             this.panelTopPage.BackColor = System.Drawing.Color.DimGray;
+            this.panelTopPage.Controls.Add(this.lbButtonTenis);
+            this.panelTopPage.Controls.Add(this.lbButtonBasketball);
             this.panelTopPage.Controls.Add(this.lbButtonFootbal);
             this.panelTopPage.Controls.Add(this.lbSportListButtomMenu);
             this.panelTopPage.Controls.Add(this.pictureBoxBtnConfig);
@@ -391,7 +395,7 @@
             this.lbButtonFootbal.AutoSize = true;
             this.lbButtonFootbal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbButtonFootbal.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbButtonFootbal.Location = new System.Drawing.Point(212, 17);
+            this.lbButtonFootbal.Location = new System.Drawing.Point(236, 17);
             this.lbButtonFootbal.Name = "lbButtonFootbal";
             this.lbButtonFootbal.Size = new System.Drawing.Size(127, 33);
             this.lbButtonFootbal.TabIndex = 14;
@@ -499,11 +503,35 @@
             // 
             this.BannerPic.Location = new System.Drawing.Point(176, 72);
             this.BannerPic.Name = "BannerPic";
-            this.BannerPic.Size = new System.Drawing.Size(1017, 90);
-            this.BannerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.BannerPic.Size = new System.Drawing.Size(700, 90);
+            this.BannerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BannerPic.TabIndex = 15;
             this.BannerPic.TabStop = false;
             this.BannerPic.Click += new System.EventHandler(this.BannerPic_Click);
+            // 
+            // lbButtonBasketball
+            // 
+            this.lbButtonBasketball.AutoSize = true;
+            this.lbButtonBasketball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbButtonBasketball.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbButtonBasketball.Location = new System.Drawing.Point(423, 17);
+            this.lbButtonBasketball.Name = "lbButtonBasketball";
+            this.lbButtonBasketball.Size = new System.Drawing.Size(160, 33);
+            this.lbButtonBasketball.TabIndex = 15;
+            this.lbButtonBasketball.Text = "Basketball";
+            this.lbButtonBasketball.Click += new System.EventHandler(this.lbButtonBasketball_Click);
+            // 
+            // lbButtonTenis
+            // 
+            this.lbButtonTenis.AutoSize = true;
+            this.lbButtonTenis.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbButtonTenis.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbButtonTenis.Location = new System.Drawing.Point(634, 17);
+            this.lbButtonTenis.Name = "lbButtonTenis";
+            this.lbButtonTenis.Size = new System.Drawing.Size(92, 33);
+            this.lbButtonTenis.TabIndex = 16;
+            this.lbButtonTenis.Text = "Tenis";
+            this.lbButtonTenis.Click += new System.EventHandler(this.lbButtonTenis_Click);
             // 
             // FormPincipalMenu
             // 
@@ -583,5 +611,7 @@
         private System.Windows.Forms.TextBox txtStartTime;
         private System.Windows.Forms.TextBox txtStadium;
         private System.Windows.Forms.Label lbStadium;
+        private System.Windows.Forms.Label lbButtonTenis;
+        private System.Windows.Forms.Label lbButtonBasketball;
     }
 }

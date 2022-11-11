@@ -14,7 +14,7 @@ namespace Apis
         public static string GetPost(string url, string Uname, string Pass) 
         {
             WebRequest request = WebRequest.Create(url);
-            Post u = new Post() { Username = Uname, Password = Pass };
+            PostAut u = new PostAut() { Username = Uname, Password = Pass };
 
             string result = "";
 

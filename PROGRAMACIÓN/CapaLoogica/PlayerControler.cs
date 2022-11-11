@@ -1,6 +1,4 @@
 ﻿using CapDeDatos;
-using NewAPIResult;
-using System.Collections.Generic;
 using System.Data;
 
 namespace CapaLoogica

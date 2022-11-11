@@ -19,6 +19,8 @@ namespace ApiPublica.ExtendedMenu
         public string EndTime { get; set; }
         public string Date { get; set; }
         public string Stadium { get; set; }
+        public string Manager1 { get; set; }
+        public string Manager2 { get; set; }
 
         public FormMenuResult1vs1Extend()
         {
@@ -41,12 +43,14 @@ namespace ApiPublica.ExtendedMenu
             lbEndTime.Text = EndTime;
             lbDate.Text = Date;
             lbUbication.Text = Stadium;
+            lbManagerTeam1.Text = Manager1;
+            lbManagerTeam2.Text = Manager2;
         }
         public void GetData()
         {
             IdTeam1 = FormPincipalMenu.IdTeam1;
             IdTeam2 = FormPincipalMenu.IdTeam2;
-            Team1 =  FormPincipalMenu.Team1;
+            Team1 = FormPincipalMenu.Team1;
             Team2 = FormPincipalMenu.Team2;
             Score1 = FormPincipalMenu.Score1;
             Score2 = FormPincipalMenu.Score2;
@@ -55,57 +59,13 @@ namespace ApiPublica.ExtendedMenu
             EndTime = FormPincipalMenu.EndTime;
             Date = FormPincipalMenu.Date;
             Stadium = FormPincipalMenu.Stadium;
+            Manager1 = new ManagerControler().GetNameByTeam(IdTeam1);
+            Manager2 = new ManagerControler().GetNameByTeam(IdTeam2);
 
-
-            DataTable tabla1 = new PlayerControler().GetUserNameByTeam(IdTeam1);
-            string[] Players1 = tabla1.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
-            DataTable tabla2 = new PlayerControler().GetUserNameByTeam(IdTeam2);
-            string[] Players2 = tabla2.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
-            string a = "a";
-
-            
-                FillTeam1Players(Players1);
-                FillTeam2Players(Players2);
-          
-            
+            dataGridTeam1.DataSource =  new PlayerControler().GetUserNameByTeam(IdTeam1);
+            dataGridTeam2.DataSource = new PlayerControler().GetUserNameByTeam(IdTeam2);          
         }
 
-        private void FillTeam1Players(string[] names)
-        {
-
-            ControlName[] listItem = new ControlName[names.Length];
-
-            for (int i = 0; i < listItem.Length; i++)
-            {
-                listItem[i] = new ControlName();
-                listItem[i].Name = names[i];
-
-                if (panelNamesPlayersTeam1.Controls.Count < 0) panelNamesPlayersTeam1.Controls.Clear();
-                else panelNamesPlayersTeam1.Controls.Add(listItem[i]);
-
-            }
-        }
-        private void FillTeam2Players(string[] names)
-        {
-
-            ControlName[] listItem = new ControlName[names.Length];
-
-            for (int i = 0; i < listItem.Length; i++)
-            {
-                listItem[i] = new ControlName();
-                listItem[i].Name = names[i];
-
-                if (panelNamesPlayersTeam2.Controls.Count < 0)
-                {
-                    panelNamesPlayersTeam2.Controls.Clear();
-                }
-                else
-                {
-                    panelNamesPlayersTeam2.Controls.Add(listItem[i]);
-                }
-
-            }
-        }
         private void MenuResult1vs1Extend_Load(object sender, System.EventArgs e)
         {
           //  DataTable tabla = new PlayerControler().GetUserNameByTeam(Team1);
@@ -151,6 +111,12 @@ namespace ApiPublica.ExtendedMenu
         {
             //FillTeam1Players("a");
         }
+
+        private void label2_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
     }
 }
                 

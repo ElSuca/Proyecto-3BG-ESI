@@ -46,8 +46,8 @@ namespace BackOffice.ResultManager
 
         private void btnRegisterAcc_Click(object sender, EventArgs e)
         {
-          /*  try
-            {*/
+            try
+            {
                 if (panelEventMenu.Visible)
                 {
                     string StartDate = $"{txtEventStartDateYear.Text}-" +
@@ -91,7 +91,7 @@ namespace BackOffice.ResultManager
                 }
                 else MessageBox.Show("Por favor, seleccione un menu");
                 reloadList();
-          /*  }
+            }
             catch (IndexOutOfRangeException)
             {
                 MessageBox.Show("Please enter a date");
@@ -115,7 +115,7 @@ namespace BackOffice.ResultManager
             catch (Exception)
             {
                 MessageBox.Show("There was an unexpected error");
-            }*/
+            }
         }
         private void parsearEvento()
         {

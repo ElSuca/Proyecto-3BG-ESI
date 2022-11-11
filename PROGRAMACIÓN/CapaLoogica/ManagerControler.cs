@@ -42,7 +42,7 @@ namespace CapaLoogica
         public bool ExistManager(int id) => new ModelManager().ExistManager(id);
         public int GetId(string Name) => new ModelManager().GetId(Name);
         public bool HaveChange(int id) => new ModelManager().HaveChange(id);
-
+        public string GetNameByTeam(int id) => new ModelManager().GetNameByTeam(id);
     }
 }
 

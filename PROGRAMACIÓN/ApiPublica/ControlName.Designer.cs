@@ -36,7 +36,7 @@
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbName.Location = new System.Drawing.Point(3, 0);
+            this.lbName.Location = new System.Drawing.Point(3, 11);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(66, 24);
             this.lbName.TabIndex = 0;
@@ -50,7 +50,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.Controls.Add(this.lbName);
             this.Name = "ControlName";
-            this.Size = new System.Drawing.Size(73, 29);
+            this.Size = new System.Drawing.Size(155, 52);
             this.ResumeLayout(false);
             this.PerformLayout();
 

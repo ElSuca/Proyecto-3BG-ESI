@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.blManagerTeam1 = new System.Windows.Forms.Label();
-            this.blManagerTeam2 = new System.Windows.Forms.Label();
+            this.dataGridTeam2 = new System.Windows.Forms.DataGridView();
+            this.dataGridTeam1 = new System.Windows.Forms.DataGridView();
+            this.lbManagerTeam1 = new System.Windows.Forms.Label();
+            this.lbManagerTeam2 = new System.Windows.Forms.Label();
             this.lbManager = new System.Windows.Forms.Label();
-            this.panelNamesPlayersTeam1 = new System.Windows.Forms.Panel();
-            this.panelNamesPlayersTeam2 = new System.Windows.Forms.Panel();
             this.lbTeam2_ = new System.Windows.Forms.Label();
             this.lbTeam1_ = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,8 +60,9 @@
             this.lbUbicationInf = new System.Windows.Forms.Label();
             this.lbUbication = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonaaa = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTeam2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTeam1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -71,11 +74,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.panel3.Controls.Add(this.blManagerTeam1);
-            this.panel3.Controls.Add(this.blManagerTeam2);
+            this.panel3.Controls.Add(this.dataGridTeam2);
+            this.panel3.Controls.Add(this.dataGridTeam1);
+            this.panel3.Controls.Add(this.lbManagerTeam1);
+            this.panel3.Controls.Add(this.lbManagerTeam2);
             this.panel3.Controls.Add(this.lbManager);
-            this.panel3.Controls.Add(this.panelNamesPlayersTeam1);
-            this.panel3.Controls.Add(this.panelNamesPlayersTeam2);
             this.panel3.Controls.Add(this.lbTeam2_);
             this.panel3.Controls.Add(this.lbTeam1_);
             this.panel3.Location = new System.Drawing.Point(12, 172);
@@ -84,55 +87,85 @@
             this.panel3.TabIndex = 38;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // blManagerTeam1
+            // dataGridTeam2
             // 
-            this.blManagerTeam1.AutoSize = true;
-            this.blManagerTeam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blManagerTeam1.ForeColor = System.Drawing.SystemColors.Control;
-            this.blManagerTeam1.Location = new System.Drawing.Point(62, 245);
-            this.blManagerTeam1.Name = "blManagerTeam1";
-            this.blManagerTeam1.Size = new System.Drawing.Size(89, 20);
-            this.blManagerTeam1.TabIndex = 40;
-            this.blManagerTeam1.Text = "Manager1";
+            this.dataGridTeam2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTeam2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridTeam2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTeam2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.dataGridTeam2.Location = new System.Drawing.Point(301, 47);
+            this.dataGridTeam2.Name = "dataGridTeam2";
+            this.dataGridTeam2.RowHeadersVisible = false;
+            this.dataGridTeam2.ShowCellErrors = false;
+            this.dataGridTeam2.ShowCellToolTips = false;
+            this.dataGridTeam2.ShowEditingIcon = false;
+            this.dataGridTeam2.ShowRowErrors = false;
+            this.dataGridTeam2.Size = new System.Drawing.Size(136, 195);
+            this.dataGridTeam2.TabIndex = 42;
             // 
-            // blManagerTeam2
+            // dataGridTeam1
             // 
-            this.blManagerTeam2.AutoSize = true;
-            this.blManagerTeam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blManagerTeam2.ForeColor = System.Drawing.SystemColors.Control;
-            this.blManagerTeam2.Location = new System.Drawing.Point(323, 245);
-            this.blManagerTeam2.Name = "blManagerTeam2";
-            this.blManagerTeam2.Size = new System.Drawing.Size(89, 20);
-            this.blManagerTeam2.TabIndex = 39;
-            this.blManagerTeam2.Text = "Manager2";
+            this.dataGridTeam1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.dataGridTeam1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTeam1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.dataGridTeam1.Location = new System.Drawing.Point(15, 47);
+            this.dataGridTeam1.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridTeam1.Name = "dataGridTeam1";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTeam1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridTeam1.RowHeadersVisible = false;
+            this.dataGridTeam1.ShowCellErrors = false;
+            this.dataGridTeam1.ShowCellToolTips = false;
+            this.dataGridTeam1.ShowEditingIcon = false;
+            this.dataGridTeam1.ShowRowErrors = false;
+            this.dataGridTeam1.Size = new System.Drawing.Size(136, 195);
+            this.dataGridTeam1.TabIndex = 41;
+            // 
+            // lbManagerTeam1
+            // 
+            this.lbManagerTeam1.AutoSize = true;
+            this.lbManagerTeam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManagerTeam1.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbManagerTeam1.Location = new System.Drawing.Point(23, 245);
+            this.lbManagerTeam1.Name = "lbManagerTeam1";
+            this.lbManagerTeam1.Size = new System.Drawing.Size(89, 20);
+            this.lbManagerTeam1.TabIndex = 40;
+            this.lbManagerTeam1.Text = "Manager1";
+            // 
+            // lbManagerTeam2
+            // 
+            this.lbManagerTeam2.AutoSize = true;
+            this.lbManagerTeam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManagerTeam2.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbManagerTeam2.Location = new System.Drawing.Point(323, 245);
+            this.lbManagerTeam2.Name = "lbManagerTeam2";
+            this.lbManagerTeam2.Size = new System.Drawing.Size(89, 20);
+            this.lbManagerTeam2.TabIndex = 39;
+            this.lbManagerTeam2.Text = "Manager2";
             // 
             // lbManager
             // 
             this.lbManager.AutoSize = true;
             this.lbManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbManager.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbManager.Location = new System.Drawing.Point(214, 245);
+            this.lbManager.Location = new System.Drawing.Point(192, 245);
             this.lbManager.Name = "lbManager";
             this.lbManager.Size = new System.Drawing.Size(79, 20);
             this.lbManager.TabIndex = 38;
             this.lbManager.Text = "Manager";
-            // 
-            // panelNamesPlayersTeam1
-            // 
-            this.panelNamesPlayersTeam1.AutoScroll = true;
-            this.panelNamesPlayersTeam1.Location = new System.Drawing.Point(27, 47);
-            this.panelNamesPlayersTeam1.Name = "panelNamesPlayersTeam1";
-            this.panelNamesPlayersTeam1.Size = new System.Drawing.Size(155, 195);
-            this.panelNamesPlayersTeam1.TabIndex = 37;
-            this.panelNamesPlayersTeam1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNamesPlayersTeam1_Paint);
-            // 
-            // panelNamesPlayersTeam2
-            // 
-            this.panelNamesPlayersTeam2.AutoScroll = true;
-            this.panelNamesPlayersTeam2.Location = new System.Drawing.Point(314, 47);
-            this.panelNamesPlayersTeam2.Name = "panelNamesPlayersTeam2";
-            this.panelNamesPlayersTeam2.Size = new System.Drawing.Size(158, 195);
-            this.panelNamesPlayersTeam2.TabIndex = 36;
             // 
             // lbTeam2_
             // 
@@ -140,7 +173,7 @@
             this.lbTeam2_.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeam2_.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTeam2_.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTeam2_.Location = new System.Drawing.Point(340, 11);
+            this.lbTeam2_.Location = new System.Drawing.Point(295, 11);
             this.lbTeam2_.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTeam2_.Name = "lbTeam2_";
             this.lbTeam2_.Size = new System.Drawing.Size(111, 33);
@@ -153,7 +186,7 @@
             this.lbTeam1_.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeam1_.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTeam1_.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTeam1_.Location = new System.Drawing.Point(40, 11);
+            this.lbTeam1_.Location = new System.Drawing.Point(21, 11);
             this.lbTeam1_.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTeam1_.Name = "lbTeam1_";
             this.lbTeam1_.Size = new System.Drawing.Size(111, 33);
@@ -179,7 +212,7 @@
             this.lbTeam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeam2.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTeam2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTeam2.Location = new System.Drawing.Point(438, 40);
+            this.lbTeam2.Location = new System.Drawing.Point(380, 40);
             this.lbTeam2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTeam2.Name = "lbTeam2";
             this.lbTeam2.Size = new System.Drawing.Size(111, 33);
@@ -211,6 +244,7 @@
             this.label2.Size = new System.Drawing.Size(26, 33);
             this.label2.TabIndex = 33;
             this.label2.Text = "-";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbResult2
             // 
@@ -231,7 +265,7 @@
             this.lbTeam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeam1.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTeam1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTeam1.Location = new System.Drawing.Point(67, 40);
+            this.lbTeam1.Location = new System.Drawing.Point(18, 40);
             this.lbTeam1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTeam1.Name = "lbTeam1";
             this.lbTeam1.Size = new System.Drawing.Size(111, 33);
@@ -422,23 +456,12 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonaaa
-            // 
-            this.buttonaaa.Location = new System.Drawing.Point(763, 111);
-            this.buttonaaa.Name = "buttonaaa";
-            this.buttonaaa.Size = new System.Drawing.Size(75, 23);
-            this.buttonaaa.TabIndex = 39;
-            this.buttonaaa.Text = "button1";
-            this.buttonaaa.UseVisualStyleBackColor = true;
-            this.buttonaaa.Click += new System.EventHandler(this.buttonaaa_Click);
-            // 
             // FormMenuResult1vs1Extend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(850, 462);
-            this.Controls.Add(this.buttonaaa);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -446,6 +469,8 @@
             this.Text = "FormMenuResult1vs1Extend";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTeam2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTeam1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -461,11 +486,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label blManagerTeam1;
-        private System.Windows.Forms.Label blManagerTeam2;
+        private System.Windows.Forms.Label lbManagerTeam1;
+        private System.Windows.Forms.Label lbManagerTeam2;
         private System.Windows.Forms.Label lbManager;
-        private System.Windows.Forms.Panel panelNamesPlayersTeam1;
-        private System.Windows.Forms.Panel panelNamesPlayersTeam2;
         private System.Windows.Forms.Label lbTeam2_;
         private System.Windows.Forms.Label lbTeam1_;
         private System.Windows.Forms.Panel panel2;
@@ -490,6 +513,7 @@
         private System.Windows.Forms.Label lbUbicationInf;
         private System.Windows.Forms.Label lbUbication;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonaaa;
+        private System.Windows.Forms.DataGridView dataGridTeam2;
+        private System.Windows.Forms.DataGridView dataGridTeam1;
     }
 }

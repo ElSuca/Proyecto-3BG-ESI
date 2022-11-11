@@ -64,7 +64,7 @@ namespace CapDeDatos
             {
                 Command.CommandText = "INSERT INTO " +
                    "AD (PATH,CAT,NAME) " +
-                   $"VALUES ('{this.Path}{this.Category}','{this.Category}','{this.Name}')";
+                   $"VALUES ('{this.Path}','{this.Category}','{this.Name}')";
                 this.Command.Prepare();
                 this.Command.ExecuteNonQuery();
             }
@@ -129,6 +129,14 @@ namespace CapDeDatos
             this.DataReader.Close();
             if (Check == "n") return true;
             else return false;
+        }
+        public DataTable GetAdInfo(string category)
+        {
+            DataTable tabla = new DataTable();
+            this.Command.CommandText = $"SELECT PATH FROM AD WHERE CAT = '{category}'";
+            tabla.Load(Command.ExecuteReader());
+            Conection.Close();
+            return tabla;
         }
     }
 }

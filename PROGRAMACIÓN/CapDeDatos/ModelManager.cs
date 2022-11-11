@@ -33,12 +33,6 @@ namespace CapDeDatos
             }
 
         }
-
-
-
-
-
-
         void insert()
         {
             try
@@ -86,6 +80,16 @@ namespace CapDeDatos
             {
                 return 0;
             }
+        }
+        public string GetNameByTeam(int idTeam)
+        {
+            this.Command.CommandText = $"SELECT NAME FROM MANAGER join MANA_TEAM on MANAGER.ID = MANA_TEAM.ID_MANA WHERE MANA_TEAM.ID_TEAM  = '{idTeam}'";
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            this.DataReader.Read();
+            this.Name =this.DataReader["NAME"].ToString();
+            this.DataReader.Close();
+            return Name;
         }
         private void Update()
         {
