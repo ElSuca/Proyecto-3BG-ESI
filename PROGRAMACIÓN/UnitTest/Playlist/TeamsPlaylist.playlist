@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="UnitTest.BackOfficeTeamsTest.Register" /><Add Test="UnitTest.BackOfficeTeamsTest.Modify" /><Add Test="UnitTest.BackOfficeTeamsTest.Delete" /></Playlist>
