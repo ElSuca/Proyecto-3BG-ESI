@@ -1,11 +1,13 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Web.Http;
 using CapDeDatos;
 
 namespace CapaLoogica
 {
-    public class SportControler
+    public class SportControler : ApiController
     {
-        public SportControler()
+        public SportControler() 
         {
         }
         /*public DataTable GetEventData(string Eventname) => new ModelSport().eventTable(Eventname);
@@ -40,5 +42,16 @@ namespace CapaLoogica
         public bool ExistSport(int id) => new ModelSport().ExistSport(id);
         public int GetId(string Name) => new ModelSport().GetId(Name);
         public bool HaveChange(int id) => new ModelSport().HaveChange(id);
+
+        [HttpPost]
+        public Dictionary<int, ModelSport> GetSportByPage([FromBody] SafeSystemBuffer r)
+        {
+            return new ModelSport().PopulateSportByPage(r.PageNumber);
+        }
+        [HttpPost]
+        public Dictionary<int, ModelSport> GetSportById([FromBody] SafeSystemBuffer r)
+        {
+            return new ModelSport().PopulateSportById(r.Id);
+        }
     }
 }

@@ -16,6 +16,11 @@ namespace CapDeDatos
         public int PageNumberPlayer { get; set; }
         public string SearchBarContent { get; set; }
 
+
+        public int IdMain { get; set; }
+        public int PageNumberMain { get; set; }
+        public int SportMain { get; set; }
+
         public SafeSystemBuffer() => SetDefaultLanguage();
 
         public void SetDefaultLanguage()

@@ -258,8 +258,8 @@ namespace ApiPublica
         private void lbButtonFootbal_Click(object sender, EventArgs e)
         {
             controlApiRes();
-            SendRequestResult.GetPost("http://localhost:1111//api//EventId//GetEventIdByDate", 1, new SportControler().GetId("Football"));
-
+            SendRequestResult.GetPost("http://localhost:3333//api//EventId//GetEventIdByDate", 1, new SportControler().GetId("Football"));
+            var a = new AplicationControler().getResponse();
             panelResult.Controls.Clear();
             FillResults1vs1(Int32.Parse(txtTeam1id.Text), Int32.Parse(txtTeam2id.Text), new TeamControler().GetName(Int32.Parse(txtTeam1id.Text)), new TeamControler().GetName(Int32.Parse(txtTeam2id.Text)), Int32.Parse(txtScore1.Text), Int32.Parse(txtScore2.Text), txtDate.Text, txtCompetition.Text, txtStartTime.Text, txtEndTime.Text, txtStadium.Text);
             new EventControler().GetEventBySport("Football");

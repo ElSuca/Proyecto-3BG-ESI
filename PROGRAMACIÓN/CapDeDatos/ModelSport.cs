@@ -1,10 +1,11 @@
 ﻿using CapaDeDatos;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace CapDeDatos
 {
-   public class ModelSport : Model
+    public class ModelSport : Model
     {
         public DataTable table;
 
@@ -165,6 +166,7 @@ namespace CapDeDatos
         public int Id;
         public string Name { get; set; }
         public string Type { get; set; }
+        public List<string> Type_ { get; set; }
 
         public ModelSport(int id) => this.GetSportData(id);
         public ModelSport()
@@ -221,7 +223,7 @@ namespace CapDeDatos
             this.Command.Prepare();
             this.Command.ExecuteNonQuery();
         }
-        public void  Delete (int Id)
+        public void Delete(int Id)
         {
             try
             {
@@ -311,7 +313,96 @@ namespace CapDeDatos
             }
             if (Type == "n") return true;
             else return false;
-        }    
+        }
+
+        public Dictionary<int, ModelSport> PopulateSportByPage(int i)
+        {
+            Dictionary<int, ModelSport> sporttemp = new Dictionary<int, ModelSport>();
+            this.Command.CommandText = "SELECT DISTINCT SPORT.*, " +
+                 "T_SPO.TYPE " +
+                 "FROM SPORT LEFT JOIN(T_SPO) " +
+                 "ON(T_SPO.ID_SP = SPORT.ID) " +
+                 " WHERE SPORT.ID<=@Id AND SPORT.ID>=@I ";
+            this.Command.Parameters.AddWithValue("@Id", i * 5);
+            this.Command.Parameters.AddWithValue("@I", ((i - 1) * 5) + 1);
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            DataTable t = new DataTable();
+            DataTable schema = this.DataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.DataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.DataReader[col.ColumnName];
+                }
+            }
+            foreach (DataRow row in t.Rows)
+            {
+                ModelSport u = sporttemp.ContainsKey(int.Parse(row["ID"].ToString())) ? sporttemp[int.Parse(row["ID"].ToString())]
+                  : ModelSport.FromRow(row);
+                u.AddIds(row);
+                sporttemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return sporttemp;
+        }
+        public Dictionary<int, ModelSport> PopulateSportById(int i)
+        {
+            Dictionary<int, ModelSport> sporttemp = new Dictionary<int, ModelSport>();
+            this.Command.CommandText = "SELECT DISTINCT SPORT.*, " +
+                "T_SPO.TYPE " +
+                "FROM SPORT LEFT JOIN(T_SPO) " +
+                "ON(T_SPO.ID_SP = SPORT.ID) " +
+                "  WHERE SPORT.ID=@Id";
+            this.Command.Parameters.AddWithValue("@Id", i);
+            this.Command.Prepare();
+            this.DataReader = this.Command.ExecuteReader();
+            DataTable t = new DataTable();
+            DataTable schema = this.DataReader.GetSchemaTable();
+            foreach (DataRow row in schema.Rows)
+            {
+                string colname = row.Field<string>("ColumnName");
+                Type ty = row.Field<Type>("DataType");
+                t.Columns.Add(colname, ty);
+            }
+            while (this.DataReader.Read())
+            {
+                var newRow = t.Rows.Add();
+                foreach (DataColumn col in t.Columns)
+                {
+                    newRow[col.ColumnName] = this.DataReader[col.ColumnName];
+                }
+            }
+            foreach (DataRow row in t.Rows)
+            {
+                ModelSport u = sporttemp.ContainsKey(int.Parse(row["ID"].ToString())) ? sporttemp[int.Parse(row["ID"].ToString())]
+                  : ModelSport.FromRow(row);
+                u.AddIds(row);
+                sporttemp[int.Parse(row["Id"].ToString())] = u;
+            }
+            return sporttemp;
+        }
+
+        public static ModelSport FromRow(DataRow r)
+        {
+            ModelSport t = new ModelSport();
+            t.Id = int.Parse(r["Id"].ToString());
+            t.Name = r["Name"].ToString();
+            t.Type_ = new List<string>();
+            t.AddIds(r);
+            return t;
+        }
+        public void AddIds(DataRow r)
+        {
+            this.Type_.Add((r["Type"].ToString()));
+
+        }
     }
 }
 

@@ -131,6 +131,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainPageModel.cs" />
     <Compile Include="ModelAction.cs" />
     <Compile Include="ModelAd.cs" />
     <Compile Include="Model.cs" />

@@ -15,7 +15,7 @@ namespace Apis
         {
             WebRequest request = WebRequest.Create(url);
             Dictionary<string, string> u = new Dictionary<string, string>();
-            u.Add("category",category);
+            u.Add("Category",category);
             string result = "";
 
             request.Method = "post";

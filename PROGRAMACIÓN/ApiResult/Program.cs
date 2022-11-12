@@ -7,7 +7,7 @@ namespace ApiResult
     {
         static void Main(string[] args)
         {
-            string domainAddress = "http://localhost:59099";
+            string domainAddress = "http://localhost:3333";
 
             using (WebApp.Start(url: domainAddress))
             {

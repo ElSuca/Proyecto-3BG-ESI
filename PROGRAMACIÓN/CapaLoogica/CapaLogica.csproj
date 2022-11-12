@@ -148,6 +148,7 @@
     <Compile Include="EventControler.cs" />
     <Compile Include="FamilyControler.cs" />
     <Compile Include="JudgeControler.cs" />
+    <Compile Include="MainController.cs" />
     <Compile Include="ManagerControler.cs" />
     <Compile Include="PlayerControler.cs" />
     <Compile Include="Program.cs" />
