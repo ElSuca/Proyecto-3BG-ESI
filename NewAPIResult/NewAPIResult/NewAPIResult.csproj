@@ -185,6 +185,7 @@
     <Compile Include="Controller\AsocController.cs" />
     <Compile Include="Controller\EventController.cs" />
     <Compile Include="Controller\EventIdController.cs" />
+    <Compile Include="Controller\FamilyController.cs" />
     <Compile Include="Controller\MainController.cs" />
     <Compile Include="Controller\ManagerController.cs" />
     <Compile Include="Controller\SportController.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Models\AsocModel.cs" />
     <Compile Include="Models\EventIdModel.cs" />
     <Compile Include="Models\EventModel.cs" />
+    <Compile Include="Models\FamilyModel.cs" />
     <Compile Include="Models\IdRequest.cs" />
     <Compile Include="Models\JsonRequest.cs" />
     <Compile Include="Models\MainPageModel.cs" />
