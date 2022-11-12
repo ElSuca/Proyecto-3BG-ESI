@@ -52,12 +52,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbDebuggButton = new System.Windows.Forms.Label();
             this.panelConfig = new System.Windows.Forms.Panel();
-            this.lbBtnLanguge = new System.Windows.Forms.Label();
             this.panelLowMark2 = new System.Windows.Forms.Panel();
             this.lbBtnPersonalInformation = new System.Windows.Forms.Label();
             this.panelLowMark = new System.Windows.Forms.Panel();
             this.panelMenus = new System.Windows.Forms.Panel();
             this.panelTopPage = new System.Windows.Forms.Panel();
+            this.lbButtonTenis = new System.Windows.Forms.Label();
+            this.lbButtonBasketball = new System.Windows.Forms.Label();
             this.lbButtonFootbal = new System.Windows.Forms.Label();
             this.lbSportListButtomMenu = new System.Windows.Forms.Label();
             this.pictureBoxBtnConfig = new System.Windows.Forms.PictureBox();
@@ -69,8 +70,6 @@
             this.panelSportList = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.BannerPic = new System.Windows.Forms.PictureBox();
-            this.lbButtonBasketball = new System.Windows.Forms.Label();
-            this.lbButtonTenis = new System.Windows.Forms.Label();
             this.panelDebugg.SuspendLayout();
             this.panelConfig.SuspendLayout();
             this.panelTopPage.SuspendLayout();
@@ -313,7 +312,6 @@
             // panelConfig
             // 
             this.panelConfig.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelConfig.Controls.Add(this.lbBtnLanguge);
             this.panelConfig.Controls.Add(this.panelLowMark2);
             this.panelConfig.Controls.Add(this.lbBtnPersonalInformation);
             this.panelConfig.Location = new System.Drawing.Point(15, 72);
@@ -322,20 +320,6 @@
             this.panelConfig.TabIndex = 14;
             this.panelConfig.Visible = false;
             this.panelConfig.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConfig_Paint);
-            // 
-            // lbBtnLanguge
-            // 
-            this.lbBtnLanguge.AutoSize = true;
-            this.lbBtnLanguge.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBtnLanguge.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbBtnLanguge.Location = new System.Drawing.Point(4, 56);
-            this.lbBtnLanguge.Name = "lbBtnLanguge";
-            this.lbBtnLanguge.Size = new System.Drawing.Size(63, 13);
-            this.lbBtnLanguge.TabIndex = 3;
-            this.lbBtnLanguge.Text = "Language";
-            this.lbBtnLanguge.Click += new System.EventHandler(this.lbBtnLanguge_Click);
-            this.lbBtnLanguge.MouseLeave += new System.EventHandler(this.lbBtnLanguge_MouseLeave);
-            this.lbBtnLanguge.MouseHover += new System.EventHandler(this.lbBtnLanguge_MouseHover);
             // 
             // panelLowMark2
             // 
@@ -389,6 +373,30 @@
             this.panelTopPage.Name = "panelTopPage";
             this.panelTopPage.Size = new System.Drawing.Size(1801, 53);
             this.panelTopPage.TabIndex = 16;
+            // 
+            // lbButtonTenis
+            // 
+            this.lbButtonTenis.AutoSize = true;
+            this.lbButtonTenis.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbButtonTenis.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbButtonTenis.Location = new System.Drawing.Point(634, 17);
+            this.lbButtonTenis.Name = "lbButtonTenis";
+            this.lbButtonTenis.Size = new System.Drawing.Size(92, 33);
+            this.lbButtonTenis.TabIndex = 16;
+            this.lbButtonTenis.Text = "Tenis";
+            this.lbButtonTenis.Click += new System.EventHandler(this.lbButtonTenis_Click);
+            // 
+            // lbButtonBasketball
+            // 
+            this.lbButtonBasketball.AutoSize = true;
+            this.lbButtonBasketball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbButtonBasketball.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbButtonBasketball.Location = new System.Drawing.Point(423, 17);
+            this.lbButtonBasketball.Name = "lbButtonBasketball";
+            this.lbButtonBasketball.Size = new System.Drawing.Size(160, 33);
+            this.lbButtonBasketball.TabIndex = 15;
+            this.lbButtonBasketball.Text = "Basketball";
+            this.lbButtonBasketball.Click += new System.EventHandler(this.lbButtonBasketball_Click);
             // 
             // lbButtonFootbal
             // 
@@ -509,30 +517,6 @@
             this.BannerPic.TabStop = false;
             this.BannerPic.Click += new System.EventHandler(this.BannerPic_Click);
             // 
-            // lbButtonBasketball
-            // 
-            this.lbButtonBasketball.AutoSize = true;
-            this.lbButtonBasketball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbButtonBasketball.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbButtonBasketball.Location = new System.Drawing.Point(423, 17);
-            this.lbButtonBasketball.Name = "lbButtonBasketball";
-            this.lbButtonBasketball.Size = new System.Drawing.Size(160, 33);
-            this.lbButtonBasketball.TabIndex = 15;
-            this.lbButtonBasketball.Text = "Basketball";
-            this.lbButtonBasketball.Click += new System.EventHandler(this.lbButtonBasketball_Click);
-            // 
-            // lbButtonTenis
-            // 
-            this.lbButtonTenis.AutoSize = true;
-            this.lbButtonTenis.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbButtonTenis.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbButtonTenis.Location = new System.Drawing.Point(634, 17);
-            this.lbButtonTenis.Name = "lbButtonTenis";
-            this.lbButtonTenis.Size = new System.Drawing.Size(92, 33);
-            this.lbButtonTenis.TabIndex = 16;
-            this.lbButtonTenis.Text = "Tenis";
-            this.lbButtonTenis.Click += new System.EventHandler(this.lbButtonTenis_Click);
-            // 
             // FormPincipalMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -592,7 +576,6 @@
         private System.Windows.Forms.Panel panelLowMark;
         private System.Windows.Forms.Panel panelLowMark2;
         private System.Windows.Forms.Panel panelMenus;
-        private System.Windows.Forms.Label lbBtnLanguge;
         private System.Windows.Forms.PictureBox BannerPic;
         private System.Windows.Forms.Panel panelTopPage;
         private System.Windows.Forms.Panel panelBackgroun1;

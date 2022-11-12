@@ -5,7 +5,7 @@ using System.Web.Http;
 
 namespace CapaLoogica
 {
-    public class AsociationControler : ApiController
+    public class AsociationControler 
     {
         public AsociationControler()
         {
@@ -55,15 +55,6 @@ namespace CapaLoogica
         public int GetId(string Name) => new ModelAsociation().GetId(Name);
         public bool HaveChange(int id) => new ModelAsociation().HaveChange(id);
 
-        [HttpPost]
-        public Dictionary<int, ModelAsociation> GetAsocInfoByPage([FromBody] SafeSystemBuffer r)
-        {
-            return new ModelAsociation().PopulateAsocByPage(r.PageNumber);
-        }
-        [HttpPost]
-        public Dictionary<int, ModelAsociation> GetAsocInfoById([FromBody] SafeSystemBuffer r)
-        {
-            return new ModelAsociation().PopulateAsocById(r.Id);
-        }
+       
     }
 }

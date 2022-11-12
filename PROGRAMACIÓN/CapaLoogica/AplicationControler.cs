@@ -17,7 +17,9 @@ namespace CapaLoogica
             set { _language = value; SafeSystemBuffer.Language = value; }
         }
         public string getResponse() => SafeSystemBuffer.Response;
-
+        public string SetResponse(string v) => SafeSystemBuffer.Response = v;
+        public DataTable getResponseTable() => SafeSystemBuffer.ResponseTable;
+        public DataTable SetResponseTable(DataTable v) => SafeSystemBuffer.ResponseTable = v;
         private int getLanguage()
         {
             int selection;

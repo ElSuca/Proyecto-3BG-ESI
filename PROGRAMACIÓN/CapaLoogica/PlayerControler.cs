@@ -5,7 +5,7 @@ using System.Web.Http;
 
 namespace CapaLoogica
 {
-    public class PlayerControler : ApiController
+    public class PlayerControler
     {
         public DataTable GetPlayerDataTable() => new ModelPlayer().GetPlayerDataTable();
 
@@ -83,21 +83,5 @@ namespace CapaLoogica
         public int GetId(string Name) => new ModelPlayer().GetId(Name);
         public bool HaveChange(int id) => new ModelPlayer().HaveChange(id);
         public DataTable GetUserNameByTeam(int id) => new ModelPlayer().GetNameByTeam(id);
-
-        [HttpPost]
-        public Dictionary<int, ModelPlayer> GetAllPlayer([FromBody] SafeSystemBuffer p)
-        {
-            return new ModelPlayer().PopulatePlayer((p.PageNumberPlayer));
-        }
-        [HttpPost]
-        public Dictionary<int, ModelPlayer> GetNamedPlayer([FromBody] SafeSystemBuffer p)
-        {
-            return new ModelPlayer().PopulatePlayer((p.SearchBarContent));
-        }
-        [HttpPost]
-        public Dictionary<int, ModelPlayer> GetPlayerById([FromBody] SafeSystemBuffer r)
-        {
-            return new ModelPlayer().PopulatePlayerById(r.Id);
-        }
     }
 }

@@ -20,7 +20,7 @@ namespace Proyecto
         public StarterMenu()
         {
             InitializeComponent();
-            traduction(new AplicationControler().Language);
+            
         }
 
         private void btnLoggin_Click(object sender, EventArgs e) => new FormLogging().Show();
@@ -29,22 +29,6 @@ namespace Proyecto
 
         private void Lblanguaje_Click(object sender, EventArgs e) => new FormPincipal().setSelection(4);
 
-        private void traduction(int l)
-        {
-            if (l == 0)
-            {
-                btnRegister.Text = "Register";
-                btnLoggin.Text = "Log in";
-                Lblanguaje.Text = "Language";
-                labelTitle.Text = "Project Olympus";
-            }
-            else
-            {
-                btnRegister.Text = "Registrar";
-                btnLoggin.Text = "Iniciar Sesión";
-                Lblanguaje.Text = "Idioma";
-                labelTitle.Text = "Proyecto Olympus";
-            }
-        }
+       
     }
 }

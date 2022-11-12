@@ -31,7 +31,6 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.btnLoggin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.Lblanguaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -73,24 +72,11 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // Lblanguaje
-            // 
-            this.Lblanguaje.AutoSize = true;
-            this.Lblanguaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblanguaje.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lblanguaje.Location = new System.Drawing.Point(15, 11);
-            this.Lblanguaje.Name = "Lblanguaje";
-            this.Lblanguaje.Size = new System.Drawing.Size(59, 13);
-            this.Lblanguaje.TabIndex = 8;
-            this.Lblanguaje.Text = "Languaje";
-            this.Lblanguaje.Click += new System.EventHandler(this.Lblanguaje_Click);
-            // 
             // StarterMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.Controls.Add(this.Lblanguaje);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.btnLoggin);
             this.Controls.Add(this.btnRegister);
@@ -106,6 +92,5 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button btnLoggin;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Label Lblanguaje;
     }
 }

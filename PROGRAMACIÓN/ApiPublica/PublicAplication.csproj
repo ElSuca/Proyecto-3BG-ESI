@@ -252,10 +252,6 @@
       <Project>{eab0cd5c-6f60-4bfa-80ec-d07a595d3f32}</Project>
       <Name>ApiPublicidad</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ApiResult\ApiResult.csproj">
-      <Project>{274d84c4-11db-4f7d-ab98-f5b9d71bb867}</Project>
-      <Name>ApiResult</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaLoogica\CapaLogica.csproj">
       <Project>{145b1adb-bc7a-4013-8311-88959ac2a71a}</Project>
       <Name>CapaLogica</Name>
@@ -263,6 +259,10 @@
     <ProjectReference Include="..\CapDeDatos\CapaDeDatos.csproj">
       <Project>{C2A71A24-EA6E-4DB3-8F1D-CD8C21901F87}</Project>
       <Name>CapaDeDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewAPIResult\NewAPIResult.csproj">
+      <Project>{589071ce-821e-40b2-8a5b-cf442216d51b}</Project>
+      <Name>NewAPIResult</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

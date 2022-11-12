@@ -5,7 +5,7 @@ using System.Web.Http;
 
 namespace CapaLoogica
 {
-    public class EventControler : ApiController
+    public class EventControler 
     {
         public EventControler()
         {
@@ -77,19 +77,5 @@ namespace CapaLoogica
         public bool HaveChange(int id) => new ModelEvents().HaveChange(id);
 
         public string GetStartDate() => new ModelEvents().StartDate;
-
-        [HttpPost]
-        public Dictionary<int, ModelEvents> GetEventByPage([FromBody]  SafeSystemBuffer r) => new ModelEvents().PopulateEventByPage(r.PageNumber);
-        [HttpPost]
-        public Dictionary<int, ModelEvents> GetEventById([FromBody] SafeSystemBuffer r) => new ModelEvents().PopulateEventById(r.Id);
-
-        [HttpPost]
-        public HashSet<int?> GetEventIdByDate([FromBody] SafeSystemBuffer r)
-        {
-            r.PageNumber = (r.PageNumber - 1) * 5;
-            return new ModelEvents().PopulatePlayer(r.SportId, r.PageNumber);
-        }
-       
-
     }
 }

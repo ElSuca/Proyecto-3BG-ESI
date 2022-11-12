@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace CapDeDatos
 {
@@ -7,7 +8,7 @@ namespace CapDeDatos
         public static string startPath { get; set; }
         public static int Language { get; set; }
         public static string Response { get; set; }
-        public static string[] ResponseArray { get; set; }
+        public static DataTable ResponseTable { get; set; }
         public int PageNumber { get; set; }
         public int SportId { get; set; }
         public int Id { get; set; }

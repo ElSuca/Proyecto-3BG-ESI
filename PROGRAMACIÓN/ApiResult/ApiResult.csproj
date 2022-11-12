@@ -86,9 +86,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapDeDatos\CapaDeDatos.csproj">
-      <Project>{C2A71A24-EA6E-4DB3-8F1D-CD8C21901F87}</Project>
-      <Name>CapaDeDatos</Name>
+    <ProjectReference Include="..\CapaLoogica\CapaLogica.csproj">
+      <Project>{145b1adb-bc7a-4013-8311-88959ac2a71a}</Project>
+      <Name>CapaLogica</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

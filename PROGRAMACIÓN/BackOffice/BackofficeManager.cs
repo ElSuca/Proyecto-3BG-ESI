@@ -9,8 +9,8 @@ namespace Proyecto.Backoffice
 {
     public partial class BackofficeManager : Form
     {
-        public MySqlCommand command;
-        public MySqlDataReader dataReader;
+        public MySqlCommand Command;
+        public MySqlDataReader DataReader;
         public BackofficeManager()
         {
             InitializeComponent();

@@ -4,8 +4,8 @@ using System.Web.Http;
 
 namespace CapaLoogica
 {
-    public class ActionControler : ApiController
-    {
+    public class ActionControler
+    { 
         public ActionControler()
         {
         }

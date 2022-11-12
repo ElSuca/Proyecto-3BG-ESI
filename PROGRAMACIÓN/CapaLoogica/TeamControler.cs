@@ -5,8 +5,8 @@ using System.Web.Http;
 
 namespace CapaLoogica
 {
-    public class TeamControler : ApiController
-    {
+    public class TeamControler
+    { 
         public DataTable GetTeamDataTable() => new ModelTeam().GetTeamDataTable();
         public static void Delete(int id) => new ModelTeam(id).Delete(id);
         public static void Alta(string name,string city,string state, string country)
@@ -47,13 +47,6 @@ namespace CapaLoogica
         public int GetId(string Name) => new ModelTeam().GetId(Name);
         public string GetName(int id) => new ModelTeam().GetName(id);
         public bool HaveChange(int id) => new ModelTeam().HaveChange(id);
-
-
-
-        [HttpPost]
-        public Dictionary<int, ModelTeam> GetTeamInfoByPage([FromBody] SafeSystemBuffer r) => new ModelTeam().PopulateTeamByPage(r.PageNumber);
-        [HttpPost]
-        public Dictionary<int, ModelTeam> GetTeamInfoById([FromBody] SafeSystemBuffer r) => new ModelTeam().PopulateTeamById(r.Id);
+      
     }
-    
 }

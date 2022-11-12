@@ -5,7 +5,7 @@ using CapDeDatos;
 
 namespace CapaLoogica
 {
-    public class SportControler : ApiController
+    public class SportControler
     {
         public SportControler() 
         {
@@ -42,16 +42,5 @@ namespace CapaLoogica
         public bool ExistSport(int id) => new ModelSport().ExistSport(id);
         public int GetId(string Name) => new ModelSport().GetId(Name);
         public bool HaveChange(int id) => new ModelSport().HaveChange(id);
-
-        [HttpPost]
-        public Dictionary<int, ModelSport> GetSportByPage([FromBody] SafeSystemBuffer r)
-        {
-            return new ModelSport().PopulateSportByPage(r.PageNumber);
-        }
-        [HttpPost]
-        public Dictionary<int, ModelSport> GetSportById([FromBody] SafeSystemBuffer r)
-        {
-            return new ModelSport().PopulateSportById(r.Id);
-        }
     }
 }

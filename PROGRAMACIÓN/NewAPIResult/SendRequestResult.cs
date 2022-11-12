@@ -1,19 +1,20 @@
-﻿using CapaLoogica;
+﻿using CapDeDatos;
 using Newtonsoft.Json;
+using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
-using Formatting = Newtonsoft.Json.Formatting;
 
-namespace ApiResult
+namespace NewAPIResult
 {
     public class SendRequestResult
     {
+
         public SendRequestResult()
         {
         }
@@ -29,21 +30,24 @@ namespace ApiResult
             request.Method = "post";
             request.ContentType = "application/json;charset=UTF-8";
 
+          
             using (var m = new StreamWriter(request.GetRequestStream()))
-            {
+            {  
                 string json = JsonConvert.SerializeObject(u, Formatting.Indented);
                 m.Write(json);
                 m.Flush();
                 m.Close();
             }
             WebResponse response = request.GetResponse();
+           
             using (var l = new StreamReader(response.GetResponseStream()))
             {
                 result = l.ReadToEnd().Trim();
             }
-            Dictionary<string, string> EventId = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
-           new AplicationControler().SetResponse(EventId["ID"]);
+            DataTable dt = (DataTable)JsonConvert.DeserializeObject(result, (typeof(DataTable)));
 
+            SafeSystemBuffer.ResponseTable = dt;
+            Console.Write(e);
             return result;
         }
     }

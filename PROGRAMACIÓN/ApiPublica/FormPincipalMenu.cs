@@ -1,8 +1,9 @@
 ﻿using ApiPublica.ExtendedMenu;
-using ApiResult;
+using NewAPIResult;
 using Apis;
 using CapaLogica;
 using CapaLoogica;
+using NewAPIResult;
 using Proyecto;
 using System;
 using System.Diagnostics;
@@ -143,10 +144,10 @@ namespace ApiPublica
         private void lbBtnLanguge_MouseLeave(object sender, EventArgs e) => panelLowMark2.Visible = false;
         private void lbBtnLanguge_MouseHover(object sender, EventArgs e)
         {
-            panelLowMark2.Size = new Size(lbBtnLanguge.Size.Width, 2);
+           /* panelLowMark2.Size = new Size(lbBtnLanguge.Size.Width, 2);
             panelLowMark2.Location = new Point(lbBtnLanguge.Location.X, lbBtnLanguge.Location.Y + 12);
             panelLowMark2.Show();
-            panelLowMark2.Visible = true;
+            panelLowMark2.Visible = true;*/
         }
 
       
@@ -258,8 +259,8 @@ namespace ApiPublica
         private void lbButtonFootbal_Click(object sender, EventArgs e)
         {
             controlApiRes();
-            SendRequestResult.GetPost("http://localhost:3333//api//EventId//GetEventIdByDate", 1, new SportControler().GetId("Football"));
-            var a = new AplicationControler().getResponse();
+            SendRequestResult.GetPost("http://localhost:39099/api/EventId/GetEventIdByDate", 1, new SportControler().GetId("Football")); //39099
+            var a = new AplicationControler().getResponseTable();
             panelResult.Controls.Clear();
             FillResults1vs1(Int32.Parse(txtTeam1id.Text), Int32.Parse(txtTeam2id.Text), new TeamControler().GetName(Int32.Parse(txtTeam1id.Text)), new TeamControler().GetName(Int32.Parse(txtTeam2id.Text)), Int32.Parse(txtScore1.Text), Int32.Parse(txtScore2.Text), txtDate.Text, txtCompetition.Text, txtStartTime.Text, txtEndTime.Text, txtStadium.Text);
             new EventControler().GetEventBySport("Football");
